@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Confirmação de Presença</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f3ee;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 20px;
+      padding: 35px 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      color: #666;
+    }
+
+    .event {
+      background: #f1ebe3;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #333;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Confirmação de Presença</h1>
+
+    <p class="subtitle">
+      Lançamento do livro<br>
+      <strong>Antes Que Eu Seja Usado</strong>
+    </p>
+
+    <div class="event">
+      <strong>Você é nosso convidado!</strong><br>
+      Confirme sua presença selecionando seu nome abaixo.
+    </div>
+
+    <label for="nome">Selecione seu nome:</label>
+
+    <select id="nome">
+      <option value="">-- Escolha seu nome --</option>
+
+      <option>Convidado 1</option>
+      <option>Convidado 2</option>
+      <option>Convidado 3</option>
+      <option>Convidado 4</option>
+      <option>Convidado 5</option>
+
+    </select>
+
+    <button onclick="confirmarPresenca()">
+      Confirmar minha presença
+    </button>
+
+    <div id="mensagem"></div>
+
+  </div>
+
+  <script>
+    function confirmarPresenca() {
+
+      const nome = document.getElementById("nome").value;
+      const mensagem = document.getElementById("mensagem");
+
+      if (nome === "") {
+        mensagem.innerHTML = "Por favor, selecione seu nome.";
+        return;
+      }
+
+      mensagem.innerHTML =
+        "Presença confirmada!<br>Seja muito bem-vindo(a), " + nome + "!";
+    }
+  </script>
+
+</body>
+</html>
