@@ -40,7 +40,7 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(255,255,255,0.65),
+          rgba(255, 255, 255, 0.65),
           transparent 40%
         ),
         linear-gradient(135deg, var(--fundo), #e5dbcd);
@@ -63,7 +63,9 @@
         0 2px 8px rgba(54, 42, 32, 0.08);
     }
 
-    /* CABEÇALHO */
+    /* =========================
+       CABEÇALHO
+    ========================== */
 
     .topo {
       background:
@@ -119,7 +121,9 @@
       margin: 18px auto 0;
     }
 
-    /* CAPA */
+    /* =========================
+       CAPA DO LIVRO
+    ========================== */
 
     .area-capa {
       padding: 38px 25px 15px;
@@ -157,7 +161,9 @@
       line-height: 1.7;
     }
 
-    /* INTRODUÇÃO */
+    /* =========================
+       INTRODUÇÃO
+    ========================== */
 
     .introducao {
       text-align: center;
@@ -177,7 +183,9 @@
       color: var(--cinza);
     }
 
-    /* EVENTO */
+    /* =========================
+       INFORMAÇÕES DO EVENTO
+    ========================== */
 
     .evento {
       margin: 15px 25px 30px;
@@ -232,7 +240,9 @@
       margin-top: 3px;
     }
 
-    /* CONFIRMAÇÃO */
+    /* =========================
+       CONFIRMAÇÃO
+    ========================== */
 
     .confirmacao {
       padding: 5px 30px 35px;
@@ -312,15 +322,17 @@
       transform: none;
     }
 
-    /* MENSAGEM */
+    /* =========================
+       MENSAGEM DE CONFIRMAÇÃO
+    ========================== */
 
     #mensagem {
       display: none;
       margin-top: 22px;
-      padding: 20px;
+      padding: 22px;
       border-radius: 12px;
-      text-align: center;
-      font-size: 16px;
+      text-align: left;
+      font-size: 15px;
       line-height: 1.7;
     }
 
@@ -336,19 +348,46 @@
       background: #f8ece8;
       border: 1px solid #e2c7bf;
       color: #71453b;
+      text-align: center;
     }
 
     .mensagem-titulo {
-      font-size: 20px;
-      margin-bottom: 12px;
+      text-align: center;
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 18px;
     }
 
-    .mensagem-detalhes {
-      margin-top: 14px;
-      font-weight: normal;
+    .mensagem-introducao {
+      margin-bottom: 18px;
     }
 
-    /* FRASE FINAL */
+    .mensagem-secao {
+      margin-top: 18px;
+    }
+
+    .mensagem-secao strong.titulo {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .mensagem-secao ul {
+      padding-left: 22px;
+      margin-top: 8px;
+    }
+
+    .mensagem-secao li {
+      margin-bottom: 9px;
+    }
+
+    .mensagem-final {
+      margin-top: 20px;
+    }
+
+    /* =========================
+       FRASE FINAL
+    ========================== */
 
     .frase-final {
       border-top: 1px solid var(--borda);
@@ -372,6 +411,10 @@
       font-size: 14px;
     }
 
+    /* =========================
+       RODAPÉ
+    ========================== */
+
     footer {
       text-align: center;
       padding: 18px 20px 25px;
@@ -380,7 +423,9 @@
       letter-spacing: 0.3px;
     }
 
-    /* CELULAR */
+    /* =========================
+       CELULAR
+    ========================== */
 
     @media (max-width: 600px) {
 
@@ -448,6 +493,11 @@
         padding-right: 20px;
       }
 
+      #mensagem {
+        padding: 18px;
+        font-size: 14px;
+      }
+
       .frase-final {
         margin-left: 20px;
         margin-right: 20px;
@@ -482,7 +532,9 @@
 
     <section class="convite">
 
-      <!-- CABEÇALHO -->
+      <!-- =========================
+           CABEÇALHO
+      ========================== -->
 
       <header class="topo">
 
@@ -499,7 +551,9 @@
       </header>
 
 
-      <!-- CAPA DO LIVRO -->
+      <!-- =========================
+           CAPA DO LIVRO
+      ========================== -->
 
       <section class="area-capa">
 
@@ -543,7 +597,9 @@
       </section>
 
 
-      <!-- INTRODUÇÃO -->
+      <!-- =========================
+           INTRODUÇÃO
+      ========================== -->
 
       <section class="introducao">
 
@@ -560,7 +616,9 @@
       </section>
 
 
-      <!-- INFORMAÇÕES DO EVENTO -->
+      <!-- =========================
+           INFORMAÇÕES DO EVENTO
+      ========================== -->
 
       <section class="evento">
 
@@ -614,7 +672,9 @@
       </section>
 
 
-      <!-- CONFIRMAÇÃO -->
+      <!-- =========================
+           CONFIRMAÇÃO
+      ========================== -->
 
       <section class="confirmacao">
 
@@ -706,7 +766,9 @@
       </section>
 
 
-      <!-- FRASE FINAL -->
+      <!-- =========================
+           FRASE FINAL
+      ========================== -->
 
       <section class="frase-final">
 
@@ -731,7 +793,9 @@
   </main>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
   <script>
 
@@ -747,19 +811,23 @@
         document.getElementById("botaoConfirmar");
 
 
-      /* VALIDAÇÃO */
+      /* =========================
+         VALIDAÇÃO
+      ========================== */
 
       if (nome === "") {
 
         mensagem.className = "erro";
 
         mensagem.innerHTML = `
+
           <div class="mensagem-titulo">
             Atenção
           </div>
 
           Por favor, selecione seu nome
           para confirmar sua presença.
+
         `;
 
         mensagem.scrollIntoView({
@@ -771,13 +839,17 @@
       }
 
 
-      /* GOOGLE APPS SCRIPT */
+      /* =========================
+         GOOGLE APPS SCRIPT
+      ========================== */
 
       const url =
         "https://script.google.com/macros/s/AKfycbzO6vAGXLNfyfp2-uzxySY91pf2OUQvWf-f_OFV-dTauWVsOzTE9pIvqy_2eYfrKTzqYA/exec";
 
 
-      /* BOTÃO */
+      /* =========================
+         BOTÃO
+      ========================== */
 
       botao.disabled = true;
 
@@ -809,7 +881,9 @@
         });
 
 
-        /* MENSAGEM DE SUCESSO */
+        /* =========================
+           MENSAGEM DE CONFIRMAÇÃO
+        ========================== */
 
         mensagem.className = "sucesso";
 
@@ -819,34 +893,93 @@
             ✓ Presença confirmada!
           </div>
 
-          <strong>
-            Obrigado pela sua presença,
-            ${nome}!
-          </strong>
+          <div class="mensagem-introducao">
 
-          <div class="mensagem-detalhes">
-
-            Será uma alegria receber você
-            no lançamento do livro
-            <strong>Antes Que Eu Seja Usado</strong>.
+            Olá!
 
             <br><br>
 
-            O evento acontecerá no dia
-            <strong>19 de setembro, às 18h</strong>,
-            na Rua Estrada do Siqueira, 485,
-            Novo Mondubim — Fortaleza/CE.
+            Sua presença está confirmada com sucesso
+            para o lançamento do livro
+            <strong>Antes Que Eu Seja Usado</strong>!
 
-            <br><br>
+            Estamos preparando tudo com muito carinho
+            e será uma alegria enorme ter você com a
+            gente para comemorar esse momento tão especial.
 
-            Os livros estarão disponíveis
-            para venda no local do evento.
+          </div>
+
+
+          <div class="mensagem-secao">
+
+            <strong class="titulo">
+              📍 Detalhes do Evento
+            </strong>
+
+            <ul>
+
+              <li>
+                <strong>Data:</strong>
+                19 de setembro
+              </li>
+
+              <li>
+                <strong>Horário:</strong>
+                18h
+              </li>
+
+              <li>
+                <strong>Local:</strong>
+                Rua Estrada do Siqueira, 485
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="mensagem-secao">
+
+            <strong class="titulo">
+              📌 Avisos Importantes
+            </strong>
+
+            <ul>
+
+              <li>
+                <strong>Acompanhantes:</strong>
+                Como estamos organizando uma recepção
+                pensada com muito cuidado para a
+                quantidade exata de pessoas confirmadas,
+                <strong>
+                  o convite é individual e não será possível
+                  levar acompanhantes.
+                </strong>
+                Contamos com a sua compreensão!
+              </li>
+
+              <li>
+                <strong>Venda de Livros:</strong>
+                Teremos exemplares físicos à venda no local
+                para você garantir o seu.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="mensagem-final">
+
+            Se acontecer algum imprevisto e você não puder
+            comparecer, pedimos a gentileza de entrar em
+            contato conosco para que possamos reorganizar
+            a recepção da melhor forma.
 
             <br><br>
 
             <strong>
-              Agradecemos desde já pela sua presença
-              e esperamos você!
+              Um abraço e até lá!
             </strong>
 
           </div>
@@ -866,7 +999,10 @@
 
       } catch (erro) {
 
-        /* ERRO */
+
+        /* =========================
+           MENSAGEM DE ERRO
+        ========================== */
 
         mensagem.className = "erro";
 
@@ -879,7 +1015,7 @@
           Ocorreu um problema ao registrar
           sua presença.
 
-          <br>
+          <br><br>
 
           Por favor, tente novamente.
 
