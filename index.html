@@ -1,187 +1,80 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+```html
+<h1>Confirmação de Presença</h1>
 
-  <title>Confirmação de Presença</title>
+<p class="subtitle">
+  Lançamento do livro<br>
+  <strong>Antes Que Eu Seja Usado</strong>
+</p>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<div class="event">
+  <strong>Você é nosso convidado!</strong><br>
+  Confirme sua presença selecionando seu nome abaixo.
+</div>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f3ee;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+<label for="nome">Selecione seu nome:</label>
 
-    .container {
-      width: 100%;
-      max-width: 500px;
-      background: white;
-      border-radius: 20px;
-      padding: 35px 25px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+<select id="nome">
+  <option value="">-- Escolha seu nome --</option>
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+  <option>Alexandre &amp; Antônia</option>
+  <option>Alexandre &amp; Clea</option>
+  <option>Alexandre Santos (Pr) &amp; Ítala Rodrigues (Pra)</option>
+  <option>Alisson Gadelha (Pr) &amp; Lucinda (Pra)</option>
+  <option>Almeida Júnior (Pr) &amp; Cleane (Pra)</option>
+  <option>Ana Maria</option>
+  <option>Ap Mardônio Maciel &amp; Apa Jô</option>
+  <option>Ari (Pr) &amp; Cris (Pra)</option>
+  <option>Conceição Bittencourt (Pra)</option>
+  <option>Costa Júnior (Pr) &amp; Maria (Miss)</option>
+  <option>Davi e Graci</option>
+  <option>Davi Vasconcelos (Prft) &amp; Claudenisia Marques</option>
+  <option>Daniel (Pr) &amp; Lidiana (Pra)</option>
+  <option>David (Pr) &amp; Camila (Pra)</option>
+  <option>Denilma Oliveira</option>
+  <option>Denis Pinheiro (Pr) &amp; Márcia Pinheiro</option>
+  <option>Denilson Pinheiro (Pr) &amp; Gardenia Pinheiro (Pra)</option>
+  <option>Diego (Pr) &amp; Sabrina (Pra)</option>
+  <option>Elisnaldo &amp; Cristina</option>
+  <option>Fábio &amp; Milena</option>
+  <option>Giovane Silva &amp; Rafaela Cristiane</option>
+  <option>Igor &amp; Adriana</option>
+  <option>Ivania (Ir)</option>
+  <option>Jefferson &amp; Luana Débora</option>
+  <option>Joaquim &amp; esposa</option>
+  <option>Jonathan &amp; Kenya</option>
+  <option>Júnior Martins &amp; Carla Martins</option>
+  <option>Kelvim &amp; Larissa</option>
+  <option>Kílvio (Pr) &amp; Valdênia (Pra)</option>
+  <option>Klecio (Pr) e Esposa</option>
+  <option>Leonardo (Pr) &amp; Monique</option>
+  <option>Liduina Braga</option>
+  <option>Luizinho &amp; Priscila</option>
+  <option>Marcelo Damasceno (Pr) &amp; Elizabeth (Pra)</option>
+  <option>Maria de Fátima Pinheiro</option>
+  <option>Maria José Pinheiro</option>
+  <option>Mateus &amp; Rebeca</option>
+  <option>Maurício (Pr) &amp; Cláudia (Pra)</option>
+  <option>Mayra Gurgel</option>
+  <option>Nelson Junior &amp; Dani Marques</option>
+  <option>Paulo Martins (Pr) &amp; esposa</option>
+  <option>Rogério (Pr) &amp; Wanda (Pra)</option>
+  <option>Sandro (Pr) &amp; Débora (Pra)</option>
+  <option>Tony Domingos (Pr) &amp; esposa</option>
+  <option>Tony Everson (Pr) &amp; esposa</option>
+  <option>Valdelúcia Fialho (Pra)</option>
+  <option>Valdir Amaral</option>
+  <option>Wesley Ismael (Pr) &amp; Lucimar (Pra)</option>
+  <option>Yasmin Santos</option>
+</select>
 
-    .subtitle {
-      font-size: 17px;
-      line-height: 1.5;
-      margin-bottom: 25px;
-      color: #666;
-    }
+<button onclick="confirmarPresenca()">
+  Confirmar minha presença
+</button>
 
-    .event {
-      background: #f1ebe3;
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
+<div id="mensagem"></div>
 
-    label {
-      display: block;
-      text-align: left;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    select {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-      background: white;
-      margin-bottom: 20px;
-    }
-
-    button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 10px;
-      background: #333;
-      color: white;
-      font-size: 17px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    #mensagem {
-      margin-top: 20px;
-      font-weight: bold;
-      line-height: 1.5;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-
-    <h1>Confirmação de Presença</h1>
-
-    <p class="subtitle">
-      Lançamento do livro<br>
-      <strong>Antes Que Eu Seja Usado</strong>
-    </p>
-
-    <div class="event">
-      <strong>Você é nosso convidado!</strong><br>
-      Confirme sua presença selecionando seu nome abaixo.
-    </div>
-
-    <label for="nome">Selecione seu nome:</label>
-
-    <select id="nome">
-      <option value="">-- Escolha seu nome --</option>
-
-  ```html id="q7m4xz"
-<option>Alexandre &amp; Antônia</option>
-<option>Alexandre &amp; Clea</option>
-<option>Alexandre Santos (Pr) &amp; Ítala Rodrigues (Pra)</option>
-<option>Alisson Gadelha (Pr) &amp; Lucinda (Pra)</option>
-<option>Almeida Júnior (Pr) &amp; Cleane (Pra)</option>
-<option>Ana Maria</option>
-<option>Ap Mardônio Maciel &amp; Apa Jô</option>
-<option>Ari (Pr) &amp; Cris (Pra)</option>
-<option>Conceição Bittencourt (Pra)</option>
-<option>Costa Júnior (Pr) &amp; Maria (Miss)</option>
-<option>Davi e Graci</option>
-<option>Davi Vasconcelos (Prft) &amp; Claudenisia Marques</option>
-<option>Daniel (Pr) &amp; Lidiana (Pra)</option>
-<option>David (Pr) &amp; Camila (Pra)</option>
-<option>Denilma Oliveira</option>
-<option>Denis Pinheiro (Pr) &amp; Márcia Pinheiro</option>
-<option>Denilson Pinheiro (Pr) &amp; Gardenia Pinheiro (Pra)</option>
-<option>Diego (Pr) &amp; Sabrina (Pra)</option>
-<option>Elisnaldo &amp; Cristina</option>
-<option>Fábio &amp; Milena</option>
-<option>Giovane Silva &amp; Rafaela Cristiane</option>
-<option>Igor &amp; Adriana</option>
-<option>Ivania (Ir)</option>
-<option>Jefferson &amp; Luana Débora</option>
-<option>Joaquim &amp; esposa</option>
-<option>Jonathan &amp; Kenya</option>
-<option>Júnior Martins &amp; Carla Martins</option>
-<option>Kelvim &amp; Larissa</option>
-<option>Kílvio (Pr) &amp; Valdênia (Pra)</option>
-<option>Klecio (Pr) e Esposa</option>
-<option>Leonardo (Pr) &amp; Monique</option>
-<option>Liduina Braga</option>
-<option>Luizinho &amp; Priscila</option>
-<option>Marcelo Damasceno (Pr) &amp; Elizabeth (Pra)</option>
-<option>Maria de Fátima Pinheiro</option>
-<option>Maria José Pinheiro</option>
-<option>Mateus &amp; Rebeca</option>
-<option>Maurício (Pr) &amp; Cláudia (Pra)</option>
-<option>Mayra Gurgel</option>
-<option>Nelson Junior &amp; Dani Marques</option>
-<option>Paulo Martins (Pr) &amp; esposa</option>
-<option>Rogério (Pr) &amp; Wanda (Pra)</option>
-<option>Sandro (Pr) &amp; Débora (Pra)</option>
-<option>Tony Domingos (Pr) &amp; esposa</option>
-<option>Tony Everson (Pr) &amp; esposa</option>
-<option>Valdelúcia Fialho (Pra)</option>
-<option>Valdir Amaral</option>
-<option>Wesley Ismael (Pr) &amp; Lucimar (Pra)</option>
-<option>Yasmin Santos</option>
-```
-
-
-
-
-
-    </select>
-
-    <button onclick="confirmarPresenca()">
-      Confirmar minha presença
-    </button>
-
-    <div id="mensagem"></div>
-
-  </div>
-
-  async function confirmarPresenca() {
+<script>
+async function confirmarPresenca() {
   const nome = document.getElementById("nome").value;
   const mensagem = document.getElementById("mensagem");
 
@@ -209,3 +102,5 @@
       "Não foi possível registrar a presença. Tente novamente.";
   }
 }
+</script>
+```
