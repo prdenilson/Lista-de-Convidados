@@ -181,21 +181,31 @@
 
   </div>
 
-  <script>
-    function confirmarPresenca() {
+  async function confirmarPresenca() {
+  const nome = document.getElementById("nome").value;
+  const mensagem = document.getElementById("mensagem");
 
-      const nome = document.getElementById("nome").value;
-      const mensagem = document.getElementById("mensagem");
+  if (nome === "") {
+    mensagem.innerHTML = "Por favor, selecione seu nome.";
+    return;
+  }
 
-      if (nome === "") {
-        mensagem.innerHTML = "Por favor, selecione seu nome.";
-        return;
-      }
+  const url = "https://script.google.com/macros/s/AKfycbzO6vAGXLNfyfp2-uzxySY91pf2OUQvWf-f_OFV-dTauWVsOzTE9pIvqy_2eYfrKTzqYA/exec";
 
-      mensagem.innerHTML =
-        "Presença confirmada!<br>Seja muito bem-vindo(a), " + nome + "!";
-    }
-  </script>
+  try {
+    await fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: "nome=" + encodeURIComponent(nome)
+    });
 
-</body>
-</html>
+    mensagem.innerHTML =
+      "Presença confirmada!<br>Seja muito bem-vindo(a), " + nome + "!";
+  } catch (erro) {
+    mensagem.innerHTML =
+      "Não foi possível registrar a presença. Tente novamente.";
+  }
+}
