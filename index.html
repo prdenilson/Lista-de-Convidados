@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Confirme sua presença no lançamento do livro Antes Que Eu Seja Usado e faça parte da pré-venda."
+    content="Confirme sua presença no lançamento do livro Antes Que Eu Seja Usado e garanta seu exemplar na pré-venda."
   >
 
   <style>
@@ -123,7 +123,7 @@
     }
 
     /* =========================
-       CAPA
+       CAPA PRINCIPAL
     ========================== */
 
     .area-capa {
@@ -248,15 +248,17 @@
     .compra {
       margin: 15px 25px 30px;
       padding: 30px 22px;
-      border: 1px solid var(--borda);
+      border: 1px solid var(--dourado-claro);
       border-radius: 17px;
       background:
         linear-gradient(
           135deg,
-          rgba(246, 240, 231, 0.95),
-          rgba(238, 229, 216, 0.9)
+          rgba(246, 240, 231, 0.98),
+          rgba(238, 229, 216, 0.95)
         );
       text-align: center;
+      box-shadow:
+        0 8px 25px rgba(70, 52, 38, 0.08);
     }
 
     .compra-titulo {
@@ -278,15 +280,83 @@
       font-size: 15px;
       line-height: 1.7;
       color: var(--cinza);
-      margin-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       DESTAQUE LIVRO + OFERTA
+    ========================== */
+
+    .oferta-pre-venda {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      text-align: left;
+      margin: 10px 0 25px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 253, 249, 0.78);
+      border: 1px solid var(--borda);
+    }
+
+    .capa-pre-venda {
+      flex: 0 0 145px;
+      width: 145px;
+    }
+
+    .capa-pre-venda img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow:
+        0 12px 25px rgba(45, 35, 27, 0.25),
+        0 2px 6px rgba(45, 35, 27, 0.12);
+    }
+
+    .oferta-texto {
+      flex: 1;
+    }
+
+    .oferta-texto h4 {
+      font-size: 21px;
+      font-weight: normal;
+      color: var(--marrom-escuro);
+      margin-bottom: 9px;
+    }
+
+    .oferta-texto p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--cinza);
+      margin-bottom: 10px;
+    }
+
+    .beneficio-digital {
+      margin-top: 12px;
+      padding: 13px;
+      border-radius: 10px;
+      background: rgba(154, 122, 79, 0.10);
+      border: 1px solid rgba(154, 122, 79, 0.30);
+      color: var(--marrom);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .beneficio-digital strong {
+      color: var(--marrom-escuro);
     }
 
     .preco {
       font-size: 30px;
       font-weight: bold;
       color: var(--marrom);
-      margin-bottom: 21px;
+      margin: 18px 0 20px;
     }
+
+    /* =========================
+       PAGAMENTOS
+    ========================== */
 
     .botoes-pagamento {
       display: grid;
@@ -633,6 +703,19 @@
       .compra {
         margin-left: 15px;
         margin-right: 15px;
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+
+      .oferta-pre-venda {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+      }
+
+      .capa-pre-venda {
+        flex: none;
+        width: 145px;
       }
 
       .botoes-pagamento {
@@ -670,6 +753,10 @@
         width: 92%;
       }
 
+      .capa-pre-venda {
+        width: 130px;
+      }
+
       .confirmacao h3 {
         font-size: 21px;
       }
@@ -701,7 +788,7 @@
       </header>
 
 
-      <!-- CAPA -->
+      <!-- CAPA PRINCIPAL -->
 
       <section class="area-capa">
 
@@ -816,7 +903,9 @@
       </section>
 
 
-      <!-- PRÉ-VENDA -->
+      <!-- =========================
+           PRÉ-VENDA
+      ========================== -->
 
       <section class="compra">
 
@@ -825,12 +914,77 @@
         </div>
 
         <h3>
-          Antes Que Eu Seja Usado
+          Garanta seu livro antecipadamente
         </h3>
 
         <p class="compra-subtitulo">
-          Reserve seu exemplar hoje e receba no dia do lançamento.
+          Reserve seu exemplar hoje e receba o livro físico
+          no dia do lançamento.
         </p>
+
+
+        <!-- CAPA PEQUENA + OFERTA -->
+
+        <div class="oferta-pre-venda">
+
+          <div class="capa-pre-venda">
+
+            <img
+              src="capa.jpg"
+              alt="Capa do livro Antes Que Eu Seja Usado"
+            >
+
+          </div>
+
+
+          <div class="oferta-texto">
+
+            <h4>
+              Antes Que Eu Seja Usado
+            </h4>
+
+            <p>
+              <em>
+                Uma jornada antes do encontro com nossa vocação.
+              </em>
+            </p>
+
+            <p>
+              Uma jornada de reflexão, quebrantamento e
+              transformação para quem deseja compreender que,
+              antes de ser usado por Deus, precisamos permitir
+              que Ele trabalhe em nós.
+            </p>
+
+
+            <div class="beneficio-digital">
+
+              💻 <strong>
+                Benefício exclusivo da pré-venda
+              </strong>
+
+              <br>
+
+              Quem realizar a compra antecipadamente
+              durante a pré-venda receberá também
+              <strong>a versão digital do livro</strong>.
+
+              <br><br>
+
+              <strong>
+                A versão digital será disponibilizada
+                exclusivamente para quem comprar
+                antecipadamente na pré-venda.
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PREÇO -->
 
         <div class="preco">
           R$ 34,90
@@ -849,6 +1003,7 @@
           >
             🟢 Pagar com Pix
           </a>
+
 
           <a
             class="botao-pagamento botao-cartao"
@@ -888,14 +1043,25 @@
 
 
         <p class="compra-observacao">
+
           Escolha a forma de pagamento de sua preferência.
+
+          <br>
+
+          <strong>
+            A versão digital é um benefício exclusivo
+            da compra antecipada na pré-venda.
+          </strong>
+
         </p>
 
+
+        <!-- ENTREGA -->
 
         <div class="entrega">
 
           📖 <strong>
-            Seu exemplar será entregue no dia do lançamento.
+            Seu exemplar físico será entregue no dia do lançamento.
           </strong>
 
           <br>
@@ -916,8 +1082,10 @@
         </h3>
 
         <p class="confirmacao-texto">
+
           Para confirmar sua presença, informe seu nome
           e o nome da sua igreja.
+
         </p>
 
 
@@ -1071,6 +1239,7 @@
             ✓ Presença confirmada!
           </div>
 
+
           <div class="mensagem-introducao">
 
             Olá, <strong>${escapeHtml(nome)}</strong>!
@@ -1124,10 +1293,20 @@
             </strong>
 
             <p>
-              Se você realizou a compra do livro,
-              seu exemplar será reservado e
+
+              Se você realizou a compra antecipada
+              durante a pré-venda, seu exemplar físico
+              será reservado e
               <strong>entregue no dia do lançamento</strong>,
               no local do evento.
+
+              <br><br>
+
+              Além disso, você receberá
+              <strong>a versão digital do livro</strong>,
+              benefício exclusivo para quem realizou
+              a compra antecipadamente na pré-venda.
+
             </p>
 
           </div>
