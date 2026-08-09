@@ -9,10 +9,11 @@
 
   <meta
     name="description"
-    content="Confirme sua presença no lançamento do livro Antes Que Eu Seja Usado e garanta seu exemplar."
+    content="Confirme sua presença no lançamento do livro Antes Que Eu Seja Usado e faça parte da pré-venda."
   >
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -122,7 +123,7 @@
     }
 
     /* =========================
-       CAPA DO LIVRO
+       CAPA
     ========================== */
 
     .area-capa {
@@ -184,7 +185,7 @@
     }
 
     /* =========================
-       INFORMAÇÕES DO EVENTO
+       EVENTO
     ========================== */
 
     .evento {
@@ -241,7 +242,7 @@
     }
 
     /* =========================
-       COMPRA DO LIVRO
+       PRÉ-VENDA
     ========================== */
 
     .compra {
@@ -323,6 +324,46 @@
     .botao-cartao {
       background: linear-gradient(135deg, #9a7a4f, #735a39);
       color: white;
+    }
+
+    /* =========================
+       COMPROVANTE WHATSAPP
+    ========================== */
+
+    .comprovante {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid var(--dourado-claro);
+      border-radius: 12px;
+      background: rgba(195, 168, 120, 0.12);
+      text-align: center;
+      color: var(--marrom);
+    }
+
+    .comprovante strong {
+      font-size: 16px;
+    }
+
+    .comprovante p {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--cinza);
+    }
+
+    .numero-whatsapp {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+
+    .numero-whatsapp strong {
+      color: var(--marrom-escuro);
+    }
+
+    .mensagem-whatsapp {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--cinza);
     }
 
     .compra-observacao {
@@ -516,10 +557,6 @@
       font-size: 14px;
     }
 
-    /* =========================
-       RODAPÉ
-    ========================== */
-
     footer {
       text-align: center;
       padding: 18px 20px 25px;
@@ -637,6 +674,7 @@
         font-size: 21px;
       }
     }
+
   </style>
 </head>
 
@@ -646,9 +684,7 @@
 
     <section class="convite">
 
-      <!-- =========================
-           CABEÇALHO
-      ========================== -->
+      <!-- CABEÇALHO -->
 
       <header class="topo">
 
@@ -665,9 +701,7 @@
       </header>
 
 
-      <!-- =========================
-           CAPA DO LIVRO
-      ========================== -->
+      <!-- CAPA -->
 
       <section class="area-capa">
 
@@ -711,9 +745,7 @@
       </section>
 
 
-      <!-- =========================
-           INTRODUÇÃO
-      ========================== -->
+      <!-- INTRODUÇÃO -->
 
       <section class="introducao">
 
@@ -730,9 +762,7 @@
       </section>
 
 
-      <!-- =========================
-           INFORMAÇÕES DO EVENTO
-      ========================== -->
+      <!-- INFORMAÇÕES DO EVENTO -->
 
       <section class="evento">
 
@@ -786,14 +816,12 @@
       </section>
 
 
-      <!-- =========================
-           FAÇA PARTE DA PRÉ VENDA
-      ========================== -->
+      <!-- PRÉ-VENDA -->
 
       <section class="compra">
 
         <div class="compra-titulo">
-           FAÇA PARTE DA PRÉ VENDA
+          Faça parte da pré-venda
         </div>
 
         <h3>
@@ -801,12 +829,15 @@
         </h3>
 
         <p class="compra-subtitulo">
-          Uma jornada antes do encontro com nossa vocação
+          Reserve seu exemplar hoje e receba no dia do lançamento.
         </p>
 
         <div class="preco">
           R$ 34,90
         </div>
+
+
+        <!-- PAGAMENTOS -->
 
         <div class="botoes-pagamento">
 
@@ -830,13 +861,42 @@
 
         </div>
 
+
+        <!-- COMPROVANTE -->
+
+        <div class="comprovante">
+
+          <strong>
+            📲 Pagamento realizado?
+          </strong>
+
+          <p>
+            Após realizar o pagamento, envie o comprovante
+            pelo WhatsApp para confirmarmos sua compra.
+          </p>
+
+          <div class="numero-whatsapp">
+            WhatsApp:
+            <strong>(85) 98514-1830</strong>
+          </div>
+
+          <div class="mensagem-whatsapp">
+            Envie seu comprovante junto com seu nome.
+          </div>
+
+        </div>
+
+
         <p class="compra-observacao">
           Escolha a forma de pagamento de sua preferência.
         </p>
 
+
         <div class="entrega">
 
-          📖 <strong>Ao adquirir na pré venda, seu exemplar será entregue no dia do lançamento.</strong>
+          📖 <strong>
+            Seu exemplar será entregue no dia do lançamento.
+          </strong>
 
           <br>
 
@@ -847,9 +907,7 @@
       </section>
 
 
-      <!-- =========================
-           CONFIRMAÇÃO DE PRESENÇA
-      ========================== -->
+      <!-- CONFIRMAÇÃO -->
 
       <section class="confirmacao">
 
@@ -901,9 +959,7 @@
       </section>
 
 
-      <!-- =========================
-           FRASE FINAL
-      ========================== -->
+      <!-- FRASE FINAL -->
 
       <section class="frase-final">
 
@@ -928,9 +984,7 @@
   </main>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
+  <!-- JAVASCRIPT -->
 
   <script>
 
@@ -948,10 +1002,6 @@
       const botao =
         document.getElementById("botaoConfirmar");
 
-
-      /* =========================
-         VALIDAÇÃO
-      ========================== */
 
       if (nome === "" || igreja === "") {
 
@@ -977,17 +1027,9 @@
       }
 
 
-      /* =========================
-         GOOGLE APPS SCRIPT
-      ========================== */
-
       const url =
         "https://script.google.com/macros/s/AKfycbzO6vAGXLNfyfp2-uzxySY91pf2OUQvWf-f_OFV-dTauWVsOzTE9pIvqy_2eYfrKTzqYA/exec";
 
-
-      /* =========================
-         BOTÃO
-      ========================== */
 
       botao.disabled = true;
 
@@ -1020,10 +1062,6 @@
 
         });
 
-
-        /* =========================
-           MENSAGEM DE CONFIRMAÇÃO
-        ========================== */
 
         mensagem.className = "sucesso";
 
@@ -1066,7 +1104,7 @@
 
               <li>
                 <strong>Horário:</strong>
-                18h
+                19h
               </li>
 
               <li>
@@ -1124,11 +1162,6 @@
 
       } catch (erro) {
 
-
-        /* =========================
-           MENSAGEM DE ERRO
-        ========================== */
-
         mensagem.className = "erro";
 
         mensagem.innerHTML = `
@@ -1155,12 +1188,6 @@
 
     }
 
-
-    /* =========================
-       SEGURANÇA
-       Evita inserir caracteres
-       digitados pelo usuário como HTML.
-    ========================== */
 
     function escapeHtml(texto) {
 
