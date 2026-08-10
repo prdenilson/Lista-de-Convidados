@@ -1,18 +1,29 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Antes Que Eu Seja Usado | Lançamento</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Antes Que Eu Seja Usado | Lançamento
+  </title>
 
   <meta
     name="description"
-    content="Confirme sua presença no lançamento do livro Antes Que Eu Seja Usado e garanta seu exemplar na pré-venda."
+    content="Conheça o livro Antes Que Eu Seja Usado, de Francisco Denilson Pinheiro. Conheça a obra, o autor, o lançamento e garanta seu exemplar na pré-venda."
   >
 
   <style>
+
+    /* =========================
+       RESET
+    ========================== */
 
     * {
       box-sizing: border-box;
@@ -20,620 +31,1595 @@
       padding: 0;
     }
 
+
+    /* =========================
+       CORES
+    ========================== */
+
     :root {
+
       --fundo: #eee7dc;
+
       --marrom: #4b392c;
+
       --marrom-escuro: #30251e;
+
       --dourado: #9a7a4f;
+
       --dourado-claro: #c3a878;
+
       --texto: #3d342d;
+
       --cinza: #766c64;
+
       --borda: #d5c7b6;
+
+      --branco: #fffdf9;
+
     }
+
+
+    /* =========================
+       HTML
+    ========================== */
 
     html {
+
       scroll-behavior: smooth;
+
+      scroll-padding-top: 65px;
+
     }
 
+
+    /* =========================
+       BODY
+    ========================== */
+
     body {
+
       min-height: 100vh;
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       background:
+
         radial-gradient(
           circle at top,
           rgba(255, 255, 255, 0.65),
           transparent 40%
         ),
-        linear-gradient(135deg, var(--fundo), #e5dbcd);
+
+        linear-gradient(
+          135deg,
+          var(--fundo),
+          #e5dbcd
+        );
+
       color: var(--texto);
+
       padding: 30px 15px;
+
     }
+
+
+    /* =========================
+       PÁGINA
+    ========================== */
 
     .pagina {
+
       width: 100%;
+
       max-width: 700px;
+
       margin: 0 auto;
+
     }
 
+
     .convite {
-      background: rgba(255, 253, 249, 0.97);
+
+      background:
+        rgba(255, 253, 249, 0.97);
+
       border-radius: 24px;
+
       overflow: hidden;
+
       box-shadow:
-        0 20px 60px rgba(54, 42, 32, 0.18),
-        0 2px 8px rgba(54, 42, 32, 0.08);
+
+        0 20px 60px
+        rgba(54, 42, 32, 0.18),
+
+        0 2px 8px
+        rgba(54, 42, 32, 0.08);
+
     }
+
 
     /* =========================
        CABEÇALHO
     ========================== */
 
     .topo {
+
       background:
+
         linear-gradient(
           135deg,
           rgba(47, 37, 29, 0.98),
           rgba(82, 62, 47, 0.98)
         );
+
       color: white;
+
       text-align: center;
+
       padding: 34px 25px 30px;
+
       position: relative;
+
     }
+
 
     .topo::before,
     .topo::after {
+
       content: "";
+
       position: absolute;
+
       width: 70px;
+
       height: 1px;
-      background: var(--dourado-claro);
+
+      background:
+        var(--dourado-claro);
+
       top: 50%;
+
       opacity: 0.7;
+
     }
+
 
     .topo::before {
       left: 25px;
     }
 
+
     .topo::after {
       right: 25px;
     }
 
+
     .pequeno-titulo {
+
       font-size: 12px;
+
       letter-spacing: 4px;
+
       text-transform: uppercase;
+
       color: #dbc7a8;
+
       margin-bottom: 12px;
+
     }
+
 
     .topo h1 {
+
       font-size: 31px;
+
       font-weight: normal;
+
       letter-spacing: 1px;
+
       line-height: 1.25;
+
     }
 
+
     .linha-dourada {
+
       width: 55px;
+
       height: 2px;
-      background: var(--dourado-claro);
+
+      background:
+        var(--dourado-claro);
+
       margin: 18px auto 0;
+
     }
+
+
+    /* =========================
+       MENU
+    ========================== */
+
+    .menu {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(48, 37, 30, 0.98);
+
+      border-top:
+        1px solid
+        rgba(195, 168, 120, 0.25);
+
+      border-bottom:
+        1px solid
+        rgba(195, 168, 120, 0.25);
+
+      backdrop-filter: blur(8px);
+
+    }
+
+
+    .menu-conteudo {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 3px;
+
+      padding: 9px 8px;
+
+      overflow-x: auto;
+
+      scrollbar-width: none;
+
+    }
+
+
+    .menu-conteudo::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .menu a {
+
+      flex: 0 0 auto;
+
+      text-decoration: none;
+
+      color: #eadcc6;
+
+      font-size: 11px;
+
+      letter-spacing: 0.7px;
+
+      text-transform: uppercase;
+
+      padding: 8px 9px;
+
+      border-radius: 7px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+    }
+
+
+    .menu a:hover {
+
+      background:
+        rgba(195, 168, 120, 0.15);
+
+      color: white;
+
+    }
+
 
     /* =========================
        CAPA PRINCIPAL
     ========================== */
 
     .area-capa {
+
       padding: 38px 25px 15px;
+
       text-align: center;
+
     }
+
 
     .capa {
+
       width: min(82%, 330px);
+
       margin: 0 auto;
+
       position: relative;
+
     }
+
 
     .capa img {
+
       width: 100%;
+
       height: auto;
+
       display: block;
+
       border-radius: 5px;
+
       box-shadow:
-        0 18px 35px rgba(45, 35, 27, 0.28),
-        0 3px 8px rgba(45, 35, 27, 0.15);
+
+        0 18px 35px
+        rgba(45, 35, 27, 0.28),
+
+        0 3px 8px
+        rgba(45, 35, 27, 0.15);
+
     }
 
+
     .capa-placeholder {
+
       min-height: 430px;
+
       display: none;
+
       justify-content: center;
+
       align-items: center;
+
       padding: 40px 25px;
+
       border-radius: 5px;
-      background: linear-gradient(145deg, #554438, #2f251f);
+
+      background:
+
+        linear-gradient(
+          145deg,
+          #554438,
+          #2f251f
+        );
+
       color: #e5d4b8;
+
       box-shadow:
-        0 18px 35px rgba(45, 35, 27, 0.28);
+
+        0 18px 35px
+        rgba(45, 35, 27, 0.28);
+
       font-size: 15px;
+
       line-height: 1.7;
+
     }
+
 
     /* =========================
        INTRODUÇÃO
     ========================== */
 
     .introducao {
+
       text-align: center;
-      padding: 25px 35px 20px;
+
+      padding: 25px 35px 25px;
+
     }
+
 
     .introducao h2 {
+
       font-size: 26px;
+
       font-weight: normal;
-      color: var(--marrom-escuro);
+
+      color:
+        var(--marrom-escuro);
+
       margin-bottom: 12px;
+
     }
 
+
     .introducao p {
+
       font-size: 16px;
+
       line-height: 1.7;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
     }
+
+
+    /* =========================
+       TÍTULOS
+    ========================== */
+
+    .titulo-secao {
+
+      text-align: center;
+
+      padding: 35px 25px 15px;
+
+    }
+
+
+    .titulo-secao .pequeno {
+
+      display: block;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      color:
+        var(--dourado);
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .titulo-secao h2 {
+
+      font-size: 28px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+    }
+
+
+    .titulo-secao .linha {
+
+      width: 45px;
+
+      height: 2px;
+
+      background:
+        var(--dourado-claro);
+
+      margin: 14px auto 0;
+
+    }
+
+
+    /* =========================
+       SOBRE O LIVRO
+    ========================== */
+
+    .livro {
+
+      padding: 5px 25px 35px;
+
+    }
+
+
+    .livro-conteudo {
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 17px;
+
+      padding: 25px 22px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(246, 240, 231, 0.9),
+          rgba(238, 229, 216, 0.8)
+        );
+
+    }
+
+
+    .livro-conteudo p {
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+      color:
+        var(--cinza);
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .livro-conteudo p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .frase-livro {
+
+      margin-top: 22px;
+
+      padding: 20px;
+
+      border-left:
+        3px solid
+        var(--dourado);
+
+      background:
+        rgba(154, 122, 79, 0.08);
+
+      color:
+        var(--marrom);
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+      font-style: italic;
+
+      text-align: center;
+
+    }
+
+
+    /* =========================
+       SOBRE O AUTOR
+    ========================== */
+
+    .autor {
+
+      padding: 5px 25px 35px;
+
+    }
+
+
+    .autor-conteudo {
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 17px;
+
+      padding: 25px 22px;
+
+      background:
+        rgba(246, 240, 231, 0.7);
+
+    }
+
+
+    .autor-foto {
+
+      width: 190px;
+
+      height: 230px;
+
+      margin: 0 auto 22px;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid
+        var(--dourado-claro);
+
+      box-shadow:
+
+        0 12px 28px
+        rgba(45, 35, 27, 0.20);
+
+      background:
+        #ddd3c5;
+
+    }
+
+
+    .autor-foto img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center top;
+
+      display: block;
+
+    }
+
+
+    .autor-nome {
+
+      text-align: center;
+
+      font-size: 24px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .autor-texto p {
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+      color:
+        var(--cinza);
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .autor-texto strong {
+
+      color:
+        var(--marrom);
+
+    }
+
+
+    .autor-frase {
+
+      margin-top: 20px;
+
+      padding: 18px;
+
+      border-top:
+        1px solid
+        var(--borda);
+
+      text-align: center;
+
+    }
+
+
+    .autor-frase p {
+
+      font-size: 18px;
+
+      line-height: 1.6;
+
+      font-style: italic;
+
+      color:
+        var(--marrom);
+
+      margin-bottom: 0;
+
+    }
+
 
     /* =========================
        EVENTO
     ========================== */
 
     .evento {
+
       margin: 15px 25px 30px;
+
       padding: 25px 20px;
-      border: 1px solid var(--borda);
+
+      border:
+        1px solid
+        var(--borda);
+
       border-radius: 17px;
+
       background:
+
         linear-gradient(
           135deg,
           rgba(246, 240, 231, 0.9),
           rgba(238, 229, 216, 0.8)
         );
+
       text-align: center;
+
     }
+
 
     .evento-titulo {
+
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 3px;
-      color: var(--dourado);
+
+      color:
+        var(--dourado);
+
       margin-bottom: 18px;
+
     }
+
 
     .informacoes {
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 15px;
+
     }
+
 
     .info {
+
       padding: 10px;
+
     }
+
 
     .info strong {
+
       display: block;
+
       font-size: 17px;
-      color: var(--marrom);
+
+      color:
+        var(--marrom);
+
       margin-bottom: 6px;
+
     }
+
 
     .info span {
+
       display: block;
+
       font-size: 14px;
+
       line-height: 1.5;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
     }
 
+
     .endereco {
-      grid-column: 1 / -1;
-      border-top: 1px solid var(--borda);
+
+      grid-column:
+        1 / -1;
+
+      border-top:
+        1px solid
+        var(--borda);
+
       padding-top: 17px;
+
       margin-top: 3px;
+
     }
+
 
     /* =========================
        PRÉ-VENDA
     ========================== */
 
     .compra {
+
       margin: 15px 25px 30px;
+
       padding: 30px 22px;
-      border: 1px solid var(--dourado-claro);
+
+      border:
+        1px solid
+        var(--dourado-claro);
+
       border-radius: 17px;
+
       background:
+
         linear-gradient(
           135deg,
           rgba(246, 240, 231, 0.98),
           rgba(238, 229, 216, 0.95)
         );
+
       text-align: center;
+
       box-shadow:
-        0 8px 25px rgba(70, 52, 38, 0.08);
+
+        0 8px 25px
+        rgba(70, 52, 38, 0.08);
+
     }
+
 
     .compra-titulo {
+
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 3px;
-      color: var(--dourado);
+
+      color:
+        var(--dourado);
+
       margin-bottom: 13px;
+
     }
+
 
     .compra h3 {
+
       font-size: 27px;
+
       font-weight: normal;
-      color: var(--marrom-escuro);
+
+      color:
+        var(--marrom-escuro);
+
       margin-bottom: 10px;
+
     }
+
 
     .compra-subtitulo {
+
       font-size: 15px;
+
       line-height: 1.7;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
       margin-bottom: 20px;
+
     }
 
+
     /* =========================
-       DESTAQUE LIVRO + OFERTA
+       OFERTA
     ========================== */
 
     .oferta-pre-venda {
+
       display: flex;
+
       align-items: center;
+
       gap: 24px;
+
       text-align: left;
+
       margin: 10px 0 25px;
+
       padding: 20px;
+
       border-radius: 15px;
-      background: rgba(255, 253, 249, 0.78);
-      border: 1px solid var(--borda);
+
+      background:
+        rgba(255, 253, 249, 0.78);
+
+      border:
+        1px solid
+        var(--borda);
+
     }
+
 
     .capa-pre-venda {
+
       flex: 0 0 145px;
+
       width: 145px;
+
     }
+
 
     .capa-pre-venda img {
+
       width: 100%;
+
       height: auto;
+
       display: block;
+
       border-radius: 4px;
+
       box-shadow:
-        0 12px 25px rgba(45, 35, 27, 0.25),
-        0 2px 6px rgba(45, 35, 27, 0.12);
+
+        0 12px 25px
+        rgba(45, 35, 27, 0.25),
+
+        0 2px 6px
+        rgba(45, 35, 27, 0.12);
+
     }
+
 
     .oferta-texto {
+
       flex: 1;
+
     }
+
 
     .oferta-texto h4 {
+
       font-size: 21px;
+
       font-weight: normal;
-      color: var(--marrom-escuro);
+
+      color:
+        var(--marrom-escuro);
+
       margin-bottom: 9px;
+
     }
+
 
     .oferta-texto p {
+
       font-size: 14px;
+
       line-height: 1.65;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
       margin-bottom: 10px;
+
     }
+
 
     .beneficio-digital {
+
       margin-top: 12px;
+
       padding: 13px;
+
       border-radius: 10px;
-      background: rgba(154, 122, 79, 0.10);
-      border: 1px solid rgba(154, 122, 79, 0.30);
-      color: var(--marrom);
+
+      background:
+        rgba(154, 122, 79, 0.10);
+
+      border:
+        1px solid
+        rgba(154, 122, 79, 0.30);
+
+      color:
+        var(--marrom);
+
       font-size: 14px;
+
       line-height: 1.6;
+
     }
+
 
     .beneficio-digital strong {
-      color: var(--marrom-escuro);
+
+      color:
+        var(--marrom-escuro);
+
     }
+
 
     .preco {
+
       font-size: 30px;
+
       font-weight: bold;
-      color: var(--marrom);
+
+      color:
+        var(--marrom);
+
       margin: 18px 0 20px;
+
     }
 
+
     /* =========================
-       PAGAMENTOS
+       PAGAMENTO
     ========================== */
 
     .botoes-pagamento {
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 12px;
+
     }
+
 
     .botao-pagamento {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       min-height: 56px;
+
       padding: 14px 12px;
+
       border-radius: 11px;
+
       text-decoration: none;
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 15px;
+
       font-weight: bold;
-      transition: all 0.2s ease;
+
+      transition:
+        all 0.2s ease;
+
       box-shadow:
-        0 6px 15px rgba(62, 47, 36, 0.16);
+
+        0 6px 15px
+        rgba(62, 47, 36, 0.16);
+
     }
+
 
     .botao-pagamento:hover {
-      transform: translateY(-2px);
+
+      transform:
+        translateY(-2px);
+
       box-shadow:
-        0 9px 20px rgba(62, 47, 36, 0.23);
+
+        0 9px 20px
+        rgba(62, 47, 36, 0.23);
+
     }
+
 
     .botao-pix {
-      background: linear-gradient(135deg, #5b4636, #3f3026);
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
       color: white;
+
     }
+
 
     .botao-cartao {
-      background: linear-gradient(135deg, #9a7a4f, #735a39);
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #9a7a4f,
+          #735a39
+        );
+
       color: white;
+
     }
 
+
     /* =========================
-       COMPROVANTE WHATSAPP
+       COMPROVANTE
     ========================== */
 
     .comprovante {
+
       margin-top: 20px;
+
       padding: 18px;
-      border: 1px solid var(--dourado-claro);
+
+      border:
+        1px solid
+        var(--dourado-claro);
+
       border-radius: 12px;
-      background: rgba(195, 168, 120, 0.12);
+
+      background:
+        rgba(195, 168, 120, 0.12);
+
       text-align: center;
-      color: var(--marrom);
+
+      color:
+        var(--marrom);
+
     }
+
 
     .comprovante strong {
+
       font-size: 16px;
+
     }
+
 
     .comprovante p {
+
       margin-top: 8px;
+
       font-size: 14px;
+
       line-height: 1.6;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
     }
+
 
     .numero-whatsapp {
+
       margin-top: 12px;
+
       font-size: 16px;
+
     }
+
 
     .numero-whatsapp strong {
-      color: var(--marrom-escuro);
+
+      color:
+        var(--marrom-escuro);
+
     }
+
 
     .mensagem-whatsapp {
+
       margin-top: 6px;
+
       font-size: 13px;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
     }
+
 
     .compra-observacao {
+
       margin-top: 17px;
+
       font-size: 13px;
+
       line-height: 1.6;
-      color: #8b8178;
+
+      color:
+        #8b8178;
+
     }
 
+
     .entrega {
+
       margin-top: 18px;
+
       padding-top: 18px;
-      border-top: 1px solid var(--borda);
+
+      border-top:
+        1px solid
+        var(--borda);
+
       font-size: 14px;
+
       line-height: 1.6;
-      color: var(--marrom);
+
+      color:
+        var(--marrom);
+
     }
+
 
     /* =========================
        CONFIRMAÇÃO
     ========================== */
 
     .confirmacao {
-      padding: 5px 30px 35px;
+
+      padding:
+        5px 30px 35px;
+
     }
+
 
     .confirmacao h3 {
+
       text-align: center;
+
       font-size: 24px;
+
       font-weight: normal;
-      color: var(--marrom-escuro);
+
+      color:
+        var(--marrom-escuro);
+
       margin-bottom: 8px;
+
     }
+
 
     .confirmacao-texto {
+
       text-align: center;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
       font-size: 15px;
+
       line-height: 1.6;
+
       margin-bottom: 25px;
+
     }
+
 
     label {
+
       display: block;
+
       font-size: 15px;
+
       font-weight: bold;
-      color: var(--marrom);
+
+      color:
+        var(--marrom);
+
       margin-bottom: 9px;
+
     }
+
 
     input {
+
       width: 100%;
+
       padding: 16px 15px;
-      border: 1px solid var(--borda);
+
+      border:
+        1px solid
+        var(--borda);
+
       border-radius: 11px;
+
       background: #fff;
-      color: var(--texto);
-      font-family: Georgia, "Times New Roman", serif;
+
+      color:
+        var(--texto);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 16px;
+
       outline: none;
-      transition: all 0.2s ease;
+
+      transition:
+        all 0.2s ease;
+
       margin-bottom: 17px;
+
     }
+
 
     input:focus {
-      border-color: var(--dourado);
+
+      border-color:
+        var(--dourado);
+
       box-shadow:
-        0 0 0 3px rgba(154, 122, 79, 0.12);
+
+        0 0 0 3px
+        rgba(154, 122, 79, 0.12);
+
     }
+
 
     input::placeholder {
-      color: #a39a91;
+
+      color:
+        #a39a91;
+
     }
+
 
     .botao {
+
       width: 100%;
+
       margin-top: 2px;
+
       padding: 17px 20px;
+
       border: none;
+
       border-radius: 11px;
+
       background:
-        linear-gradient(135deg, #5b4636, #3f3026);
+
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
       color: white;
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 17px;
+
       font-weight: bold;
+
       cursor: pointer;
+
       box-shadow:
-        0 7px 16px rgba(62, 47, 36, 0.20);
-      transition: all 0.2s ease;
+
+        0 7px 16px
+        rgba(62, 47, 36, 0.20);
+
+      transition:
+        all 0.2s ease;
+
     }
+
 
     .botao:hover {
-      transform: translateY(-2px);
+
+      transform:
+        translateY(-2px);
+
       box-shadow:
-        0 10px 22px rgba(62, 47, 36, 0.27);
+
+        0 10px 22px
+        rgba(62, 47, 36, 0.27);
+
     }
 
+
     .botao:disabled {
+
       opacity: 0.7;
+
       cursor: wait;
+
       transform: none;
+
     }
+
 
     /* =========================
        MENSAGEM
     ========================== */
 
     #mensagem {
+
       display: none;
+
       margin-top: 22px;
+
       padding: 22px;
+
       border-radius: 12px;
+
       text-align: left;
+
       font-size: 15px;
+
       line-height: 1.7;
+
     }
+
 
     #mensagem.sucesso {
+
       display: block;
-      background: #edf3e9;
-      border: 1px solid #c9d9bf;
-      color: #43563b;
+
+      background:
+        #edf3e9;
+
+      border:
+        1px solid
+        #c9d9bf;
+
+      color:
+        #43563b;
+
     }
+
 
     #mensagem.erro {
+
       display: block;
-      background: #f8ece8;
-      border: 1px solid #e2c7bf;
-      color: #71453b;
+
+      background:
+        #f8ece8;
+
+      border:
+        1px solid
+        #e2c7bf;
+
+      color:
+        #71453b;
+
       text-align: center;
+
     }
+
 
     .mensagem-titulo {
+
       text-align: center;
+
       font-size: 21px;
+
       font-weight: bold;
+
       margin-bottom: 18px;
+
     }
+
 
     .mensagem-introducao {
+
       margin-bottom: 18px;
+
     }
+
 
     .mensagem-secao {
+
       margin-top: 18px;
+
     }
+
 
     .mensagem-secao strong.titulo {
+
       display: block;
+
       margin-bottom: 8px;
+
       font-size: 16px;
+
     }
+
 
     .mensagem-secao ul {
+
       padding-left: 22px;
+
       margin-top: 8px;
+
     }
+
 
     .mensagem-secao li {
+
       margin-bottom: 9px;
+
     }
 
+
     .mensagem-final {
+
       margin-top: 20px;
+
     }
+
 
     /* =========================
        FRASE FINAL
     ========================== */
 
     .frase-final {
-      border-top: 1px solid var(--borda);
+
+      border-top:
+        1px solid
+        var(--borda);
+
       margin: 0 30px;
+
       padding: 25px 10px 30px;
+
       text-align: center;
+
     }
+
 
     .frase-final p {
+
       font-size: 15px;
+
       line-height: 1.7;
+
       font-style: italic;
-      color: var(--cinza);
+
+      color:
+        var(--cinza);
+
     }
+
 
     .frase-final strong {
+
       display: block;
+
       margin-top: 8px;
+
       font-style: normal;
-      color: var(--marrom);
+
+      color:
+        var(--marrom);
+
       font-size: 14px;
+
     }
 
+
     footer {
+
       text-align: center;
+
       padding: 18px 20px 25px;
+
       font-size: 12px;
-      color: #8b8178;
+
+      color:
+        #8b8178;
+
       letter-spacing: 0.3px;
+
     }
+
 
     /* =========================
        CELULAR
@@ -642,157 +1628,398 @@
     @media (max-width: 600px) {
 
       body {
-        padding: 15px 10px;
+
+        padding:
+          15px 10px;
+
       }
+
 
       .convite {
+
         border-radius: 18px;
+
       }
+
 
       .topo {
-        padding: 28px 18px 25px;
+
+        padding:
+          28px 18px 25px;
+
       }
 
+
       .topo h1 {
+
         font-size: 26px;
+
       }
+
 
       .topo::before,
       .topo::after {
+
         width: 35px;
+
       }
+
 
       .topo::before {
         left: 12px;
       }
 
+
       .topo::after {
         right: 12px;
       }
 
-      .area-capa {
-        padding-top: 30px;
+
+      .menu-conteudo {
+
+        justify-content:
+          flex-start;
+
       }
+
+
+      .menu a {
+
+        font-size: 10px;
+
+        padding:
+          8px 8px;
+
+      }
+
+
+      .area-capa {
+
+        padding-top: 30px;
+
+      }
+
 
       .capa {
-        width: min(88%, 300px);
+
+        width:
+          min(88%, 300px);
+
       }
+
 
       .introducao {
+
         padding-left: 22px;
+
         padding-right: 22px;
+
       }
+
 
       .introducao h2 {
+
         font-size: 23px;
+
       }
+
+
+      .titulo-secao {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+      }
+
+
+      .titulo-secao h2 {
+
+        font-size: 25px;
+
+      }
+
+
+      .livro {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+      }
+
+
+      .autor {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+      }
+
+
+      .autor-foto {
+
+        width: 170px;
+
+        height: 215px;
+
+      }
+
 
       .evento {
+
         margin-left: 15px;
+
         margin-right: 15px;
+
       }
+
 
       .informacoes {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
+
       }
+
 
       .endereco {
-        grid-column: auto;
+
+        grid-column:
+          auto;
+
       }
+
 
       .compra {
+
         margin-left: 15px;
+
         margin-right: 15px;
+
         padding-left: 17px;
+
         padding-right: 17px;
+
       }
+
 
       .oferta-pre-venda {
-        flex-direction: column;
-        text-align: center;
+
+        flex-direction:
+          column;
+
+        text-align:
+          center;
+
         gap: 18px;
+
       }
+
 
       .capa-pre-venda {
+
         flex: none;
+
         width: 145px;
+
       }
+
 
       .botoes-pagamento {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
+
       }
+
 
       .confirmacao {
+
         padding-left: 20px;
+
         padding-right: 20px;
+
       }
+
 
       #mensagem {
+
         padding: 18px;
+
         font-size: 14px;
+
       }
 
+
       .frase-final {
+
         margin-left: 20px;
+
         margin-right: 20px;
+
       }
+
     }
+
 
     @media (max-width: 380px) {
 
       .topo h1 {
+
         font-size: 23px;
+
       }
+
 
       .pequeno-titulo {
+
         font-size: 10px;
+
         letter-spacing: 3px;
+
       }
+
 
       .capa {
+
         width: 92%;
+
       }
+
 
       .capa-pre-venda {
+
         width: 130px;
+
       }
 
+
       .confirmacao h3 {
+
         font-size: 21px;
+
       }
+
+
+      .autor-foto {
+
+        width: 155px;
+
+        height: 200px;
+
+      }
+
     }
 
   </style>
+
 </head>
+
 
 <body>
 
+
   <main class="pagina">
+
 
     <section class="convite">
 
-      <!-- CABEÇALHO -->
 
-      <header class="topo">
+      <!-- =========================
+           CABEÇALHO
+      ========================== -->
+
+      <header
+        class="topo"
+        id="inicio"
+      >
 
         <div class="pequeno-titulo">
+
           Lançamento de Livro
+
         </div>
 
+
         <h1>
+
           Antes Que Eu Seja Usado
+
         </h1>
+
 
         <div class="linha-dourada"></div>
 
       </header>
 
 
-      <!-- CAPA PRINCIPAL -->
+      <!-- =========================
+           MENU
+      ========================== -->
+
+      <nav class="menu">
+
+        <div class="menu-conteudo">
+
+
+          <a href="#inicio">
+
+            Início
+
+          </a>
+
+
+          <a href="#livro">
+
+            O Livro
+
+          </a>
+
+
+          <a href="#autor">
+
+            Sobre o Autor
+
+          </a>
+
+
+          <a href="#lancamento">
+
+            Lançamento
+
+          </a>
+
+
+          <a href="#prevenda">
+
+            Pré-venda
+
+          </a>
+
+
+          <a href="#confirmacao">
+
+            Confirmar
+
+          </a>
+
+
+        </div>
+
+      </nav>
+
+
+      <!-- =========================
+           CAPA PRINCIPAL
+      ========================== -->
 
       <section class="area-capa">
 
+
         <div class="capa">
+
 
           <img
             src="capa.jpg"
@@ -803,102 +2030,442 @@
             "
           >
 
+
           <div class="capa-placeholder">
+
 
             <div>
 
+
               <strong>
+
                 ANTES QUE EU SEJA USADO
+
               </strong>
 
+
               <br><br>
+
 
               Não foi possível carregar a capa.
 
+
               <br><br>
 
+
               <small>
+
                 Verifique se o arquivo
                 <strong>capa.jpg</strong>
                 está na mesma pasta deste index.html.
+
               </small>
+
 
             </div>
 
+
           </div>
 
+
         </div>
+
 
       </section>
 
 
-      <!-- INTRODUÇÃO -->
+      <!-- =========================
+           INTRODUÇÃO
+      ========================== -->
 
       <section class="introducao">
 
+
         <h2>
+
           Você é nosso convidado
+
         </h2>
 
+
         <p>
+
           Será uma alegria compartilhar com você este momento
           tão especial: o lançamento de
           <strong>Antes Que Eu Seja Usado</strong>.
+
         </p>
+
 
       </section>
 
 
-      <!-- INFORMAÇÕES DO EVENTO -->
+      <!-- =========================
+           SOBRE O LIVRO
+      ========================== -->
 
-      <section class="evento">
+      <section id="livro">
 
-        <div class="evento-titulo">
-          Informações do lançamento
+
+        <div class="titulo-secao">
+
+
+          <span class="pequeno">
+
+            Conheça a obra
+
+          </span>
+
+
+          <h2>
+
+            Sobre o Livro
+
+          </h2>
+
+
+          <div class="linha"></div>
+
+
         </div>
 
-        <div class="informacoes">
 
-          <div class="info">
+        <div class="livro">
 
-            <strong>
-              19 de setembro
-            </strong>
 
-            <span>
-              Sábado
-            </span>
+          <div class="livro-conteudo">
+
+
+            <p>
+
+              <strong>
+                Antes Que Eu Seja Usado
+              </strong>
+              é uma jornada antes do encontro com nossa vocação.
+
+            </p>
+
+
+            <p>
+
+              Uma jornada de reflexão, quebrantamento e transformação
+              para quem deseja compreender que, antes de ser usado
+              por Deus, precisamos permitir que Ele trabalhe em nós.
+
+            </p>
+
+
+            <p>
+
+              A obra nasceu de uma caminhada marcada pela compreensão
+              de que Deus não está interessado apenas naquilo que
+              podemos fazer para Ele, mas principalmente naquilo que
+              Ele deseja formar dentro de nós.
+
+            </p>
+
+
+            <p>
+
+              Antes do serviço, existe o caráter.
+
+              <br>
+
+              Antes da obra, existe o coração.
+
+              <br>
+
+              Antes de sermos usados, precisamos permitir que Deus
+              nos transforme.
+
+            </p>
+
+
+            <div class="frase-livro">
+
+              “Antes de Deus querer o seu serviço,
+              Ele quer você.”
+
+            </div>
+
 
           </div>
 
-
-          <div class="info">
-
-            <strong>
-              19h
-            </strong>
-
-            <span>
-              Início do lançamento
-            </span>
-
-          </div>
-
-
-          <div class="info endereco">
-
-            <strong>
-              Local
-            </strong>
-
-            <span>
-              Rua Estrada do Siqueira, 485<br>
-              Novo Mondubim — Fortaleza/CE
-            </span>
-
-          </div>
 
         </div>
+
+
+      </section>
+
+
+      <!-- =========================
+           SOBRE O AUTOR
+      ========================== -->
+
+      <section id="autor">
+
+
+        <div class="titulo-secao">
+
+
+          <span class="pequeno">
+
+            Conheça quem escreveu
+
+          </span>
+
+
+          <h2>
+
+            Sobre o Autor
+
+          </h2>
+
+
+          <div class="linha"></div>
+
+
+        </div>
+
+
+        <div class="autor">
+
+
+          <div class="autor-conteudo">
+
+
+            <!-- FOTO DO AUTOR -->
+
+            <div class="autor-foto">
+
+
+              <img
+                src="autor.png"
+                alt="Francisco Denilson Pinheiro, autor de Antes Que Eu Seja Usado"
+                onerror="
+                  this.style.display='none';
+                "
+              >
+
+
+            </div>
+
+
+            <h3 class="autor-nome">
+
+              Francisco Denilson Pinheiro
+
+            </h3>
+
+
+            <div class="autor-texto">
+
+
+              <p>
+
+                <strong>
+                  Francisco Denilson Pinheiro
+                </strong>
+                nasceu em 1981 e teve um encontro transformador
+                com Jesus Cristo em 25 de dezembro de 2006.
+
+              </p>
+
+
+              <p>
+
+                Consagrado ao ministério pastoral em
+                8 de dezembro de 2011, dedica-se ao ensino e à
+                exposição das Escrituras, áreas pelas quais nutre
+                profunda paixão.
+
+              </p>
+
+
+              <p>
+
+                Sua caminhada é marcada pela experiência da
+                graça restauradora de Deus. Após atravessar uma
+                das fases mais difíceis de sua vida, encontrou no
+                Senhor não apenas perdão, mas também restauração
+                e um novo começo.
+
+              </p>
+
+
+              <p>
+
+                Casado com a pastora
+                <strong>
+                  Gardênia Pinheiro
+                </strong>,
+                é pai de seis filhos e avô de dois netos.
+
+              </p>
+
+
+              <p>
+
+                Em sua caminhada ministerial, carrega uma convicção
+                que se tornou também o coração de sua primeira obra:
+                Deus está mais interessado em formar o caráter de
+                Seus filhos do que simplesmente usá-los em Sua obra.
+
+              </p>
+
+
+              <p>
+
+                Foi a partir dessa convicção que nasceu
+                <strong>
+                  Antes Que Eu Seja Usado
+                </strong>,
+                uma obra escrita para encorajar uma nova geração
+                de cristãos e líderes a buscar mais do que
+                performance ministerial:
+                <strong>
+                  uma vida de intimidade com Deus.
+                </strong>
+
+              </p>
+
+
+            </div>
+
+
+            <div class="autor-frase">
+
+
+              <p>
+
+                “Antes de Deus querer o seu serviço,
+                Ele quer você.”
+
+              </p>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+      <!-- =========================
+           LANÇAMENTO
+      ========================== -->
+
+      <section id="lancamento">
+
+
+        <div class="titulo-secao">
+
+
+          <span class="pequeno">
+
+            Reserve esta data
+
+          </span>
+
+
+          <h2>
+
+            Lançamento
+
+          </h2>
+
+
+          <div class="linha"></div>
+
+
+        </div>
+
+
+        <section class="evento">
+
+
+          <div class="evento-titulo">
+
+            Informações do lançamento
+
+          </div>
+
+
+          <div class="informacoes">
+
+
+            <div class="info">
+
+
+              <strong>
+
+                19 de setembro
+
+              </strong>
+
+
+              <span>
+
+                Sábado
+
+              </span>
+
+
+            </div>
+
+
+            <div class="info">
+
+
+              <strong>
+
+                19h
+
+              </strong>
+
+
+              <span>
+
+                Início do lançamento
+
+              </span>
+
+
+            </div>
+
+
+            <div class="info endereco">
+
+
+              <strong>
+
+                Local
+
+              </strong>
+
+
+              <span>
+
+                Rua Estrada do Siqueira, 485<br>
+
+                Novo Mondubim — Fortaleza/CE
+
+              </span>
+
+
+            </div>
+
+
+          </div>
+
+
+        </section>
+
 
       </section>
 
@@ -907,179 +2474,298 @@
            PRÉ-VENDA
       ========================== -->
 
-      <section class="compra">
+      <section id="prevenda">
 
-        <div class="compra-titulo">
-          Faça parte da pré-venda
+
+        <div class="titulo-secao">
+
+
+          <span class="pequeno">
+
+            Garanta seu exemplar
+
+          </span>
+
+
+          <h2>
+
+            Pré-venda
+
+          </h2>
+
+
+          <div class="linha"></div>
+
+
         </div>
 
-        <h3>
-          Garanta seu livro antecipadamente
-        </h3>
 
-        <p class="compra-subtitulo">
-          Reserve seu exemplar hoje e receba o livro físico
-          no dia do lançamento.
-        </p>
+        <section class="compra">
 
 
-        <!-- CAPA PEQUENA + OFERTA -->
+          <div class="compra-titulo">
 
-        <div class="oferta-pre-venda">
-
-          <div class="capa-pre-venda">
-
-            <img
-              src="capa.jpg"
-              alt="Capa do livro Antes Que Eu Seja Usado"
-            >
+            Faça parte da pré-venda
 
           </div>
 
 
-          <div class="oferta-texto">
+          <h3>
 
-            <h4>
-              Antes Que Eu Seja Usado
-            </h4>
+            Garanta seu livro antecipadamente
+
+          </h3>
+
+
+          <p class="compra-subtitulo">
+
+            Reserve seu exemplar hoje e receba o livro físico
+            no dia do lançamento.
+
+          </p>
+
+
+          <div class="oferta-pre-venda">
+
+
+            <div class="capa-pre-venda">
+
+
+              <img
+                src="capa.jpg"
+                alt="Capa do livro Antes Que Eu Seja Usado"
+              >
+
+
+            </div>
+
+
+            <div class="oferta-texto">
+
+
+              <h4>
+
+                Antes Que Eu Seja Usado
+
+              </h4>
+
+
+              <p>
+
+                <em>
+
+                  Uma jornada antes do encontro com nossa vocação.
+
+                </em>
+
+              </p>
+
+
+              <p>
+
+                Uma jornada de reflexão, quebrantamento e
+                transformação para quem deseja compreender que,
+                antes de ser usado por Deus, precisamos permitir
+                que Ele trabalhe em nós.
+
+              </p>
+
+
+              <div class="beneficio-digital">
+
+
+                💻
+
+                <strong>
+
+                  Benefício exclusivo da pré-venda
+
+                </strong>
+
+
+                <br><br>
+
+
+                Quem realizar a compra antecipadamente
+                durante a pré-venda receberá também
+                <strong>
+                  a versão digital do livro
+                </strong>.
+
+
+                <br><br>
+
+
+                <strong>
+
+                  A versão digital será disponibilizada
+                  exclusivamente para quem comprar
+                  antecipadamente na pré-venda.
+
+                </strong>
+
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+          <div class="preco">
+
+            R$ 34,90
+
+          </div>
+
+
+          <div class="botoes-pagamento">
+
+
+            <a
+              class="botao-pagamento botao-pix"
+              href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              🟢 Pagar com Pix
+
+            </a>
+
+
+            <a
+              class="botao-pagamento botao-cartao"
+              href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              💳 Pagar com cartão
+
+            </a>
+
+
+          </div>
+
+
+          <div class="comprovante">
+
+
+            <strong>
+
+              📲 Pagamento realizado?
+
+            </strong>
+
 
             <p>
-              <em>
-                Uma jornada antes do encontro com nossa vocação.
-              </em>
-            </p>
 
-            <p>
-              Uma jornada de reflexão, quebrantamento e
-              transformação para quem deseja compreender que,
-              antes de ser usado por Deus, precisamos permitir
-              que Ele trabalhe em nós.
+              Após realizar o pagamento, envie o comprovante
+              pelo WhatsApp para confirmarmos sua compra.
+
             </p>
 
 
-            <div class="beneficio-digital">
+            <div class="numero-whatsapp">
 
-              💻 <strong>
-                Benefício exclusivo da pré-venda
-              </strong>
-
-              <br>
-
-              Quem realizar a compra antecipadamente
-              durante a pré-venda receberá também
-              <strong>a versão digital do livro</strong>.
-
-              <br><br>
+              WhatsApp:
 
               <strong>
-                A versão digital será disponibilizada
-                exclusivamente para quem comprar
-                antecipadamente na pré-venda.
+
+                (85) 98514-1830
+
               </strong>
 
             </div>
 
+
+            <div class="mensagem-whatsapp">
+
+              Envie seu comprovante junto com seu nome.
+
+            </div>
+
+
           </div>
 
-        </div>
 
+          <p class="compra-observacao">
 
-        <!-- PREÇO -->
+            Escolha a forma de pagamento de sua preferência.
 
-        <div class="preco">
-          R$ 34,90
-        </div>
+            <br>
 
+            <strong>
 
-        <!-- PAGAMENTOS -->
+              A versão digital é um benefício exclusivo
+              da compra antecipada na pré-venda.
 
-        <div class="botoes-pagamento">
+            </strong>
 
-          <a
-            class="botao-pagamento botao-pix"
-            href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🟢 Pagar com Pix
-          </a>
-
-
-          <a
-            class="botao-pagamento botao-cartao"
-            href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            💳 Pagar com cartão
-          </a>
-
-        </div>
-
-
-        <!-- COMPROVANTE -->
-
-        <div class="comprovante">
-
-          <strong>
-            📲 Pagamento realizado?
-          </strong>
-
-          <p>
-            Após realizar o pagamento, envie o comprovante
-            pelo WhatsApp para confirmarmos sua compra.
           </p>
 
-          <div class="numero-whatsapp">
-            WhatsApp:
-            <strong>(85) 98514-1830</strong>
+
+          <div class="entrega">
+
+
+            📖
+
+            <strong>
+
+              Seu exemplar físico será entregue no dia do lançamento.
+
+            </strong>
+
+
+            <br>
+
+            19 de setembro, no local do evento.
+
+
           </div>
 
-          <div class="mensagem-whatsapp">
-            Envie seu comprovante junto com seu nome.
-          </div>
 
-        </div>
+        </section>
 
-
-        <p class="compra-observacao">
-
-          Escolha a forma de pagamento de sua preferência.
-
-          <br>
-
-          <strong>
-            A versão digital é um benefício exclusivo
-            da compra antecipada na pré-venda.
-          </strong>
-
-        </p>
-
-
-        <!-- ENTREGA -->
-
-        <div class="entrega">
-
-          📖 <strong>
-            Seu exemplar físico será entregue no dia do lançamento.
-          </strong>
-
-          <br>
-
-          19 de setembro, no local do evento.
-
-        </div>
 
       </section>
 
 
-      <!-- CONFIRMAÇÃO -->
+      <!-- =========================
+           CONFIRMAÇÃO
+      ========================== -->
 
-      <section class="confirmacao">
+      <section
+        class="confirmacao"
+        id="confirmacao"
+      >
 
-        <h3>
-          Confirme sua presença
-        </h3>
+
+        <div class="titulo-secao">
+
+
+          <span class="pequeno">
+
+            Esperamos por você
+
+          </span>
+
+
+          <h2>
+
+            Confirme sua presença
+
+          </h2>
+
+
+          <div class="linha"></div>
+
+
+        </div>
+
 
         <p class="confirmacao-texto">
 
@@ -1090,8 +2776,11 @@
 
 
         <label for="nome">
+
           Seu nome
+
         </label>
+
 
         <input
           type="text"
@@ -1102,8 +2791,11 @@
 
 
         <label for="igreja">
+
           Sua igreja
+
         </label>
+
 
         <input
           type="text"
@@ -1118,54 +2810,91 @@
           id="botaoConfirmar"
           onclick="confirmarPresenca()"
         >
+
           Confirmar minha presença
+
         </button>
 
 
         <div id="mensagem"></div>
 
+
       </section>
 
 
-      <!-- FRASE FINAL -->
+      <!-- =========================
+           FRASE FINAL
+      ========================== -->
 
       <section class="frase-final">
 
+
         <p>
+
           “Antes de ser usado, precisamos permitir que Deus
           trabalhe em nós.”
+
         </p>
 
+
         <strong>
+
           Antes Que Eu Seja Usado
+
         </strong>
+
 
       </section>
 
 
+      <!-- =========================
+           RODAPÉ
+      ========================== -->
+
       <footer>
+
         Será uma alegria receber você neste momento especial.
+
+        <br><br>
+
+        © 2026 — Francisco Denilson Pinheiro
+
       </footer>
 
+
     </section>
+
 
   </main>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
   <script>
 
+
     async function confirmarPresenca() {
 
+
       const nome =
-        document.getElementById("nome").value.trim();
+        document
+          .getElementById("nome")
+          .value
+          .trim();
+
 
       const igreja =
-        document.getElementById("igreja").value.trim();
+        document
+          .getElementById("igreja")
+          .value
+          .trim();
+
 
       const mensagem =
         document.getElementById("mensagem");
+
 
       const botao =
         document.getElementById("botaoConfirmar");
@@ -1173,25 +2902,37 @@
 
       if (nome === "" || igreja === "") {
 
-        mensagem.className = "erro";
+
+        mensagem.className =
+          "erro";
+
 
         mensagem.innerHTML = `
 
           <div class="mensagem-titulo">
+
             Atenção
+
           </div>
+
 
           Por favor, informe seu nome
           e o nome da sua igreja.
 
         `;
 
+
         mensagem.scrollIntoView({
+
           behavior: "smooth",
+
           block: "center"
+
         });
 
+
         return;
+
       }
 
 
@@ -1199,61 +2940,89 @@
         "https://script.google.com/macros/s/AKfycbzO6vAGXLNfyfp2-uzxySY91pf2OUQvWf-f_OFV-dTauWVsOzTE9pIvqy_2eYfrKTzqYA/exec";
 
 
-      botao.disabled = true;
+      botao.disabled =
+        true;
+
 
       botao.innerHTML =
         "Registrando confirmação...";
 
-      mensagem.className = "";
 
-      mensagem.style.display = "none";
+      mensagem.className =
+        "";
+
+
+      mensagem.style.display =
+        "none";
 
 
       try {
 
-        await fetch(url, {
 
-          method: "POST",
+        await fetch(
 
-          mode: "no-cors",
+          url,
 
-          headers: {
-            "Content-Type":
-              "application/x-www-form-urlencoded"
-          },
+          {
 
-          body:
-            "nome=" +
-            encodeURIComponent(nome) +
-            "&igreja=" +
-            encodeURIComponent(igreja)
+            method: "POST",
 
-        });
+            mode: "no-cors",
+
+            headers: {
+
+              "Content-Type":
+                "application/x-www-form-urlencoded"
+
+            },
+
+            body:
+
+              "nome=" +
+              encodeURIComponent(nome) +
+
+              "&igreja=" +
+              encodeURIComponent(igreja)
+
+          }
+
+        );
 
 
-        mensagem.className = "sucesso";
+        mensagem.className =
+          "sucesso";
+
 
         mensagem.innerHTML = `
 
           <div class="mensagem-titulo">
+
             ✓ Presença confirmada!
+
           </div>
 
 
           <div class="mensagem-introducao">
 
-            Olá, <strong>${escapeHtml(nome)}</strong>!
+            Olá,
+            <strong>
+              ${escapeHtml(nome)}
+            </strong>!
 
             <br><br>
 
             Sua presença está confirmada com sucesso
             para o lançamento do livro
-            <strong>Antes Que Eu Seja Usado</strong>.
+            <strong>
+              Antes Que Eu Seja Usado
+            </strong>.
 
             <br><br>
 
             Igreja:
-            <strong>${escapeHtml(igreja)}</strong>
+            <strong>
+              ${escapeHtml(igreja)}
+            </strong>
 
           </div>
 
@@ -1261,77 +3030,119 @@
           <div class="mensagem-secao">
 
             <strong class="titulo">
+
               📍 Detalhes do Evento
+
             </strong>
+
 
             <ul>
 
+
               <li>
-                <strong>Data:</strong>
+
+                <strong>
+                  Data:
+                </strong>
+
                 19 de setembro
+
               </li>
 
+
               <li>
-                <strong>Horário:</strong>
+
+                <strong>
+                  Horário:
+                </strong>
+
                 19h
+
               </li>
 
+
               <li>
-                <strong>Local:</strong>
+
+                <strong>
+                  Local:
+                </strong>
+
                 Rua Estrada do Siqueira, 485
+
               </li>
+
 
             </ul>
+
 
           </div>
 
 
           <div class="mensagem-secao">
 
+
             <strong class="titulo">
+
               📖 Seu exemplar
+
             </strong>
+
 
             <p>
 
               Se você realizou a compra antecipada
               durante a pré-venda, seu exemplar físico
               será reservado e
-              <strong>entregue no dia do lançamento</strong>,
+              <strong>
+                entregue no dia do lançamento
+              </strong>,
               no local do evento.
 
               <br><br>
 
               Além disso, você receberá
-              <strong>a versão digital do livro</strong>,
+              <strong>
+                a versão digital do livro
+              </strong>,
               benefício exclusivo para quem realizou
               a compra antecipadamente na pré-venda.
 
             </p>
+
 
           </div>
 
 
           <div class="mensagem-final">
 
+
             Estamos preparando tudo com muito carinho
             e será uma alegria enorme ter você com a
             gente para comemorar esse momento tão especial.
 
+
             <br><br>
 
+
             <strong>
+
               Um abraço e até lá!
+
             </strong>
 
+
           </div>
+
 
         `;
 
 
         mensagem.scrollIntoView({
+
           behavior: "smooth",
+
           block: "center"
+
         });
 
 
@@ -1339,48 +3150,70 @@
           "Presença confirmada ✓";
 
 
-      } catch (erro) {
+      }
 
-        mensagem.className = "erro";
+
+      catch (erro) {
+
+
+        mensagem.className =
+          "erro";
+
 
         mensagem.innerHTML = `
 
           <div class="mensagem-titulo">
+
             Não foi possível confirmar.
+
           </div>
+
 
           Ocorreu um problema ao registrar
           sua presença.
 
+
           <br><br>
+
 
           Por favor, tente novamente.
 
         `;
 
-        botao.disabled = false;
+
+        botao.disabled =
+          false;
+
 
         botao.innerHTML =
           "Confirmar minha presença";
 
+
       }
+
 
     }
 
 
     function escapeHtml(texto) {
 
+
       const div =
         document.createElement("div");
 
-      div.textContent = texto;
+
+      div.textContent =
+        texto;
+
 
       return div.innerHTML;
 
     }
 
+
   </script>
 
+
 </body>
+
 </html>
-```
