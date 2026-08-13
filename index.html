@@ -2509,7 +2509,8 @@
     }
 
   </style>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
 </head>
 
 
@@ -3754,6 +3755,17 @@
   ========================== -->
 
   <script>
+    const SUPABASE_URL =
+    "https://qieejecsicnmsdtefejs.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
+
+  const supabase =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
 
 
     /* =========================
@@ -3779,59 +3791,87 @@
     }
 
 
-    function fazerLogin() {
+    async function fazerLogin() {
 
-      const usuario =
-        document
-          .getElementById("loginUsuario")
-          .value
-          .trim();
+  const usuario =
+    document
+      .getElementById("loginUsuario")
+      .value
+      .trim();
 
-      const senha =
-        document
-          .getElementById("loginSenha")
-          .value
-          .trim();
+  const senha =
+    document
+      .getElementById("loginSenha")
+      .value
+      .trim();
 
-      const mensagem =
-        document.getElementById("mensagemLogin");
-
-      const biblioteca =
-        document.getElementById("biblioteca");
-
-      /*
-        ATENÇÃO:
-
-        ESTE LOGIN É SOMENTE A ESTRUTURA VISUAL DA PRIMEIRA ETAPA.
-
-        AQUI NÃO ESTAMOS ARMAZENANDO OU VALIDANDO SENHAS DE CLIENTES.
-
-        NA PRÓXIMA ETAPA, ESTA FUNÇÃO SERÁ CONECTADA
-        AO SISTEMA REAL DE AUTENTICAÇÃO.
-      */
-
-      if (usuario === "" || senha === "") {
-
-        mensagem.className =
-          "mensagem-login erro";
-
-        mensagem.textContent =
-          "Digite seu login e sua senha.";
-
-        return;
-
-      }
+  const mensagem =
+    document.getElementById("mensagemLogin");
 
 
-      mensagem.className =
-        "mensagem-login erro";
+  if (usuario === "" || senha === "") {
 
-      mensagem.textContent =
-        "O sistema de acesso ainda está sendo configurado. " +
-        "Na próxima etapa vamos conectar o login aos compradores " +
-        "da pré-venda e liberar a biblioteca de forma segura.";
+    mensagem.className =
+      "mensagem-login erro";
 
-    }
+    mensagem.style.display =
+      "block";
+
+    mensagem.textContent =
+      "Digite seu e-mail e sua senha.";
+
+    return;
+
+  }
+
+
+  mensagem.className =
+    "mensagem-login";
+
+  mensagem.style.display =
+    "block";
+
+  mensagem.textContent =
+    "Entrando...";
+
+
+  const {
+    data,
+    error
+  } =
+    await supabase.auth.signInWithPassword({
+
+      email: usuario,
+
+      password: senha
+
+    });
+
+
+  if (error) {
+
+    mensagem.className =
+      "mensagem-login erro";
+
+    mensagem.style.display =
+      "block";
+
+    mensagem.textContent =
+      "E-mail ou senha incorretos.";
+
+    return;
+
+  }
+
+
+  if (data.user) {
+
+    window.location.href =
+      "biblioteca.html";
+
+  }
+
+}
 
 
     function abrirLivro() {
