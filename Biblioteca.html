@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -19,6 +18,10 @@
     name="description"
     content="Área exclusiva para leitura digital de Antes Que Eu Seja Usado."
   >
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
   <style>
 
@@ -805,6 +808,66 @@
 
   <script>
 
+    /* =========================
+       CONEXÃO COM O SUPABASE
+    ========================== */
+
+    const SUPABASE_URL =
+      "https://qieejecsicnmsdtefejs.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
+
+    const supabase =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================
+       VERIFICAR LOGIN
+    ========================== */
+
+    async function verificarLogin() {
+
+      try {
+
+        const {
+          data: {
+            session
+          }
+        } = await supabase.auth.getSession();
+
+
+        if (!session) {
+
+          window.location.href =
+            "index.html";
+
+          return;
+
+        }
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao verificar login:",
+          erro
+        );
+
+        window.location.href =
+          "index.html";
+
+      }
+
+    }
+
+
+    /* =========================
+       ABRIR LIVRO
+    ========================== */
+
     function abrirLivro() {
 
       const leitor =
@@ -821,19 +884,19 @@
 
       });
 
-
       /*
-        IMPORTANTE:
+        O PDF ainda não foi conectado.
 
-        O PDF NÃO deve ser colocado aqui como link público.
-
-        Depois vamos conectar este iframe ao Supabase
-        para gerar um endereço temporário e privado
-        somente para o usuário autenticado.
+        Na próxima etapa vamos buscar o arquivo
+        no armazenamento privado do Supabase.
       */
 
     }
 
+
+    /* =========================
+       FECHAR LIVRO
+    ========================== */
 
     function fecharLivro() {
 
@@ -852,24 +915,40 @@
     }
 
 
-    function sairDaBiblioteca() {
+    /* =========================
+       SAIR DA BIBLIOTECA
+    ========================== */
 
-      /*
-        Na próxima etapa esta função também vai
-        encerrar a sessão do usuário no Supabase.
-      */
+    async function sairDaBiblioteca() {
 
-      fecharLivro();
+      try {
+
+        await supabase.auth.signOut();
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao sair:",
+          erro
+        );
+
+      }
 
       window.location.href =
         "index.html";
 
     }
 
+
+    /* =========================
+       INICIAR PÁGINA
+    ========================== */
+
+    verificarLogin();
+
   </script>
 
 </body>
 
 </html>
-```
 
