@@ -300,7 +300,8 @@
     }
 
 
-    .menu a {
+    .menu a,
+    .menu button {
 
       flex: 0 0 auto;
 
@@ -325,12 +326,34 @@
     }
 
 
-    .menu a:hover {
+    .menu a:hover,
+    .menu button:hover {
 
       background:
         rgba(195, 168, 120, 0.15);
 
       color: white;
+
+    }
+
+
+    .botao-login-menu {
+
+      background:
+        rgba(195, 168, 120, 0.12);
+
+      border:
+        1px solid
+        rgba(195, 168, 120, 0.45);
+
+      color: #f4e8d3;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      cursor: pointer;
 
     }
 
@@ -508,6 +531,494 @@
         var(--dourado-claro);
 
       margin: 14px auto 0;
+
+    }
+
+
+    /* =========================
+       ÁREA DE LOGIN
+    ========================== */
+
+    .login-area {
+
+      display: none;
+
+      padding: 5px 25px 35px;
+
+    }
+
+
+    .login-card {
+
+      border:
+        1px solid
+        var(--dourado-claro);
+
+      border-radius: 17px;
+
+      padding: 28px 22px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(246, 240, 231, 0.98),
+          rgba(238, 229, 216, 0.95)
+        );
+
+      box-shadow:
+
+        0 8px 25px
+        rgba(70, 52, 38, 0.08);
+
+    }
+
+
+    .login-card h3 {
+
+      text-align: center;
+
+      font-size: 25px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .login-card p {
+
+      text-align: center;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color:
+        var(--cinza);
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .campo-login {
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .campo-login label {
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .campo-login input {
+
+      margin-bottom: 0;
+
+    }
+
+
+    .botao-login {
+
+      width: 100%;
+
+      margin-top: 5px;
+
+      padding: 16px 20px;
+
+      border: none;
+
+      border-radius: 11px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
+      color: white;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+
+        0 7px 16px
+        rgba(62, 47, 36, 0.20);
+
+    }
+
+
+    .botao-login:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .mensagem-login {
+
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 15px;
+
+      border-radius: 10px;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      text-align: center;
+
+    }
+
+
+    .mensagem-login.erro {
+
+      display: block;
+
+      background: #f8ece8;
+
+      border:
+        1px solid
+        #e2c7bf;
+
+      color: #71453b;
+
+    }
+
+
+    .login-observacao {
+
+      margin-top: 17px;
+
+      font-size: 12px !important;
+
+      line-height: 1.6 !important;
+
+      color:
+        #8b8178 !important;
+
+      margin-bottom: 0 !important;
+
+    }
+
+
+    /* =========================
+       MINHA BIBLIOTECA
+    ========================== */
+
+    .biblioteca {
+
+      display: none;
+
+      margin: 15px 25px 35px;
+
+      padding: 25px 20px;
+
+      border:
+        1px solid
+        var(--dourado-claro);
+
+      border-radius: 17px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(246, 240, 231, 0.98),
+          rgba(238, 229, 216, 0.95)
+        );
+
+      box-shadow:
+
+        0 8px 25px
+        rgba(70, 52, 38, 0.08);
+
+    }
+
+
+    .biblioteca-topo {
+
+      text-align: center;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .biblioteca-topo .pequeno {
+
+      display: block;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      color:
+        var(--dourado);
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .biblioteca-topo h3 {
+
+      font-size: 28px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .biblioteca-topo p {
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      color:
+        var(--cinza);
+
+    }
+
+
+    .livro-digital {
+
+      display: grid;
+
+      grid-template-columns:
+        120px 1fr;
+
+      gap: 20px;
+
+      align-items: center;
+
+      padding: 18px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 15px;
+
+      background:
+        rgba(255, 253, 249, 0.80);
+
+    }
+
+
+    .livro-digital img {
+
+      width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      border-radius: 4px;
+
+      box-shadow:
+
+        0 12px 25px
+        rgba(45, 35, 27, 0.20);
+
+    }
+
+
+    .livro-digital h4 {
+
+      font-size: 21px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+      margin-bottom: 9px;
+
+    }
+
+
+    .livro-digital p {
+
+      font-size: 14px;
+
+      line-height: 1.65;
+
+      color:
+        var(--cinza);
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .botao-ler {
+
+      display: inline-block;
+
+      padding: 13px 18px;
+
+      border: none;
+
+      border-radius: 10px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
+      color: white;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 15px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+    }
+
+
+    .botao-sair {
+
+      width: 100%;
+
+      margin-top: 15px;
+
+      padding: 12px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 10px;
+
+      background:
+        transparent;
+
+      color:
+        var(--marrom);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+    }
+
+
+    /* =========================
+       LEITOR
+    ========================== */
+
+    .leitor {
+
+      display: none;
+
+      margin-top: 20px;
+
+    }
+
+
+    .leitor-titulo {
+
+      text-align: center;
+
+      font-size: 17px;
+
+      color:
+        var(--marrom);
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .leitor-frame {
+
+      width: 100%;
+
+      height: 650px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      background: white;
+
+    }
+
+
+    .leitor-frame iframe {
+
+      width: 100%;
+
+      height: 100%;
+
+      border: 0;
+
+    }
+
+
+    .leitor-observacao {
+
+      margin-top: 10px;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+
+      text-align: center;
+
+      color:
+        #8b8178;
 
     }
 
@@ -1692,12 +2203,29 @@
       }
 
 
-      .menu a {
+      .menu a,
+      .menu button {
 
         font-size: 10px;
 
         padding:
           8px 8px;
+
+        background: transparent;
+
+        border: none;
+
+      }
+
+
+      .botao-login-menu {
+
+        border:
+          1px solid
+          rgba(195, 168, 120, 0.45) !important;
+
+        background:
+          rgba(195, 168, 120, 0.12) !important;
 
       }
 
@@ -1870,6 +2398,57 @@
 
       }
 
+
+      .login-area {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+      }
+
+
+      .biblioteca {
+
+        margin-left: 15px;
+
+        margin-right: 15px;
+
+      }
+
+
+      .livro-digital {
+
+        grid-template-columns:
+          1fr;
+
+        text-align: center;
+
+      }
+
+
+      .livro-digital img {
+
+        width: 145px;
+
+        margin: 0 auto;
+
+      }
+
+
+      .botao-ler {
+
+        width: 100%;
+
+      }
+
+
+      .leitor-frame {
+
+        height: 500px;
+
+      }
+
     }
 
 
@@ -1917,6 +2496,13 @@
         width: 155px;
 
         height: 200px;
+
+      }
+
+
+      .leitor-frame {
+
+        height: 430px;
 
       }
 
@@ -2015,6 +2601,17 @@
           </a>
 
 
+          <button
+            type="button"
+            class="botao-login-menu"
+            onclick="abrirLogin()"
+          >
+
+            🔐 Minha Biblioteca
+
+          </button>
+
+
         </div>
 
       </nav>
@@ -2104,6 +2701,281 @@
           <strong>Antes Que Eu Seja Usado</strong>.
 
         </p>
+
+
+      </section>
+
+
+      <!-- =========================
+           LOGIN
+      ========================== -->
+
+      <section
+        class="login-area"
+        id="loginArea"
+      >
+
+
+        <div class="titulo-secao">
+
+
+          <span class="pequeno">
+
+            Acesso exclusivo
+
+          </span>
+
+
+          <h2>
+
+            Acesso à minha biblioteca
+
+          </h2>
+
+
+          <div class="linha"></div>
+
+
+        </div>
+
+
+        <div class="login-card">
+
+
+          <h3>
+
+            Entrar
+
+          </h3>
+
+
+          <p>
+
+            Digite o login e a senha recebidos após a compra
+            do livro na pré-venda.
+
+          </p>
+
+
+          <div class="campo-login">
+
+
+            <label for="loginUsuario">
+
+              Login
+
+            </label>
+
+
+            <input
+              type="text"
+              id="loginUsuario"
+              placeholder="Digite seu login"
+              autocomplete="username"
+            >
+
+
+          </div>
+
+
+          <div class="campo-login">
+
+
+            <label for="loginSenha">
+
+              Senha
+
+            </label>
+
+
+            <input
+              type="password"
+              id="loginSenha"
+              placeholder="Digite sua senha"
+              autocomplete="current-password"
+            >
+
+
+          </div>
+
+
+          <button
+            type="button"
+            class="botao-login"
+            onclick="fazerLogin()"
+          >
+
+            Entrar na minha biblioteca
+
+          </button>
+
+
+          <div
+            class="mensagem-login"
+            id="mensagemLogin"
+          ></div>
+
+
+          <p class="login-observacao">
+
+            Este acesso será exclusivo para compradores da
+            pré-venda. A autenticação real será conectada
+            na próxima etapa.
+
+          </p>
+
+
+        </div>
+
+
+      </section>
+
+
+      <!-- =========================
+           MINHA BIBLIOTECA
+      ========================== -->
+
+      <section
+        class="biblioteca"
+        id="biblioteca"
+      >
+
+
+        <div class="biblioteca-topo">
+
+
+          <span class="pequeno">
+
+            Área exclusiva do leitor
+
+          </span>
+
+
+          <h3>
+
+            Minha Biblioteca
+
+          </h3>
+
+
+          <p>
+
+            Seu material digital ficará disponível aqui
+            depois que seu acesso for liberado.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="livro-digital">
+
+
+          <div>
+
+
+            <img
+              src="capa.jpg"
+              alt="Capa do livro Antes Que Eu Seja Usado"
+            >
+
+
+          </div>
+
+
+          <div>
+
+
+            <h4>
+
+              Antes Que Eu Seja Usado
+
+            </h4>
+
+
+            <p>
+
+              Leia o livro diretamente pelo site,
+              sem precisar baixar o arquivo para o celular.
+
+            </p>
+
+
+            <button
+              type="button"
+              class="botao-ler"
+              onclick="abrirLivro()"
+            >
+
+              📖 Ler meu livro
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div
+          class="leitor"
+          id="leitor"
+        >
+
+
+          <div class="leitor-titulo">
+
+            Leitura de
+            <strong>
+              Antes Que Eu Seja Usado
+            </strong>
+
+          </div>
+
+
+          <div class="leitor-frame">
+
+
+            <!--
+              FUTURAMENTE O PDF PRIVADO SERÁ CARREGADO AQUI.
+
+              NÃO COLOQUE O PDF PÚBLICO NESTE INDEX.
+              ELE SERÁ LIGADO DEPOIS A UM SISTEMA DE
+              AUTENTICAÇÃO E ARMAZENAMENTO PRIVADO.
+            -->
+
+
+            <iframe
+              id="frameLivro"
+              title="Leitor do livro Antes Que Eu Seja Usado"
+            ></iframe>
+
+
+          </div>
+
+
+          <p class="leitor-observacao">
+
+            O livro será disponibilizado para leitura
+            dentro desta área após a configuração do acesso privado.
+
+          </p>
+
+
+        </div>
+
+
+        <button
+          type="button"
+          class="botao-sair"
+          onclick="sairDaBiblioteca()"
+        >
+
+          Sair da minha biblioteca
+
+        </button>
 
 
       </section>
@@ -2883,6 +3755,153 @@
 
   <script>
 
+
+    /* =========================
+       LOGIN / BIBLIOTECA
+    ========================== */
+
+    function abrirLogin() {
+
+      const loginArea =
+        document.getElementById("loginArea");
+
+      loginArea.style.display =
+        "block";
+
+      loginArea.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+      });
+
+    }
+
+
+    function fazerLogin() {
+
+      const usuario =
+        document
+          .getElementById("loginUsuario")
+          .value
+          .trim();
+
+      const senha =
+        document
+          .getElementById("loginSenha")
+          .value
+          .trim();
+
+      const mensagem =
+        document.getElementById("mensagemLogin");
+
+      const biblioteca =
+        document.getElementById("biblioteca");
+
+      /*
+        ATENÇÃO:
+
+        ESTE LOGIN É SOMENTE A ESTRUTURA VISUAL DA PRIMEIRA ETAPA.
+
+        AQUI NÃO ESTAMOS ARMAZENANDO OU VALIDANDO SENHAS DE CLIENTES.
+
+        NA PRÓXIMA ETAPA, ESTA FUNÇÃO SERÁ CONECTADA
+        AO SISTEMA REAL DE AUTENTICAÇÃO.
+      */
+
+      if (usuario === "" || senha === "") {
+
+        mensagem.className =
+          "mensagem-login erro";
+
+        mensagem.textContent =
+          "Digite seu login e sua senha.";
+
+        return;
+
+      }
+
+
+      mensagem.className =
+        "mensagem-login erro";
+
+      mensagem.textContent =
+        "O sistema de acesso ainda está sendo configurado. " +
+        "Na próxima etapa vamos conectar o login aos compradores " +
+        "da pré-venda e liberar a biblioteca de forma segura.";
+
+    }
+
+
+    function abrirLivro() {
+
+      const leitor =
+        document.getElementById("leitor");
+
+      leitor.style.display =
+        "block";
+
+      leitor.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+      });
+
+      /*
+        O PDF será ligado aqui depois da configuração
+        do armazenamento privado.
+
+        Não coloque o link público do PDF aqui.
+      */
+
+    }
+
+
+    function sairDaBiblioteca() {
+
+      const biblioteca =
+        document.getElementById("biblioteca");
+
+      const leitor =
+        document.getElementById("leitor");
+
+      leitor.style.display =
+        "none";
+
+      biblioteca.style.display =
+        "none";
+
+      document
+        .getElementById("loginUsuario")
+        .value = "";
+
+      document
+        .getElementById("loginSenha")
+        .value = "";
+
+      document
+        .getElementById("mensagemLogin")
+        .style.display = "none";
+
+      document
+        .getElementById("inicio")
+        .scrollIntoView({
+
+          behavior: "smooth",
+
+          block: "start"
+
+        });
+
+    }
+
+
+    /* =========================
+       CONFIRMAÇÃO DE PRESENÇA
+    ========================== */
 
     async function confirmarPresenca() {
 
