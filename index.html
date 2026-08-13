@@ -2616,14 +2616,20 @@
 
 
           <button
-            type="button"
-            class="botao-login-menu"
-            onclick="abrirLogin()"
-          >
+  type="button"
+  class="botao-login-menu"
+  onclick="
+    document.getElementById('loginArea').style.display = 'block';
+    document.getElementById('loginArea').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  "
+>
 
-            🔐 Minha Biblioteca
+  🔐 Minha Biblioteca
 
-          </button>
+</button>
 
 
         </div>
