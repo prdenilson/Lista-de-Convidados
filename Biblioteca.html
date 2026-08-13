@@ -1,1 +1,875 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Minha Biblioteca | Antes Que Eu Seja Usado
+  </title>
+
+  <meta
+    name="description"
+    content="Área exclusiva para leitura digital de Antes Que Eu Seja Usado."
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+
+      --fundo: #eee7dc;
+
+      --marrom: #4b392c;
+
+      --marrom-escuro: #30251e;
+
+      --dourado: #9a7a4f;
+
+      --dourado-claro: #c3a878;
+
+      --texto: #3d342d;
+
+      --cinza: #766c64;
+
+      --borda: #d5c7b6;
+
+      --branco: #fffdf9;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      min-height: 100vh;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      background:
+
+        radial-gradient(
+          circle at top,
+          rgba(255, 255, 255, 0.65),
+          transparent 40%
+        ),
+
+        linear-gradient(
+          135deg,
+          var(--fundo),
+          #e5dbcd
+        );
+
+      color: var(--texto);
+
+      padding: 25px 15px;
+
+    }
+
+    .pagina {
+
+      width: 100%;
+
+      max-width: 900px;
+
+      margin: 0 auto;
+
+    }
+
+    .biblioteca {
+
+      background:
+        rgba(255, 253, 249, 0.97);
+
+      border-radius: 24px;
+
+      overflow: hidden;
+
+      box-shadow:
+
+        0 20px 60px
+        rgba(54, 42, 32, 0.18),
+
+        0 2px 8px
+        rgba(54, 42, 32, 0.08);
+
+    }
+
+    .topo {
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(47, 37, 29, 0.98),
+          rgba(82, 62, 47, 0.98)
+        );
+
+      color: white;
+
+      text-align: center;
+
+      padding: 32px 25px;
+
+    }
+
+    .pequeno {
+
+      display: block;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      color: #dbc7a8;
+
+      margin-bottom: 10px;
+
+    }
+
+    .topo h1 {
+
+      font-size: 30px;
+
+      font-weight: normal;
+
+      line-height: 1.3;
+
+    }
+
+    .linha {
+
+      width: 50px;
+
+      height: 2px;
+
+      background:
+        var(--dourado-claro);
+
+      margin: 16px auto 0;
+
+    }
+
+    .conteudo {
+
+      padding: 30px 25px 35px;
+
+    }
+
+    .boas-vindas {
+
+      text-align: center;
+
+      margin-bottom: 28px;
+
+    }
+
+    .boas-vindas h2 {
+
+      font-size: 25px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+      margin-bottom: 10px;
+
+    }
+
+    .boas-vindas p {
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      color:
+        var(--cinza);
+
+    }
+
+    .livro {
+
+      display: grid;
+
+      grid-template-columns:
+        190px 1fr;
+
+      gap: 25px;
+
+      align-items: center;
+
+      padding: 22px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 18px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(246, 240, 231, 0.95),
+          rgba(238, 229, 216, 0.9)
+        );
+
+    }
+
+    .capa {
+
+      width: 100%;
+
+    }
+
+    .capa img {
+
+      width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      border-radius: 5px;
+
+      box-shadow:
+
+        0 15px 30px
+        rgba(45, 35, 27, 0.25);
+
+    }
+
+    .informacoes h3 {
+
+      font-size: 27px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+      margin-bottom: 12px;
+
+    }
+
+    .informacoes p {
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      color:
+        var(--cinza);
+
+      margin-bottom: 18px;
+
+    }
+
+    .botao {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding: 14px 22px;
+
+      border: none;
+
+      border-radius: 11px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
+      color: white;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      text-decoration: none;
+
+      box-shadow:
+
+        0 7px 16px
+        rgba(62, 47, 36, 0.20);
+
+      transition:
+        all 0.2s ease;
+
+    }
+
+    .botao:hover {
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+
+        0 10px 22px
+        rgba(62, 47, 36, 0.27);
+
+    }
+
+    .leitor {
+
+      display: none;
+
+      margin-top: 28px;
+
+      padding: 20px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 17px;
+
+      background:
+        rgba(255, 253, 249, 0.9);
+
+    }
+
+    .leitor-topo {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-bottom: 15px;
+
+    }
+
+    .leitor-topo h3 {
+
+      font-size: 20px;
+
+      font-weight: normal;
+
+      color:
+        var(--marrom-escuro);
+
+    }
+
+    .fechar {
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 8px;
+
+      background: white;
+
+      color:
+        var(--marrom);
+
+      padding: 8px 12px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      cursor: pointer;
+
+    }
+
+    .area-leitura {
+
+      width: 100%;
+
+      height: 75vh;
+
+      min-height: 550px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      background: white;
+
+    }
+
+    .area-leitura iframe {
+
+      width: 100%;
+
+      height: 100%;
+
+      border: none;
+
+    }
+
+    .aviso {
+
+      margin-top: 12px;
+
+      text-align: center;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+
+      color:
+        #8b8178;
+
+    }
+
+    .sair {
+
+      display: block;
+
+      width: 100%;
+
+      margin-top: 22px;
+
+      padding: 13px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      border-radius: 10px;
+
+      background:
+        transparent;
+
+      color:
+        var(--marrom);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+    }
+
+    .mensagem {
+
+      margin-top: 18px;
+
+      padding: 16px;
+
+      border-radius: 10px;
+
+      background:
+        #f8ece8;
+
+      border:
+        1px solid
+        #e2c7bf;
+
+      color:
+        #71453b;
+
+      text-align: center;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      padding: 20px;
+
+      font-size: 12px;
+
+      color:
+        #8b8178;
+
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+
+        padding:
+          15px 10px;
+
+      }
+
+      .biblioteca {
+
+        border-radius: 18px;
+
+      }
+
+      .topo h1 {
+
+        font-size: 25px;
+
+      }
+
+      .conteudo {
+
+        padding:
+          25px 15px 30px;
+
+      }
+
+      .livro {
+
+        grid-template-columns:
+          1fr;
+
+        text-align: center;
+
+      }
+
+      .capa {
+
+        width: 145px;
+
+        margin: 0 auto;
+
+      }
+
+      .informacoes h3 {
+
+        font-size: 24px;
+
+      }
+
+      .botao {
+
+        width: 100%;
+
+      }
+
+      .leitor {
+
+        padding: 15px;
+
+      }
+
+      .leitor-topo {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: center;
+
+      }
+
+      .area-leitura {
+
+        height: 65vh;
+
+        min-height: 450px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <main class="pagina">
+
+    <section class="biblioteca">
+
+      <header class="topo">
+
+        <span class="pequeno">
+
+          Área exclusiva do leitor
+
+        </span>
+
+        <h1>
+
+          Minha Biblioteca
+
+        </h1>
+
+        <div class="linha"></div>
+
+      </header>
+
+
+      <div class="conteudo">
+
+
+        <section class="boas-vindas">
+
+          <h2>
+
+            Acesso ao seu livro
+
+          </h2>
+
+          <p>
+
+            Aqui você poderá ler sua versão digital
+            diretamente pelo navegador.
+
+          </p>
+
+        </section>
+
+
+        <section class="livro">
+
+
+          <div class="capa">
+
+            <img
+              src="capa.jpg"
+              alt="Capa do livro Antes Que Eu Seja Usado"
+            >
+
+          </div>
+
+
+          <div class="informacoes">
+
+            <h3>
+
+              Antes Que Eu Seja Usado
+
+            </h3>
+
+            <p>
+
+              Uma jornada de reflexão, quebrantamento
+              e transformação para quem deseja compreender
+              que, antes de ser usado por Deus, precisamos
+              permitir que Ele trabalhe em nós.
+
+            </p>
+
+            <button
+              type="button"
+              class="botao"
+              onclick="abrirLivro()"
+            >
+
+              📖 Ler meu livro
+
+            </button>
+
+          </div>
+
+
+        </section>
+
+
+        <section
+          class="leitor"
+          id="leitor"
+        >
+
+
+          <div class="leitor-topo">
+
+            <h3>
+
+              Antes Que Eu Seja Usado
+
+            </h3>
+
+            <button
+              type="button"
+              class="fechar"
+              onclick="fecharLivro()"
+            >
+
+              Fechar leitura
+
+            </button>
+
+          </div>
+
+
+          <div class="area-leitura">
+
+            <iframe
+              id="pdfLeitor"
+              title="Leitor do livro"
+            ></iframe>
+
+          </div>
+
+
+          <p class="aviso">
+
+            O livro será aberto diretamente no navegador.
+            O arquivo ficará protegido no armazenamento privado
+            quando conectarmos esta página ao Supabase.
+
+          </p>
+
+
+        </section>
+
+
+        <button
+          type="button"
+          class="sair"
+          onclick="sairDaBiblioteca()"
+        >
+
+          Sair da minha biblioteca
+
+        </button>
+
+
+        <div
+          class="mensagem"
+          id="mensagem"
+        >
+
+          A página está pronta.
+          O próximo passo é conectar esta biblioteca
+          ao seu projeto do Supabase.
+
+        </div>
+
+
+      </div>
+
+
+      <footer>
+
+        Antes Que Eu Seja Usado
+
+        <br><br>
+
+        © 2026 — Francisco Denilson Pinheiro
+
+      </footer>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    function abrirLivro() {
+
+      const leitor =
+        document.getElementById("leitor");
+
+      leitor.style.display =
+        "block";
+
+      leitor.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+      });
+
+
+      /*
+        IMPORTANTE:
+
+        O PDF NÃO deve ser colocado aqui como link público.
+
+        Depois vamos conectar este iframe ao Supabase
+        para gerar um endereço temporário e privado
+        somente para o usuário autenticado.
+      */
+
+    }
+
+
+    function fecharLivro() {
+
+      const leitor =
+        document.getElementById("leitor");
+
+      const iframe =
+        document.getElementById("pdfLeitor");
+
+      leitor.style.display =
+        "none";
+
+      iframe.src =
+        "";
+
+    }
+
+
+    function sairDaBiblioteca() {
+
+      /*
+        Na próxima etapa esta função também vai
+        encerrar a sessão do usuário no Supabase.
+      */
+
+      fecharLivro();
+
+      window.location.href =
+        "index.html";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+```
 
