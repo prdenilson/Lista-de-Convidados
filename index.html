@@ -3813,11 +3813,9 @@
        FAZER LOGIN
     ========================== */
 
-    async function fazerLogin() {
+   async function fazerLogin() {
 
-      alert("A função fazerLogin foi chamada");
-
-    const usuario =
+  const usuario =
     document.getElementById("loginUsuario").value.trim();
 
   const senha =
@@ -3829,33 +3827,20 @@
   const botao =
     document.getElementById("botaoLogin");
 
-
   if (usuario === "" || senha === "") {
 
-    mensagem.className =
-      "mensagem-login erro";
-
-    mensagem.style.display =
-      "block";
-
-    mensagem.textContent =
-      "Digite seu e-mail e sua senha.";
+    mensagem.className = "mensagem-login erro";
+    mensagem.style.display = "block";
+    mensagem.textContent = "Digite seu e-mail e sua senha.";
 
     return;
   }
 
-
   botao.disabled = true;
 
-  mensagem.className =
-    "mensagem-login";
-
-  mensagem.style.display =
-    "block";
-
-  mensagem.textContent =
-    "Entrando...";
-
+  mensagem.className = "mensagem-login";
+  mensagem.style.display = "block";
+  mensagem.textContent = "Entrando...";
 
   try {
 
@@ -3865,64 +3850,41 @@
         password: senha
       });
 
-
     if (resultado.error) {
 
-      mensagem.className =
-        "mensagem-login erro";
-
-      mensagem.style.display =
-        "block";
-
-      mensagem.textContent =
-        resultado.error.message;
+      mensagem.className = "mensagem-login erro";
+      mensagem.style.display = "block";
+      mensagem.textContent = resultado.error.message;
 
       botao.disabled = false;
 
       return;
     }
 
+    document.getElementById("biblioteca").style.display = "block";
 
-    if (resultado.data && resultado.data.user) {
+    document.getElementById("biblioteca").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 
-      mensagem.style.display =
-        "none";
+    mensagem.style.display = "none";
 
-      document.getElementById("biblioteca")
-        .style.display = "block";
-
-      document.getElementById("biblioteca")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      document.getElementById("loginUsuario")
-        .value = "";
-
-      document.getElementById("loginSenha")
-        .value = "";
-
-    }
+    document.getElementById("loginUsuario").value = "";
+    document.getElementById("loginSenha").value = "";
 
   } catch (erro) {
 
     console.error("Erro no login:", erro);
 
-    mensagem.className =
-      "mensagem-login erro";
-
-    mensagem.style.display =
-      "block";
-
+    mensagem.className = "mensagem-login erro";
+    mensagem.style.display = "block";
     mensagem.textContent =
-      "Não foi possível conectar ao sistema de login.";
+      "Erro ao conectar ao sistema de login.";
 
   }
 
-
   botao.disabled = false;
-
 }
 
     /* =========================
