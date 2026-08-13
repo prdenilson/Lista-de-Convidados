@@ -3815,149 +3815,113 @@
 
     async function fazerLogin() {
 
-      const usuario =
-        document
-          .getElementById("loginUsuario")
-          .value
-          .trim();
+  const usuario =
+    document.getElementById("loginUsuario").value.trim();
 
-      const senha =
-        document
-          .getElementById("loginSenha")
-          .value
-          .trim();
+  const senha =
+    document.getElementById("loginSenha").value.trim();
 
-      const mensagem =
-        document.getElementById("mensagemLogin");
+  const mensagem =
+    document.getElementById("mensagemLogin");
 
-      const botao =
-        document.getElementById("botaoLogin");
+  const botao =
+    document.getElementById("botaoLogin");
 
 
-      if (usuario === "" || senha === "") {
+  if (usuario === "" || senha === "") {
 
-        mensagem.className =
-          "mensagem-login erro";
+    mensagem.className =
+      "mensagem-login erro";
 
-        mensagem.style.display =
-          "block";
+    mensagem.style.display =
+      "block";
 
-        mensagem.textContent =
-          "Digite seu e-mail e sua senha.";
+    mensagem.textContent =
+      "Digite seu e-mail e sua senha.";
 
-        return;
+    return;
+  }
 
-      }
 
+  botao.disabled = true;
+
+  mensagem.className =
+    "mensagem-login";
+
+  mensagem.style.display =
+    "block";
+
+  mensagem.textContent =
+    "Entrando...";
+
+
+  try {
+
+    const resultado =
+      await supabase.auth.signInWithPassword({
+        email: usuario,
+        password: senha
+      });
+
+
+    if (resultado.error) {
 
       mensagem.className =
-        "mensagem-login";
+        "mensagem-login erro";
 
       mensagem.style.display =
         "block";
 
       mensagem.textContent =
-        "Entrando...";
+        resultado.error.message;
 
-      botao.disabled =
-        true;
+      botao.disabled = false;
 
-
-      try {
-
-        const {
-          data,
-          error
-        } =
-          await supabase.auth.signInWithPassword({
-
-            email: usuario,
-
-            password: senha
-
-          });
+      return;
+    }
 
 
-        if (error) {
+    if (resultado.data && resultado.data.user) {
 
-          mensagem.className =
-            "mensagem-login erro";
+      mensagem.style.display =
+        "none";
 
-          mensagem.style.display =
-            "block";
+      document.getElementById("biblioteca")
+        .style.display = "block";
 
-          mensagem.textContent =
-            "E-mail ou senha incorretos.";
+      document.getElementById("biblioteca")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
 
-          botao.disabled =
-            false;
+      document.getElementById("loginUsuario")
+        .value = "";
 
-          return;
-
-        }
-
-
-        if (data.user) {
-
-          mensagem.style.display =
-            "none";
-
-
-          document
-            .getElementById("biblioteca")
-            .style.display =
-              "block";
-
-
-          document
-            .getElementById("biblioteca")
-            .scrollIntoView({
-
-              behavior: "smooth",
-
-              block: "start"
-
-            });
-
-
-          document
-            .getElementById("loginUsuario")
-            .value =
-              "";
-
-          document
-            .getElementById("loginSenha")
-            .value =
-              "";
-
-        }
-
-
-      } catch (erro) {
-
-        console.error(
-          "Erro ao fazer login:",
-          erro
-        );
-
-
-        mensagem.className =
-          "mensagem-login erro";
-
-        mensagem.style.display =
-          "block";
-
-        mensagem.textContent =
-          "Não foi possível realizar o login. Tente novamente.";
-
-      }
-
-
-      botao.disabled =
-        false;
+      document.getElementById("loginSenha")
+        .value = "";
 
     }
 
+  } catch (erro) {
+
+    console.error("Erro no login:", erro);
+
+    mensagem.className =
+      "mensagem-login erro";
+
+    mensagem.style.display =
+      "block";
+
+    mensagem.textContent =
+      "Não foi possível conectar ao sistema de login.";
+
+  }
+
+
+  botao.disabled = false;
+
+}
 
     /* =========================
        ABRIR LIVRO
