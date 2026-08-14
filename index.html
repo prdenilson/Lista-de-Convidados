@@ -1590,7 +1590,7 @@ const SUPABASE_URL =
 const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_QbMRb7_7ftE￾AvMplgc_GA_1hXNQhBc";
 
-const supabase =
+const clienteSupabase =
   window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_PUBLISHABLE_KEY
@@ -1646,7 +1646,7 @@ async function fazerLogin() {
   try {
 
     const { data, error } =
-      await supabase.auth.signInWithPassword({
+      await clienteSupabase.auth.signInWithPassword({
 
         email: usuario,
 
@@ -1767,7 +1767,7 @@ async function confirmarPresenca() {
 
 
   const url =
-   "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec";
+  "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec";
 
 
   botao.disabled = true;
