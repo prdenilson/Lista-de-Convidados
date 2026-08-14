@@ -123,6 +123,11 @@ body {
   margin: 18px auto 0;
 }
 
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
 .menu {
   position: sticky;
   top: 0;
@@ -158,6 +163,7 @@ body {
   padding: 8px 9px;
   border-radius: 7px;
   transition: background 0.2s ease, color 0.2s ease;
+  border: none;
 }
 
 .menu a:hover,
@@ -168,10 +174,60 @@ body {
 
 .botao-login-menu {
   background: rgba(195, 168, 120, 0.12);
-  border: 1px solid rgba(195, 168, 120, 0.45);
+  border: 1px solid rgba(195, 168, 120, 0.45) !important;
   color: #f4e8d3;
   font-family: Georgia, "Times New Roman", serif;
   cursor: pointer;
+}
+
+
+/* =========================================================
+   BOTÃO HAMBÚRGUER
+   ========================================================= */
+
+.botao-menu {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 17px;
+  background: transparent;
+  color: #eadcc6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.icone-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 27px;
+  height: 27px;
+}
+
+.icone-menu span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #eadcc6;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.botao-menu.aberto .icone-menu span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.botao-menu.aberto .icone-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+.botao-menu.aberto .icone-menu span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .area-capa {
@@ -666,6 +722,48 @@ body {
   color: white;
 }
 
+
+/* =========================================================
+   BOTÃO AMAZON
+   ========================================================= */
+
+.botao-amazon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 58px;
+  margin-top: 16px;
+  padding: 15px 18px;
+  border-radius: 11px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #4b392c, #30251e);
+  color: #fffdf9;
+  border: 1px solid var(--dourado);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  box-shadow: 0 7px 17px rgba(62, 47, 36, 0.18);
+  transition: all 0.2s ease;
+}
+
+.botao-amazon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 23px rgba(62, 47, 36, 0.26);
+  background: linear-gradient(135deg, #5b4636, #3f3026);
+}
+
+.amazon-icone {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.amazon-texto {
+  display: block;
+}
+
 .comprovante {
   margin-top: 20px;
   padding: 18px;
@@ -916,16 +1014,43 @@ footer {
     right: 12px;
   }
 
+
+  /* =======================================================
+     MENU MOBILE
+     ======================================================= */
+
+  .botao-menu {
+    display: flex;
+  }
+
   .menu-conteudo {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
+    gap: 3px;
+    padding: 8px 10px 12px;
+    overflow: hidden;
+  }
+
+  .menu-conteudo.aberto {
+    display: flex;
   }
 
   .menu a,
   .menu button {
-    font-size: 10px;
-    padding: 8px 8px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 11px;
+    padding: 11px 12px;
     background: transparent;
     border: none;
+  }
+
+  .menu a:hover,
+  .menu button:hover {
+    background: rgba(195, 168, 120, 0.15);
   }
 
   .botao-login-menu {
@@ -1024,6 +1149,7 @@ footer {
     padding-left: 15px;
     padding-right: 15px;
   }
+
 }
 </style>
 
@@ -1050,21 +1176,63 @@ footer {
 
 <nav class="menu">
 
-  <div class="menu-conteudo">
+  <!-- BOTÃO DO MENU HAMBÚRGUER -->
 
-    <a href="#inicio">Início</a>
+  <button
+    type="button"
+    class="botao-menu"
+    id="botaoMenu"
+    aria-label="Abrir menu"
+    aria-expanded="false"
+    onclick="alternarMenu()"
+  >
 
-    <a href="#livro">O Livro</a>
+    <span>
+      Menu
+    </span>
 
-    <a href="#autor">Sobre o Autor</a>
+    <span class="icone-menu">
 
-    <a href="#lancamento">Lançamento</a>
+      <span></span>
+      <span></span>
+      <span></span>
 
-    <a href="#prevenda">Pré-venda</a>
+    </span>
 
-    <a href="#confirmacao">Confirmar PRESENÇA</a>
+  </button>
 
-    <a href="#loginArea" class="botao-login-menu">
+
+  <div class="menu-conteudo" id="menuConteudo">
+
+    <a href="#inicio" onclick="fecharMenu()">
+      Início
+    </a>
+
+    <a href="#livro" onclick="fecharMenu()">
+      O Livro
+    </a>
+
+    <a href="#autor" onclick="fecharMenu()">
+      Sobre o Autor
+    </a>
+
+    <a href="#lancamento" onclick="fecharMenu()">
+      Lançamento
+    </a>
+
+    <a href="#prevenda" onclick="fecharMenu()">
+      Pré-venda
+    </a>
+
+    <a href="#confirmacao" onclick="fecharMenu()">
+      Confirmar PRESENÇA
+    </a>
+
+    <a
+      href="#loginArea"
+      class="botao-login-menu"
+      onclick="fecharMenu()"
+    >
       Minha Biblioteca
     </a>
 
@@ -1461,6 +1629,28 @@ footer {
   </div>
 
 
+  <!-- =======================================================
+       VERSÃO DIGITAL AMAZON
+       ======================================================= -->
+
+  <a
+    href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
+    class="botao-amazon"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <span class="amazon-icone">
+      📖
+    </span>
+
+    <span class="amazon-texto">
+      Adquira a versão digital agora pela Amazon
+    </span>
+
+  </a>
+
+
   <div class="comprovante">
 
     <strong>
@@ -1579,6 +1769,58 @@ footer {
 
 
 <script>
+
+/* =========================================================
+   MENU HAMBÚRGUER
+   ========================================================= */
+
+function alternarMenu() {
+
+  const botao =
+    document.getElementById("botaoMenu");
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+  const aberto =
+    menu.classList.toggle("aberto");
+
+  botao.classList.toggle(
+    "aberto",
+    aberto
+  );
+
+  botao.setAttribute(
+    "aria-expanded",
+    aberto ? "true" : "false"
+  );
+
+}
+
+
+function fecharMenu() {
+
+  const botao =
+    document.getElementById("botaoMenu");
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+  if (window.innerWidth <= 600) {
+
+    menu.classList.remove("aberto");
+
+    botao.classList.remove("aberto");
+
+    botao.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+}
+
 
 /* =========================================================
    SUPABASE
