@@ -2028,36 +2028,126 @@ botao.disabled = false;
 ABRIR LIVRO
 ========================== */
 async function abrirLivro() {
-const {
-data: {
-session
-}
-} =
-await supabase.auth.getSession();
-if (!session) {
-const mensagem =
-document.getElementById("mensagemLogin");
-mensagem.className =
-"mensagem-login erro";
-mensagem.style.display =
-"block";
-mensagem.textContent =
-"Faça login para acessar sua biblioteca.";
-abrirLogin();
-return;
-}
-const leitor =
-document.getElementById("leitor");
-leitor.style.display =
-"block";
-leitor.scrollIntoView({
-behavior: "smooth",
-block: "start"
-});
-/*
-O arquivo PDF privado será conectado
-ao Supabase na próxima etapa.
-*/
+
+  const leitor =
+    document.getElementById("leitor");
+
+  const frameLivro =
+    document.getElementById("frameLivro");
+
+  const mensagem =
+    document.getElementById("mensagemLogin");
+
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabase.auth.getSession();
+
+    if (error) {
+
+      console.error(
+        "Erro ao verificar sessão:",
+        error
+      );
+
+      mensagem.className =
+        "mensagem-login erro";
+
+      mensagem.style.display =
+        "block";
+
+      mensagem.textContent =
+        "Não foi possível verificar seu acesso.";
+
+      abrirLogin();
+
+      return;
+    }
+
+    const session =
+      data.session;
+
+    if (!session) {
+
+      mensagem.className =
+        "mensagem-login erro";
+
+      mensagem.style.display =
+        "block";
+
+      mensagem.textContent =
+        "Faça login para acessar sua biblioteca.";
+
+      abrirLogin();
+
+      return;
+    }
+
+    leitor.style.display =
+      "block";
+
+    leitor.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+    const {
+      data: signedData,
+      error: signedError
+    } =
+      await supabase.storage
+        .from("Livro")
+        .createSignedUrl(
+          "Antes que eu seja usado PDF.pdf",
+          60 * 60
+        );
+
+    if (signedError) {
+
+      console.error(
+        "Erro ao criar URL do livro:",
+        signedError
+      );
+
+      mensagem.className =
+        "mensagem-login erro";
+
+      mensagem.style.display =
+        "block";
+
+      mensagem.textContent =
+        "Não foi possível abrir o livro.";
+
+      return;
+    }
+
+    frameLivro.src =
+      signedData.signedUrl;
+
+    mensagem.style.display =
+      "none";
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao abrir livro:",
+      erro
+    );
+
+    mensagem.className =
+      "mensagem-login erro";
+
+    mensagem.style.display =
+      "block";
+
+    mensagem.textContent =
+      "Ocorreu um erro ao carregar o livro.";
+
+  }
+
 }
 /* =========================
 SAIR DA BIBLIOTECA
