@@ -912,10 +912,14 @@
  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
  function abrirLogin() {
- const loginArea = document.getElementById("loginArea");
- loginArea.style.display = "block";
- loginArea.scrollIntoView({ behavior: "smooth", block: "start" });
- }
+  const loginArea = document.getElementById("loginArea");
+  loginArea.style.display = "block";
+  
+  // Aguarda 50ms para o navegador renderizar a seção antes de rolar a página
+  setTimeout(() => {
+    loginArea.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 50);
+}
 
  async function fazerLogin() {
  const usuario = document.getElementById("loginUsuario").value.trim();
