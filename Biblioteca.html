@@ -868,30 +868,129 @@
        ABRIR LIVRO
     ========================== */
 
-    function abrirLivro() {
+   async function abrirLivro() {
 
-      const leitor =
-        document.getElementById("leitor");
+  const leitor =
+    document.getElementById("leitor");
 
-      leitor.style.display =
-        "block";
+  const iframe =
+    document.getElementById("pdfLeitor");
 
-      leitor.scrollIntoView({
+  const mensagem =
+    document.getElementById("mensagem");
 
-        behavior: "smooth",
+  try {
 
-        block: "start"
+    const {
+      data: {
+        session
+      }
+    } =
+      await supabase.auth.getSession();
 
-      });
 
-      /*
-        O PDF ainda não foi conectado.
+    if (!session) {
 
-        Na próxima etapa vamos buscar o arquivo
-        no armazenamento privado do Supabase.
-      */
+      mensagem.textContent =
+        "Sua sessão expirou. Faça login novamente.";
+
+      window.location.href =
+        "index.html";
+
+      return;
 
     }
+
+
+    leitor.style.display =
+      "block";
+
+    leitor.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start"
+
+    });
+
+
+    /* =========================
+       ARQUIVO DO LIVRO
+    ========================== */
+
+    const LIVRO_BUCKET =
+      "Livro";
+
+    const LIVRO_ARQUIVO =
+      "Antes que eu seja usado PDF.pdf";
+
+
+    /* =========================
+       CRIAR URL TEMPORÁRIA
+    ========================== */
+
+    const {
+      data: signedData,
+      error: signedError
+    } =
+      await supabase.storage
+        .from(LIVRO_BUCKET)
+        .createSignedUrl(
+          LIVRO_ARQUIVO,
+          60 * 60
+        );
+
+
+    if (signedError) {
+
+      console.error(
+        "Erro ao criar URL do livro:",
+        signedError
+      );
+
+      mensagem.textContent =
+        "Não foi possível abrir o livro.";
+
+      return;
+
+    }
+
+
+    if (
+      !signedData ||
+      !signedData.signedUrl
+    ) {
+
+      throw new Error(
+        "O Supabase não retornou uma URL válida."
+      );
+
+    }
+
+
+    /* =========================
+       ABRIR PDF
+    ========================== */
+
+    iframe.src =
+      signedData.signedUrl;
+
+    mensagem.style.display =
+      "none";
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao abrir livro:",
+      erro
+    );
+
+    mensagem.textContent =
+      "Ocorreu um erro ao carregar o livro.";
+
+  }
+
+}
 
 
     /* =========================
