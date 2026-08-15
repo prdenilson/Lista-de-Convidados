@@ -1,1 +1,1194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Livros | Francisco Denilson Pinheiro</title>
+
+  <meta
+    name="description"
+    content="Conheça os livros e materiais de Francisco Denilson Pinheiro."
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --fundo: #eee7dc;
+      --marrom: #4b392c;
+      --marrom-escuro: #30251e;
+      --dourado: #9a7a4f;
+      --dourado-claro: #c3a878;
+      --texto: #3d342d;
+      --cinza: #766c64;
+      --borda: #d5c7b6;
+      --branco: #fffdf9;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(255, 255, 255, 0.65),
+          transparent 40%
+        ),
+        linear-gradient(
+          135deg,
+          var(--fundo),
+          #e5dbcd
+        );
+
+      color: var(--texto);
+
+      padding: 30px 15px;
+    }
+
+    .pagina {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .site {
+      background: rgba(255, 253, 249, 0.97);
+
+      border-radius: 24px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 60px rgba(54, 42, 32, 0.18),
+        0 2px 8px rgba(54, 42, 32, 0.08);
+    }
+
+
+    /* =====================================================
+       CABEÇALHO
+       ===================================================== */
+
+    .topo {
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(47, 37, 29, 0.98),
+          rgba(82, 62, 47, 0.98)
+        );
+
+      color: white;
+
+      text-align: center;
+
+      padding: 34px 25px 30px;
+
+      position: relative;
+    }
+
+    .pequeno-titulo {
+
+      font-size: 12px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      color: #dbc7a8;
+
+      margin-bottom: 12px;
+    }
+
+    .topo h1 {
+
+      font-size: 31px;
+
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      line-height: 1.25;
+    }
+
+    .linha-dourada {
+
+      width: 55px;
+
+      height: 2px;
+
+      background: var(--dourado-claro);
+
+      margin: 18px auto 0;
+    }
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .menu {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background: rgba(48, 37, 30, 0.98);
+
+      border-top:
+        1px solid rgba(195, 168, 120, 0.25);
+
+      border-bottom:
+        1px solid rgba(195, 168, 120, 0.25);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .menu-conteudo {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 3px;
+
+      padding: 9px 8px;
+
+      overflow-x: auto;
+
+      scrollbar-width: none;
+    }
+
+    .menu-conteudo::-webkit-scrollbar {
+      display: none;
+    }
+
+    .menu a {
+
+      flex: 0 0 auto;
+
+      text-decoration: none;
+
+      color: #eadcc6;
+
+      font-size: 11px;
+
+      letter-spacing: 0.7px;
+
+      text-transform: uppercase;
+
+      padding: 8px 9px;
+
+      border-radius: 7px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .menu a:hover {
+
+      background:
+        rgba(195, 168, 120, 0.15);
+
+      color: white;
+    }
+
+    .menu a.ativo {
+
+      background:
+        rgba(195, 168, 120, 0.18);
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
+
+    .botao-menu {
+
+      display: none;
+
+      width: 100%;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 12px 17px;
+
+      background: transparent;
+
+      color: #eadcc6;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      border: none;
+    }
+
+    .icone-menu {
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      gap: 5px;
+
+      width: 27px;
+
+      height: 27px;
+    }
+
+    .icone-menu span {
+
+      display: block;
+
+      width: 25px;
+
+      height: 2px;
+
+      background: #eadcc6;
+
+      border-radius: 2px;
+    }
+
+
+    /* =====================================================
+       CONTEÚDO
+       ===================================================== */
+
+    .conteudo {
+
+      padding: 45px 35px 50px;
+    }
+
+    .titulo-secao {
+
+      text-align: center;
+
+      margin-bottom: 35px;
+    }
+
+    .titulo-secao .pequeno {
+
+      display: block;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      color: var(--dourado);
+
+      margin-bottom: 10px;
+    }
+
+    .titulo-secao h2 {
+
+      font-size: 30px;
+
+      font-weight: normal;
+
+      color: var(--marrom-escuro);
+    }
+
+    .linha {
+
+      width: 45px;
+
+      height: 2px;
+
+      background: var(--dourado-claro);
+
+      margin: 14px auto 0;
+    }
+
+
+    /* =====================================================
+       PRODUTO
+       ===================================================== */
+
+    .produto {
+
+      display: grid;
+
+      grid-template-columns:
+        300px 1fr;
+
+      gap: 45px;
+
+      align-items: start;
+
+      padding: 30px;
+
+      border:
+        1px solid var(--borda);
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(246, 240, 231, 0.98),
+          rgba(238, 229, 216, 0.92)
+        );
+
+      box-shadow:
+        0 10px 30px rgba(70, 52, 38, 0.08);
+    }
+
+
+    /* =====================================================
+       CAPA
+       ===================================================== */
+
+    .produto-capa {
+
+      text-align: center;
+    }
+
+    .produto-capa img {
+
+      width: 100%;
+
+      max-width: 280px;
+
+      height: auto;
+
+      display: block;
+
+      margin: 0 auto;
+
+      border-radius: 5px;
+
+      box-shadow:
+        0 18px 35px rgba(45, 35, 27, 0.28),
+        0 3px 8px rgba(45, 35, 27, 0.15);
+    }
+
+
+    /* =====================================================
+       INFORMAÇÕES
+       ===================================================== */
+
+    .produto-info h3 {
+
+      font-size: 30px;
+
+      font-weight: normal;
+
+      line-height: 1.25;
+
+      color: var(--marrom-escuro);
+
+      margin-bottom: 8px;
+    }
+
+    .subtitulo {
+
+      font-size: 16px;
+
+      line-height: 1.7;
+
+      color: var(--dourado);
+
+      margin-bottom: 22px;
+    }
+
+    .descricao {
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+      color: var(--cinza);
+
+      margin-bottom: 18px;
+    }
+
+    .informacao {
+
+      margin-top: 22px;
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid var(--borda);
+    }
+
+    .informacao strong {
+
+      display: block;
+
+      font-size: 14px;
+
+      color: var(--marrom);
+
+      margin-bottom: 7px;
+    }
+
+    .informacao span {
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      color: var(--cinza);
+    }
+
+
+    /* =====================================================
+       PREÇO
+       ===================================================== */
+
+    .preco {
+
+      margin-top: 25px;
+
+      font-size: 30px;
+
+      font-weight: bold;
+
+      color: var(--marrom);
+    }
+
+
+    /* =====================================================
+       BOTÕES
+       ===================================================== */
+
+    .botoes {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+    .botao {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 55px;
+
+      padding: 14px 12px;
+
+      border-radius: 11px;
+
+      text-decoration: none;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 15px;
+
+      font-weight: bold;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .botao:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 18px rgba(62, 47, 36, 0.20);
+    }
+
+    .botao-pix {
+
+      background:
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
+      color: white;
+    }
+
+    .botao-cartao {
+
+      background:
+        linear-gradient(
+          135deg,
+          #9a7a4f,
+          #735a39
+        );
+
+      color: white;
+    }
+
+
+    /* =====================================================
+       AMAZON
+       ===================================================== */
+
+    .botao-amazon {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      width: 100%;
+
+      min-height: 58px;
+
+      margin-top: 16px;
+
+      padding: 15px 18px;
+
+      border-radius: 11px;
+
+      text-decoration: none;
+
+      background:
+        linear-gradient(
+          135deg,
+          #4b392c,
+          #30251e
+        );
+
+      color: #fffdf9;
+
+      border:
+        1px solid var(--dourado);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      line-height: 1.4;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .botao-amazon:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 23px rgba(62, 47, 36, 0.26);
+    }
+
+
+    /* =====================================================
+       AVISO
+       ===================================================== */
+
+    .aviso {
+
+      margin-top: 22px;
+
+      padding: 18px;
+
+      border:
+        1px solid var(--dourado-claro);
+
+      border-radius: 12px;
+
+      background:
+        rgba(195, 168, 120, 0.12);
+
+      text-align: center;
+
+      color: var(--marrom);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       FUTUROS MATERIAIS
+       ===================================================== */
+
+    .futuros {
+
+      margin-top: 45px;
+
+      padding: 25px;
+
+      border-top:
+        1px solid var(--borda);
+
+      text-align: center;
+    }
+
+    .futuros h3 {
+
+      font-size: 22px;
+
+      font-weight: normal;
+
+      color: var(--marrom-escuro);
+
+      margin-bottom: 10px;
+    }
+
+    .futuros p {
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color: var(--cinza);
+    }
+
+
+    /* =====================================================
+       RODAPÉ
+       ===================================================== */
+
+    footer {
+
+      text-align: center;
+
+      padding: 20px;
+
+      font-size: 12px;
+
+      color: #8b8178;
+
+      border-top:
+        1px solid var(--borda);
+    }
+
+
+    /* =====================================================
+       CELULAR
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding: 15px 10px;
+      }
+
+      .site {
+        border-radius: 18px;
+      }
+
+      .topo {
+        padding: 28px 18px 25px;
+      }
+
+      .topo h1 {
+        font-size: 26px;
+      }
+
+      .botao-menu {
+        display: flex;
+      }
+
+      .menu-conteudo {
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 3px;
+
+        padding:
+          8px 10px 12px;
+
+        overflow: hidden;
+      }
+
+      .menu-conteudo.aberto {
+        display: flex;
+      }
+
+      .menu a {
+
+        display: block;
+
+        width: 100%;
+
+        text-align: left;
+
+        padding: 11px 12px;
+      }
+
+      .conteudo {
+
+        padding:
+          35px 17px 40px;
+      }
+
+      .titulo-secao h2 {
+        font-size: 26px;
+      }
+
+      .produto {
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 20px;
+      }
+
+      .produto-capa img {
+        max-width: 250px;
+      }
+
+      .produto-info h3 {
+        font-size: 26px;
+      }
+
+      .botoes {
+        grid-template-columns: 1fr;
+      }
+
+      .futuros {
+        padding: 20px 5px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<main class="pagina">
+
+  <div class="site">
+
+
+    <!-- ===================================================
+         CABEÇALHO
+         =================================================== -->
+
+    <header class="topo">
+
+      <div class="pequeno-titulo">
+        Livros e Materiais
+      </div>
+
+      <h1>
+        Francisco Denilson Pinheiro
+      </h1>
+
+      <div class="linha-dourada"></div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MENU
+         =================================================== -->
+
+    <nav class="menu">
+
+
+      <button
+        type="button"
+        class="botao-menu"
+        id="botaoMenu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        onclick="alternarMenu()"
+      >
+
+        <span>
+          Menu
+        </span>
+
+        <span class="icone-menu">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </span>
+
+      </button>
+
+
+      <div
+        class="menu-conteudo"
+        id="menuConteudo"
+      >
+
+        <a href="index.html">
+          Início
+        </a>
+
+        <a
+          href="livros.html"
+          class="ativo"
+        >
+          Livros
+        </a>
+
+        <a href="autor.html">
+          Sobre o Autor
+        </a>
+
+        <a href="ministerio.html">
+          Ministério
+        </a>
+
+        <a href="eventos.html">
+          Eventos
+        </a>
+
+        <a href="loja.html">
+          Loja
+        </a>
+
+        <a href="Biblioteca.html">
+          Minha Biblioteca
+        </a>
+
+        <a href="contato.html">
+          Contato
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- ===================================================
+         CONTEÚDO
+         =================================================== -->
+
+    <section class="conteudo">
+
+
+      <div class="titulo-secao">
+
+        <span class="pequeno">
+          Obras e materiais
+        </span>
+
+        <h2>
+          Livros
+        </h2>
+
+        <div class="linha"></div>
+
+      </div>
+
+
+      <!-- =================================================
+           LIVRO
+           ================================================= -->
+
+      <article class="produto">
+
+
+        <div class="produto-capa">
+
+          <img
+            src="capa.jpg"
+            alt="Capa do livro Antes Que Eu Seja Usado"
+          >
+
+        </div>
+
+
+        <div class="produto-info">
+
+
+          <h3>
+            Antes Que Eu Seja Usado
+          </h3>
+
+
+          <p class="subtitulo">
+
+            Uma jornada antes do encontro com nossa vocação.
+
+          </p>
+
+
+          <p class="descricao">
+
+            <strong>Antes Que Eu Seja Usado</strong> nasceu de uma
+            jornada de formação, quebrantamento e transformação.
+
+            Antes de sermos usados por Deus, existe um processo
+            que precisa acontecer dentro de nós.
+
+            Esta obra é um convite para olhar para dentro,
+            permitir que Deus sonde o coração e trabalhar aquilo
+            que precisa ser transformado.
+
+          </p>
+
+
+          <div class="informacao">
+
+            <strong>
+              Autor
+            </strong>
+
+            <span>
+              Francisco Denilson Pinheiro
+            </span>
+
+          </div>
+
+
+          <div class="informacao">
+
+            <strong>
+              Livro físico
+            </strong>
+
+            <span>
+              Venda do livro físico disponível.
+            </span>
+
+          </div>
+
+
+          <div class="preco">
+            R$ 34,90
+          </div>
+
+
+          <div class="botoes">
+
+
+            <a
+              href="#"
+              class="botao botao-pix"
+              onclick="return false;"
+            >
+              Pagar com PIX
+            </a>
+
+
+            <a
+              href="#"
+              class="botao botao-cartao"
+              onclick="return false;"
+            >
+              Pagar com cartão
+            </a>
+
+
+          </div>
+
+
+          <a
+            href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
+            class="botao-amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            📖
+            Adquira a versão digital pela Amazon
+
+          </a>
+
+
+          <div class="aviso">
+
+            Após realizar o pagamento, siga as orientações
+            apresentadas no site para confirmar sua compra.
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           FUTUROS MATERIAIS
+           ================================================= -->
+
+      <div class="futuros">
+
+        <h3>
+          Novos materiais
+        </h3>
+
+        <p>
+
+          Este espaço poderá receber novos livros,
+          apostilas e outros materiais no futuro.
+
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         RODAPÉ
+         =================================================== -->
+
+    <footer>
+
+      Francisco Denilson Pinheiro
+
+      <br><br>
+
+      © 2026 — Todos os direitos reservados.
+
+    </footer>
+
+
+  </div>
+
+</main>
+
+
+<script>
+
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+function alternarMenu() {
+
+  const botao =
+    document.getElementById("botaoMenu");
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+
+  const aberto =
+    menu.classList.toggle("aberto");
+
+
+  botao.classList.toggle(
+    "aberto",
+    aberto
+  );
+
+
+  botao.setAttribute(
+    "aria-expanded",
+    aberto ? "true" : "false"
+  );
+
+}
+
+
+function fecharMenu() {
+
+  const botao =
+    document.getElementById("botaoMenu");
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+
+  if (window.innerWidth <= 700) {
+
+    menu.classList.remove("aberto");
+
+    botao.classList.remove("aberto");
+
+    botao.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   FECHAR MENU AO CLICAR EM UM LINK
+   ========================================================= */
+
+document
+  .querySelectorAll(".menu a")
+  .forEach(function(link) {
+
+    link.addEventListener(
+      "click",
+      fecharMenu
+    );
+
+  });
+
+
+</script>
+
+
+</body>
+
+</html>
