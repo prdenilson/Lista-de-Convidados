@@ -595,7 +595,7 @@
 
         Sua autorização de leitura está ativa.
         O conteúdo é disponibilizado através do
-        Supabase Storage.
+        supabaseClient.storage.
 
       </div>
 
@@ -641,7 +641,7 @@ const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
 
 
-const supabase =
+const supabaseClient =
   window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_PUBLISHABLE_KEY
@@ -695,7 +695,7 @@ async function verificarAcesso() {
       data,
       error
     } =
-      await supabase.auth.getSession();
+      await supabaseClient.auth.getSession();
 
 
     if (error) {
@@ -798,7 +798,7 @@ async function abrirLivro() {
       data,
       error
     } =
-      await supabase
+      await supabaseClient
         .storage
         .from(BUCKET)
         .createSignedUrl(
@@ -905,7 +905,7 @@ async function sair() {
 
   try {
 
-    await supabase.auth.signOut();
+    await supabaseClient.auth.signOut();
 
   } catch (erro) {
 
@@ -977,7 +977,7 @@ function mostrarErro(mensagem) {
    OBSERVAR ALTERAÇÕES DE AUTENTICAÇÃO
    ========================================================= */
 
-supabase.auth.onAuthStateChange(
+supabaseClient.auth.onAuthStateChange(
   (event, session) => {
 
     console.log(
