@@ -1878,10 +1878,15 @@ async function confirmarPresenca() {
     document.getElementById("botaoConfirmar");
 
 
+  /* ==============================
+     VERIFICAÇÃO DOS CAMPOS
+     ============================== */
+
   if (nome === "" || igreja === "") {
 
-    mensagem.className =
-      "erro";
+    mensagem.className = "erro";
+
+    mensagem.style.display = "block";
 
     mensagem.innerHTML = `
       <div class="mensagem-titulo">
@@ -1900,20 +1905,26 @@ async function confirmarPresenca() {
   }
 
 
-  const url =
-  "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec";
+  /* ==============================
+     ENDEREÇO DO GOOGLE SHEETS
+     ============================== */
 
+  const url =
+    "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec";
+
+
+  /* ==============================
+     AGUARDANDO ENVIO
+     ============================== */
 
   botao.disabled = true;
 
   botao.innerHTML =
     "Registrando confirmação...";
 
-
   mensagem.className = "";
 
-  mensagem.style.display =
-    "none";
+  mensagem.style.display = "none";
 
 
   try {
@@ -1926,7 +1937,7 @@ async function confirmarPresenca() {
 
       headers: {
         "Content-Type":
-          "application/x-www-form-urlencoded"
+          "application/x-www-form-urlencoded;charset=UTF-8"
       },
 
       body:
@@ -1938,9 +1949,13 @@ async function confirmarPresenca() {
     });
 
 
-    mensagem.className =
-      "sucesso";
+    /* ==============================
+       CONFIRMAÇÃO NA TELA
+       ============================== */
 
+    mensagem.className = "sucesso";
+
+    mensagem.style.display = "block";
 
     mensagem.innerHTML = `
 
@@ -1951,17 +1966,17 @@ async function confirmarPresenca() {
       <div class="mensagem-introducao">
 
         Olá,
-        <strong>
-          ${escapeHtml(nome)}
-        </strong>!
+        <strong>${escapeHtml(nome)}</strong>!
 
         <br><br>
 
         Sua presença está confirmada com sucesso
         para o lançamento do livro
-        <strong>
-          Antes Que Eu Seja Usado
-        </strong>.
+        <strong>Antes Que Eu Seja Usado</strong>.
+
+        <br><br>
+
+        Será uma alegria receber você!
 
       </div>
 
@@ -1980,9 +1995,14 @@ async function confirmarPresenca() {
 
   } catch (erro) {
 
-    mensagem.className =
-      "erro";
+    console.error(
+      "Erro ao confirmar presença:",
+      erro
+    );
 
+    mensagem.className = "erro";
+
+    mensagem.style.display = "block";
 
     mensagem.innerHTML = `
 
@@ -1997,7 +2017,6 @@ async function confirmarPresenca() {
       Por favor, tente novamente.
 
     `;
-
 
     botao.disabled = false;
 
