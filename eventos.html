@@ -1,1 +1,1243 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eventos | Pr. Denilson Pinheiro</title>
+
+  <meta
+    name="description"
+    content="Palestras, lançamentos, agendas e convites do Pr. Denilson Pinheiro."
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --fundo: #eee7dc;
+      --marrom: #4b392c;
+      --marrom-escuro: #30251e;
+      --dourado: #9a7a4f;
+      --dourado-claro: #c3a878;
+      --texto: #3d342d;
+      --cinza: #766c64;
+      --borda: #d5c7b6;
+      --branco: #fffdf9;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(255, 255, 255, 0.65),
+          transparent 40%
+        ),
+        linear-gradient(
+          135deg,
+          var(--fundo),
+          #e5dbcd
+        );
+
+      color: var(--texto);
+
+      padding: 30px 15px;
+    }
+
+    .pagina {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .site {
+      background: rgba(255, 253, 249, 0.97);
+
+      border-radius: 24px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 60px rgba(54, 42, 32, 0.18),
+        0 2px 8px rgba(54, 42, 32, 0.08);
+    }
+
+
+    /* =====================================================
+       CABEÇALHO
+       ===================================================== */
+
+    .topo {
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(47, 37, 29, 0.98),
+          rgba(82, 62, 47, 0.98)
+        );
+
+      color: white;
+
+      text-align: center;
+
+      padding: 34px 25px 30px;
+
+      position: relative;
+    }
+
+    .pequeno-titulo {
+
+      font-size: 12px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      color: #dbc7a8;
+
+      margin-bottom: 12px;
+    }
+
+    .topo h1 {
+
+      font-size: 31px;
+
+      font-weight: normal;
+
+      letter-spacing: 1px;
+
+      line-height: 1.25;
+    }
+
+    .linha-dourada {
+
+      width: 55px;
+
+      height: 2px;
+
+      background: var(--dourado-claro);
+
+      margin: 18px auto 0;
+    }
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .menu {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background: rgba(48, 37, 30, 0.98);
+
+      border-top:
+        1px solid rgba(195, 168, 120, 0.25);
+
+      border-bottom:
+        1px solid rgba(195, 168, 120, 0.25);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .menu-conteudo {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 3px;
+
+      padding: 9px 8px;
+
+      overflow-x: auto;
+
+      scrollbar-width: none;
+    }
+
+    .menu-conteudo::-webkit-scrollbar {
+      display: none;
+    }
+
+    .menu a {
+
+      flex: 0 0 auto;
+
+      text-decoration: none;
+
+      color: #eadcc6;
+
+      font-size: 11px;
+
+      letter-spacing: 0.7px;
+
+      text-transform: uppercase;
+
+      padding: 8px 9px;
+
+      border-radius: 7px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .menu a:hover {
+
+      background:
+        rgba(195, 168, 120, 0.15);
+
+      color: white;
+    }
+
+    .menu a.ativo {
+
+      background:
+        rgba(195, 168, 120, 0.18);
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
+
+    .botao-menu {
+
+      display: none;
+
+      width: 100%;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 12px 17px;
+
+      background: transparent;
+
+      color: #eadcc6;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      border: none;
+    }
+
+    .icone-menu {
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      gap: 5px;
+
+      width: 27px;
+
+      height: 27px;
+    }
+
+    .icone-menu span {
+
+      display: block;
+
+      width: 25px;
+
+      height: 2px;
+
+      background: #eadcc6;
+
+      border-radius: 2px;
+    }
+
+
+    /* =====================================================
+       CONTEÚDO
+       ===================================================== */
+
+    .conteudo {
+
+      padding: 45px 35px 50px;
+    }
+
+    .titulo-secao {
+
+      text-align: center;
+
+      margin-bottom: 35px;
+    }
+
+    .titulo-secao .pequeno {
+
+      display: block;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      color: var(--dourado);
+
+      margin-bottom: 10px;
+    }
+
+    .titulo-secao h2 {
+
+      font-size: 30px;
+
+      font-weight: normal;
+
+      color: var(--marrom-escuro);
+    }
+
+    .linha {
+
+      width: 45px;
+
+      height: 2px;
+
+      background: var(--dourado-claro);
+
+      margin: 14px auto 0;
+    }
+
+
+    /* =====================================================
+       INTRODUÇÃO
+       ===================================================== */
+
+    .introducao {
+
+      max-width: 680px;
+
+      margin: 0 auto 35px;
+
+      text-align: center;
+
+      color: var(--cinza);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       CARTÕES
+       ===================================================== */
+
+    .cartoes {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .cartao {
+
+      display: flex;
+
+      flex-direction: column;
+
+      padding: 25px;
+
+      border:
+        1px solid var(--borda);
+
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(246, 240, 231, 0.98),
+          rgba(238, 229, 216, 0.92)
+        );
+
+      box-shadow:
+        0 8px 25px rgba(70, 52, 38, 0.07);
+
+      min-height: 210px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .cartao:hover {
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 30px rgba(70, 52, 38, 0.13);
+    }
+
+    .icone {
+
+      font-size: 28px;
+
+      margin-bottom: 14px;
+    }
+
+    .cartao h3 {
+
+      font-size: 22px;
+
+      font-weight: normal;
+
+      color: var(--marrom-escuro);
+
+      margin-bottom: 10px;
+    }
+
+    .cartao p {
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      color: var(--cinza);
+
+      flex-grow: 1;
+    }
+
+
+    /* =====================================================
+       BOTÃO
+       ===================================================== */
+
+    .botao {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 45px;
+
+      padding: 11px 18px;
+
+      border-radius: 9px;
+
+      text-decoration: none;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      background:
+        linear-gradient(
+          135deg,
+          #5b4636,
+          #3f3026
+        );
+
+      color: white;
+
+      margin-top: 18px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .botao:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 17px rgba(62, 47, 36, 0.20);
+    }
+
+
+    /* =====================================================
+       AGENDA
+       ===================================================== */
+
+    .agenda {
+
+      margin-top: 40px;
+
+      padding-top: 30px;
+
+      border-top:
+        1px solid var(--borda);
+    }
+
+    .agenda-titulo {
+
+      text-align: center;
+
+      margin-bottom: 22px;
+    }
+
+    .agenda-titulo h3 {
+
+      font-size: 24px;
+
+      font-weight: normal;
+
+      color: var(--marrom-escuro);
+
+      margin-bottom: 7px;
+    }
+
+    .agenda-titulo p {
+
+      font-size: 14px;
+
+      color: var(--cinza);
+    }
+
+    .evento {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 20px;
+
+      padding: 18px;
+
+      margin-bottom: 12px;
+
+      border:
+        1px solid var(--borda);
+
+      border-radius: 12px;
+
+      background: rgba(255, 253, 249, 0.8);
+    }
+
+    .data {
+
+      min-width: 85px;
+
+      text-align: center;
+
+      padding: 10px;
+
+      border-right:
+        1px solid var(--borda);
+    }
+
+    .data strong {
+
+      display: block;
+
+      font-size: 22px;
+
+      color: var(--marrom);
+    }
+
+    .data span {
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      color: var(--dourado);
+    }
+
+    .evento-info {
+
+      flex: 1;
+    }
+
+    .evento-info h4 {
+
+      font-size: 17px;
+
+      font-weight: normal;
+
+      color: var(--marrom-escuro);
+
+      margin-bottom: 5px;
+    }
+
+    .evento-info p {
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+      color: var(--cinza);
+    }
+
+
+    /* =====================================================
+       CONVITE
+       ===================================================== */
+
+    .convite {
+
+      margin-top: 40px;
+
+      padding: 30px;
+
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #4b392c,
+          #30251e
+        );
+
+      color: white;
+
+      text-align: center;
+    }
+
+    .convite h3 {
+
+      font-size: 25px;
+
+      font-weight: normal;
+
+      margin-bottom: 12px;
+    }
+
+    .convite p {
+
+      max-width: 600px;
+
+      margin: 0 auto;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color: #eadcc6;
+    }
+
+    .botao-whatsapp {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-top: 20px;
+
+      padding: 13px 22px;
+
+      border-radius: 9px;
+
+      text-decoration: none;
+
+      background: #fffdf9;
+
+      color: var(--marrom);
+
+      font-weight: bold;
+
+      font-size: 14px;
+    }
+
+
+    /* =====================================================
+       RODAPÉ
+       ===================================================== */
+
+    footer {
+
+      text-align: center;
+
+      padding: 20px;
+
+      font-size: 12px;
+
+      color: #8b8178;
+
+      border-top:
+        1px solid var(--borda);
+    }
+
+
+    /* =====================================================
+       CELULAR
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding: 15px 10px;
+      }
+
+      .site {
+        border-radius: 18px;
+      }
+
+      .topo {
+        padding: 28px 18px 25px;
+      }
+
+      .topo h1 {
+        font-size: 26px;
+      }
+
+      .botao-menu {
+        display: flex;
+      }
+
+      .menu-conteudo {
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 3px;
+
+        padding:
+          8px 10px 12px;
+
+        overflow: hidden;
+      }
+
+      .menu-conteudo.aberto {
+        display: flex;
+      }
+
+      .menu a {
+
+        display: block;
+
+        width: 100%;
+
+        text-align: left;
+
+        padding: 11px 12px;
+      }
+
+      .conteudo {
+
+        padding:
+          35px 17px 40px;
+      }
+
+      .titulo-secao h2 {
+        font-size: 26px;
+      }
+
+      .cartoes {
+        grid-template-columns: 1fr;
+      }
+
+      .evento {
+        align-items: flex-start;
+      }
+
+      .data {
+        min-width: 70px;
+      }
+
+      .convite {
+        padding: 25px 18px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<main class="pagina">
+
+  <div class="site">
+
+
+    <!-- ===================================================
+         CABEÇALHO
+         =================================================== -->
+
+    <header class="topo">
+
+      <div class="pequeno-titulo">
+        Palestras e Agenda
+      </div>
+
+      <h1>
+        Eventos
+      </h1>
+
+      <div class="linha-dourada"></div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MENU
+         =================================================== -->
+
+    <nav class="menu">
+
+
+      <button
+        type="button"
+        class="botao-menu"
+        id="botaoMenu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        onclick="alternarMenu()"
+      >
+
+        <span>
+          Menu
+        </span>
+
+        <span class="icone-menu">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </span>
+
+      </button>
+
+
+      <div
+        class="menu-conteudo"
+        id="menuConteudo"
+      >
+
+        <a href="index.html">
+          Início
+        </a>
+
+        <a href="livros.html">
+          Livros
+        </a>
+
+        <a
+          href="eventos.html"
+          class="ativo"
+        >
+          Eventos
+        </a>
+
+        <a href="Biblioteca.html">
+          Minha Biblioteca
+        </a>
+
+        <a
+          href="https://wa.me/5585985141630"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contato
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- ===================================================
+         CONTEÚDO
+         =================================================== -->
+
+    <section class="conteudo">
+
+
+      <div class="titulo-secao">
+
+        <span class="pequeno">
+          Encontros e oportunidades
+        </span>
+
+        <h2>
+          Eventos
+        </h2>
+
+        <div class="linha"></div>
+
+      </div>
+
+
+      <p class="introducao">
+
+        Um espaço para conhecer minhas palestras, acompanhar
+        lançamentos, consultar minha agenda e entrar em contato
+        para convites e eventos em igrejas.
+
+      </p>
+
+
+      <!-- =================================================
+           CATEGORIAS
+           ================================================= -->
+
+      <div class="cartoes">
+
+
+        <article class="cartao">
+
+          <div class="icone">
+            🎤
+          </div>
+
+          <h3>
+            Palestras
+          </h3>
+
+          <p>
+
+            Palestras para igrejas, líderes e grupos,
+            abordando temas relacionados à fé, formação,
+            vocação, leitura e desenvolvimento cristão.
+
+          </p>
+
+          <a
+            href="https://wa.me/5585985141630?text=Olá%2C%20Pr.%20Denilson.%20Gostaria%20de%20conhecer%20suas%20palestras."
+            class="botao"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conhecer palestras
+          </a>
+
+        </article>
+
+
+        <article class="cartao">
+
+          <div class="icone">
+            📖
+          </div>
+
+          <h3>
+            Lançamentos
+          </h3>
+
+          <p>
+
+            Acompanhe lançamentos de livros, encontros
+            especiais e momentos relacionados às novas obras.
+
+          </p>
+
+          <a
+            href="livros.html"
+            class="botao"
+          >
+            Conhecer os livros
+          </a>
+
+        </article>
+
+
+        <article class="cartao">
+
+          <div class="icone">
+            📅
+          </div>
+
+          <h3>
+            Minha Agenda
+          </h3>
+
+          <p>
+
+            Confira os próximos compromissos, palestras,
+            lançamentos e encontros que estarão disponíveis
+            para participação.
+
+          </p>
+
+          <a
+            href="#agenda"
+            class="botao"
+          >
+            Ver agenda
+          </a>
+
+        </article>
+
+
+        <article class="cartao">
+
+          <div class="icone">
+            🤝
+          </div>
+
+          <h3>
+            Convites
+          </h3>
+
+          <p>
+
+            Sua igreja ou organização deseja me convidar
+            para uma palestra, lançamento ou outro evento?
+
+          </p>
+
+          <a
+            href="https://wa.me/5585985141630?text=Olá%2C%20Pr.%20Denilson.%20Gostaria%20de%20fazer%20um%20convite%20para um evento."
+            class="botao"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fazer um convite
+          </a>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- =================================================
+           AGENDA
+           ================================================= -->
+
+      <div
+        class="agenda"
+        id="agenda"
+      >
+
+        <div class="agenda-titulo">
+
+          <h3>
+            Próximos eventos
+          </h3>
+
+          <p>
+            Em breve, novos compromissos serão publicados aqui.
+          </p>
+
+        </div>
+
+
+        <div class="evento">
+
+          <div class="data">
+
+            <strong>
+              19
+            </strong>
+
+            <span>
+              Set. 2026
+            </span>
+
+          </div>
+
+
+          <div class="evento-info">
+
+            <h4>
+              Lançamento do livro “Antes Que Eu Seja Usado”
+            </h4>
+
+            <p>
+              19 de setembro de 2026 às 19h.
+              Evento de lançamento do livro de
+              Francisco Denilson Pinheiro.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =================================================
+           CONVITE
+           ================================================= -->
+
+      <div class="convite">
+
+        <h3>
+          Sua igreja pode receber uma palestra
+        </h3>
+
+        <p>
+
+          Se você deseja levar uma palestra, encontro
+          ou apresentação do Pr. Denilson Pinheiro para
+          sua igreja ou grupo, entre em contato pelo WhatsApp.
+
+        </p>
+
+
+        <a
+          href="https://wa.me/5585985141630?text=Olá%2C%20Pr.%20Denilson.%20Gostaria%20de%20convidá-lo%20para%20um%20evento."
+          class="botao-whatsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          📱
+          Quero fazer um convite
+
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         RODAPÉ
+         =================================================== -->
+
+    <footer>
+
+      Pr. Denilson Pinheiro — Escritor
+
+      <br><br>
+
+      © 2026 — Todos os direitos reservados.
+
+    </footer>
+
+
+  </div>
+
+</main>
+
+
+<script>
+
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+function alternarMenu() {
+
+  const botao =
+    document.getElementById("botaoMenu");
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+
+  const aberto =
+    menu.classList.toggle("aberto");
+
+
+  botao.classList.toggle(
+    "aberto",
+    aberto
+  );
+
+
+  botao.setAttribute(
+    "aria-expanded",
+    aberto ? "true" : "false"
+  );
+
+}
+
+
+function fecharMenu() {
+
+  const botao =
+    document.getElementById("botaoMenu");
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+
+  if (window.innerWidth <= 700) {
+
+    menu.classList.remove("aberto");
+
+    botao.classList.remove("aberto");
+
+    botao.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   FECHAR MENU AO CLICAR EM UM LINK
+   ========================================================= */
+
+document
+  .querySelectorAll(".menu a")
+  .forEach(function(link) {
+
+    link.addEventListener(
+      "click",
+      fecharMenu
+    );
+
+  });
+
+
+</script>
+
+
+</body>
+
+</html>
+```
