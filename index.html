@@ -49,11 +49,22 @@
       transition: all 0.3s ease;
     }
 
+    /* BANNER TOPO */
+    .promo-banner {
+      background-color: #c99e5c;
+      color: #0d0c0b;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
     /* HEADER FIXO E EDITORIAL */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      width: 100%;
       background-color: rgba(13, 12, 11, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
@@ -125,9 +136,9 @@
       color: var(--bg-dark) !important;
     }
 
-    /* HERO SECTION SIMPLES E ELEGANTE */
+    /* HERO SECTION */
     .hero {
-      padding: 80px 8% 60px;
+      padding: 60px 8%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
@@ -135,11 +146,12 @@
       max-width: 1200px;
       margin: 0 auto;
       flex: 1;
+      width: 100%;
     }
 
     .hero-content h1 {
       font-family: var(--font-serif);
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 20px;
@@ -200,13 +212,14 @@
     }
 
     .hero-image img {
-      max-width: 80%;
+      max-width: 320px;
+      width: 100%;
       border-radius: 4px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.6);
       border: 1px solid var(--border-color);
     }
 
-    /* MODAL DE LOGIN (FLUTUANTE, SEM RECARREGAR PÁGINA) */
+    /* MODAL DE LOGIN */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -318,7 +331,7 @@
 <body>
 
   <!-- BANNER DE AVISO DE PRÉ-VENDA -->
-  <div style="background-color: #c99e5c; color: #0d0c0b; text-align: center; padding: 10px 15px; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+  <div class="promo-banner">
     🔥 PRÉ-VENDA LIBERADA! Garanta seu exemplar autografado 
     <a href="lancamento.html" style="text-decoration: underline; margin-left: 8px; color: #0d0c0b;">Clique aqui →</a>
   </div>
@@ -339,6 +352,7 @@
       <a href="eventos.html">Agenda & Palestras</a>
       <a href="#" class="btn-login" onclick="abrirModalLogin(event)">Acessar Biblioteca</a>
     </nav>
+  </header>
 
   <!-- SEÇÃO PRINCIPAL (LANDING) -->
   <main class="hero">
@@ -347,8 +361,8 @@
       <p>Uma reflexão profunda sobre propósito, fé e integridade espiritual em tempos de superficialidade. Acesse sua versão digital ou confira a agenda de encontros.</p>
       
       <div class="cta-group">
-        <a href="#" class="btn-primary" onclick="abrirModalLogin(event)">Ler Livro Digital</a>
-        <a href="eventos.html" class="btn-secondary">Ver Agenda de Eventos</a>
+        <a href="lancamento.html" class="btn-primary">Garantir na Pré-Venda</a>
+        <a href="#" class="btn-secondary" onclick="abrirModalLogin(event)">Ler Digital</a>
       </div>
     </div>
 
