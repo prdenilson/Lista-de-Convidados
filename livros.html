@@ -2,20 +2,19 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Livros | Francisco Denilson Pinheiro</title>
+  <meta name="description" content="Conheça os livros e materiais de Francisco Denilson Pinheiro.">
 
-  <meta
-    name="description"
-    content="Conheça os livros e materiais de Francisco Denilson Pinheiro."
-  >
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-
+    /* Reset & Theme Variables */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,15 +22,15 @@
     }
 
     :root {
-      --fundo: #eee7dc;
-      --marrom: #4b392c;
-      --marrom-escuro: #30251e;
-      --dourado: #9a7a4f;
-      --dourado-claro: #c3a878;
-      --texto: #3d342d;
-      --cinza: #766c64;
-      --borda: #d5c7b6;
-      --branco: #fffdf9;
+      --bg-dark: #0d0c0b;
+      --bg-card: #161412;
+      --gold-primary: #c99e5c;
+      --gold-hover: #b38948;
+      --text-light: #f5f5f5;
+      --text-muted: #a3a09a;
+      --border-color: rgba(201, 158, 92, 0.15);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
     }
 
     html {
@@ -39,1143 +38,520 @@
     }
 
     body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
       min-height: 100vh;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      background:
-        radial-gradient(
-          circle at top,
-          rgba(255, 255, 255, 0.65),
-          transparent 40%
-        ),
-        linear-gradient(
-          135deg,
-          var(--fundo),
-          #e5dbcd
-        );
-
-      color: var(--texto);
-
-      padding: 30px 15px;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    /* --- CABEÇALHO EDITORIAL --- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(13, 12, 11, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .foto-pessoal {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .brand-titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.6rem;
+      letter-spacing: 2.5px;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* --- MENU DE NAVEGAÇÃO --- */
+    nav.menu-desktop {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav.menu-desktop a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav.menu-desktop a:hover,
+    nav.menu-desktop a.ativo {
+      color: var(--gold-primary);
+    }
+
+    nav.menu-desktop a.ativo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--gold-primary);
+    }
+
+    .botao-menu-mobile {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .menu-mobile-dropdown {
+      display: none;
+      flex-direction: column;
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 5%;
+      gap: 12px;
+    }
+
+    .menu-mobile-dropdown.aberto {
+      display: flex;
+    }
+
+    .menu-mobile-dropdown a {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      padding: 8px 0;
+    }
+
+    .menu-mobile-dropdown a.ativo {
+      color: var(--gold-primary);
+    }
+
+    /* --- CONTEÚDO PRINCIPAL --- */
     .pagina {
       width: 100%;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-    }
-
-    .site {
-      background: rgba(255, 253, 249, 0.97);
-
-      border-radius: 24px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 20px 60px rgba(54, 42, 32, 0.18),
-        0 2px 8px rgba(54, 42, 32, 0.08);
-    }
-
-
-    /* =====================================================
-       CABEÇALHO
-       ===================================================== */
-
-    .topo {
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(47, 37, 29, 0.98),
-          rgba(82, 62, 47, 0.98)
-        );
-
-      color: white;
-
-      text-align: center;
-
-      padding: 34px 25px 30px;
-
-      position: relative;
-    }
-
-    .pequeno-titulo {
-
-      font-size: 12px;
-
-      letter-spacing: 4px;
-
-      text-transform: uppercase;
-
-      color: #dbc7a8;
-
-      margin-bottom: 12px;
-    }
-
-    .topo h1 {
-
-      font-size: 31px;
-
-      font-weight: normal;
-
-      letter-spacing: 1px;
-
-      line-height: 1.25;
-    }
-
-    .linha-dourada {
-
-      width: 55px;
-
-      height: 2px;
-
-      background: var(--dourado-claro);
-
-      margin: 18px auto 0;
-    }
-
-
-    /* =====================================================
-       MENU
-       ===================================================== */
-
-    .menu {
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 1000;
-
-      background: rgba(48, 37, 30, 0.98);
-
-      border-top:
-        1px solid rgba(195, 168, 120, 0.25);
-
-      border-bottom:
-        1px solid rgba(195, 168, 120, 0.25);
-
-      backdrop-filter: blur(8px);
-    }
-
-    .menu-conteudo {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 3px;
-
-      padding: 9px 8px;
-
-      overflow-x: auto;
-
-      scrollbar-width: none;
-    }
-
-    .menu-conteudo::-webkit-scrollbar {
-      display: none;
-    }
-
-    .menu a {
-
-      flex: 0 0 auto;
-
-      text-decoration: none;
-
-      color: #eadcc6;
-
-      font-size: 11px;
-
-      letter-spacing: 0.7px;
-
-      text-transform: uppercase;
-
-      padding: 8px 9px;
-
-      border-radius: 7px;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .menu a:hover {
-
-      background:
-        rgba(195, 168, 120, 0.15);
-
-      color: white;
-    }
-
-    .menu a.ativo {
-
-      background:
-        rgba(195, 168, 120, 0.18);
-
-      color: #fff;
-    }
-
-
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
-
-    .botao-menu {
-
-      display: none;
-
-      width: 100%;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      padding: 12px 17px;
-
-      background: transparent;
-
-      color: #eadcc6;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 15px;
-
-      cursor: pointer;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-
-      border: none;
-    }
-
-    .icone-menu {
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      gap: 5px;
-
-      width: 27px;
-
-      height: 27px;
-    }
-
-    .icone-menu span {
-
-      display: block;
-
-      width: 25px;
-
-      height: 2px;
-
-      background: #eadcc6;
-
-      border-radius: 2px;
-    }
-
-
-    /* =====================================================
-       CONTEÚDO
-       ===================================================== */
-
-    .conteudo {
-
-      padding: 45px 35px 50px;
+      padding: 50px 20px;
+      flex: 1;
     }
 
     .titulo-secao {
-
       text-align: center;
-
-      margin-bottom: 35px;
+      margin-bottom: 50px;
     }
 
     .titulo-secao .pequeno {
-
       display: block;
-
-      font-size: 11px;
-
+      font-size: 0.7rem;
       text-transform: uppercase;
-
       letter-spacing: 3px;
-
-      color: var(--dourado);
-
-      margin-bottom: 10px;
+      color: var(--gold-primary);
+      margin-bottom: 8px;
     }
 
     .titulo-secao h2 {
-
-      font-size: 30px;
-
-      font-weight: normal;
-
-      color: var(--marrom-escuro);
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #fff;
     }
 
-    .linha {
-
+    .linha-dourada {
       width: 45px;
-
-      height: 2px;
-
-      background: var(--dourado-claro);
-
-      margin: 14px auto 0;
+      height: 1px;
+      background-color: var(--gold-primary);
+      margin: 15px auto 0;
     }
 
-
-    /* =====================================================
-       PRODUTO
-       ===================================================== */
-
+    /* --- CARD DO PRODUTO --- */
     .produto {
-
       display: grid;
-
-      grid-template-columns:
-        300px 1fr;
-
-      gap: 45px;
-
+      grid-template-columns: 320px 1fr;
+      gap: 50px;
       align-items: start;
-
-      padding: 30px;
-
-      border:
-        1px solid var(--borda);
-
-      border-radius: 18px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(246, 240, 231, 0.98),
-          rgba(238, 229, 216, 0.92)
-        );
-
-      box-shadow:
-        0 10px 30px rgba(70, 52, 38, 0.08);
+      padding: 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-card);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
-
-
-    /* =====================================================
-       CAPA
-       ===================================================== */
 
     .produto-capa {
-
       text-align: center;
     }
 
     .produto-capa img {
-
       width: 100%;
-
       max-width: 280px;
-
       height: auto;
-
       display: block;
-
       margin: 0 auto;
-
-      border-radius: 5px;
-
-      box-shadow:
-        0 18px 35px rgba(45, 35, 27, 0.28),
-        0 3px 8px rgba(45, 35, 27, 0.15);
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     }
 
-
-    /* =====================================================
-       INFORMAÇÕES
-       ===================================================== */
-
     .produto-info h3 {
-
-      font-size: 30px;
-
-      font-weight: normal;
-
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
       line-height: 1.25;
-
-      color: var(--marrom-escuro);
-
-      margin-bottom: 8px;
+      color: #fff;
+      margin-bottom: 10px;
     }
 
     .subtitulo {
-
-      font-size: 16px;
-
-      line-height: 1.7;
-
-      color: var(--dourado);
-
-      margin-bottom: 22px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+      font-style: italic;
     }
 
     .descricao {
-
-      font-size: 15px;
-
+      font-size: 0.9rem;
       line-height: 1.8;
-
-      color: var(--cinza);
-
-      margin-bottom: 18px;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-weight: 300;
     }
 
     .informacao {
-
-      margin-top: 22px;
-
-      padding-top: 20px;
-
-      border-top:
-        1px solid var(--borda);
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
     .informacao strong {
-
       display: block;
-
-      font-size: 14px;
-
-      color: var(--marrom);
-
-      margin-bottom: 7px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
     }
 
     .informacao span {
-
-      font-size: 14px;
-
-      line-height: 1.6;
-
-      color: var(--cinza);
+      font-size: 0.88rem;
+      color: var(--text-light);
     }
-
-
-    /* =====================================================
-       PREÇO
-       ===================================================== */
 
     .preco {
-
       margin-top: 25px;
-
-      font-size: 30px;
-
-      font-weight: bold;
-
-      color: var(--marrom);
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #fff;
     }
 
-
-    /* =====================================================
-       BOTÕES
-       ===================================================== */
-
+    /* --- BOTÕES DE COMPRA --- */
     .botoes {
-
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 12px;
-
-      margin-top: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
     }
 
     .botao {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      min-height: 55px;
-
-      padding: 14px 12px;
-
-      border-radius: 11px;
-
+      gap: 8px;
+      min-height: 50px;
+      padding: 12px 18px;
+      border-radius: 2px;
       text-decoration: none;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 15px;
-
-      font-weight: bold;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .botao:hover {
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 8px 18px rgba(62, 47, 36, 0.20);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
     }
 
     .botao-pix {
+      background-color: var(--gold-primary);
+      color: #0d0c0b;
+    }
 
-      background:
-        linear-gradient(
-          135deg,
-          #5b4636,
-          #3f3026
-        );
-
-      color: white;
+    .botao-pix:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 8px 20px rgba(201, 158, 92, 0.25);
     }
 
     .botao-cartao {
-
-      background:
-        linear-gradient(
-          135deg,
-          #9a7a4f,
-          #735a39
-        );
-
-      color: white;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-primary);
+      background: transparent;
     }
 
-
-    /* =====================================================
-       AMAZON
-       ===================================================== */
+    .botao-cartao:hover {
+      background-color: rgba(201, 158, 92, 0.1);
+      color: #fff;
+    }
 
     .botao-amazon {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      gap: 9px;
-
+      gap: 10px;
       width: 100%;
-
-      min-height: 58px;
-
-      margin-top: 16px;
-
-      padding: 15px 18px;
-
-      border-radius: 11px;
-
+      min-height: 52px;
+      margin-top: 15px;
+      padding: 14px 20px;
+      border-radius: 2px;
       text-decoration: none;
-
-      background:
-        linear-gradient(
-          135deg,
-          #4b392c,
-          #30251e
-        );
-
-      color: #fffdf9;
-
-      border:
-        1px solid var(--dourado);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 16px;
-
-      font-weight: bold;
-
-      line-height: 1.4;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      background-color: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--border-color);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
     }
 
     .botao-amazon:hover {
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 10px 23px rgba(62, 47, 36, 0.26);
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+      background-color: rgba(201, 158, 92, 0.05);
     }
 
-
-    /* =====================================================
-       AVISO
-       ===================================================== */
-
     .aviso {
-
-      margin-top: 22px;
-
-      padding: 18px;
-
-      border:
-        1px solid var(--dourado-claro);
-
-      border-radius: 12px;
-
-      background:
-        rgba(195, 168, 120, 0.12);
-
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px dashed var(--border-color);
+      border-radius: 2px;
+      background-color: rgba(201, 158, 92, 0.03);
       text-align: center;
-
-      color: var(--marrom);
-
-      font-size: 14px;
-
+      color: var(--text-muted);
+      font-size: 0.8rem;
       line-height: 1.6;
     }
 
-
-    /* =====================================================
-       FUTUROS MATERIAIS
-       ===================================================== */
-
+    /* --- FUTUROS MATERIAIS --- */
     .futuros {
-
-      margin-top: 45px;
-
-      padding: 25px;
-
-      border-top:
-        1px solid var(--borda);
-
+      margin-top: 60px;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border-color);
       text-align: center;
     }
 
     .futuros h3 {
-
-      font-size: 22px;
-
-      font-weight: normal;
-
-      color: var(--marrom-escuro);
-
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #fff;
       margin-bottom: 10px;
     }
 
     .futuros p {
-
-      font-size: 14px;
-
+      font-size: 0.88rem;
       line-height: 1.7;
-
-      color: var(--cinza);
+      color: var(--text-muted);
+      font-weight: 300;
     }
 
-
-    /* =====================================================
-       RODAPÉ
-       ===================================================== */
-
+    /* --- FOOTER --- */
     footer {
-
       text-align: center;
-
-      padding: 20px;
-
-      font-size: 12px;
-
-      color: #8b8178;
-
-      border-top:
-        1px solid var(--borda);
+      padding: 30px;
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: auto;
     }
 
-
-    /* =====================================================
-       CELULAR
-       ===================================================== */
-
-    @media (max-width: 700px) {
-
-      body {
-        padding: 15px 10px;
+    @media (max-width: 850px) {
+      header {
+        padding: 15px 20px;
       }
-
-      .site {
-        border-radius: 18px;
-      }
-
-      .topo {
-        padding: 28px 18px 25px;
-      }
-
-      .topo h1 {
-        font-size: 26px;
-      }
-
-      .botao-menu {
-        display: flex;
-      }
-
-      .menu-conteudo {
-
+      nav.menu-desktop {
         display: none;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 3px;
-
-        padding:
-          8px 10px 12px;
-
-        overflow: hidden;
       }
-
-      .menu-conteudo.aberto {
-        display: flex;
-      }
-
-      .menu a {
-
+      .botao-menu-mobile {
         display: block;
-
-        width: 100%;
-
-        text-align: left;
-
-        padding: 11px 12px;
       }
-
-      .conteudo {
-
-        padding:
-          35px 17px 40px;
-      }
-
-      .titulo-secao h2 {
-        font-size: 26px;
-      }
-
       .produto {
-
         grid-template-columns: 1fr;
-
-        gap: 28px;
-
-        padding: 20px;
+        gap: 30px;
+        padding: 25px;
       }
-
-      .produto-capa img {
-        max-width: 250px;
-      }
-
-      .produto-info h3 {
-        font-size: 26px;
-      }
-
       .botoes {
         grid-template-columns: 1fr;
       }
-
-      .futuros {
-        padding: 20px 5px;
-      }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-<main class="pagina">
-
-  <div class="site">
-
-
-    <!-- ===================================================
-         CABEÇALHO
-         =================================================== -->
-
-    <header class="topo">
-
-      <div class="pequeno-titulo">
-        Livros e Materiais
+  <!-- CABEÇALHO EDITORIAL -->
+  <header>
+    <div class="header-brand">
+      <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
+      <div class="brand-titles">
+        <span class="brand-name">Francisco Denilson</span>
+        <span class="brand-sub">Escritor & Palestrante</span>
       </div>
+    </div>
 
-      <h1>
-        Francisco Denilson Pinheiro
-      </h1>
-
-      <div class="linha-dourada"></div>
-
-    </header>
-
-
-    <!-- ===================================================
-         MENU
-         =================================================== -->
-
-    <nav class="menu">
-
-
-      <button
-        type="button"
-        class="botao-menu"
-        id="botaoMenu"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        onclick="alternarMenu()"
-      >
-
-        <span>
-          Menu
-        </span>
-
-        <span class="icone-menu">
-
-          <span></span>
-          <span></span>
-          <span></span>
-
-        </span>
-
-      </button>
-
-
-      <div
-        class="menu-conteudo"
-        id="menuConteudo"
-      >
-
-        <a href="index.html">
-          Início
-        </a>
-
-        <a
-          href="livros.html"
-          class="ativo"
-        >
-          Livros
-        </a>
-
-      
-        <a href="Biblioteca.html">
-          Minha Biblioteca
-        </a>
-
-        <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">
-  Contato
-        </a>
-
-      </div>
-
+    <nav class="menu-desktop">
+      <a href="index.html">Início</a>
+      <a href="livros.html" class="ativo">Livros</a>
+      <a href="Biblioteca.html">Minha Biblioteca</a>
+      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
     </nav>
 
-
-    <!-- ===================================================
-         CONTEÚDO
-         =================================================== -->
-
-    <section class="conteudo">
-
-
-      <div class="titulo-secao">
-
-        <span class="pequeno">
-          Obras e materiais
-        </span>
-
-        <h2>
-          Livros
-        </h2>
-
-        <div class="linha"></div>
-
-      </div>
-
-
-      <!-- =================================================
-           LIVRO
-           ================================================= -->
-
-      <article class="produto">
-
-
-        <div class="produto-capa">
-
-          <img
-            src="capa.jpg"
-            alt="Capa do livro Antes Que Eu Seja Usado"
-          >
-
-        </div>
-
-
-        <div class="produto-info">
-
-
-          <h3>
-            Antes Que Eu Seja Usado
-          </h3>
-
-
-          <p class="subtitulo">
-
-            Uma jornada antes do encontro com nossa vocação.
-
-          </p>
-
-
-          <p class="descricao">
-
-            <strong>Antes Que Eu Seja Usado</strong> nasceu de uma
-            jornada de formação, quebrantamento e transformação.
-
-            Antes de sermos usados por Deus, existe um processo
-            que precisa acontecer dentro de nós.
-
-            Esta obra é um convite para olhar para dentro,
-            permitir que Deus sonde o coração e trabalhar aquilo
-            que precisa ser transformado.
-
-          </p>
-
-
-          <div class="informacao">
-
-            <strong>
-              Autor
-            </strong>
-
-            <span>
-              Francisco Denilson Pinheiro
-            </span>
-
-          </div>
-
-
-          <div class="informacao">
-
-            <strong>
-              Livro físico
-            </strong>
-
-            <span>
-              Venda do livro físico disponível.
-            </span>
-
-          </div>
-
-
-          <div class="preco">
-            R$ 34,90
-          </div>
-
-
-          <div class="botoes">
-
-
-            <a
-  href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
-  class="botao botao-pix"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Pagar com PIX
-</a>
-
-
-            <a
-  href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
-  class="botao botao-cartao"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Pagar com cartão
-</a>
-
-
-          </div>
-
-
-          <a
-            href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
-            class="botao-amazon"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            📖
-            Adquira a versão digital pela Amazon
-
-          </a>
-
-
-          <div class="aviso">
-
-            Após realizar o pagamento, siga as orientações
-            apresentadas no site para confirmar sua compra.
-
-          </div>
-
-
-        </div>
-
-      </article>
-
-
-      <!-- =================================================
-           FUTUROS MATERIAIS
-           ================================================= -->
-
-      <div class="futuros">
-
-        <h3>
-          Novos materiais
-        </h3>
-
-        <p>
-
-          Este espaço poderá receber novos livros,
-          apostilas e outros materiais no futuro.
-
-        </p>
-
-      </div>
-
-
-    </section>
-
-
-    <!-- ===================================================
-         RODAPÉ
-         =================================================== -->
-
-    <footer>
-
-      Francisco Denilson Pinheiro
-
-      <br><br>
-
-      © 2026 — Todos os direitos reservados.
-
-    </footer>
-
-
+    <button type="button" class="botao-menu-mobile" id="botaoMenu" aria-label="Abrir menu" onclick="alternarMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- MENU MOBILE DROPDOWN -->
+  <div class="menu-mobile-dropdown" id="menuConteudo">
+    <a href="index.html">Início</a>
+    <a href="livros.html" class="ativo">Livros</a>
+    <a href="Biblioteca.html">Minha Biblioteca</a>
+    <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
   </div>
 
-</main>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="pagina">
 
+    <div class="titulo-secao">
+      <span class="pequeno">Obras e materiais</span>
+      <h2>Catálogo de Livros</h2>
+      <div class="linha-dourada"></div>
+    </div>
 
-<script>
+    <!-- LIVRO DESTACADO -->
+    <article class="produto">
 
+      <div class="produto-capa">
+        <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
+      </div>
 
-/* =========================================================
-   MENU MOBILE
-   ========================================================= */
+      <div class="produto-info">
+        <h3>Antes Que Eu Seja Usado</h3>
+        <p class="subtitulo">Uma jornada antes do encontro com nossa vocação.</p>
 
-function alternarMenu() {
+        <p class="descricao">
+          <strong>Antes Que Eu Seja Usado</strong> nasceu de uma jornada de formação, quebrantamento e transformação. Antes de sermos usados por Deus, existe um processo que precisa acontecer dentro de nós. Esta obra é um convite para olhar para dentro, permitir que Deus sonde o coração e trabalhar aquilo que precisa ser transformado.
+        </p>
 
-  const botao =
-    document.getElementById("botaoMenu");
+        <div class="informacao">
+          <strong>Autor</strong>
+          <span>Francisco Denilson Pinheiro</span>
+        </div>
 
-  const menu =
-    document.getElementById("menuConteudo");
+        <div class="informacao">
+          <strong>Livro físico</strong>
+          <span>Venda do exemplar impresso disponível.</span>
+        </div>
 
+        <div class="preco">
+          R$ 34,90
+        </div>
 
-  const aberto =
-    menu.classList.toggle("aberto");
+        <div class="botoes">
+          <a href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5" class="botao botao-pix" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-pix"></i> Pagar com PIX
+          </a>
 
+          <a href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90" class="botao botao-cartao" target="_blank" rel="noopener noreferrer">
+            <i class="fa-regular fa-credit-card"></i> Pagar com Cartão
+          </a>
+        </div>
 
-  botao.classList.toggle(
-    "aberto",
-    aberto
-  );
+        <a href="https://www.amazon.com.br/dp/B0HB2FMCQZ" class="botao-amazon" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-amazon"></i> Adquira a versão digital pela Amazon
+        </a>
 
+        <div class="aviso">
+          Após realizar o pagamento, siga as orientações apresentadas no site para confirmar sua compra e liberação do acesso.
+        </div>
 
-  botao.setAttribute(
-    "aria-expanded",
-    aberto ? "true" : "false"
-  );
+      </div>
 
-}
+    </article>
 
+    <!-- FUTUROS MATERIAIS -->
+    <div class="futuros">
+      <h3>Novos Materiais em Breve</h3>
+      <p>Este espaço é continuamente atualizado e receberá novas obras, apostilas e conteúdos exclusivos no futuro.</p>
+    </div>
 
-function fecharMenu() {
+  </main>
 
-  const botao =
-    document.getElementById("botaoMenu");
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+  </footer>
 
-  const menu =
-    document.getElementById("menuConteudo");
+  <script>
+    /* SCRIPT DO MENU MOBILE */
+    function alternarMenu() {
+      const menu = document.getElementById("menuConteudo");
+      menu.classList.toggle("aberto");
+    }
 
+    function fecharMenu() {
+      const menu = document.getElementById("menuConteudo");
+      if (window.innerWidth <= 850) {
+        menu.classList.remove("aberto");
+      }
+    }
 
-  if (window.innerWidth <= 700) {
-
-    menu.classList.remove("aberto");
-
-    botao.classList.remove("aberto");
-
-    botao.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   FECHAR MENU AO CLICAR EM UM LINK
-   ========================================================= */
-
-document
-  .querySelectorAll(".menu a")
-  .forEach(function(link) {
-
-    link.addEventListener(
-      "click",
-      fecharMenu
-    );
-
-  });
-
-
-</script>
-
+    document.querySelectorAll(".menu-mobile-dropdown a").forEach(function(link) {
+      link.addEventListener("click", fecharMenu);
+    });
+  </script>
 
 </body>
-
 </html>
