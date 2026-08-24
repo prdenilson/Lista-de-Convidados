@@ -170,7 +170,11 @@
        1. CABEÇALHO
        ========================================================= */
 
-    .topo {
+   /* =========================================================
+   CABEÇALHO — NOVO VISUAL
+   ========================================================= */
+
+.topo {
 
   background:
     linear-gradient(
@@ -181,12 +185,14 @@
 
   color: white;
 
-  padding: 25px 35px;
+  padding: 28px 40px;
 
   position: relative;
 
 }
 
+
+/* ESTRUTURA DO CABEÇALHO */
 
 .cabecalho-moderno {
 
@@ -200,10 +206,12 @@
 
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 40px;
 
 }
 
+
+/* FOTO + NOME */
 
 .marca-pessoal {
 
@@ -211,71 +219,84 @@
 
   align-items: center;
 
-  gap: 16px;
-
-}
-
-    
-.foto-pessoal {
-
-  width: 95px;
-
-  height: 110px;
-
-  object-fit: cover;
-
-  border-radius: 8px;
-
-  border: none;
-
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.22);
-
-}
-
-.nome-pessoal {
+  gap: 18px;
 
   text-align: left;
 
 }
 
 
+/* FOTO */
+
+.foto-pessoal {
+
+  width: 82px;
+
+  height: 82px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  display: block;
+
+  border: 2px solid var(--dourado-claro);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* NOME */
+
 .nome-pessoal strong {
 
   display: block;
 
-  font-size: 18px;
+  font-size: 21px;
+
+  font-weight: normal;
 
   letter-spacing: 1px;
+
+  line-height: 1.3;
 
   color: #fffdf9;
 
 }
 
 
+/* PROFISSÃO */
+
 .nome-pessoal span {
 
   display: block;
 
-  margin-top: 6px;
+  margin-top: 7px;
 
   font-size: 11px;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 
   color: #dbc7a8;
 
 }
 
 
+/* FRASE */
+
 .frase-cabecalho {
 
-  text-align: right;
-
-  font-size: 16px;
+  font-size: 17px;
 
   line-height: 1.6;
 
+  text-align: right;
+
   color: #eadcc6;
+
+  max-width: 360px;
 
 }
 
@@ -288,78 +309,83 @@
 
 }
 
-    .topo::before,
-    .topo::after {
+/* =========================================================
+   CABEÇALHO — CELULAR
+   ========================================================= */
 
-      content: "";
+@media (max-width: 700px) {
 
-      position: absolute;
+  .topo {
 
-      width: 70px;
+    padding: 22px 20px;
 
-      height: 1px;
+  }
 
-      background:
-        var(--dourado-claro);
+  .cabecalho-moderno {
 
-      top: 50%;
+    flex-direction: column;
 
-      opacity: 0.7;
+    align-items: center;
 
-    }
+    gap: 18px;
 
+    text-align: center;
 
-    .topo::before {
-      left: 25px;
-    }
+  }
 
+  .marca-pessoal {
 
-    .topo::after {
-      right: 25px;
-    }
+    flex-direction: column;
 
+    align-items: center;
 
-    .pequeno-titulo {
+    gap: 10px;
 
-      font-size: 12px;
+  }
 
-      letter-spacing: 4px;
+  .foto-pessoal {
 
-      text-transform: uppercase;
+    width: 85px;
 
-      color: #dbc7a8;
+    height: 95px;
 
-      margin-bottom: 12px;
+  }
 
-    }
+  .nome-pessoal {
 
+    text-align: center;
 
-    .topo h1 {
+  }
 
-      font-size: 31px;
+  .nome-pessoal strong {
 
-      font-weight: normal;
+    font-size: 17px;
 
-      letter-spacing: 1px;
+  }
 
-      line-height: 1.25;
+  .nome-pessoal span {
 
-    }
+    font-size: 10px;
 
+    letter-spacing: 1.3px;
 
-    .linha-dourada {
+  }
 
-      width: 55px;
+  .frase-cabecalho {
 
-      height: 2px;
+    width: 100%;
 
-      background:
-        var(--dourado-claro);
+    max-width: 320px;
 
-      margin: 18px auto 0;
+    text-align: center;
 
-    }
+    font-size: 15px;
 
+    line-height: 1.5;
+
+  }
+
+}
 
     /* =========================================================
        2. MENU
