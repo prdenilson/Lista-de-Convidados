@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,7 +17,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Francisco Denilson Pinheiro | Pastor, Escritor e Palestrante</title>
-  <meta name="description" content="Site oficial de Francisco Denilson Pinheiro. Conheça as obras, lançamentos, eventos e garanta o livro Antes Que Eu Seja Usado.">
+  <meta name="description" content="Site oficial do Pr. Francisco Denilson Pinheiro. Conheça sua trajetória pastoral, palestras, artigos e obras literárias como o livro 'Antes Que Eu Seja Usado'.">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +63,7 @@
       transition: all 0.3s ease;
     }
 
-    /* --- CABEÇALHO ESTILO EDITORIAL / AUTOR --- */
+    /* --- CABEÇALHO EDITORIAL --- */
     header {
       position: sticky;
       top: 0;
@@ -77,7 +78,6 @@
       gap: 30px;
     }
 
-    /* Marca / Nome do Pastor & Autor */
     .header-brand {
       display: flex;
       align-items: center;
@@ -116,7 +116,6 @@
       font-weight: 500;
     }
 
-    /* Navegação Centralizada */
     nav {
       justify-self: center;
     }
@@ -137,7 +136,7 @@
       padding-bottom: 4px;
     }
 
-    .nav-menu a:hover {
+    .nav-menu a:hover, .nav-menu a.ativo {
       color: #fff;
     }
 
@@ -153,11 +152,10 @@
       transform: translateX(-50%);
     }
 
-    .nav-menu a:hover::after {
+    .nav-menu a:hover::after, .nav-menu a.ativo::after {
       width: 100%;
     }
 
-    /* Ações na Direita */
     .header-actions {
       display: flex;
       align-items: center;
@@ -192,19 +190,25 @@
       color: var(--gold-primary);
     }
 
-    /* Hero / Banner */
+    /* --- HERO PRINCIPAL COM CAPA AMPLIADA EM DESTAQUE --- */
     .hero {
       position: relative;
+      min-height: 600px;
       display: flex;
       align-items: center;
-      padding: 90px 8%;
-      min-height: 520px;
-      background: linear-gradient(90deg, rgba(13,12,11,1) 45%, rgba(13,12,11,0.7) 75%, rgba(13,12,11,0.95) 100%), 
-                  url('capa.jpg') right center/contain no-repeat;
+      padding: 80px 8%;
+      background-color: var(--bg-dark);
+      background-image: linear-gradient(90deg, #0d0c0b 35%, rgba(13, 12, 11, 0.75) 65%, rgba(13, 12, 11, 0.35) 100%), 
+                        url('capa.jpg');
+      background-position: right 5% center;
+      background-repeat: no-repeat;
+      background-size: 700px auto;
+      overflow: hidden;
     }
 
-    .hero-left {
-      max-width: 580px;
+    .hero-content {
+      max-width: 650px;
+      z-index: 2;
     }
 
     .hero-title {
@@ -221,29 +225,30 @@
     }
 
     .divider-gold {
-      width: 45px;
+      width: 50px;
       height: 2px;
       background-color: var(--gold-primary);
-      margin-bottom: 25px;
+      margin: 20px 0 25px;
     }
 
     .hero-description {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text-muted);
       margin-bottom: 35px;
       font-weight: 300;
+      line-height: 1.8;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .btn-gold {
       background-color: var(--gold-primary);
       color: #000;
-      padding: 12px 24px;
+      padding: 14px 28px;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -252,8 +257,6 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: none;
-      cursor: pointer;
     }
 
     .btn-gold:hover {
@@ -263,7 +266,7 @@
     .btn-outline {
       border: 1px solid var(--border-color);
       color: var(--text-light);
-      padding: 12px 24px;
+      padding: 14px 28px;
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -279,16 +282,18 @@
       color: var(--gold-primary);
     }
 
-    /* Pré-venda */
-    .compra-section {
-      padding: 90px 8%;
+    /* --- SEÇÃO BIOGRAFIA --- */
+    .biografia-section {
+      padding: 80px 8%;
       background-color: var(--bg-card);
       border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .section-header {
+    .bio-content {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
-      margin-bottom: 50px;
     }
 
     .section-tag {
@@ -296,72 +301,142 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--gold-primary);
+      display: block;
+      margin-bottom: 12px;
     }
 
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      margin-top: 8px;
-      font-weight: 400;
+    .bio-text {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-top: 20px;
     }
 
-    .oferta-pre-venda {
+    /* --- SEÇÃO PILARES --- */
+    .pilares-section {
+      padding: 80px 8%;
+    }
+
+    .pilares-grid {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.015);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .pilar-card {
+      background-color: var(--bg-card);
       border: 1px solid var(--border-color);
-      padding: 35px;
+      padding: 35px 28px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .pilar-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
+    }
+
+    .pilar-icon {
+      font-size: 1.8rem;
+      color: var(--gold-primary);
+      margin-bottom: 18px;
+    }
+
+    .pilar-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .pilar-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* --- SEÇÃO OBRAS & PUBLICAÇÕES --- */
+    .obras-section {
+      padding: 90px 8%;
+      background-color: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .obras-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 45px;
+      max-width: 950px;
+      margin: 40px auto 0;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      padding: 40px;
       border-radius: 4px;
     }
 
-    .capa-pre-venda img {
+    .capa-livro img {
       width: 100%;
       border-radius: 2px;
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     }
 
-    .oferta-texto h4 {
+    .obra-info h4 {
       font-family: var(--font-serif);
       font-size: 1.8rem;
-      margin-bottom: 8px;
       font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .obra-sub {
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .obra-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 20px;
     }
 
     .beneficio-digital {
-      margin: 20px 0;
       padding: 14px;
       background-color: rgba(201, 158, 92, 0.08);
       border-left: 2px solid var(--gold-primary);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
+      margin-bottom: 25px;
     }
 
     .beneficio-digital strong {
       color: var(--gold-primary);
     }
 
-    .preco {
-      font-size: 2rem;
+    .preco-tag {
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--gold-primary);
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
-    .botoes-pagamento {
+    .botoes-compra {
       display: flex;
-      gap: 15px;
-      margin-bottom: 15px;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .btn-pay {
-      flex: 1;
-      padding: 12px;
-      text-align: center;
+      padding: 12px 20px;
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       border-radius: 2px;
@@ -378,47 +453,69 @@
     }
 
     .btn-amazon {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px;
+      gap: 8px;
+      padding: 12px 20px;
       background-color: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text-light);
-      font-size: 0.85rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       border-radius: 2px;
-      margin-bottom: 25px;
     }
 
-    .comprovante {
-      padding: 20px;
+    .comprovante-box {
+      margin-top: 20px;
+      padding: 18px;
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 2px;
-      text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
     .btn-whatsapp {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 12px;
-      padding: 10px 20px;
+      margin-top: 10px;
+      padding: 8px 16px;
       background-color: #25D366;
       color: #fff;
       font-weight: 700;
       border-radius: 2px;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
-    /* Confirmação de Presença */
-    .confirmacao-section {
+    .futuras-obras {
+      max-width: 950px;
+      margin: 30px auto 0;
+      padding: 25px;
+      border: 1px dashed var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-radius: 4px;
+    }
+
+    .futuras-obras i {
+      color: var(--gold-primary);
+      margin-right: 8px;
+    }
+
+    /* --- SEÇÃO EVENTO EM DESTAQUE & CONFIRMAÇÃO --- */
+    .evento-destaque-section {
       padding: 90px 8%;
-      max-width: 650px;
-      margin: 0 auto;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 35px auto 0;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: 4px;
     }
 
     .form-group {
@@ -427,7 +524,7 @@
 
     .form-group label {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 8px;
@@ -437,7 +534,7 @@
     .form-group input {
       width: 100%;
       padding: 14px;
-      background-color: var(--bg-card);
+      background-color: var(--bg-dark);
       border: 1px solid var(--border-color);
       color: var(--text-light);
       border-radius: 2px;
@@ -484,7 +581,7 @@
       color: #ef9a9a;
     }
 
-    /* Área de Login / Biblioteca */
+    /* --- LOGIN BIBLIOTECA --- */
     .login-section {
       padding: 90px 8%;
       background-color: var(--bg-card);
@@ -525,7 +622,7 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Responsividade */
+    /* Responsividade para Celulares e Tablets */
     @media (max-width: 950px) {
       header {
         grid-template-columns: 1fr;
@@ -540,29 +637,38 @@
         gap: 15px;
       }
       .hero {
-        background: var(--bg-dark);
+        background-size: cover;
+        background-position: center;
+        text-align: center;
         padding: 60px 20px;
       }
-      .compra-section, .confirmacao-section, .login-section {
-        padding: 50px 20px;
+      .hero-content {
+        margin: 0 auto;
       }
-      .oferta-pre-venda {
+      .divider-gold {
+        margin: 20px auto;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .obras-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 25px;
       }
-      .capa-pre-venda {
+      .capa-livro {
         max-width: 180px;
         margin: 0 auto;
       }
-      .botoes-pagamento {
-        flex-direction: column;
+      .botoes-compra {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Estilo Editorial / Autor -->
+  <!-- Header Editorial -->
   <header id="inicio">
     <div class="header-brand">
       <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
@@ -574,11 +680,11 @@
 
     <nav>
       <ul class="nav-menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="#prevenda">Pré-venda</a></li>
-        <li><a href="livros.html">Livros</a></li>
-        <li><a href="#confirmacao">Confirmação</a></li>
+        <li><a href="#inicio" class="ativo">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#obras">Obras</a></li>
+        <li><a href="eventos.html">Agenda</a></li>
+        <li><a href="#confirmacao">Lançamento</a></li>
       </ul>
     </nav>
 
@@ -592,96 +698,160 @@
     </div>
   </header>
 
-  <!-- Banner / Hero Section -->
-  <section class="hero" id="banner">
-    <div class="hero-left">
-      <h1 class="hero-title">Palavras que <em>edificam.</em><br>Princípios que <em>transformam.</em></h1>
+  <!-- Hero Principal -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Palavras que <em>edificam.</em><br>
+        Princípios que <em>transformam.</em>
+      </h1>
       <div class="divider-gold"></div>
+      
       <p class="hero-description">
-        Escritor, pastor e professor da Palavra.<br>
-        Uma missão: comunicar verdades que despertam, fortalecem e preparam vidas para o propósito de Deus.
+        <strong style="color: var(--gold-primary); font-weight: 600;">Pastor, Escritor e Palestrante.</strong><br>
+        Uma missão dedicada a expor verdades eternas que despertam a fé, fortalecem vocações e preparam vidas para o cumprimento do propósito de Deus.
       </p>
+
       <div class="hero-buttons">
-        <a href="#prevenda" class="btn-gold"><i class="fa-solid fa-book-open"></i> Conheça o Livro</a>
-        <a href="#confirmacao" class="btn-outline"><i class="fa-solid fa-calendar-check"></i> Confirmar Presença</a>
+        <a href="#obras" class="btn-gold">
+          <i class="fa-solid fa-book-open"></i> Conheça o Livro
+        </a>
+        <a href="#confirmacao" class="btn-outline">
+          <i class="fa-regular fa-calendar-check"></i> Confirmar Presença
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Pré-venda -->
-  <section class="compra-section" id="prevenda">
-    <div class="section-header">
-      <span class="section-tag">Pré-venda Exclusiva</span>
-      <h2 class="section-title">Garanta Seu Exemplar</h2>
+  <!-- Seção Biografia -->
+  <section class="biografia-section" id="sobre">
+    <div class="bio-content">
+      <span class="section-tag">Trajetória e Propósito</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 400; margin-top: 8px;">
+        Sobre Francisco Denilson Pinheiro
+      </h2>
+      <div class="divider-gold" style="margin: 20px auto;"></div>
+      <p class="bio-text">
+        Pastor, escritor e palestrante com vocação voltada para a edificação da Igreja e formação de líderes. Através da exposição bíblica, de palestras e da escrita literária, o Pr. Denilson busca provocar reflexões profundas sobre o serviço cristão, a maturidade espiritual e os processos de preparação que antecedem o cumprimento do propósito divino em nossas vidas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção 3 Pilares -->
+  <section class="pilares-section">
+    <div style="text-align: center;">
+      <span class="section-tag">Frentes de Atuação</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 400;">Ministério & Atuação</h2>
     </div>
 
-    <div class="oferta-pre-venda">
-      <div class="capa-pre-venda">
+    <div class="pilares-grid">
+      <article class="pilar-card">
+        <div class="pilar-icon"><i class="fa-solid fa-church"></i></div>
+        <h3>Cuidado Pastoral</h3>
+        <p>Dedicação ao pastoreio, aconselhamento e acompanhamento de vidas, promovendo o crescimento espiritual e a restauração familiar com base na Palavra.</p>
+      </article>
+
+      <article class="pilar-card">
+        <div class="pilar-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+        <h3>Literatura & Ensino</h3>
+        <p>Escrita de obras literárias e conteúdos de formação que provocam a reflexão, aprofundam a fé e auxiliam no amadurecimento espiritual do leitor.</p>
+      </article>
+
+      <article class="pilar-card">
+        <div class="pilar-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+        <h3>Palestras & Conferências</h3>
+        <p>Prelecções em congressos, simpósios e reuniões de liderança, abordando temas de vocação, liderança servidora e restauração ministerial.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Seção Obras Literárias -->
+  <section class="obras-section" id="obras">
+    <div style="text-align: center;">
+      <span class="section-tag">Biblioteca do Autor</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 400;">Obras & Publicações</h2>
+    </div>
+
+    <div class="obras-grid">
+      <div class="capa-livro">
         <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
       </div>
-      <div class="oferta-texto">
+      <div class="obra-info">
         <h4>Antes Que Eu Seja Usado</h4>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Uma jornada antes do encontro com nossa vocação.</p>
+        <div class="obra-sub">Sua jornada de reflexão e preparação para a vocação</div>
+        <p class="obra-desc">
+          Esta obra aborda os processos silenciosos de Deus na vida de quem foi chamado. Antes do altar, do palco ou da visibilidade, existe uma forja interior necessária para sustentar a responsabilidade do serviço cristão.
+        </p>
 
         <div class="beneficio-digital">
-          <strong>Benefício especial:</strong> Leitores que tiverem acesso à versão digital poderão realizar a leitura diretamente pela área exclusiva da biblioteca.
+          <strong>Acesso Digital Exclusivo:</strong> Adquirindo a versão digital, você pode realizar a leitura diretamente em nossa área exclusiva da biblioteca online.
         </div>
 
-        <div class="preco">R$ 34,90</div>
+        <div class="preco-tag">R$ 34,90</div>
 
-        <div class="botoes-pagamento">
+        <div class="botoes-compra">
           <a href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5" class="btn-pay btn-pix" target="_blank">Pagar com PIX</a>
           <a href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90" class="btn-pay btn-card" target="_blank">Pagar com Cartão</a>
+          <a href="https://www.amazon.com.br/dp/B0HB2FMCQZ" class="btn-amazon" target="_blank">
+            <i class="fa-brands fa-amazon"></i> Ver na Amazon
+          </a>
         </div>
 
-        <a href="https://www.amazon.com.br/dp/B0HB2FMCQZ" class="btn-amazon" target="_blank">
-          <i class="fa-brands fa-amazon"></i> Adquira a versão digital pela Amazon
-        </a>
-
-        <div class="comprovante">
-          <strong>Após o pagamento:</strong>
-          <p style="color: var(--text-muted); margin-top: 5px;">Envie o comprovante pelo WhatsApp para confirmar sua compra.</p>
+        <div class="comprovante-box">
+          <strong>Confirmar compra impressa/física:</strong>
+          <p style="color: var(--text-muted); margin-top: 4px;">Após o pagamento, envie seu comprovante via WhatsApp para validação.</p>
           <a href="https://wa.me/5585985141830?text=Olá!%20Estou%20enviando%20meu%20comprovante%20de%20pagamento%20do%20livro%20Antes%20Que%20Eu%20Seja%20Usado." class="btn-whatsapp" target="_blank">
             <i class="fa-brands fa-whatsapp"></i> Enviar Comprovante
           </a>
         </div>
       </div>
     </div>
+
+    <div class="futuras-obras">
+      <i class="fa-solid fa-pen-nib"></i> Novas obras literárias e projetos editoriais estão em desenvolvimento. Acompanhe as novidades em nossa biblioteca.
+    </div>
   </section>
 
-  <!-- Confirmação de Presença -->
-  <section class="confirmacao-section" id="confirmacao">
-    <div class="section-header">
-      <span class="section-tag">Lançamento do Livro</span>
-      <h2 class="section-title">Confirme sua Presença</h2>
+  <!-- Lançamento em Destaque & Confirmação -->
+  <section class="evento-destaque-section" id="confirmacao">
+    <div style="text-align: center;">
+      <span class="section-tag">Agenda em Destaque</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 400;">Lançamento Presencial em Fortaleza</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">Dia 19 de Setembro de 2026 • 19h00 na Casa de Deus Mondubim</p>
     </div>
 
-    <div class="form-group">
-      <label for="nome">Seu Nome Completo</label>
-      <input type="text" id="nome" placeholder="Digite seu nome completo">
+    <div class="form-container">
+      <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; text-align: center; margin-bottom: 20px;">
+        Confirme Sua Presença no Evento
+      </h3>
+
+      <div class="form-group">
+        <label for="nome">Seu Nome Completo</label>
+        <input type="text" id="nome" placeholder="Digite seu nome completo">
+      </div>
+
+      <div class="form-group">
+        <label for="igreja">Sua Igreja ou Comunidade</label>
+        <input type="text" id="igreja" placeholder="Digite o nome da sua igreja">
+      </div>
+
+      <button type="button" class="btn-submit" id="botaoConfirmar" onclick="confirmarPresenca()">Confirmar minha presença</button>
+
+      <div id="mensagem"></div>
     </div>
-
-    <div class="form-group">
-      <label for="igreja">Sua Igreja ou Comunidade</label>
-      <input type="text" id="igreja" placeholder="Digite sua igreja">
-    </div>
-
-    <button type="button" class="btn-submit" id="botaoConfirmar" onclick="confirmarPresenca()">Confirmar minha presença</button>
-
-    <div id="mensagem"></div>
   </section>
 
   <!-- Área de Login / Biblioteca -->
   <section class="login-section" id="loginArea">
     <div class="login-card">
-      <div class="section-header" style="margin-bottom: 25px;">
+      <div style="text-align: center; margin-bottom: 25px;">
         <span class="section-tag"><i class="fa-solid fa-lock"></i> Área Exclusiva</span>
         <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-top: 5px; font-weight: 400;">Minha Biblioteca</h3>
       </div>
 
       <div class="form-group">
         <label for="loginUsuario">Seu e-mail</label>
-        <input type="email" id="loginUsuario" placeholder="Digite seu e-mail">
+        <input type="email" id="loginUsuario" placeholder="Digite seu e-mail registrado">
       </div>
 
       <div class="form-group">
