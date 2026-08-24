@@ -153,6 +153,13 @@
       margin-bottom: 10px;
     }
 
+    .price-tag {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      margin-bottom: 15px;
+    }
+
     .offer-details ul {
       list-style: none;
       margin: 15px 0 25px;
@@ -213,6 +220,51 @@
     .btn-card:hover {
       background-color: var(--gold-hover);
       border-color: var(--gold-hover);
+    }
+
+    /* MODAL DO PIX */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .modal-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 35px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      text-align: center;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .pix-key-box {
+      background: #0d0c0b;
+      border: 1px dashed var(--gold-primary);
+      padding: 15px;
+      font-size: 0.95rem;
+      color: var(--gold-primary);
+      font-weight: 600;
+      margin: 20px 0;
+      word-break: break-all;
     }
 
     footer {
@@ -283,6 +335,7 @@
       <img src="capa.jpg" alt="Capa do Livro Antes Que Eu Seja Usado">
       <div class="offer-details">
         <h3>Edição de Lançamento</h3>
+        <div class="price-tag">R$ 34,90</div>
         <ul>
           <li><i class="fa-solid fa-check"></i> Exemplar físico impresso em alta qualidade</li>
           <li><i class="fa-solid fa-check"></i> Autógrafo exclusivo de Francisco Denilson</li>
@@ -292,25 +345,41 @@
         
         <!-- BOTÕES DE PAGAMENTO -->
         <div class="payment-buttons">
-          <!-- Cole aqui o seu link de checkout/chave do Pix -->
-          <a href="https://seu-link-de-pagamento-pix.com" target="_blank" class="btn-pay btn-pix">
-            <i class="fa-solid fa-pix"></i> Pagar via PIX
-          </a>
+          <button onclick="abrirModalPix()" class="btn-pay btn-pix">
+            <i class="fa-solid fa-pix"></i> Pagar R$ 34,90 via PIX
+          </button>
           
-          <!-- Cole aqui o seu link de checkout para Cartão -->
-          <a href="https://seu-link-de-pagamento-cartao.com" target="_blank" class="btn-pay btn-card">
-            <i class="fa-regular fa-credit-card"></i> Pagar via Cartão de Crédito
+          <a href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-h9dLra1iu1-34,90" target="_blank" class="btn-pay btn-card">
+            <i class="fa-regular fa-credit-card"></i> Pagar R$ 34,90 via Cartão
           </a>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- MODAL COM A CHAVE PIX -->
+  <div class="modal-overlay" id="modalPix">
+    <div class="modal-card">
+      <span class="close-modal" onclick="fecharModalPix()">&times;</span>
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #fff; margin-bottom: 10px;">Pagamento via PIX</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Transfira o valor de <strong>R$ 34,90</strong> utilizando a chave PIX (E-mail) abaixo:</p>
+      
+      <div class="pix-key-box" id="chavePixText">antesqueeusejausado@yahoo.com</div>
+
+      <button onclick="copiarPix()" id="btnCopiarPix" class="btn-pay btn-pix" style="margin-bottom: 15px;">
+        <i class="fa-regular fa-copy"></i> Copiar Chave PIX
+      </button>
+
+      <p style="font-size: 0.75rem; color: var(--text-muted);">Após realizar a transferência, envie o comprovante para nosso WhatsApp ou e-mail de atendimento para liberação imediata!</p>
+    </div>
+  </div>
+
   <footer>
     © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
   </footer>
 
   <script>
+    // Cronômetro
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 30);
 
@@ -333,6 +402,25 @@
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // Funções do Modal PIX
+    function abrirModalPix() {
+      document.getElementById("modalPix").style.display = "flex";
+    }
+
+    function fecharModalPix() {
+      document.getElementById("modalPix").style.display = "none";
+    }
+
+    function copiarPix() {
+      const chave = document.getElementById("chavePixText").innerText;
+      navigator.clipboard.writeText(chave);
+      const btn = document.getElementById("btnCopiarPix");
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Chave Copiada!';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Chave PIX';
+      }, 3000);
+    }
   </script>
 
 </body>
