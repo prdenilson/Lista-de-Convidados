@@ -1,1011 +1,507 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    Minha Biblioteca | Antes Que Eu Seja Usado
-  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Biblioteca | Antes Que Eu Seja Usado</title>
 
   <!-- SUPABASE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-
+    /* Reset & Theme Variables */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-
     :root {
-      --fundo: #eee7dc;
-      --marrom: #4b392c;
-      --marrom-escuro: #30251e;
-      --dourado: #9a7a4f;
-      --dourado-claro: #c3a878;
-      --texto: #3d342d;
-      --cinza: #766c64;
-      --borda: #d5c7b6;
-      --branco: #fffdf9;
+      --bg-dark: #0d0c0b;
+      --bg-card: #161412;
+      --gold-primary: #c99e5c;
+      --gold-hover: #b38948;
+      --text-light: #f5f5f5;
+      --text-muted: #a3a09a;
+      --border-color: rgba(201, 158, 92, 0.15);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
     }
 
-
-    html,
-    body {
+    html, body {
       width: 100%;
       min-height: 100%;
     }
 
-
     body {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      background:
-        radial-gradient(
-          circle at top,
-          rgba(255,255,255,.65),
-          transparent 40%
-        ),
-        linear-gradient(
-          135deg,
-          var(--fundo),
-          #e5dbcd
-        );
-
-      color: var(--texto);
-
-      padding: 20px;
-    }
-
-
-    .pagina {
-
-      width: 100%;
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-    }
-
-
-    .cabecalho {
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(47,37,29,.98),
-          rgba(82,62,47,.98)
-        );
-
-      color: white;
-
-      border-radius:
-        20px 20px 0 0;
-
-      padding:
-        28px 25px;
-
-      text-align: center;
-
-      box-shadow:
-        0 10px 30px
-        rgba(54,42,32,.15);
-
-    }
-
-
-    .cabecalho-pequeno {
-
-      font-size: 11px;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      color: #dbc7a8;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .cabecalho h1 {
-
-      font-size: 29px;
-
-      font-weight: normal;
-
-      line-height: 1.3;
-
-    }
-
-
-    .linha {
-
-      width: 55px;
-
-      height: 2px;
-
-      background:
-        var(--dourado-claro);
-
-      margin:
-        15px auto 0;
-
-    }
-
-
-    .barra {
-
+      font-family: var(--font-sans);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
       display: flex;
-
-      align-items: center;
-
-      justify-content:
-        space-between;
-
-      gap: 15px;
-
-      padding:
-        12px 18px;
-
-      background:
-        #30251e;
-
-      color: white;
-
+      flex-direction: column;
+      min-height: 100vh;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    /* --- CABEÇALHO EDITORIAL --- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(13, 12, 11, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .foto-pessoal {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .brand-titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.6rem;
+      letter-spacing: 2.5px;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .btn-voltar-home {
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+      padding: 8px 16px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-voltar-home:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+    }
+
+    /* --- BARRA DO USUÁRIO LOGADO --- */
+    .barra {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 8%;
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+    }
 
     .usuario {
-
-      font-size: 13px;
-
-      color: #eadcc6;
-
+      font-size: 0.82rem;
+      color: var(--gold-primary);
       overflow: hidden;
-
       text-overflow: ellipsis;
-
       white-space: nowrap;
-
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-
 
     .botao-sair {
-
-      border: 1px solid
-        rgba(195,168,120,.5);
-
-      background:
-        rgba(195,168,120,.12);
-
-      color: #f4e8d3;
-
-      padding:
-        8px 14px;
-
-      border-radius: 8px;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      border: 1px solid rgba(201, 158, 92, 0.4);
+      background: transparent;
+      color: var(--text-light);
+      padding: 6px 16px;
+      border-radius: 2px;
+      font-family: var(--font-sans);
       cursor: pointer;
-
-      font-size: 12px;
-
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
-
 
     .botao-sair:hover {
-
-      background:
-        rgba(195,168,120,.25);
-
+      background-color: rgba(201, 158, 92, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
     }
 
-
-    .conteudo {
-
-      background:
-        rgba(255,253,249,.98);
-
-      min-height:
-        calc(100vh - 180px);
-
-      padding:
-        25px;
-
-      border-radius:
-        0 0 20px 20px;
-
-      box-shadow:
-        0 20px 60px
-        rgba(54,42,32,.15);
-
+    /* --- CONTEÚDO PRINCIPAL --- */
+    .pagina {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      flex: 1;
     }
-
 
     .carregando {
-
-      min-height: 300px;
-
+      min-height: 400px;
       display: flex;
-
+      flex-direction: column;
       align-items: center;
-
       justify-content: center;
-
       text-align: center;
-
-      color: var(--cinza);
-
-      font-size: 16px;
-
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      gap: 15px;
     }
 
+    .carregando i {
+      font-size: 2rem;
+      color: var(--gold-primary);
+    }
 
     .erro {
-
       max-width: 600px;
-
-      margin:
-        50px auto;
-
-      padding:
-        25px;
-
-      border:
-        1px solid #e2c7bf;
-
-      border-radius: 14px;
-
-      background:
-        #f8ece8;
-
-      color:
-        #71453b;
-
+      margin: 60px auto;
+      padding: 40px;
+      border: 1px solid rgba(198, 40, 40, 0.3);
+      border-radius: 4px;
+      background-color: var(--bg-card);
+      color: #ef9a9a;
       text-align: center;
-
       line-height: 1.7;
-
     }
-
 
     .erro h2 {
-
-      font-size: 24px;
-
-      font-weight: normal;
-
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
       margin-bottom: 12px;
-
+      color: #fff;
     }
 
+    .erro p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
 
     .leitor {
-
       display: none;
-
     }
-
 
     .titulo-leitor {
-
       text-align: center;
-
-      margin-bottom: 20px;
-
+      margin-bottom: 25px;
     }
-
 
     .titulo-leitor span {
-
       display: block;
-
-      font-size: 11px;
-
+      font-size: 0.7rem;
       text-transform: uppercase;
-
       letter-spacing: 3px;
-
-      color: var(--dourado);
-
+      color: var(--gold-primary);
       margin-bottom: 8px;
-
     }
-
 
     .titulo-leitor h2 {
-
-      font-size: 25px;
-
-      font-weight: normal;
-
-      color: var(--marrom-escuro);
-
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #fff;
     }
-
 
     .leitor-info {
-
       text-align: center;
-
-      color: var(--cinza);
-
-      font-size: 13px;
-
+      color: var(--text-muted);
+      font-size: 0.88rem;
       line-height: 1.6;
-
-      margin-bottom: 18px;
-
+      margin-bottom: 25px;
+      font-weight: 300;
     }
-
 
     .pdf-container {
-
       width: 100%;
-
-      height: 78vh;
-
-      min-height: 600px;
-
-      border:
-        1px solid var(--borda);
-
-      border-radius: 12px;
-
+      height: 80vh;
+      min-height: 650px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
       overflow: hidden;
-
-      background: #d9d9d9;
-
-      box-shadow:
-        0 10px 30px
-        rgba(45,35,27,.15);
-
+      background-color: var(--bg-card);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
-
 
     #leitorPDF {
-
       width: 100%;
-
       height: 100%;
-
       border: none;
-
       display: block;
-
-      background: white;
-
+      background: #1e1e1e;
     }
-
 
     .rodape {
-
       text-align: center;
-
-      padding:
-        20px 10px 5px;
-
-      color: #8b8178;
-
-      font-size: 12px;
-
+      padding: 25px 10px 5px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
       line-height: 1.6;
-
+      letter-spacing: 1px;
     }
 
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: auto;
+    }
 
     @media (max-width: 700px) {
-
-      body {
-        padding: 10px;
+      header {
+        padding: 15px 20px;
       }
-
-
-      .cabecalho {
-
-        border-radius:
-          15px 15px 0 0;
-
-        padding:
-          24px 18px;
-
-      }
-
-
-      .cabecalho h1 {
-
-        font-size: 24px;
-
-      }
-
-
       .barra {
-
-        align-items:
-          flex-start;
-
+        padding: 12px 20px;
       }
-
-
-      .conteudo {
-
-        padding:
-          15px;
-
-        border-radius:
-          0 0 15px 15px;
-
+      .pagina {
+        padding: 20px 10px;
       }
-
-
       .pdf-container {
-
-        height:
-          72vh;
-
-        min-height:
-          500px;
-
+        height: 72vh;
+        min-height: 480px;
       }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-<div class="pagina">
-
-
-  <!-- CABEÇALHO -->
-
-  <header class="cabecalho">
-
-    <div class="cabecalho-pequeno">
-      Biblioteca Digital
+  <!-- CABEÇALHO EDITORIAL -->
+  <header>
+    <div class="header-brand">
+      <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
+      <div class="brand-titles">
+        <span class="brand-name">Francisco Denilson</span>
+        <span class="brand-sub">BIBLIOTECA DIGITAL</span>
+      </div>
     </div>
 
-    <h1>
-      Antes Que Eu Seja Usado
-    </h1>
-
-    <div class="linha"></div>
-
+    <a href="index.html" class="btn-voltar-home">
+      <i class="fa-solid fa-house"></i> Voltar ao Site
+    </a>
   </header>
 
-
-  <!-- BARRA DO USUÁRIO -->
-
-  <div
-    class="barra"
-    id="barraUsuario"
-    style="display:none;"
-  >
-
-    <div
-      class="usuario"
-      id="usuarioLogado"
-    >
+  <!-- BARRA DO USUÁRIO LOGADO -->
+  <div class="barra" id="barraUsuario" style="display:none;">
+    <div class="usuario" id="usuarioLogado">
+      <i class="fa-regular fa-user" style="color: var(--gold-primary);"></i>
     </div>
 
-
-    <button
-      type="button"
-      class="botao-sair"
-      onclick="sair()"
-    >
-      Sair
+    <button type="button" class="botao-sair" onclick="sair()">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair
     </button>
-
   </div>
 
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="pagina">
+    <main class="conteudo">
 
-  <!-- CONTEÚDO -->
-
-  <main class="conteudo">
-
-
-    <!-- CARREGANDO -->
-
-    <div
-      class="carregando"
-      id="carregando"
-    >
-
-      Verificando seu acesso...
-
-    </div>
-
-
-    <!-- ERRO -->
-
-    <div
-      class="erro"
-      id="mensagemErro"
-      style="display:none;"
-    >
-
-      <h2>
-        Acesso não autorizado
-      </h2>
-
-      <p id="textoErro">
-
-        Não foi possível acessar sua biblioteca.
-
-      </p>
-
-      <br>
-
-      <button
-        type="button"
-        class="botao-sair"
-        onclick="voltarParaLogin()"
-      >
-        Voltar para o login
-      </button>
-
-    </div>
-
-
-    <!-- LEITOR -->
-
-    <section
-      class="leitor"
-      id="leitor"
-    >
-
-      <div class="titulo-leitor">
-
-        <span>
-          Leitura exclusiva
-        </span>
-
-        <h2>
-          Antes Que Eu Seja Usado
-        </h2>
-
+      <!-- CARREGANDO -->
+      <div class="carregando" id="carregando">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <span>Verificando seu acesso à biblioteca...</span>
       </div>
 
-
-      <div class="leitor-info">
-
-        Sua autorização de leitura está ativa.
-        O conteúdo é disponibilizado através do
-        supabaseClient.storage.
-
+      <!-- ERRO -->
+      <div class="erro" id="mensagemErro" style="display:none;">
+        <h2>Acesso não autorizado</h2>
+        <p id="textoErro">Não foi possível acessar sua biblioteca.</p>
+        <br>
+        <button type="button" class="botao-sair" onclick="voltarParaLogin()" style="margin-top: 15px;">
+          Voltar para o login
+        </button>
       </div>
 
+      <!-- LEITOR DE PDF -->
+      <section class="leitor" id="leitor">
+        <div class="titulo-leitor">
+          <span>Leitura Exclusiva do Leitor</span>
+          <h2>Antes Que Eu Seja Usado</h2>
+        </div>
 
-      <div class="pdf-container">
+        <div class="leitor-info">
+          Sua autorização de leitura está ativa. Desfrute da sua jornada de reflexão.
+        </div>
 
-        <iframe
-          id="leitorPDF"
-          title="Livro Antes Que Eu Seja Usado"
-          allow="fullscreen"
-        >
-        </iframe>
+        <div class="pdf-container">
+          <iframe id="leitorPDF" title="Livro Antes Que Eu Seja Usado" allow="fullscreen"></iframe>
+        </div>
 
-      </div>
+        <div class="rodape">
+          Esta versão digital é destinada exclusivamente aos leitores autorizados.
+        </div>
+      </section>
 
+    </main>
+  </div>
 
-      <div class="rodape">
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+  </footer>
 
-        Esta versão digital é destinada exclusivamente
-        aos leitores autorizados.
+  <!-- LÓGICA E AUTENTICAÇÃO SUPABASE (INTACTA) -->
+  <script>
+    /* CONFIGURAÇÃO DO SUPABASE */
+    const SUPABASE_URL = "https://qieejecsicnmsdtefejs.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
-      </div>
+    /* CONFIGURAÇÕES DO LIVRO */
+    const BUCKET = "Livro";
+    const ARQUIVO_PDF = "Antes que eu seja usado PDF.pdf";
+    const TEMPO_URL = 3600; /* 1 hora = 3600 segundos */
 
-    </section>
+    /* INICIALIZAÇÃO */
+    document.addEventListener("DOMContentLoaded", verificarAcesso);
 
+    /* VERIFICAR SESSÃO */
+    async function verificarAcesso() {
+      const carregando = document.getElementById("carregando");
 
-  </main>
+      try {
+        const { data, error } = await supabaseClient.auth.getSession();
 
-</div>
+        if (error) {
+          console.error("Erro ao verificar sessão:", error);
+          mostrarErro("Não foi possível verificar sua sessão.");
+          return;
+        }
 
+        const sessao = data.session;
 
-<script>
+        /* Se não existir sessão, redireciona para o login do index */
+        if (!sessao) {
+          window.location.href = "index.html#loginArea";
+          return;
+        }
 
-/* =========================================================
-   CONFIGURAÇÃO DO SUPABASE
-   ========================================================= */
+        /* Usuário autenticado */
+        const email = sessao.user.email || "";
+        document.getElementById("usuarioLogado").innerHTML = `<i class="fa-regular fa-user" style="color: var(--gold-primary);"></i> ${email}`;
+        document.getElementById("barraUsuario").style.display = "flex";
 
-const SUPABASE_URL =
-  "https://qieejecsicnmsdtefejs.supabase.co";
+        /* Solicita URL temporária do PDF */
+        await abrirLivro();
 
-
-const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
-
-
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-
-
-/* =========================================================
-   CONFIGURAÇÕES DO LIVRO
-   ========================================================= */
-
-const BUCKET =
-  "Livro";
-
-
-const ARQUIVO_PDF =
-  "Antes que eu seja usado PDF.pdf";
-
-
-/*
-  Tempo de validade da autorização temporária.
-
-  1 hora = 3600 segundos.
-*/
-
-const TEMPO_URL =
-  3600;
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-   ========================================================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  verificarAcesso
-);
-
-
-/* =========================================================
-   VERIFICAR SESSÃO
-   ========================================================= */
-
-async function verificarAcesso() {
-
-  const carregando =
-    document.getElementById("carregando");
-
-  try {
-
-    const {
-      data,
-      error
-    } =
-      await supabaseClient.auth.getSession();
-
-
-    if (error) {
-
-      console.error(
-        "Erro ao verificar sessão:",
-        error
-      );
-
-      mostrarErro(
-        "Não foi possível verificar sua sessão."
-      );
-
-      return;
-
+      } catch (erro) {
+        console.error("Erro inesperado:", erro);
+        mostrarErro("Ocorreu um erro ao carregar sua biblioteca.");
+      }
     }
 
+    /* ABRIR LIVRO */
+    async function abrirLivro() {
+      try {
+        const { data, error } = await supabaseClient
+          .storage
+          .from(BUCKET)
+          .createSignedUrl(ARQUIVO_PDF, TEMPO_URL);
 
-    const sessao =
-      data.session;
+        if (error) {
+          console.error("Erro ao gerar URL do PDF:", error);
+          mostrarErro("Seu login foi reconhecido, mas não foi possível abrir o livro. Verifique se o arquivo PDF está corretamente armazenado no Supabase.");
+          return;
+        }
 
+        if (!data || !data.signedUrl) {
+          mostrarErro("O sistema não recebeu o endereço seguro do livro.");
+          return;
+        }
 
-    /*
-      Não existe sessão.
+        const leitorPDF = document.getElementById("leitorPDF");
+        leitorPDF.src = data.signedUrl;
 
-      Isso significa que a pessoa tentou
-      acessar Biblioteca.html diretamente.
-    */
+        document.getElementById("carregando").style.display = "none";
+        document.getElementById("leitor").style.display = "block";
 
-    if (!sessao) {
+        leitorPDF.onload = function() {
+          console.log("PDF carregado com sucesso.");
+        };
 
-      window.location.href =
-        "index.html#loginArea";
-
-      return;
-
+      } catch (erro) {
+        console.error("Erro ao abrir livro:", erro);
+        mostrarErro("Não foi possível abrir o livro digital.");
+      }
     }
 
-
-    /*
-      Usuário autenticado.
-    */
-
-    const email =
-      sessao.user.email || "";
-
-
-    document.getElementById(
-      "usuarioLogado"
-    ).textContent =
-      email;
-
-
-    document.getElementById(
-      "barraUsuario"
-    ).style.display =
-      "flex";
-
-
-    /*
-      Agora solicitamos ao Supabase
-      a autorização temporária para
-      o arquivo PDF.
-    */
-
-    await abrirLivro();
-
-
-  } catch (erro) {
-
-    console.error(
-      "Erro inesperado:",
-      erro
-    );
-
-    mostrarErro(
-      "Ocorreu um erro ao carregar sua biblioteca."
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   ABRIR LIVRO
-   ========================================================= */
-
-async function abrirLivro() {
-
-  try {
-
-    /*
-      Gera uma URL assinada temporária.
-
-      O PDF continua protegido no bucket privado.
-    */
-
-    const {
-      data,
-      error
-    } =
-      await supabaseClient
-        .storage
-        .from(BUCKET)
-        .createSignedUrl(
-          ARQUIVO_PDF,
-          TEMPO_URL
-        );
-
-
-    if (error) {
-
-      console.error(
-        "Erro ao gerar URL do PDF:",
-        error
-      );
-
-      mostrarErro(
-        "Seu login foi reconhecido, mas não foi possível abrir o livro. Verifique se o arquivo PDF está corretamente armazenado no Supabase."
-      );
-
-      return;
-
+    /* SAIR */
+    async function sair() {
+      try {
+        await supabaseClient.auth.signOut();
+      } catch (erro) {
+        console.error("Erro ao sair:", erro);
+      }
+      window.location.href = "index.html";
     }
 
-
-    if (
-      !data ||
-      !data.signedUrl
-    ) {
-
-      mostrarErro(
-        "O sistema não recebeu o endereço seguro do livro."
-      );
-
-      return;
-
+    /* VOLTAR PARA LOGIN */
+    function voltarParaLogin() {
+      window.location.href = "index.html#loginArea";
     }
 
-
-    /*
-      Coloca a URL assinada no leitor.
-    */
-
-    const leitorPDF =
-      document.getElementById(
-        "leitorPDF"
-      );
-
-
-    leitorPDF.src =
-      data.signedUrl;
-
-
-    /*
-      Mostra o leitor.
-    */
-
-    document.getElementById(
-      "carregando"
-    ).style.display =
-      "none";
-
-
-    document.getElementById(
-      "leitor"
-    ).style.display =
-      "block";
-
-
-    /*
-      Caso o PDF não consiga carregar,
-      mostramos uma mensagem amigável.
-    */
-
-    leitorPDF.onload = function() {
-
-      console.log(
-        "PDF carregado com sucesso."
-      );
-
-    };
-
-
-  } catch (erro) {
-
-    console.error(
-      "Erro ao abrir livro:",
-      erro
-    );
-
-    mostrarErro(
-      "Não foi possível abrir o livro digital."
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   SAIR
-   ========================================================= */
-
-async function sair() {
-
-  try {
-
-    await supabaseClient.auth.signOut();
-
-  } catch (erro) {
-
-    console.error(
-      "Erro ao sair:",
-      erro
-    );
-
-  }
-
-
-  window.location.href =
-    "index.html";
-
-}
-
-
-/* =========================================================
-   VOLTAR PARA LOGIN
-   ========================================================= */
-
-function voltarParaLogin() {
-
-  window.location.href =
-    "index.html#loginArea";
-
-}
-
-
-/* =========================================================
-   MOSTRAR ERRO
-   ========================================================= */
-
-function mostrarErro(mensagem) {
-
-  document.getElementById(
-    "carregando"
-  ).style.display =
-    "none";
-
-
-  document.getElementById(
-    "leitor"
-  ).style.display =
-    "none";
-
-
-  document.getElementById(
-    "barraUsuario"
-  ).style.display =
-    "none";
-
-
-  document.getElementById(
-    "textoErro"
-  ).textContent =
-    mensagem;
-
-
-  document.getElementById(
-    "mensagemErro"
-  ).style.display =
-    "block";
-
-}
-
-
-/* =========================================================
-   OBSERVAR ALTERAÇÕES DE AUTENTICAÇÃO
-   ========================================================= */
-
-supabaseClient.auth.onAuthStateChange(
-  (event, session) => {
-
-    console.log(
-      "Estado de autenticação:",
-      event
-    );
-
-
-    /*
-      Se o usuário sair enquanto estiver
-      na biblioteca, retorna para o index.
-    */
-
-    if (
-      event === "SIGNED_OUT" ||
-      !session
-    ) {
-
-      window.location.href =
-        "index.html";
-
+    /* MOSTRAR ERRO */
+    function mostrarErro(mensagem) {
+      document.getElementById("carregando").style.display = "none";
+      document.getElementById("leitor").style.display = "none";
+      document.getElementById("barraUsuario").style.display = "none";
+      document.getElementById("textoErro").textContent = mensagem;
+      document.getElementById("mensagemErro").style.display = "block";
     }
 
-  }
-);
-
-</script>
-
-
+    /* OBSERVAR ALTERAÇÕES DE AUTENTICAÇÃO */
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      console.log("Estado de autenticação:", event);
+      if (event === "SIGNED_OUT" || !session) {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
 </body>
 </html>
