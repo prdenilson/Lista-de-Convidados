@@ -172,24 +172,123 @@
 
     .topo {
 
-      background:
+  background:
+    linear-gradient(
+      135deg,
+      rgba(47, 37, 29, 0.98),
+      rgba(82, 62, 47, 0.98)
+    );
 
-        linear-gradient(
-          135deg,
-          rgba(47, 37, 29, 0.98),
-          rgba(82, 62, 47, 0.98)
-        );
+  color: white;
 
-      color: white;
+  padding: 25px 35px;
 
-      text-align: center;
+  position: relative;
 
-      padding: 34px 25px 30px;
+}
 
-      position: relative;
 
-    }
+.cabecalho-moderno {
 
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+}
+
+
+.marca-pessoal {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+}
+
+
+.foto-pessoal {
+
+  width: 78px;
+
+  height: 78px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--dourado-claro);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.nome-pessoal {
+
+  text-align: left;
+
+}
+
+
+.nome-pessoal strong {
+
+  display: block;
+
+  font-size: 18px;
+
+  letter-spacing: 1px;
+
+  color: #fffdf9;
+
+}
+
+
+.nome-pessoal span {
+
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  color: #dbc7a8;
+
+}
+
+
+.frase-cabecalho {
+
+  text-align: right;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  color: #eadcc6;
+
+}
+
+
+.frase-cabecalho em {
+
+  color: var(--dourado-claro);
+
+  font-style: normal;
+
+}
 
     .topo::before,
     .topo::after {
@@ -1822,28 +1921,45 @@
          ===================================================== -->
 
     <header
-      class="topo"
-      id="inicio"
-    >
+  class="topo"
+  id="inicio"
+>
 
-      <div class="pequeno-titulo">
+  <div class="cabecalho-moderno">
 
-        Lançamento de Livro
+    <div class="marca-pessoal">
+
+      <img
+        src="imagem-pessoal.jpg"
+        alt="Francisco Denilson Pinheiro"
+        class="foto-pessoal"
+      >
+
+      <div class="nome-pessoal">
+
+        <strong>
+          FRANCISCO DENILSON PINHEIRO
+        </strong>
+
+        <span>
+          ESCRITOR • PASTOR • PALESTRANTE
+        </span>
 
       </div>
 
+    </div>
 
-      <h1>
+    <div class="frase-cabecalho">
 
-        Antes Que Eu Seja Usado
+      Palavras que <em>edificam.</em>
+      <br>
+      Princípios que <em>transformam.</em>
 
-      </h1>
+    </div>
 
+  </div>
 
-      <div class="linha-dourada"></div>
-
-    </header>
-
+</header>
 
     <!-- =====================================================
          2. MENU
