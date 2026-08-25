@@ -1,323 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<div class="botoes">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livros | Francisco Denilson Pinheiro</title>
-  <meta name="description" content="Conheça os livros e materiais de Francisco Denilson Pinheiro.">
+  <!-- SINOPSE -->
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <a
+    href="sinopse.html"
+    class="button button-outline"
+  >
+    Conheça a sinopse
+  </a>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- PIX -->
 
-  <style>
-    /* --- CONTEÚDO PRINCIPAL --- */
-    .pagina {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 50px 20px;
-      flex: 1;
-    }
+  <a
+    href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
+    class="button"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Adquira agora — PIX
+  </a>
 
-    /* --- CARD DO PRODUTO --- */
-    .produto {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 50px;
-      align-items: start;
-      padding: 40px;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      background-color: var(--bg-card);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    }
+  <!-- INFINITEPAY -->
 
-    .produto-capa {
-      text-align: center;
-    }
+  <a
+    href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
+    class="button button-outline"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Comprar com cartão
+  </a>
 
-    .produto-capa img {
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-    }
+  <!-- AMAZON KDP -->
 
-    .produto-info h3 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      font-weight: 400;
-      line-height: 1.25;
-      color: #fff;
-      margin-bottom: 10px;
-    }
+  <a
+    href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
+    class="button button-dark"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Versão digital — Amazon KDP
+  </a>
 
-    .subtitulo {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--gold-primary);
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    .descricao {
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-      font-weight: 300;
-    }
-
-    .informacao {
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .informacao strong {
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--gold-primary);
-      margin-bottom: 4px;
-    }
-
-    .informacao span {
-      font-size: 0.88rem;
-      color: var(--text-light);
-    }
-
-    .preco {
-      margin-top: 25px;
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    /* --- BOTÕES DE COMPRA --- */
-    .botoes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .botao-amazon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      min-height: 52px;
-      margin-top: 15px;
-      padding: 14px 20px;
-      border-radius: 2px;
-      text-decoration: none;
-      background-color: transparent;
-      color: var(--text-light);
-      border: 1px solid var(--border-color);
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: all 0.3s ease;
-    }
-
-    .botao-amazon:hover {
-      border-color: var(--gold-primary);
-      color: var(--gold-primary);
-      background-color: rgba(201, 158, 92, 0.05);
-    }
-
-    .aviso {
-      margin-top: 20px;
-      padding: 15px;
-      border: 1px dashed var(--border-color);
-      border-radius: 2px;
-      background-color: rgba(201, 158, 92, 0.03);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      line-height: 1.6;
-    }
-
-    /* --- FUTUROS MATERIAIS --- */
-    .futuros {
-      margin-top: 60px;
-      padding: 40px 20px;
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-    }
-
-    .futuros h3 {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .futuros p {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      font-weight: 300;
-    }
-
-    @media (max-width: 850px) {
-      .produto {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 25px;
-      }
-      .botoes {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- CABEÇALHO -->
-  <header class="site-header">
-    <div class="header-brand">
-      <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
-      <div class="brand-titles">
-        <span class="brand-name">Francisco Denilson</span>
-        <span class="brand-sub">Escritor & Palestrante</span>
-      </div>
-    </div>
-
-    <nav class="menu-desktop">
-      <a href="index.html">Início</a>
-      <a href="livros.html" class="ativo">Livros</a>
-      <a href="biblioteca.html">Minha Biblioteca</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
-    </nav>
-
-    <button type="button" class="botao-menu-mobile" id="botaoMenu" aria-label="Abrir menu" onclick="alternarMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </header>
-
-  <!-- MENU MOBILE DROPDOWN -->
-  <div class="menu-mobile-dropdown" id="menuConteudo">
-    <a href="index.html">Início</a>
-    <a href="livros.html" class="ativo">Livros</a>
-    <a href="biblioteca.html">Minha Biblioteca</a>
-    <a href="eventos.html">Eventos</a>
-    <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
-  </div>
-
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="pagina">
-
-    <div class="titulo-secao">
-      <span class="pequeno">Obras e materiais</span>
-      <h2>Catálogo de Livros</h2>
-      <div class="linha-dourada"></div>
-    </div>
-
-    <!-- LIVRO DESTACADO -->
-    <article class="produto">
-
-      <div class="produto-capa">
-        <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
-      </div>
-
-      <div class="produto-info">
-        <h3>Antes Que Eu Seja Usado</h3>
-        <p class="subtitulo">Uma jornada antes do encontro com nossa vocação.</p>
-
-        <p class="descricao">
-          <strong>Antes Que Eu Seja Usado</strong> nasceu de uma jornada de formação, quebrantamento e transformação. Antes de sermos usados por Deus, existe um processo que precisa acontecer dentro de nós. Esta obra é um convite para olhar para dentro, permitir que Deus sonde o coração e trabalhar aquilo que precisa ser transformado.
-        </p>
-
-        <div class="informacao">
-          <strong>Autor</strong>
-          <span>Francisco Denilson Pinheiro</span>
-        </div>
-
-        <div class="informacao">
-          <strong>Livro físico</strong>
-          <span>Venda do exemplar impresso disponível.</span>
-        </div>
-
-        <div class="preco">
-          R$ 34,90
-        </div>
-
-        <div class="botoes">
-          <a href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5" class="botao botao-ouro" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-pix"></i> Pagar com PIX
-          </a>
-
-          <a href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90" class="botao botao-contorno" target="_blank" rel="noopener noreferrer">
-            <i class="fa-regular fa-credit-card"></i> Pagar com Cartão
-          </a>
-        </div>
-
-        <a href="https://www.amazon.com.br/dp/B0HB2FMCQZ" class="botao-amazon" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-amazon"></i> Adquira a versão digital pela Amazon
-        </a>
-
-        <div class="aviso">
-          Após realizar o pagamento, siga as orientações apresentadas no site para confirmar sua compra e liberação do acesso.
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- FUTUROS MATERIAIS -->
-    <div class="futuros">
-      <h3>Novos Materiais em Breve</h3>
-      <p>Este espaço é continuamente atualizado e receberá novas obras, apostilas e conteúdos exclusivos no futuro.</p>
-    </div>
-
-  </main>
-
-  <!-- RODAPÉ -->
-  <footer class="site-footer">
-    <div class="footer-social">
-      <a href="https://instagram.com/prdenilsonescritor" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
-    © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
-  </footer>
-
-  <script>
-    /* SCRIPT DO MENU MOBILE */
-    function alternarMenu() {
-      const menu = document.getElementById("menuConteudo");
-      menu.classList.toggle("aberto");
-    }
-
-    function fecharMenu() {
-      const menu = document.getElementById("menuConteudo");
-      if (window.innerWidth <= 850) {
-        menu.classList.remove("aberto");
-      }
-    }
-
-    document.querySelectorAll(".menu-mobile-dropdown a").forEach(function(link) {
-      link.addEventListener("click", fecharMenu);
-    });
-  </script>
-
-</body>
-</html>
+</div>
