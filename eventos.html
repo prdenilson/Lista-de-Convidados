@@ -3,157 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Próximos Eventos</title>
+  <title>Eventos | Francisco Denilson Pinheiro</title>
+  <meta name="description" content="Próximos eventos e palestras de Francisco Denilson Pinheiro.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f9;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #1a365d;
-      margin-bottom: 30px;
-    }
-    .event-card {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    @media (min-width: 768px) {
-      .event-card {
-        flex-direction: row;
-        align-items: flex-start;
-      }
-    }
-    .event-image {
-      max-width: 100%;
-      width: 300px;
-      height: auto;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-    @media (min-width: 768px) {
-      .event-image {
-        margin-bottom: 0;
-        margin-right: 20px;
-      }
-    }
-    .event-details {
+    .pagina {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
       flex: 1;
     }
-    .event-title {
-      font-size: 24px;
-      font-weight: bold;
-      color: #2b6cb0;
-      margin-top: 0;
-      margin-bottom: 10px;
+
+    .evento-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 35px;
+      margin-bottom: 30px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-card);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
     }
-    .event-info {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-    .event-info strong {
-      color: #4a5568;
-    }
-    .timer-container {
-      margin-top: 15px;
-      padding: 10px 15px;
-      background-color: #ebf8ff;
-      border-left: 4px solid #3182ce;
+
+    .evento-card img {
+      width: 100%;
+      height: 100%;
+      max-height: 260px;
+      object-fit: cover;
       border-radius: 4px;
     }
-    .timer-title {
-      font-size: 14px;
-      font-weight: bold;
-      color: #2c5282;
-      margin-bottom: 5px;
+
+    .evento-titulo {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
     }
+
+    .evento-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+
+    .evento-info strong {
+      color: var(--gold-primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      display: block;
+    }
+
+    .timer-container {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background-color: rgba(201, 158, 92, 0.06);
+      border: 1px dashed var(--border-color);
+      border-radius: 2px;
+    }
+
+    .timer-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-primary);
+      margin-bottom: 8px;
+    }
+
     .timer-display {
-      font-size: 20px;
-      font-weight: bold;
-      color: #2b6cb0;
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    @media (max-width: 800px) {
+      .evento-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 20px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Próximos Eventos</h1>
-
-  <!-- EVENTO 1: CONSOLIDAÇÃO -->
-  <div class="event-card">
-    <img src="consolidação.jpg" alt="Evento Consolidação" class="event-image">
-    <div class="event-details">
-      <h2 class="event-title">CONSOLIDAÇÃO</h2>
-      <p class="event-info"><strong>Data:</strong> 19 de Setembro de 2026 às 09:00</p>
-      <p class="event-info"><strong>Local:</strong> Retiro da Igreja da Restauração - Fortaleza, CE</p>
-      
-      <div class="timer-container">
-        <div class="timer-title">Tempo restante para o evento:</div>
-        <div id="timer1" class="timer-display">Carregando...</div>
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="header-brand">
+      <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
+      <div class="brand-titles">
+        <span class="brand-name">Francisco Denilson</span>
+        <span class="brand-sub">Escritor & Palestrante</span>
       </div>
     </div>
-  </div>
 
-  <!-- EVENTO 2: CONGRESSO UNIFICADO -->
-  <div class="event-card">
-    <img src="congresso unificado.jpg" alt="Congresso Unificado" class="event-image">
-    <div class="event-details">
-      <h2 class="event-title">Congresso Unificado</h2>
-      <p class="event-info"><strong>Tema:</strong> Protegendo a família em uma geração sem referências</p>
-      <p class="event-info"><strong>Data:</strong> 20 de Setembro de 2026 às 19:00</p>
-      <p class="event-info"><strong>Local:</strong> Assembleia de Deus Restauração - Chorozinho, CE</p>
-      
-      <div class="timer-container">
-        <div class="timer-title">Tempo restante para o evento:</div>
-        <div id="timer2" class="timer-display">Carregando...</div>
-      </div>
-    </div>
-  </div>
+    <nav class="menu-desktop">
+      <a href="index.html">Início</a>
+      <a href="livros.html">Livros</a>
+      <a href="biblioteca.html">Minha Biblioteca</a>
+      <a href="eventos.html" class="ativo">Eventos</a>
+      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
+    </nav>
 
-  <script>
-    function iniciarContador(idElemento, dataAlvoISO) {
-      const dataEvento = new Date(dataAlvoISO).getTime();
+    <button type="button" class="botao-menu-mobile" id="botaoMenu" aria-label="Abrir menu" onclick="alternarMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
 
-      function atualizar() {
-        const agora = new Date().getTime();
-        const diferenca = dataEvento - agora;
-        const elemento = document.getElementById(idElemento);
-
-        if (!elemento) return;
-
-        if (diferenca <= 0) {
-          elemento.innerHTML = "O evento começou!";
-          clearInterval(intervalo);
-          return;
-        }
-
-        const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
-
-        elemento.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-      }
-
-      atualizar();
-      const intervalo = setInterval(atualizar, 1000);
-    }
-
-    // Evento 1: 19/09/2026 às 09:00 (Horário de Brasília / Ceará)
-    iniciarContador('timer1', '2026-09-19T09:00:00-03:00');
-
-    // Evento 2: 20/09/2026 às 19:00 (Horário de Brasília / Ceará)
-    iniciarContador('timer2', '2026-09-20T19:00:00-03:00');
-  </script>
-
-</body>
-</html>
+  <!-- MENU MOBILE -->
+  <div class="menu-mobile-dropdown" id="menuConteudo">
+    <a href="index.html">Início</a>
+    <a href="livros.html">Livros</a>
+    <a href="biblioteca.html">Minha
