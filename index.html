@@ -3,402 +3,390 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Francisco Denilson | Autor & Escritor</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <title>Lançamento - Antes Que Eu Seja Usado | Pr. Denilson Pinheiro</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg-dark: #0d0c0b;
-      --bg-card: #161412;
-      --gold-primary: #c99e5c;
-      --gold-hover: #b38948;
-      --text-light: #f5f5f5;
-      --text-muted: #a3a09a;
-      --border-color: rgba(201, 158, 92, 0.2);
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Montserrat', sans-serif;
+      --primary-color: #1a365d;
+      --accent-color: #d69e2e;
+      --accent-hover: #b7791f;
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
     }
 
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: var(--font-sans);
-      background-color: var(--bg-dark);
+      background-color: var(--bg-color);
       color: var(--text-light);
       line-height: 1.6;
     }
 
-    a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-
-    /* 1. BANNER SUPERIOR */
-    .top-banner {
-      background-color: var(--gold-primary);
-      color: var(--bg-dark);
-      text-align: center;
-      padding: 10px 15px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      width: 100%;
-    }
-    .top-banner a { text-decoration: underline; color: var(--bg-dark); }
-
-    /* 2. CABEÇALHO MELHORADO */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: rgba(13, 12, 11, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      padding: 15px 5%;
+    /* SEÇÃO 1: SOBRE O AUTOR (PRIMEIRA DOBRA) */
+    .hero-author {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand img { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--gold-primary); object-fit: cover; }
-    .brand-title { font-family: var(--font-serif); font-size: 0.95rem; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; }
-    .brand-sub { font-size: 0.6rem; letter-spacing: 1.5px; color: var(--gold-primary); display: block; text-transform: uppercase; }
-
-    nav { display: flex; align-items: center; gap: 20px; }
-    nav a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; color: var(--text-muted); }
-    nav a:hover, nav a.active { color: var(--gold-primary); }
-    nav .btn-nav { border: 1px solid var(--gold-primary); padding: 8px 14px; color: var(--gold-primary); border-radius: 2px; }
-
-    /* CONTAINER PRINCIPAL HERO */
-    .hero-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 50px 20px 30px;
-    }
-
-    /* SEÇÃO SOBRE O LIVRO + CAPA DO LIVRO */
-    .hero-book {
-      display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-
-    .hero-content h1 {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 span {
-      font-style: italic;
-      color: var(--gold-primary);
-      display: block;
-    }
-
-    .hero-content p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 30px;
-      max-width: 520px;
-    }
-
-    .btn-primary {
-      background-color: var(--gold-primary);
-      color: var(--bg-dark);
-      border: 1px solid var(--gold-primary);
-      padding: 14px 28px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      border-radius: 2px;
-      display: inline-block;
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       text-align: center;
+      border-bottom: 1px solid #334155;
     }
 
-    .btn-primary:hover { background-color: var(--gold-hover); }
+    @media(min-width: 768px) {
+      .hero-author {
+        flex-direction: row;
+        text-align: left;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 20px;
+      }
+    }
 
-    .book-cover img {
-      width: 100%;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    .author-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
       object-fit: cover;
-    }
-
-    /* SEÇÃO SOBRE O AUTOR E INFORMAÇÕES */
-    .author-section {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 35px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 30px;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-
-    .author-img-box img {
-      width: 100%;
-      height: 260px;
-      border-radius: 4px;
-      object-fit: cover;
-      border: 1px solid var(--gold-primary);
-    }
-
-    .author-info h2 {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .author-roles {
-      color: var(--gold-primary);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .author-bio {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .author-family {
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px dashed var(--border-color);
-      color: var(--text-light);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .author-family i { color: var(--gold-primary); margin-right: 8px; }
-
-    /* SEÇÃO CONFIRMAÇÃO DE PRESENÇA */
-    .presence-section {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 40px;
-      max-width: 700px;
-      margin: 0 auto 60px;
-      text-align: center;
-    }
-
-    .presence-section h2 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .presence-section p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 10px 25px rgba(214, 158, 46, 0.2);
       margin-bottom: 25px;
     }
 
-    .presence-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      text-align: left;
+    @media(min-width: 768px) {
+      .author-photo {
+        margin-bottom: 0;
+        margin-right: 40px;
+        width: 260px;
+        height: 260px;
+      }
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    .author-info {
+      max-width: 650px;
     }
 
-    .form-group label {
-      font-size: 0.75rem;
+    .author-info h2 {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .author-info h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .author-info p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-instagram:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(220, 39, 67, 0.4);
+    }
+
+    /* SEÇÃO 2: ANÚNCIO DO LIVRO & LANÇAMENTO */
+    .book-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media(min-width: 900px) {
+      .book-section {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+      }
+    }
+
+    .book-cover-container {
+      flex: 1;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    @media(min-width: 900px) {
+      .book-cover-container {
+        margin-bottom: 0;
+      }
+    }
+
+    .book-cover {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .book-details {
+      flex: 1.2;
+    }
+
+    /* BADGE LANÇAMENTO */
+    .badge-lançamento {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #000;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      padding: 6px 18px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 15px rgba(214, 158, 46, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .book-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .book-description {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    /* CRONÔMETRO ESTILOSO */
+    .timer-box {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .timer-title {
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--gold-primary);
+      color: var(--accent-color);
+      margin-bottom: 12px;
       font-weight: 600;
     }
 
-    .form-group input {
-      background-color: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      padding: 12px 15px;
+    .timer-grid {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .time-card {
+      background: #0f172a;
+      padding: 10px 15px;
+      border-radius: 8px;
+      min-width: 65px;
+      border: 1px solid #334155;
+    }
+
+    .time-card .number {
+      font-size: 1.8rem;
+      font-weight: bold;
       color: #fff;
-      border-radius: 2px;
-      font-size: 0.9rem;
-      outline: none;
+      display: block;
     }
 
-    .form-group input:focus {
-      border-color: var(--gold-primary);
-    }
-
-    .btn-submit {
-      width: 100%;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.72rem;
-      letter-spacing: 1px;
+    .time-card .label {
+      font-size: 0.75rem;
       color: var(--text-muted);
-      border-top: 1px solid rgba(255,255,255,0.05);
+      text-transform: uppercase;
     }
 
-    /* 5 e 6. AJUSTES COMPATÍVEIS COM CELULAR (RESPONSIVO) */
-    @media (max-width: 800px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
-        text-align: center;
-      }
+    /* BOTÃO PRÉ-VENDA */
+    .btn-buy {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--accent-color);
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 18px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 10px 20px rgba(214, 158, 46, 0.3);
+    }
 
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 15px;
-      }
+    .btn-buy:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
 
-      nav a { font-size: 0.7rem; }
+    /* SESSÃO DE CONFIRMAÇÃO E GARANTIAS */
+    .confirmation-section {
+      margin-top: 20px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px dashed #334155;
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-      .hero-book {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-      }
+    .confirmation-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-      .hero-content h1 { font-size: 2.2rem; }
-      .hero-content p { margin: 0 auto 25px; }
-
-      .book-cover {
-        max-width: 200px;
-        margin: 0 auto;
-      }
-
-      .author-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 25px;
-      }
-
-      .author-img-box img {
-        max-width: 180px;
-        height: 220px;
-        margin: 0 auto;
-      }
-
-      .presence-section {
-        padding: 25px;
-      }
+    .confirmation-item span {
+      color: #10b981; /* Verde de verificado */
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <!-- BANNER SUPERIOR -->
-  <div class="top-banner">
-    🔥 Pré-Venda Liberada! Garanta seu exemplar autografado. <a href="lancamento.html">Clique Aqui →</a>
-  </div>
+  <!-- PRIMEIRA SEÇÃO: AUTOR & BIOGRAFIA -->
+  <section class="hero-author">
+    <img src="foto-autor.jpg" alt="Pr. Denilson Pinheiro" class="author-photo">
+    <div class="author-info">
+      <h2>Sobre o Autor</h2>
+      <h1>Pr. Denilson Pinheiro</h1>
+      <p>Escritor, palestrante e pastor dedicado ao ensino da Palavra e ao fortalecimento espiritual de famílias e líderes. Através de seus escritos, busca trazer reflexões profundas sobre propósito, caminhada cristã e integridade espiritual.</p>
+      
+      <a href="https://instagram.com/prdenilsonescritor" target="_blank" class="btn-instagram">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @prdenilsonescritor
+      </a>
+    </div>
+  </section>
 
-  <!-- 6. CABEÇALHO ORGANIZADO PARA CELULAR E DESKTOP -->
-  <header>
-    <div class="brand">
-      <img src="imagem-pessoal.jpg" alt="Francisco Denilson">
-      <div>
-        <span class="brand-title">Francisco Denilson</span>
-        <span class="brand-sub">Autor & Escritor</span>
-      </div>
+  <!-- SEGUNDA SEÇÃO: ANÚNCIO DO LIVRO, CRONÔMETRO E OFERTA -->
+  <section class="book-section">
+    <div class="book-cover-container">
+      <img src="capa-livro.jpg" alt="Livro Antes Que Eu Seja Usado" class="book-cover">
     </div>
 
-    <nav>
-      <a href="index.html" class="active">Início</a>
-      <a href="lancamento.html">Pré-Venda</a>
-      <a href="eventos.html">Agenda & Palestras</a>
-      <a href="biblioteca.html" class="btn-nav">Acessar Biblioteca</a>
-    </nav>
-  </header>
+    <div class="book-details">
+      <!-- DESTAQUE LANÇAMENTO SOBRE O NOME DO LIVRO -->
+      <div class="badge-lançamento">LANÇAMENTO</div>
+      
+      <h1 class="book-title">Antes Que Eu Seja Usado</h1>
+      
+      <p class="book-description">
+        Uma reflexão profunda sobre propósito, fé e integridade espiritual em tempos de superficialidade. Garanta seu exemplar impresso e autografado na pré-venda exclusiva.
+      </p>
 
-  <main class="hero-container">
-
-    <!-- 2 e 3. LIVRO + CAPA DO LIVRO + APENAS BOTÃO PRÉ-VENDA -->
-    <section class="hero-book">
-      <div class="hero-content">
-        <h1>Antes Que Eu Seja <span>Usado</span></h1>
-        <p>Uma reflexão profunda sobre propósito, fé e integridade espiritual em tempos de superficialidade. Garanta seu exemplar impresso e autografado na pré-venda exclusiva.</p>
-        
-        <a href="lancamento.html" class="btn-primary">
-          <i class="fa-solid fa-bookmark"></i> Garantir na Pré-Venda
-        </a>
-      </div>
-
-      <div class="book-cover">
-        <img src="capa.jpg" alt="Capa do Livro Antes Que Eu Seja Usado">
-      </div>
-    </section>
-
-    <!-- 1. INFORMAÇÕES DO AUTOR ABAIXO DA SUA IMAGEM -->
-    <section class="author-section">
-      <div class="author-img-box">
-        <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro">
-      </div>
-      <div class="author-info">
-        <h2>Francisco Denilson Pinheiro</h2>
-        <div class="author-roles">Pastor • Juiz de Paz Eclesiástico • Escritor • Palestrante</div>
-        <p class="author-bio">Dedicado ao ensino da Palavra, edificação de famílias e formação de lideranças com integridade e propósito cristão.</p>
-        <div class="author-family">
-          <i class="fa-solid fa-heart"></i> Casado com a <strong>Pastora Gardênia Pinheiro</strong>
+      <!-- CRONÔMETRO ESTILOSO PRÓXIMO AO ANÚNCIO -->
+      <div class="timer-box">
+        <div class="timer-title">A Oferta de Pré-Venda Encerra Em:</div>
+        <div class="timer-grid">
+          <div class="time-card">
+            <span id="dias" class="number">00</span>
+            <span class="label">Dias</span>
+          </div>
+          <div class="time-card">
+            <span id="horas" class="number">00</span>
+            <span class="label">Horas</span>
+          </div>
+          <div class="time-card">
+            <span id="minutos" class="number">00</span>
+            <span class="label">Min</span>
+          </div>
+          <div class="time-card">
+            <span id="segundos" class="number">00</span>
+            <span class="label">Seg</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- 4. CONFIRMAÇÃO DE PRESENÇA NO LANÇAMENTO -->
-    <section class="presence-section">
-      <h2><i class="fa-regular fa-calendar-check" style="color: var(--gold-primary);"></i> Confirme Sua Presença</h2>
-      <p>Preencha os dados abaixo para confirmar sua presença no evento oficial de lançamento do livro.</p>
+      <!-- BOTÃO DE AÇÃO -->
+      <a href="#comprar" class="btn-buy">Garantir na Pré-Venda</a>
 
-      <form class="presence-form" action="#" method="POST">
-        <div class="form-group">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+      <!-- SESSÃO DE CONFIRMAÇÃO LOGO ABAIXO DO BOTÃO -->
+      <div class="confirmation-section">
+        <div class="confirmation-item">
+          <span>✓</span> Exemplar Impresso e Autografado pelo Autor.
         </div>
-
-        <div class="form-group">
-          <label for="igreja">Sua Igreja / Instituição</label>
-          <input type="text" id="igreja" name="igreja" placeholder="Ex: Igreja Evangélica..." required>
+        <div class="confirmation-item">
+          <span>✓</span> Acesso ao grupo de leitores e atualizações de envio.
         </div>
+        <div class="confirmation-item">
+          <span>✓</span> Compra 100% Segura e Garantida.
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <button type="submit" class="btn-primary btn-submit">
-          <i class="fa-solid fa-paper-plane"></i> Confirmar Minha Presença
-        </button>
-      </form>
-    </section>
+  <!-- SCRIPT DO CRONÔMETRO -->
+  <script>
+    function iniciarCronometroOferta(dataAlvoISO) {
+      const dataAlvo = new Date(dataAlvoISO).getTime();
 
-  </main>
+      function atualizar() {
+        const agora = new Date().getTime();
+        const diferenca = dataAlvo - agora;
 
-  <footer>
-    © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
-  </footer>
+        if (diferenca <= 0) {
+          document.querySelector(".timer-box").innerHTML = "<div style='color: var(--accent-color); font-weight: bold;'>A Pré-venda Oficial Começou!</div>";
+          clearInterval(intervalo);
+          return;
+        }
 
+        const d = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+        document.getElementById("dias").innerText = String(d).padStart(2, '0');
+        document.getElementById("horas").innerText = String(h).padStart(2, '0');
+        document.getElementById("minutos").innerText = String(m).padStart(2, '0');
+        document.getElementById("segundos").innerText = String(s).padStart(2, '0');
+      }
+
+      atualizar();
+      const intervalo = setInterval(atualizar, 1000);
+    }
+
+    // Configure aqui a data de encerramento/lançamento da pré-venda (Exemplo: 19/09/2026 às 09:00)
+    iniciarCronometroOferta("2026-09-19T09:00:00-03:00");
+  </script>
 </body>
 </html>
