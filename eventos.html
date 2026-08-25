@@ -1,234 +1,1315 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventos | Francisco Denilson Pinheiro</title>
-  <meta name="description" content="Próximos eventos e palestras de Francisco Denilson Pinheiro.">
 
-  <!-- Fonts & Icons -->
+  <title>Eventos | Francisco Denilson Pinheiro</title>
+
+  <meta
+    name="description"
+    content="Agenda de eventos, palestras e compromissos de Francisco Denilson Pinheiro."
+  >
+
+  <!-- FONTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ÍCONES -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <!-- ESTILO PRINCIPAL DO SITE -->
   <link rel="stylesheet" href="style.css">
 
+
   <style>
-    .pagina {
+
+    /* =====================================================
+       PÁGINA DE EVENTOS
+    ===================================================== */
+
+    .pagina-eventos {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 60px 20px;
-      flex: 1;
+      padding: 65px 20px 80px;
     }
 
-    .evento-card {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 40px;
-      align-items: center;
-      padding: 35px;
-      margin-bottom: 30px;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      background-color: var(--bg-card);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    /* =====================================================
+       CABEÇALHO DA PÁGINA
+    ===================================================== */
+
+    .cabecalho-eventos {
+      text-align: center;
+      margin-bottom: 55px;
     }
 
-    .evento-card img {
-      width: 100%;
-      height: 100%;
-      max-height: 260px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    .evento-titulo {
-      font-family: var(--font-serif);
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 14px;
-    }
-
-    .evento-info {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      line-height: 1.7;
-    }
-
-    .evento-info strong {
-      color: var(--gold-primary);
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.72rem;
-      letter-spacing: 1.5px;
+    .cabecalho-eventos .pequeno {
       display: block;
+      color: var(--gold-primary);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .timer-container {
-      margin-top: 20px;
-      padding: 16px 20px;
-      background-color: rgba(201, 158, 92, 0.06);
-      border: 1px dashed var(--border-color);
-      border-radius: 2px;
+    .cabecalho-eventos h1 {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3.3rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.15;
     }
 
-    .timer-title {
+    .cabecalho-eventos p {
+      max-width: 600px;
+      margin: 15px auto 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .linha-dourada {
+      width: 55px;
+      height: 2px;
+      background: var(--gold-primary);
+      margin: 22px auto 0;
+    }
+
+
+    /* =====================================================
+       EVENTO
+    ===================================================== */
+
+    .evento {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) 1fr;
+
+      gap: 50px;
+      align-items: center;
+
+      margin-bottom: 45px;
+      padding: 32px;
+
+      background: var(--bg-card);
+
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+
+      box-shadow:
+        0 20px 55px rgba(0,0,0,0.35);
+
+      overflow: hidden;
+    }
+
+
+    /* detalhe dourado lateral */
+
+    .evento::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      width: 3px;
+      height: 100%;
+
+      background: var(--gold-primary);
+    }
+
+
+    /* =====================================================
+       IMAGEM
+    ===================================================== */
+
+    .evento-imagem {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(0,0,0,0.12);
+
+      border-radius: 5px;
+
+      padding: 8px;
+    }
+
+    .evento-imagem img {
+      width: 100%;
+      height: auto;
+
+      max-height: 430px;
+
+      object-fit: contain;
+
+      display: block;
+
+      border-radius: 3px;
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.45);
+    }
+
+
+    /* =====================================================
+       CONTEÚDO
+    ===================================================== */
+
+    .evento-conteudo {
+      padding: 5px 5px 5px 0;
+    }
+
+
+    .evento-numero {
+      font-family: var(--font-sans);
       font-size: 0.68rem;
       font-weight: 600;
+
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+
       color: var(--gold-primary);
-      margin-bottom: 8px;
+
+      margin-bottom: 12px;
     }
 
-    .timer-display {
+
+    .evento-titulo {
+      margin: 0 0 18px;
+
       font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 600;
+
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+      font-weight: 500;
+
+      line-height: 1.15;
+
       color: #fff;
     }
 
-    @media (max-width: 800px) {
-      .evento-card {
-        grid-template-columns: 1fr;
-        padding: 22px;
-        gap: 20px;
-      }
+
+    .evento-tema {
+      color: var(--text-muted);
+
+      font-size: 0.95rem;
+
+      line-height: 1.7;
+
+      margin-bottom: 25px;
     }
+
+
+    /* =====================================================
+       INFORMAÇÕES DO EVENTO
+    ===================================================== */
+
+    .evento-detalhes {
+      display: flex;
+      flex-direction: column;
+
+      gap: 17px;
+
+      margin-bottom: 25px;
+    }
+
+
+    .detalhe {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 13px;
+    }
+
+
+    .detalhe-icone {
+      width: 35px;
+      height: 35px;
+
+      flex-shrink: 0;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border-color);
+
+      border-radius: 50%;
+
+      color: var(--gold-primary);
+
+      font-size: 0.82rem;
+    }
+
+
+    .detalhe-texto {
+      display: flex;
+      flex-direction: column;
+
+      gap: 3px;
+    }
+
+
+    .detalhe-label {
+      font-family: var(--font-sans);
+
+      font-size: 0.65rem;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      color: var(--gold-primary);
+    }
+
+
+    .detalhe-valor {
+      font-size: 0.9rem;
+
+      color: var(--text-light);
+
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       CONTADOR
+    ===================================================== */
+
+    .contador {
+      margin: 25px 0;
+
+      padding: 17px 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(201,158,92,0.08),
+          rgba(201,158,92,0.02)
+        );
+
+      border:
+
+        1px solid
+        rgba(201,158,92,0.22);
+
+      border-radius: 4px;
+    }
+
+
+    .contador-titulo {
+      margin-bottom: 9px;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.62rem;
+
+      font-weight: 600;
+
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+
+      color: var(--gold-primary);
+    }
+
+
+    .contador-tempo {
+      font-family: var(--font-serif);
+
+      font-size: 1.35rem;
+
+      font-weight: 500;
+
+      color: #fff;
+
+      letter-spacing: 0.5px;
+    }
+
+
+    /* =====================================================
+       BOTÕES
+    ===================================================== */
+
+    .evento-botoes {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+
+    .botao-evento {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      min-height: 48px;
+
+      padding: 13px 20px;
+
+      border-radius: 3px;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.72rem;
+
+      font-weight: 600;
+
+      letter-spacing: 1.1px;
+
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+
+    .botao-evento:hover {
+      transform: translateY(-2px);
+    }
+
+
+    .botao-localizacao {
+      background: var(--gold-primary);
+
+      color: #171513;
+
+      border: 1px solid var(--gold-primary);
+    }
+
+
+    .botao-localizacao:hover {
+      background: #dfc58e;
+    }
+
+
+    .botao-whatsapp {
+      background: transparent;
+
+      color: #fff;
+
+      border: 1px solid var(--border-color);
+    }
+
+
+    .botao-whatsapp:hover {
+      color: var(--gold-primary);
+
+      border-color: var(--gold-primary);
+
+      background:
+        rgba(201,158,92,0.05);
+    }
+
+
+    /* =====================================================
+       ÁREA DE CONVITES
+    ===================================================== */
+
+    .convites {
+      margin-top: 60px;
+
+      padding: 42px 30px;
+
+      text-align: center;
+
+      border-top:
+        1px solid var(--border-color);
+
+      background:
+        rgba(201,158,92,0.025);
+    }
+
+
+    .convites h2 {
+      margin: 0 0 10px;
+
+      font-family: var(--font-serif);
+
+      font-size: 1.8rem;
+
+      font-weight: 500;
+
+      color: #fff;
+    }
+
+
+    .convites p {
+      max-width: 650px;
+
+      margin: 0 auto 22px;
+
+      color: var(--text-muted);
+
+      font-size: 0.9rem;
+
+      line-height: 1.8;
+    }
+
+
+    .botao-convite {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 14px 24px;
+
+      background: var(--gold-primary);
+
+      color: #171513;
+
+      border-radius: 3px;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.72rem;
+
+      font-weight: 700;
+
+      letter-spacing: 1.2px;
+
+      text-transform: uppercase;
+
+      transition: 0.25s;
+    }
+
+
+    .botao-convite:hover {
+      background: #dfc58e;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =====================================================
+       RESPONSIVO
+    ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .pagina-eventos {
+        padding: 45px 15px 60px;
+      }
+
+
+      .cabecalho-eventos {
+        margin-bottom: 35px;
+      }
+
+
+      .evento {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 20px;
+
+        margin-bottom: 30px;
+      }
+
+
+      .evento-imagem {
+        padding: 5px;
+      }
+
+
+      .evento-imagem img {
+        max-height: none;
+
+        width: 100%;
+
+        height: auto;
+
+        object-fit: contain;
+      }
+
+
+      .evento-conteudo {
+        padding: 0;
+      }
+
+
+      .evento-titulo {
+        font-size: 2rem;
+      }
+
+
+      .evento-botoes {
+        flex-direction: column;
+      }
+
+
+      .botao-evento {
+        width: 100%;
+      }
+
+
+      .convites {
+        padding: 35px 15px;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .evento {
+        padding: 15px;
+      }
+
+
+      .evento-titulo {
+        font-size: 1.75rem;
+      }
+
+
+      .contador-tempo {
+        font-size: 1.1rem;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- CABEÇALHO -->
+
+  <!-- =====================================================
+       CABEÇALHO
+  ===================================================== -->
+
   <header class="site-header">
+
     <div class="header-brand">
-      <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
+
+      <img
+        src="imagem-pessoal.jpg"
+        alt="Francisco Denilson Pinheiro"
+        class="foto-pessoal"
+      >
+
       <div class="brand-titles">
-        <span class="brand-name">Francisco Denilson</span>
-        <span class="brand-sub">Escritor & Palestrante</span>
+
+        <span class="brand-name">
+          Francisco Denilson
+        </span>
+
+        <span class="brand-sub">
+          Escritor & Palestrante
+        </span>
+
       </div>
+
     </div>
+
+
+    <!-- MENU DESKTOP -->
 
     <nav class="menu-desktop">
-      <a href="index.html">Início</a>
-      <a href="livros.html">Livros</a>
-      <a href="biblioteca.html">Minha Biblioteca</a>
-      <a href="eventos.html" class="ativo">Eventos</a>
-      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
+
+      <a href="index.html">
+        Início
+      </a>
+
+      <a href="obras.html">
+        Obras
+      </a>
+
+      <a href="biblioteca.html">
+        Minha Biblioteca
+      </a>
+
+      <a
+        href="eventos.html"
+        class="ativo"
+      >
+        Eventos
+      </a>
+
+      <a
+        href="https://wa.me/5585985141830?text=Olá%2C%20Denílson!%20Gostaria%20de%20informações%20sobre%20convites%20para%20eventos."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Contato
+      </a>
+
     </nav>
 
-    <button type="button" class="botao-menu-mobile" id="botaoMenu" aria-label="Abrir menu" onclick="alternarMenu()">
+
+    <!-- BOTÃO MOBILE -->
+
+    <button
+      type="button"
+      class="botao-menu-mobile"
+      id="botaoMenu"
+      aria-label="Abrir menu"
+      onclick="alternarMenu()"
+    >
+
       <i class="fa-solid fa-bars"></i>
+
     </button>
+
   </header>
 
-  <!-- MENU MOBILE -->
-  <div class="menu-mobile-dropdown" id="menuConteudo">
-    <a href="index.html">Início</a>
-    <a href="livros.html">Livros</a>
-    <a href="biblioteca.html">Minha Biblioteca</a>
-    <a href="eventos.html" class="ativo">Eventos</a>
-    <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
+
+  <!-- =====================================================
+       MENU MOBILE
+  ===================================================== -->
+
+  <div
+    class="menu-mobile-dropdown"
+    id="menuConteudo"
+  >
+
+    <a href="index.html">
+      Início
+    </a>
+
+    <a href="obras.html">
+      Obras
+    </a>
+
+    <a href="biblioteca.html">
+      Minha Biblioteca
+    </a>
+
+    <a
+      href="eventos.html"
+      class="ativo"
+    >
+      Eventos
+    </a>
+
+    <a
+      href="https://wa.me/5585985141830?text=Olá%2C%20Denílson!%20Gostaria%20de%20informações%20sobre%20convites%20para%20eventos."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Contato
+    </a>
+
   </div>
 
-  <!-- CONTEÚDO -->
-  <main class="pagina">
-    <div class="titulo-secao">
-      <span class="pequeno">Agenda</span>
-      <h2>Próximos Eventos</h2>
+
+  <!-- =====================================================
+       CONTEÚDO
+  ===================================================== -->
+
+  <main class="pagina-eventos">
+
+
+    <!-- CABEÇALHO -->
+
+    <div class="cabecalho-eventos">
+
+      <span class="pequeno">
+        Agenda
+      </span>
+
+      <h1>
+        Próximos Eventos
+      </h1>
+
       <div class="linha-dourada"></div>
+
+      <p>
+        Acompanhe os próximos encontros, palestras e compromissos
+        de Francisco Denilson Pinheiro.
+      </p>
+
     </div>
 
-    <!-- EVENTO 1: CONSOLIDAÇÃO -->
-    <article class="evento-card">
-      <img src="consolidação.jpg" alt="Evento Consolidação">
-      <div>
-        <h3 class="evento-titulo">Consolidação</h3>
-        <p class="evento-info"><strong>Data</strong> 19 de setembro de 2026, às 09h</p>
-        <p class="evento-info"><strong>Local</strong> Retiro da Igreja da Restauração — Fortaleza, CE</p>
 
-        <div class="timer-container">
-          <div class="timer-title">Tempo restante para o evento</div>
-          <div id="timer1" class="timer-display">Carregando...</div>
-        </div>
+    <!-- =====================================================
+         EVENTO 1
+    ===================================================== -->
+
+    <article class="evento">
+
+
+      <div class="evento-imagem">
+
+        <img
+          src="consolidação.jpg"
+          alt="Evento Consolidação"
+        >
+
       </div>
+
+
+      <div class="evento-conteudo">
+
+        <div class="evento-numero">
+          Próximo compromisso
+        </div>
+
+        <h2 class="evento-titulo">
+          Consolidação
+        </h2>
+
+
+        <div class="evento-detalhes">
+
+
+          <div class="detalhe">
+
+            <div class="detalhe-icone">
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <div class="detalhe-texto">
+
+              <span class="detalhe-label">
+                Data
+              </span>
+
+              <span class="detalhe-valor">
+                19 de setembro de 2026
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="detalhe">
+
+            <div class="detalhe-icone">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <div class="detalhe-texto">
+
+              <span class="detalhe-label">
+                Horário
+              </span>
+
+              <span class="detalhe-valor">
+                09h
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="detalhe">
+
+            <div class="detalhe-icone">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="detalhe-texto">
+
+              <span class="detalhe-label">
+                Local
+              </span>
+
+              <span class="detalhe-valor">
+                Retiro da Igreja da Restauração — Fortaleza, CE
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- CONTADOR -->
+
+        <div class="contador">
+
+          <div class="contador-titulo">
+            Tempo restante
+          </div>
+
+          <div
+            id="timer1"
+            class="contador-tempo"
+          >
+            Carregando...
+          </div>
+
+        </div>
+
+
+        <!-- BOTÕES -->
+
+        <div class="evento-botoes">
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Retiro+da+Igreja+da+Restauração%2C+Fortaleza%2C+CE"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="botao-evento botao-localizacao"
+          >
+
+            <i class="fa-solid fa-location-arrow"></i>
+
+            Ver localização
+
+          </a>
+
+
+          <a
+            href="https://wa.me/5585985141830?text=Olá%2C%20Denílson!%20Gostaria%20de%20informações%20sobre%20o%20evento%20de%20Consolidação."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="botao-evento botao-whatsapp"
+          >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Informações
+
+          </a>
+
+        </div>
+
+      </div>
+
     </article>
 
-    <!-- EVENTO 2: CONGRESSO UNIFICADO -->
-    <article class="evento-card">
-      <img src="congresso unificado.jpg" alt="Congresso Unificado">
-      <div>
-        <h3 class="evento-titulo">Congresso Unificado</h3>
-        <p class="evento-info"><strong>Tema</strong> Protegendo a família em uma geração sem referências</p>
-        <p class="evento-info"><strong>Data</strong> 20 de setembro de 2026, às 19h</p>
-        <p class="evento-info"><strong>Local</strong> Assembleia de Deus Restauração — Chorozinho, CE</p>
 
-        <div class="timer-container">
-          <div class="timer-title">Tempo restante para o evento</div>
-          <div id="timer2" class="timer-display">Carregando...</div>
-        </div>
+    <!-- =====================================================
+         EVENTO 2
+    ===================================================== -->
+
+    <article class="evento">
+
+
+      <div class="evento-imagem">
+
+        <img
+          src="congresso unificado.jpg"
+          alt="Congresso Unificado"
+        >
+
       </div>
+
+
+      <div class="evento-conteudo">
+
+        <div class="evento-numero">
+          Congresso
+        </div>
+
+        <h2 class="evento-titulo">
+          Congresso Unificado
+        </h2>
+
+
+        <p class="evento-tema">
+          <strong>Tema:</strong>
+          Protegendo a família em uma geração sem referências.
+        </p>
+
+
+        <div class="evento-detalhes">
+
+
+          <div class="detalhe">
+
+            <div class="detalhe-icone">
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <div class="detalhe-texto">
+
+              <span class="detalhe-label">
+                Data
+              </span>
+
+              <span class="detalhe-valor">
+                20 de setembro de 2026
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="detalhe">
+
+            <div class="detalhe-icone">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <div class="detalhe-texto">
+
+              <span class="detalhe-label">
+                Horário
+              </span>
+
+              <span class="detalhe-valor">
+                19h
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="detalhe">
+
+            <div class="detalhe-icone">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="detalhe-texto">
+
+              <span class="detalhe-label">
+                Local
+              </span>
+
+              <span class="detalhe-valor">
+                Assembleia de Deus Restauração — Chorozinho, CE
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- CONTADOR -->
+
+        <div class="contador">
+
+          <div class="contador-titulo">
+            Tempo restante
+          </div>
+
+          <div
+            id="timer2"
+            class="contador-tempo"
+          >
+            Carregando...
+          </div>
+
+        </div>
+
+
+        <!-- BOTÕES -->
+
+        <div class="evento-botoes">
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Assembleia+de+Deus+Restauração%2C+Chorozinho%2C+CE"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="botao-evento botao-localizacao"
+          >
+
+            <i class="fa-solid fa-location-arrow"></i>
+
+            Ver localização
+
+          </a>
+
+
+          <a
+            href="https://wa.me/5585985141830?text=Olá%2C%20Denílson!%20Gostaria%20de%20informações%20sobre%20o%20Congresso%20Unificado."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="botao-evento botao-whatsapp"
+          >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Informações
+
+          </a>
+
+        </div>
+
+      </div>
+
     </article>
+
+
+    <!-- =====================================================
+         CONVITES
+    ===================================================== -->
+
+    <section class="convites">
+
+      <h2>
+        Convites e participação em eventos
+      </h2>
+
+      <p>
+        Para convites para pregações, palestras, congressos,
+        encontros e outros eventos, entre em contato diretamente
+        pelo WhatsApp.
+      </p>
+
+
+      <a
+        href="https://wa.me/5585985141830?text=Olá%2C%20Denílson!%20Gostaria%20de%20fazer%20um%20convite%20para%20um%20evento."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="botao-convite"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Fazer um convite pelo WhatsApp
+
+      </a>
+
+    </section>
+
+
   </main>
 
-  <!-- RODAPÉ -->
+
+  <!-- =====================================================
+       RODAPÉ
+  ===================================================== -->
+
   <footer class="site-footer">
+
     <div class="footer-social">
-      <a href="https://instagram.com/prdenilsonescritor" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+      <a
+        href="https://instagram.com/prdenilsonescritor"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+
+        <i class="fa-brands fa-instagram"></i>
+
+      </a>
+
+
+      <a
+        href="https://wa.me/5585985141830"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+      </a>
+
     </div>
-    © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+
+
+    © 2026 Francisco Denilson Pinheiro.
+    Todos os direitos reservados.
+
   </footer>
 
-  <script>
-    function alternarMenu() {
-      document.getElementById("menuConteudo").classList.toggle("aberto");
-    }
-    function fecharMenu() {
-      if (window.innerWidth <= 850) {
-        document.getElementById("menuConteudo").classList.remove("aberto");
-      }
-    }
-    document.querySelectorAll(".menu-mobile-dropdown a").forEach(function(link) {
-      link.addEventListener("click", fecharMenu);
-    });
 
-    /* CONTADORES REGRESSIVOS */
-    function iniciarContador(idElemento, dataAlvoISO) {
-      const dataEvento = new Date(dataAlvoISO).getTime();
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    function alternarMenu() {
+
+      const menu =
+        document.getElementById("menuConteudo");
+
+      menu.classList.toggle("aberto");
+
+    }
+
+
+    function fecharMenu() {
+
+      if (window.innerWidth <= 850) {
+
+        document
+          .getElementById("menuConteudo")
+          .classList.remove("aberto");
+
+      }
+
+    }
+
+
+    document
+      .querySelectorAll(".menu-mobile-dropdown a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          fecharMenu
+        );
+
+      });
+
+
+    /* =====================================================
+       CONTADOR REGRESSIVO
+    ===================================================== */
+
+    function iniciarContador(
+      idElemento,
+      dataAlvoISO
+    ) {
+
+      const elemento =
+        document.getElementById(idElemento);
+
+      if (!elemento) return;
+
+
+      const dataEvento =
+        new Date(dataAlvoISO).getTime();
+
 
       function atualizar() {
-        const agora = new Date().getTime();
-        const diferenca = dataEvento - agora;
-        const elemento = document.getElementById(idElemento);
-        if (!elemento) return;
+
+        const agora =
+          new Date().getTime();
+
+
+        const diferenca =
+          dataEvento - agora;
+
 
         if (diferenca <= 0) {
-          elemento.innerHTML = "O evento começou!";
+
+          elemento.innerHTML =
+            "O evento começou!";
+
           clearInterval(intervalo);
+
           return;
+
         }
 
-        const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-        elemento.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+        const dias =
+          Math.floor(
+            diferenca /
+            (1000 * 60 * 60 * 24)
+          );
+
+
+        const horas =
+          Math.floor(
+            (
+              diferenca %
+              (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+          );
+
+
+        const minutos =
+          Math.floor(
+            (
+              diferenca %
+              (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+          );
+
+
+        const segundos =
+          Math.floor(
+            (
+              diferenca %
+              (1000 * 60)
+            ) /
+            1000
+          );
+
+
+        elemento.innerHTML =
+          `${dias} dias · ${horas}h · ${minutos}m · ${segundos}s`;
+
       }
 
+
       atualizar();
-      const intervalo = setInterval(atualizar, 1000);
+
+
+      const intervalo =
+        setInterval(
+          atualizar,
+          1000
+        );
+
     }
 
-    iniciarContador('timer1', '2026-09-19T09:00:00-03:00');
-    iniciarContador('timer2', '2026-09-20T19:00:00-03:00');
+
+    /* =====================================================
+       DATAS DOS EVENTOS
+    ===================================================== */
+
+    iniciarContador(
+      "timer1",
+      "2026-09-19T09:00:00-03:00"
+    );
+
+
+    iniciarContador(
+      "timer2",
+      "2026-09-20T19:00:00-03:00"
+    );
+
+
   </script>
 
+
 </body>
+
 </html>
