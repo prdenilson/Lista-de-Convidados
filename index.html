@@ -2,14 +2,24 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Francisco Denilson Pinheiro — escritor, pastor e autor de livros cristãos.">
+  <meta
+    name="description"
+    content="Francisco Denilson Pinheiro — escritor, pastor e autor de livros cristãos."
+  >
 
   <title>Francisco Denilson Pinheiro | Escritor</title>
 
+
   <style>
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
       margin: 0;
@@ -17,9 +27,11 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
+
 
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -29,292 +41,612 @@
       overflow-x: hidden;
     }
 
+
     a {
       text-decoration: none;
       color: inherit;
     }
+
 
     /* =========================
        CABEÇALHO
     ========================= */
 
     header {
+
       width: 100%;
+
       background: #171513;
+
       color: #fff;
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
+
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
+
     .header-container {
+
       width: 100%;
+
       max-width: 1200px;
+
       min-height: 82px;
+
       margin: 0 auto;
+
       padding: 0 20px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 20px;
     }
 
+
     .logo {
+
       display: flex;
+
       flex-direction: column;
+
       line-height: 1.1;
     }
 
+
     .logo strong {
+
       font-size: 18px;
+
       font-weight: 500;
+
       letter-spacing: 0.5px;
     }
 
+
     .logo span {
+
       margin-top: 5px;
+
       font-family: Arial, sans-serif;
+
       font-size: 10px;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       color: #c9b58a;
     }
 
+
     nav ul {
+
       list-style: none;
+
       display: flex;
+
       align-items: center;
+
       gap: 28px;
     }
 
+
     nav a {
+
       font-family: Arial, sans-serif;
+
       font-size: 12px;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
       color: #eee;
+
       transition: 0.3s;
+
       white-space: nowrap;
     }
 
+
     nav a:hover,
     nav a.active {
+
       color: #c9b58a;
     }
 
+
     .menu-button {
+
       display: none;
+
       background: transparent;
+
       border: none;
+
       color: white;
+
       font-size: 28px;
+
       cursor: pointer;
     }
+
 
     /* =========================
        BOTÕES
     ========================= */
 
     .button {
+
       display: inline-block;
+
       margin-top: 12px;
+
       padding: 14px 25px;
 
       background: #c9b58a;
+
       color: #191715;
 
       font-family: Arial, sans-serif;
+
       font-size: 12px;
+
       font-weight: bold;
+
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
 
       transition: 0.3s;
+
       text-align: center;
+
       border: none;
+
       cursor: pointer;
     }
 
+
     .button:hover {
+
       background: #e0cfaa;
+
+      transform: translateY(-1px);
     }
 
+
     /* =========================
-       SEÇÃO — SOBRE O AUTOR
+       SOBRE O AUTOR
     ========================= */
 
     .about {
+
       width: 100%;
+
       background: #ffffff;
+
       padding: 80px 20px;
     }
 
+
     .about-container {
+
       width: 100%;
+
       max-width: 1100px;
+
       margin: 0 auto;
     }
 
+
     .about-grid {
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 70px;
+
       align-items: center;
     }
+
 
     .about-image {
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
     }
 
+
     .about-image img {
+
       width: 100%;
+
       max-width: 500px;
+
       height: auto;
+
       display: block;
+
       border-radius: 4px;
+
       box-shadow: 0 18px 40px rgba(0,0,0,0.14);
     }
 
+
     .about-text {
+
       max-width: 500px;
     }
 
+
     .eyebrow {
+
       font-family: Arial, sans-serif;
+
       color: #9c8457;
+
       font-size: 11px;
+
       font-weight: bold;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       margin-bottom: 12px;
     }
 
+
     .about-text h1 {
+
       font-size: clamp(32px, 4vw, 48px);
+
       line-height: 1.1;
+
       font-weight: 500;
+
       margin-bottom: 22px;
     }
 
+
     .about-text p {
+
       color: #5c5751;
+
       font-size: 17px;
+
       margin-bottom: 16px;
     }
 
+
     /* =========================
-       SEÇÃO — LANÇAMENTO
+       LANÇAMENTO
     ========================= */
 
     .launch {
+
       width: 100%;
+
       background: #191715;
+
       color: white;
+
       padding: 80px 20px;
     }
 
+
     .launch-container {
+
       width: 100%;
+
       max-width: 1100px;
+
       margin: 0 auto;
 
       display: grid;
+
       grid-template-columns: 0.8fr 1.2fr;
+
       gap: 60px;
+
       align-items: center;
     }
+
 
     .launch-book {
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
     }
 
+
     .launch-book img {
+
       width: 100%;
+
       max-width: 300px;
+
       height: auto;
+
       display: block;
 
       filter: drop-shadow(0 18px 25px rgba(0,0,0,0.55));
     }
 
+
     .launch-content {
+
       max-width: 600px;
     }
 
+
     .launch-content .eyebrow {
+
       color: #c9b58a;
     }
 
+
     .launch-content h2 {
+
       font-size: clamp(32px, 4vw, 50px);
+
       line-height: 1.1;
+
       font-weight: 500;
+
       margin-bottom: 18px;
     }
 
+
     .launch-subtitle {
+
       color: #dedbd5;
+
       font-size: 18px;
+
       margin-bottom: 30px;
     }
+
 
     .launch-details {
+
       border-left: 2px solid #c9b58a;
+
       padding-left: 20px;
+
       margin-bottom: 30px;
     }
 
+
     .launch-details .label {
+
       display: block;
+
       font-family: Arial, sans-serif;
+
       color: #c9b58a;
+
       font-size: 12px;
+
       font-weight: bold;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       margin-bottom: 8px;
     }
 
+
     .launch-details p {
+
       font-size: 17px;
+
       color: #eee;
+
       margin-bottom: 6px;
     }
 
+
     .launch-details .address {
+
       color: #cfcac2;
+
       margin-top: 10px;
     }
+
+
+    /* =========================
+       CONTADOR REGRESSIVO
+    ========================= */
+
+    .countdown-title {
+
+      font-family: Arial, sans-serif;
+
+      color: #c9b58a;
+
+      font-size: 11px;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+
+    .countdown {
+
+      display: flex;
+
+      gap: 10px;
+
+      margin: 25px 0 30px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .countdown-box {
+
+      min-width: 78px;
+
+      padding: 13px 10px;
+
+      border: 1px solid rgba(201,181,138,0.35);
+
+      background: rgba(255,255,255,0.03);
+
+      text-align: center;
+
+      border-radius: 3px;
+    }
+
+
+    .countdown-box strong {
+
+      display: block;
+
+      color: #fff;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 25px;
+
+      line-height: 1.1;
+
+      font-weight: 600;
+    }
+
+
+    .countdown-box span {
+
+      display: block;
+
+      margin-top: 5px;
+
+      color: #c9b58a;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+
+    .evento-encerrado {
+
+      color: #c9b58a;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      margin: 20px 0;
+    }
+
+
+    /* =========================
+       BOTÃO DE PRÉ-VENDA
+    ========================= */
+
+    .pre-venda-button {
+
+      display: inline-block;
+
+      margin-top: 15px;
+
+      padding: 15px 25px;
+
+      background: #c9b58a;
+
+      color: #191715;
+
+      border: 1px solid #c9b58a;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      letter-spacing: 1.3px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      text-align: center;
+    }
+
+
+    .pre-venda-button:hover {
+
+      background: #e0cfaa;
+
+      border-color: #e0cfaa;
+    }
+
 
     /* =========================
        BOTÃO FIXO
     ========================= */
 
     .confirmar-fixo {
+
       position: fixed;
+
       right: 22px;
+
       bottom: 22px;
 
       z-index: 2000;
 
       background: #c9b58a;
+
       color: #191715;
 
       padding: 15px 22px;
 
       border: none;
+
       border-radius: 3px;
 
       font-family: Arial, sans-serif;
+
       font-size: 12px;
+
       font-weight: bold;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
 
       cursor: pointer;
@@ -324,25 +656,33 @@
       transition: 0.3s;
     }
 
+
     .confirmar-fixo:hover {
+
       background: #e0cfaa;
+
       transform: translateY(-2px);
     }
 
+
     /* =========================
-       MODAL DE CONFIRMAÇÃO
+       MODAL — CONFIRMAÇÃO
     ========================= */
 
     .modal {
+
       display: none;
 
       position: fixed;
+
       z-index: 3000;
 
       left: 0;
+
       top: 0;
 
       width: 100%;
+
       height: 100%;
 
       background: rgba(0,0,0,0.72);
@@ -350,15 +690,21 @@
       padding: 20px;
 
       align-items: center;
+
       justify-content: center;
     }
 
+
     .modal.aberto {
+
       display: flex;
     }
 
+
     .modal-content {
+
       width: 100%;
+
       max-width: 480px;
 
       background: #ffffff;
@@ -372,32 +718,47 @@
       position: relative;
     }
 
+
     .modal-content h2 {
+
       font-size: 28px;
+
       font-weight: 500;
+
       margin-bottom: 8px;
+
       color: #24211e;
     }
 
+
     .modal-subtitle {
+
       color: #66605a;
+
       font-size: 15px;
+
       margin-bottom: 25px;
     }
 
+
     .campo {
+
       margin-bottom: 18px;
     }
 
+
     .campo label {
+
       display: block;
 
       font-family: Arial, sans-serif;
 
       font-size: 11px;
+
       font-weight: bold;
 
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
 
       color: #6d6253;
@@ -405,56 +766,75 @@
       margin-bottom: 7px;
     }
 
+
     .campo input {
+
       width: 100%;
 
       padding: 13px 14px;
 
       border: 1px solid #d8d1c5;
+
       border-radius: 2px;
 
       font-family: Arial, sans-serif;
+
       font-size: 15px;
 
       outline: none;
     }
 
+
     .campo input:focus {
+
       border-color: #c9b58a;
     }
 
+
     .botao-confirmar {
+
       width: 100%;
 
       padding: 15px;
 
       background: #191715;
+
       color: #ffffff;
 
       border: none;
+
       border-radius: 2px;
 
       font-family: Arial, sans-serif;
+
       font-size: 12px;
+
       font-weight: bold;
 
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
 
       cursor: pointer;
     }
 
+
     .botao-confirmar:hover {
+
       background: #302c28;
     }
 
+
     .fechar-modal {
+
       position: absolute;
 
       top: 12px;
+
       right: 15px;
 
       background: transparent;
+
       border: none;
 
       font-size: 27px;
@@ -464,7 +844,9 @@
       cursor: pointer;
     }
 
+
     .mensagem {
+
       display: none;
 
       margin-top: 18px;
@@ -478,77 +860,326 @@
       text-align: center;
 
       font-family: Arial, sans-serif;
+
       font-size: 13px;
     }
 
+
     .mensagem.exibir {
+
       display: block;
     }
+
+
+    /* =========================
+       MODAL — PRÉ-VENDA
+    ========================= */
+
+    .pre-venda-modal {
+
+      display: none;
+
+      position: fixed;
+
+      z-index: 3500;
+
+      left: 0;
+
+      top: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      background: rgba(0,0,0,0.78);
+
+      padding: 20px;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+
+    .pre-venda-modal.aberto {
+
+      display: flex;
+    }
+
+
+    .pre-venda-card {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: 560px;
+
+      background: #191715;
+
+      color: white;
+
+      border: 1px solid rgba(201,181,138,0.35);
+
+      padding: 45px 40px;
+
+      text-align: center;
+
+      box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+    }
+
+
+    .pre-venda-card .eyebrow {
+
+      color: #c9b58a;
+
+      margin-bottom: 15px;
+    }
+
+
+    .pre-venda-card h2 {
+
+      font-size: clamp(28px, 5vw, 40px);
+
+      font-weight: 500;
+
+      line-height: 1.15;
+
+      margin-bottom: 18px;
+    }
+
+
+    .pre-venda-card .linha {
+
+      width: 60px;
+
+      height: 1px;
+
+      background: #c9b58a;
+
+      margin: 20px auto;
+    }
+
+
+    .pre-venda-card p {
+
+      color: #dedbd5;
+
+      font-size: 16px;
+
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+    }
+
+
+    .beneficio {
+
+      margin: 25px 0;
+
+      padding: 18px;
+
+      border: 1px solid rgba(201,181,138,0.35);
+
+      background: rgba(201,181,138,0.06);
+    }
+
+
+    .beneficio strong {
+
+      display: block;
+
+      color: #c9b58a;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 6px;
+    }
+
+
+    .beneficio span {
+
+      color: white;
+
+      font-size: 18px;
+
+      font-weight: bold;
+    }
+
+
+    .botao-adquirir {
+
+      display: inline-block;
+
+      width: 100%;
+
+      padding: 15px 20px;
+
+      background: #c9b58a;
+
+      color: #191715;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      border: none;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+
+    .botao-adquirir:hover {
+
+      background: #e0cfaa;
+    }
+
+
+    .fechar-pre-venda {
+
+      position: absolute;
+
+      top: 10px;
+
+      right: 15px;
+
+      background: transparent;
+
+      border: none;
+
+      color: #aaa;
+
+      font-size: 30px;
+
+      cursor: pointer;
+
+      line-height: 1;
+    }
+
+
+    .fechar-pre-venda:hover {
+
+      color: white;
+    }
+
 
     /* =========================
        RODAPÉ
     ========================= */
 
     footer {
+
       width: 100%;
+
       background: #12110f;
+
       color: #ddd;
+
       padding: 35px 20px 25px;
     }
 
+
     .footer-container {
+
       width: 100%;
+
       max-width: 1100px;
+
       margin: 0 auto;
 
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 30px;
     }
 
+
     .footer-name strong {
+
       display: block;
+
       font-size: 18px;
+
       font-weight: 500;
+
       color: white;
+
       margin-bottom: 5px;
     }
 
+
     .footer-name span {
+
       font-family: Arial, sans-serif;
+
       font-size: 10px;
+
       letter-spacing: 2px;
+
       color: #c9b58a;
+
       text-transform: uppercase;
     }
 
+
     .footer-links {
+
       display: flex;
+
       gap: 18px;
+
       flex-wrap: wrap;
 
       font-family: Arial, sans-serif;
+
       font-size: 12px;
     }
 
+
     .footer-links a:hover {
+
       color: #c9b58a;
     }
 
+
     .copyright {
+
       width: 100%;
+
       max-width: 1100px;
+
       margin: 25px auto 0;
+
       padding-top: 18px;
 
       border-top: 1px solid rgba(255,255,255,0.1);
 
       font-family: Arial, sans-serif;
+
       font-size: 11px;
+
       color: #888;
+
       text-align: center;
     }
+
 
     /* =========================
        RESPONSIVO
@@ -557,98 +1188,165 @@
     @media (max-width: 800px) {
 
       .header-container {
+
         min-height: 70px;
       }
 
+
       .logo strong {
+
         font-size: 16px;
       }
 
+
       .menu-button {
+
         display: block;
       }
 
+
       nav {
+
         display: none;
 
         position: absolute;
+
         top: 100%;
+
         left: 0;
 
         width: 100%;
 
         background: #171513;
+
         padding: 20px;
 
         box-shadow: 0 10px 10px rgba(0,0,0,0.3);
       }
 
+
       nav.open {
+
         display: block;
       }
 
+
       nav ul {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 15px;
       }
 
+
+      /* SOBRE */
+
       .about {
+
         padding: 55px 20px;
       }
 
+
       .about-grid {
+
         grid-template-columns: 1fr;
+
         gap: 35px;
+
         text-align: center;
       }
 
+
       .about-image img {
+
         max-width: 430px;
       }
 
+
       .about-text {
+
         max-width: 100%;
       }
 
+
       .about-text p {
+
         font-size: 16px;
       }
 
+
       .button {
+
         width: 100%;
+
         max-width: 320px;
       }
 
+
+      /* LANÇAMENTO */
+
       .launch {
+
         padding: 55px 20px;
       }
 
+
       .launch-container {
+
         grid-template-columns: 1fr;
+
         gap: 40px;
+
         text-align: center;
       }
 
+
       .launch-book {
+
         order: 1;
       }
 
+
       .launch-content {
+
         order: 2;
+
         max-width: 100%;
       }
 
+
       .launch-details {
+
         border-left: none;
+
         border-top: 2px solid #c9b58a;
+
         padding-left: 0;
+
         padding-top: 18px;
       }
 
+
+      .countdown {
+
+        justify-content: center;
+      }
+
+
+      .countdown-box {
+
+        min-width: 68px;
+      }
+
+
       .confirmar-fixo {
+
         right: 15px;
+
         left: 15px;
+
         bottom: 15px;
 
         width: auto;
@@ -656,26 +1354,45 @@
         text-align: center;
       }
 
+
+      .pre-venda-card {
+
+        padding: 40px 22px;
+      }
+
+
       .modal-content {
+
         padding: 30px 22px;
       }
 
+
+      /* RODAPÉ */
+
       .footer-container {
+
         flex-direction: column;
+
         text-align: center;
+
         align-items: center;
       }
 
+
       .footer-links {
+
         justify-content: center;
       }
+
     }
 
   </style>
 
 </head>
 
+
 <body>
+
 
   <!-- =========================
        CABEÇALHO
@@ -686,9 +1403,17 @@
     <div class="header-container">
 
       <a href="index.html" class="logo">
-        <strong>Francisco Denilson Pinheiro</strong>
-        <span>Escritor</span>
+
+        <strong>
+          Francisco Denilson Pinheiro
+        </strong>
+
+        <span>
+          Escritor
+        </span>
+
       </a>
+
 
       <button
         class="menu-button"
@@ -698,6 +1423,7 @@
       >
         ☰
       </button>
+
 
       <nav id="menu">
 
@@ -748,7 +1474,12 @@
   </header>
 
 
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
+
   <main>
+
 
     <!-- =========================
          SOBRE O AUTOR
@@ -759,6 +1490,7 @@
       <div class="about-container">
 
         <div class="about-grid">
+
 
           <div class="about-image">
 
@@ -776,17 +1508,21 @@
               Sobre o autor
             </div>
 
+
             <h1>
               Francisco Denilson Pinheiro
             </h1>
+
 
             <p>
               Escritor, pastor e palestrante, dedicado ao ensino das Escrituras e à produção de conteúdos que promovam reflexão, fé e transformação.
             </p>
 
+
             <p>
               Seus escritos nascem da experiência ministerial, da reflexão bíblica e do desejo de ajudar pessoas a compreenderem melhor sua caminhada com Deus.
             </p>
+
 
             <a
               href="https://www.instagram.com/prdenilsonescritor/"
@@ -807,12 +1543,13 @@
 
 
     <!-- =========================
-         LANÇAMENTO
+         LANÇAMENTO DO LIVRO
     ========================= -->
 
     <section class="launch">
 
       <div class="launch-container">
+
 
         <div class="launch-book">
 
@@ -826,13 +1563,16 @@
 
         <div class="launch-content">
 
+
           <div class="eyebrow">
             Lançamento do livro
           </div>
 
+
           <h2>
             Antes Que Eu Seja Usado
           </h2>
+
 
           <p class="launch-subtitle">
             Uma jornada antes do encontro com nossa vocação.
@@ -841,28 +1581,111 @@
 
           <div class="launch-details">
 
+
             <span class="label">
               Data e horário
             </span>
 
+
             <p>
-              <strong>19 de setembro de 2026 — 19h</strong>
+              <strong>
+                19 de setembro de 2026 — 19h
+              </strong>
             </p>
 
-            <span class="label" style="margin-top:18px;">
+
+            <span
+              class="label"
+              style="margin-top:18px;"
+            >
               Local
             </span>
 
+
             <p>
-              <strong>CASA DE DEUS NOVO MONDUBIM</strong>
+              <strong>
+                CASA DE DEUS NOVO MONDUBIM
+              </strong>
             </p>
+
 
             <p class="address">
               Rua Estrada do Siqueira, 485
             </p>
 
+
           </div>
 
+
+          <!-- =========================
+               CONTADOR
+          ========================= -->
+
+          <div class="countdown-title">
+            Contagem regressiva para o lançamento
+          </div>
+
+
+          <div
+            class="countdown"
+            id="countdown"
+          >
+
+            <div class="countdown-box">
+
+              <strong id="dias">
+                00
+              </strong>
+
+              <span>
+                Dias
+              </span>
+
+            </div>
+
+
+            <div class="countdown-box">
+
+              <strong id="horas">
+                00
+              </strong>
+
+              <span>
+                Horas
+              </span>
+
+            </div>
+
+
+            <div class="countdown-box">
+
+              <strong id="minutos">
+                00
+              </strong>
+
+              <span>
+                Minutos
+              </span>
+
+            </div>
+
+
+            <div class="countdown-box">
+
+              <strong id="segundos">
+                00
+              </strong>
+
+              <span>
+                Segundos
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- COMO CHEGAR -->
 
           <a
             href="https://www.google.com/maps/search/?api=1&query=Casa+de+Deus+Novo+Mondubim%2C+Rua+Estrada+do+Siqueira%2C+485%2C+Fortaleza%2C+CE"
@@ -872,6 +1695,18 @@
           >
             Como chegar
           </a>
+
+
+          <!-- PRÉ-VENDA -->
+
+          <button
+            type="button"
+            class="pre-venda-button"
+            onclick="abrirPreVenda()"
+          >
+            Adquira agora na pré-venda
+          </button>
+
 
         </div>
 
@@ -887,15 +1722,16 @@
   ========================= -->
 
   <button
+    type="button"
     class="confirmar-fixo"
     onclick="abrirModal()"
   >
-    CONFIRME PRESENÇA NO LANÇAMENTO
+    Confirme presença no lançamento
   </button>
 
 
   <!-- =========================
-       MODAL DE CONFIRMAÇÃO
+       MODAL — CONFIRMAÇÃO
   ========================= -->
 
   <div
@@ -906,7 +1742,9 @@
 
     <div class="modal-content">
 
+
       <button
+        type="button"
         class="fechar-modal"
         onclick="fecharModal()"
         aria-label="Fechar"
@@ -914,22 +1752,29 @@
         ×
       </button>
 
+
       <h2>
         Confirme sua presença
       </h2>
 
+
       <p class="modal-subtitle">
-        Será uma alegria receber você no lançamento de <strong>Antes Que Eu Seja Usado</strong>.
+
+        Será uma alegria receber você no lançamento de
+        <strong>Antes Que Eu Seja Usado</strong>.
+
       </p>
 
 
       <form id="formConfirmacao">
+
 
         <div class="campo">
 
           <label for="nome">
             Nome
           </label>
+
 
           <input
             type="text"
@@ -947,6 +1792,7 @@
           <label for="igreja">
             Igreja
           </label>
+
 
           <input
             type="text"
@@ -967,6 +1813,7 @@
           Confirmar presença
         </button>
 
+
       </form>
 
 
@@ -981,12 +1828,81 @@
 
 
   <!-- =========================
+       MODAL — PRÉ-VENDA
+  ========================= -->
+
+  <div
+    class="pre-venda-modal"
+    id="modalPreVenda"
+    onclick="fecharPreVendaFora(event)"
+  >
+
+    <div class="pre-venda-card">
+
+
+      <button
+        type="button"
+        class="fechar-pre-venda"
+        onclick="fecharPreVenda()"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+
+      <div class="eyebrow">
+        Pré-venda
+      </div>
+
+
+      <h2>
+        Antes Que Eu Seja Usado
+      </h2>
+
+
+      <div class="linha"></div>
+
+
+      <p>
+        Adquira seu exemplar físico na pré-venda e tenha uma condição especial para acessar também a versão digital da obra.
+      </p>
+
+
+      <div class="beneficio">
+
+        <strong>
+          Benefício da pré-venda
+        </strong>
+
+        <span>
+          Livro físico + acesso à versão digital
+        </span>
+
+      </div>
+
+
+      <a
+        href="obras.html"
+        class="botao-adquirir"
+      >
+        Quero adquirir o livro
+      </a>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
        RODAPÉ
   ========================= -->
 
   <footer>
 
+
     <div class="footer-container">
+
 
       <div class="footer-name">
 
@@ -1003,12 +1919,29 @@
 
       <div class="footer-links">
 
-        <a href="index.html">Início</a>
-        <a href="obras.html">Obras</a>
-        <a href="pre-venda.html">Pré Venda</a>
-        <a href="eventos.html">Eventos</a>
-        <a href="area-do-leitor.html">Área do Leitor</a>
-        <a href="contato.html">Contato</a>
+        <a href="index.html">
+          Início
+        </a>
+
+        <a href="obras.html">
+          Obras
+        </a>
+
+        <a href="pre-venda.html">
+          Pré Venda
+        </a>
+
+        <a href="eventos.html">
+          Eventos
+        </a>
+
+        <a href="area-do-leitor.html">
+          Área do Leitor
+        </a>
+
+        <a href="contato.html">
+          Contato
+        </a>
 
       </div>
 
@@ -1016,8 +1949,12 @@
 
 
     <div class="copyright">
-      © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+
+      © 2026 Francisco Denilson Pinheiro.
+      Todos os direitos reservados.
+
     </div>
+
 
   </footer>
 
@@ -1028,51 +1965,168 @@
 
   <script>
 
-    /* MENU MOBILE */
+
+    /* =========================
+       MENU MOBILE
+    ========================= */
 
     function toggleMenu() {
 
-      const menu = document.getElementById("menu");
-      const button = document.querySelector(".menu-button");
+      const menu =
+        document.getElementById("menu");
+
+      const button =
+        document.querySelector(".menu-button");
+
 
       menu.classList.toggle("open");
 
-      const aberto = menu.classList.contains("open");
 
-      button.setAttribute("aria-expanded", aberto);
+      const aberto =
+        menu.classList.contains("open");
+
+
+      button.setAttribute(
+        "aria-expanded",
+        aberto
+      );
 
     }
 
 
-    /* ABRIR MODAL */
+    /* =========================
+       CONTADOR REGRESSIVO
+    ========================= */
+
+    const dataLancamento =
+      new Date(
+        "2026-09-19T19:00:00-03:00"
+      ).getTime();
+
+
+    function atualizarContador() {
+
+
+      const agora =
+        new Date().getTime();
+
+
+      const distancia =
+        dataLancamento - agora;
+
+
+      if (distancia <= 0) {
+
+        document.getElementById("countdown").innerHTML =
+
+          '<div class="evento-encerrado">' +
+          'O lançamento já começou!' +
+          '</div>';
+
+        return;
+
+      }
+
+
+      const dias =
+        Math.floor(
+          distancia /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const horas =
+        Math.floor(
+          (distancia %
+          (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutos =
+        Math.floor(
+          (distancia %
+          (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+
+      const segundos =
+        Math.floor(
+          (distancia %
+          (1000 * 60)) /
+          1000
+        );
+
+
+      document.getElementById("dias").textContent =
+        String(dias).padStart(2, "0");
+
+
+      document.getElementById("horas").textContent =
+        String(horas).padStart(2, "0");
+
+
+      document.getElementById("minutos").textContent =
+        String(minutos).padStart(2, "0");
+
+
+      document.getElementById("segundos").textContent =
+        String(segundos).padStart(2, "0");
+
+    }
+
+
+    atualizarContador();
+
+
+    setInterval(
+      atualizarContador,
+      1000
+    );
+
+
+    /* =========================
+       MODAL DE CONFIRMAÇÃO
+    ========================= */
 
     function abrirModal() {
 
-      const modal = document.getElementById("modalConfirmacao");
+      const modal =
+        document.getElementById(
+          "modalConfirmacao"
+        );
+
 
       modal.classList.add("aberto");
 
-      document.getElementById("nome").focus();
+
+      document
+        .getElementById("nome")
+        .focus();
 
     }
 
 
-    /* FECHAR MODAL */
-
     function fecharModal() {
 
-      const modal = document.getElementById("modalConfirmacao");
+      const modal =
+        document.getElementById(
+          "modalConfirmacao"
+        );
+
 
       modal.classList.remove("aberto");
 
     }
 
 
-    /* FECHAR CLICANDO FORA */
-
     function fecharModalFora(event) {
 
-      if (event.target.id === "modalConfirmacao") {
+      if (
+        event.target.id ===
+        "modalConfirmacao"
+      ) {
 
         fecharModal();
 
@@ -1081,93 +2135,216 @@
     }
 
 
-    /* ENVIO DA CONFIRMAÇÃO */
+    /* =========================
+       ENVIO DA CONFIRMAÇÃO
+    ========================= */
 
-    const form = document.getElementById("formConfirmacao");
-
-    form.addEventListener("submit", async function(event) {
-
-      event.preventDefault();
-
-
-      const botao = document.getElementById("botaoEnviar");
-      const mensagem = document.getElementById("mensagem");
-
-      const nome = document.getElementById("nome").value.trim();
-      const igreja = document.getElementById("igreja").value.trim();
+    const form =
+      document.getElementById(
+        "formConfirmacao"
+      );
 
 
-      if (!nome || !igreja) {
-
-        mensagem.textContent = "Por favor, preencha seu nome e sua igreja.";
-        mensagem.classList.add("exibir");
-
-        return;
-
-      }
+    form.addEventListener(
+      "submit",
+      async function(event) {
 
 
-      botao.disabled = true;
-      botao.textContent = "Enviando...";
+        event.preventDefault();
 
 
-      const dados = new URLSearchParams();
+        const botao =
+          document.getElementById(
+            "botaoEnviar"
+          );
 
-      dados.append("nome", nome);
-      dados.append("igreja", igreja);
+
+        const mensagem =
+          document.getElementById(
+            "mensagem"
+          );
 
 
-      try {
+        const nome =
+          document
+            .getElementById("nome")
+            .value
+            .trim();
 
-        const resposta = await fetch(
-          "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec",
-          {
-            method: "POST",
-            body: dados
-          }
+
+        const igreja =
+          document
+            .getElementById("igreja")
+            .value
+            .trim();
+
+
+        if (!nome || !igreja) {
+
+          mensagem.textContent =
+            "Por favor, preencha seu nome e sua igreja.";
+
+
+          mensagem.classList.add(
+            "exibir"
+          );
+
+
+          return;
+
+        }
+
+
+        botao.disabled = true;
+
+        botao.textContent =
+          "Enviando...";
+
+
+        const dados =
+          new URLSearchParams();
+
+
+        dados.append(
+          "nome",
+          nome
         );
 
 
-        const resultado = await resposta.text();
+        dados.append(
+          "igreja",
+          igreja
+        );
 
 
-        mensagem.textContent =
-          "Presença confirmada! Esperamos você no lançamento.";
-
-        mensagem.classList.add("exibir");
-
-        form.reset();
-
-        botao.textContent = "Presença confirmada";
+        try {
 
 
-        setTimeout(function() {
+          await fetch(
 
-          fecharModal();
+            "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec",
 
-          mensagem.classList.remove("exibir");
+            {
+              method: "POST",
+              body: dados,
+              mode: "no-cors"
+            }
+
+          );
+
+
+          mensagem.textContent =
+            "Presença confirmada! Esperamos você no lançamento.";
+
+
+          mensagem.classList.add(
+            "exibir"
+          );
+
+
+          form.reset();
+
+
+          botao.textContent =
+            "Presença confirmada";
+
+
+          setTimeout(
+            function() {
+
+              fecharModal();
+
+
+              mensagem.classList.remove(
+                "exibir"
+              );
+
+
+              botao.disabled = false;
+
+
+              botao.textContent =
+                "Confirmar presença";
+
+            },
+            3000
+          );
+
+
+        } catch (erro) {
+
+
+          mensagem.textContent =
+            "Não foi possível registrar sua presença. Tente novamente.";
+
+
+          mensagem.classList.add(
+            "exibir"
+          );
+
 
           botao.disabled = false;
-          botao.textContent = "Confirmar presença";
-
-        }, 3000);
 
 
-      } catch (erro) {
+          botao.textContent =
+            "Confirmar presença";
 
-        mensagem.textContent =
-          "Não foi possível registrar sua presença. Tente novamente.";
+        }
 
-        mensagem.classList.add("exibir");
+      }
+    );
 
-        botao.disabled = false;
-        botao.textContent = "Confirmar presença";
+
+    /* =========================
+       MODAL DE PRÉ-VENDA
+    ========================= */
+
+    function abrirPreVenda() {
+
+      const modal =
+        document.getElementById(
+          "modalPreVenda"
+        );
+
+
+      modal.classList.add(
+        "aberto"
+      );
+
+    }
+
+
+    function fecharPreVenda() {
+
+      const modal =
+        document.getElementById(
+          "modalPreVenda"
+        );
+
+
+      modal.classList.remove(
+        "aberto"
+      );
+
+    }
+
+
+    function fecharPreVendaFora(event) {
+
+      if (
+        event.target.id ===
+        "modalPreVenda"
+      ) {
+
+        fecharPreVenda();
 
       }
 
-    });
+    }
 
   </script>
 
+
 </body>
+
 </html>
