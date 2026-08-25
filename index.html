@@ -6,9 +6,6 @@
   <title>Francisco Denilson Pinheiro | Escritor & Palestrante</title>
   <meta name="description" content="Francisco Denilson Pinheiro — escritor, pastor e autor do livro Antes Que Eu Seja Usado.">
 
-  <!-- SUPABASE -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,57 +152,17 @@
       margin-bottom: 16px;
     }
 
-    /* ÁREA DO LEITOR E LOGIN */
-    .reader-section {
+    /* BANNER ÁREA DO LEITOR NO FINAL */
+    .reader-cta {
       background-color: var(--bg-card);
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
-    }
-
-    .login-box {
-      max-width: 420px;
-      margin: 30px auto 0;
-      background: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      padding: 30px;
-      border-radius: 4px;
-      text-align: left;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--gold-primary);
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 2px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-card);
-      color: var(--text-light);
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--gold-primary);
-    }
-
-    #loginMensagem {
-      margin-top: 15px;
-      font-size: 0.85rem;
       text-align: center;
+    }
+
+    .reader-cta-box {
+      max-width: 650px;
+      margin: 0 auto;
     }
 
     /* RESPONSIVIDADE */
@@ -228,7 +185,7 @@
 
 <body>
 
-  <!-- CABEÇALHO -->
+  <!-- CABEÇALHO COM ÁREA DO LEITOR NO MENU -->
   <header class="site-header">
     <div class="header-brand">
       <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
@@ -241,7 +198,7 @@
     <nav class="menu-desktop">
       <a href="index.html" class="ativo">Início</a>
       <a href="livros.html">Livros</a>
-      <a href="biblioteca.html">Minha Biblioteca</a>
+      <a href="biblioteca.html">Área do Leitor</a>
       <a href="eventos.html">Eventos</a>
       <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
     </nav>
@@ -251,11 +208,11 @@
     </button>
   </header>
 
-  <!-- MENU MOBILE -->
+  <!-- MENU MOBILE COM ÁREA DO LEITOR -->
   <div class="menu-mobile-dropdown" id="menuConteudo">
     <a href="index.html" class="ativo">Início</a>
     <a href="livros.html">Livros</a>
-    <a href="biblioteca.html">Minha Biblioteca</a>
+    <a href="biblioteca.html">Área do Leitor</a>
     <a href="eventos.html">Eventos</a>
     <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
   </div>
@@ -273,7 +230,7 @@
           </p>
           <div style="display: flex; gap: 15px; flex-wrap: wrap;">
             <a href="lancamento.html" class="botao botao-ouro">Garantir na pré-venda</a>
-            <a href="#loginArea" class="botao" style="border: 1px solid var(--border-color); color: #fff;">Área do Leitor</a>
+            <a href="biblioteca.html" class="botao" style="border: 1px solid var(--border-color); color: #fff;">Acessar Área do Leitor</a>
           </div>
         </div>
 
@@ -318,33 +275,18 @@
       </div>
     </section>
 
-    <!-- ÁREA DO LEITOR / LOGIN SUPABASE -->
-    <section class="secao reader-section" id="loginArea">
-      <div class="titulo-secao">
-        <span class="pequeno">Exclusivo</span>
-        <h2>Área do Leitor</h2>
-        <div class="linha-dourada"></div>
-      </div>
-
-      <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; max-width: 600px; margin: 0 auto;">
-        Acesse sua biblioteca digital para ler a versão digital dos livros autorizados.
-      </p>
-
-      <div class="login-box">
-        <form id="loginForm">
-          <div class="form-group">
-            <label for="email">E-mail de Acesso</label>
-            <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" class="form-control" placeholder="••••••••" required>
-          </div>
-
-          <button type="submit" id="btnEntrar" class="botao botao-ouro" style="width: 100%;">Entrar na Biblioteca</button>
-        </form>
-        <div id="loginMensagem"></div>
+    <!-- CHAMADA PARA A ÁREA DO LEITOR -->
+    <section class="secao reader-cta">
+      <div class="reader-cta-box">
+        <div class="titulo-secao">
+          <span class="pequeno">Exclusivo</span>
+          <h2>Área do Leitor</h2>
+          <div class="linha-dourada"></div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.8; margin-bottom: 25px;">
+          Já possui o livro ou acesso VIP? Faça login na sua conta para ter acesso ao material digital exclusivo e conteúdos complementares.
+        </p>
+        <a href="biblioteca.html" class="botao botao-ouro">Ir para Login do Leitor</a>
       </div>
     </section>
 
@@ -371,41 +313,6 @@
     }
     document.querySelectorAll(".menu-mobile-dropdown a").forEach(function(link) {
       link.addEventListener("click", fecharMenu);
-    });
-
-    /* INTEGRAÇÃO LOGIN SUPABASE */
-    const SUPABASE_URL = "https://qieejecsicnmsdtefejs.supabase.co";
-    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
-    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
-
-    const loginForm = document.getElementById("loginForm");
-    const loginMensagem = document.getElementById("loginMensagem");
-
-    loginForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("senha").value;
-      const btn = document.getElementById("btnEntrar");
-
-      btn.innerText = "Entrando...";
-      btn.disabled = true;
-      loginMensagem.innerText = "";
-
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
-
-      if (error) {
-        loginMensagem.style.color = "#ef9a9a";
-        loginMensagem.innerText = "Erro ao entrar: E-mail ou senha inválidos.";
-        btn.innerText = "Entrar na Biblioteca";
-        btn.disabled = false;
-      } else {
-        loginMensagem.style.color = "var(--gold-primary)";
-        loginMensagem.innerText = "Login realizado com sucesso! Redirecionando...";
-        window.location.href = "biblioteca.html";
-      }
     });
   </script>
 
