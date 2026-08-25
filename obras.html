@@ -1,45 +1,762 @@
-<div class="botoes">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-  <!-- SINOPSE -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <a
-    href="sinopse.html"
-    class="button button-outline"
+  <meta
+    name="description"
+    content="Conheça a obra Antes Que Eu Seja Usado, de Francisco Denilson Pinheiro."
   >
-    Conheça a sinopse
-  </a>
 
-  <!-- PIX -->
+  <title>Obras | Francisco Denilson Pinheiro</title>
 
-  <a
-    href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
-    class="button"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Adquira agora — PIX
-  </a>
+  <style>
 
-  <!-- INFINITEPAY -->
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <a
-    href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
-    class="button button-outline"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Comprar com cartão
-  </a>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f6f2;
+      color: #24211e;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-  <!-- AMAZON KDP -->
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  <a
-    href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
-    class="button button-dark"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Versão digital — Amazon KDP
-  </a>
+    /* =========================
+       CABEÇALHO
+    ========================= */
 
-</div>
+    header {
+      width: 100%;
+      background: #171513;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1200px;
+      min-height: 82px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo strong {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      margin-top: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c9b58a;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #eee;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #c9b58a;
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       CONTEÚDO
+    ========================= */
+
+    main {
+      width: 100%;
+      min-height: calc(100vh - 82px);
+    }
+
+    .obras {
+      width: 100%;
+      padding: 80px 20px;
+      background: #f8f6f2;
+    }
+
+    .obras-container {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .titulo span {
+      display: block;
+      font-family: Arial, sans-serif;
+      color: #9c8457;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .titulo h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 500;
+      color: #24211e;
+    }
+
+    .titulo .linha {
+      width: 60px;
+      height: 2px;
+      background: #c9b58a;
+      margin: 18px auto 0;
+    }
+
+    /* =========================
+       LIVRO
+    ========================= */
+
+    .livro {
+      background: #fff;
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 60px;
+      align-items: center;
+
+      padding: 50px;
+
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      border: 1px solid #e5dfd5;
+    }
+
+    .livro-capa {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .livro-capa img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      display: block;
+
+      box-shadow: 0 18px 30px rgba(0,0,0,0.22);
+    }
+
+    .livro-info {
+      max-width: 600px;
+    }
+
+    .livro-info .categoria {
+      font-family: Arial, sans-serif;
+      color: #9c8457;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .livro-info h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #24211e;
+    }
+
+    .subtitulo {
+      color: #9c8457;
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
+    .descricao {
+      color: #5c5751;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .autor {
+      padding-top: 18px;
+      border-top: 1px solid #e5dfd5;
+      margin-bottom: 28px;
+    }
+
+    .autor strong {
+      display: block;
+      font-family: Arial, sans-serif;
+      color: #9c8457;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .autor span {
+      font-size: 15px;
+      color: #44403b;
+    }
+
+    /* =========================
+       BOTÕES
+    ========================= */
+
+    .botoes {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      min-height: 52px;
+
+      padding: 14px 20px;
+
+      background: #c9b58a;
+      color: #191715;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+
+      border: 1px solid #c9b58a;
+
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .button:hover {
+      background: #e0cfaa;
+      border-color: #e0cfaa;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: #5a4e39;
+      border-color: #c9b58a;
+    }
+
+    .button-outline:hover {
+      background: #c9b58a;
+      color: #191715;
+    }
+
+    .button-dark {
+      background: #191715;
+      color: #fff;
+      border-color: #191715;
+    }
+
+    .button-dark:hover {
+      background: #302b26;
+      border-color: #302b26;
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    footer {
+      width: 100%;
+      background: #12110f;
+      color: #ddd;
+      padding: 35px 20px 25px;
+    }
+
+    .footer-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-name strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .footer-name span {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #c9b58a;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: #c9b58a;
+    }
+
+    .copyright {
+      width: 100%;
+      max-width: 1100px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+
+      border-top: 1px solid rgba(255,255,255,0.1);
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .header-container {
+        min-height: 70px;
+      }
+
+      .logo strong {
+        font-size: 16px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #171513;
+        padding: 20px;
+
+        box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+      }
+
+      nav.open {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .obras {
+        padding: 55px 15px;
+      }
+
+      .titulo {
+        margin-bottom: 35px;
+      }
+
+      .livro {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 30px 22px;
+      }
+
+      .livro-capa img {
+        max-width: 230px;
+      }
+
+      .livro-info {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .autor {
+        text-align: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================
+       CABEÇALHO
+  ========================= -->
+
+  <header>
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo">
+        <strong>Francisco Denilson Pinheiro</strong>
+        <span>Escritor</span>
+      </a>
+
+      <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav id="menu">
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Início
+            </a>
+          </li>
+
+          <li>
+            <a href="obras.html" class="active">
+              Obras
+            </a>
+          </li>
+
+          <li>
+            <a href="pre-venda.html">
+              Pré Venda
+            </a>
+          </li>
+
+          <li>
+            <a href="eventos.html">
+              Eventos
+            </a>
+          </li>
+
+          <li>
+            <a href="area-do-leitor.html">
+              Área do Leitor
+            </a>
+          </li>
+
+          <li>
+            <a href="contato.html">
+              Contato
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
+
+  <main>
+
+    <section class="obras">
+
+      <div class="obras-container">
+
+        <div class="titulo">
+
+          <span>Minha obra</span>
+
+          <h1>Antes Que Eu Seja Usado</h1>
+
+          <div class="linha"></div>
+
+        </div>
+
+
+        <article class="livro">
+
+          <!-- CAPA -->
+
+          <div class="livro-capa">
+
+            <img
+              src="capa.jpg"
+              alt="Capa do livro Antes Que Eu Seja Usado"
+            >
+
+          </div>
+
+
+          <!-- INFORMAÇÕES -->
+
+          <div class="livro-info">
+
+            <div class="categoria">
+              Livro
+            </div>
+
+            <h2>
+              Antes Que Eu Seja Usado
+            </h2>
+
+            <p class="subtitulo">
+              Uma jornada antes do encontro com nossa vocação.
+            </p>
+
+            <p class="descricao">
+              Uma obra sobre caráter, preparação e transformação.
+              Antes de sermos usados por Deus, existe um processo
+              que precisa acontecer dentro de nós.
+            </p>
+
+            <div class="autor">
+
+              <strong>
+                Autor
+              </strong>
+
+              <span>
+                Francisco Denilson Pinheiro
+              </span>
+
+            </div>
+
+
+            <!-- =========================
+                 BOTÕES
+            ========================= -->
+
+            <div class="botoes">
+
+              <!-- SINOPSE -->
+
+              <a
+                href="sinopse.html"
+                class="button button-outline"
+              >
+                Conheça a sinopse
+              </a>
+
+
+              <!-- PIX -->
+
+              <a
+                href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
+                class="button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Adquira agora — PIX
+              </a>
+
+
+              <!-- CARTÃO -->
+
+              <a
+                href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
+                class="button button-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Comprar com cartão
+              </a>
+
+
+              <!-- AMAZON -->
+
+              <a
+                href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
+                class="button button-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Versão digital — Amazon KDP
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       RODAPÉ
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-name">
+
+        <strong>
+          Francisco Denilson Pinheiro
+        </strong>
+
+        <span>
+          Escritor
+        </span>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Início
+        </a>
+
+        <a href="obras.html">
+          Obras
+        </a>
+
+        <a href="pre-venda.html">
+          Pré Venda
+        </a>
+
+        <a href="eventos.html">
+          Eventos
+        </a>
+
+        <a href="area-do-leitor.html">
+          Área do Leitor
+        </a>
+
+        <a href="contato.html">
+          Contato
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Francisco Denilson Pinheiro.
+      Todos os direitos reservados.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       MENU MOBILE
+  ========================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("menu");
+
+      const button = document.querySelector(".menu-button");
+
+      menu.classList.toggle("open");
+
+      const aberto = menu.classList.contains("open");
+
+      button.setAttribute(
+        "aria-expanded",
+        aberto
+      );
+
+    }
+
+  </script>
+
+</body>
+
+</html>
