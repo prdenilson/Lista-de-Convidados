@@ -402,6 +402,260 @@
 
     }
 
+/* =====================================================
+   MODAL DE LOGIN
+===================================================== */
+
+.modal-login {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.78);
+
+  backdrop-filter: blur(5px);
+
+  z-index: 9999;
+}
+
+.modal-login.aberto {
+  display: flex;
+}
+
+.caixa-login {
+  position: relative;
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 40px 35px;
+
+  background: var(--bg-card);
+
+  border: 1px solid rgba(201,158,92,0.45);
+
+  border-radius: 6px;
+
+  box-shadow: 0 25px 70px rgba(0,0,0,0.65);
+
+  animation: aparecerLogin 0.25s ease;
+}
+
+@keyframes aparecerLogin {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+.fechar-login {
+  position: absolute;
+
+  top: 14px;
+  right: 16px;
+
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-muted);
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.fechar-login:hover {
+  color: var(--gold-primary);
+}
+
+.icone-login {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--gold-primary);
+
+  color: var(--gold-primary);
+
+  font-size: 1.3rem;
+}
+
+.caixa-login h2 {
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  font-family: var(--font-serif);
+
+  font-size: 1.7rem;
+
+  font-weight: 400;
+
+  color: #fff;
+}
+
+.texto-login {
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  color: var(--text-muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+}
+
+.campo-login {
+  margin-bottom: 18px;
+}
+
+.campo-login label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--gold-primary);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.campo-login input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  box-sizing: border-box;
+
+  background: #171513;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 3px;
+
+  color: #fff;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.9rem;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.campo-login input:focus {
+  border-color: var(--gold-primary);
+
+  box-shadow: 0 0 0 2px rgba(201,158,92,0.08);
+}
+
+.campo-login input::placeholder {
+  color: #777;
+}
+
+.botao-entrar {
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: 8px;
+
+  border: 1px solid var(--gold-primary);
+
+  border-radius: 2px;
+
+  background: var(--gold-primary);
+
+  color: #171513;
+
+  font-family: var(--font-sans);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.botao-entrar:hover {
+  background: #e0bd7d;
+
+  border-color: #e0bd7d;
+}
+
+.botao-entrar:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+.mensagem-login {
+  min-height: 20px;
+
+  margin-top: 15px;
+
+  text-align: center;
+
+  color: #d99;
+
+  font-size: 0.8rem;
+
+  line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+
+  .caixa-login {
+    padding: 35px 22px;
+  }
+
+}
+    
   </style>
 
 </head>
@@ -409,6 +663,111 @@
 
 <body>
 
+  <!-- =====================================================
+     MODAL DE LOGIN
+===================================================== -->
+
+<div
+  id="modalLogin"
+  class="modal-login"
+  aria-hidden="true"
+>
+
+  <div class="caixa-login">
+
+    <button
+      type="button"
+      class="fechar-login"
+      onclick="fecharLogin()"
+      aria-label="Fechar"
+    >
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="icone-login">
+
+      <i class="fa-solid fa-lock"></i>
+
+    </div>
+
+
+    <h2>
+      Acesso à leitura digital
+    </h2>
+
+
+    <p class="texto-login">
+
+      Entre com seu e-mail e senha
+      para acessar sua biblioteca.
+
+    </p>
+
+
+    <form id="formLogin">
+
+
+      <div class="campo-login">
+
+        <label for="emailLogin">
+          E-mail
+        </label>
+
+        <input
+          type="email"
+          id="emailLogin"
+          placeholder="Digite seu e-mail"
+          autocomplete="email"
+          required
+        >
+
+      </div>
+
+
+      <div class="campo-login">
+
+        <label for="senhaLogin">
+          Senha
+        </label>
+
+        <input
+          type="password"
+          id="senhaLogin"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+          required
+        >
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="botao-entrar"
+        id="botaoEntrar"
+      >
+
+        <i class="fa-solid fa-right-to-bracket"></i>
+
+        Entrar
+
+      </button>
+
+
+      <p
+        id="mensagemLogin"
+        class="mensagem-login"
+      ></p>
+
+
+    </form>
+
+  </div>
+
+</div>
 
 <!-- =====================================================
      CABEÇALHO
@@ -814,6 +1173,88 @@ document
 
   });
 
+  /* =====================================================
+   MODAL DE LOGIN
+===================================================== */
+
+function abrirLogin() {
+
+  const modal =
+    document.getElementById("modalLogin");
+
+  modal.classList.add("aberto");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow = "hidden";
+
+  setTimeout(function() {
+
+    document
+      .getElementById("emailLogin")
+      .focus();
+
+  }, 100);
+
+}
+
+
+function fecharLogin() {
+
+  const modal =
+    document.getElementById("modalLogin");
+
+  modal.classList.remove("aberto");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+}
+
+
+/* =====================================================
+   FECHAR CLICANDO FORA DA CAIXA
+===================================================== */
+
+document
+  .getElementById("modalLogin")
+  .addEventListener(
+    "click",
+    function(event) {
+
+      if (event.target === this) {
+
+        fecharLogin();
+
+      }
+
+    }
+  );
+
+
+/* =====================================================
+   FECHAR COM ESC
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Escape") {
+
+      fecharLogin();
+
+    }
+
+  }
+);
 
 </script>
 
