@@ -302,15 +302,18 @@
     }
 
     .about-image {
-      min-height: 300px;
-      background: #ded8ce;
       display: flex;
-      align-items: center;
       justify-content: center;
-      color: #777;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      object-fit: cover;
     }
 
     .about-text h3 {
@@ -643,7 +646,7 @@
         </div>
 
         <div class="hero-book">
-          <img src="imagens/capa-antes-que-eu-seja-usado.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
+          <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
         </div>
       </div>
     </section>
@@ -663,7 +666,9 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-image">SUA FOTO AQUI</div>
+          <div class="about-image">
+            <img src="imagem-pessoal.jpg" alt="Foto de Francisco Denilson Pinheiro">
+          </div>
           <div class="about-text">
             <h3>Francisco Denilson Pinheiro</h3>
             <p>Escritor e pastor, dedicado ao ensino das Escrituras e à produção de conteúdos que promovam reflexão, fé e transformação.</p>
@@ -682,7 +687,7 @@
         </div>
 
         <div class="book-card">
-          <img src="imagens/capa-antes-que-eu-seja-usado.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
+          <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
           <div>
             <h3>Antes Que Eu Seja Usado</h3>
             <p>Uma jornada antes do encontro com nossa vocação. Um livro sobre caráter, preparação e transformação antes de sermos usados por Deus.</p>
