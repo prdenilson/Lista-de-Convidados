@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
   <title>Francisco Denilson Pinheiro | Escritor</title>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -113,7 +114,35 @@
     }
 
     /* =========================
-       SEÇÃO 1 — SOBRE O AUTOR
+       BOTÕES
+    ========================= */
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 25px;
+
+      background: #c9b58a;
+      color: #191715;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      transition: 0.3s;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #e0cfaa;
+    }
+
+    /* =========================
+       SEÇÃO — SOBRE O AUTOR
     ========================= */
 
     .about {
@@ -178,33 +207,7 @@
     }
 
     /* =========================
-       BOTÕES
-    ========================= */
-
-    .button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 14px 25px;
-
-      background: #c9b58a;
-      color: #191715;
-
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-
-      transition: 0.3s;
-      text-align: center;
-    }
-
-    .button:hover {
-      background: #e0cfaa;
-    }
-
-    /* =========================
-       SEÇÃO 2 — LANÇAMENTO
+       SEÇÃO — LANÇAMENTO
     ========================= */
 
     .launch {
@@ -290,6 +293,199 @@
     }
 
     /* =========================
+       BOTÃO FIXO
+    ========================= */
+
+    .confirmar-fixo {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+
+      z-index: 2000;
+
+      background: #c9b58a;
+      color: #191715;
+
+      padding: 15px 22px;
+
+      border: none;
+      border-radius: 3px;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.30);
+
+      transition: 0.3s;
+    }
+
+    .confirmar-fixo:hover {
+      background: #e0cfaa;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       MODAL DE CONFIRMAÇÃO
+    ========================= */
+
+    .modal {
+      display: none;
+
+      position: fixed;
+      z-index: 3000;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0,0,0,0.72);
+
+      padding: 20px;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.aberto {
+      display: flex;
+    }
+
+    .modal-content {
+      width: 100%;
+      max-width: 480px;
+
+      background: #ffffff;
+
+      padding: 35px;
+
+      border-radius: 4px;
+
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+
+      position: relative;
+    }
+
+    .modal-content h2 {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #24211e;
+    }
+
+    .modal-subtitle {
+      color: #66605a;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .campo {
+      margin-bottom: 18px;
+    }
+
+    .campo label {
+      display: block;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      color: #6d6253;
+
+      margin-bottom: 7px;
+    }
+
+    .campo input {
+      width: 100%;
+
+      padding: 13px 14px;
+
+      border: 1px solid #d8d1c5;
+      border-radius: 2px;
+
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+
+      outline: none;
+    }
+
+    .campo input:focus {
+      border-color: #c9b58a;
+    }
+
+    .botao-confirmar {
+      width: 100%;
+
+      padding: 15px;
+
+      background: #191715;
+      color: #ffffff;
+
+      border: none;
+      border-radius: 2px;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+    .botao-confirmar:hover {
+      background: #302c28;
+    }
+
+    .fechar-modal {
+      position: absolute;
+
+      top: 12px;
+      right: 15px;
+
+      background: transparent;
+      border: none;
+
+      font-size: 27px;
+
+      color: #777;
+
+      cursor: pointer;
+    }
+
+    .mensagem {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 12px;
+
+      background: #eee9df;
+
+      color: #4e493f;
+
+      text-align: center;
+
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .mensagem.exibir {
+      display: block;
+    }
+
+    /* =========================
        RODAPÉ
     ========================= */
 
@@ -331,6 +527,7 @@
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
+
       font-family: Arial, sans-serif;
       font-size: 12px;
     }
@@ -396,8 +593,6 @@
         gap: 15px;
       }
 
-      /* SOBRE */
-
       .about {
         padding: 55px 20px;
       }
@@ -425,8 +620,6 @@
         max-width: 320px;
       }
 
-      /* LANÇAMENTO */
-
       .launch {
         padding: 55px 20px;
       }
@@ -453,7 +646,19 @@
         padding-top: 18px;
       }
 
-      /* RODAPÉ */
+      .confirmar-fixo {
+        right: 15px;
+        left: 15px;
+        bottom: 15px;
+
+        width: auto;
+
+        text-align: center;
+      }
+
+      .modal-content {
+        padding: 30px 22px;
+      }
 
       .footer-container {
         flex-direction: column;
@@ -465,6 +670,7 @@
         justify-content: center;
       }
     }
+
   </style>
 
 </head>
@@ -477,208 +683,302 @@
 
   <header>
 
-```
-<div class="header-container">
+    <div class="header-container">
 
-  <a href="index.html" class="logo">
-    <strong>Francisco Denilson Pinheiro</strong>
-    <span>Escritor</span>
-  </a>
+      <a href="index.html" class="logo">
+        <strong>Francisco Denilson Pinheiro</strong>
+        <span>Escritor</span>
+      </a>
 
-  <button
-    class="menu-button"
-    onclick="toggleMenu()"
-    aria-label="Abrir menu"
-    aria-expanded="false"
-  >
-    ☰
-  </button>
+      <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-  <nav id="menu">
+      <nav id="menu">
 
-    <ul>
+        <ul>
 
-      <li>
-        <a href="index.html" class="active">
-          Início
-        </a>
-      </li>
+          <li>
+            <a href="index.html" class="active">
+              Início
+            </a>
+          </li>
 
-      <li>
-        <a href="obras.html">
-          Obras
-        </a>
-      </li>
+          <li>
+            <a href="obras.html">
+              Obras
+            </a>
+          </li>
 
-      <li>
-        <a href="pre-venda.html">
-          Pré Venda
-        </a>
-      </li>
+          <li>
+            <a href="pre-venda.html">
+              Pré Venda
+            </a>
+          </li>
 
-      <li>
-        <a href="eventos.html">
-          Eventos
-        </a>
-      </li>
+          <li>
+            <a href="eventos.html">
+              Eventos
+            </a>
+          </li>
 
-      <li>
-        <a href="area-do-leitor.html">
-          Área do Leitor
-        </a>
-      </li>
+          <li>
+            <a href="area-do-leitor.html">
+              Área do Leitor
+            </a>
+          </li>
 
-      <li>
-        <a href="contato.html">
-          Contato
-        </a>
-      </li>
+          <li>
+            <a href="contato.html">
+              Contato
+            </a>
+          </li>
 
-    </ul>
+        </ul>
 
-  </nav>
+      </nav>
 
-</div>
-```
+    </div>
 
   </header>
 
+
   <main>
 
-```
-<!-- =========================
-     PRIMEIRA E ÚNICA SEÇÃO
-     SOBRE O AUTOR
-========================= -->
+    <!-- =========================
+         SOBRE O AUTOR
+    ========================= -->
 
-<section class="about">
+    <section class="about">
 
-  <div class="about-container">
+      <div class="about-container">
 
-    <div class="about-grid">
+        <div class="about-grid">
 
-      <div class="about-image">
+          <div class="about-image">
 
-        <img
-          src="imagem-pessoal.jpg"
-          alt="Francisco Denilson Pinheiro"
-        >
+            <img
+              src="imagem-pessoal.jpg"
+              alt="Francisco Denilson Pinheiro"
+            >
 
-      </div>
+          </div>
 
 
-      <div class="about-text">
+          <div class="about-text">
 
-        <div class="eyebrow">
-          Sobre o autor
+            <div class="eyebrow">
+              Sobre o autor
+            </div>
+
+            <h1>
+              Francisco Denilson Pinheiro
+            </h1>
+
+            <p>
+              Escritor, pastor e palestrante, dedicado ao ensino das Escrituras e à produção de conteúdos que promovam reflexão, fé e transformação.
+            </p>
+
+            <p>
+              Seus escritos nascem da experiência ministerial, da reflexão bíblica e do desejo de ajudar pessoas a compreenderem melhor sua caminhada com Deus.
+            </p>
+
+            <a
+              href="https://www.instagram.com/prdenilsonescritor/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              Instagram @prdenilsonescritor
+            </a>
+
+          </div>
+
         </div>
 
-        <h1>
-          Francisco Denilson Pinheiro
-        </h1>
+      </div>
 
-        <p>
-          Escritor, pastor e palestrante, dedicado ao ensino das Escrituras e à produção de conteúdos que promovam reflexão, fé e transformação.
-        </p>
+    </section>
 
-        <p>
-          Seus escritos nascem da experiência ministerial, da reflexão bíblica e do desejo de ajudar pessoas a compreenderem melhor sua caminhada com Deus.
-        </p>
 
-        <a
-          href="https://www.instagram.com/prdenilsonescritor/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button"
-        >
-          Instagram @prdenilsonescritor
-        </a>
+    <!-- =========================
+         LANÇAMENTO
+    ========================= -->
+
+    <section class="launch">
+
+      <div class="launch-container">
+
+        <div class="launch-book">
+
+          <img
+            src="capa.jpg"
+            alt="Capa do livro Antes Que Eu Seja Usado"
+          >
+
+        </div>
+
+
+        <div class="launch-content">
+
+          <div class="eyebrow">
+            Lançamento do livro
+          </div>
+
+          <h2>
+            Antes Que Eu Seja Usado
+          </h2>
+
+          <p class="launch-subtitle">
+            Uma jornada antes do encontro com nossa vocação.
+          </p>
+
+
+          <div class="launch-details">
+
+            <span class="label">
+              Data e horário
+            </span>
+
+            <p>
+              <strong>19 de setembro de 2026 — 19h</strong>
+            </p>
+
+            <span class="label" style="margin-top:18px;">
+              Local
+            </span>
+
+            <p>
+              <strong>CASA DE DEUS NOVO MONDUBIM</strong>
+            </p>
+
+            <p class="address">
+              Rua Estrada do Siqueira, 485
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Casa+de+Deus+Novo+Mondubim%2C+Rua+Estrada+do+Siqueira%2C+485%2C+Fortaleza%2C+CE"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            Como chegar
+          </a>
+
+        </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </div>
-
-</section>
+  </main>
 
 
-<!-- =========================
-     SEGUNDA E ÚLTIMA SEÇÃO
-     LANÇAMENTO DO LIVRO
-========================= -->
+  <!-- =========================
+       BOTÃO FIXO
+  ========================= -->
 
-<section class="launch">
+  <button
+    class="confirmar-fixo"
+    onclick="abrirModal()"
+  >
+    CONFIRME PRESENÇA NO LANÇAMENTO
+  </button>
 
-  <div class="launch-container">
 
-    <div class="launch-book">
+  <!-- =========================
+       MODAL DE CONFIRMAÇÃO
+  ========================= -->
 
-      <img
-        src="capa.jpg"
-        alt="Capa do livro Antes Que Eu Seja Usado"
+  <div
+    class="modal"
+    id="modalConfirmacao"
+    onclick="fecharModalFora(event)"
+  >
+
+    <div class="modal-content">
+
+      <button
+        class="fechar-modal"
+        onclick="fecharModal()"
+        aria-label="Fechar"
       >
-
-    </div>
-
-
-    <div class="launch-content">
-
-      <div class="eyebrow">
-        Lançamento do livro
-      </div>
+        ×
+      </button>
 
       <h2>
-        Antes Que Eu Seja Usado
+        Confirme sua presença
       </h2>
 
-      <p class="launch-subtitle">
-        Uma jornada antes do encontro com nossa vocação.
+      <p class="modal-subtitle">
+        Será uma alegria receber você no lançamento de <strong>Antes Que Eu Seja Usado</strong>.
       </p>
 
 
-      <div class="launch-details">
+      <form id="formConfirmacao">
 
-        <span class="label">
-          Data e horário
-        </span>
+        <div class="campo">
 
-        <p>
-          <strong>19 de setembro de 2026 — 19h</strong>
-        </p>
+          <label for="nome">
+            Nome
+          </label>
 
-        <span class="label" style="margin-top:18px;">
-          Local
-        </span>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome"
+            required
+          >
 
-        <p>
-          <strong>CASA DE DEUS NOVO MONDUBIM</strong>
-        </p>
-
-        <p class="address">
-          Rua Estrada do Siqueira, 485
-        </p>
-
-      </div>
+        </div>
 
 
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Casa+de+Deus+Novo+Mondubim%2C+Rua+Estrada+do+Siqueira%2C+485%2C+Fortaleza%2C+CE"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button"
-      >
-        Como chegar
-      </a>
+        <div class="campo">
+
+          <label for="igreja">
+            Igreja
+          </label>
+
+          <input
+            type="text"
+            id="igreja"
+            name="igreja"
+            placeholder="Digite o nome da sua igreja"
+            required
+          >
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="botao-confirmar"
+          id="botaoEnviar"
+        >
+          Confirmar presença
+        </button>
+
+      </form>
+
+
+      <div
+        class="mensagem"
+        id="mensagem"
+      ></div>
 
     </div>
 
   </div>
 
-</section>
-```
-
-  </main>
 
   <!-- =========================
        RODAPÉ
@@ -686,44 +986,49 @@
 
   <footer>
 
-```
-<div class="footer-container">
+    <div class="footer-container">
 
-  <div class="footer-name">
+      <div class="footer-name">
 
-    <strong>
-      Francisco Denilson Pinheiro
-    </strong>
+        <strong>
+          Francisco Denilson Pinheiro
+        </strong>
 
-    <span>
-      Escritor
-    </span>
+        <span>
+          Escritor
+        </span>
 
-  </div>
-
-
-  <div class="footer-links">
-
-    <a href="index.html">Início</a>
-    <a href="obras.html">Obras</a>
-    <a href="pre-venda.html">Pré Venda</a>
-    <a href="eventos.html">Eventos</a>
-    <a href="area-do-leitor.html">Área do Leitor</a>
-    <a href="contato.html">Contato</a>
-
-  </div>
-
-</div>
+      </div>
 
 
-<div class="copyright">
-  © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
-</div>
-```
+      <div class="footer-links">
+
+        <a href="index.html">Início</a>
+        <a href="obras.html">Obras</a>
+        <a href="pre-venda.html">Pré Venda</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="area-do-leitor.html">Área do Leitor</a>
+        <a href="contato.html">Contato</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+    </div>
 
   </footer>
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
+
+    /* MENU MOBILE */
 
     function toggleMenu() {
 
@@ -738,8 +1043,131 @@
 
     }
 
+
+    /* ABRIR MODAL */
+
+    function abrirModal() {
+
+      const modal = document.getElementById("modalConfirmacao");
+
+      modal.classList.add("aberto");
+
+      document.getElementById("nome").focus();
+
+    }
+
+
+    /* FECHAR MODAL */
+
+    function fecharModal() {
+
+      const modal = document.getElementById("modalConfirmacao");
+
+      modal.classList.remove("aberto");
+
+    }
+
+
+    /* FECHAR CLICANDO FORA */
+
+    function fecharModalFora(event) {
+
+      if (event.target.id === "modalConfirmacao") {
+
+        fecharModal();
+
+      }
+
+    }
+
+
+    /* ENVIO DA CONFIRMAÇÃO */
+
+    const form = document.getElementById("formConfirmacao");
+
+    form.addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+
+      const botao = document.getElementById("botaoEnviar");
+      const mensagem = document.getElementById("mensagem");
+
+      const nome = document.getElementById("nome").value.trim();
+      const igreja = document.getElementById("igreja").value.trim();
+
+
+      if (!nome || !igreja) {
+
+        mensagem.textContent = "Por favor, preencha seu nome e sua igreja.";
+        mensagem.classList.add("exibir");
+
+        return;
+
+      }
+
+
+      botao.disabled = true;
+      botao.textContent = "Enviando...";
+
+
+      const dados = new URLSearchParams();
+
+      dados.append("nome", nome);
+      dados.append("igreja", igreja);
+
+
+      try {
+
+        const resposta = await fetch(
+          "https://script.google.com/macros/s/AKfycbwsDvIqeVNSW-qqyyBfmGWNJle-PUoYkqhA_IHnHfUoEvLaEX8n_vdxWDrZRNNsaZ5qDQ/exec",
+          {
+            method: "POST",
+            body: dados
+          }
+        );
+
+
+        const resultado = await resposta.text();
+
+
+        mensagem.textContent =
+          "Presença confirmada! Esperamos você no lançamento.";
+
+        mensagem.classList.add("exibir");
+
+        form.reset();
+
+        botao.textContent = "Presença confirmada";
+
+
+        setTimeout(function() {
+
+          fecharModal();
+
+          mensagem.classList.remove("exibir");
+
+          botao.disabled = false;
+          botao.textContent = "Confirmar presença";
+
+        }, 3000);
+
+
+      } catch (erro) {
+
+        mensagem.textContent =
+          "Não foi possível registrar sua presença. Tente novamente.";
+
+        mensagem.classList.add("exibir");
+
+        botao.disabled = false;
+        botao.textContent = "Confirmar presença";
+
+      }
+
+    });
+
   </script>
 
 </body>
 </html>
-
