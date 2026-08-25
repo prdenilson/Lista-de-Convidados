@@ -53,4 +53,298 @@
       display: inline-block;
       background-color: var(--gold-primary);
       color: #0d0c0b;
-      font-weight:
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+
+    .lancamento-titulo {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .lancamento-desc {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    @media (max-width: 850px) {
+      .lancamento-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* CRONÔMETRO */
+    .timer-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .timer-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .timer-grid {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .time-card {
+      background: var(--bg-dark);
+      padding: 10px 14px;
+      border-radius: 2px;
+      min-width: 62px;
+      border: 1px solid var(--border-color);
+    }
+
+    .time-card .number {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      display: block;
+    }
+
+    .time-card .label {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CONFIRMAÇÃO E FORMULÁRIO */
+    .confirmacao-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 28px;
+    }
+
+    .confirmacao-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .confirmacao-item i {
+      color: var(--gold-primary);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 13px 14px;
+      margin-top: 10px;
+      border-radius: 2px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+    }
+
+    .form-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    #mensagemSucesso {
+      display: none;
+      color: var(--gold-primary);
+      font-weight: 600;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="header-brand">
+      <img src="imagem-pessoal.jpg" alt="Francisco Denilson Pinheiro" class="foto-pessoal">
+      <div class="brand-titles">
+        <span class="brand-name">Francisco Denilson</span>
+        <span class="brand-sub">Escritor & Palestrante</span>
+      </div>
+    </div>
+
+    <nav class="menu-desktop">
+      <a href="index.html">Início</a>
+      <a href="livros.html">Livros</a>
+      <a href="biblioteca.html">Minha Biblioteca</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
+    </nav>
+
+    <button type="button" class="botao-menu-mobile" id="botaoMenu" aria-label="Abrir menu" onclick="alternarMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <div class="menu-mobile-dropdown" id="menuConteudo">
+    <a href="index.html">Início</a>
+    <a href="livros.html">Livros</a>
+    <a href="biblioteca.html">Minha Biblioteca</a>
+    <a href="eventos.html">Eventos</a>
+    <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer">Contato</a>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <main class="pagina">
+    <div class="lancamento-grid">
+
+      <div class="capa-wrap">
+        <img src="capa.jpg" alt="Antes Que Eu Seja Usado">
+      </div>
+
+      <div>
+        <div class="badge-lancamento">Lançamento</div>
+        <h1 class="lancamento-titulo">Antes Que Eu Seja Usado</h1>
+        <p class="lancamento-desc">
+          Uma reflexão profunda sobre propósito, fé e integridade espiritual em tempos de superficialidade. Garanta seu exemplar impresso e autografado na pré-venda exclusiva.
+        </p>
+
+        <!-- CRONÔMETRO -->
+        <div class="timer-box">
+          <div class="timer-title">A pré-venda encerra em</div>
+          <div class="timer-grid">
+            <div class="time-card"><span id="dias" class="number">00</span><span class="label">Dias</span></div>
+            <div class="time-card"><span id="horas" class="number">00</span><span class="label">Horas</span></div>
+            <div class="time-card"><span id="minutos" class="number">00</span><span class="label">Min</span></div>
+            <div class="time-card"><span id="segundos" class="number">00</span><span class="label">Seg</span></div>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO -->
+        <div class="confirmacao-box">
+          <div class="confirmacao-item"><i class="fa-solid fa-check"></i> Exemplar impresso e autografado pelo autor</div>
+          <div class="confirmacao-item"><i class="fa-solid fa-check"></i> Compra 100% segura e garantida</div>
+
+          <form id="cadastroForm">
+            <input type="text" name="nome" placeholder="Seu nome completo" class="form-input" required>
+            <input type="tel" name="whatsapp" placeholder="WhatsApp (com DDD)" class="form-input" required>
+            <input type="text" name="bairro" placeholder="Seu bairro / cidade" class="form-input" required>
+
+            <button type="submit" id="btnEnviar" class="botao botao-ouro btn-submit">Garantir na pré-venda</button>
+          </form>
+          <div id="mensagemSucesso">✓ Cadastro enviado com sucesso!</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="footer-social">
+      <a href="https://instagram.com/prdenilsonescritor" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://wa.me/5585985141630" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function alternarMenu() {
+      document.getElementById("menuConteudo").classList.toggle("aberto");
+    }
+    function fecharMenu() {
+      if (window.innerWidth <= 850) {
+        document.getElementById("menuConteudo").classList.remove("aberto");
+      }
+    }
+    document.querySelectorAll(".menu-mobile-dropdown a").forEach(function(link) {
+      link.addEventListener("click", fecharMenu);
+    });
+
+    /* CRONÔMETRO */
+    function iniciarCronometro(dataAlvoISO) {
+      const dataAlvo = new Date(dataAlvoISO).getTime();
+
+      function atualizar() {
+        const agora = new Date().getTime();
+        const diferenca = dataAlvo - agora;
+
+        if (diferenca <= 0) {
+          document.querySelector(".timer-box").innerHTML = "<div style='color: var(--gold-primary); font-weight: 600;'>Lançamento iniciado!</div>";
+          return;
+        }
+
+        const d = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+        document.getElementById("dias").innerText = String(d).padStart(2, '0');
+        document.getElementById("horas").innerText = String(h).padStart(2, '0');
+        document.getElementById("minutos").innerText = String(m).padStart(2, '0');
+        document.getElementById("segundos").innerText = String(s).padStart(2, '0');
+      }
+
+      atualizar();
+      setInterval(atualizar, 1000);
+    }
+
+    iniciarCronometro("2026-09-19T09:00:00-03:00");
+
+    /* ENVIO PARA A PLANILHA (Google Script) */
+    const scriptURL = 'SUA_URL_DO_GOOGLE_SCRIPT_AQUI';
+    const form = document.getElementById('cadastroForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = document.getElementById('btnEnviar');
+      btn.innerText = 'Enviando...';
+      btn.disabled = true;
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          document.getElementById('mensagemSucesso').style.display = 'block';
+          form.reset();
+          btn.innerText = 'Garantir na pré-venda';
+          btn.disabled = false;
+        })
+        .catch(error => {
+          alert('Erro ao enviar! Tente novamente.');
+          btn.innerText = 'Garantir na pré-venda';
+          btn.disabled = false;
+        });
+    });
+  </script>
+</body>
+</html>
