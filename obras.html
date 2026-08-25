@@ -12,9 +12,6 @@
     content="Conheça as obras de Francisco Denilson Pinheiro e adquira o livro Antes Que Eu Seja Usado."
   >
 
-  <!-- SUPABASE -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
   <!-- FONTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,106 +348,14 @@
       cursor: pointer;
 
       transition: all 0.3s ease;
+
+      text-decoration: none;
     }
 
     .botao-leitura:hover {
       background: #e0bd7d;
 
       transform: translateY(-1px);
-    }
-
-
-    /* =====================================================
-       LEITOR
-    ===================================================== */
-
-    #areaLeitura {
-      display: none;
-
-      margin-top: 50px;
-    }
-
-    .titulo-leitura {
-      text-align: center;
-
-      margin-bottom: 20px;
-    }
-
-    .titulo-leitura span {
-      display: block;
-
-      color: var(--gold-primary);
-
-      font-family: var(--font-sans);
-
-      font-size: 0.7rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: 3px;
-
-      margin-bottom: 8px;
-    }
-
-    .titulo-leitura h2 {
-      font-family: var(--font-serif);
-
-      color: #fff;
-
-      font-size: 2rem;
-
-      font-weight: 400;
-    }
-
-    .pdf-container {
-      width: 100%;
-
-      height: 80vh;
-
-      min-height: 600px;
-
-      overflow: hidden;
-
-      background: #1e1e1e;
-
-      border: 1px solid var(--border-color);
-
-      border-radius: 4px;
-
-      box-shadow:
-        0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    #leitorPDF {
-      width: 100%;
-      height: 100%;
-
-      border: none;
-
-      display: block;
-    }
-
-
-    /* =====================================================
-       MENSAGEM
-    ===================================================== */
-
-    #mensagemLeitura {
-      display: none;
-
-      margin-top: 25px;
-
-      padding: 20px;
-
-      text-align: center;
-
-      color: var(--text-muted);
-
-      border: 1px solid var(--border-color);
-
-      background: var(--bg-card);
-
-      line-height: 1.7;
     }
 
 
@@ -493,12 +398,6 @@
 
       .acesso-digital {
         padding: 25px 18px;
-      }
-
-      .pdf-container {
-        height: 72vh;
-
-        min-height: 480px;
       }
 
     }
@@ -806,56 +705,20 @@
     </p>
 
 
+    <!-- =================================================
+         BOTÃO PARA A BIBLIOTECA
+    ================================================= -->
+
     <a
-  href="biblioteca.html"
-  class="botao-leitura"
->
-  <i class="fa-solid fa-book-open"></i>
-  Acessar leitura do livro
-</a>
+      href="biblioteca.html"
+      class="botao-leitura"
+    >
 
+      <i class="fa-solid fa-book-open"></i>
 
-  </section>
+      Acessar leitura do livro
 
-
-  <!-- MENSAGEM -->
-
-  <div
-    id="mensagemLeitura"
-  ></div>
-
-
-  <!-- ===================================================
-       LEITOR DIGITAL
-  =================================================== -->
-
-  <section
-    id="areaLeitura"
-  >
-
-
-    <div class="titulo-leitura">
-
-      <span>
-        Leitura exclusiva
-      </span>
-
-      <h2>
-        Antes Que Eu Seja Usado
-      </h2>
-
-    </div>
-
-
-    <div class="pdf-container">
-
-      <iframe
-        id="leitorPDF"
-        title="Leitura digital de Antes Que Eu Seja Usado"
-        allow="fullscreen"
-      ></iframe>
-
-    </div>
+    </a>
 
 
   </section>
@@ -949,250 +812,6 @@ document
     );
 
   });
-
-
-/* =====================================================
-   SUPABASE
-===================================================== */
-
-const SUPABASE_URL =
-  "https://qieejecsicnmsdtefejs.supabase.co";
-
-
-const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
-
-
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-
-
-/* =====================================================
-   CONFIGURAÇÃO DO LIVRO
-===================================================== */
-
-const BUCKET =
-  "Livro";
-
-
-const ARQUIVO_PDF =
-  "Antes que eu seja usado PDF.pdf";
-
-
-const TEMPO_URL =
-  3600;
-
-
-/* =====================================================
-   ACESSAR LIVRO
-===================================================== */
-
-async function acessarLivro() {
-
-  const mensagem =
-    document.getElementById(
-      "mensagemLeitura"
-    );
-
-
-  mensagem.style.display = "block";
-
-  mensagem.innerHTML =
-    "Verificando seu acesso...";
-
-
-  try {
-
-
-    /* VERIFICA LOGIN */
-
-    const {
-      data,
-      error
-    } =
-      await supabaseClient.auth.getSession();
-
-
-    if (error) {
-
-      console.error(
-        "Erro ao verificar sessão:",
-        error
-      );
-
-      mensagem.innerHTML =
-        "Não foi possível verificar seu acesso.";
-
-      return;
-
-    }
-
-
-    const sessao =
-      data.session;
-
-
-    /* NÃO ESTÁ LOGADO */
-
-    if (!sessao) {
-
-      mensagem.innerHTML =
-
-        "Para acessar a versão digital, " +
-        "você precisa entrar na sua conta.";
-
-      setTimeout(function() {
-
-        window.location.href =
-          "index.html#loginArea";
-
-      }, 1200);
-
-      return;
-
-    }
-
-
-    /* ESTÁ LOGADO */
-
-    mensagem.innerHTML =
-      "Preparando seu livro digital...";
-
-
-    /* GERA URL TEMPORÁRIA */
-
-    const {
-      data: arquivo,
-      error: erroArquivo
-    } =
-      await supabaseClient
-        .storage
-        .from(BUCKET)
-        .createSignedUrl(
-          ARQUIVO_PDF,
-          TEMPO_URL
-        );
-
-
-    if (erroArquivo) {
-
-      console.error(
-        "Erro ao gerar URL:",
-        erroArquivo
-      );
-
-      mensagem.innerHTML =
-        "Seu login foi reconhecido, mas não foi possível abrir o livro digital.";
-
-      return;
-
-    }
-
-
-    if (
-      !arquivo ||
-      !arquivo.signedUrl
-    ) {
-
-      mensagem.innerHTML =
-        "Não foi possível obter o endereço seguro do livro.";
-
-      return;
-
-    }
-
-
-    /* COLOCA PDF NO LEITOR */
-
-    const leitor =
-      document.getElementById(
-        "leitorPDF"
-      );
-
-
-    leitor.src =
-      arquivo.signedUrl;
-
-
-    /* MOSTRA LEITOR */
-
-    document.getElementById(
-      "areaLeitura"
-    ).style.display = "block";
-
-
-    mensagem.style.display =
-      "none";
-
-
-    /* DESCE ATÉ O LEITOR */
-
-    setTimeout(function() {
-
-      document
-        .getElementById("areaLeitura")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }, 200);
-
-
-  } catch (erro) {
-
-    console.error(
-      "Erro ao acessar livro:",
-      erro
-    );
-
-    mensagem.style.display =
-      "block";
-
-    mensagem.innerHTML =
-      "Ocorreu um erro ao abrir o livro digital.";
-
-  }
-
-}
-
-
-/* =====================================================
-   OBSERVAR AUTENTICAÇÃO
-===================================================== */
-
-supabaseClient.auth.onAuthStateChange(
-  function(event, session) {
-
-    console.log(
-      "Estado de autenticação:",
-      event
-    );
-
-
-    if (
-      event === "SIGNED_OUT"
-    ) {
-
-      const area =
-        document.getElementById(
-          "areaLeitura"
-        );
-
-
-      if (area) {
-
-        area.style.display =
-          "none";
-
-      }
-
-    }
-
-  }
-);
 
 
 </script>
