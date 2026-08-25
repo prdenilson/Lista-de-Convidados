@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Francisco Denilson Pinheiro — escritor, pastor e autor de livros cristãos. Conheça sua trajetória e o lançamento de Antes Que Eu Seja Usado.">
+  <meta name="description" content="Francisco Denilson Pinheiro — escritor, pastor e autor de livros cristãos.">
 
   <title>Francisco Denilson Pinheiro | Escritor</title>
 
@@ -48,10 +48,12 @@
     }
 
     .header-container {
+      width: 100%;
       max-width: 1200px;
-      margin: 0 auto;
       min-height: 82px;
+      margin: 0 auto;
       padding: 0 20px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -83,16 +85,17 @@
       list-style: none;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 28px;
     }
 
     nav a {
       font-family: Arial, sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #eee;
       transition: 0.3s;
+      white-space: nowrap;
     }
 
     nav a:hover,
@@ -110,15 +113,17 @@
     }
 
     /* =========================
-       SEÇÃO SOBRE O AUTOR
+       SEÇÃO 1 — SOBRE O AUTOR
     ========================= */
 
     .about {
-      background: #fff;
+      width: 100%;
+      background: #ffffff;
       padding: 80px 20px;
     }
 
     .about-container {
+      width: 100%;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -142,7 +147,7 @@
       height: auto;
       display: block;
       border-radius: 4px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
     }
 
     .about-text {
@@ -172,17 +177,24 @@
       margin-bottom: 16px;
     }
 
+    /* =========================
+       BOTÕES
+    ========================= */
+
     .button {
       display: inline-block;
       margin-top: 12px;
       padding: 14px 25px;
+
       background: #c9b58a;
       color: #191715;
+
       font-family: Arial, sans-serif;
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+
       transition: 0.3s;
       text-align: center;
     }
@@ -192,18 +204,21 @@
     }
 
     /* =========================
-       LANÇAMENTO
+       SEÇÃO 2 — LANÇAMENTO
     ========================= */
 
     .launch {
+      width: 100%;
       background: #191715;
       color: white;
       padding: 80px 20px;
     }
 
     .launch-container {
+      width: 100%;
       max-width: 1100px;
       margin: 0 auto;
+
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 60px;
@@ -220,7 +235,8 @@
       width: 100%;
       max-width: 300px;
       height: auto;
-      object-fit: contain;
+      display: block;
+
       filter: drop-shadow(0 18px 25px rgba(0,0,0,0.55));
     }
 
@@ -233,7 +249,7 @@
     }
 
     .launch-content h2 {
-      font-size: clamp(30px, 4vw, 48px);
+      font-size: clamp(32px, 4vw, 50px);
       line-height: 1.1;
       font-weight: 500;
       margin-bottom: 18px;
@@ -251,11 +267,12 @@
       margin-bottom: 30px;
     }
 
-    .launch-details strong {
+    .launch-details .label {
       display: block;
       font-family: Arial, sans-serif;
       color: #c9b58a;
       font-size: 12px;
+      font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 8px;
@@ -263,34 +280,13 @@
 
     .launch-details p {
       font-size: 17px;
-      margin-bottom: 5px;
       color: #eee;
+      margin-bottom: 6px;
     }
 
     .launch-details .address {
-      margin-top: 10px;
       color: #cfcac2;
-    }
-
-    .launch-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .launch-buttons .button {
-      margin-top: 0;
-    }
-
-    .button-outline {
-      background: transparent;
-      color: #c9b58a;
-      border: 1px solid #c9b58a;
-    }
-
-    .button-outline:hover {
-      background: #c9b58a;
-      color: #191715;
+      margin-top: 10px;
     }
 
     /* =========================
@@ -298,16 +294,20 @@
     ========================= */
 
     footer {
+      width: 100%;
       background: #12110f;
       color: #ddd;
-      padding: 40px 20px 25px;
+      padding: 35px 20px 25px;
     }
 
     .footer-container {
+      width: 100%;
       max-width: 1100px;
       margin: 0 auto;
+
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 30px;
     }
 
@@ -340,10 +340,13 @@
     }
 
     .copyright {
+      width: 100%;
       max-width: 1100px;
-      margin: 30px auto 0;
-      padding-top: 20px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+
       border-top: 1px solid rgba(255,255,255,0.1);
+
       font-family: Arial, sans-serif;
       font-size: 11px;
       color: #888;
@@ -370,12 +373,16 @@
 
       nav {
         display: none;
+
         position: absolute;
         top: 100%;
         left: 0;
+
         width: 100%;
+
         background: #171513;
         padding: 20px;
+
         box-shadow: 0 10px 10px rgba(0,0,0,0.3);
       }
 
@@ -389,6 +396,8 @@
         gap: 15px;
       }
 
+      /* SOBRE */
+
       .about {
         padding: 55px 20px;
       }
@@ -399,12 +408,12 @@
         text-align: center;
       }
 
-      .about-text {
-        max-width: 100%;
-      }
-
       .about-image img {
         max-width: 430px;
+      }
+
+      .about-text {
+        max-width: 100%;
       }
 
       .about-text p {
@@ -416,6 +425,8 @@
         max-width: 320px;
       }
 
+      /* LANÇAMENTO */
+
       .launch {
         padding: 55px 20px;
       }
@@ -426,16 +437,13 @@
         text-align: center;
       }
 
-      .launch-content {
-        max-width: 100%;
-      }
-
       .launch-book {
         order: 1;
       }
 
       .launch-content {
         order: 2;
+        max-width: 100%;
       }
 
       .launch-details {
@@ -445,9 +453,7 @@
         padding-top: 18px;
       }
 
-      .launch-buttons {
-        justify-content: center;
-      }
+      /* RODAPÉ */
 
       .footer-container {
         flex-direction: column;
@@ -470,9 +476,10 @@
   ========================= -->
 
   <header>
-    <div class="header-container">
 
 ```
+<div class="header-container">
+
   <a href="index.html" class="logo">
     <strong>Francisco Denilson Pinheiro</strong>
     <span>Escritor</span>
@@ -488,33 +495,47 @@
   </button>
 
   <nav id="menu">
+
     <ul>
 
       <li>
-        <a href="index.html" class="active">Início</a>
+        <a href="index.html" class="active">
+          Início
+        </a>
       </li>
 
       <li>
-        <a href="obras.html">Obras</a>
+        <a href="obras.html">
+          Obras
+        </a>
       </li>
 
       <li>
-        <a href="pre-venda.html">Pré Venda</a>
+        <a href="pre-venda.html">
+          Pré Venda
+        </a>
       </li>
 
       <li>
-        <a href="eventos.html">Eventos</a>
+        <a href="eventos.html">
+          Eventos
+        </a>
       </li>
 
       <li>
-        <a href="area-do-leitor.html">Área do Leitor</a>
+        <a href="area-do-leitor.html">
+          Área do Leitor
+        </a>
       </li>
 
       <li>
-        <a href="contato.html">Contato</a>
+        <a href="contato.html">
+          Contato
+        </a>
       </li>
 
     </ul>
+
   </nav>
 
 </div>
@@ -526,6 +547,7 @@
 
 ```
 <!-- =========================
+     PRIMEIRA E ÚNICA SEÇÃO
      SOBRE O AUTOR
 ========================= -->
 
@@ -536,11 +558,14 @@
     <div class="about-grid">
 
       <div class="about-image">
+
         <img
           src="imagem-pessoal.jpg"
           alt="Francisco Denilson Pinheiro"
         >
+
       </div>
+
 
       <div class="about-text">
 
@@ -566,7 +591,7 @@
           rel="noopener noreferrer"
           class="button"
         >
-          Siga-me no Instagram
+          Instagram @prdenilsonescritor
         </a>
 
       </div>
@@ -579,7 +604,8 @@
 
 
 <!-- =========================
-     LANÇAMENTO
+     SEGUNDA E ÚLTIMA SEÇÃO
+     LANÇAMENTO DO LIVRO
 ========================= -->
 
 <section class="launch">
@@ -595,10 +621,11 @@
 
     </div>
 
+
     <div class="launch-content">
 
       <div class="eyebrow">
-        Lançamento
+        Lançamento do livro
       </div>
 
       <h2>
@@ -609,15 +636,23 @@
         Uma jornada antes do encontro com nossa vocação.
       </p>
 
+
       <div class="launch-details">
 
-        <strong>
-          19 de setembro de 2026 • 19h
-        </strong>
+        <span class="label">
+          Data e horário
+        </span>
 
         <p>
-          <strong>Local</strong>
-          CASA DE DEUS NOVO MONDUBIM
+          <strong>19 de setembro de 2026 — 19h</strong>
+        </p>
+
+        <span class="label" style="margin-top:18px;">
+          Local
+        </span>
+
+        <p>
+          <strong>CASA DE DEUS NOVO MONDUBIM</strong>
         </p>
 
         <p class="address">
@@ -626,25 +661,15 @@
 
       </div>
 
-      <div class="launch-buttons">
 
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Casa+de+Deus+Novo+Mondubim%2C+Rua+Estrada+do+Siqueira%2C+485%2C+Fortaleza%2C+CE"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button"
-        >
-          Como chegar
-        </a>
-
-        <a
-          href="eventos.html"
-          class="button button-outline"
-        >
-          Ver evento
-        </a>
-
-      </div>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Casa+de+Deus+Novo+Mondubim%2C+Rua+Estrada+do+Siqueira%2C+485%2C+Fortaleza%2C+CE"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button"
+      >
+        Como chegar
+      </a>
 
     </div>
 
@@ -676,35 +701,20 @@
 
   </div>
 
+
   <div class="footer-links">
 
-    <a href="index.html">
-      Início
-    </a>
-
-    <a href="obras.html">
-      Obras
-    </a>
-
-    <a href="pre-venda.html">
-      Pré Venda
-    </a>
-
-    <a href="eventos.html">
-      Eventos
-    </a>
-
-    <a href="area-do-leitor.html">
-      Área do Leitor
-    </a>
-
-    <a href="contato.html">
-      Contato
-    </a>
+    <a href="index.html">Início</a>
+    <a href="obras.html">Obras</a>
+    <a href="pre-venda.html">Pré Venda</a>
+    <a href="eventos.html">Eventos</a>
+    <a href="area-do-leitor.html">Área do Leitor</a>
+    <a href="contato.html">Contato</a>
 
   </div>
 
 </div>
+
 
 <div class="copyright">
   © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
