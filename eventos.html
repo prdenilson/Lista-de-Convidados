@@ -120,16 +120,19 @@
   </div>
 
   <script>
-    // Função para atualizar e manter o contador preciso baseado na data/hora do dispositivo do usuário
     function iniciarContador(idElemento, dataAlvoISO) {
       const dataEvento = new Date(dataAlvoISO).getTime();
 
       function atualizar() {
         const agora = new Date().getTime();
         const diferenca = dataEvento - agora;
+        const elemento = document.getElementById(idElemento);
+
+        if (!elemento) return;
 
         if (diferenca <= 0) {
-          document.getElementById(idElemento).innerHTML = "O evento começou!";
+          elemento.innerHTML = "O evento começou!";
+          clearInterval(intervalo);
           return;
         }
 
@@ -138,19 +141,18 @@
         const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-        document.getElementById(idElemento).innerHTML = 
-          `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+        elemento.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
       }
 
       atualizar();
-      setInterval(atualizar, 1000);
+      const intervalo = setInterval(atualizar, 1000);
     }
 
-    // Evento 1: 19/09/2026 às 09:00
-    iniciarContador('timer1', '2026-09-19T09:00:00');
+    // Evento 1: 19/09/2026 às 09:00 (Horário de Brasília / Ceará)
+    iniciarContador('timer1', '2026-09-19T09:00:00-03:00');
 
-    // Evento 2: 20/09/2026 às 19:00
-    iniciarContador('timer2', '2026-09-20T19:00:00');
+    // Evento 2: 20/09/2026 às 19:00 (Horário de Brasília / Ceará)
+    iniciarContador('timer2', '2026-09-20T19:00:00-03:00');
   </script>
 
 </body>
