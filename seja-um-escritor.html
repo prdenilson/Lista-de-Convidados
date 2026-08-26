@@ -1,1 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Seja um Escritor | Francisco Denilson Pinheiro</title>
+
+<meta
+  name="description"
+  content="Você tem uma ideia para um livro? Comece a desenvolvê-la."
+>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+  rel="stylesheet"
+>
+
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+>
+
+
+<link
+  rel="stylesheet"
+  href="style.css"
+>
+
+<link
+  rel="stylesheet"
+  href="seja-um-escritor.css"
+>
+
+</head>
+
+
+<body class="escritor-page">
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header class="site-header">
+
+  <div class="header-brand">
+
+    <img
+      src="imagem-pessoal.jpg"
+      alt="Francisco Denilson Pinheiro"
+      class="foto-pessoal"
+    >
+
+    <div class="brand-titles">
+
+      <span class="brand-name">
+        Francisco Denilson
+      </span>
+
+      <span class="brand-sub">
+        Escritor & Palestrante
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <nav class="menu-desktop">
+
+    <a href="index.html">
+      Início
+    </a>
+
+    <a href="obras.html">
+      Obras
+    </a>
+
+    <a
+      href="seja-um-escritor.html"
+      class="ativo"
+    >
+      Seja um Escritor
+    </a>
+
+    <a href="eventos.html">
+      Eventos
+    </a>
+
+    <a href="contato.html">
+      Contato
+    </a>
+
+  </nav>
+
+
+  <button
+    type="button"
+    class="botao-menu-mobile"
+    onclick="alternarMenu()"
+    aria-label="Abrir menu"
+  >
+
+    <i class="fa-solid fa-bars"></i>
+
+  </button>
+
+</header>
+
+
+<!-- =====================================================
+     MENU MOBILE
+===================================================== -->
+
+<div
+  class="menu-mobile-dropdown"
+  id="menuConteudo"
+>
+
+  <a href="index.html">
+    Início
+  </a>
+
+  <a href="obras.html">
+    Obras
+  </a>
+
+  <a
+    href="seja-um-escritor.html"
+    class="ativo"
+  >
+    Seja um Escritor
+  </a>
+
+  <a href="eventos.html">
+    Eventos
+  </a>
+
+  <a href="contato.html">
+    Contato
+  </a>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="escritor-hero">
+
+  <span class="escritor-kicker">
+    Talvez exista um livro dentro de você
+  </span>
+
+
+  <h1>
+    <em>Seja</em> um escritor.
+  </h1>
+
+
+  <div class="escritor-linha"></div>
+
+
+  <p>
+
+    Você já teve uma ideia e pensou:
+
+    <strong>
+      “Isso poderia virar um livro.”
+    </strong>
+
+    <br><br>
+
+    Talvez possa.
+
+    Esta página foi criada para ajudar você a descobrir
+    o que existe dentro dessa ideia e dar os primeiros
+    passos para transformá-la em palavras.
+
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     CONTEÚDO
+===================================================== -->
+
+<main class="escritor-container">
+
+
+<!-- =====================================================
+     ETAPA 1
+===================================================== -->
+
+<section class="etapa">
+
+  <span class="numero-etapa">
+    Primeiro passo
+  </span>
+
+
+  <h2>
+    Não tente escrever um livro ainda.
+  </h2>
+
+
+  <p class="etapa-intro">
+
+    Comece contando a sua ideia.
+
+    Não se preocupe com gramática,
+    capítulos, título ou organização.
+
+    Imagine que você está conversando comigo.
+
+  </p>
+
+
+  <div class="caderno">
+
+    <div class="caderno-topo">
+
+      <i class="fa-solid fa-pen"></i>
+
+      Minha primeira ideia
+
+    </div>
+
+
+    <textarea
+      id="ideiaLivro"
+      maxlength="5000"
+      placeholder="Escreva aqui tudo o que vier à sua mente...
+
+O que você gostaria de contar?
+
+Pode começar com uma frase, uma história, uma experiência ou simplesmente uma ideia.
+
+Não precisa estar perfeito."
+    ></textarea>
+
+
+    <div
+      class="contador"
+      id="contadorIdeia"
+    >
+      0 / 5.000
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ETAPA 2
+===================================================== -->
+
+<section class="etapa">
+
+  <span class="numero-etapa">
+    Segundo passo
+  </span>
+
+
+  <h2>
+    Agora vamos fazer sua ideia crescer.
+  </h2>
+
+
+  <p class="etapa-intro">
+
+    Responda sem pressa.
+
+    Não existem respostas certas.
+
+    Estas perguntas existem para ajudar você
+    a descobrir o conteúdo que já está dentro da sua ideia.
+
+  </p>
+
+
+  <div class="perguntas">
+
+
+    <!-- PERGUNTA 1 -->
+
+    <div class="pergunta">
+
+      <label>
+        1. Se você tivesse cinco minutos para contar
+        sua ideia a alguém, o que diria?
+      </label>
+
+      <small>
+        Conte como se estivesse conversando com um amigo.
+      </small>
+
+      <textarea
+        id="pergunta1"
+        placeholder="Minha ideia é..."
+      ></textarea>
+
+    </div>
+
+
+    <!-- PERGUNTA 2 -->
+
+    <div class="pergunta">
+
+      <label>
+        2. Por que essa história precisa ser contada?
+      </label>
+
+      <small>
+        O que fez você sentir que isso poderia tocar,
+        ensinar ou ajudar outras pessoas?
+      </small>
+
+      <textarea
+        id="pergunta2"
+        placeholder="Acredito que essa história precisa ser contada porque..."
+      ></textarea>
+
+    </div>
+
+
+    <!-- PERGUNTA 3 -->
+
+    <div class="pergunta">
+
+      <label>
+        3. Para quem você gostaria de escrever?
+      </label>
+
+      <small>
+        Imagine uma única pessoa lendo seu livro.
+        Quem ela é?
+      </small>
+
+      <textarea
+        id="pergunta3"
+        placeholder="Eu gostaria que meu livro chegasse a..."
+      ></textarea>
+
+    </div>
+
+
+    <!-- PERGUNTA 4 -->
+
+    <div class="pergunta">
+
+      <label>
+        4. O que você gostaria de provocar no leitor?
+      </label>
+
+      <small>
+        Quando ele terminar o livro, o que você gostaria
+        que tivesse mudado dentro dele?
+      </small>
+
+      <textarea
+        id="pergunta4"
+        placeholder="Quero que o leitor..."
+      ></textarea>
+
+    </div>
+
+
+    <!-- PERGUNTA 5 -->
+
+    <div class="pergunta">
+
+      <label>
+        5. O que você viveu que pode se transformar
+        em uma mensagem para alguém?
+      </label>
+
+      <small>
+        Experiências também podem se transformar
+        em livros.
+      </small>
+
+      <textarea
+        id="pergunta5"
+        placeholder="Uma experiência que marcou minha vida foi..."
+      ></textarea>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ETAPA 3
+===================================================== -->
+
+<section class="etapa">
+
+  <span class="numero-etapa">
+    Terceiro passo
+  </span>
+
+
+  <h2>
+    Sua ideia começa a ganhar forma.
+  </h2>
+
+
+  <p class="etapa-intro">
+
+    Agora tente dar nome e direção ao projeto.
+
+    Não precisa ser definitivo.
+
+    Um título provisório também é um começo.
+
+  </p>
+
+
+  <div class="projeto-grid">
+
+
+    <div class="campo-projeto">
+
+      <label>
+        Título provisório
+      </label>
+
+      <input
+        type="text"
+        id="tituloLivro"
+        placeholder="Meu livro..."
+      >
+
+    </div>
+
+
+    <div class="campo-projeto">
+
+      <label>
+        Tema central
+      </label>
+
+      <input
+        type="text"
+        id="temaLivro"
+        placeholder="Sobre o que é?"
+      >
+
+    </div>
+
+
+    <div class="campo-projeto">
+
+      <label>
+        Meu leitor
+      </label>
+
+      <input
+        type="text"
+        id="leitorLivro"
+        placeholder="Para quem escrevo?"
+      >
+
+    </div>
+
+
+    <div class="campo-projeto">
+
+      <label>
+        Transformação
+      </label>
+
+      <input
+        type="text"
+        id="transformacaoLivro"
+        placeholder="O que quero provocar?"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div class="acoes">
+
+    <button
+      type="button"
+      class="botao-escritor"
+      onclick="enviarProjeto()"
+    >
+
+      <i class="fa-solid fa-envelope"></i>
+
+      Enviar minha ideia
+
+    </button>
+
+
+    <button
+      type="button"
+      class="botao-escritor botao-secundario"
+      onclick="limparProjeto()"
+    >
+
+      <i class="fa-solid fa-rotate-left"></i>
+
+      Começar novamente
+
+    </button>
+
+  </div>
+
+
+  <div
+    id="mensagemFinal"
+    class="mensagem-final"
+  >
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PALAVRA FINAL
+===================================================== -->
+
+<section class="etapa">
+
+  <span class="numero-etapa">
+    Uma palavra de Denílson
+  </span>
+
+
+  <h2>
+    Todo livro começa pequeno.
+  </h2>
+
+
+  <p class="etapa-intro">
+
+    Talvez hoje você tenha apenas uma ideia.
+
+    Não despreze esse começo.
+
+    Muitos livros começam assim:
+    uma experiência, uma pergunta,
+    uma inquietação ou uma história
+    que alguém sente que precisa contar.
+
+    <br><br>
+
+    Não espere saber escrever para começar.
+
+    <strong>
+      Comece escrevendo para descobrir
+      o escritor que existe em você.
+    </strong>
+
+  </p>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
+
+<footer class="site-footer">
+
+  <div class="footer-social">
+
+    <a
+      href="https://instagram.com/prdenilsonescritor"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+
+      <i class="fa-brands fa-instagram"></i>
+
+    </a>
+
+
+    <a
+      href="https://wa.me/5585985141830"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+  </div>
+
+
+  © 2026 Francisco Denilson Pinheiro.
+  Todos os direitos reservados.
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const ideia =
+  document.getElementById("ideiaLivro");
+
+const contador =
+  document.getElementById("contadorIdeia");
+
+
+ideia.addEventListener(
+  "input",
+  function() {
+
+    contador.textContent =
+      this.value.length + " / 5.000";
+
+  }
+);
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+function alternarMenu() {
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+  menu.classList.toggle("aberto");
+
+}
+
+
+/* =====================================================
+   ENVIAR PROJETO
+===================================================== */
+
+function enviarProjeto() {
+
+  const ideiaTexto =
+    document.getElementById("ideiaLivro").value;
+
+  const titulo =
+    document.getElementById("tituloLivro").value;
+
+  const tema =
+    document.getElementById("temaLivro").value;
+
+  const leitor =
+    document.getElementById("leitorLivro").value;
+
+  const transformacao =
+    document.getElementById("transformacaoLivro").value;
+
+
+  const p1 =
+    document.getElementById("pergunta1").value;
+
+  const p2 =
+    document.getElementById("pergunta2").value;
+
+  const p3 =
+    document.getElementById("pergunta3").value;
+
+  const p4 =
+    document.getElementById("pergunta4").value;
+
+  const p5 =
+    document.getElementById("pergunta5").value;
+
+
+  if (!ideiaTexto.trim()) {
+
+    alert(
+      "Antes de enviar, escreva pelo menos um pouco da sua ideia."
+    );
+
+    document
+      .getElementById("ideiaLivro")
+      .focus();
+
+    return;
+
+  }
+
+
+  const assunto =
+    "Minha ideia de livro — Seja um Escritor";
+
+
+  const corpo =
+
+`Olá, Denílson.
+
+Estou começando a desenvolver uma ideia de livro.
+
+==============================
+MINHA IDEIA
+==============================
+
+${ideiaTexto}
+
+
+==============================
+PERGUNTAS
+==============================
+
+1. Se eu tivesse cinco minutos para contar minha ideia:
+
+${p1}
+
+
+2. Por que essa história precisa ser contada?
+
+${p2}
+
+
+3. Para quem eu gostaria de escrever?
+
+${p3}
+
+
+4. O que quero provocar no leitor?
+
+${p4}
+
+
+5. O que vivi que pode se transformar em mensagem?
+
+${p5}
+
+
+==============================
+MEU PROJETO
+==============================
+
+Título provisório:
+${titulo}
+
+Tema central:
+${tema}
+
+Meu leitor:
+${leitor}
+
+Transformação:
+${transformacao}
+
+
+Estou dando meus primeiros passos como escritor.
+
+`;
+
+
+  const email =
+    "antesqueeusejausado@yahoo.com";
+
+
+  const url =
+    "mailto:" +
+    email +
+    "?subject=" +
+    encodeURIComponent(assunto) +
+    "&body=" +
+    encodeURIComponent(corpo);
+
+
+  window.location.href = url;
+
+
+  const mensagem =
+    document.getElementById("mensagemFinal");
+
+
+  mensagem.innerHTML =
+
+    "<strong>Sua ideia está pronta para partir.</strong><br><br>" +
+
+    "O seu aplicativo de e-mail será aberto com " +
+    "a ideia e as respostas organizadas. " +
+
+    "Agora basta enviar a mensagem para Denílson.";
+
+  mensagem.classList.add("mostrar");
+
+}
+
+
+/* =====================================================
+   LIMPAR
+===================================================== */
+
+function limparProjeto() {
+
+  const confirmar =
+    confirm(
+      "Deseja apagar tudo e começar novamente?"
+    );
+
+
+  if (!confirmar) {
+    return;
+  }
+
+
+  document
+    .querySelectorAll(
+      "#ideiaLivro, .pergunta textarea, .campo-projeto input"
+    )
+    .forEach(function(campo) {
+
+      campo.value = "";
+
+    });
+
+
+  contador.textContent =
+    "0 / 5.000";
+
+
+  document
+    .getElementById("mensagemFinal")
+    .classList
+    .remove("mostrar");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
