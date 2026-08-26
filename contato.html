@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Contato | Francisco Denilson Pinheiro</title>
+
+  <meta
+    name="description"
+    content="Entre em contato com Francisco Denilson Pinheiro para convites, palestras, eventos, livros e outros assuntos."
+  >
+
+  <!-- =====================================================
+       FONTES
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ÍCONES
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+
+  <!-- =====================================================
+       ESTILO PRINCIPAL
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <!-- =====================================================
+       ESTILO DA PÁGINA
+  ====================================================== -->
+
+  <style>
+
+    :root {
+      --ouro: #c99e5c;
+      --ouro-claro: #e0bd7d;
+      --fundo: #0d0c0b;
+      --card: #171513;
+      --texto: #eeeeee;
+      --texto-suave: #a9a39b;
+      --borda: rgba(201,158,92,0.25);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+
+    /* =====================================================
+       CABEÇALHO
+    ====================================================== */
+
+    .cabecalho {
+      width: 100%;
+
+      padding: 22px 7%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+      background:
+        rgba(13,12,11,0.96);
+    }
+
+
+    .marca {
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+    }
+
+
+    .marca img {
+      width: 48px;
+      height: 48px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border:
+        1px solid var(--ouro);
+    }
+
+
+    .marca-texto {
+      display: flex;
+
+      flex-direction: column;
+    }
+
+
+    .marca-nome {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 1.1rem;
+
+      color: #fff;
+    }
+
+
+    .marca-subtitulo {
+      margin-top: 3px;
+
+      color: var(--ouro);
+
+      font-size: 0.65rem;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       MENU
+    ====================================================== */
+
+    .menu {
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+    }
+
+
+    .menu a {
+      color: #ddd;
+
+      text-decoration: none;
+
+      font-size: 0.72rem;
+
+      font-weight: 500;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      transition: 0.3s ease;
+    }
+
+
+    .menu a:hover,
+    .menu a.ativo {
+      color: var(--ouro);
+    }
+
+
+    /* =====================================================
+       CONTEÚDO
+    ====================================================== */
+
+    .pagina {
+      width: 100%;
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding:
+        80px 25px 90px;
+    }
+
+
+    .titulo {
+      text-align: center;
+
+      margin-bottom: 55px;
+    }
+
+
+    .titulo .pequeno {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--ouro);
+
+      font-size: 0.72rem;
+
+      font-weight: 600;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+
+    .titulo h1 {
+      margin: 0;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: clamp(2.4rem, 5vw, 4rem);
+
+      font-weight: 400;
+
+      color: #fff;
+    }
+
+
+    .linha-dourada {
+      width: 65px;
+
+      height: 1px;
+
+      margin: 22px auto;
+
+      background: var(--ouro);
+    }
+
+
+    .titulo p {
+      max-width: 620px;
+
+      margin: 0 auto;
+
+      color: var(--texto-suave);
+
+      font-size: 0.95rem;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       ÁREA PRINCIPAL
+    ====================================================== */
+
+    .contato-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 25px;
+    }
+
+
+    .cartao-contato {
+      padding: 38px 32px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(201,158,92,0.08),
+          rgba(23,21,19,0.95)
+        );
+
+      border:
+        1px solid var(--borda);
+
+      border-radius: 5px;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .cartao-contato:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(201,158,92,0.6);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+    }
+
+
+    .icone {
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 22px;
+
+      border:
+        1px solid var(--ouro);
+
+      border-radius: 50%;
+
+      color: var(--ouro);
+
+      font-size: 1.3rem;
+    }
+
+
+    .cartao-contato h2 {
+      margin: 0 0 12px;
+
+      font-family:
+        'Playfair Display',
+        serif;
+
+      font-size: 1.65rem;
+
+      font-weight: 400;
+
+      color: #fff;
+    }
+
+
+    .cartao-contato p {
+      margin: 0 0 25px;
+
+      color: var(--texto-suave);
+
+      font-size: 0.88rem;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       BOTÕES
+    ====================================================== */
+
+    .botao {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      min-height: 48px;
+
+      padding: 13px 20px;
+
+      border-radius: 2px;
+
+      text-decoration: none;
+
+      font-size: 0.72rem;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      transition: 0.3s ease;
+    }
+
+
+    .botao-dourado {
+      background: var(--ouro);
+
+      color: #171513;
+
+      border:
+        1px solid var(--ouro);
+    }
+
+
+    .botao-dourado:hover {
+      background: var(--ouro-claro);
+
+      border-color: var(--ouro-claro);
+
+      transform: translateY(-2px);
+    }
+
+
+    .botao-outline {
+      background: transparent;
+
+      color: #fff;
+
+      border:
+        1px solid rgba(255,255,255,0.18);
+    }
+
+
+    .botao-outline:hover {
+      color: var(--ouro);
+
+      border-color: var(--ouro);
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+    ====================================================== */
+
+    .whatsapp {
+      margin-top: 35px;
+
+      padding: 35px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(201,158,92,0.13),
+          rgba(201,158,92,0.025)
+        );
+
+      border:
+        1px solid rgba(201,158,92,0.35);
+
+      border-radius: 5px;
+    }
+
+
+    .whatsapp h2 {
+      margin: 0 0 10px;
+
+      font-family:
+        'Playfair Display',
+        serif;
+
+      font-size: 1.8rem;
+
+      font-weight: 400;
+    }
+
+
+    .whatsapp p {
+      max-width: 600px;
+
+      margin:
+        0 auto 22px;
+
+      color: var(--texto-suave);
+
+      font-size: 0.88rem;
+
+      line-height: 1.7;
+    }
+
+
+    .numero {
+      display: block;
+
+      margin-bottom: 20px;
+
+      color: var(--ouro);
+
+      font-size: 0.85rem;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =====================================================
+       INSTAGRAM
+    ====================================================== */
+
+    .redes {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 15px;
+
+      margin-top: 40px;
+    }
+
+
+    .rede {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid rgba(255,255,255,0.15);
+
+      border-radius: 50%;
+
+      color: #ddd;
+
+      text-decoration: none;
+
+      font-size: 1rem;
+
+      transition: 0.3s ease;
+    }
+
+
+    .rede:hover {
+      color: var(--ouro);
+
+      border-color: var(--ouro);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =====================================================
+       RODAPÉ
+    ====================================================== */
+
+    footer {
+      padding:
+        30px 20px;
+
+      text-align: center;
+
+      border-top:
+        1px solid rgba(255,255,255,0.05);
+
+      color: #777;
+
+      font-size: 0.75rem;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .cabecalho {
+        padding:
+          18px 20px;
+      }
+
+
+      .menu {
+        display: none;
+      }
+
+
+      .pagina {
+        padding:
+          55px 18px 70px;
+      }
+
+
+      .contato-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .cartao-contato {
+        padding:
+          30px 25px;
+      }
+
+
+      .whatsapp {
+        padding:
+          30px 20px;
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header class="cabecalho">
+
+
+  <div class="marca">
+
+    <img
+      src="imagem-pessoal.jpg"
+      alt="Francisco Denilson Pinheiro"
+    >
+
+    <div class="marca-texto">
+
+      <span class="marca-nome">
+        Francisco Denilson
+      </span>
+
+      <span class="marca-subtitulo">
+        Escritor & Palestrante
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <nav class="menu">
+
+    <a href="index.html">
+      Início
+    </a>
+
+    <a href="obras.html">
+      Obras
+    </a>
+
+    <a href="biblioteca.html">
+      Minha Biblioteca
+    </a>
+
+    <a href="eventos.html">
+      Eventos
+    </a>
+
+    <a
+      href="contato.html"
+      class="ativo"
+    >
+      Contato
+    </a>
+
+  </nav>
+
+
+</header>
+
+
+<!-- =====================================================
+     CONTEÚDO
+===================================================== -->
+
+<main class="pagina">
+
+
+  <section class="titulo">
+
+    <span class="pequeno">
+      Entre em contato
+    </span>
+
+    <h1>
+      Vamos conversar?
+    </h1>
+
+    <div class="linha-dourada"></div>
+
+    <p>
+
+      Seja para falar sobre livros, convites,
+      palestras ou simplesmente para trocar uma ideia,
+      será uma alegria conversar com você.
+
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       CARTÕES
+  ====================================================== -->
+
+  <section class="contato-grid">
+
+
+    <!-- ===================================================
+         CONVITES
+    ==================================================== -->
+
+    <article class="cartao-contato">
+
+      <div class="icone">
+
+        <i class="fa-solid fa-microphone"></i>
+
+      </div>
+
+
+      <h2>
+        Convites e palestras
+      </h2>
+
+
+      <p>
+
+        Sua igreja, organização ou grupo deseja
+        me convidar para uma palestra, encontro,
+        lançamento ou outro evento?
+
+      </p>
+
+
+      <a
+        href="https://wa.me/5585985141830?text=Ol%C3%A1%2C%20Pr.%20Denilson%21%20Gostaria%20de%20convid%C3%A1-lo%20para%20um%20evento."
+        class="botao botao-dourado"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Fazer um convite
+
+      </a>
+
+    </article>
+
+
+    <!-- ===================================================
+         LIVROS
+    ==================================================== -->
+
+    <article class="cartao-contato">
+
+      <div class="icone">
+
+        <i class="fa-solid fa-book-open"></i>
+
+      </div>
+
+
+      <h2>
+        Livros e obras
+      </h2>
+
+
+      <p>
+
+        Tem alguma dúvida sobre minhas obras,
+        sobre o livro <strong>Antes Que Eu Seja Usado</strong>
+        ou deseja falar sobre aquisição e projetos?
+
+      </p>
+
+
+      <a
+        href="https://wa.me/5585985141830?text=Ol%C3%A1%2C%20Pr.%20Denilson%21%20Gostaria%20de%20falar%20sobre seus livros."
+        class="botao botao-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Falar sobre livros
+
+      </a>
+
+    </article>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       WHATSAPP PRINCIPAL
+  ====================================================== -->
+
+  <section class="whatsapp">
+
+
+    <h2>
+      Fale comigo pelo WhatsApp
+    </h2>
+
+
+    <p>
+
+      Para uma resposta mais rápida,
+      envie uma mensagem diretamente pelo WhatsApp.
+
+    </p>
+
+
+    <span class="numero">
+
+      +55 85 98514-1830
+
+    </span>
+
+
+    <a
+      href="https://wa.me/5585985141830"
+      class="botao botao-dourado"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      Abrir WhatsApp
+
+    </a>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       REDES SOCIAIS
+  ====================================================== -->
+
+  <div class="redes">
+
+
+    <a
+      href="https://instagram.com/prdenilsonescritor"
+      class="rede"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+
+      <i class="fa-brands fa-instagram"></i>
+
+    </a>
+
+
+    <a
+      href="https://wa.me/5585985141830"
+      class="rede"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+  </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
+
+<footer>
+
+  Francisco Denilson Pinheiro — Escritor & Palestrante
+
+  <br>
+
+  © 2026 — Todos os direitos reservados.
+
+</footer>
+
+
+</body>
+
+</html>
