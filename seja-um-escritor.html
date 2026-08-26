@@ -691,41 +691,49 @@ function alternarMenu() {
    ENVIAR PROJETO
 ===================================================== */
 
+/* =====================================================
+   ENVIAR PROJETO PELO WHATSAPP
+===================================================== */
+
 function enviarProjeto() {
 
   const ideiaTexto =
-    document.getElementById("ideiaLivro").value;
+    document.getElementById("ideiaLivro").value.trim();
 
   const titulo =
-    document.getElementById("tituloLivro").value;
+    document.getElementById("tituloLivro").value.trim();
 
   const tema =
-    document.getElementById("temaLivro").value;
+    document.getElementById("temaLivro").value.trim();
 
   const leitor =
-    document.getElementById("leitorLivro").value;
+    document.getElementById("leitorLivro").value.trim();
 
   const transformacao =
-    document.getElementById("transformacaoLivro").value;
+    document.getElementById("transformacaoLivro").value.trim();
 
 
   const p1 =
-    document.getElementById("pergunta1").value;
+    document.getElementById("pergunta1").value.trim();
 
   const p2 =
-    document.getElementById("pergunta2").value;
+    document.getElementById("pergunta2").value.trim();
 
   const p3 =
-    document.getElementById("pergunta3").value;
+    document.getElementById("pergunta3").value.trim();
 
   const p4 =
-    document.getElementById("pergunta4").value;
+    document.getElementById("pergunta4").value.trim();
 
   const p5 =
-    document.getElementById("pergunta5").value;
+    document.getElementById("pergunta5").value.trim();
 
 
-  if (!ideiaTexto.trim()) {
+  /* =====================================================
+     VERIFICAR SE EXISTE UMA IDEIA
+  ===================================================== */
+
+  if (!ideiaTexto) {
 
     alert(
       "Antes de enviar, escreva pelo menos um pouco da sua ideia."
@@ -736,111 +744,127 @@ function enviarProjeto() {
       .focus();
 
     return;
-
   }
 
 
-  const assunto =
-    "Minha ideia de livro — Seja um Escritor";
+  /* =====================================================
+     NÚMERO DO WHATSAPP
+  ===================================================== */
+
+  const numeroWhatsApp =
+    "5585985141830";
 
 
-  const corpo =
+  /* =====================================================
+     MONTAR A MENSAGEM
+  ===================================================== */
 
-`Olá, Denílson.
+  const mensagem =
 
-Estou começando a desenvolver uma ideia de livro.
+`Olá, Denílson!
 
-==============================
-MINHA IDEIA
-==============================
+Estou começando a desenvolver uma ideia de livro através da área "Seja um Escritor" do seu site.
+
+━━━━━━━━━━━━━━━━━━━━
+📖 MINHA IDEIA
+━━━━━━━━━━━━━━━━━━━━
 
 ${ideiaTexto}
 
 
-==============================
-PERGUNTAS
-==============================
+━━━━━━━━━━━━━━━━━━━━
+💭 PERGUNTAS
+━━━━━━━━━━━━━━━━━━━━
 
 1. Se eu tivesse cinco minutos para contar minha ideia:
 
-${p1}
+${p1 || "Não respondido."}
 
 
 2. Por que essa história precisa ser contada?
 
-${p2}
+${p2 || "Não respondido."}
 
 
 3. Para quem eu gostaria de escrever?
 
-${p3}
+${p3 || "Não respondido."}
 
 
 4. O que quero provocar no leitor?
 
-${p4}
+${p4 || "Não respondido."}
 
 
 5. O que vivi que pode se transformar em mensagem?
 
-${p5}
+${p5 || "Não respondido."}
 
 
-==============================
-MEU PROJETO
-==============================
+━━━━━━━━━━━━━━━━━━━━
+📝 MEU PROJETO
+━━━━━━━━━━━━━━━━━━━━
 
 Título provisório:
-${titulo}
+${titulo || "Ainda não definido."}
 
 Tema central:
-${tema}
+${tema || "Ainda não definido."}
 
 Meu leitor:
-${leitor}
+${leitor || "Ainda não definido."}
 
-Transformação:
-${transformacao}
+Transformação que desejo provocar:
+${transformacao || "Ainda não definida."}
 
 
 Estou dando meus primeiros passos como escritor.
 
-`;
+Enviado através do site:
+prdenilsonescritor.com.br`;
 
 
-  const email =
-    "antesqueeusejausado@yahoo.com";
+  /* =====================================================
+     CRIAR LINK DO WHATSAPP
+  ===================================================== */
+
+  const urlWhatsApp =
+    "https://wa.me/" +
+    numeroWhatsApp +
+    "?text=" +
+    encodeURIComponent(mensagem);
 
 
-  const url =
-    "mailto:" +
-    email +
-    "?subject=" +
-    encodeURIComponent(assunto) +
-    "&body=" +
-    encodeURIComponent(corpo);
+  /* =====================================================
+     ABRIR WHATSAPP
+  ===================================================== */
+
+  window.open(
+    urlWhatsApp,
+    "_blank"
+  );
 
 
-  window.location.href = url;
+  /* =====================================================
+     MENSAGEM NA PÁGINA
+  ===================================================== */
 
-
-  const mensagem =
+  const mensagemFinal =
     document.getElementById("mensagemFinal");
 
 
-  mensagem.innerHTML =
+  mensagemFinal.innerHTML =
 
     "<strong>Sua ideia está pronta para partir.</strong><br><br>" +
 
-    "O seu aplicativo de e-mail será aberto com " +
-    "a ideia e as respostas organizadas. " +
+    "O WhatsApp foi aberto com sua mensagem organizada. " +
 
-    "Agora basta enviar a mensagem para Denílson.";
+    "Agora basta conferir e tocar em <strong>Enviar</strong>.";
 
-  mensagem.classList.add("mostrar");
+
+  mensagemFinal.classList.add("mostrar");
 
 }
-
 
 /* =====================================================
    LIMPAR
