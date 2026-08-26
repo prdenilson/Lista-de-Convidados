@@ -1237,7 +1237,104 @@ function fecharLogin() {
 
 }
 
+/* =====================================================
+   LOGIN COM SUPABASE
+===================================================== */
 
+document
+  .getElementById("formLogin")
+  .addEventListener(
+    "submit",
+    async function(event) {
+
+      event.preventDefault();
+
+      const email =
+        document
+          .getElementById("emailLogin")
+          .value
+          .trim();
+
+      const senha =
+        document
+          .getElementById("senhaLogin")
+          .value;
+
+      const botao =
+        document.getElementById("botaoEntrar");
+
+      const mensagem =
+        document.getElementById("mensagemLogin");
+
+
+      mensagem.textContent = "";
+
+
+      botao.disabled = true;
+
+      botao.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Entrando...';
+
+
+      try {
+
+        const { data, error } =
+          await supabaseClient.auth.signInWithPassword({
+
+            email: email,
+
+            password: senha
+
+          });
+
+
+        if (error) {
+
+          console.error(
+            "Erro no login:",
+            error
+          );
+
+          mensagem.textContent =
+            "E-mail ou senha incorretos.";
+
+          botao.disabled = false;
+
+          botao.innerHTML =
+            '<i class="fa-solid fa-right-to-bracket"></i> Entrar';
+
+          return;
+
+        }
+
+
+        if (data.session) {
+
+          window.location.href =
+            "biblioteca.html";
+
+        }
+
+      } catch (erro) {
+
+        console.error(
+          "Erro inesperado:",
+          erro
+        );
+
+        mensagem.textContent =
+          "Não foi possível realizar o login. Tente novamente.";
+
+        botao.disabled = false;
+
+        botao.innerHTML =
+          '<i class="fa-solid fa-right-to-bracket"></i> Entrar';
+
+      }
+
+    }
+  );
+  
 /* =====================================================
    FECHAR CLICANDO FORA DA CAIXA
 ===================================================== */
