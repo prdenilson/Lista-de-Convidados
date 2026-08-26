@@ -658,6 +658,9 @@
     
   </style>
 
+  <!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 
 
@@ -1132,6 +1135,22 @@
 ===================================================== -->
 
 <script>
+
+  /* =====================================================
+   CONFIGURAÇÃO DO SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+  "https://qieejecsicnmsdtefejs.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
 
 
 /* =====================================================
