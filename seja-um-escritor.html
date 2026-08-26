@@ -504,9 +504,22 @@ Não precisa estar perfeito."
 
   </div>
 
+  
 
   <div class="acoes">
 
+<button
+  type="button"
+  class="botao-escritor"
+  onclick="analisarIdeia()"
+>
+
+  <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+  Analisar minha ideia
+
+</button>
+    
     <button
       type="button"
       class="botao-escritor"
@@ -535,14 +548,21 @@ Não precisa estar perfeito."
   </div>
 
 
-  <div
+   <div
     id="mensagemFinal"
     class="mensagem-final"
   >
 
   </div>
 
+
+  <div
+    id="resultadoAnalise"
+    class="resultado-analise"
+  ></div>
+
 </section>
+
 
 
 <!-- =====================================================
@@ -861,6 +881,249 @@ function limparProjeto() {
 
 }
 
+/* =====================================================
+   ANALISAR IDEIA DO LIVRO
+===================================================== */
+
+function analisarIdeia() {
+
+  const ideia = document
+    .getElementById("ideiaLivro")
+    .value
+    .trim();
+
+  const resultado =
+    document.getElementById("resultadoAnalise");
+
+
+  if (!ideia) {
+
+    alert(
+      "Escreva primeiro sua ideia para o livro."
+    );
+
+    document
+      .getElementById("ideiaLivro")
+      .focus();
+
+    return;
+  }
+
+
+  resultado.innerHTML = `
+
+    <div class="analise-cabecalho">
+
+      <span>
+        SUA IDEIA COMEÇOU A GANHAR FORMA
+      </span>
+
+      <h2>
+        Existe um livro possível aqui.
+      </h2>
+
+      <p>
+        A partir daquilo que você escreveu,
+        este é um primeiro caminho para começar
+        a transformar sua ideia em livro.
+      </p>
+
+    </div>
+
+
+    <div class="analise-item">
+
+      <span>
+        SUA IDEIA
+      </span>
+
+      <p>
+        ${escaparHTML(ideia)}
+      </p>
+
+    </div>
+
+
+    <div class="estrutura-livro">
+
+      <span>
+        UMA POSSÍVEL ESTRUTURA
+      </span>
+
+      <h3>
+        Caminho sugerido para o seu livro
+      </h3>
+
+
+      <div class="capitulo-sugerido">
+
+        <strong>01</strong>
+
+        <div>
+
+          <h4>
+            Onde tudo começou
+          </h4>
+
+          <p>
+            Conte a história, experiência ou acontecimento
+            que deu origem à sua ideia.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="capitulo-sugerido">
+
+        <strong>02</strong>
+
+        <div>
+
+          <h4>
+            A pergunta que ficou
+          </h4>
+
+          <p>
+            Qual pergunta ou inquietação fez você perceber
+            que precisava falar sobre esse assunto?
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="capitulo-sugerido">
+
+        <strong>03</strong>
+
+        <div>
+
+          <h4>
+            O que você descobriu
+          </h4>
+
+          <p>
+            Quais experiências, aprendizados ou descobertas
+            ajudaram você a compreender melhor essa ideia?
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="capitulo-sugerido">
+
+        <strong>04</strong>
+
+        <div>
+
+          <h4>
+            Quando tudo mudou
+          </h4>
+
+          <p>
+            Existe algum momento decisivo que mudou sua
+            maneira de pensar ou enxergar esse assunto?
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="capitulo-sugerido">
+
+        <strong>05</strong>
+
+        <div>
+
+          <h4>
+            O que você gostaria de dizer
+          </h4>
+
+          <p>
+            Se o leitor pudesse guardar apenas uma mensagem
+            do seu livro, qual seria?
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="capitulo-sugerido">
+
+        <strong>06</strong>
+
+        <div>
+
+          <h4>
+            Depois da última página
+          </h4>
+
+          <p>
+            Como você gostaria que o leitor estivesse
+            diferente depois de terminar seu livro?
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="analise-mensagem">
+
+      <i class="fa-solid fa-feather-pointed"></i>
+
+      <p>
+
+        <strong>
+          Agora comece pelo primeiro capítulo.
+        </strong>
+
+        Não tente escrever um livro inteiro de uma vez.
+        Comece contando aquilo que você conhece,
+        aquilo que viveu e aquilo que deseja comunicar.
+
+      </p>
+
+    </div>
+
+  `;
+
+
+  resultado.classList.add("mostrar");
+
+
+  resultado.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+
+/* =====================================================
+   PROTEGER TEXTO
+===================================================== */
+
+function escaparHTML(texto) {
+
+  return texto
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+  
 </script>
 
 
