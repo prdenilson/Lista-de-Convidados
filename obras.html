@@ -1,20 +1,31 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Obras | Francisco Denilson Pinheiro</title>
 
   <meta
     name="description"
-    content="Conheça as obras de Francisco Denilson Pinheiro e adquira o livro Antes Que Eu Seja Usado."
+    content="Conheça as obras de Francisco Denilson Pinheiro e acesse seus devocionais em PDF."
   >
 
   <!-- FONTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
@@ -27,8 +38,12 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
 
-  <!-- ESTILO PRINCIPAL DO SITE -->
-  <link rel="stylesheet" href="style.css">
+  <!-- ESTILO PRINCIPAL -->
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 
   <style>
 
@@ -37,10 +52,15 @@
     ===================================================== */
 
     .pagina {
+
       width: 100%;
+
       max-width: 1100px;
+
       margin: 0 auto;
+
       padding: 60px 20px 80px;
+
     }
 
 
@@ -49,8 +69,11 @@
     ===================================================== */
 
     .livro {
+
       display: grid;
+
       grid-template-columns: 300px 1fr;
+
       gap: 55px;
 
       align-items: start;
@@ -60,10 +83,12 @@
       background: var(--bg-card);
 
       border: 1px solid var(--border-color);
+
       border-radius: 5px;
 
       box-shadow:
         0 20px 50px rgba(0,0,0,0.35);
+
     }
 
 
@@ -72,14 +97,22 @@
     ===================================================== */
 
     .livro-capa {
+
       display: flex;
+
       justify-content: center;
+
       align-items: flex-start;
+
     }
 
+
     .livro-capa img {
+
       width: 100%;
+
       max-width: 270px;
+
       height: auto;
 
       display: block;
@@ -88,17 +121,20 @@
 
       box-shadow:
         0 18px 40px rgba(0,0,0,0.55);
+
     }
 
 
     /* =====================================================
-       INFORMAÇÕES
+       INFORMAÇÕES DO LIVRO
     ===================================================== */
 
     .livro-info h1 {
+
       font-family: var(--font-serif);
 
       font-size: 2.4rem;
+
       line-height: 1.15;
 
       font-weight: 500;
@@ -106,9 +142,12 @@
       color: #fff;
 
       margin-bottom: 12px;
+
     }
 
+
     .livro-subtitulo {
+
       color: var(--gold-primary);
 
       font-size: 1rem;
@@ -118,17 +157,23 @@
       line-height: 1.6;
 
       margin-bottom: 25px;
+
     }
 
+
     .livro-autor {
+
       color: var(--text-muted);
 
       font-size: 0.85rem;
 
       margin-bottom: 25px;
+
     }
 
+
     .livro-autor strong {
+
       color: var(--gold-primary);
 
       text-transform: uppercase;
@@ -140,14 +185,12 @@
       display: block;
 
       margin-bottom: 4px;
+
     }
 
 
-    /* =====================================================
-       DESCRIÇÃO
-    ===================================================== */
-
     .livro-descricao {
+
       color: var(--text-muted);
 
       font-size: 0.95rem;
@@ -157,14 +200,16 @@
       font-weight: 300;
 
       margin-bottom: 25px;
+
     }
 
 
     /* =====================================================
-       BOTÕES
+       BOTÕES DO LIVRO
     ===================================================== */
 
     .botoes {
+
       display: grid;
 
       grid-template-columns: 1fr 1fr;
@@ -172,12 +217,16 @@
       gap: 12px;
 
       margin-top: 25px;
+
     }
 
+
     .button {
+
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       min-height: 50px;
@@ -203,58 +252,338 @@
       cursor: pointer;
 
       transition: all 0.3s ease;
+
+      gap: 9px;
+
     }
 
+
     .button {
+
       background: var(--gold-primary);
 
       color: #171513;
 
       border: 1px solid var(--gold-primary);
+
     }
 
+
     .button:hover {
+
       background: #e0bd7d;
 
       border-color: #e0bd7d;
+
     }
 
+
     .button-outline {
+
       background: transparent;
 
       color: var(--text-light);
 
       border: 1px solid var(--border-color);
+
     }
 
+
     .button-outline:hover {
+
       color: var(--gold-primary);
 
       border-color: var(--gold-primary);
 
       background: rgba(201,158,92,0.05);
+
     }
 
+
     .button-dark {
+
       background: #171513;
 
       color: #fff;
 
       border: 1px solid var(--border-color);
+
     }
 
+
     .button-dark:hover {
+
       border-color: var(--gold-primary);
 
       color: var(--gold-primary);
+
+    }
+
+
+    /* =====================================================
+       DEVOCIONAIS
+    ===================================================== */
+
+    .devocionais {
+
+      margin-top: 70px;
+
+    }
+
+
+    .devocionais-cabecalho {
+
+      text-align: center;
+
+      margin-bottom: 35px;
+
+    }
+
+
+    .devocionais-cabecalho .pequeno {
+
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--gold-primary);
+
+      font-family: var(--font-sans);
+
+      font-size: 0.7rem;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .devocionais-cabecalho h2 {
+
+      margin: 0;
+
+      color: #fff;
+
+      font-family: var(--font-serif);
+
+      font-size: 2.2rem;
+
+      font-weight: 400;
+
+    }
+
+
+    .devocionais-cabecalho p {
+
+      max-width: 680px;
+
+      margin: 12px auto 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.9rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    .devocional-card {
+
+      display: grid;
+
+      grid-template-columns: 150px 1fr;
+
+      gap: 30px;
+
+      align-items: center;
+
+      padding: 30px;
+
+      background: var(--bg-card);
+
+      border: 1px solid var(--border-color);
+
+      border-radius: 5px;
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.22);
+
+    }
+
+
+    .devocional-capa {
+
+      width: 150px;
+
+      min-height: 190px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border: 1px solid rgba(201,158,92,0.35);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(201,158,92,0.12),
+          rgba(201,158,92,0.03)
+        );
+
+      border-radius: 4px;
+
+      color: var(--gold-primary);
+
+      font-size: 2.5rem;
+
+      box-shadow:
+        0 12px 25px rgba(0,0,0,0.25);
+
+    }
+
+
+    .devocional-conteudo h3 {
+
+      color: #fff;
+
+      font-family: var(--font-serif);
+
+      font-size: 1.6rem;
+
+      font-weight: 400;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .devocional-conteudo p {
+
+      color: var(--text-muted);
+
+      font-size: 0.9rem;
+
+      line-height: 1.75;
+
+      margin-bottom: 20px;
+
+      max-width: 680px;
+
+    }
+
+
+    .devocional-botoes {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+    }
+
+
+    .devocional-botao {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      min-height: 45px;
+
+      padding: 11px 18px;
+
+      border-radius: 2px;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.7rem;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+
+    }
+
+
+    .devocional-botao-leitura {
+
+      background: var(--gold-primary);
+
+      color: #171513;
+
+      border: 1px solid var(--gold-primary);
+
+    }
+
+
+    .devocional-botao-leitura:hover {
+
+      background: #e0bd7d;
+
+      border-color: #e0bd7d;
+
+      transform: translateY(-1px);
+
+    }
+
+
+    .devocional-botao-download {
+
+      background: transparent;
+
+      color: #fff;
+
+      border: 1px solid var(--border-color);
+
+    }
+
+
+    .devocional-botao-download:hover {
+
+      color: var(--gold-primary);
+
+      border-color: var(--gold-primary);
+
+    }
+
+
+    .devocional-observacao {
+
+      margin-top: 12px;
+
+      color: #777;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.68rem;
+
     }
 
 
     /* =====================================================
        ÁREA DE ACESSO DIGITAL
+       IMPORTANTE: PRESERVADA PARA O SUPABASE
     ===================================================== */
 
     .acesso-digital {
+
       margin-top: 45px;
 
       padding: 30px;
@@ -271,10 +600,14 @@
         );
 
       text-align: center;
+
     }
 
+
     .acesso-icone {
+
       width: 52px;
+
       height: 52px;
 
       margin: 0 auto 15px;
@@ -282,6 +615,7 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       border-radius: 50%;
@@ -291,9 +625,12 @@
       color: var(--gold-primary);
 
       font-size: 1.2rem;
+
     }
 
+
     .acesso-digital h2 {
+
       font-family: var(--font-serif);
 
       font-size: 1.6rem;
@@ -303,9 +640,12 @@
       color: #fff;
 
       margin-bottom: 10px;
+
     }
 
+
     .acesso-digital p {
+
       max-width: 650px;
 
       margin: 0 auto 20px;
@@ -315,12 +655,16 @@
       font-size: 0.88rem;
 
       line-height: 1.7;
+
     }
 
+
     .botao-leitura {
+
       display: inline-flex;
 
       align-items: center;
+
       justify-content: center;
 
       gap: 10px;
@@ -350,12 +694,329 @@
       transition: all 0.3s ease;
 
       text-decoration: none;
+
     }
 
+
     .botao-leitura:hover {
+
       background: #e0bd7d;
 
       transform: translateY(-1px);
+
+    }
+
+
+    /* =====================================================
+       MODAL DE LOGIN
+       NÃO MEXER NA LÓGICA
+    ===================================================== */
+
+    .modal-login {
+
+      position: fixed;
+
+      inset: 0;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background: rgba(0, 0, 0, 0.78);
+
+      backdrop-filter: blur(5px);
+
+      z-index: 9999;
+
+    }
+
+
+    .modal-login.aberto {
+
+      display: flex;
+
+    }
+
+
+    .caixa-login {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: 420px;
+
+      padding: 40px 35px;
+
+      background: var(--bg-card);
+
+      border: 1px solid rgba(201,158,92,0.45);
+
+      border-radius: 6px;
+
+      box-shadow: 0 25px 70px rgba(0,0,0,0.65);
+
+      animation: aparecerLogin 0.25s ease;
+
+    }
+
+
+    @keyframes aparecerLogin {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(15px) scale(0.97);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+
+      }
+
+    }
+
+
+    .fechar-login {
+
+      position: absolute;
+
+      top: 14px;
+
+      right: 16px;
+
+      width: 35px;
+
+      height: 35px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border: none;
+
+      background: transparent;
+
+      color: var(--text-muted);
+
+      font-size: 1.2rem;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .fechar-login:hover {
+
+      color: var(--gold-primary);
+
+    }
+
+
+    .icone-login {
+
+      width: 58px;
+
+      height: 58px;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--gold-primary);
+
+      color: var(--gold-primary);
+
+      font-size: 1.3rem;
+
+    }
+
+
+    .caixa-login h2 {
+
+      margin-bottom: 10px;
+
+      text-align: center;
+
+      font-family: var(--font-serif);
+
+      font-size: 1.7rem;
+
+      font-weight: 400;
+
+      color: #fff;
+
+    }
+
+
+    .texto-login {
+
+      margin-bottom: 25px;
+
+      text-align: center;
+
+      color: var(--text-muted);
+
+      font-size: 0.85rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .campo-login {
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .campo-login label {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: var(--gold-primary);
+
+      font-size: 0.72rem;
+
+      font-weight: 600;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .campo-login input {
+
+      width: 100%;
+
+      padding: 13px 14px;
+
+      box-sizing: border-box;
+
+      background: #171513;
+
+      border: 1px solid var(--border-color);
+
+      border-radius: 3px;
+
+      color: #fff;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.9rem;
+
+      outline: none;
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .campo-login input:focus {
+
+      border-color: var(--gold-primary);
+
+      box-shadow: 0 0 0 2px rgba(201,158,92,0.08);
+
+    }
+
+
+    .campo-login input::placeholder {
+
+      color: #777;
+
+    }
+
+
+    .botao-entrar {
+
+      width: 100%;
+
+      min-height: 50px;
+
+      margin-top: 8px;
+
+      border: 1px solid var(--gold-primary);
+
+      border-radius: 2px;
+
+      background: var(--gold-primary);
+
+      color: #171513;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.75rem;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .botao-entrar:hover {
+
+      background: #e0bd7d;
+
+      border-color: #e0bd7d;
+
+    }
+
+
+    .botao-entrar:disabled {
+
+      opacity: 0.6;
+
+      cursor: wait;
+
+    }
+
+
+    .mensagem-login {
+
+      min-height: 20px;
+
+      margin-top: 15px;
+
+      text-align: center;
+
+      color: #d99;
+
+      font-size: 0.8rem;
+
+      line-height: 1.5;
+
     }
 
 
@@ -366,1014 +1027,1072 @@
     @media (max-width: 800px) {
 
       .pagina {
+
         padding: 40px 15px 60px;
+
       }
 
+
       .livro {
+
         grid-template-columns: 1fr;
 
         gap: 30px;
 
         padding: 25px;
+
       }
+
 
       .livro-capa img {
+
         max-width: 240px;
+
       }
 
+
       .livro-info h1 {
+
         font-size: 2rem;
 
         text-align: center;
+
       }
+
 
       .livro-subtitulo,
       .livro-autor {
+
         text-align: center;
+
       }
+
 
       .botoes {
+
         grid-template-columns: 1fr;
+
       }
 
+
+      .devocional-card {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 25px;
+
+      }
+
+
+      .devocional-capa {
+
+        margin: 0 auto;
+
+      }
+
+
+      .devocional-conteudo p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+      }
+
+
+      .devocional-botoes {
+
+        justify-content: center;
+
+      }
+
+
       .acesso-digital {
+
         padding: 25px 18px;
+
+      }
+
+
+      .caixa-login {
+
+        padding: 35px 22px;
+
       }
 
     }
 
-/* =====================================================
-   MODAL DE LOGIN
-===================================================== */
 
-.modal-login {
-  position: fixed;
-  inset: 0;
+    @media (max-width: 500px) {
 
-  display: none;
+      .devocional-botoes {
 
-  align-items: center;
-  justify-content: center;
+        flex-direction: column;
 
-  padding: 20px;
+      }
 
-  background: rgba(0, 0, 0, 0.78);
 
-  backdrop-filter: blur(5px);
+      .devocional-botao {
 
-  z-index: 9999;
-}
+        width: 100%;
 
-.modal-login.aberto {
-  display: flex;
-}
+      }
 
-.caixa-login {
-  position: relative;
+    }
 
-  width: 100%;
-  max-width: 420px;
-
-  padding: 40px 35px;
-
-  background: var(--bg-card);
-
-  border: 1px solid rgba(201,158,92,0.45);
-
-  border-radius: 6px;
-
-  box-shadow: 0 25px 70px rgba(0,0,0,0.65);
-
-  animation: aparecerLogin 0.25s ease;
-}
-
-@keyframes aparecerLogin {
-
-  from {
-    opacity: 0;
-    transform: translateY(15px) scale(0.97);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-}
-
-.fechar-login {
-  position: absolute;
-
-  top: 14px;
-  right: 16px;
-
-  width: 35px;
-  height: 35px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-
-  background: transparent;
-
-  color: var(--text-muted);
-
-  font-size: 1.2rem;
-
-  cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.fechar-login:hover {
-  color: var(--gold-primary);
-}
-
-.icone-login {
-  width: 58px;
-  height: 58px;
-
-  margin: 0 auto 18px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  border: 1px solid var(--gold-primary);
-
-  color: var(--gold-primary);
-
-  font-size: 1.3rem;
-}
-
-.caixa-login h2 {
-  margin-bottom: 10px;
-
-  text-align: center;
-
-  font-family: var(--font-serif);
-
-  font-size: 1.7rem;
-
-  font-weight: 400;
-
-  color: #fff;
-}
-
-.texto-login {
-  margin-bottom: 25px;
-
-  text-align: center;
-
-  color: var(--text-muted);
-
-  font-size: 0.85rem;
-
-  line-height: 1.6;
-}
-
-.campo-login {
-  margin-bottom: 18px;
-}
-
-.campo-login label {
-  display: block;
-
-  margin-bottom: 7px;
-
-  color: var(--gold-primary);
-
-  font-size: 0.72rem;
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-}
-
-.campo-login input {
-  width: 100%;
-
-  padding: 13px 14px;
-
-  box-sizing: border-box;
-
-  background: #171513;
-
-  border: 1px solid var(--border-color);
-
-  border-radius: 3px;
-
-  color: #fff;
-
-  font-family: var(--font-sans);
-
-  font-size: 0.9rem;
-
-  outline: none;
-
-  transition: 0.3s ease;
-}
-
-.campo-login input:focus {
-  border-color: var(--gold-primary);
-
-  box-shadow: 0 0 0 2px rgba(201,158,92,0.08);
-}
-
-.campo-login input::placeholder {
-  color: #777;
-}
-
-.botao-entrar {
-  width: 100%;
-
-  min-height: 50px;
-
-  margin-top: 8px;
-
-  border: 1px solid var(--gold-primary);
-
-  border-radius: 2px;
-
-  background: var(--gold-primary);
-
-  color: #171513;
-
-  font-family: var(--font-sans);
-
-  font-size: 0.75rem;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.botao-entrar:hover {
-  background: #e0bd7d;
-
-  border-color: #e0bd7d;
-}
-
-.botao-entrar:disabled {
-  opacity: 0.6;
-
-  cursor: wait;
-}
-
-.mensagem-login {
-  min-height: 20px;
-
-  margin-top: 15px;
-
-  text-align: center;
-
-  color: #d99;
-
-  font-size: 0.8rem;
-
-  line-height: 1.5;
-}
-
-@media (max-width: 500px) {
-
-  .caixa-login {
-    padding: 35px 22px;
-  }
-
-}
-    
   </style>
 
+
   <!-- SUPABASE -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
 
 </head>
 
 
 <body>
 
+
   <!-- =====================================================
-     MODAL DE LOGIN
-===================================================== -->
+       MODAL DE LOGIN
+       PRESERVADO
+  ===================================================== -->
 
-<div
-  id="modalLogin"
-  class="modal-login"
-  aria-hidden="true"
->
+  <div
+    id="modalLogin"
+    class="modal-login"
+    aria-hidden="true"
+  >
 
-  <div class="caixa-login">
-
-    <button
-      type="button"
-      class="fechar-login"
-      onclick="fecharLogin()"
-      aria-label="Fechar"
-    >
-
-      <i class="fa-solid fa-xmark"></i>
-
-    </button>
-
-
-    <div class="icone-login">
-
-      <i class="fa-solid fa-lock"></i>
-
-    </div>
-
-
-    <h2>
-      Acesso à leitura digital
-    </h2>
-
-
-    <p class="texto-login">
-
-      Entre com seu e-mail e senha
-      para acessar sua biblioteca.
-
-    </p>
-
-
-    <form id="formLogin">
-
-
-      <div class="campo-login">
-
-        <label for="emailLogin">
-          E-mail
-        </label>
-
-        <input
-          type="email"
-          id="emailLogin"
-          placeholder="Digite seu e-mail"
-          autocomplete="email"
-          required
-        >
-
-      </div>
-
-
-      <div class="campo-login">
-
-        <label for="senhaLogin">
-          Senha
-        </label>
-
-        <input
-          type="password"
-          id="senhaLogin"
-          placeholder="Digite sua senha"
-          autocomplete="current-password"
-          required
-        >
-
-      </div>
+    <div class="caixa-login">
 
 
       <button
-        type="submit"
-        class="botao-entrar"
-        id="botaoEntrar"
+        type="button"
+        class="fechar-login"
+        onclick="fecharLogin()"
+        aria-label="Fechar"
       >
 
-        <i class="fa-solid fa-right-to-bracket"></i>
-
-        Entrar
+        <i class="fa-solid fa-xmark"></i>
 
       </button>
 
 
-      <p
-        id="mensagemLogin"
-        class="mensagem-login"
-      ></p>
+      <div class="icone-login">
+
+        <i class="fa-solid fa-lock"></i>
+
+      </div>
 
 
-    </form>
+      <h2>
+        Acesso à leitura digital
+      </h2>
 
-  </div>
 
-</div>
+      <p class="texto-login">
 
-<!-- =====================================================
-     CABEÇALHO
-===================================================== -->
+        Entre com seu e-mail e senha
+        para acessar sua biblioteca.
 
-<header class="site-header">
+      </p>
 
-  <div class="header-brand">
 
-    <img
-      src="imagem-pessoal.jpg"
-      alt="Francisco Denilson Pinheiro"
-      class="foto-pessoal"
-    >
+      <form id="formLogin">
 
-    <div class="brand-titles">
 
-      <span class="brand-name">
-        Francisco Denilson
-      </span>
+        <div class="campo-login">
 
-      <span class="brand-sub">
-        Escritor & Palestrante
-      </span>
+          <label for="emailLogin">
+            E-mail
+          </label>
+
+          <input
+            type="email"
+            id="emailLogin"
+            placeholder="Digite seu e-mail"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <div class="campo-login">
+
+          <label for="senhaLogin">
+            Senha
+          </label>
+
+          <input
+            type="password"
+            id="senhaLogin"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+            required
+          >
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="botao-entrar"
+          id="botaoEntrar"
+        >
+
+          <i class="fa-solid fa-right-to-bracket"></i>
+
+          Entrar
+
+        </button>
+
+
+        <p
+          id="mensagemLogin"
+          class="mensagem-login"
+        ></p>
+
+
+      </form>
 
     </div>
 
   </div>
 
 
-  <nav class="menu-desktop">
+  <!-- =====================================================
+       CABEÇALHO
+  ===================================================== -->
+
+  <header class="site-header">
+
+
+    <div class="header-brand">
+
+      <img
+        src="imagem-pessoal.jpg"
+        alt="Francisco Denilson Pinheiro"
+        class="foto-pessoal"
+      >
+
+
+      <div class="brand-titles">
+
+        <span class="brand-name">
+          Francisco Denilson
+        </span>
+
+
+        <span class="brand-sub">
+          Escritor & Palestrante
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- MENU DESKTOP -->
+
+    <nav class="menu-desktop">
+
+
+      <a href="index.html">
+        Início
+      </a>
+
+
+      <a
+        href="obras.html"
+        class="ativo"
+      >
+        Obras
+      </a>
+
+
+      <a href="pre-venda.html">
+        Pré Venda
+      </a>
+
+
+      <a href="eventos.html">
+        Eventos
+      </a>
+
+
+      <a href="area-do-leitor.html">
+        Área do Leitor
+      </a>
+
+
+      <a href="seja-um-escritor.html">
+        Seja um Escritor
+      </a>
+
+
+      <a href="contato.html">
+        Contato
+      </a>
+
+
+    </nav>
+
+
+    <!-- MENU MOBILE -->
+
+    <button
+      type="button"
+      class="botao-menu-mobile"
+      id="botaoMenu"
+      aria-label="Abrir menu"
+      onclick="alternarMenu()"
+    >
+
+      <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+  </header>
+
+
+  <!-- =====================================================
+       MENU MOBILE
+  ===================================================== -->
+
+  <div
+    class="menu-mobile-dropdown"
+    id="menuConteudo"
+  >
+
 
     <a href="index.html">
       Início
     </a>
 
-    <a href="obras.html" class="ativo">
+
+    <a
+      href="obras.html"
+      class="ativo"
+    >
       Obras
     </a>
 
-    <a href="biblioteca.html">
-      Minha Biblioteca
+
+    <a href="pre-venda.html">
+      Pré Venda
     </a>
+
 
     <a href="eventos.html">
       Eventos
     </a>
 
-    <a
-      href="https://wa.me/5585985141830"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+
+    <a href="area-do-leitor.html">
+      Área do Leitor
+    </a>
+
+
+    <a href="seja-um-escritor.html">
+      Seja um Escritor
+    </a>
+
+
+    <a href="contato.html">
       Contato
     </a>
 
-  </nav>
-
-
-  <button
-    type="button"
-    class="botao-menu-mobile"
-    id="botaoMenu"
-    aria-label="Abrir menu"
-    onclick="alternarMenu()"
-  >
-
-    <i class="fa-solid fa-bars"></i>
-
-  </button>
-
-</header>
-
-
-<!-- =====================================================
-     MENU MOBILE
-===================================================== -->
-
-<div
-  class="menu-mobile-dropdown"
-  id="menuConteudo"
->
-
-  <a href="index.html">
-    Início
-  </a>
-
-  <a
-    href="obras.html"
-    class="ativo"
-  >
-    Obras
-  </a>
-
-  <a href="biblioteca.html">
-    Minha Biblioteca
-  </a>
-
-  <a href="eventos.html">
-    Eventos
-  </a>
-
-  <a
-    href="https://wa.me/5585985141830"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Contato
-  </a>
-
-</div>
-
-
-<!-- =====================================================
-     CONTEÚDO
-===================================================== -->
-
-<main class="pagina">
-
-
-  <div class="titulo-secao">
-
-    <span class="pequeno">
-      Minha obra
-    </span>
-
-    <h2>
-      Antes Que Eu Seja Usado
-    </h2>
-
-    <div class="linha-dourada"></div>
 
   </div>
 
 
-  <!-- ===================================================
-       LIVRO
-  =================================================== -->
-
-  <article class="livro">
-
-
-    <!-- CAPA -->
-
-    <div class="livro-capa">
-
-      <img
-        src="capa.jpg"
-        alt="Capa do livro Antes Que Eu Seja Usado"
-      >
-
-    </div>
-
-
-    <!-- INFORMAÇÕES -->
-
-    <div class="livro-info">
-
-      <h1>
-        Antes Que Eu Seja Usado
-      </h1>
-
-
-      <p class="livro-subtitulo">
-        Uma jornada antes do encontro com nossa vocação.
-      </p>
-
-
-      <div class="livro-autor">
-
-        <strong>
-          Autor
-        </strong>
-
-        Francisco Denilson Pinheiro
-
-      </div>
-
-
-      <p class="livro-descricao">
-
-        Antes de sermos usados por Deus, existe um processo que
-        precisa acontecer dentro de nós. Esta obra é um convite
-        para uma jornada de reflexão, quebrantamento,
-        transformação e preparação para o encontro com nossa
-        vocação.
-
-      </p>
-
-
-      <!-- BOTÕES -->
-
-      <div class="botoes">
-
-
-        <!-- SINOPSE -->
-
-        <a
-          href="sinopse.html"
-          class="button button-outline"
-        >
-
-          <i class="fa-solid fa-book-open"></i>
-
-          Conheça a sinopse
-
-        </a>
-
-
-        <!-- PIX -->
-
-        <a
-          href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
-          class="button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <i class="fa-brands fa-pix"></i>
-
-          Adquira agora — PIX
-
-        </a>
-
-
-        <!-- CARTÃO -->
-
-        <a
-          href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
-          class="button button-outline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <i class="fa-regular fa-credit-card"></i>
-
-          Comprar com cartão
-
-        </a>
-
-
-        <!-- AMAZON -->
-
-        <a
-          href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
-          class="button button-dark"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <i class="fa-brands fa-amazon"></i>
-
-          Versão digital — Amazon KDP
-
-        </a>
-
-
-      </div>
-
-
-    </div>
-
-  </article>
-
-
-  <!-- ===================================================
-       ACESSO À VERSÃO DIGITAL
-  =================================================== -->
-
-  <section class="acesso-digital">
-
-
-    <div class="acesso-icone">
-
-      <i class="fa-solid fa-lock"></i>
-
-    </div>
-
-
-    <h2>
-      Acesso à leitura digital
-    </h2>
-
-
-    <p>
-
-      Comprou o livro físico na pré-venda?
-
-      Você tem direito ao acesso à versão digital de
-      <strong>Antes Que Eu Seja Usado</strong>.
-
-      Faça login para acessar sua leitura.
-
-    </p>
+  <!-- =====================================================
+       CONTEÚDO
+  ===================================================== -->
+
+  <main class="pagina">
 
 
     <!-- =================================================
-         BOTÃO PARA A BIBLIOTECA
+         TÍTULO
     ================================================= -->
 
-    <button
-  type="button"
-  class="botao-leitura"
-  onclick="abrirLogin()"
->
-
-      <i class="fa-solid fa-book-open"></i>
-
-      Acessar leitura do livro
-
-    </button>
+    <div class="titulo-secao">
 
 
-  </section>
+      <span class="pequeno">
+        Minhas obras
+      </span>
 
 
-</main>
+      <h2>
+        Livros e Devocionais
+      </h2>
 
 
-<!-- =====================================================
-     RODAPÉ
-===================================================== -->
-
-<footer class="site-footer">
-
-  <div class="footer-social">
-
-    <a
-      href="https://instagram.com/prdenilsonescritor"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-
-      <i class="fa-brands fa-instagram"></i>
-
-    </a>
+      <div class="linha-dourada"></div>
 
 
-    <a
-      href="https://wa.me/5585985141830"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="WhatsApp"
-    >
-
-      <i class="fa-brands fa-whatsapp"></i>
-
-    </a>
-
-  </div>
+    </div>
 
 
-  © 2026 Francisco Denilson Pinheiro.
-  Todos os direitos reservados.
+    <!-- =================================================
+         LIVRO PRINCIPAL
+    ================================================= -->
 
-</footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-  /* =====================================================
-   CONFIGURAÇÃO DO SUPABASE
-===================================================== */
-
-const SUPABASE_URL =
-  "https://qieejecsicnmsdtefejs.supabase.co";
-
-const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
-
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
+    <article class="livro">
 
 
-/* =====================================================
-   MENU MOBILE
-===================================================== */
+      <!-- CAPA -->
 
-function alternarMenu() {
-
-  const menu =
-    document.getElementById("menuConteudo");
-
-  menu.classList.toggle("aberto");
-
-}
+      <div class="livro-capa">
 
 
-function fecharMenu() {
+        <img
+          src="capa.jpg"
+          alt="Capa do livro Antes Que Eu Seja Usado"
+        >
 
-  if (window.innerWidth <= 850) {
+
+      </div>
+
+
+      <!-- INFORMAÇÕES -->
+
+      <div class="livro-info">
+
+
+        <h1>
+          Antes Que Eu Seja Usado
+        </h1>
+
+
+        <p class="livro-subtitulo">
+          Uma jornada antes do encontro com nossa vocação.
+        </p>
+
+
+        <div class="livro-autor">
+
+
+          <strong>
+            Autor
+          </strong>
+
+
+          Francisco Denilson Pinheiro
+
+
+        </div>
+
+
+        <p class="livro-descricao">
+
+          Antes de sermos usados por Deus, existe um processo que
+          precisa acontecer dentro de nós. Esta obra é um convite
+          para uma jornada de reflexão, quebrantamento,
+          transformação e preparação para o encontro com nossa
+          vocação.
+
+        </p>
+
+
+        <!-- BOTÕES -->
+
+        <div class="botoes">
+
+
+          <!-- SINOPSE -->
+
+          <a
+            href="sinopse.html"
+            class="button button-outline"
+          >
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Conheça a sinopse
+
+          </a>
+
+
+          <!-- PIX -->
+
+          <a
+            href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <i class="fa-brands fa-pix"></i>
+
+            Adquira agora — PIX
+
+          </a>
+
+
+          <!-- CARTÃO -->
+
+          <a
+            href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
+            class="button button-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <i class="fa-regular fa-credit-card"></i>
+
+            Comprar com cartão
+
+          </a>
+
+
+          <!-- AMAZON -->
+
+          <a
+            href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
+            class="button button-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <i class="fa-brands fa-amazon"></i>
+
+            Versão digital — Amazon KDP
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </article>
+
+
+    <!-- =================================================
+         DEVOCIONAIS
+    ================================================= -->
+
+    <section class="devocionais">
+
+
+      <div class="devocionais-cabecalho">
+
+
+        <span class="pequeno">
+          Conteúdo gratuito
+        </span>
+
+
+        <h2>
+          Devocionais para ler em PDF
+        </h2>
+
+
+        <p>
+
+          Textos para leitura, reflexão e edificação.
+          Leia diretamente no navegador ou baixe o PDF
+          para guardar e ler quando quiser.
+
+        </p>
+
+
+      </div>
+
+
+      <!-- DEVOCIONAL 01 -->
+
+      <article class="devocional-card">
+
+
+        <!-- CAPA / ÍCONE -->
+
+        <div
+          class="devocional-capa"
+          aria-label="Devocional em PDF"
+        >
+
+          <i class="fa-solid fa-file-pdf"></i>
+
+        </div>
+
+
+        <!-- CONTEÚDO -->
+
+        <div class="devocional-conteudo">
+
+
+          <h3>
+            Devocional 01
+          </h3>
+
+
+          <p>
+
+            Um momento de leitura e reflexão para
+            aproximar o coração da Palavra de Deus.
+
+          </p>
+
+
+          <div class="devocional-botoes">
+
+
+            <!-- LER ONLINE -->
+
+            <a
+              href="devocionais/devocional-01.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="devocional-botao devocional-botao-leitura"
+            >
+
+              <i class="fa-solid fa-book-open"></i>
+
+              Ler online
+
+            </a>
+
+
+            <!-- BAIXAR -->
+
+            <a
+              href="devocionais/devocional-01.pdf"
+              download="devocional-01.pdf"
+              class="devocional-botao devocional-botao-download"
+            >
+
+              <i class="fa-solid fa-download"></i>
+
+              Baixar PDF
+
+            </a>
+
+
+          </div>
+
+
+          <div class="devocional-observacao">
+
+            Arquivo PDF • Leitura gratuita
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+    </section>
+
+
+    <!-- =================================================
+         ACESSO À LEITURA DIGITAL
+         NÃO ALTERAR
+    ================================================= -->
+
+    <section class="acesso-digital">
+
+
+      <div class="acesso-icone">
+
+        <i class="fa-solid fa-lock"></i>
+
+      </div>
+
+
+      <h2>
+        Acesso à leitura digital
+      </h2>
+
+
+      <p>
+
+        Comprou o livro físico na pré-venda?
+
+        Você tem direito ao acesso à versão digital de
+        <strong>Antes Que Eu Seja Usado</strong>.
+
+        Faça login para acessar sua leitura.
+
+      </p>
+
+
+      <!-- BOTÃO PARA A BIBLIOTECA -->
+
+      <button
+        type="button"
+        class="botao-leitura"
+        onclick="abrirLogin()"
+      >
+
+        <i class="fa-solid fa-book-open"></i>
+
+        Acessar leitura do livro
+
+      </button>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       RODAPÉ
+  ===================================================== -->
+
+  <footer class="site-footer">
+
+
+    <div class="footer-social">
+
+
+      <a
+        href="https://instagram.com/prdenilsonescritor"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+
+        <i class="fa-brands fa-instagram"></i>
+
+      </a>
+
+
+      <a
+        href="https://wa.me/5585985141830"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+      </a>
+
+
+    </div>
+
+
+    © 2026 Francisco Denilson Pinheiro.
+    Todos os direitos reservados.
+
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       SUPABASE PRESERVADO
+  ===================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       CONFIGURAÇÃO DO SUPABASE
+    ===================================================== */
+
+    const SUPABASE_URL =
+      "https://qieejecsicnmsdtefejs.supabase.co";
+
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
+
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    function alternarMenu() {
+
+      const menu =
+        document.getElementById("menuConteudo");
+
+      menu.classList.toggle("aberto");
+
+    }
+
+
+    function fecharMenu() {
+
+      if (window.innerWidth <= 850) {
+
+        document
+          .getElementById("menuConteudo")
+          .classList
+          .remove("aberto");
+
+      }
+
+    }
+
 
     document
-      .getElementById("menuConteudo")
-      .classList
-      .remove("aberto");
+      .querySelectorAll(".menu-mobile-dropdown a")
+      .forEach(function(link) {
 
-  }
-
-}
-
-
-document
-  .querySelectorAll(".menu-mobile-dropdown a")
-  .forEach(function(link) {
-
-    link.addEventListener(
-      "click",
-      fecharMenu
-    );
-
-  });
-
-  /* =====================================================
-   MODAL DE LOGIN
-===================================================== */
-
-function abrirLogin() {
-
-  const modal =
-    document.getElementById("modalLogin");
-
-  modal.classList.add("aberto");
-
-  modal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-  document.body.style.overflow = "hidden";
-
-  setTimeout(function() {
-
-    document
-      .getElementById("emailLogin")
-      .focus();
-
-  }, 100);
-
-}
-
-
-function fecharLogin() {
-
-  const modal =
-    document.getElementById("modalLogin");
-
-  modal.classList.remove("aberto");
-
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  document.body.style.overflow = "";
-
-}
-
-/* =====================================================
-   LOGIN COM SUPABASE
-===================================================== */
-
-document
-  .getElementById("formLogin")
-  .addEventListener(
-    "submit",
-    async function(event) {
-
-      event.preventDefault();
-
-      const email =
-        document
-          .getElementById("emailLogin")
-          .value
-          .trim();
-
-      const senha =
-        document
-          .getElementById("senhaLogin")
-          .value;
-
-      const botao =
-        document.getElementById("botaoEntrar");
-
-      const mensagem =
-        document.getElementById("mensagemLogin");
-
-
-      mensagem.textContent = "";
-
-
-      botao.disabled = true;
-
-      botao.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Entrando...';
-
-
-      try {
-
-        const { data, error } =
-          await supabaseClient.auth.signInWithPassword({
-
-            email: email,
-
-            password: senha
-
-          });
-
-
-        if (error) {
-
-          console.error(
-            "Erro no login:",
-            error
-          );
-
-          mensagem.textContent =
-            "E-mail ou senha incorretos.";
-
-          botao.disabled = false;
-
-          botao.innerHTML =
-            '<i class="fa-solid fa-right-to-bracket"></i> Entrar';
-
-          return;
-
-        }
-
-
-        if (data.session) {
-
-          window.location.href =
-            "biblioteca.html";
-
-        }
-
-      } catch (erro) {
-
-        console.error(
-          "Erro inesperado:",
-          erro
+        link.addEventListener(
+          "click",
+          fecharMenu
         );
 
-        mensagem.textContent =
-          "Não foi possível realizar o login. Tente novamente.";
+      });
 
-        botao.disabled = false;
 
-        botao.innerHTML =
-          '<i class="fa-solid fa-right-to-bracket"></i> Entrar';
+    /* =====================================================
+       MODAL DE LOGIN
+       PRESERVADO
+    ===================================================== */
+
+    function abrirLogin() {
+
+      const modal =
+        document.getElementById("modalLogin");
+
+
+      modal.classList.add("aberto");
+
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+
+      setTimeout(function() {
+
+        document
+          .getElementById("emailLogin")
+          .focus();
+
+      }, 100);
+
+    }
+
+
+    function fecharLogin() {
+
+      const modal =
+        document.getElementById("modalLogin");
+
+
+      modal.classList.remove("aberto");
+
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* =====================================================
+       LOGIN COM SUPABASE
+       PRESERVADO
+    ===================================================== */
+
+    document
+      .getElementById("formLogin")
+      .addEventListener(
+        "submit",
+        async function(event) {
+
+
+          event.preventDefault();
+
+
+          const email =
+            document
+              .getElementById("emailLogin")
+              .value
+              .trim();
+
+
+          const senha =
+            document
+              .getElementById("senhaLogin")
+              .value;
+
+
+          const botao =
+            document.getElementById(
+              "botaoEntrar"
+            );
+
+
+          const mensagem =
+            document.getElementById(
+              "mensagemLogin"
+            );
+
+
+          mensagem.textContent =
+            "";
+
+
+          botao.disabled =
+            true;
+
+
+          botao.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Entrando...';
+
+
+          try {
+
+
+            const { data, error } =
+              await supabaseClient.auth.signInWithPassword({
+
+                email: email,
+
+                password: senha
+
+              });
+
+
+            if (error) {
+
+
+              console.error(
+                "Erro no login:",
+                error
+              );
+
+
+              mensagem.textContent =
+                "E-mail ou senha incorretos.";
+
+
+              botao.disabled =
+                false;
+
+
+              botao.innerHTML =
+                '<i class="fa-solid fa-right-to-bracket"></i> Entrar';
+
+
+              return;
+
+            }
+
+
+            if (data.session) {
+
+
+              window.location.href =
+                "biblioteca.html";
+
+
+            }
+
+
+          } catch (erro) {
+
+
+            console.error(
+              "Erro inesperado:",
+              erro
+            );
+
+
+            mensagem.textContent =
+              "Não foi possível realizar o login. Tente novamente.";
+
+
+            botao.disabled =
+              false;
+
+
+            botao.innerHTML =
+              '<i class="fa-solid fa-right-to-bracket"></i> Entrar';
+
+
+          }
+
+        }
+      );
+
+
+    /* =====================================================
+       FECHAR CLICANDO FORA DA CAIXA
+       PRESERVADO
+    ===================================================== */
+
+    document
+      .getElementById("modalLogin")
+      .addEventListener(
+        "click",
+        function(event) {
+
+
+          if (event.target === this) {
+
+            fecharLogin();
+
+          }
+
+        }
+      );
+
+
+    /* =====================================================
+       FECHAR COM ESC
+       PRESERVADO
+    ===================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+
+        if (event.key === "Escape") {
+
+          fecharLogin();
+
+        }
 
       }
-
-    }
-  );
-  
-/* =====================================================
-   FECHAR CLICANDO FORA DA CAIXA
-===================================================== */
-
-document
-  .getElementById("modalLogin")
-  .addEventListener(
-    "click",
-    function(event) {
-
-      if (event.target === this) {
-
-        fecharLogin();
-
-      }
-
-    }
-  );
+    );
 
 
-/* =====================================================
-   FECHAR COM ESC
-===================================================== */
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (event.key === "Escape") {
-
-      fecharLogin();
-
-    }
-
-  }
-);
-
-</script>
+  </script>
 
 
 </body>
+
 </html>
+```
