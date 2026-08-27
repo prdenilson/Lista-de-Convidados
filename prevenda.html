@@ -1,0 +1,1159 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pré-venda | Antes Que Eu Seja Usado</title>
+
+  <meta name="description" content="Garanta seu exemplar de Antes Que Eu Seja Usado, de Francisco Denílson Pinheiro. Uma jornada antes do encontro com nossa vocação.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f8f5ef;
+      color: #29251f;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       MENU
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(35, 30, 25, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 15px rgba(0,0,0,.2);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #d6b36a;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      transition: .3s;
+    }
+
+    .menu a:hover {
+      color: #d6b36a;
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding: 120px 25px 80px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(25,20,16,.76), rgba(25,20,16,.88)),
+        url('capa.jpg') center/cover;
+      color: white;
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .hero-text h1 span {
+      color: #d6b36a;
+    }
+
+    .subtitle {
+      font-size: 23px;
+      font-style: italic;
+      margin-bottom: 25px;
+      color: #eee;
+    }
+
+    .hero-text p {
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      max-width: 600px;
+      color: #ddd;
+    }
+
+    .book-cover {
+      text-align: center;
+      animation: floating 4s ease-in-out infinite;
+    }
+
+    .book-cover img {
+      width: min(360px, 80%);
+      border-radius: 5px;
+      box-shadow: 0 25px 50px rgba(0,0,0,.6);
+    }
+
+    @keyframes floating {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* =========================
+       BOTÕES
+    ========================== */
+
+    .btn {
+      display: inline-block;
+      padding: 16px 30px;
+      margin-top: 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      transition: .3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #d6b36a;
+      color: #241f19;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    /* =========================
+       SEÇÕES
+    ========================== */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      font-family: Arial, sans-serif;
+      color: #6c655d;
+    }
+
+    /* =========================
+       PERGUNTA
+    ========================== */
+
+    .question {
+      background: #2b2621;
+      color: white;
+      text-align: center;
+    }
+
+    .question h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      max-width: 850px;
+      margin: auto;
+      font-style: italic;
+    }
+
+    .question p {
+      max-width: 700px;
+      margin: 25px auto 0;
+      font-family: Arial, sans-serif;
+      color: #ddd;
+      font-size: 17px;
+    }
+
+    /* =========================
+       VÍDEO
+    ========================== */
+
+    .video-box {
+      max-width: 850px;
+      margin: auto;
+      aspect-ratio: 16/9;
+      background: #211d19;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      box-shadow: 0 15px 40px rgba(0,0,0,.15);
+      overflow: hidden;
+    }
+
+    .video-placeholder {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .play {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: #d6b36a;
+      color: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: auto auto 20px;
+    }
+
+    /* =========================
+       CAPÍTULOS
+    ========================== */
+
+    .chapters {
+      background: #fff;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .chapter {
+      padding: 30px;
+      background: #f8f5ef;
+      border-radius: 15px;
+      border: 1px solid #e6dfd3;
+      transition: .3s;
+    }
+
+    .chapter:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.08);
+    }
+
+    .chapter-number {
+      font-size: 42px;
+      color: #c19a51;
+      font-weight: bold;
+    }
+
+    .chapter h3 {
+      font-size: 22px;
+      margin: 8px 0;
+    }
+
+    .chapter p {
+      font-family: Arial, sans-serif;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* =========================
+       DEGUSTAÇÃO
+    ========================== */
+
+    .excerpt {
+      background: #eee8dc;
+    }
+
+    .excerpt-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 50px;
+      background: white;
+      border-left: 5px solid #c19a51;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .excerpt-box p {
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    /* =========================
+       PRÉ-VENDA
+    ========================== */
+
+    .purchase {
+      background: #29241f;
+      color: white;
+    }
+
+    .purchase-box {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 48px;
+      color: #d6b36a;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .purchase-info p {
+      font-family: Arial, sans-serif;
+      color: #ddd;
+    }
+
+    .payment-card {
+      background: #fff;
+      color: #29241f;
+      padding: 35px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .payment-card h3 {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .payment-btn {
+      width: 100%;
+      padding: 15px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .pix {
+      background: #c19a51;
+      color: white;
+    }
+
+    .boleto {
+      background: #eee;
+      color: #222;
+    }
+
+    .payment-note {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+      font-family: Arial, sans-serif;
+    }
+
+    /* =========================
+       PROGRESSO
+    ========================== */
+
+    .progress-section {
+      text-align: center;
+      background: #f8f5ef;
+    }
+
+    .progress {
+      max-width: 700px;
+      height: 18px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 25px auto 10px;
+    }
+
+    .progress-bar {
+      width: 62%;
+      height: 100%;
+      background: #c19a51;
+      border-radius: 20px;
+    }
+
+    .progress-text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* =========================
+       DEPOIMENTOS
+    ========================== */
+
+    .testimonials {
+      background: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      background: #f8f5ef;
+      border-radius: 15px;
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 20px;
+      font-style: normal;
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      margin-bottom: 12px;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid #e5ded3;
+    }
+
+    summary {
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    details p {
+      margin-top: 15px;
+      font-family: Arial, sans-serif;
+      color: #666;
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================== */
+
+    .final {
+      text-align: center;
+      background:
+        linear-gradient(rgba(30,25,20,.85),rgba(30,25,20,.9)),
+        url('capa.jpg') center/cover;
+      color: white;
+    }
+
+    .final h2 {
+      font-size: clamp(35px,5vw,55px);
+      margin-bottom: 15px;
+    }
+
+    .final p {
+      font-family: Arial, sans-serif;
+      max-width: 650px;
+      margin: auto;
+      color: #ddd;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #1d1916;
+      color: #aaa;
+      text-align: center;
+      padding: 35px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    /* =========================
+       BOTÃO FIXO
+    ========================== */
+
+    .fixed-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      background: #c19a51;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(0,0,0,.3);
+      transition: .3s;
+    }
+
+    .fixed-button:hover {
+      transform: scale(1.05);
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #231f1b;
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-container,
+      .purchase-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text p {
+        margin: auto;
+      }
+
+      .chapter-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .book-cover {
+        order: -1;
+      }
+
+      .excerpt-box {
+        padding: 30px;
+      }
+
+      .fixed-button {
+        left: 15px;
+        right: 15px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      Pr. Denílson <span>Pinheiro</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#livro">O Livro</a></li>
+      <li><a href="#capitulos">Capítulos</a></li>
+      <li><a href="#prevenda">Pré-venda</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="livro">
+
+  <div class="hero-container">
+
+    <div class="hero-text">
+
+      <p style="color:#d6b36a;font-family:Arial,sans-serif;font-weight:bold;">
+        PRÉ-VENDA OFICIAL
+      </p>
+
+      <h1>
+        ANTES QUE<br>
+        EU SEJA <span>USADO</span>
+      </h1>
+
+      <div class="subtitle">
+        Uma jornada antes do encontro com nossa vocação
+      </div>
+
+      <p>
+        Antes de Deus usar nossas mãos, talvez Ele queira
+        transformar nosso coração.
+      </p>
+
+      <a href="#prevenda" class="btn btn-primary">
+        QUERO GARANTIR MEU EXEMPLAR
+      </a>
+
+    </div>
+
+    <div class="book-cover">
+      <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PERGUNTA -->
+
+<section class="question">
+
+  <div class="container">
+
+    <h2>
+      E se antes de Deus usar você...
+      Ele quiser transformar você?
+    </h2>
+
+    <p>
+      Talvez a maior preparação para cumprir uma vocação
+      não aconteça diante das pessoas, mas no lugar secreto.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VÍDEO -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Por que este livro?</h2>
+
+      <p>
+        Uma mensagem pessoal do autor
+      </p>
+
+    </div>
+
+    <div class="video-box">
+
+      <!--
+        FUTURO VÍDEO
+
+        Quando você tiver o vídeo,
+        substitua este bloco por um iframe do YouTube.
+      -->
+
+      <div class="video-placeholder">
+
+        <div class="play">▶</div>
+
+        <h3>Assista ao vídeo do autor</h3>
+
+        <p>
+          Em breve, Denílson Pinheiro contará
+          por que escreveu este livro.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CAPÍTULOS -->
+
+<section class="chapters" id="capitulos">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Uma jornada em seis passos</h2>
+
+      <p>
+        Cada capítulo representa uma etapa de transformação.
+      </p>
+
+    </div>
+
+    <div class="chapter-grid">
+
+      <div class="chapter">
+        <div class="chapter-number">01</div>
+        <h3>Antes de Tudo</h3>
+        <p>
+          Antes da missão, existe uma preparação.
+        </p>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-number">02</div>
+        <h3>Sonda-me</h3>
+        <p>
+          Um convite para olhar para dentro.
+        </p>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-number">03</div>
+        <h3>Quebranta-me</h3>
+        <p>
+          O quebrantamento que prepara o coração.
+        </p>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-number">04</div>
+        <h3>Transforma-me</h3>
+        <p>
+          Quando Deus começa a mudar aquilo que somos.
+        </p>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-number">05</div>
+        <h3>Enche-me</h3>
+        <p>
+          Uma vida preenchida pela presença de Deus.
+        </p>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-number">06</div>
+        <h3>Usa-me</h3>
+        <p>
+          Depois da preparação, a entrega.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DEGUSTAÇÃO -->
+
+<section class="excerpt">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Uma pequena degustação</h2>
+
+      <p>
+        Antes de comprar, conheça um pouco da mensagem.
+      </p>
+
+    </div>
+
+    <div class="excerpt-box">
+
+      <p>
+        “Talvez este livro não seja sobre como ser usado por Deus.
+        Talvez seja sobre quem precisamos nos tornar antes que
+        Deus nos use.”
+      </p>
+
+      <a href="#" class="btn btn-primary">
+        LER UM TRECHO
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRÉ-VENDA -->
+
+<section class="purchase" id="prevenda">
+
+  <div class="purchase-box">
+
+    <div class="purchase-info">
+
+      <p style="color:#d6b36a;font-weight:bold;">
+        GARANTA SEU EXEMPLAR
+      </p>
+
+      <h2 style="font-size:42px;margin-top:10px;">
+        Antes Que Eu Seja Usado
+      </h2>
+
+      <div class="price">
+        R$ 34,90
+      </div>
+
+      <p>
+        Livro físico — pré-venda.
+      </p>
+
+      <p style="margin-top:15px;">
+        Garanta antecipadamente seu exemplar
+        e faça parte deste momento especial.
+      </p>
+
+    </div>
+
+
+    <div class="payment-card">
+
+      <h3>Como você quer pagar?</h3>
+
+      <!--
+        COLOQUE AQUI O LINK REAL DO PIX
+      -->
+
+      <a href="COLOQUE-AQUI-O-LINK-DO-PIX"
+         class="payment-btn pix"
+         style="display:block;text-decoration:none;">
+        💠 PAGAR COM PIX
+      </a>
+
+
+      <!--
+        COLOQUE AQUI O LINK REAL DO BOLETO
+      -->
+
+      <a href="COLOQUE-AQUI-O-LINK-DO-BOLETO"
+         class="payment-btn boleto"
+         style="display:block;text-decoration:none;">
+        🧾 PAGAR COM BOLETO
+      </a>
+
+      <p class="payment-note">
+        Após o pagamento, siga as instruções
+        apresentadas para confirmação do pedido.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROGRESSO -->
+
+<section class="progress-section">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>A pré-venda está acontecendo</h2>
+
+      <p>
+        Acompanhe o avanço dos exemplares reservados.
+      </p>
+
+    </div>
+
+    <div class="progress">
+
+      <!--
+        ALTERE AQUI A PORCENTAGEM
+        conforme o número real de livros vendidos.
+      -->
+
+      <div class="progress-bar"></div>
+
+    </div>
+
+    <div class="progress-text">
+      62% dos exemplares desta primeira etapa já foram reservados.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DEPOIMENTOS -->
+
+<section class="testimonials">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>O que estão dizendo</h2>
+
+      <p>
+        Pessoas que conheceram a mensagem do livro.
+      </p>
+
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+
+        “Este livro nos leva a olhar
+        primeiro para dentro antes de
+        querer fazer algo para Deus.”
+
+        <strong>
+          — Pastora Valdelúcia Fialho
+        </strong>
+
+      </div>
+
+
+      <div class="testimonial">
+
+        “Uma mensagem que fala sobre
+        preparação, caráter e propósito.”
+
+        <strong>
+          — Francisco Denílson Pinheiro Filho
+        </strong>
+
+      </div>
+
+
+      <div class="testimonial">
+
+        “Uma jornada profunda sobre
+        aquilo que Deus deseja formar em nós.”
+
+        <strong>
+          — Pastora Gardênia Pinheiro
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="duvidas">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Dúvidas frequentes</h2>
+
+      <p>
+        Tudo o que você precisa saber antes de reservar.
+      </p>
+
+    </div>
+
+    <div class="faq">
+
+      <details>
+
+        <summary>
+          Qual o valor do livro?
+        </summary>
+
+        <p>
+          O valor do livro físico na pré-venda é R$ 34,90.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Quais são as formas de pagamento?
+        </summary>
+
+        <p>
+          Nesta página você poderá realizar o pagamento
+          através de Pix ou boleto.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Quando vou receber meu livro?
+        </summary>
+
+        <p>
+          As informações sobre entrega e retirada serão
+          apresentadas no momento da confirmação da compra.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Posso comprar mais de um exemplar?
+        </summary>
+
+        <p>
+          Sim. Para compras de vários exemplares,
+          entre em contato diretamente com o autor.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA FINAL -->
+
+<section class="final">
+
+  <div class="container">
+
+    <h2>
+      Antes de ser usado...
+      permita-se ser transformado.
+    </h2>
+
+    <p>
+      Garanta seu exemplar de
+      <strong>Antes Que Eu Seja Usado</strong>
+      e comece esta jornada.
+    </p>
+
+    <a href="#prevenda" class="btn btn-primary">
+      QUERO MEU EXEMPLAR
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <p>
+    © 2026 Francisco Denílson Pinheiro
+  </p>
+
+  <p style="margin-top:8px;">
+    Escritor • Pastor • Palestrante
+  </p>
+
+</footer>
+
+
+<!-- BOTÃO FIXO -->
+
+<a href="#prevenda" class="fixed-button">
+  📖 Quero meu exemplar
+</a>
+
+
+<script>
+
+  function toggleMenu() {
+
+    document
+      .getElementById("menu")
+      .classList
+      .toggle("active");
+
+  }
+
+</script>
+
+</body>
+</html>
+```
