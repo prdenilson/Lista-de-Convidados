@@ -2733,19 +2733,20 @@ document
         ================================================== */
 
         const {
-          data: resultadoEmail,
-          error: erroEmail
-        } =
-          await supabaseClient.functions.invoke(
-            "resend-email",
-            {
-              body: {
-              nome: nome,
-               leitura: leitura || "Não informado",
-              mensagem: mensagem,
-              token: tokenAprovacao
-          }
-
+  data: resultadoEmail,
+  error: erroEmail
+} =
+  await supabaseClient.functions.invoke(
+    "resend-email",
+    {
+      body: {
+        nome: nome,
+        leitura: leitura || "Não informado",
+        mensagem: mensagem,
+        token: tokenAprovacao
+      }
+    }
+  );
 
         console.log(
           "Resposta da Edge Function:",
