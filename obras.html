@@ -1835,7 +1835,77 @@
         SUPABASE_URL,
         SUPABASE_PUBLISHABLE_KEY
       );
+    /* =====================================================
+       CAPA DO DEVOCIONAL — PRIMEIRA PÁGINA DO PDF
+    ===================================================== */
 
+    const urlDevocional =
+      "devocionais/devocional-01.pdf";
+
+
+    const canvasDevocional =
+      document.getElementById("capaDevocional");
+
+
+    if (
+      canvasDevocional &&
+      typeof pdfjsLib !== "undefined"
+    ) {
+
+      const contexto =
+        canvasDevocional.getContext("2d");
+
+
+      pdfjsLib
+        .getDocument(urlDevocional)
+        .promise
+        .then(function(pdf) {
+
+          return pdf.getPage(1);
+
+        })
+
+
+        .then(function(page) {
+
+          const escala = 1.5;
+
+
+          const viewport =
+            page.getViewport({
+              scale: escala
+            });
+
+
+          canvasDevocional.width =
+            viewport.width;
+
+
+          canvasDevocional.height =
+            viewport.height;
+
+
+          return page.render({
+
+            canvasContext: contexto,
+
+            viewport: viewport
+
+          }).promise;
+
+        })
+
+
+        .catch(function(erro) {
+
+          console.error(
+            "Erro ao carregar a capa do devocional:",
+            erro
+          );
+
+        });
+
+    }
 
     /* =====================================================
        MENU MOBILE
