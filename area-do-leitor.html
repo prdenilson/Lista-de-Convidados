@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,833 +10,862 @@
 
 <title>Área do Leitor | Pr. Denílson Pinheiro</title>
 
-<meta
-name="description"
-content="Área do Leitor do Pr. Denílson Pinheiro. Devocionais, leitura, oração, desafios e comunidade."
->
+<meta name="description"
+content="Área do Leitor do Pr. Denílson Pinheiro. Devocionais, leitura, oração, desafios e comunidade.">
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Georgia,"Times New Roman",serif;
-background:#f5f1e9;
-color:#29251f;
-line-height:1.7;
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f5f1e9;
+    color:#29251f;
+    line-height:1.7;
 }
 
 img{
-max-width:100%;
-display:block;
+    max-width:100%;
+    display:block;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+    text-decoration:none;
+    color:inherit;
 }
 
 button{
-font-family:inherit;
+    font-family:inherit;
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* =====================================================
+   CABEÇALHO
+===================================================== */
 
 header{
-background:#211d18;
-color:white;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 3px 15px rgba(0,0,0,.18);
+    background:#211d18;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.18);
 }
 
 .nav-container{
-max-width:1200px;
-margin:auto;
-padding:17px 25px;
+    max-width:1200px;
+    margin:auto;
+    padding:17px 25px;
 
-display:flex;
-align-items:center;
-justify-content:space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-font-size:21px;
-font-weight:bold;
+    font-size:21px;
+    font-weight:bold;
 }
 
 .logo span{
-display:block;
-font-size:11px;
-font-weight:normal;
-color:#cdbb99;
-letter-spacing:1px;
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+    color:#cdbb99;
+    letter-spacing:1px;
 }
 
 nav{
-display:flex;
-gap:28px;
-align-items:center;
+    display:flex;
+    gap:28px;
+    align-items:center;
 }
 
 nav a{
-color:white;
-font-size:15px;
-transition:.3s;
+    color:white;
+    font-size:15px;
+    transition:.3s;
 }
 
 nav a:hover{
-color:#d4bc91;
+    color:#d4bc91;
 }
 
 .menu-btn{
-display:none;
-background:none;
-border:none;
-color:white;
-font-size:30px;
-cursor:pointer;
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+/* =====================================================
+   HERO / ABERTURA
+===================================================== */
 
 .hero{
-min-height:570px;
+    min-height:570px;
 
-background:
-linear-gradient(
-rgba(25,21,17,.58),
-rgba(25,21,17,.78)
-),
-url("imagens/biblioteca.jpg")
-center/cover;
+    background:
+    linear-gradient(
+        rgba(25,21,17,.55),
+        rgba(25,21,17,.78)
+    ),
+    url("imagens/biblioteca.jpg")
+    center center / cover no-repeat;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-text-align:center;
-
-padding:70px 25px;
+    text-align:center;
+    padding:70px 25px;
 }
 
 .hero-content{
-max-width:850px;
-color:white;
+    max-width:850px;
+    color:white;
 }
 
 .hero-label{
-font-size:13px;
-text-transform:uppercase;
-letter-spacing:4px;
-color:#d9c39b;
-margin-bottom:20px;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    color:#d9c39b;
+    margin-bottom:20px;
 }
 
 .hero h1{
-font-size:clamp(45px,7vw,76px);
-line-height:1.05;
-margin-bottom:22px;
+    font-size:clamp(45px,7vw,76px);
+    line-height:1.05;
+    margin-bottom:22px;
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
-font-size:21px;
-color:#eee8df;
+    max-width:700px;
+    margin:auto;
+    font-size:21px;
+    color:#eee8df;
 }
 
 .hero-frase{
-margin-top:30px;
-font-size:16px;
-font-style:italic;
-color:#d8c7a9;
+    margin-top:30px;
+    font-size:16px;
+    font-style:italic;
+    color:#d8c7a9;
 }
 
 
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* =====================================================
+   ESTRUTURA
+===================================================== */
 
 .container{
-max-width:1120px;
-margin:auto;
-padding:80px 25px;
+    max-width:1120px;
+    margin:auto;
+    padding:80px 25px;
 }
 
 .section-title{
-text-align:center;
-margin-bottom:45px;
+    text-align:center;
+    margin-bottom:45px;
 }
 
 .section-title span{
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:3px;
-color:#94774c;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#94774c;
 }
 
 .section-title h2{
-font-size:38px;
-line-height:1.2;
-margin-top:8px;
+    font-size:38px;
+    line-height:1.2;
+    margin-top:8px;
 }
 
 .section-title p{
-max-width:680px;
-margin:12px auto 0;
-color:#716b62;
+    max-width:680px;
+    margin:12px auto 0;
+    color:#716b62;
 }
 
 
-/* =========================================================
+/* =====================================================
    DEVOCIONAL
-========================================================= */
+===================================================== */
 
 .devocional-area{
-background:#faf8f4;
+    background:#faf8f4;
 }
 
 .devocional{
-display:grid;
-grid-template-columns:420px 1fr;
-background:white;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
+    display:grid;
+    grid-template-columns:420px 1fr;
+
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
 
 .devocional-imagem{
-min-height:430px;
-background:
-url("imagens/devocional.jpg")
-center/cover;
+    min-height:430px;
+
+    background:
+    url("imagens/devocional.jpg")
+    center center / cover no-repeat;
 }
 
 .devocional-conteudo{
-padding:45px;
+    padding:45px;
 }
 
 .devocional-meta{
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:2px;
-color:#94774c;
-margin-bottom:12px;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#94774c;
+    margin-bottom:12px;
 }
 
 .devocional h3{
-font-size:32px;
-line-height:1.2;
-margin-bottom:20px;
+    font-size:32px;
+    line-height:1.2;
+    margin-bottom:20px;
 }
 
 .versiculo{
-background:#f5f0e7;
-border-left:4px solid #b89b68;
-padding:18px 22px;
-margin:25px 0;
-font-style:italic;
+    background:#f5f0e7;
+    border-left:4px solid #b89b68;
+    padding:18px 22px;
+    margin:25px 0;
+    font-style:italic;
 }
 
 .devocional-conteudo p{
-color:#565149;
-}
-
-.btn{
-border:none;
-background:#29231c;
-color:white;
-padding:13px 24px;
-border-radius:30px;
-cursor:pointer;
-font-size:14px;
-transition:.3s;
-}
-
-.btn:hover{
-background:#8d744c;
-transform:translateY(-2px);
+    color:#565149;
 }
 
 .devocional-botoes{
-display:flex;
-gap:12px;
-margin-top:25px;
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+}
+
+.btn{
+    border:none;
+    background:#29231c;
+    color:white;
+    padding:13px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#8d744c;
+    transform:translateY(-2px);
 }
 
 
-/* =========================================================
-   PEQUENAS IMAGENS / INSPIRAÇÃO
-========================================================= */
+/* =====================================================
+   INSPIRAÇÃO
+===================================================== */
 
 .inspiracao{
-background:#ebe5d9;
+    background:#ebe5d9;
 }
 
 .inspiracao-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
 .inspiracao-card{
-background:white;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
-transition:.3s;
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    transition:.3s;
 }
 
 .inspiracao-card:hover{
-transform:translateY(-5px);
+    transform:translateY(-5px);
 }
 
 .inspiracao-card img{
-width:100%;
-height:190px;
-object-fit:cover;
+    width:100%;
+    height:210px;
+    object-fit:cover;
 }
 
 .inspiracao-conteudo{
-padding:25px;
+    padding:25px;
 }
 
 .inspiracao-conteudo h3{
-font-size:22px;
-margin-bottom:7px;
+    font-size:22px;
+    margin-bottom:7px;
 }
 
 .inspiracao-conteudo p{
-font-size:14px;
-color:#706a62;
+    font-size:14px;
+    color:#706a62;
 }
 
 
-/* =========================================================
-   MURAL
-========================================================= */
+/* =====================================================
+   MURAL DA JORNADA
+===================================================== */
 
 .mural-area{
-background:#faf8f4;
-}
-
-.mural-intro{
-text-align:center;
-max-width:720px;
-margin:-20px auto 35px;
-color:#6d675e;
+    background:#faf8f4;
 }
 
 .publicar{
-max-width:850px;
-margin:0 auto 35px;
-background:white;
-padding:30px;
-border-radius:16px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
+    max-width:850px;
+    margin:0 auto 35px;
+
+    background:white;
+    padding:30px;
+    border-radius:16px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
 .publicar h3{
-font-size:23px;
-margin-bottom:6px;
+    font-size:23px;
+    margin-bottom:6px;
 }
 
 .publicar p{
-font-size:14px;
-color:#777;
-margin-bottom:18px;
+    font-size:14px;
+    color:#777;
+    margin-bottom:18px;
 }
 
 textarea{
-width:100%;
-min-height:120px;
-padding:15px;
-border:1px solid #ddd;
-border-radius:10px;
-resize:vertical;
-font-size:16px;
-outline:none;
+    width:100%;
+    min-height:120px;
+    padding:15px;
+
+    border:1px solid #ddd;
+    border-radius:10px;
+
+    resize:vertical;
+    font-size:16px;
+    outline:none;
 }
 
 textarea:focus{
-border-color:#a98c5b;
+    border-color:#a98c5b;
 }
 
 .publicar-footer{
-margin-top:14px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
+    margin-top:14px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
 }
 
 .login-info{
-font-size:13px;
-color:#777;
+    font-size:13px;
+    color:#777;
 }
 
 .post{
-max-width:850px;
-margin:0 auto 20px;
-background:white;
-padding:28px;
-border-radius:16px;
-box-shadow:0 4px 15px rgba(0,0,0,.05);
+    max-width:850px;
+    margin:0 auto 20px;
+
+    background:white;
+    padding:28px;
+    border-radius:16px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
 }
 
 .post-header{
-display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
 }
 
 .avatar{
-width:45px;
-height:45px;
-border-radius:50%;
-background:#8d744c;
-color:white;
+    width:45px;
+    height:45px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    border-radius:50%;
+    background:#8d744c;
+    color:white;
 
-font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
 }
 
 .post-author{
-font-weight:bold;
+    font-weight:bold;
 }
 
 .post-date{
-font-size:12px;
-color:#999;
-display:block;
+    font-size:12px;
+    color:#999;
+    display:block;
 }
 
 .post-text{
-color:#4e4942;
-margin-bottom:18px;
+    color:#4e4942;
+    margin-bottom:18px;
 }
 
 .post-actions{
-border-top:1px solid #eee;
-padding-top:14px;
-display:flex;
-gap:22px;
-flex-wrap:wrap;
+    border-top:1px solid #eee;
+    padding-top:14px;
+
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
 }
 
 .action{
-background:none;
-border:none;
-color:#777;
-cursor:pointer;
-font-size:14px;
+    background:none;
+    border:none;
+    color:#777;
+    cursor:pointer;
+    font-size:14px;
 }
 
 .action:hover{
-color:#8d744c;
+    color:#8d744c;
 }
 
 
-/* =========================================================
-   BÍBLIA / LEITURA
-========================================================= */
+/* =====================================================
+   BÍBLIA
+===================================================== */
 
 .biblia-area{
-background:#ebe5d9;
+    background:#ebe5d9;
 }
 
 .biblia-box{
-display:grid;
-grid-template-columns:1fr 1fr;
+    display:grid;
+    grid-template-columns:1fr 1fr;
 
-background:white;
-border-radius:20px;
-overflow:hidden;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
 
-box-shadow:0 8px 30px rgba(0,0,0,.07);
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
 }
 
 .biblia-imagem{
-min-height:400px;
+    min-height:400px;
 
-background:
-url("imagens/biblia-aberta.jpg")
-center/cover;
+    background:
+    url("imagens/biblia-aberta.jpg")
+    center center / cover no-repeat;
 }
 
 .biblia-conteudo{
-padding:45px;
-display:flex;
-flex-direction:column;
-justify-content:center;
+    padding:45px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .biblia-conteudo span{
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:2px;
-color:#94774c;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#94774c;
 }
 
 .biblia-conteudo h2{
-font-size:34px;
-line-height:1.2;
-margin:10px 0 18px;
+    font-size:34px;
+    line-height:1.2;
+    margin:10px 0 18px;
 }
 
 .biblia-conteudo p{
-color:#666;
-margin-bottom:22px;
+    color:#666;
+    margin-bottom:22px;
 }
 
 
-/* =========================================================
+/* =====================================================
    DESAFIOS
-========================================================= */
+===================================================== */
 
 .desafios-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
 .desafio{
-background:white;
-padding:30px;
-border-radius:17px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
+    background:white;
+    padding:30px;
+    border-radius:17px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
 .desafio-icon{
-font-size:32px;
-margin-bottom:8px;
+    font-size:32px;
+    margin-bottom:8px;
 }
 
 .desafio h3{
-font-size:23px;
-margin-bottom:7px;
+    font-size:23px;
+    margin-bottom:7px;
 }
 
 .desafio p{
-font-size:15px;
-color:#6c665e;
-margin-bottom:18px;
+    font-size:15px;
+    color:#6c665e;
+    margin-bottom:18px;
 }
 
 .progress{
-height:9px;
-background:#e4ded4;
-border-radius:10px;
-overflow:hidden;
-margin-bottom:8px;
+    height:9px;
+    background:#e4ded4;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:8px;
 }
 
 .progress-bar{
-height:100%;
-width:65%;
-background:#8d744c;
+    height:100%;
+    width:65%;
+    background:#8d744c;
 }
 
 .progress-text{
-font-size:12px;
-color:#888;
+    font-size:12px;
+    color:#888;
 }
 
 
-/* =========================================================
+/* =====================================================
    CLUBE DO LIVRO
-========================================================= */
+===================================================== */
 
 .clube-area{
-background:#faf8f4;
+    background:#faf8f4;
 }
 
 .clube{
-max-width:850px;
-margin:auto;
+    max-width:850px;
+    margin:auto;
 
-background:#29231c;
-color:white;
+    background:#29231c;
+    color:white;
 
-padding:42px;
-border-radius:20px;
+    padding:42px;
+    border-radius:20px;
 }
 
 .clube-label{
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:2px;
-color:#cdbb99;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#cdbb99;
 }
 
 .clube h3{
-font-size:32px;
-margin:8px 0 15px;
+    font-size:32px;
+    margin:8px 0 15px;
 }
 
 .clube p{
-color:#ddd;
-margin-bottom:20px;
+    color:#ddd;
+    margin-bottom:20px;
 }
 
 .clube-info{
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-color:#cfc8bd;
-font-size:14px;
-margin-bottom:25px;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+
+    color:#cfc8bd;
+    font-size:14px;
+
+    margin-bottom:25px;
 }
 
 
-/* =========================================================
-   MEU ESPAÇO
-========================================================= */
-
-.meu-espaco{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-.espaco-card{
-background:white;
-border-radius:16px;
-padding:30px;
-text-align:center;
-box-shadow:0 4px 18px rgba(0,0,0,.05);
-}
-
-.espaco-icon{
-font-size:31px;
-margin-bottom:10px;
-}
-
-.espaco-card h3{
-font-size:20px;
-margin-bottom:6px;
-}
-
-.espaco-card p{
-font-size:14px;
-color:#777;
-}
-
-
-/* =========================================================
+/* =====================================================
    ORAÇÃO
-========================================================= */
+===================================================== */
 
 .oracao-area{
-background:#ebe5d9;
+    background:#ebe5d9;
 }
 
 .oracao-box{
-max-width:850px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 7px 25px rgba(0,0,0,.06);
+    max-width:850px;
+    margin:auto;
+
+    background:white;
+    padding:40px;
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 7px 25px rgba(0,0,0,.06);
 }
 
 .oracao-box h3{
-font-size:29px;
-margin-bottom:10px;
+    font-size:29px;
+    margin-bottom:10px;
 }
 
 .oracao-box p{
-max-width:620px;
-margin:auto auto 25px;
-color:#666;
+    max-width:620px;
+    margin:auto auto 25px;
+    color:#666;
 }
 
 .pedido{
-border-top:1px solid #eee;
-margin-top:28px;
-padding-top:25px;
-text-align:left;
+    border-top:1px solid #eee;
+    margin-top:28px;
+    padding-top:25px;
+    text-align:left;
 }
 
 .pedido strong{
-display:block;
-margin-bottom:6px;
+    display:block;
+    margin-bottom:6px;
 }
 
 .pedido small{
-color:#999;
+    color:#999;
 }
 
 
-/* =========================================================
+/* =====================================================
+   MEU ESPAÇO
+===================================================== */
+
+.meu-espaco{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.espaco-card{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+
+.espaco-icon{
+    font-size:31px;
+    margin-bottom:10px;
+}
+
+.espaco-card h3{
+    font-size:20px;
+    margin-bottom:6px;
+}
+
+.espaco-card p{
+    font-size:14px;
+    color:#777;
+}
+
+
+/* =====================================================
    ÁUDIO
-========================================================= */
+===================================================== */
 
 .audio-area{
-background:#faf8f4;
+    background:#faf8f4;
 }
 
 .audio-box{
-max-width:850px;
-margin:auto;
-background:#211d18;
-color:white;
-padding:45px;
-border-radius:20px;
-text-align:center;
+    max-width:850px;
+    margin:auto;
+
+    background:#211d18;
+    color:white;
+
+    padding:45px;
+    border-radius:20px;
+
+    text-align:center;
 }
 
 .audio-box h3{
-font-size:29px;
-margin-bottom:10px;
+    font-size:29px;
+    margin-bottom:10px;
 }
 
 .audio-box p{
-color:#ddd;
-margin-bottom:22px;
+    color:#ddd;
+    margin-bottom:22px;
 }
 
 
-/* =========================================================
+/* =====================================================
    FINAL
-========================================================= */
+===================================================== */
 
 .final{
-background:#211d18;
-color:white;
-text-align:center;
-padding:90px 25px;
+    background:#211d18;
+    color:white;
+
+    text-align:center;
+
+    padding:90px 25px;
 }
 
 .final h2{
-max-width:780px;
-margin:auto;
-font-size:36px;
-line-height:1.3;
+    max-width:780px;
+    margin:auto;
+
+    font-size:36px;
+    line-height:1.3;
 }
 
 .final p{
-margin-top:18px;
-color:#cfc8bd;
+    margin-top:18px;
+    color:#cfc8bd;
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* =====================================================
+   RODAPÉ
+===================================================== */
 
 footer{
-background:#171512;
-color:#999;
-text-align:center;
-padding:30px 20px;
-font-size:13px;
+    background:#171512;
+    color:#999;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    font-size:13px;
 }
 
 footer strong{
-color:white;
+    color:white;
 }
 
 
-/* =========================================================
-   RESPONSIVO
-========================================================= */
+/* =====================================================
+   CELULAR
+===================================================== */
 
 @media(max-width:850px){
 
-.menu-btn{
-display:block;
-}
+    .menu-btn{
+        display:block;
+    }
 
-nav{
-display:none;
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-background:#211d18;
-flex-direction:column;
-gap:0;
-}
+    nav{
+        display:none;
 
-nav.active{
-display:flex;
-}
+        position:absolute;
+        top:70px;
+        left:0;
 
-nav a{
-width:100%;
-padding:15px 25px;
-border-top:1px solid rgba(255,255,255,.08);
-}
+        width:100%;
 
-.devocional,
-.biblia-box{
-grid-template-columns:1fr;
-}
+        background:#211d18;
 
-.devocional-imagem,
-.biblia-imagem{
-min-height:300px;
-}
+        flex-direction:column;
+        gap:0;
+    }
 
-.inspiracao-grid{
-grid-template-columns:1fr;
-}
+    nav.active{
+        display:flex;
+    }
 
-.desafios-grid{
-grid-template-columns:1fr;
-}
+    nav a{
+        width:100%;
+        padding:15px 25px;
 
-.meu-espaco{
-grid-template-columns:1fr;
-}
+        border-top:1px solid rgba(255,255,255,.08);
+    }
 
-.devocional-conteudo,
-.biblia-conteudo{
-padding:30px;
-}
+    .devocional,
+    .biblia-box{
+        grid-template-columns:1fr;
+    }
 
-.publicar-footer{
-flex-direction:column;
-align-items:flex-start;
-}
+    .devocional-imagem,
+    .biblia-imagem{
+        min-height:300px;
+    }
 
-.hero{
-min-height:470px;
-}
+    .inspiracao-grid{
+        grid-template-columns:1fr;
+    }
 
-.hero p{
-font-size:18px;
-}
+    .desafios-grid{
+        grid-template-columns:1fr;
+    }
 
-.section-title h2{
-font-size:30px;
-}
+    .meu-espaco{
+        grid-template-columns:1fr;
+    }
+
+    .devocional-conteudo,
+    .biblia-conteudo{
+        padding:30px;
+    }
+
+    .publicar-footer{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .devocional-botoes{
+        flex-wrap:wrap;
+    }
+
+    .hero{
+        min-height:470px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
 
 }
 
@@ -847,9 +877,9 @@ font-size:30px;
 <body>
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
 
 <header>
 
@@ -877,17 +907,25 @@ aria-label="Abrir menu"
 
 <nav id="menu">
 
-<a href="index.html">Início</a>
+<a href="index.html">
+Início
+</a>
 
-<a href="sobre.html">Sobre</a>
+<a href="sobre.html">
+Sobre
+</a>
 
-<a href="obras.html">Obras</a>
+<a href="obras.html">
+Obras
+</a>
 
 <a href="area-do-leitor.html">
 Área do Leitor
 </a>
 
-<a href="eventos.html">Eventos</a>
+<a href="eventos.html">
+Eventos
+</a>
 
 </nav>
 
@@ -897,9 +935,9 @@ aria-label="Abrir menu"
 
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- =====================================================
+     ABERTURA
+===================================================== -->
 
 <section class="hero">
 
@@ -919,10 +957,8 @@ e crescer na caminhada com Deus.
 </p>
 
 <div class="hero-frase">
-
 “Há leituras que informam.
 Outras transformam.”
-
 </div>
 
 </div>
@@ -931,9 +967,9 @@ Outras transformam.”
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      DEVOCIONAL
-========================================================= -->
+===================================================== -->
 
 <section class="devocional-area">
 
@@ -1024,9 +1060,9 @@ Ler devocional
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      INSPIRAÇÃO
-========================================================= -->
+===================================================== -->
 
 <section class="inspiracao">
 
@@ -1132,9 +1168,9 @@ instantes em silêncio diante de Deus.
 
 
 
-<!-- =========================================================
-     MURAL DA JORNADA
-========================================================= -->
+<!-- =====================================================
+     MURAL
+===================================================== -->
 
 <section class="mural-area">
 
@@ -1240,6 +1276,7 @@ mas também na pessoa que estou me tornando.
 </article>
 
 
+
 <article class="post">
 
 <div class="post-header">
@@ -1293,15 +1330,16 @@ Preciso confiar em quem está me conduzindo.
 
 </article>
 
+
 </div>
 
 </section>
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      BÍBLIA
-========================================================= -->
+===================================================== -->
 
 <section class="biblia-area">
 
@@ -1320,7 +1358,7 @@ Um momento com Deus
 </span>
 
 <h2>
-Abra a Bíblia.
+Abra a Bíblia.<br>
 Abra o coração.
 </h2>
 
@@ -1349,9 +1387,9 @@ Começar uma leitura
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      DESAFIOS
-========================================================= -->
+===================================================== -->
 
 <section>
 
@@ -1459,9 +1497,9 @@ Começar desafio
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CLUBE DO LIVRO
-========================================================= -->
+===================================================== -->
 
 <section class="clube-area">
 
@@ -1523,9 +1561,9 @@ Participar da discussão
 
 
 
-<!-- =========================================================
-     MURAL DE ORAÇÃO
-========================================================= -->
+<!-- =====================================================
+     ORAÇÃO
+===================================================== -->
 
 <section class="oracao-area">
 
@@ -1592,9 +1630,9 @@ uma decisão importante que preciso tomar.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      MEU ESPAÇO
-========================================================= -->
+===================================================== -->
 
 <section>
 
@@ -1685,9 +1723,9 @@ e sua jornada de leitura.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      ÁUDIO
-========================================================= -->
+===================================================== -->
 
 <section class="audio-area">
 
@@ -1718,10 +1756,8 @@ dirige ou simplesmente descansa.
 </h3>
 
 <p>
-
 Em breve, devocionais, reflexões
 e outros conteúdos em áudio.
-
 </p>
 
 <button class="btn">
@@ -1736,33 +1772,29 @@ Em breve
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FINAL
-========================================================= -->
+===================================================== -->
 
 <section class="final">
 
 <h2>
-
 “Continue caminhando.
 Deus ainda está trabalhando em você.”
-
 </h2>
 
 <p>
-
 Volte sempre.
 Há uma nova palavra esperando por você.
-
 </p>
 
 </section>
 
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
 
 <footer>
 
@@ -1783,10 +1815,10 @@ Escritor • Pastor • Palestrante
 
 function toggleMenu(){
 
-const menu =
-document.getElementById("menu");
+    const menu =
+    document.getElementById("menu");
 
-menu.classList.toggle("active");
+    menu.classList.toggle("active");
 
 }
 
@@ -1797,3 +1829,4 @@ menu.classList.toggle("active");
 
 </html>
 ```
+
