@@ -2590,7 +2590,6 @@ Todos os direitos reservados.
     }
 
 
-  ```javascript
 /* =====================================================
    ENVIAR MENSAGEM
 ====================================================== */
@@ -2627,7 +2626,9 @@ document
           .trim();
 
 
-      /* VALIDAÇÕES */
+      /* =================================================
+         VALIDAÇÕES
+      ================================================== */
 
       if (!nome) {
 
@@ -2688,8 +2689,7 @@ document
         ================================================== */
 
         const {
-          data,
-          error
+          error: erroBanco
         } =
           await supabaseClient
             .from("mensagens_mural")
@@ -2700,16 +2700,14 @@ document
                 mensagem: mensagem,
                 aprovada: false
               }
-            ])
-            .select()
-            .single();
+            ]);
 
 
-        if (error) {
+        if (erroBanco) {
 
           console.error(
             "Erro ao salvar mensagem:",
-            error
+            erroBanco
           );
 
           mostrarStatus(
@@ -2731,73 +2729,50 @@ document
               PARA ENVIAR O E-MAIL
         ================================================== */
 
-       ```javascript
-const {
-  data: resultadoEmail,
-  error: erroEmail
-} = await supabaseClient.functions.invoke(
-  "resend-email",
-  {
-    body: {
-      nome: nome,
-      leitura: leitura || "Não informado",
-      mensagem: mensagem
-    }
-  }
-);
-
-
-if (erroEmail) {
-
-  console.error(
-    "Erro ao chamar a Edge Function:",
-    erroEmail
-  );
-
-  mostrarStatus(
-    "Mensagem recebida, mas houve um problema ao enviar o aviso por e-mail.",
-    "sucesso"
-  );
-
-} else {
-
-  console.log(
-    "E-mail enviado:",
-    resultadoEmail
-  );
-
-  mostrarStatus(
-    "Mensagem enviada com sucesso! Ela ficará aguardando aprovação.",
-    "sucesso"
-  );
-
-}
-```
+        const {
+          data: resultadoEmail,
+          error: erroEmail
+        } =
+          await supabaseClient.functions.invoke(
+            "resend-email",
+            {
+              body: {
+                nome: nome,
+                leitura: leitura || "Não informado",
+                mensagem: mensagem
+              }
+            }
+          );
 
 
         console.log(
-          "Resposta do envio de e-mail:",
+          "Resposta da Edge Function:",
           resultadoEmail
         );
 
 
         /* =================================================
-           3 — MENSAGEM PARA O LEITOR
+           3 — VERIFICAR ENVIO DO E-MAIL
         ================================================== */
 
-        if (!respostaEmail.ok) {
+        if (erroEmail) {
 
           console.error(
-            "A mensagem foi salva, mas o e-mail não foi enviado:",
-            resultadoEmail
+            "Erro ao chamar a Edge Function:",
+            erroEmail
           );
 
           mostrarStatus(
-            "Mensagem recebida! Ela ficará aguardando aprovação. O aviso por e-mail apresentou um problema.",
+            "Mensagem recebida! Ela ficará aguardando aprovação, mas o aviso por e-mail apresentou um problema.",
             "sucesso"
           );
 
         } else {
+
+          console.log(
+            "E-mail enviado com sucesso:",
+            resultadoEmail
+          );
 
           mostrarStatus(
             "Mensagem enviada com sucesso! Ela ficará aguardando aprovação.",
@@ -2807,7 +2782,9 @@ if (erroEmail) {
         }
 
 
-        /* LIMPAR FORMULÁRIO */
+        /* =================================================
+           4 — LIMPAR FORMULÁRIO
+        ================================================== */
 
         document
           .getElementById("formularioMural")
@@ -2841,8 +2818,7 @@ if (erroEmail) {
 
     }
   );
-```
-
+    
     /* =====================================================
        ROLAGEM SUAVE
     ====================================================== */
