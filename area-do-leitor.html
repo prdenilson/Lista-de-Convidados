@@ -2625,6 +2625,8 @@ document
           .value
           .trim();
 
+      const tokenAprovacao = crypto.randomUUID();
+
 
       /* =================================================
          VALIDAÇÕES
@@ -2695,11 +2697,12 @@ document
             .from("mensagens_mural")
             .insert([
               {
-                nome: nome,
-                leitura: leitura || null,
-                mensagem: mensagem,
-                aprovada: false
-              }
+              nome: nome,
+              leitura: leitura || null,
+              mensagem: mensagem,
+              aprovada: false,
+              token_aprovacao: tokenAprovacao
+          }
             ]);
 
 
@@ -2737,12 +2740,11 @@ document
             "resend-email",
             {
               body: {
-                nome: nome,
-                leitura: leitura || "Não informado",
-                mensagem: mensagem
-              }
-            }
-          );
+              nome: nome,
+               leitura: leitura || "Não informado",
+              mensagem: mensagem,
+              token: tokenAprovacao
+          }
 
 
         console.log(
