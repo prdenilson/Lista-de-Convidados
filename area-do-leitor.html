@@ -11,12 +11,12 @@
 <title>Área do Leitor | Pr. Denílson Pinheiro</title>
 
 <meta name="description"
-content="Área do Leitor do Pr. Denílson Pinheiro. Devocionais, leitura, oração, desafios e comunidade.">
+content="Área do Leitor do Pr. Denílson Pinheiro — um espaço para leitura, reflexão, oração e comunhão.">
 
 <style>
 
 /* =====================================================
-   CONFIGURAÇÕES GERAIS
+   RESET
 ===================================================== */
 
 *{
@@ -30,7 +30,7 @@ html{
 }
 
 body{
-    font-family:Georgia,"Times New Roman",serif;
+    font-family:Georgia, "Times New Roman", serif;
     background:#f5f1e9;
     color:#29251f;
     line-height:1.7;
@@ -114,7 +114,7 @@ nav a:hover{
 
 
 /* =====================================================
-   HERO / ABERTURA
+   HERO
 ===================================================== */
 
 .hero{
@@ -122,7 +122,7 @@ nav a:hover{
 
     background:
     linear-gradient(
-        rgba(25,21,17,.55),
+        rgba(25,21,17,.48),
         rgba(25,21,17,.78)
     ),
     url("imagens/biblioteca.jpg")
@@ -171,7 +171,7 @@ nav a:hover{
 
 
 /* =====================================================
-   ESTRUTURA
+   CONTAINER
 ===================================================== */
 
 .container{
@@ -340,6 +340,42 @@ nav a:hover{
     background:#faf8f4;
 }
 
+.mural-imagem{
+    max-width:900px;
+    height:350px;
+
+    margin:0 auto 35px;
+
+    border-radius:22px;
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.mural-imagem img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.mural-frase{
+    max-width:850px;
+    margin:0 auto 35px;
+
+    text-align:center;
+
+    font-size:20px;
+    font-style:italic;
+
+    color:#665b4c;
+}
+
+
+/* =====================================================
+   PUBLICAÇÃO
+===================================================== */
+
 .publicar{
     max-width:850px;
     margin:0 auto 35px;
@@ -393,6 +429,11 @@ textarea:focus{
     font-size:13px;
     color:#777;
 }
+
+
+/* =====================================================
+   POSTAGENS
+===================================================== */
 
 .post{
     max-width:850px;
@@ -784,7 +825,7 @@ footer strong{
 
 
 /* =====================================================
-   CELULAR
+   RESPONSIVO
 ===================================================== */
 
 @media(max-width:850px){
@@ -867,6 +908,60 @@ footer strong{
         font-size:30px;
     }
 
+    .mural-imagem{
+        height:240px;
+    }
+
+    .mural-frase{
+        font-size:17px;
+    }
+
+}
+
+
+/* =====================================================
+   TELAS MUITO PEQUENAS
+===================================================== */
+
+@media(max-width:480px){
+
+    .container{
+        padding:60px 18px;
+    }
+
+    .hero{
+        padding:55px 18px;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .devocional-conteudo,
+    .biblia-conteudo,
+    .publicar,
+    .oracao-box,
+    .clube{
+        padding:25px;
+    }
+
+    .mural-imagem{
+        height:210px;
+        border-radius:16px;
+    }
+
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+button:focus,
+a:focus,
+textarea:focus{
+    outline:2px solid #b89b68;
+    outline-offset:3px;
 }
 
 </style>
@@ -936,7 +1031,7 @@ Eventos
 
 
 <!-- =====================================================
-     ABERTURA
+     HERO
 ===================================================== -->
 
 <section class="hero">
@@ -1169,7 +1264,7 @@ instantes em silêncio diante de Deus.
 
 
 <!-- =====================================================
-     MURAL
+     MURAL DA JORNADA
 ===================================================== -->
 
 <section class="mural-area">
@@ -1194,6 +1289,24 @@ pode edificar outra pessoa.
 </div>
 
 
+<div class="mural-imagem">
+
+<img
+src="imagens/mural.jpg"
+alt="Mural comunitário com mensagens de fé e encorajamento"
+>
+
+</div>
+
+
+<div class="mural-frase">
+
+“Compartilhe aquilo que Deus está ensinando a você.
+Talvez seja exatamente a palavra que alguém precisava ler hoje.”
+
+</div>
+
+
 <div class="publicar">
 
 <h3>
@@ -1202,7 +1315,7 @@ O que Deus falou com você?
 
 <p>
 Compartilhe uma reflexão, um testemunho,
-um versículo ou uma frase que marcou você.
+um versículo ou uma palavra de encorajamento.
 </p>
 
 <textarea
@@ -1225,22 +1338,31 @@ Publicar no mural
 </div>
 
 
+<!--
+    EXEMPLOS VISUAIS
+
+    Estes posts são apenas demonstração.
+    Posteriormente serão substituídos
+    pelas mensagens reais do Supabase.
+-->
+
+
 <article class="post">
 
 <div class="post-header">
 
 <div class="avatar">
-M
+L
 </div>
 
 <div>
 
 <div class="post-author">
-Maria
+Leitor
 </div>
 
 <span class="post-date">
-Há 2 dias
+Exemplo de publicação
 </span>
 
 </div>
@@ -1250,9 +1372,9 @@ Há 2 dias
 
 <div class="post-text">
 
-Hoje entendi que Deus não está apenas
-interessado naquilo que faço para Ele,
-mas também na pessoa que estou me tornando.
+“Às vezes Deus não muda imediatamente
+as circunstâncias porque primeiro quer
+transformar aquilo que existe dentro de nós.”
 
 </div>
 
@@ -1260,70 +1382,15 @@ mas também na pessoa que estou me tornando.
 <div class="post-actions">
 
 <button class="action">
-🙏 18 Améns
+🙏 Amém
 </button>
 
 <button class="action">
-❤️ 7 Isso me tocou
+❤️ Isso me tocou
 </button>
 
 <button class="action">
-💬 3 Respostas
-</button>
-
-</div>
-
-</article>
-
-
-
-<article class="post">
-
-<div class="post-header">
-
-<div class="avatar">
-C
-</div>
-
-<div>
-
-<div class="post-author">
-Carlos
-</div>
-
-<span class="post-date">
-Há 4 dias
-</span>
-
-</div>
-
-</div>
-
-
-<div class="post-text">
-
-“O Senhor é o meu pastor; nada me faltará.”
-
-<br><br>
-
-Nem sempre preciso entender o caminho.
-Preciso confiar em quem está me conduzindo.
-
-</div>
-
-
-<div class="post-actions">
-
-<button class="action">
-🙏 24 Améns
-</button>
-
-<button class="action">
-❤️ 11 Isso me tocou
-</button>
-
-<button class="action">
-💬 5 Respostas
+💬 Responder
 </button>
 
 </div>
@@ -1439,13 +1506,13 @@ acompanhe sua caminhada.
 </div>
 
 <div class="progress-text">
-19 de 30 dias concluídos
+Seu progresso aparecerá aqui.
 </div>
 
 <br>
 
 <button class="btn">
-Continuar desafio
+Começar desafio
 </button>
 
 </article>
@@ -1477,7 +1544,7 @@ style="width:42%;">
 </div>
 
 <div class="progress-text">
-3 de 7 dias concluídos
+Seu progresso aparecerá aqui.
 </div>
 
 <br>
@@ -1508,7 +1575,7 @@ Começar desafio
 <div class="section-title">
 
 <span>
-Leitura
+Leitura em comunidade
 </span>
 
 <h2>
@@ -1516,8 +1583,8 @@ Clube do Livro
 </h2>
 
 <p>
-Um espaço para conversar sobre livros,
-ideias e experiências de leitura.
+Livros diferentes, histórias diferentes,
+mas uma oportunidade de crescer juntos.
 </p>
 
 </div>
@@ -1530,11 +1597,13 @@ Leitura em destaque
 </div>
 
 <h3>
-Antes Que Eu Seja Usado
+Uma leitura para este mês
 </h3>
 
 <p>
-Uma jornada antes do encontro com nossa vocação.
+Aqui poderão aparecer livros do Pr. Denílson
+Pinheiro e também sugestões de leitura
+para a comunidade.
 </p>
 
 <div class="clube-info">
@@ -1547,10 +1616,14 @@ Uma jornada antes do encontro com nossa vocação.
 💬 Discussão entre leitores
 </span>
 
+<span>
+🙏 Reflexões
+</span>
+
 </div>
 
 <button class="btn">
-Participar da discussão
+Ver discussão
 </button>
 
 </div>
@@ -1562,7 +1635,7 @@ Participar da discussão
 
 
 <!-- =====================================================
-     ORAÇÃO
+     MURAL DE ORAÇÃO
 ===================================================== -->
 
 <section class="oracao-area">
@@ -1608,16 +1681,17 @@ Deixar pedido de oração
 <div class="pedido">
 
 <strong>
-Pedido de oração
+Um espaço para intercessão
 </strong>
 
 <p>
-Peço oração pela minha família e por
-uma decisão importante que preciso tomar.
+Quando essa função estiver conectada
+ao sistema de leitores, os pedidos
+aprovados aparecerão aqui.
 </p>
 
 <small>
-🙏 14 pessoas estão orando
+🙏 Interação protegida e moderada
 </small>
 
 </div>
@@ -1641,7 +1715,7 @@ uma decisão importante que preciso tomar.
 <div class="section-title">
 
 <span>
-Sua área pessoal
+Sua caminhada
 </span>
 
 <h2>
