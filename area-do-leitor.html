@@ -16,7 +16,7 @@ content="width=device-width, initial-scale=1.0"
 
 <meta
 name="description"
-content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, oração, reflexão e comunhão para quem deseja crescer na fé."
+content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, oração e um mural para compartilhar experiências de leitura."
 
 >
 
@@ -28,7 +28,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
   <link
     rel="preconnect"
-    href="https://fonts.googleapis.com"
+    href="https://fonts.gstatic.com"
     crossorigin
   >
 
@@ -47,7 +47,13 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
   >
 
   <!-- =====================================================
-       ESTILO PRINCIPAL
+       SUPABASE
+  ====================================================== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- =====================================================
+       ESTILO PRINCIPAL DO SITE
   ====================================================== -->
 
   <link
@@ -59,7 +65,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     /* =====================================================
        PÁGINA
-    ===================================================== */
+    ====================================================== */
 
     .pagina-leitor {
       width: 100%;
@@ -72,7 +78,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     /* =====================================================
        HERO
-    ===================================================== */
+    ====================================================== */
 
     .hero-leitor {
       position: relative;
@@ -82,6 +88,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       overflow: hidden;
       border-radius: 6px;
       margin-bottom: 65px;
+
       background:
         linear-gradient(
           90deg,
@@ -90,8 +97,11 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
           rgba(15,13,11,0.35) 100%
         ),
         url("imagens/biblia-aberta.jpg") center/cover no-repeat;
+
       border: 1px solid var(--border-color);
-      box-shadow: 0 20px 55px rgba(0,0,0,0.35);
+
+      box-shadow:
+        0 20px 55px rgba(0,0,0,0.35);
     }
 
 
@@ -143,7 +153,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     /* =====================================================
        TÍTULOS
-    ===================================================== */
+    ====================================================== */
 
     .titulo-leitor {
       text-align: center;
@@ -190,8 +200,8 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
     /* =====================================================
-       CARDS DE ACESSO
-    ===================================================== */
+       ATALHOS
+    ====================================================== */
 
     .atalhos-leitor {
       display: grid;
@@ -211,11 +221,18 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       padding: 25px;
       box-sizing: border-box;
       text-decoration: none;
+
       border: 1px solid var(--border-color);
       border-radius: 5px;
+
       background: #171513;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.2);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
     }
 
 
@@ -223,12 +240,14 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       content: "";
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           to top,
           rgba(0,0,0,0.95),
           rgba(0,0,0,0.15)
         );
+
       z-index: 1;
     }
 
@@ -245,7 +264,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+
+      transition:
+        transform 0.5s ease;
     }
 
 
@@ -263,12 +284,16 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
     .atalho-icone {
       width: 38px;
       height: 38px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       margin-bottom: 12px;
+
       border: 1px solid var(--gold-primary);
       border-radius: 50%;
+
       color: var(--gold-primary);
       background: rgba(20,18,15,0.75);
     }
@@ -292,7 +317,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     /* =====================================================
        DEVOCIONAIS
-    ===================================================== */
+    ====================================================== */
 
     .secao-devocionais {
       margin-bottom: 80px;
@@ -310,22 +335,34 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       grid-template-columns: 155px 1fr;
       gap: 30px;
       align-items: center;
+
       padding: 28px;
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-color);
       border-radius: 5px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.22);
     }
 
 
     .devocional-capa {
       width: 155px;
       height: 195px;
+
       overflow: hidden;
+
       border-radius: 4px;
-      border: 1px solid rgba(201,158,92,0.35);
+
+      border:
+        1px solid rgba(201,158,92,0.35);
+
       background: #171513;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+
+      box-shadow:
+        0 12px 25px rgba(0,0,0,0.3);
     }
 
 
@@ -339,18 +376,26 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     .devocional-conteudo h3 {
       margin: 0 0 9px;
+
       color: #fff;
+
       font-family: var(--font-serif);
+
       font-size: 1.65rem;
+
       font-weight: 400;
     }
 
 
     .devocional-conteudo p {
       max-width: 680px;
+
       margin: 0 0 18px;
+
       color: var(--text-muted);
+
       font-size: 0.9rem;
+
       line-height: 1.75;
     }
 
@@ -364,27 +409,43 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     .devocional-botao {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       gap: 8px;
+
       min-height: 43px;
+
       padding: 10px 17px;
+
       box-sizing: border-box;
+
       border-radius: 2px;
+
       font-family: var(--font-sans);
+
       font-size: 0.69rem;
+
       font-weight: 700;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
       text-decoration: none;
+
       transition: 0.3s ease;
     }
 
 
     .devocional-botao-leitura {
       background: var(--gold-primary);
+
       color: #171513;
-      border: 1px solid var(--gold-primary);
+
+      border:
+        1px solid var(--gold-primary);
     }
 
 
@@ -396,8 +457,11 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     .devocional-botao-download {
       background: transparent;
+
       color: #fff;
-      border: 1px solid var(--border-color);
+
+      border:
+        1px solid var(--border-color);
     }
 
 
@@ -409,144 +473,543 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     .devocional-observacao {
       margin-top: 12px;
+
       color: #777;
+
       font-size: 0.67rem;
     }
 
 
     /* =====================================================
        MURAL
-    ===================================================== */
+    ====================================================== */
 
     .secao-mural {
       position: relative;
+
       overflow: hidden;
-      min-height: 430px;
-      display: flex;
-      align-items: center;
+
       margin-bottom: 80px;
-      border: 1px solid rgba(201,158,92,0.35);
+
+      border:
+        1px solid rgba(201,158,92,0.35);
+
       border-radius: 6px;
+
       background:
         linear-gradient(
           90deg,
           rgba(16,14,12,0.97),
-          rgba(16,14,12,0.88),
-          rgba(16,14,12,0.48)
+          rgba(16,14,12,0.92)
         ),
         url("imagens/mural.jpg") center/cover no-repeat;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
     }
 
 
     .mural-conteudo {
-      max-width: 620px;
-      padding: 55px;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 55px 35px;
     }
 
 
     .mural-conteudo .pequeno {
       color: var(--gold-primary);
+
       font-size: 0.7rem;
+
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
 
     .mural-conteudo h2 {
       margin: 12px 0 15px;
+
       color: #fff;
+
       font-family: var(--font-serif);
+
       font-size: 2.4rem;
+
       line-height: 1.15;
+
       font-weight: 400;
     }
 
 
-    .mural-conteudo p {
+    .mural-introducao {
       margin: 0 0 25px;
+
       color: rgba(255,255,255,0.76);
+
       font-size: 0.92rem;
+
       line-height: 1.8;
     }
 
 
     .mural-frase {
       margin: 0 0 25px;
+
       padding-left: 18px;
-      border-left: 2px solid var(--gold-primary);
+
+      border-left:
+        2px solid var(--gold-primary);
+
       color: var(--gold-primary);
+
       font-family: var(--font-serif);
+
       font-size: 1.05rem;
+
       font-style: italic;
+
       line-height: 1.6;
     }
 
 
     .botao-mural {
       display: inline-flex;
+
       align-items: center;
+
       gap: 9px;
+
       padding: 14px 22px;
+
       background: var(--gold-primary);
+
       color: #171513;
-      border: 1px solid var(--gold-primary);
+
+      border:
+        1px solid var(--gold-primary);
+
       border-radius: 2px;
+
       font-family: var(--font-sans);
+
       font-size: 0.72rem;
+
       font-weight: 700;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
       cursor: pointer;
+
       transition: 0.3s ease;
     }
 
 
     .botao-mural:hover {
       background: #e0bd7d;
+
       border-color: #e0bd7d;
+
       transform: translateY(-1px);
     }
 
 
     /* =====================================================
-       ORAÇÃO + LEITURA
-    ===================================================== */
+       FORMULÁRIO DO MURAL
+    ====================================================== */
+
+    .mural-formulario {
+      display: none;
+
+      margin-top: 35px;
+
+      padding: 30px;
+
+      background:
+        rgba(23,21,19,0.95);
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius: 5px;
+    }
+
+
+    .mural-formulario.visivel {
+      display: block;
+    }
+
+
+    .mural-formulario h3 {
+      margin: 0 0 25px;
+
+      color: #fff;
+
+      font-family: var(--font-serif);
+
+      font-size: 1.65rem;
+
+      font-weight: 400;
+    }
+
+
+    .campo-mural {
+      margin-bottom: 18px;
+    }
+
+
+    .campo-mural label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #ddd;
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+    }
+
+
+    .campo-mural input,
+    .campo-mural textarea {
+      width: 100%;
+
+      box-sizing: border-box;
+
+      padding: 13px 14px;
+
+      background: #11100f;
+
+      color: #fff;
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius: 3px;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.85rem;
+
+      outline: none;
+
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .campo-mural input:focus,
+    .campo-mural textarea:focus {
+      border-color: var(--gold-primary);
+
+      box-shadow:
+        0 0 0 2px rgba(201,158,92,0.08);
+    }
+
+
+    .campo-mural textarea {
+      min-height: 140px;
+
+      resize: vertical;
+    }
+
+
+    .mural-acoes {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 20px;
+    }
+
+
+    .botao-enviar-mensagem,
+    .botao-cancelar-mural {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      min-height: 43px;
+
+      padding: 10px 18px;
+
+      border-radius: 2px;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.7rem;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+    }
+
+
+    .botao-enviar-mensagem {
+      background: var(--gold-primary);
+
+      color: #171513;
+
+      border:
+        1px solid var(--gold-primary);
+    }
+
+
+    .botao-enviar-mensagem:hover {
+      background: #e0bd7d;
+
+      border-color: #e0bd7d;
+    }
+
+
+    .botao-enviar-mensagem:disabled {
+      opacity: 0.6;
+
+      cursor: not-allowed;
+
+      transform: none;
+    }
+
+
+    .botao-cancelar-mural {
+      background: transparent;
+
+      color: #fff;
+
+      border:
+        1px solid var(--border-color);
+    }
+
+
+    .botao-cancelar-mural:hover {
+      color: var(--gold-primary);
+
+      border-color: var(--gold-primary);
+    }
+
+
+    .mensagem-status {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 13px 15px;
+
+      border-radius: 3px;
+
+      font-size: 0.78rem;
+
+      line-height: 1.6;
+    }
+
+
+    .mensagem-status.sucesso {
+      display: block;
+
+      color: #d9efd9;
+
+      background: rgba(55,100,55,0.22);
+
+      border:
+        1px solid rgba(100,160,100,0.35);
+    }
+
+
+    .mensagem-status.erro {
+      display: block;
+
+      color: #f0d4d4;
+
+      background: rgba(120,45,45,0.22);
+
+      border:
+        1px solid rgba(180,90,90,0.35);
+    }
+
+
+    /* =====================================================
+       MENSAGENS PUBLICADAS
+    ====================================================== */
+
+    .mural-mensagens {
+      margin-top: 45px;
+    }
+
+
+    .mural-mensagens h3 {
+      margin: 0 0 20px;
+
+      color: #fff;
+
+      font-family: var(--font-serif);
+
+      font-size: 1.6rem;
+
+      font-weight: 400;
+    }
+
+
+    .lista-mensagens {
+      display: grid;
+
+      gap: 15px;
+    }
+
+
+    .mensagem-card {
+      padding: 20px;
+
+      background: rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      border-radius: 4px;
+    }
+
+
+    .mensagem-cabecalho {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .mensagem-nome {
+      color: var(--gold-primary);
+
+      font-weight: 700;
+
+      font-size: 0.82rem;
+    }
+
+
+    .mensagem-data {
+      color: #777;
+
+      font-size: 0.68rem;
+    }
+
+
+    .mensagem-leitura {
+      margin-bottom: 10px;
+
+      color: #aaa;
+
+      font-size: 0.7rem;
+
+      font-style: italic;
+    }
+
+
+    .mensagem-texto {
+      margin: 0;
+
+      color: rgba(255,255,255,0.76);
+
+      font-size: 0.84rem;
+
+      line-height: 1.75;
+
+      white-space: pre-line;
+    }
+
+
+    .sem-mensagens {
+      padding: 20px;
+
+      color: #888;
+
+      font-size: 0.8rem;
+
+      border:
+        1px dashed rgba(255,255,255,0.12);
+
+      border-radius: 4px;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       LEITURA + ORAÇÃO
+    ====================================================== */
 
     .duas-secoes {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 25px;
+
       margin-bottom: 80px;
     }
 
 
     .bloco-imagem {
       min-height: 330px;
+
       position: relative;
+
       overflow: hidden;
+
       display: flex;
+
       align-items: flex-end;
-      border: 1px solid var(--border-color);
+
+      border:
+        1px solid var(--border-color);
+
       border-radius: 5px;
+
       background: #171513;
     }
 
 
     .bloco-imagem img {
       position: absolute;
+
       inset: 0;
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
     }
 
 
     .bloco-imagem::after {
       content: "";
+
       position: absolute;
+
       inset: 0;
+
       background:
         linear-gradient(
           to top,
@@ -558,91 +1021,133 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
     .bloco-imagem-conteudo {
       position: relative;
+
       z-index: 2;
+
       padding: 30px;
     }
 
 
     .bloco-imagem-conteudo h3 {
       margin: 0 0 8px;
+
       color: #fff;
+
       font-family: var(--font-serif);
+
       font-size: 1.8rem;
+
       font-weight: 400;
     }
 
 
     .bloco-imagem-conteudo p {
       margin: 0 0 18px;
+
       color: rgba(255,255,255,0.7);
+
       font-size: 0.82rem;
+
       line-height: 1.65;
     }
 
 
     .botao-secundario {
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
+
       padding: 11px 17px;
-      border: 1px solid var(--border-color);
+
+      border:
+        1px solid var(--border-color);
+
       color: #fff;
+
+      background: transparent;
+
       text-decoration: none;
+
       font-size: 0.68rem;
+
       font-weight: 700;
+
       letter-spacing: 1px;
+
       text-transform: uppercase;
+
+      cursor: pointer;
+
       transition: 0.3s ease;
     }
 
 
     .botao-secundario:hover {
       border-color: var(--gold-primary);
+
       color: var(--gold-primary);
     }
 
 
     /* =====================================================
        CHAMADA FINAL
-    ===================================================== */
+    ====================================================== */
 
     .convite-final {
       padding: 45px 30px;
+
       text-align: center;
-      border-top: 1px solid rgba(201,158,92,0.25);
-      border-bottom: 1px solid rgba(201,158,92,0.25);
+
+      border-top:
+        1px solid rgba(201,158,92,0.25);
+
+      border-bottom:
+        1px solid rgba(201,158,92,0.25);
+
       margin-bottom: 20px;
     }
 
 
     .convite-final i {
       color: var(--gold-primary);
+
       font-size: 1.5rem;
+
       margin-bottom: 15px;
     }
 
 
     .convite-final h2 {
       margin: 0 0 10px;
+
       color: #fff;
+
       font-family: var(--font-serif);
+
       font-size: 2rem;
+
       font-weight: 400;
     }
 
 
     .convite-final p {
       max-width: 650px;
+
       margin: 0 auto;
+
       color: var(--text-muted);
+
       font-size: 0.88rem;
+
       line-height: 1.7;
     }
 
 
     /* =====================================================
        RESPONSIVO
-    ===================================================== */
+    ====================================================== */
 
     @media (max-width: 950px) {
 
@@ -662,7 +1167,6 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
       .hero-leitor {
         min-height: 420px;
-        background-position: center;
       }
 
 
@@ -678,7 +1182,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
       .devocional-card {
         grid-template-columns: 1fr;
+
         text-align: center;
+
         padding: 25px;
       }
 
@@ -690,17 +1196,13 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
       .devocional-conteudo p {
         margin-left: auto;
+
         margin-right: auto;
       }
 
 
       .devocional-botoes {
         justify-content: center;
-      }
-
-
-      .secao-mural {
-        min-height: 460px;
       }
 
 
@@ -753,6 +1255,31 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       }
 
 
+      .mural-formulario {
+        padding: 22px;
+      }
+
+
+      .mural-acoes {
+        flex-direction: column;
+      }
+
+
+      .botao-enviar-mensagem,
+      .botao-cancelar-mural {
+        width: 100%;
+      }
+
+
+      .mensagem-cabecalho {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+      }
+
+
       .convite-final {
         padding: 35px 15px;
       }
@@ -789,7 +1316,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
     <span class="brand-sub">
-      Escritor & Palestrante
+      Escritor &amp; Palestrante
     </span>
 
   </div>
@@ -797,7 +1324,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 </div>
 
 
-<!-- MENU DESKTOP -->
+<!-- =================================================
+     MENU DESKTOP
+================================================== -->
 
 <nav class="menu-desktop">
 
@@ -843,13 +1372,16 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 </nav>
 
 
-<!-- MENU MOBILE -->
+<!-- =================================================
+     MENU MOBILE
+================================================== -->
 
 <button
   type="button"
   class="botao-menu-mobile"
   id="botaoMenu"
   aria-label="Abrir menu"
+  aria-expanded="false"
   onclick="alternarMenu()"
 >
 
@@ -861,7 +1393,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
   </header>
 
   <!-- =====================================================
-       MENU MOBILE
+       MENU MOBILE DROPDOWN
   ====================================================== -->
 
   <div
@@ -917,9 +1449,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
   <main class="pagina-leitor">
 
 ```
-<!-- ===================================================
+<!-- =================================================
      HERO
-==================================================== -->
+================================================== -->
 
 <section class="hero-leitor">
 
@@ -938,12 +1470,10 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
     <p>
-
       Um lugar para ler, refletir, orar e compartilhar.
       Aqui você encontrará conteúdos para fortalecer sua
-      caminhada cristã e também poderá fazer parte de uma
-      comunidade de leitores que desejam crescer na fé.
-
+      caminhada e também poderá fazer parte de uma
+      comunidade de leitores.
     </p>
 
 
@@ -953,9 +1483,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 </section>
 
 
-<!-- ===================================================
+<!-- =================================================
      ATALHOS
-==================================================== -->
+================================================== -->
 
 <section>
 
@@ -966,9 +1496,11 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
       Explore
     </span>
 
+
     <h2>
       Encontre um lugar para permanecer
     </h2>
+
 
     <div class="linha-dourada-leitor"></div>
 
@@ -978,7 +1510,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
   <div class="atalhos-leitor">
 
 
-    <!-- DEVOCIONAL -->
+    <!-- DEVOCIONAIS -->
 
     <a
       href="#devocionais"
@@ -1006,7 +1538,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
         <span>
-          Leituras rápidas para refletir e fortalecer a fé.
+          Leituras para refletir e fortalecer a fé.
         </span>
 
       </div>
@@ -1042,7 +1574,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
         <span>
-          Descubra novos conteúdos para sua caminhada.
+          Reserve um tempo para ler e refletir.
         </span>
 
       </div>
@@ -1078,7 +1610,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
         <span>
-          Um espaço para apresentar pedidos e interceder.
+          Um espaço para apresentar seus pedidos.
         </span>
 
       </div>
@@ -1124,12 +1656,13 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
   </div>
 
+
 </section>
 
 
-<!-- ===================================================
+<!-- =================================================
      DEVOCIONAIS
-==================================================== -->
+================================================== -->
 
 <section
   id="devocionais"
@@ -1151,11 +1684,8 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
     <p>
-
       Pequenas leituras para grandes momentos de reflexão.
-      Leia diretamente no navegador ou baixe o PDF para
-      guardar e ler quando quiser.
-
+      Leia diretamente no navegador ou baixe o PDF.
     </p>
 
 
@@ -1168,7 +1698,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
   <div class="devocionais-lista">
 
 
-    <!-- DEVOCIONAL 01 -->
+    <!-- =================================================
+         DEVOCIONAL 01
+    ================================================== -->
 
     <article class="devocional-card">
 
@@ -1230,9 +1762,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
         <div class="devocional-observacao">
-
           Arquivo PDF • Leitura gratuita
-
         </div>
 
 
@@ -1242,7 +1772,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
     </article>
 
 
-    <!-- DEVOCIONAL 02 -->
+    <!-- =================================================
+         DEVOCIONAL 02
+    ================================================== -->
 
     <article class="devocional-card">
 
@@ -1304,9 +1836,7 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
         <div class="devocional-observacao">
-
           Arquivo PDF • Leitura gratuita
-
         </div>
 
 
@@ -1322,9 +1852,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 </section>
 
 
-<!-- ===================================================
+<!-- =================================================
      MURAL
-==================================================== -->
+================================================== -->
 
 <section
   id="mural"
@@ -1345,24 +1875,21 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
     </h2>
 
 
-    <p>
-
-      O que Deus falou ao seu coração hoje?
-
-      Compartilhe uma reflexão, um versículo, um
-      testemunho ou uma palavra que possa edificar
-      outra pessoa.
-
+    <p class="mural-introducao">
+      O que Deus falou ao seu coração durante uma leitura?
+      Compartilhe uma reflexão, um versículo, um testemunho
+      ou uma palavra que possa edificar outra pessoa.
     </p>
 
 
     <div class="mural-frase">
-
-      “Compartilhe aquilo que Deus está fazendo
-      em sua caminhada.”
-
+      “Compartilhe aquilo que Deus está fazendo em sua caminhada.”
     </div>
 
+
+    <!-- =================================================
+         BOTÃO ABRIR FORMULÁRIO
+    ================================================== -->
 
     <button
       type="button"
@@ -1377,15 +1904,160 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
     </button>
 
 
+    <!-- =================================================
+         FORMULÁRIO
+    ================================================== -->
+
+    <div
+      id="muralFormulario"
+      class="mural-formulario"
+    >
+
+
+      <h3>
+        Deixe sua mensagem
+      </h3>
+
+
+      <form id="formularioMural">
+
+
+        <div class="campo-mural">
+
+          <label for="nomeLeitor">
+            Seu nome
+          </label>
+
+
+          <input
+            type="text"
+            id="nomeLeitor"
+            name="nome"
+            maxlength="80"
+            required
+            placeholder="Como gostaria de ser identificado?"
+          >
+
+        </div>
+
+
+        <div class="campo-mural">
+
+          <label for="leituraLeitor">
+            O que você leu?
+          </label>
+
+
+          <input
+            type="text"
+            id="leituraLeitor"
+            name="leitura"
+            maxlength="120"
+            placeholder="Ex.: Devocional Promessas"
+          >
+
+        </div>
+
+
+        <div class="campo-mural">
+
+          <label for="mensagemLeitor">
+            Sua mensagem
+          </label>
+
+
+          <textarea
+            id="mensagemLeitor"
+            name="mensagem"
+            maxlength="1000"
+            required
+            placeholder="Escreva aqui sua reflexão, testemunho ou mensagem..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="mural-acoes">
+
+
+          <button
+            type="submit"
+            class="botao-enviar-mensagem"
+            id="botaoEnviarMensagem"
+          >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Enviar mensagem
+
+          </button>
+
+
+          <button
+            type="button"
+            class="botao-cancelar-mural"
+            onclick="fecharMural()"
+          >
+
+            Cancelar
+
+          </button>
+
+
+        </div>
+
+
+        <div
+          id="mensagemStatus"
+          class="mensagem-status"
+        ></div>
+
+
+      </form>
+
+
+    </div>
+
+
+    <!-- =================================================
+         MENSAGENS PUBLICADAS
+    ================================================== -->
+
+    <div
+      id="muralMensagens"
+      class="mural-mensagens"
+    >
+
+
+      <h3>
+        Mensagens dos leitores
+      </h3>
+
+
+      <div
+        id="listaMensagens"
+        class="lista-mensagens"
+      >
+
+        <div class="sem-mensagens">
+          Carregando mensagens...
+        </div>
+
+      </div>
+
+
+    </div>
+
+
   </div>
 
 
 </section>
 
 
-<!-- ===================================================
+<!-- =================================================
      LEITURA + ORAÇÃO
-==================================================== -->
+================================================== -->
 
 <section
   id="leitura"
@@ -1413,11 +2085,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
       <p>
-
         Separe alguns minutos do seu dia para desacelerar,
         ler e permitir que uma boa palavra encontre espaço
         dentro de você.
-
       </p>
 
 
@@ -1462,10 +2132,8 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
       <p>
-
-        Em breve você poderá deixar seu pedido de oração
-        e também interceder pelos pedidos de outros leitores.
-
+        Apresente seus pedidos a Deus e reserve um momento
+        para interceder e buscar Sua presença.
       </p>
 
 
@@ -1491,9 +2159,9 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 </section>
 
 
-<!-- ===================================================
-     BÍBLIA
-==================================================== -->
+<!-- =================================================
+     CHAMADA FINAL
+================================================== -->
 
 <section
   id="biblia"
@@ -1510,12 +2178,10 @@ content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, o
 
 
   <p>
-
-    A caminhada cristã é feita de encontros:
+    A caminhada é feita de encontros:
     com a Palavra, com Deus e também com pessoas.
     Este espaço continuará crescendo para acompanhar
     você nessa jornada.
-
   </p>
 
 
@@ -1575,18 +2241,42 @@ Todos os direitos reservados.
 
 
     /* =====================================================
+       CONFIGURAÇÃO SUPABASE
+    ====================================================== */
+
+    const SUPABASE_URL =
+      "COLE_AQUI_A_URL_DO_SEU_SUPABASE";
+
+
+    const SUPABASE_ANON_KEY =
+      "COLE_AQUI_A_SUA_CHAVE_ANON_PUBLICA";
+
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+      );
+
+
+    /* =====================================================
        MENU MOBILE
-    ===================================================== */
+    ====================================================== */
 
     function alternarMenu() {
 
       const menu =
-        document.getElementById(
-          "menuConteudo"
-        );
+        document.getElementById("menuConteudo");
 
-      menu.classList.toggle(
-        "aberto"
+      const botao =
+        document.getElementById("botaoMenu");
+
+      const aberto =
+        menu.classList.toggle("aberto");
+
+      botao.setAttribute(
+        "aria-expanded",
+        aberto ? "true" : "false"
       );
 
     }
@@ -1596,14 +2286,18 @@ Todos os direitos reservados.
 
       if (window.innerWidth <= 850) {
 
-        document
-          .getElementById(
-            "menuConteudo"
-          )
-          .classList
-          .remove(
-            "aberto"
-          );
+        const menu =
+          document.getElementById("menuConteudo");
+
+        const botao =
+          document.getElementById("botaoMenu");
+
+        menu.classList.remove("aberto");
+
+        botao.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
       }
 
@@ -1627,17 +2321,458 @@ Todos os direitos reservados.
 
 
     /* =====================================================
-       MURAL
-       TEMPORARIAMENTE
+       MURAL — ABRIR
     ====================================================== */
 
     function abrirMural() {
 
-      alert(
-        "O Mural está sendo preparado. Em breve você poderá deixar sua mensagem e interagir com outros leitores."
+      const formulario =
+        document.getElementById(
+          "muralFormulario"
+        );
+
+
+      formulario.classList.add(
+        "visivel"
+      );
+
+
+      formulario.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+
+      setTimeout(
+        function() {
+
+          document
+            .getElementById("nomeLeitor")
+            .focus();
+
+        },
+        500
       );
 
     }
+
+
+    /* =====================================================
+       MURAL — FECHAR
+    ====================================================== */
+
+    function fecharMural() {
+
+      const formulario =
+        document.getElementById(
+          "muralFormulario"
+        );
+
+
+      formulario.classList.remove(
+        "visivel"
+      );
+
+
+      limparStatus();
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    function mostrarStatus(
+      mensagem,
+      tipo
+    ) {
+
+      const status =
+        document.getElementById(
+          "mensagemStatus"
+        );
+
+
+      status.textContent =
+        mensagem;
+
+
+      status.className =
+        "mensagem-status " +
+        tipo;
+
+    }
+
+
+    function limparStatus() {
+
+      const status =
+        document.getElementById(
+          "mensagemStatus"
+        );
+
+
+      status.textContent = "";
+
+      status.className =
+        "mensagem-status";
+
+    }
+
+
+    /* =====================================================
+       ESCAPAR HTML
+       Protege o mural contra HTML inserido pelo usuário.
+    ====================================================== */
+
+    function escaparHTML(texto) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent =
+        texto ?? "";
+
+      return div.innerHTML;
+
+    }
+
+
+    /* =====================================================
+       FORMATAÇÃO DA DATA
+    ====================================================== */
+
+    function formatarData(data) {
+
+      if (!data) {
+        return "";
+      }
+
+
+      const dataObj =
+        new Date(data);
+
+
+      return dataObj.toLocaleDateString(
+        "pt-BR",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       CARREGAR MENSAGENS APROVADAS
+    ====================================================== */
+
+    async function carregarMensagens() {
+
+      const lista =
+        document.getElementById(
+          "listaMensagens"
+        );
+
+
+      lista.innerHTML =
+        '<div class="sem-mensagens">Carregando mensagens...</div>';
+
+
+      try {
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("mensagens_mural")
+            .select(
+              "id, nome, mensagem, leitura, created_at"
+            )
+            .eq(
+              "aprovada",
+              true
+            )
+            .order(
+              "created_at",
+              {
+                ascending: false
+              }
+            );
+
+
+        if (error) {
+
+          console.error(
+            "Erro ao carregar mensagens:",
+            error
+          );
+
+          lista.innerHTML =
+            '<div class="sem-mensagens">Não foi possível carregar as mensagens no momento.</div>';
+
+          return;
+
+        }
+
+
+        if (!data || data.length === 0) {
+
+          lista.innerHTML =
+            '<div class="sem-mensagens">Ainda não há mensagens publicadas. Seja o primeiro a compartilhar uma palavra.</div>';
+
+          return;
+
+        }
+
+
+        lista.innerHTML =
+          data
+            .map(
+              function(item) {
+
+                const leitura =
+                  item.leitura
+                    ? `
+                      <div class="mensagem-leitura">
+                        Leitura: ${escaparHTML(item.leitura)}
+                      </div>
+                    `
+                    : "";
+
+
+                return `
+                  <article class="mensagem-card">
+
+                    <div class="mensagem-cabecalho">
+
+                      <div class="mensagem-nome">
+                        ${escaparHTML(item.nome)}
+                      </div>
+
+                      <div class="mensagem-data">
+                        ${formatarData(item.created_at)}
+                      </div>
+
+                    </div>
+
+                    ${leitura}
+
+                    <p class="mensagem-texto">
+                      ${escaparHTML(item.mensagem)}
+                    </p>
+
+                  </article>
+                `;
+
+              }
+            )
+            .join("");
+
+
+      } catch (erro) {
+
+        console.error(
+          "Erro inesperado:",
+          erro
+        );
+
+
+        lista.innerHTML =
+          '<div class="sem-mensagens">Ocorreu um erro ao carregar o mural.</div>';
+
+      }
+
+    }
+
+
+    /* =====================================================
+       ENVIAR MENSAGEM
+    ====================================================== */
+
+    document
+      .getElementById("formularioMural")
+      .addEventListener(
+        "submit",
+        async function(event) {
+
+          event.preventDefault();
+
+
+          const botao =
+            document.getElementById(
+              "botaoEnviarMensagem"
+            );
+
+
+          const nome =
+            document
+              .getElementById("nomeLeitor")
+              .value
+              .trim();
+
+
+          const leitura =
+            document
+              .getElementById("leituraLeitor")
+              .value
+              .trim();
+
+
+          const mensagem =
+            document
+              .getElementById("mensagemLeitor")
+              .value
+              .trim();
+
+
+          if (!nome) {
+
+            mostrarStatus(
+              "Digite seu nome para enviar a mensagem.",
+              "erro"
+            );
+
+            return;
+
+          }
+
+
+          if (!mensagem) {
+
+            mostrarStatus(
+              "Escreva sua mensagem antes de enviar.",
+              "erro"
+            );
+
+            return;
+
+          }
+
+
+          if (nome.length < 2) {
+
+            mostrarStatus(
+              "Digite um nome válido.",
+              "erro"
+            );
+
+            return;
+
+          }
+
+
+          if (mensagem.length < 5) {
+
+            mostrarStatus(
+              "Sua mensagem precisa ter pelo menos alguns caracteres.",
+              "erro"
+            );
+
+            return;
+
+          }
+
+
+          botao.disabled = true;
+
+
+          botao.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+
+          limparStatus();
+
+
+          try {
+
+            const {
+              error
+            } =
+              await supabaseClient
+                .from("mensagens_mural")
+                .insert([
+                  {
+                    nome: nome,
+                    leitura: leitura || null,
+                    mensagem: mensagem,
+                    aprovada: false
+                  }
+                ]);
+
+
+            if (error) {
+
+              console.error(
+                "Erro ao enviar mensagem:",
+                error
+              );
+
+
+              mostrarStatus(
+                "Não foi possível enviar sua mensagem. Tente novamente.",
+                "erro"
+              );
+
+
+              botao.disabled = false;
+
+
+              botao.innerHTML =
+                '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+
+
+              return;
+
+            }
+
+
+            mostrarStatus(
+              "Mensagem enviada com sucesso! Ela ficará aguardando aprovação antes de aparecer no mural.",
+              "sucesso"
+            );
+
+
+            document
+              .getElementById("formularioMural")
+              .reset();
+
+
+            botao.disabled = false;
+
+
+            botao.innerHTML =
+              '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+
+
+          } catch (erro) {
+
+            console.error(
+              "Erro inesperado:",
+              erro
+            );
+
+
+            mostrarStatus(
+              "Ocorreu um erro ao enviar sua mensagem.",
+              "erro"
+            );
+
+
+            botao.disabled = false;
+
+
+            botao.innerHTML =
+              '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+
+          }
+
+        }
+      );
 
 
     /* =====================================================
@@ -1655,17 +2790,32 @@ Todos os direitos reservados.
             "click",
             function(event) {
 
+              const seletor =
+                this.getAttribute("href");
+
+
+              if (
+                !seletor ||
+                seletor === "#"
+              ) {
+                return;
+              }
+
+
               const destino =
                 document.querySelector(
-                  this.getAttribute("href")
+                  seletor
                 );
+
 
               if (destino) {
 
                 event.preventDefault();
 
+
                 destino.scrollIntoView({
-                  behavior: "smooth"
+                  behavior: "smooth",
+                  block: "start"
                 });
 
               }
@@ -1676,9 +2826,22 @@ Todos os direitos reservados.
         }
       );
 
+
+    /* =====================================================
+       INICIALIZAÇÃO
+    ====================================================== */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+
+        carregarMensagens();
+
+      }
+    );
+
   </script>
 
 </body>
 
 </html>
-
