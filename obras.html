@@ -18,7 +18,10 @@
     content="Conheça as obras de Francisco Denilson Pinheiro e acesse seus devocionais em PDF."
   >
 
-  <!-- FONTES -->
+  <!-- =====================================================
+       FONTES
+  ====================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -32,13 +35,21 @@
     rel="stylesheet"
   >
 
-  <!-- ÍCONES -->
+
+  <!-- =====================================================
+       ÍCONES
+  ====================================================== -->
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
 
-  <!-- ESTILO PRINCIPAL -->
+
+  <!-- =====================================================
+       ESTILO PRINCIPAL
+  ====================================================== -->
+
   <link
     rel="stylesheet"
     href="style.css"
@@ -52,15 +63,10 @@
     ===================================================== */
 
     .pagina {
-
       width: 100%;
-
       max-width: 1100px;
-
       margin: 0 auto;
-
       padding: 60px 20px 80px;
-
     }
 
 
@@ -69,59 +75,36 @@
     ===================================================== */
 
     .livro {
-
       display: grid;
-
       grid-template-columns: 300px 1fr;
-
       gap: 55px;
-
       align-items: start;
-
       padding: 45px;
-
       background: var(--bg-card);
-
       border: 1px solid var(--border-color);
-
       border-radius: 5px;
-
-      box-shadow:
-        0 20px 50px rgba(0,0,0,0.35);
-
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
     }
 
 
     /* =====================================================
-       CAPA
+       CAPA DO LIVRO
     ===================================================== */
 
     .livro-capa {
-
       display: flex;
-
       justify-content: center;
-
       align-items: flex-start;
-
     }
 
 
     .livro-capa img {
-
       width: 100%;
-
       max-width: 270px;
-
       height: auto;
-
       display: block;
-
       border-radius: 4px;
-
-      box-shadow:
-        0 18px 40px rgba(0,0,0,0.55);
-
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
     }
 
 
@@ -130,77 +113,47 @@
     ===================================================== */
 
     .livro-info h1 {
-
       font-family: var(--font-serif);
-
       font-size: 2.4rem;
-
       line-height: 1.15;
-
       font-weight: 500;
-
       color: #fff;
-
       margin-bottom: 12px;
-
     }
 
 
     .livro-subtitulo {
-
       color: var(--gold-primary);
-
       font-size: 1rem;
-
       font-style: italic;
-
       line-height: 1.6;
-
       margin-bottom: 25px;
-
     }
 
 
     .livro-autor {
-
       color: var(--text-muted);
-
       font-size: 0.85rem;
-
       margin-bottom: 25px;
-
     }
 
 
     .livro-autor strong {
-
       color: var(--gold-primary);
-
       text-transform: uppercase;
-
       font-size: 0.7rem;
-
       letter-spacing: 1.5px;
-
       display: block;
-
       margin-bottom: 4px;
-
     }
 
 
     .livro-descricao {
-
       color: var(--text-muted);
-
       font-size: 0.95rem;
-
       line-height: 1.8;
-
       font-weight: 300;
-
       margin-bottom: 25px;
-
     }
 
 
@@ -209,114 +162,66 @@
     ===================================================== */
 
     .botoes {
-
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 12px;
-
       margin-top: 25px;
-
     }
 
 
     .button {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       min-height: 50px;
-
       padding: 13px 18px;
-
       text-align: center;
-
       text-decoration: none;
-
       font-family: var(--font-sans);
-
       font-size: 0.75rem;
-
       font-weight: 600;
-
       letter-spacing: 1px;
-
       text-transform: uppercase;
-
       border-radius: 2px;
-
       cursor: pointer;
-
       transition: all 0.3s ease;
-
       gap: 9px;
-
-    }
-
-
-    .button {
-
       background: var(--gold-primary);
-
       color: #171513;
-
       border: 1px solid var(--gold-primary);
-
     }
 
 
     .button:hover {
-
       background: #e0bd7d;
-
       border-color: #e0bd7d;
-
     }
 
 
     .button-outline {
-
       background: transparent;
-
       color: var(--text-light);
-
       border: 1px solid var(--border-color);
-
     }
 
 
     .button-outline:hover {
-
       color: var(--gold-primary);
-
       border-color: var(--gold-primary);
-
       background: rgba(201,158,92,0.05);
-
     }
 
 
     .button-dark {
-
       background: #171513;
-
       color: #fff;
-
       border: 1px solid var(--border-color);
-
     }
 
 
     .button-dark:hover {
-
       border-color: var(--gold-primary);
-
       color: var(--gold-primary);
-
     }
 
 
@@ -325,709 +230,436 @@
     ===================================================== */
 
     .devocionais {
-
       margin-top: 70px;
-
     }
 
 
     .devocionais-cabecalho {
-
       text-align: center;
-
       margin-bottom: 35px;
-
     }
 
 
     .devocionais-cabecalho .pequeno {
-
       display: block;
-
       margin-bottom: 10px;
-
       color: var(--gold-primary);
-
       font-family: var(--font-sans);
-
       font-size: 0.7rem;
-
       font-weight: 700;
-
       letter-spacing: 2px;
-
       text-transform: uppercase;
-
     }
 
 
     .devocionais-cabecalho h2 {
-
       margin: 0;
-
       color: #fff;
-
       font-family: var(--font-serif);
-
       font-size: 2.2rem;
-
       font-weight: 400;
-
     }
 
 
     .devocionais-cabecalho p {
-
       max-width: 680px;
-
       margin: 12px auto 0;
-
       color: var(--text-muted);
-
       font-size: 0.9rem;
-
       line-height: 1.7;
-
     }
 
 
     .devocional-card {
-
       display: grid;
-
       grid-template-columns: 150px 1fr;
-
       gap: 30px;
-
       align-items: center;
-
       padding: 30px;
-
       background: var(--bg-card);
-
       border: 1px solid var(--border-color);
-
       border-radius: 5px;
-
-      box-shadow:
-        0 15px 35px rgba(0,0,0,0.22);
-
+      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
     }
 
 
+    /* =====================================================
+       CAPA DO DEVOCIONAL
+    ===================================================== */
+
     .devocional-capa {
-
       width: 150px;
-
       min-height: 190px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       border: 1px solid rgba(201,158,92,0.35);
-
       background:
         linear-gradient(
           145deg,
           rgba(201,158,92,0.12),
           rgba(201,158,92,0.03)
         );
-
       border-radius: 4px;
-
-      color: var(--gold-primary);
-
-      font-size: 2.5rem;
-
-      box-shadow:
-        0 12px 25px rgba(0,0,0,0.25);
-
-    }
-
-    .devocional-capa {
-  overflow: hidden;
-  padding: 0;
-}
-
-.devocional-capa canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-
-    .devocional-conteudo h3 {
-
-      color: #fff;
-
-      font-family: var(--font-serif);
-
-      font-size: 1.6rem;
-
-      font-weight: 400;
-
-      margin-bottom: 10px;
-
+      overflow: hidden;
+      padding: 0;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
     }
 
 
-    .devocional-conteudo p {
-
-      color: var(--text-muted);
-
-      font-size: 0.9rem;
-
-      line-height: 1.75;
-
-      margin-bottom: 20px;
-
-      max-width: 680px;
-
-    }
-
-
-    .devocional-botoes {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-    }
-
-
-    .devocional-botao {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 9px;
-
-      min-height: 45px;
-
-      padding: 11px 18px;
-
-      border-radius: 2px;
-
-      font-family: var(--font-sans);
-
-      font-size: 0.7rem;
-
-      font-weight: 700;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
-
-      text-decoration: none;
-
-      transition: all 0.3s ease;
-
-    }
-
-
-    .devocional-botao-leitura {
-
-      background: var(--gold-primary);
-
-      color: #171513;
-
-      border: 1px solid var(--gold-primary);
-
-    }
-
-
-    .devocional-botao-leitura:hover {
-
-      background: #e0bd7d;
-
-      border-color: #e0bd7d;
-
-      transform: translateY(-1px);
-
-    }
-
-
-    .devocional-botao-download {
-
-      background: transparent;
-
-      color: #fff;
-
-      border: 1px solid var(--border-color);
-
-    }
-
-
-    .devocional-botao-download:hover {
-
-      color: var(--gold-primary);
-
-      border-color: var(--gold-primary);
-
-    }
-
-
-    .devocional-observacao {
-
-      margin-top: 12px;
-
-      color: #777;
-
-      font-family: var(--font-sans);
-
-      font-size: 0.68rem;
-
+    .devocional-capa canvas {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
 
     /* =====================================================
-       ÁREA DE ACESSO DIGITAL
-       IMPORTANTE: PRESERVADA PARA O SUPABASE
+       CONTEÚDO DO DEVOCIONAL
+    ===================================================== */
+
+    .devocional-conteudo h3 {
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+
+    .devocional-conteudo p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 680px;
+    }
+
+
+    .devocional-botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+
+    .devocional-botao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 45px;
+      padding: 11px 18px;
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+
+    .devocional-botao-leitura {
+      background: var(--gold-primary);
+      color: #171513;
+      border: 1px solid var(--gold-primary);
+    }
+
+
+    .devocional-botao-leitura:hover {
+      background: #e0bd7d;
+      border-color: #e0bd7d;
+      transform: translateY(-1px);
+    }
+
+
+    .devocional-botao-download {
+      background: transparent;
+      color: #fff;
+      border: 1px solid var(--border-color);
+    }
+
+
+    .devocional-botao-download:hover {
+      color: var(--gold-primary);
+      border-color: var(--gold-primary);
+    }
+
+
+    .devocional-observacao {
+      margin-top: 12px;
+      color: #777;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+    }
+
+
+    /* =====================================================
+       ACESSO À LEITURA DIGITAL
+       PRESERVADO
     ===================================================== */
 
     .acesso-digital {
-
       margin-top: 45px;
-
       padding: 30px;
-
       border: 1px solid rgba(201,158,92,0.35);
-
       border-radius: 4px;
-
       background:
         linear-gradient(
           135deg,
           rgba(201,158,92,0.08),
           rgba(201,158,92,0.02)
         );
-
       text-align: center;
-
     }
 
 
     .acesso-icone {
-
       width: 52px;
-
       height: 52px;
-
       margin: 0 auto 15px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       border-radius: 50%;
-
       border: 1px solid var(--gold-primary);
-
       color: var(--gold-primary);
-
       font-size: 1.2rem;
-
     }
 
 
     .acesso-digital h2 {
-
       font-family: var(--font-serif);
-
       font-size: 1.6rem;
-
       font-weight: 400;
-
       color: #fff;
-
       margin-bottom: 10px;
-
     }
 
 
     .acesso-digital p {
-
       max-width: 650px;
-
       margin: 0 auto 20px;
-
       color: var(--text-muted);
-
       font-size: 0.88rem;
-
       line-height: 1.7;
-
     }
 
 
     .botao-leitura {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
       gap: 10px;
-
       padding: 14px 25px;
-
       background: var(--gold-primary);
-
       color: #171513;
-
       border: none;
-
       border-radius: 2px;
-
       font-family: var(--font-sans);
-
       font-size: 0.75rem;
-
       font-weight: 700;
-
       letter-spacing: 1.2px;
-
       text-transform: uppercase;
-
       cursor: pointer;
-
       transition: all 0.3s ease;
-
       text-decoration: none;
-
     }
 
 
     .botao-leitura:hover {
-
       background: #e0bd7d;
-
       transform: translateY(-1px);
-
     }
 
 
     /* =====================================================
        MODAL DE LOGIN
-       NÃO MEXER NA LÓGICA
     ===================================================== */
 
     .modal-login {
-
       position: fixed;
-
       inset: 0;
-
       display: none;
-
       align-items: center;
-
       justify-content: center;
-
       padding: 20px;
-
-      background: rgba(0, 0, 0, 0.78);
-
+      background: rgba(0,0,0,0.78);
       backdrop-filter: blur(5px);
-
       z-index: 9999;
-
     }
 
 
     .modal-login.aberto {
-
       display: flex;
-
     }
 
 
     .caixa-login {
-
       position: relative;
-
       width: 100%;
-
       max-width: 420px;
-
       padding: 40px 35px;
-
       background: var(--bg-card);
-
       border: 1px solid rgba(201,158,92,0.45);
-
       border-radius: 6px;
-
       box-shadow: 0 25px 70px rgba(0,0,0,0.65);
-
       animation: aparecerLogin 0.25s ease;
-
     }
 
 
     @keyframes aparecerLogin {
 
       from {
-
         opacity: 0;
-
         transform: translateY(15px) scale(0.97);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: translateY(0) scale(1);
-
       }
 
     }
 
 
     .fechar-login {
-
       position: absolute;
-
       top: 14px;
-
       right: 16px;
-
       width: 35px;
-
       height: 35px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       border: none;
-
       background: transparent;
-
       color: var(--text-muted);
-
       font-size: 1.2rem;
-
       cursor: pointer;
-
       transition: 0.3s ease;
-
     }
 
 
     .fechar-login:hover {
-
       color: var(--gold-primary);
-
     }
 
 
     .icone-login {
-
       width: 58px;
-
       height: 58px;
-
       margin: 0 auto 18px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       border-radius: 50%;
-
       border: 1px solid var(--gold-primary);
-
       color: var(--gold-primary);
-
       font-size: 1.3rem;
-
     }
 
 
     .caixa-login h2 {
-
       margin-bottom: 10px;
-
       text-align: center;
-
       font-family: var(--font-serif);
-
       font-size: 1.7rem;
-
       font-weight: 400;
-
       color: #fff;
-
     }
 
 
     .texto-login {
-
       margin-bottom: 25px;
-
       text-align: center;
-
       color: var(--text-muted);
-
       font-size: 0.85rem;
-
       line-height: 1.6;
-
     }
 
 
     .campo-login {
-
       margin-bottom: 18px;
-
     }
 
 
     .campo-login label {
-
       display: block;
-
       margin-bottom: 7px;
-
       color: var(--gold-primary);
-
       font-size: 0.72rem;
-
       font-weight: 600;
-
       letter-spacing: 1px;
-
       text-transform: uppercase;
-
     }
 
 
     .campo-login input {
-
       width: 100%;
-
       padding: 13px 14px;
-
       box-sizing: border-box;
-
       background: #171513;
-
       border: 1px solid var(--border-color);
-
       border-radius: 3px;
-
       color: #fff;
-
       font-family: var(--font-sans);
-
       font-size: 0.9rem;
-
       outline: none;
-
       transition: 0.3s ease;
-
     }
 
 
     .campo-login input:focus {
-
       border-color: var(--gold-primary);
-
       box-shadow: 0 0 0 2px rgba(201,158,92,0.08);
-
     }
 
 
     .campo-login input::placeholder {
-
       color: #777;
-
     }
 
 
     .botao-entrar {
-
       width: 100%;
-
       min-height: 50px;
-
       margin-top: 8px;
-
       border: 1px solid var(--gold-primary);
-
       border-radius: 2px;
-
       background: var(--gold-primary);
-
       color: #171513;
-
       font-family: var(--font-sans);
-
       font-size: 0.75rem;
-
       font-weight: 700;
-
       letter-spacing: 1px;
-
       text-transform: uppercase;
-
       cursor: pointer;
-
       transition: 0.3s ease;
-
     }
 
 
     .botao-entrar:hover {
-
       background: #e0bd7d;
-
       border-color: #e0bd7d;
-
     }
 
 
     .botao-entrar:disabled {
-
       opacity: 0.6;
-
       cursor: wait;
-
     }
 
 
     .mensagem-login {
-
       min-height: 20px;
-
       margin-top: 15px;
-
       text-align: center;
-
       color: #d99;
-
       font-size: 0.8rem;
-
       line-height: 1.5;
-
     }
 
 
@@ -1038,99 +670,69 @@
     @media (max-width: 800px) {
 
       .pagina {
-
         padding: 40px 15px 60px;
-
       }
 
 
       .livro {
-
         grid-template-columns: 1fr;
-
         gap: 30px;
-
         padding: 25px;
-
       }
 
 
       .livro-capa img {
-
         max-width: 240px;
-
       }
 
 
       .livro-info h1 {
-
         font-size: 2rem;
-
         text-align: center;
-
       }
 
 
       .livro-subtitulo,
       .livro-autor {
-
         text-align: center;
-
       }
 
 
       .botoes {
-
         grid-template-columns: 1fr;
-
       }
 
 
       .devocional-card {
-
         grid-template-columns: 1fr;
-
         text-align: center;
-
         padding: 25px;
-
       }
 
 
       .devocional-capa {
-
         margin: 0 auto;
-
       }
 
 
       .devocional-conteudo p {
-
         margin-left: auto;
-
         margin-right: auto;
-
       }
 
 
       .devocional-botoes {
-
         justify-content: center;
-
       }
 
 
       .acesso-digital {
-
         padding: 25px 18px;
-
       }
 
 
       .caixa-login {
-
         padding: 35px 22px;
-
       }
 
     }
@@ -1139,16 +741,12 @@
     @media (max-width: 500px) {
 
       .devocional-botoes {
-
         flex-direction: column;
-
       }
 
 
       .devocional-botao {
-
         width: 100%;
-
       }
 
     }
@@ -1156,15 +754,23 @@
   </style>
 
 
- <!-- SUPABASE -->
-<script
- SUPABASE_PUBLISHABLE_KEY
-></script>
+  <!-- =====================================================
+       SUPABASE
+       IMPORTANTE: NÃO ALTERAR
+  ====================================================== -->
 
-<!-- PDF.JS -->
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
-></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+
+  <!-- =====================================================
+       PDF.JS
+  ====================================================== -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+  ></script>
 
 </head>
 
@@ -1174,7 +780,6 @@
 
   <!-- =====================================================
        MODAL DE LOGIN
-       PRESERVADO
   ===================================================== -->
 
   <div
@@ -1227,6 +832,7 @@
             E-mail
           </label>
 
+
           <input
             type="email"
             id="emailLogin"
@@ -1243,6 +849,7 @@
           <label for="senhaLogin">
             Senha
           </label>
+
 
           <input
             type="password"
@@ -1359,7 +966,7 @@
     </nav>
 
 
-    <!-- MENU MOBILE -->
+    <!-- BOTÃO MENU MOBILE -->
 
     <button
       type="button"
@@ -1459,27 +1066,21 @@
 
 
     <!-- =================================================
-         LIVRO PRINCIPAL
+         LIVRO
     ================================================= -->
 
     <article class="livro">
 
 
-      <!-- CAPA -->
-
       <div class="livro-capa">
-
 
         <img
           src="capa.jpg"
           alt="Capa do livro Antes Que Eu Seja Usado"
         >
 
-
       </div>
 
-
-      <!-- INFORMAÇÕES -->
 
       <div class="livro-info">
 
@@ -1518,8 +1119,6 @@
 
         </p>
 
-
-        <!-- BOTÕES -->
 
         <div class="botoes">
 
@@ -1632,17 +1231,17 @@
       <article class="devocional-card">
 
 
-        <!-- CAPA / ÍCONE -->
-
         <div
-  class="devocional-capa"
-  aria-label="Capa do Devocional 01"
->
-  <canvas id="capaDevocional"></canvas>
-</div>
+          class="devocional-capa"
+          aria-label="Capa do Devocional 01"
+        >
 
+          <canvas
+            id="capaDevocional"
+          ></canvas>
 
-        <!-- CONTEÚDO -->
+        </div>
+
 
         <div class="devocional-conteudo">
 
@@ -1663,8 +1262,6 @@
           <div class="devocional-botoes">
 
 
-            <!-- LER ONLINE -->
-
             <a
               href="devocionais/devocional-01.pdf"
               target="_blank"
@@ -1678,8 +1275,6 @@
 
             </a>
 
-
-            <!-- BAIXAR -->
 
             <a
               href="devocionais/devocional-01.pdf"
@@ -1715,7 +1310,7 @@
 
     <!-- =================================================
          ACESSO À LEITURA DIGITAL
-         NÃO ALTERAR
+         PRESERVADO
     ================================================= -->
 
     <section class="acesso-digital">
@@ -1745,7 +1340,10 @@
       </p>
 
 
-      <!-- BOTÃO PARA A BIBLIOTECA -->
+      <!-- =================================================
+           BOTÃO DE ACESSO
+           NÃO ALTERAR
+      ================================================= -->
 
       <button
         type="button"
@@ -1812,7 +1410,6 @@
 
   <!-- =====================================================
        JAVASCRIPT
-       SUPABASE PRESERVADO
   ===================================================== -->
 
   <script>
@@ -1820,6 +1417,7 @@
 
     /* =====================================================
        CONFIGURAÇÃO DO SUPABASE
+       PRESERVADA
     ===================================================== */
 
     const SUPABASE_URL =
@@ -1835,100 +1433,154 @@
         SUPABASE_URL,
         SUPABASE_PUBLISHABLE_KEY
       );
-  /* =====================================================
-   CAPA DO DEVOCIONAL — PRIMEIRA PÁGINA DO PDF
-===================================================== */
 
-const urlDevocional =
-  "devocionais/devocional-01.pdf";
 
-const canvasDevocional =
-  document.getElementById("capaDevocional");
+    /* =====================================================
+       CAPA DO DEVOCIONAL
+       PRIMEIRA PÁGINA DO PDF
+    ===================================================== */
 
-if (canvasDevocional) {
+    const urlDevocional =
+      "devocionais/devocional-01.pdf";
 
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-  pdfjsLib
-    .getDocument(urlDevocional)
-    .promise
-    .then(function(pdf) {
-
-      return pdf.getPage(1);
-
-    })
-    .then(function(page) {
-
-      const container =
-        document.querySelector(".devocional-capa");
-
-      const largura =
-        container.clientWidth;
-
-      const viewportOriginal =
-        page.getViewport({
-          scale: 1
-        });
-
-      const escala =
-        largura / viewportOriginal.width;
-
-      const viewport =
-        page.getViewport({
-          scale: escala
-        });
-
-      canvasDevocional.width =
-        viewport.width;
-
-      canvasDevocional.height =
-        viewport.height;
-
-      const contexto =
-        canvasDevocional.getContext("2d");
-
-      return page.render({
-
-        canvasContext: contexto,
-
-        viewport: viewport
-
-      }).promise;
-
-    })
-    .catch(function(erro) {
-
-      console.error(
-        "Erro ao mostrar a primeira página do PDF:",
-        erro
+    const canvasDevocional =
+      document.getElementById(
+        "capaDevocional"
       );
 
-    });
 
-}
+    if (
+      canvasDevocional &&
+      typeof pdfjsLib !== "undefined"
+    ) {
+
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+
+      pdfjsLib
+        .getDocument(
+          urlDevocional
+        )
+        .promise
+
+
+        .then(function(pdf) {
+
+
+          return pdf.getPage(1);
+
+
+        })
+
+
+        .then(function(page) {
+
+
+          const container =
+            document.querySelector(
+              ".devocional-capa"
+            );
+
+
+          const largura =
+            container.clientWidth;
+
+
+          const viewportOriginal =
+            page.getViewport({
+              scale: 1
+            });
+
+
+          const escala =
+            largura / viewportOriginal.width;
+
+
+          const viewport =
+            page.getViewport({
+              scale: escala
+            });
+
+
+          canvasDevocional.width =
+            viewport.width;
+
+
+          canvasDevocional.height =
+            viewport.height;
+
+
+          const contexto =
+            canvasDevocional.getContext(
+              "2d"
+            );
+
+
+          return page.render({
+
+            canvasContext:
+              contexto,
+
+            viewport:
+              viewport
+
+          }).promise;
+
+
+        })
+
+
+        .catch(function(erro) {
+
+
+          console.error(
+            "Erro ao mostrar a primeira página do PDF:",
+            erro
+          );
+
+
+        });
+
+    }
+
+
     /* =====================================================
        MENU MOBILE
     ===================================================== */
 
     function alternarMenu() {
 
-      const menu =
-        document.getElementById("menuConteudo");
 
-      menu.classList.toggle("aberto");
+      const menu =
+        document.getElementById(
+          "menuConteudo"
+        );
+
+
+      menu.classList.toggle(
+        "aberto"
+      );
 
     }
 
 
     function fecharMenu() {
 
+
       if (window.innerWidth <= 850) {
 
+
         document
-          .getElementById("menuConteudo")
+          .getElementById(
+            "menuConteudo"
+          )
           .classList
-          .remove("aberto");
+          .remove(
+            "aberto"
+          );
 
       }
 
@@ -1936,15 +1588,21 @@ if (canvasDevocional) {
 
 
     document
-      .querySelectorAll(".menu-mobile-dropdown a")
-      .forEach(function(link) {
+      .querySelectorAll(
+        ".menu-mobile-dropdown a"
+      )
+      .forEach(
+        function(link) {
 
-        link.addEventListener(
-          "click",
-          fecharMenu
-        );
 
-      });
+          link.addEventListener(
+            "click",
+            fecharMenu
+          );
+
+
+        }
+      );
 
 
     /* =====================================================
@@ -1954,11 +1612,16 @@ if (canvasDevocional) {
 
     function abrirLogin() {
 
+
       const modal =
-        document.getElementById("modalLogin");
+        document.getElementById(
+          "modalLogin"
+        );
 
 
-      modal.classList.add("aberto");
+      modal.classList.add(
+        "aberto"
+      );
 
 
       modal.setAttribute(
@@ -1971,24 +1634,36 @@ if (canvasDevocional) {
         "hidden";
 
 
-      setTimeout(function() {
+      setTimeout(
+        function() {
 
-        document
-          .getElementById("emailLogin")
-          .focus();
 
-      }, 100);
+          document
+            .getElementById(
+              "emailLogin"
+            )
+            .focus();
+
+
+        },
+        100
+      );
 
     }
 
 
     function fecharLogin() {
 
+
       const modal =
-        document.getElementById("modalLogin");
+        document.getElementById(
+          "modalLogin"
+        );
 
 
-      modal.classList.remove("aberto");
+      modal.classList.remove(
+        "aberto"
+      );
 
 
       modal.setAttribute(
@@ -2009,7 +1684,9 @@ if (canvasDevocional) {
     ===================================================== */
 
     document
-      .getElementById("formLogin")
+      .getElementById(
+        "formLogin"
+      )
       .addEventListener(
         "submit",
         async function(event) {
@@ -2020,14 +1697,18 @@ if (canvasDevocional) {
 
           const email =
             document
-              .getElementById("emailLogin")
+              .getElementById(
+                "emailLogin"
+              )
               .value
               .trim();
 
 
           const senha =
             document
-              .getElementById("senhaLogin")
+              .getElementById(
+                "senhaLogin"
+              )
               .value;
 
 
@@ -2137,13 +1818,17 @@ if (canvasDevocional) {
     ===================================================== */
 
     document
-      .getElementById("modalLogin")
+      .getElementById(
+        "modalLogin"
+      )
       .addEventListener(
         "click",
         function(event) {
 
 
-          if (event.target === this) {
+          if (
+            event.target === this
+          ) {
 
             fecharLogin();
 
@@ -2159,19 +1844,23 @@ if (canvasDevocional) {
     ===================================================== */
 
     document.addEventListener(
+
       "keydown",
+
       function(event) {
 
 
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape"
+        ) {
 
           fecharLogin();
 
         }
 
       }
-    );
 
+    );
 
   </script>
 
@@ -2180,3 +1869,4 @@ if (canvasDevocional) {
 
 </html>
 ```
+
