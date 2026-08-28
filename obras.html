@@ -1308,32 +1308,11 @@
       <article class="devocional-card">
 
         <div
-          class="devocional-capa"
-          aria-label="Capa do Devocional 02"
-        >
-
-          <div
-            style="
-              width:100%;
-              height:190px;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-            "
-          >
-
-            <i
-              class="fa-solid fa-file-pdf"
-              style="
-                font-size:2.5rem;
-                color:var(--gold-primary);
-              "
-            ></i>
-
-          </div>
-
-        </div>
-
+  class="devocional-capa"
+  aria-label="Capa do Devocional 02"
+>
+  <canvas id="capaDevocional02"></canvas>
+</div>
 
         <div class="devocional-conteudo">
 
@@ -1630,6 +1609,66 @@
 
     }
 
+    /* =====================================================
+   CAPA DO DEVOCIONAL 02 — PRIMEIRA PÁGINA DO PDF
+===================================================== */
+
+const urlDevocional02 =
+  "devocionais/devocional-02.pdf";
+
+const canvasDevocional02 =
+  document.getElementById("capaDevocional02");
+
+if (
+  canvasDevocional02 &&
+  typeof pdfjsLib !== "undefined"
+) {
+
+  const contexto02 =
+    canvasDevocional02.getContext("2d");
+
+  pdfjsLib
+    .getDocument(urlDevocional02)
+    .promise
+    .then(function(pdf) {
+
+      return pdf.getPage(1);
+
+    })
+    .then(function(page) {
+
+      const escala02 = 1.5;
+
+      const viewport02 =
+        page.getViewport({
+          scale: escala02
+        });
+
+      canvasDevocional02.width =
+        viewport02.width;
+
+      canvasDevocional02.height =
+        viewport02.height;
+
+      return page.render({
+
+        canvasContext: contexto02,
+
+        viewport: viewport02
+
+      }).promise;
+
+    })
+    .catch(function(erro) {
+
+      console.error(
+        "Erro ao carregar a capa do Devocional 02:",
+        erro
+      );
+
+    });
+
+}
 
     /* =====================================================
        MENU MOBILE
