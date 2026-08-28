@@ -1,1906 +1,1684 @@
-```html
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
 
-<title>Área do Leitor | Pr. Denílson Pinheiro</title>
+>
 
-<meta name="description"
-content="Área do Leitor do Pr. Denílson Pinheiro — um espaço para leitura, reflexão, oração e comunhão.">
+  <title>Área do Leitor | Francisco Denilson Pinheiro</title>
 
-<style>
+<meta
+name="description"
+content="Área do Leitor de Francisco Denilson Pinheiro. Devocionais, leitura, oração, reflexão e comunhão para quem deseja crescer na fé."
 
-/* =====================================================
-   RESET
-===================================================== */
+>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <!-- =====================================================
+       FONTES
+  ====================================================== -->
 
-html{
-    scroll-behavior:smooth;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-body{
-    font-family:Georgia, "Times New Roman", serif;
-    background:#f5f1e9;
-    color:#29251f;
-    line-height:1.7;
-}
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
 
-img{
-    max-width:100%;
-    display:block;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  >
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+  <!-- =====================================================
+       ÍCONES
+  ====================================================== -->
 
-button{
-    font-family:inherit;
-}
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
 
+  <!-- =====================================================
+       ESTILO PRINCIPAL
+  ====================================================== -->
 
-/* =====================================================
-   CABEÇALHO
-===================================================== */
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 
-header{
-    background:#211d18;
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.18);
-}
+  <style>
 
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:17px 25px;
+    /* =====================================================
+       PÁGINA
+    ===================================================== */
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:21px;
-    font-weight:bold;
-}
-
-.logo span{
-    display:block;
-    font-size:11px;
-    font-weight:normal;
-    color:#cdbb99;
-    letter-spacing:1px;
-}
-
-nav{
-    display:flex;
-    gap:28px;
-    align-items:center;
-}
-
-nav a{
-    color:white;
-    font-size:15px;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#d4bc91;
-}
-
-.menu-btn{
-    display:none;
-    background:none;
-    border:none;
-    color:white;
-    font-size:30px;
-    cursor:pointer;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-    min-height:570px;
-
-    background:
-    linear-gradient(
-        rgba(25,21,17,.48),
-        rgba(25,21,17,.78)
-    ),
-    url("imagens/biblioteca.jpg")
-    center center / cover no-repeat;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-    padding:70px 25px;
-}
-
-.hero-content{
-    max-width:850px;
-    color:white;
-}
-
-.hero-label{
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:4px;
-    color:#d9c39b;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(45px,7vw,76px);
-    line-height:1.05;
-    margin-bottom:22px;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    font-size:21px;
-    color:#eee8df;
-}
-
-.hero-frase{
-    margin-top:30px;
-    font-size:16px;
-    font-style:italic;
-    color:#d8c7a9;
-}
-
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.container{
-    max-width:1120px;
-    margin:auto;
-    padding:80px 25px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title span{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    color:#94774c;
-}
-
-.section-title h2{
-    font-size:38px;
-    line-height:1.2;
-    margin-top:8px;
-}
-
-.section-title p{
-    max-width:680px;
-    margin:12px auto 0;
-    color:#716b62;
-}
-
-
-/* =====================================================
-   DEVOCIONAL
-===================================================== */
-
-.devocional-area{
-    background:#faf8f4;
-}
-
-.devocional{
-    display:grid;
-    grid-template-columns:420px 1fr;
-
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-}
-
-.devocional-imagem{
-    min-height:430px;
-
-    background:
-    url("imagens/devocional.jpg")
-    center center / cover no-repeat;
-}
-
-.devocional-conteudo{
-    padding:45px;
-}
-
-.devocional-meta{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:#94774c;
-    margin-bottom:12px;
-}
-
-.devocional h3{
-    font-size:32px;
-    line-height:1.2;
-    margin-bottom:20px;
-}
-
-.versiculo{
-    background:#f5f0e7;
-    border-left:4px solid #b89b68;
-    padding:18px 22px;
-    margin:25px 0;
-    font-style:italic;
-}
-
-.devocional-conteudo p{
-    color:#565149;
-}
-
-.devocional-botoes{
-    display:flex;
-    gap:12px;
-    margin-top:25px;
-}
-
-.btn{
-    border:none;
-    background:#29231c;
-    color:white;
-    padding:13px 24px;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:14px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#8d744c;
-    transform:translateY(-2px);
-}
-
-
-/* =====================================================
-   INSPIRAÇÃO
-===================================================== */
-
-.inspiracao{
-    background:#ebe5d9;
-}
-
-.inspiracao-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.inspiracao-card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-    transition:.3s;
-}
-
-.inspiracao-card:hover{
-    transform:translateY(-5px);
-}
-
-.inspiracao-card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-}
-
-.inspiracao-conteudo{
-    padding:25px;
-}
-
-.inspiracao-conteudo h3{
-    font-size:22px;
-    margin-bottom:7px;
-}
-
-.inspiracao-conteudo p{
-    font-size:14px;
-    color:#706a62;
-}
-
-
-/* =====================================================
-   MURAL DA JORNADA
-===================================================== */
-
-.mural-area{
-    background:#faf8f4;
-}
-
-.mural-imagem{
-    max-width:900px;
-    height:350px;
-
-    margin:0 auto 35px;
-
-    border-radius:22px;
-    overflow:hidden;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.12);
-}
-
-.mural-imagem img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-}
-
-.mural-frase{
-    max-width:850px;
-    margin:0 auto 35px;
-
-    text-align:center;
-
-    font-size:20px;
-    font-style:italic;
-
-    color:#665b4c;
-}
-
-
-/* =====================================================
-   PUBLICAÇÃO
-===================================================== */
-
-.publicar{
-    max-width:850px;
-    margin:0 auto 35px;
-
-    background:white;
-    padding:30px;
-    border-radius:16px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.publicar h3{
-    font-size:23px;
-    margin-bottom:6px;
-}
-
-.publicar p{
-    font-size:14px;
-    color:#777;
-    margin-bottom:18px;
-}
-
-textarea{
-    width:100%;
-    min-height:120px;
-    padding:15px;
-
-    border:1px solid #ddd;
-    border-radius:10px;
-
-    resize:vertical;
-    font-size:16px;
-    outline:none;
-}
-
-textarea:focus{
-    border-color:#a98c5b;
-}
-
-.publicar-footer{
-    margin-top:14px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    gap:15px;
-}
-
-.login-info{
-    font-size:13px;
-    color:#777;
-}
-
-
-/* =====================================================
-   POSTAGENS
-===================================================== */
-
-.post{
-    max-width:850px;
-    margin:0 auto 20px;
-
-    background:white;
-    padding:28px;
-    border-radius:16px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
-}
-
-.post-header{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:15px;
-}
-
-.avatar{
-    width:45px;
-    height:45px;
-
-    border-radius:50%;
-    background:#8d744c;
-    color:white;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:bold;
-}
-
-.post-author{
-    font-weight:bold;
-}
-
-.post-date{
-    font-size:12px;
-    color:#999;
-    display:block;
-}
-
-.post-text{
-    color:#4e4942;
-    margin-bottom:18px;
-}
-
-.post-actions{
-    border-top:1px solid #eee;
-    padding-top:14px;
-
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
-}
-
-.action{
-    background:none;
-    border:none;
-    color:#777;
-    cursor:pointer;
-    font-size:14px;
-}
-
-.action:hover{
-    color:#8d744c;
-}
-
-
-/* =====================================================
-   BÍBLIA
-===================================================== */
-
-.biblia-area{
-    background:#ebe5d9;
-}
-
-.biblia-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-
-    box-shadow:0 8px 30px rgba(0,0,0,.07);
-}
-
-.biblia-imagem{
-    min-height:400px;
-
-    background:
-    url("imagens/biblia-aberta.jpg")
-    center center / cover no-repeat;
-}
-
-.biblia-conteudo{
-    padding:45px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.biblia-conteudo span{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:#94774c;
-}
-
-.biblia-conteudo h2{
-    font-size:34px;
-    line-height:1.2;
-    margin:10px 0 18px;
-}
-
-.biblia-conteudo p{
-    color:#666;
-    margin-bottom:22px;
-}
-
-
-/* =====================================================
-   DESAFIOS
-===================================================== */
-
-.desafios-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.desafio{
-    background:white;
-    padding:30px;
-    border-radius:17px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.desafio-icon{
-    font-size:32px;
-    margin-bottom:8px;
-}
-
-.desafio h3{
-    font-size:23px;
-    margin-bottom:7px;
-}
-
-.desafio p{
-    font-size:15px;
-    color:#6c665e;
-    margin-bottom:18px;
-}
-
-.progress{
-    height:9px;
-    background:#e4ded4;
-    border-radius:10px;
-    overflow:hidden;
-    margin-bottom:8px;
-}
-
-.progress-bar{
-    height:100%;
-    width:65%;
-    background:#8d744c;
-}
-
-.progress-text{
-    font-size:12px;
-    color:#888;
-}
-
-
-/* =====================================================
-   CLUBE DO LIVRO
-===================================================== */
-
-.clube-area{
-    background:#faf8f4;
-}
-
-.clube{
-    max-width:850px;
-    margin:auto;
-
-    background:#29231c;
-    color:white;
-
-    padding:42px;
-    border-radius:20px;
-}
-
-.clube-label{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:#cdbb99;
-}
-
-.clube h3{
-    font-size:32px;
-    margin:8px 0 15px;
-}
-
-.clube p{
-    color:#ddd;
-    margin-bottom:20px;
-}
-
-.clube-info{
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
-
-    color:#cfc8bd;
-    font-size:14px;
-
-    margin-bottom:25px;
-}
-
-
-/* =====================================================
-   ORAÇÃO
-===================================================== */
-
-.oracao-area{
-    background:#ebe5d9;
-}
-
-.oracao-box{
-    max-width:850px;
-    margin:auto;
-
-    background:white;
-    padding:40px;
-    border-radius:20px;
-
-    text-align:center;
-
-    box-shadow:0 7px 25px rgba(0,0,0,.06);
-}
-
-.oracao-box h3{
-    font-size:29px;
-    margin-bottom:10px;
-}
-
-.oracao-box p{
-    max-width:620px;
-    margin:auto auto 25px;
-    color:#666;
-}
-
-.pedido{
-    border-top:1px solid #eee;
-    margin-top:28px;
-    padding-top:25px;
-    text-align:left;
-}
-
-.pedido strong{
-    display:block;
-    margin-bottom:6px;
-}
-
-.pedido small{
-    color:#999;
-}
-
-
-/* =====================================================
-   MEU ESPAÇO
-===================================================== */
-
-.meu-espaco{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.espaco-card{
-    background:white;
-    border-radius:16px;
-    padding:30px;
-    text-align:center;
-
-    box-shadow:0 4px 18px rgba(0,0,0,.05);
-}
-
-.espaco-icon{
-    font-size:31px;
-    margin-bottom:10px;
-}
-
-.espaco-card h3{
-    font-size:20px;
-    margin-bottom:6px;
-}
-
-.espaco-card p{
-    font-size:14px;
-    color:#777;
-}
-
-
-/* =====================================================
-   ÁUDIO
-===================================================== */
-
-.audio-area{
-    background:#faf8f4;
-}
-
-.audio-box{
-    max-width:850px;
-    margin:auto;
-
-    background:#211d18;
-    color:white;
-
-    padding:45px;
-    border-radius:20px;
-
-    text-align:center;
-}
-
-.audio-box h3{
-    font-size:29px;
-    margin-bottom:10px;
-}
-
-.audio-box p{
-    color:#ddd;
-    margin-bottom:22px;
-}
-
-
-/* =====================================================
-   FINAL
-===================================================== */
-
-.final{
-    background:#211d18;
-    color:white;
-
-    text-align:center;
-
-    padding:90px 25px;
-}
-
-.final h2{
-    max-width:780px;
-    margin:auto;
-
-    font-size:36px;
-    line-height:1.3;
-}
-
-.final p{
-    margin-top:18px;
-    color:#cfc8bd;
-}
-
-
-/* =====================================================
-   RODAPÉ
-===================================================== */
-
-footer{
-    background:#171512;
-    color:#999;
-
-    text-align:center;
-
-    padding:30px 20px;
-
-    font-size:13px;
-}
-
-footer strong{
-    color:white;
-}
-
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media(max-width:850px){
-
-    .menu-btn{
-        display:block;
+    .pagina-leitor {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 55px 20px 80px;
+      box-sizing: border-box;
     }
 
-    nav{
-        display:none;
 
-        position:absolute;
-        top:70px;
-        left:0;
+    /* =====================================================
+       HERO
+    ===================================================== */
 
-        width:100%;
-
-        background:#211d18;
-
-        flex-direction:column;
-        gap:0;
+    .hero-leitor {
+      position: relative;
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 65px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(15,13,11,0.96) 0%,
+          rgba(15,13,11,0.82) 45%,
+          rgba(15,13,11,0.35) 100%
+        ),
+        url("imagens/biblia-aberta.jpg") center/cover no-repeat;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.35);
     }
 
-    nav.active{
-        display:flex;
+
+    .hero-leitor-conteudo {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      padding: 55px;
     }
 
-    nav a{
-        width:100%;
-        padding:15px 25px;
 
-        border-top:1px solid rgba(255,255,255,.08);
+    .hero-leitor-pequeno {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--gold-primary);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
     }
 
-    .devocional,
-    .biblia-box{
-        grid-template-columns:1fr;
+
+    .hero-leitor h1 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 3.1rem;
+      line-height: 1.1;
+      font-weight: 400;
     }
 
-    .devocional-imagem,
-    .biblia-imagem{
-        min-height:300px;
+
+    .hero-leitor h1 em {
+      color: var(--gold-primary);
     }
 
-    .inspiracao-grid{
-        grid-template-columns:1fr;
+
+    .hero-leitor p {
+      max-width: 570px;
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
+      line-height: 1.8;
+      font-weight: 300;
     }
 
-    .desafios-grid{
-        grid-template-columns:1fr;
+
+    /* =====================================================
+       TÍTULOS
+    ===================================================== */
+
+    .titulo-leitor {
+      text-align: center;
+      margin-bottom: 35px;
     }
 
-    .meu-espaco{
-        grid-template-columns:1fr;
+
+    .titulo-leitor .pequeno {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--gold-primary);
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .devocional-conteudo,
-    .biblia-conteudo{
-        padding:30px;
+
+    .titulo-leitor h2 {
+      margin: 0;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 400;
     }
 
-    .publicar-footer{
-        flex-direction:column;
-        align-items:flex-start;
+
+    .titulo-leitor p {
+      max-width: 680px;
+      margin: 12px auto 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
-    .devocional-botoes{
-        flex-wrap:wrap;
+
+    .linha-dourada-leitor {
+      width: 55px;
+      height: 1px;
+      margin: 18px auto 0;
+      background: var(--gold-primary);
     }
 
-    .hero{
-        min-height:470px;
+
+    /* =====================================================
+       CARDS DE ACESSO
+    ===================================================== */
+
+    .atalhos-leitor {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 75px;
     }
 
-    .hero p{
-        font-size:18px;
+
+    .atalho-leitor {
+      position: relative;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding: 25px;
+      box-sizing: border-box;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      background: #171513;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .section-title h2{
-        font-size:30px;
+
+    .atalho-leitor::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0.95),
+          rgba(0,0,0,0.15)
+        );
+      z-index: 1;
     }
 
-    .mural-imagem{
-        height:240px;
+
+    .atalho-leitor:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,158,92,0.7);
     }
 
-    .mural-frase{
-        font-size:17px;
+
+    .atalho-leitor img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-}
 
-
-/* =====================================================
-   TELAS MUITO PEQUENAS
-===================================================== */
-
-@media(max-width:480px){
-
-    .container{
-        padding:60px 18px;
+    .atalho-leitor:hover img {
+      transform: scale(1.05);
     }
 
-    .hero{
-        padding:55px 18px;
+
+    .atalho-conteudo {
+      position: relative;
+      z-index: 2;
     }
 
-    .hero h1{
-        font-size:44px;
+
+    .atalho-icone {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border: 1px solid var(--gold-primary);
+      border-radius: 50%;
+      color: var(--gold-primary);
+      background: rgba(20,18,15,0.75);
     }
 
-    .devocional-conteudo,
-    .biblia-conteudo,
-    .publicar,
-    .oracao-box,
-    .clube{
-        padding:25px;
+
+    .atalho-leitor h3 {
+      margin: 0 0 6px;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
     }
 
-    .mural-imagem{
-        height:210px;
-        border-radius:16px;
+
+    .atalho-leitor span {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.75rem;
+      line-height: 1.5;
     }
 
-}
+
+    /* =====================================================
+       DEVOCIONAIS
+    ===================================================== */
+
+    .secao-devocionais {
+      margin-bottom: 80px;
+    }
 
 
-/* =====================================================
-   ACESSIBILIDADE
-===================================================== */
+    .devocionais-lista {
+      display: grid;
+      gap: 22px;
+    }
 
-button:focus,
-a:focus,
-textarea:focus{
-    outline:2px solid #b89b68;
-    outline-offset:3px;
-}
 
-</style>
+    .devocional-card {
+      display: grid;
+      grid-template-columns: 155px 1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
+    }
+
+
+    .devocional-capa {
+      width: 155px;
+      height: 195px;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid rgba(201,158,92,0.35);
+      background: #171513;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+
+    .devocional-capa img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    .devocional-conteudo h3 {
+      margin: 0 0 9px;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 400;
+    }
+
+
+    .devocional-conteudo p {
+      max-width: 680px;
+      margin: 0 0 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+
+    .devocional-botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+
+    .devocional-botao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 43px;
+      padding: 10px 17px;
+      box-sizing: border-box;
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+
+    .devocional-botao-leitura {
+      background: var(--gold-primary);
+      color: #171513;
+      border: 1px solid var(--gold-primary);
+    }
+
+
+    .devocional-botao-leitura:hover {
+      background: #e0bd7d;
+      border-color: #e0bd7d;
+    }
+
+
+    .devocional-botao-download {
+      background: transparent;
+      color: #fff;
+      border: 1px solid var(--border-color);
+    }
+
+
+    .devocional-botao-download:hover {
+      color: var(--gold-primary);
+      border-color: var(--gold-primary);
+    }
+
+
+    .devocional-observacao {
+      margin-top: 12px;
+      color: #777;
+      font-size: 0.67rem;
+    }
+
+
+    /* =====================================================
+       MURAL
+    ===================================================== */
+
+    .secao-mural {
+      position: relative;
+      overflow: hidden;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 80px;
+      border: 1px solid rgba(201,158,92,0.35);
+      border-radius: 6px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(16,14,12,0.97),
+          rgba(16,14,12,0.88),
+          rgba(16,14,12,0.48)
+        ),
+        url("imagens/mural.jpg") center/cover no-repeat;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+
+    .mural-conteudo {
+      max-width: 620px;
+      padding: 55px;
+    }
+
+
+    .mural-conteudo .pequeno {
+      color: var(--gold-primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+
+    .mural-conteudo h2 {
+      margin: 12px 0 15px;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      line-height: 1.15;
+      font-weight: 400;
+    }
+
+
+    .mural-conteudo p {
+      margin: 0 0 25px;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+
+    .mural-frase {
+      margin: 0 0 25px;
+      padding-left: 18px;
+      border-left: 2px solid var(--gold-primary);
+      color: var(--gold-primary);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+
+    .botao-mural {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 22px;
+      background: var(--gold-primary);
+      color: #171513;
+      border: 1px solid var(--gold-primary);
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+
+    .botao-mural:hover {
+      background: #e0bd7d;
+      border-color: #e0bd7d;
+      transform: translateY(-1px);
+    }
+
+
+    /* =====================================================
+       ORAÇÃO + LEITURA
+    ===================================================== */
+
+    .duas-secoes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 80px;
+    }
+
+
+    .bloco-imagem {
+      min-height: 330px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      background: #171513;
+    }
+
+
+    .bloco-imagem img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    .bloco-imagem::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0.95),
+          rgba(0,0,0,0.1)
+        );
+    }
+
+
+    .bloco-imagem-conteudo {
+      position: relative;
+      z-index: 2;
+      padding: 30px;
+    }
+
+
+    .bloco-imagem-conteudo h3 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+
+    .bloco-imagem-conteudo p {
+      margin: 0 0 18px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+
+
+    .botao-secundario {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 17px;
+      border: 1px solid var(--border-color);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+
+    .botao-secundario:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+    }
+
+
+    /* =====================================================
+       CHAMADA FINAL
+    ===================================================== */
+
+    .convite-final {
+      padding: 45px 30px;
+      text-align: center;
+      border-top: 1px solid rgba(201,158,92,0.25);
+      border-bottom: 1px solid rgba(201,158,92,0.25);
+      margin-bottom: 20px;
+    }
+
+
+    .convite-final i {
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+
+    .convite-final h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+
+    .convite-final p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       RESPONSIVO
+    ===================================================== */
+
+    @media (max-width: 950px) {
+
+      .atalhos-leitor {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+      .pagina-leitor {
+        padding: 35px 15px 60px;
+      }
+
+
+      .hero-leitor {
+        min-height: 420px;
+        background-position: center;
+      }
+
+
+      .hero-leitor-conteudo {
+        padding: 35px 25px;
+      }
+
+
+      .hero-leitor h1 {
+        font-size: 2.35rem;
+      }
+
+
+      .devocional-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 25px;
+      }
+
+
+      .devocional-capa {
+        margin: 0 auto;
+      }
+
+
+      .devocional-conteudo p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+      .devocional-botoes {
+        justify-content: center;
+      }
+
+
+      .secao-mural {
+        min-height: 460px;
+      }
+
+
+      .mural-conteudo {
+        padding: 35px 25px;
+      }
+
+
+      .mural-conteudo h2 {
+        font-size: 2rem;
+      }
+
+
+      .duas-secoes {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .atalhos-leitor {
+        grid-template-columns: 1fr;
+      }
+
+
+      .atalho-leitor {
+        min-height: 190px;
+      }
+
+
+      .titulo-leitor h2 {
+        font-size: 1.9rem;
+      }
+
+
+      .devocional-botoes {
+        flex-direction: column;
+      }
+
+
+      .devocional-botao {
+        width: 100%;
+      }
+
+
+      .mural-conteudo {
+        padding: 30px 20px;
+      }
+
+
+      .convite-final {
+        padding: 35px 15px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
-
 <body>
 
+  <!-- =====================================================
+       CABEÇALHO
+  ====================================================== -->
 
-<!-- =====================================================
-     CABEÇALHO
-===================================================== -->
+  <header class="site-header">
 
-<header>
+```
+<div class="header-brand">
 
-<div class="nav-container">
-
-<a href="index.html" class="logo">
-
-Pr. Denílson Pinheiro
-
-<span>
-ESCRITOR • PASTOR • PALESTRANTE
-</span>
-
-</a>
+  <img
+    src="imagem-pessoal.jpg"
+    alt="Francisco Denilson Pinheiro"
+    class="foto-pessoal"
+  >
 
 
-<button
-class="menu-btn"
-onclick="toggleMenu()"
-aria-label="Abrir menu"
->
-☰
-</button>
+  <div class="brand-titles">
+
+    <span class="brand-name">
+      Francisco Denilson
+    </span>
 
 
-<nav id="menu">
+    <span class="brand-sub">
+      Escritor & Palestrante
+    </span>
 
-<a href="index.html">
-Início
-</a>
+  </div>
 
-<a href="sobre.html">
-Sobre
-</a>
+</div>
 
-<a href="obras.html">
-Obras
-</a>
 
-<a href="area-do-leitor.html">
-Área do Leitor
-</a>
+<!-- MENU DESKTOP -->
 
-<a href="eventos.html">
-Eventos
-</a>
+<nav class="menu-desktop">
+
+
+  <a href="index.html">
+    Início
+  </a>
+
+
+  <a href="obras.html">
+    Obras
+  </a>
+
+
+  <a href="pre-venda.html">
+    Pré Venda
+  </a>
+
+
+  <a href="eventos.html">
+    Eventos
+  </a>
+
+
+  <a
+    href="area-do-leitor.html"
+    class="ativo"
+  >
+    Área do Leitor
+  </a>
+
+
+  <a href="seja-um-escritor.html">
+    Seja um Escritor
+  </a>
+
+
+  <a href="contato.html">
+    Contato
+  </a>
+
 
 </nav>
 
-</div>
 
-</header>
+<!-- MENU MOBILE -->
+
+<button
+  type="button"
+  class="botao-menu-mobile"
+  id="botaoMenu"
+  aria-label="Abrir menu"
+  onclick="alternarMenu()"
+>
+
+  <i class="fa-solid fa-bars"></i>
+
+</button>
+```
+
+  </header>
+
+  <!-- =====================================================
+       MENU MOBILE
+  ====================================================== -->
+
+  <div
+    class="menu-mobile-dropdown"
+    id="menuConteudo"
+  >
+
+```
+<a href="index.html">
+  Início
+</a>
 
 
+<a href="obras.html">
+  Obras
+</a>
 
-<!-- =====================================================
+
+<a href="pre-venda.html">
+  Pré Venda
+</a>
+
+
+<a href="eventos.html">
+  Eventos
+</a>
+
+
+<a
+  href="area-do-leitor.html"
+  class="ativo"
+>
+  Área do Leitor
+</a>
+
+
+<a href="seja-um-escritor.html">
+  Seja um Escritor
+</a>
+
+
+<a href="contato.html">
+  Contato
+</a>
+```
+
+  </div>
+
+  <!-- =====================================================
+       CONTEÚDO
+  ====================================================== -->
+
+  <main class="pagina-leitor">
+
+```
+<!-- ===================================================
      HERO
-===================================================== -->
+==================================================== -->
 
-<section class="hero">
+<section class="hero-leitor">
 
-<div class="hero-content">
 
-<div class="hero-label">
-Comunidade de leitores
-</div>
+  <div class="hero-leitor-conteudo">
 
-<h1>
-Área do Leitor
-</h1>
 
-<p>
-Um espaço para ler, refletir, compartilhar
-e crescer na caminhada com Deus.
-</p>
+    <span class="hero-leitor-pequeno">
+      Um espaço para você
+    </span>
 
-<div class="hero-frase">
-“Há leituras que informam.
-Outras transformam.”
-</div>
 
-</div>
+    <h1>
+      Área do <em>Leitor</em>
+    </h1>
+
+
+    <p>
+
+      Um lugar para ler, refletir, orar e compartilhar.
+      Aqui você encontrará conteúdos para fortalecer sua
+      caminhada cristã e também poderá fazer parte de uma
+      comunidade de leitores que desejam crescer na fé.
+
+    </p>
+
+
+  </div>
+
 
 </section>
 
 
+<!-- ===================================================
+     ATALHOS
+==================================================== -->
 
-<!-- =====================================================
-     DEVOCIONAL
-===================================================== -->
-
-<section class="devocional-area">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Para sua caminhada
-</span>
-
-<h2>
-Devocional de Hoje
-</h2>
-
-<p>
-Uma breve palavra para alimentar sua fé
-e acompanhar seu dia.
-</p>
-
-</div>
+<section>
 
 
-<div class="devocional">
+  <div class="titulo-leitor">
 
-<div class="devocional-imagem">
-</div>
+    <span class="pequeno">
+      Explore
+    </span>
 
+    <h2>
+      Encontre um lugar para permanecer
+    </h2>
 
-<div class="devocional-conteudo">
+    <div class="linha-dourada-leitor"></div>
 
-<div class="devocional-meta">
-Devocional • Hoje
-</div>
-
-<h3>
-Quando Deus parece estar em silêncio
-</h3>
+  </div>
 
 
-<div class="versiculo">
-
-“Aquietai-vos e sabei que eu sou Deus.”
-
-<br><br>
-
-<strong>
-Salmos 46:10
-</strong>
-
-</div>
+  <div class="atalhos-leitor">
 
 
-<p>
+    <!-- DEVOCIONAL -->
 
-Existem momentos em que oramos,
-esperamos e parece que nada está acontecendo.
-Mas o silêncio de Deus não significa ausência.
+    <a
+      href="#devocionais"
+      class="atalho-leitor"
+    >
 
-<br><br>
-
-Continue confiando.
-Deus continua trabalhando mesmo quando
-não conseguimos enxergar.
-
-</p>
+      <img
+        src="imagens/devocional.jpg"
+        alt="Devocionais"
+      >
 
 
-<div class="devocional-botoes">
+      <div class="atalho-conteudo">
 
-<button class="btn">
-Ler devocional
-</button>
+        <div class="atalho-icone">
 
-<button class="btn">
-♡ Salvar
-</button>
+          <i class="fa-solid fa-book-open"></i>
 
-</div>
+        </div>
 
-</div>
 
-</div>
+        <h3>
+          Devocionais
+        </h3>
 
-</div>
+
+        <span>
+          Leituras rápidas para refletir e fortalecer a fé.
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- LEITURA -->
+
+    <a
+      href="#leitura"
+      class="atalho-leitor"
+    >
+
+      <img
+        src="imagens/leitura.jpg"
+        alt="Espaço de leitura"
+      >
+
+
+      <div class="atalho-conteudo">
+
+        <div class="atalho-icone">
+
+          <i class="fa-solid fa-book"></i>
+
+        </div>
+
+
+        <h3>
+          Leitura
+        </h3>
+
+
+        <span>
+          Descubra novos conteúdos para sua caminhada.
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- ORAÇÃO -->
+
+    <a
+      href="#oracao"
+      class="atalho-leitor"
+    >
+
+      <img
+        src="imagens/oracao.jpg"
+        alt="Oração"
+      >
+
+
+      <div class="atalho-conteudo">
+
+        <div class="atalho-icone">
+
+          <i class="fa-solid fa-hands-praying"></i>
+
+        </div>
+
+
+        <h3>
+          Oração
+        </h3>
+
+
+        <span>
+          Um espaço para apresentar pedidos e interceder.
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- BIBLIOTECA -->
+
+    <a
+      href="biblioteca.html"
+      class="atalho-leitor"
+    >
+
+      <img
+        src="imagens/biblioteca.jpg"
+        alt="Biblioteca"
+      >
+
+
+      <div class="atalho-conteudo">
+
+        <div class="atalho-icone">
+
+          <i class="fa-solid fa-layer-group"></i>
+
+        </div>
+
+
+        <h3>
+          Biblioteca
+        </h3>
+
+
+        <span>
+          Acesse seus conteúdos digitais.
+        </span>
+
+      </div>
+
+    </a>
+
+
+  </div>
 
 </section>
 
 
+<!-- ===================================================
+     DEVOCIONAIS
+==================================================== -->
 
-<!-- =====================================================
-     INSPIRAÇÃO
-===================================================== -->
-
-<section class="inspiracao">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Pequenos momentos
-</span>
-
-<h2>
-Inspire sua leitura
-</h2>
-
-<p>
-Separe alguns minutos. Leia. Ore.
-Pense. Permita que Deus fale ao seu coração.
-</p>
-
-</div>
-
-
-<div class="inspiracao-grid">
-
-
-<article class="inspiracao-card">
-
-<img
-src="imagens/leitura.jpg"
-alt="Pessoa lendo um livro"
+<section
+  id="devocionais"
+  class="secao-devocionais"
 >
 
-<div class="inspiracao-conteudo">
 
-<h3>
-Reserve um tempo para ler
-</h3>
-
-<p>
-Mesmo alguns minutos por dia podem
-abrir espaço para reflexão e crescimento.
-</p>
-
-</div>
-
-</article>
+  <div class="titulo-leitor">
 
 
-
-<article class="inspiracao-card">
-
-<img
-src="imagens/biblia-aberta.jpg"
-alt="Bíblia aberta"
->
-
-<div class="inspiracao-conteudo">
-
-<h3>
-Leia a Palavra
-</h3>
-
-<p>
-Mais do que conhecer a Bíblia,
-permita que ela conheça o seu coração.
-</p>
-
-</div>
-
-</article>
+    <span class="pequeno">
+      Conteúdo gratuito
+    </span>
 
 
-
-<article class="inspiracao-card">
-
-<img
-src="imagens/oracao.jpg"
-alt="Momento de oração"
->
-
-<div class="inspiracao-conteudo">
-
-<h3>
-Pare e ore
-</h3>
-
-<p>
-Depois da leitura, permaneça alguns
-instantes em silêncio diante de Deus.
-</p>
-
-</div>
-
-</article>
+    <h2>
+      Devocionais
+    </h2>
 
 
-</div>
+    <p>
 
-</div>
+      Pequenas leituras para grandes momentos de reflexão.
+      Leia diretamente no navegador ou baixe o PDF para
+      guardar e ler quando quiser.
+
+    </p>
+
+
+    <div class="linha-dourada-leitor"></div>
+
+
+  </div>
+
+
+  <div class="devocionais-lista">
+
+
+    <!-- DEVOCIONAL 01 -->
+
+    <article class="devocional-card">
+
+
+      <div class="devocional-capa">
+
+        <img
+          src="imagens/devocional.jpg"
+          alt="Devocional Promessas"
+        >
+
+      </div>
+
+
+      <div class="devocional-conteudo">
+
+
+        <h3>
+          Promessas
+        </h3>
+
+
+        <p>
+          Os recursos de Deus para o cumprimento do propósito.
+        </p>
+
+
+        <div class="devocional-botoes">
+
+
+          <a
+            href="devocionais/devocional-01.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="devocional-botao devocional-botao-leitura"
+          >
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Ler online
+
+          </a>
+
+
+          <a
+            href="devocionais/devocional-01.pdf"
+            download="devocional-01.pdf"
+            class="devocional-botao devocional-botao-download"
+          >
+
+            <i class="fa-solid fa-download"></i>
+
+            Baixar PDF
+
+          </a>
+
+
+        </div>
+
+
+        <div class="devocional-observacao">
+
+          Arquivo PDF • Leitura gratuita
+
+        </div>
+
+
+      </div>
+
+
+    </article>
+
+
+    <!-- DEVOCIONAL 02 -->
+
+    <article class="devocional-card">
+
+
+      <div class="devocional-capa">
+
+        <img
+          src="imagens/devocional.jpg"
+          alt="Devocional Derrotas que poderiam ser evitadas"
+        >
+
+      </div>
+
+
+      <div class="devocional-conteudo">
+
+
+        <h3>
+          Derrotas que poderiam ser evitadas
+        </h3>
+
+
+        <p>
+          5 erros que levam ao fracasso.
+        </p>
+
+
+        <div class="devocional-botoes">
+
+
+          <a
+            href="devocionais/devocional-02.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="devocional-botao devocional-botao-leitura"
+          >
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Ler online
+
+          </a>
+
+
+          <a
+            href="devocionais/devocional-02.pdf"
+            download="devocional-02.pdf"
+            class="devocional-botao devocional-botao-download"
+          >
+
+            <i class="fa-solid fa-download"></i>
+
+            Baixar PDF
+
+          </a>
+
+
+        </div>
+
+
+        <div class="devocional-observacao">
+
+          Arquivo PDF • Leitura gratuita
+
+        </div>
+
+
+      </div>
+
+
+    </article>
+
+
+  </div>
+
 
 </section>
 
 
+<!-- ===================================================
+     MURAL
+==================================================== -->
 
-<!-- =====================================================
-     MURAL DA JORNADA
-===================================================== -->
-
-<section class="mural-area">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Comunidade
-</span>
-
-<h2>
-Mural da Jornada
-</h2>
-
-<p>
-O que Deus está fazendo em você também
-pode edificar outra pessoa.
-</p>
-
-</div>
-
-
-<div class="mural-imagem">
-
-<img
-src="imagens/mural.jpg"
-alt="Mural comunitário com mensagens de fé e encorajamento"
+<section
+  id="mural"
+  class="secao-mural"
 >
 
-</div>
+
+  <div class="mural-conteudo">
 
 
-<div class="mural-frase">
-
-“Compartilhe aquilo que Deus está ensinando a você.
-Talvez seja exatamente a palavra que alguém precisava ler hoje.”
-
-</div>
+    <span class="pequeno">
+      Comunidade de leitores
+    </span>
 
 
-<div class="publicar">
-
-<h3>
-O que Deus falou com você?
-</h3>
-
-<p>
-Compartilhe uma reflexão, um testemunho,
-um versículo ou uma palavra de encorajamento.
-</p>
-
-<textarea
-placeholder="Escreva sua mensagem..."
-></textarea>
+    <h2>
+      Mural da Jornada
+    </h2>
 
 
-<div class="publicar-footer">
+    <p>
 
-<span class="login-info">
-🔐 Entre na sua conta para publicar.
-</span>
+      O que Deus falou ao seu coração hoje?
 
-<button class="btn">
-Publicar no mural
-</button>
+      Compartilhe uma reflexão, um versículo, um
+      testemunho ou uma palavra que possa edificar
+      outra pessoa.
 
-</div>
-
-</div>
+    </p>
 
 
-<!--
-    EXEMPLOS VISUAIS
+    <div class="mural-frase">
 
-    Estes posts são apenas demonstração.
-    Posteriormente serão substituídos
-    pelas mensagens reais do Supabase.
--->
+      “Compartilhe aquilo que Deus está fazendo
+      em sua caminhada.”
 
-
-<article class="post">
-
-<div class="post-header">
-
-<div class="avatar">
-L
-</div>
-
-<div>
-
-<div class="post-author">
-Leitor
-</div>
-
-<span class="post-date">
-Exemplo de publicação
-</span>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="post-text">
+    <button
+      type="button"
+      class="botao-mural"
+      onclick="abrirMural()"
+    >
 
-“Às vezes Deus não muda imediatamente
-as circunstâncias porque primeiro quer
-transformar aquilo que existe dentro de nós.”
+      <i class="fa-solid fa-pen"></i>
 
-</div>
+      Quero deixar uma mensagem
 
-
-<div class="post-actions">
-
-<button class="action">
-🙏 Amém
-</button>
-
-<button class="action">
-❤️ Isso me tocou
-</button>
-
-<button class="action">
-💬 Responder
-</button>
-
-</div>
-
-</article>
+    </button>
 
 
-</div>
+  </div>
+
 
 </section>
 
 
+<!-- ===================================================
+     LEITURA + ORAÇÃO
+==================================================== -->
 
-<!-- =====================================================
+<section
+  id="leitura"
+  class="duas-secoes"
+>
+
+
+  <!-- LEITURA -->
+
+  <article class="bloco-imagem">
+
+
+    <img
+      src="imagens/leitura.jpg"
+      alt="Pessoa lendo"
+    >
+
+
+    <div class="bloco-imagem-conteudo">
+
+
+      <h3>
+        Um tempo para ler
+      </h3>
+
+
+      <p>
+
+        Separe alguns minutos do seu dia para desacelerar,
+        ler e permitir que uma boa palavra encontre espaço
+        dentro de você.
+
+      </p>
+
+
+      <a
+        href="#devocionais"
+        class="botao-secundario"
+      >
+
+        <i class="fa-solid fa-book-open"></i>
+
+        Começar uma leitura
+
+      </a>
+
+
+    </div>
+
+
+  </article>
+
+
+  <!-- ORAÇÃO -->
+
+  <article
+    id="oracao"
+    class="bloco-imagem"
+  >
+
+
+    <img
+      src="imagens/oracao.jpg"
+      alt="Momento de oração"
+    >
+
+
+    <div class="bloco-imagem-conteudo">
+
+
+      <h3>
+        Espaço de oração
+      </h3>
+
+
+      <p>
+
+        Em breve você poderá deixar seu pedido de oração
+        e também interceder pelos pedidos de outros leitores.
+
+      </p>
+
+
+      <button
+        type="button"
+        class="botao-secundario"
+        onclick="abrirMural()"
+      >
+
+        <i class="fa-solid fa-hands-praying"></i>
+
+        Participar
+
+      </button>
+
+
+    </div>
+
+
+  </article>
+
+
+</section>
+
+
+<!-- ===================================================
      BÍBLIA
-===================================================== -->
+==================================================== -->
 
-<section class="biblia-area">
-
-<div class="container">
-
-<div class="biblia-box">
-
-<div class="biblia-imagem">
-</div>
+<section
+  id="biblia"
+  class="convite-final"
+>
 
 
-<div class="biblia-conteudo">
+  <i class="fa-solid fa-book-bible"></i>
 
-<span>
-Um momento com Deus
-</span>
 
-<h2>
-Abra a Bíblia.<br>
-Abra o coração.
-</h2>
+  <h2>
+    Volte sempre.
+  </h2>
 
-<p>
 
-Nossa Área do Leitor não é apenas
-um lugar para consumir conteúdo.
+  <p>
 
-É um convite para parar,
-refletir e cultivar uma vida
-mais profunda com Deus.
+    A caminhada cristã é feita de encontros:
+    com a Palavra, com Deus e também com pessoas.
+    Este espaço continuará crescendo para acompanhar
+    você nessa jornada.
 
-</p>
+  </p>
 
-<button class="btn">
-Começar uma leitura
-</button>
-
-</div>
-
-</div>
-
-</div>
 
 </section>
+```
+
+  </main>
+
+  <!-- =====================================================
+       RODAPÉ
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+```
+<div class="footer-social">
 
 
+  <a
+    href="https://instagram.com/prdenilsonescritor"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
 
-<!-- =====================================================
-     DESAFIOS
-===================================================== -->
+    <i class="fa-brands fa-instagram"></i>
 
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Crescimento
-</span>
-
-<h2>
-Desafios da Jornada
-</h2>
-
-<p>
-Pequenos passos podem produzir
-grandes mudanças.
-</p>
-
-</div>
+  </a>
 
 
-<div class="desafios-grid">
+  <a
+    href="https://wa.me/5585985141830"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
 
+    <i class="fa-brands fa-whatsapp"></i>
 
-<article class="desafio">
-
-<div class="desafio-icon">
-📖
-</div>
-
-<h3>
-30 Dias em Provérbios
-</h3>
-
-<p>
-Leia um capítulo por dia e
-acompanhe sua caminhada.
-</p>
-
-<div class="progress">
-
-<div class="progress-bar">
-</div>
-
-</div>
-
-<div class="progress-text">
-Seu progresso aparecerá aqui.
-</div>
-
-<br>
-
-<button class="btn">
-Começar desafio
-</button>
-
-</article>
-
-
-
-<article class="desafio">
-
-<div class="desafio-icon">
-🙏
-</div>
-
-<h3>
-7 Dias de Oração
-</h3>
-
-<p>
-Separe alguns minutos diariamente
-para buscar a presença de Deus.
-</p>
-
-<div class="progress">
-
-<div
-class="progress-bar"
-style="width:42%;">
-</div>
-
-</div>
-
-<div class="progress-text">
-Seu progresso aparecerá aqui.
-</div>
-
-<br>
-
-<button class="btn">
-Começar desafio
-</button>
-
-</article>
+  </a>
 
 
 </div>
 
-</div>
 
-</section>
+© 2026 Francisco Denilson Pinheiro.
+Todos os direitos reservados.
+```
 
+  </footer>
 
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
-<!-- =====================================================
-     CLUBE DO LIVRO
-===================================================== -->
+  <script>
 
-<section class="clube-area">
 
-<div class="container">
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
 
-<div class="section-title">
+    function alternarMenu() {
 
-<span>
-Leitura em comunidade
-</span>
+      const menu =
+        document.getElementById(
+          "menuConteudo"
+        );
 
-<h2>
-Clube do Livro
-</h2>
+      menu.classList.toggle(
+        "aberto"
+      );
 
-<p>
-Livros diferentes, histórias diferentes,
-mas uma oportunidade de crescer juntos.
-</p>
+    }
 
-</div>
 
+    function fecharMenu() {
 
-<div class="clube">
+      if (window.innerWidth <= 850) {
 
-<div class="clube-label">
-Leitura em destaque
-</div>
+        document
+          .getElementById(
+            "menuConteudo"
+          )
+          .classList
+          .remove(
+            "aberto"
+          );
 
-<h3>
-Uma leitura para este mês
-</h3>
+      }
 
-<p>
-Aqui poderão aparecer livros do Pr. Denílson
-Pinheiro e também sugestões de leitura
-para a comunidade.
-</p>
+    }
 
-<div class="clube-info">
 
-<span>
-📖 Leitura atual
-</span>
+    document
+      .querySelectorAll(
+        ".menu-mobile-dropdown a"
+      )
+      .forEach(
+        function(link) {
 
-<span>
-💬 Discussão entre leitores
-</span>
+          link.addEventListener(
+            "click",
+            fecharMenu
+          );
 
-<span>
-🙏 Reflexões
-</span>
+        }
+      );
 
-</div>
 
-<button class="btn">
-Ver discussão
-</button>
+    /* =====================================================
+       MURAL
+       TEMPORARIAMENTE
+    ====================================================== */
 
-</div>
+    function abrirMural() {
 
-</div>
+      alert(
+        "O Mural está sendo preparado. Em breve você poderá deixar sua mensagem e interagir com outros leitores."
+      );
 
-</section>
+    }
 
 
+    /* =====================================================
+       ROLAGEM SUAVE
+    ====================================================== */
 
-<!-- =====================================================
-     MURAL DE ORAÇÃO
-===================================================== -->
+    document
+      .querySelectorAll(
+        'a[href^="#"]'
+      )
+      .forEach(
+        function(link) {
 
-<section class="oracao-area">
+          link.addEventListener(
+            "click",
+            function(event) {
 
-<div class="container">
+              const destino =
+                document.querySelector(
+                  this.getAttribute("href")
+                );
 
-<div class="section-title">
+              if (destino) {
 
-<span>
-Intercessão
-</span>
+                event.preventDefault();
 
-<h2>
-Mural de Oração
-</h2>
+                destino.scrollIntoView({
+                  behavior: "smooth"
+                });
 
-<p>
-Porque ninguém precisa caminhar sozinho.
-</p>
+              }
 
-</div>
+            }
+          );
 
+        }
+      );
 
-<div class="oracao-box">
-
-<h3>
-🙏 Vamos orar uns pelos outros?
-</h3>
-
-<p>
-
-Compartilhe um pedido de oração.
-Outros leitores poderão se unir
-a você em oração.
-
-</p>
-
-<button class="btn">
-Deixar pedido de oração
-</button>
-
-
-<div class="pedido">
-
-<strong>
-Um espaço para intercessão
-</strong>
-
-<p>
-Quando essa função estiver conectada
-ao sistema de leitores, os pedidos
-aprovados aparecerão aqui.
-</p>
-
-<small>
-🙏 Interação protegida e moderada
-</small>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MEU ESPAÇO
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Sua caminhada
-</span>
-
-<h2>
-Meu Espaço
-</h2>
-
-<p>
-Guarde aquilo que deseja levar
-com você durante a caminhada.
-</p>
-
-</div>
-
-
-<div class="meu-espaco">
-
-
-<article class="espaco-card">
-
-<div class="espaco-icon">
-❤️
-</div>
-
-<h3>
-Meus Favoritos
-</h3>
-
-<p>
-Devocionais, versículos e conteúdos
-que tocaram seu coração.
-</p>
-
-</article>
-
-
-
-<article class="espaco-card">
-
-<div class="espaco-icon">
-📝
-</div>
-
-<h3>
-Minhas Anotações
-</h3>
-
-<p>
-Registre pensamentos e reflexões
-pessoais durante sua leitura.
-</p>
-
-</article>
-
-
-
-<article class="espaco-card">
-
-<div class="espaco-icon">
-🏅
-</div>
-
-<h3>
-Minhas Conquistas
-</h3>
-
-<p>
-Acompanhe seus desafios
-e sua jornada de leitura.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ÁUDIO
-===================================================== -->
-
-<section class="audio-area">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Ouça
-</span>
-
-<h2>
-Áudios para sua Jornada
-</h2>
-
-<p>
-Reflexões para ouvir enquanto você caminha,
-dirige ou simplesmente descansa.
-</p>
-
-</div>
-
-
-<div class="audio-box">
-
-<h3>
-🎧 Reflexões para ouvir
-</h3>
-
-<p>
-Em breve, devocionais, reflexões
-e outros conteúdos em áudio.
-</p>
-
-<button class="btn">
-Em breve
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FINAL
-===================================================== -->
-
-<section class="final">
-
-<h2>
-“Continue caminhando.
-Deus ainda está trabalhando em você.”
-</h2>
-
-<p>
-Volte sempre.
-Há uma nova palavra esperando por você.
-</p>
-
-</section>
-
-
-
-<!-- =====================================================
-     RODAPÉ
-===================================================== -->
-
-<footer>
-
-<p>
-© 2026
-<strong>Pr. Denílson Pinheiro</strong>
-</p>
-
-<p>
-Escritor • Pastor • Palestrante
-</p>
-
-</footer>
-
-
-
-<script>
-
-function toggleMenu(){
-
-    const menu =
-    document.getElementById("menu");
-
-    menu.classList.toggle("active");
-
-}
-
-</script>
-
+  </script>
 
 </body>
 
 </html>
-```
 
