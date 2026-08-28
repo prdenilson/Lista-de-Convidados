@@ -2245,11 +2245,11 @@ Todos os direitos reservados.
     ====================================================== */
 
     const SUPABASE_URL =
-      "COLE_AQUI_A_URL_DO_SEU_SUPABASE";
+      "https://qieejecsicnmsdtefejs.supabase.co";
 
 
     const SUPABASE_ANON_KEY =
-      "COLE_AQUI_A_SUA_CHAVE_ANON_PUBLICA";
+      "sb_publishable_QbMRb7_7ftE-AvMplgc_GA_1hXNQhBc";
 
 
     const supabaseClient =
@@ -2590,190 +2590,240 @@ Todos os direitos reservados.
     }
 
 
-    /* =====================================================
-       ENVIAR MENSAGEM
-    ====================================================== */
+  ```javascript
+/* =====================================================
+   ENVIAR MENSAGEM
+====================================================== */
 
-    document
-      .getElementById("formularioMural")
-      .addEventListener(
-        "submit",
-        async function(event) {
+document
+  .getElementById("formularioMural")
+  .addEventListener(
+    "submit",
+    async function(event) {
 
-          event.preventDefault();
+      event.preventDefault();
 
+      const botao =
+        document.getElementById(
+          "botaoEnviarMensagem"
+        );
 
-          const botao =
-            document.getElementById(
-              "botaoEnviarMensagem"
-            );
+      const nome =
+        document
+          .getElementById("nomeLeitor")
+          .value
+          .trim();
 
+      const leitura =
+        document
+          .getElementById("leituraLeitor")
+          .value
+          .trim();
 
-          const nome =
-            document
-              .getElementById("nomeLeitor")
-              .value
-              .trim();
-
-
-          const leitura =
-            document
-              .getElementById("leituraLeitor")
-              .value
-              .trim();
-
-
-          const mensagem =
-            document
-              .getElementById("mensagemLeitor")
-              .value
-              .trim();
+      const mensagem =
+        document
+          .getElementById("mensagemLeitor")
+          .value
+          .trim();
 
 
-          if (!nome) {
+      /* VALIDAÇÕES */
 
-            mostrarStatus(
-              "Digite seu nome para enviar a mensagem.",
-              "erro"
-            );
+      if (!nome) {
 
-            return;
+        mostrarStatus(
+          "Digite seu nome para enviar a mensagem.",
+          "erro"
+        );
 
-          }
-
-
-          if (!mensagem) {
-
-            mostrarStatus(
-              "Escreva sua mensagem antes de enviar.",
-              "erro"
-            );
-
-            return;
-
-          }
+        return;
+      }
 
 
-          if (nome.length < 2) {
+      if (nome.length < 2) {
 
-            mostrarStatus(
-              "Digite um nome válido.",
-              "erro"
-            );
+        mostrarStatus(
+          "Digite um nome válido.",
+          "erro"
+        );
 
-            return;
-
-          }
-
-
-          if (mensagem.length < 5) {
-
-            mostrarStatus(
-              "Sua mensagem precisa ter pelo menos alguns caracteres.",
-              "erro"
-            );
-
-            return;
-
-          }
+        return;
+      }
 
 
-          botao.disabled = true;
+      if (!mensagem) {
 
+        mostrarStatus(
+          "Escreva sua mensagem antes de enviar.",
+          "erro"
+        );
+
+        return;
+      }
+
+
+      if (mensagem.length < 5) {
+
+        mostrarStatus(
+          "Sua mensagem precisa ter pelo menos alguns caracteres.",
+          "erro"
+        );
+
+        return;
+      }
+
+
+      botao.disabled = true;
+
+      botao.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+      limparStatus();
+
+
+      try {
+
+        /* =================================================
+           1 — SALVAR NO SUPABASE
+        ================================================== */
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("mensagens_mural")
+            .insert([
+              {
+                nome: nome,
+                leitura: leitura || null,
+                mensagem: mensagem,
+                aprovada: false
+              }
+            ])
+            .select()
+            .single();
+
+
+        if (error) {
+
+          console.error(
+            "Erro ao salvar mensagem:",
+            error
+          );
+
+          mostrarStatus(
+            "Não foi possível enviar sua mensagem. Tente novamente.",
+            "erro"
+          );
+
+          botao.disabled = false;
 
           botao.innerHTML =
-            '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+            '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+
+          return;
+        }
 
 
-          limparStatus();
+        /* =================================================
+           2 — CHAMAR EDGE FUNCTION
+              PARA ENVIAR O E-MAIL
+        ================================================== */
 
+        const respostaEmail =
+          await fetch(
+            SUPABASE_URL +
+            "/functions/v1/resend-email",
+            {
+              method: "POST",
 
-          try {
+              headers: {
+                "Content-Type": "application/json",
+                "Authorization":
+                  "Bearer " + SUPABASE_ANON_KEY
+              },
 
-            const {
-              error
-            } =
-              await supabaseClient
-                .from("mensagens_mural")
-                .insert([
-                  {
-                    nome: nome,
-                    leitura: leitura || null,
-                    mensagem: mensagem,
-                    aprovada: false
-                  }
-                ]);
-
-
-            if (error) {
-
-              console.error(
-                "Erro ao enviar mensagem:",
-                error
-              );
-
-
-              mostrarStatus(
-                "Não foi possível enviar sua mensagem. Tente novamente.",
-                "erro"
-              );
-
-
-              botao.disabled = false;
-
-
-              botao.innerHTML =
-                '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
-
-
-              return;
-
+              body: JSON.stringify({
+                nome: nome,
+                leitura: leitura,
+                mensagem: mensagem
+              })
             }
+          );
 
 
-            mostrarStatus(
-              "Mensagem enviada com sucesso! Ela ficará aguardando aprovação antes de aparecer no mural.",
-              "sucesso"
-            );
+        const resultadoEmail =
+          await respostaEmail.json();
 
 
-            document
-              .getElementById("formularioMural")
-              .reset();
+        console.log(
+          "Resposta do envio de e-mail:",
+          resultadoEmail
+        );
 
 
-            botao.disabled = false;
+        /* =================================================
+           3 — MENSAGEM PARA O LEITOR
+        ================================================== */
 
+        if (!respostaEmail.ok) {
 
-            botao.innerHTML =
-              '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+          console.error(
+            "A mensagem foi salva, mas o e-mail não foi enviado:",
+            resultadoEmail
+          );
 
+          mostrarStatus(
+            "Mensagem recebida! Ela ficará aguardando aprovação. O aviso por e-mail apresentou um problema.",
+            "sucesso"
+          );
 
-          } catch (erro) {
+        } else {
 
-            console.error(
-              "Erro inesperado:",
-              erro
-            );
-
-
-            mostrarStatus(
-              "Ocorreu um erro ao enviar sua mensagem.",
-              "erro"
-            );
-
-
-            botao.disabled = false;
-
-
-            botao.innerHTML =
-              '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
-
-          }
+          mostrarStatus(
+            "Mensagem enviada com sucesso! Ela ficará aguardando aprovação.",
+            "sucesso"
+          );
 
         }
-      );
 
+
+        /* LIMPAR FORMULÁRIO */
+
+        document
+          .getElementById("formularioMural")
+          .reset();
+
+
+        botao.disabled = false;
+
+        botao.innerHTML =
+          '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+
+
+      } catch (erro) {
+
+        console.error(
+          "Erro inesperado:",
+          erro
+        );
+
+        mostrarStatus(
+          "Ocorreu um erro ao enviar sua mensagem. Tente novamente.",
+          "erro"
+        );
+
+        botao.disabled = false;
+
+        botao.innerHTML =
+          '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+
+      }
+
+    }
+  );
+```
 
     /* =====================================================
        ROLAGEM SUAVE
