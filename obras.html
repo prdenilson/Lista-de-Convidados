@@ -1835,78 +1835,78 @@
         SUPABASE_URL,
         SUPABASE_PUBLISHABLE_KEY
       );
-    /* =====================================================
-       CAPA DO DEVOCIONAL — PRIMEIRA PÁGINA DO PDF
-    ===================================================== */
+  /* =====================================================
+   CAPA DO DEVOCIONAL — PRIMEIRA PÁGINA DO PDF
+===================================================== */
 
-    const urlDevocional =
-      "devocionais/devocional-01.pdf";
+const urlDevocional =
+  "devocionais/devocional-01.pdf";
 
+const canvasDevocional =
+  document.getElementById("capaDevocional");
 
-    const canvasDevocional =
-      document.getElementById("capaDevocional");
+if (canvasDevocional) {
 
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-    if (
-      canvasDevocional &&
-      typeof pdfjsLib !== "undefined"
-    ) {
+  pdfjsLib
+    .getDocument(urlDevocional)
+    .promise
+    .then(function(pdf) {
+
+      return pdf.getPage(1);
+
+    })
+    .then(function(page) {
+
+      const container =
+        document.querySelector(".devocional-capa");
+
+      const largura =
+        container.clientWidth;
+
+      const viewportOriginal =
+        page.getViewport({
+          scale: 1
+        });
+
+      const escala =
+        largura / viewportOriginal.width;
+
+      const viewport =
+        page.getViewport({
+          scale: escala
+        });
+
+      canvasDevocional.width =
+        viewport.width;
+
+      canvasDevocional.height =
+        viewport.height;
 
       const contexto =
         canvasDevocional.getContext("2d");
 
+      return page.render({
 
-      pdfjsLib
-        .getDocument(urlDevocional)
-        .promise
-        .then(function(pdf) {
+        canvasContext: contexto,
 
-          return pdf.getPage(1);
+        viewport: viewport
 
-        })
+      }).promise;
 
+    })
+    .catch(function(erro) {
 
-        .then(function(page) {
+      console.error(
+        "Erro ao mostrar a primeira página do PDF:",
+        erro
+      );
 
-          const escala = 1.5;
+    });
 
-
-          const viewport =
-            page.getViewport({
-              scale: escala
-            });
-
-
-          canvasDevocional.width =
-            viewport.width;
-
-
-          canvasDevocional.height =
-            viewport.height;
-
-
-          return page.render({
-
-            canvasContext: contexto,
-
-            viewport: viewport
-
-          }).promise;
-
-        })
-
-
-        .catch(function(erro) {
-
-          console.error(
-            "Erro ao carregar a capa do devocional:",
-            erro
-          );
-
-        });
-
-    }
-
+}
     /* =====================================================
        MENU MOBILE
     ===================================================== */
