@@ -1,22 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
 
   <title>Obras | Francisco Denilson Pinheiro</title>
 
-  <meta
-    name="description"
-    content="Conheça as obras de Francisco Denilson Pinheiro e acesse seus devocionais em PDF."
-  >
+<meta
+name="description"
+content="Conheça as obras de Francisco Denilson Pinheiro."
 
+>
 
   <!-- =====================================================
        FONTES
@@ -35,7 +37,6 @@
     rel="stylesheet"
   >
 
-
   <!-- =====================================================
        ÍCONES
   ====================================================== -->
@@ -44,7 +45,6 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
-
 
   <!-- =====================================================
        ESTILO PRINCIPAL
@@ -55,6 +55,9 @@
     href="style.css"
   >
 
+  <!-- =====================================================
+       ESTILOS ESPECÍFICOS DA PÁGINA
+  ====================================================== -->
 
   <style>
 
@@ -80,11 +83,18 @@
       grid-template-columns: 300px 1fr;
       gap: 55px;
       align-items: start;
+
       padding: 45px;
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-color);
+
       border-radius: 5px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+
       box-sizing: border-box;
     }
 
@@ -104,9 +114,13 @@
       width: 100%;
       max-width: 270px;
       height: auto;
+
       display: block;
+
       border-radius: 4px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.55);
     }
 
 
@@ -116,46 +130,69 @@
 
     .livro-info h1 {
       font-family: var(--font-serif);
+
       font-size: 2.4rem;
+
       line-height: 1.15;
+
       font-weight: 500;
+
       color: #fff;
-      margin: 0 0 12px;
+
+      margin:
+        0 0 12px;
     }
 
 
     .livro-subtitulo {
       color: var(--gold-primary);
+
       font-size: 1rem;
+
       font-style: italic;
+
       line-height: 1.6;
-      margin: 0 0 25px;
+
+      margin:
+        0 0 25px;
     }
 
 
     .livro-autor {
       color: var(--text-muted);
+
       font-size: 0.85rem;
+
       margin-bottom: 25px;
     }
 
 
     .livro-autor strong {
-      color: var(--gold-primary);
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 1.5px;
       display: block;
+
+      color: var(--gold-primary);
+
+      text-transform: uppercase;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 1.5px;
+
       margin-bottom: 4px;
     }
 
 
     .livro-descricao {
       color: var(--text-muted);
+
       font-size: 0.95rem;
+
       line-height: 1.8;
+
       font-weight: 300;
-      margin: 0 0 25px;
+
+      margin:
+        0 0 25px;
     }
 
 
@@ -165,246 +202,114 @@
 
     .botoes {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 12px;
+
       margin-top: 25px;
     }
 
 
     .button {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       min-height: 50px;
-      padding: 13px 18px;
-      text-align: center;
-      text-decoration: none;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      gap: 9px;
-      background: var(--gold-primary);
-      color: #171513;
-      border: 1px solid var(--gold-primary);
+
+      padding:
+        13px 18px;
+
       box-sizing: border-box;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      font-family: var(--font-sans);
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      border-radius: 2px;
+
+      cursor: pointer;
+
+      transition:
+        all 0.3s ease;
+
+      gap: 9px;
+
+      background:
+        var(--gold-primary);
+
+      color:
+        #171513;
+
+      border:
+        1px solid var(--gold-primary);
     }
 
 
     .button:hover {
       background: #e0bd7d;
+
       border-color: #e0bd7d;
-      transform: translateY(-1px);
+
+      transform:
+        translateY(-1px);
     }
 
 
     .button-outline {
       background: transparent;
+
       color: var(--text-light);
-      border: 1px solid var(--border-color);
+
+      border:
+        1px solid var(--border-color);
     }
 
 
     .button-outline:hover {
-      color: var(--gold-primary);
-      border-color: var(--gold-primary);
-      background: rgba(201,158,92,0.05);
+      color:
+        var(--gold-primary);
+
+      border-color:
+        var(--gold-primary);
+
+      background:
+        rgba(201,158,92,0.05);
     }
 
 
     .button-dark {
-      background: #171513;
-      color: #fff;
-      border: 1px solid var(--border-color);
+      background:
+        #171513;
+
+      color:
+        #fff;
+
+      border:
+        1px solid var(--border-color);
     }
 
 
     .button-dark:hover {
-      border-color: var(--gold-primary);
-      color: var(--gold-primary);
-    }
+      border-color:
+        var(--gold-primary);
 
-
-    /* =====================================================
-       DEVOCIONAIS
-    ===================================================== */
-
-    .devocionais {
-      margin-top: 70px;
-    }
-
-
-    .devocionais-cabecalho {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-
-    .devocionais-cabecalho .pequeno {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--gold-primary);
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-
-    .devocionais-cabecalho h2 {
-      margin: 0;
-      color: #fff;
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 400;
-    }
-
-
-    .devocionais-cabecalho p {
-      max-width: 680px;
-      margin: 12px auto 0;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-
-    /* =====================================================
-       CARD DO DEVOCIONAL
-    ===================================================== */
-
-    .devocional-card {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 30px;
-      align-items: center;
-      padding: 30px;
-      margin-bottom: 25px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 5px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
-      box-sizing: border-box;
-    }
-
-
-    /* =====================================================
-       CAPA DO DEVOCIONAL
-    ===================================================== */
-
-    .devocional-capa {
-      width: 150px;
-      min-height: 190px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      border: 1px solid rgba(201,158,92,0.35);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(201,158,92,0.12),
-          rgba(201,158,92,0.03)
-        );
-      border-radius: 4px;
-      overflow: hidden;
-      padding: 0;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-      box-sizing: border-box;
-    }
-
-
-    .devocional-capa canvas {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-
-    /* =====================================================
-       CONTEÚDO DO DEVOCIONAL
-    ===================================================== */
-
-    .devocional-conteudo h3 {
-      color: #fff;
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin: 0 0 10px;
-    }
-
-
-    .devocional-conteudo p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.75;
-      margin: 0 0 20px;
-      max-width: 680px;
-    }
-
-
-    .devocional-botoes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-
-    .devocional-botao {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 45px;
-      padding: 11px 18px;
-      border-radius: 2px;
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-sizing: border-box;
-    }
-
-
-    .devocional-botao-leitura {
-      background: var(--gold-primary);
-      color: #171513;
-      border: 1px solid var(--gold-primary);
-    }
-
-
-    .devocional-botao-leitura:hover {
-      background: #e0bd7d;
-      border-color: #e0bd7d;
-      transform: translateY(-1px);
-    }
-
-
-    .devocional-botao-download {
-      background: transparent;
-      color: #fff;
-      border: 1px solid var(--border-color);
-    }
-
-
-    .devocional-botao-download:hover {
-      color: var(--gold-primary);
-      border-color: var(--gold-primary);
-    }
-
-
-    .devocional-observacao {
-      margin-top: 12px;
-      color: #777;
-      font-family: var(--font-sans);
-      font-size: 0.68rem;
+      color:
+        var(--gold-primary);
     }
 
 
@@ -414,76 +319,165 @@
 
     .acesso-digital {
       margin-top: 45px;
+
       padding: 30px;
-      border: 1px solid rgba(201,158,92,0.35);
+
+      border:
+        1px solid rgba(201,158,92,0.35);
+
       border-radius: 4px;
+
       background:
         linear-gradient(
           135deg,
           rgba(201,158,92,0.08),
           rgba(201,158,92,0.02)
         );
+
       text-align: center;
+
       box-sizing: border-box;
     }
 
 
     .acesso-icone {
       width: 52px;
+
       height: 52px;
-      margin: 0 auto 15px;
+
+      margin:
+        0 auto 15px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       border-radius: 50%;
-      border: 1px solid var(--gold-primary);
-      color: var(--gold-primary);
+
+      border:
+        1px solid var(--gold-primary);
+
+      color:
+        var(--gold-primary);
+
       font-size: 1.2rem;
     }
 
 
     .acesso-digital h2 {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: #fff;
-      margin: 0 0 10px;
+      font-family:
+        var(--font-serif);
+
+      font-size:
+        1.6rem;
+
+      font-weight:
+        400;
+
+      color:
+        #fff;
+
+      margin:
+        0 0 10px;
     }
 
 
     .acesso-digital p {
-      max-width: 650px;
-      margin: 0 auto 20px;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      line-height: 1.7;
+      max-width:
+        650px;
+
+      margin:
+        0 auto 20px;
+
+      color:
+        var(--text-muted);
+
+      font-size:
+        0.88rem;
+
+      line-height:
+        1.7;
     }
 
 
+    .acesso-digital strong {
+      color:
+        var(--gold-primary);
+
+      font-weight:
+        600;
+    }
+
+
+    /* =====================================================
+       BOTÃO DE LEITURA
+    ===================================================== */
+
     .botao-leitura {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 25px;
-      background: var(--gold-primary);
-      color: #171513;
-      border: none;
-      border-radius: 2px;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        10px;
+
+      padding:
+        14px 25px;
+
+      background:
+        var(--gold-primary);
+
+      color:
+        #171513;
+
+      border:
+        1px solid var(--gold-primary);
+
+      border-radius:
+        2px;
+
+      font-family:
+        var(--font-sans);
+
+      font-size:
+        0.75rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        1.2px;
+
+      text-transform:
+        uppercase;
+
+      cursor:
+        pointer;
+
+      transition:
+        all 0.3s ease;
+
+      text-decoration:
+        none;
     }
 
 
     .botao-leitura:hover {
-      background: #e0bd7d;
-      transform: translateY(-1px);
+      background:
+        #e0bd7d;
+
+      border-color:
+        #e0bd7d;
+
+      transform:
+        translateY(-1px);
     }
 
 
@@ -492,35 +486,74 @@
     ===================================================== */
 
     .modal-login {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.78);
-      backdrop-filter: blur(5px);
-      z-index: 9999;
-      box-sizing: border-box;
+      position:
+        fixed;
+
+      inset:
+        0;
+
+      display:
+        none;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        20px;
+
+      background:
+        rgba(0,0,0,0.78);
+
+      backdrop-filter:
+        blur(5px);
+
+      z-index:
+        9999;
+
+      box-sizing:
+        border-box;
     }
 
 
     .modal-login.aberto {
-      display: flex;
+      display:
+        flex;
     }
 
 
     .caixa-login {
-      position: relative;
-      width: 100%;
-      max-width: 420px;
-      padding: 40px 35px;
-      background: var(--bg-card);
-      border: 1px solid rgba(201,158,92,0.45);
-      border-radius: 6px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.65);
-      animation: aparecerLogin 0.25s ease;
-      box-sizing: border-box;
+      position:
+        relative;
+
+      width:
+        100%;
+
+      max-width:
+        420px;
+
+      padding:
+        40px 35px;
+
+      background:
+        var(--bg-card);
+
+      border:
+        1px solid rgba(201,158,92,0.45);
+
+      border-radius:
+        6px;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.65);
+
+      animation:
+        aparecerLogin 0.25s ease;
+
+      box-sizing:
+        border-box;
     }
 
 
@@ -528,152 +561,309 @@
 
       from {
         opacity: 0;
-        transform: translateY(15px) scale(0.97);
+
+        transform:
+          translateY(15px)
+          scale(0.97);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+          translateY(0)
+          scale(1);
       }
 
     }
 
 
     .fechar-login {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: 0.3s ease;
+      position:
+        absolute;
+
+      top:
+        14px;
+
+      right:
+        16px;
+
+      width:
+        35px;
+
+      height:
+        35px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border:
+        none;
+
+      background:
+        transparent;
+
+      color:
+        var(--text-muted);
+
+      font-size:
+        1.2rem;
+
+      cursor:
+        pointer;
+
+      transition:
+        0.3s ease;
     }
 
 
     .fechar-login:hover {
-      color: var(--gold-primary);
+      color:
+        var(--gold-primary);
     }
 
 
     .icone-login {
-      width: 58px;
-      height: 58px;
-      margin: 0 auto 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 1px solid var(--gold-primary);
-      color: var(--gold-primary);
-      font-size: 1.3rem;
+      width:
+        58px;
+
+      height:
+        58px;
+
+      margin:
+        0 auto 18px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        50%;
+
+      border:
+        1px solid var(--gold-primary);
+
+      color:
+        var(--gold-primary);
+
+      font-size:
+        1.3rem;
     }
 
 
     .caixa-login h2 {
-      margin: 0 0 10px;
-      text-align: center;
-      font-family: var(--font-serif);
-      font-size: 1.7rem;
-      font-weight: 400;
-      color: #fff;
+      margin:
+        0 0 10px;
+
+      text-align:
+        center;
+
+      font-family:
+        var(--font-serif);
+
+      font-size:
+        1.7rem;
+
+      font-weight:
+        400;
+
+      color:
+        #fff;
     }
 
 
     .texto-login {
-      margin: 0 0 25px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.6;
+      margin:
+        0 0 25px;
+
+      text-align:
+        center;
+
+      color:
+        var(--text-muted);
+
+      font-size:
+        0.85rem;
+
+      line-height:
+        1.6;
     }
 
 
     .campo-login {
-      margin-bottom: 18px;
+      margin-bottom:
+        18px;
     }
 
 
     .campo-login label {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--gold-primary);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      display:
+        block;
+
+      margin-bottom:
+        7px;
+
+      color:
+        var(--gold-primary);
+
+      font-size:
+        0.72rem;
+
+      font-weight:
+        600;
+
+      letter-spacing:
+        1px;
+
+      text-transform:
+        uppercase;
     }
 
 
     .campo-login input {
-      width: 100%;
-      padding: 13px 14px;
-      box-sizing: border-box;
-      background: #171513;
-      border: 1px solid var(--border-color);
-      border-radius: 3px;
-      color: #fff;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      outline: none;
-      transition: 0.3s ease;
+      width:
+        100%;
+
+      padding:
+        13px 14px;
+
+      box-sizing:
+        border-box;
+
+      background:
+        #171513;
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius:
+        3px;
+
+      color:
+        #fff;
+
+      font-family:
+        var(--font-sans);
+
+      font-size:
+        0.9rem;
+
+      outline:
+        none;
+
+      transition:
+        0.3s ease;
     }
 
 
     .campo-login input:focus {
-      border-color: var(--gold-primary);
-      box-shadow: 0 0 0 2px rgba(201,158,92,0.08);
+      border-color:
+        var(--gold-primary);
+
+      box-shadow:
+        0 0 0 2px
+        rgba(201,158,92,0.08);
     }
 
 
     .campo-login input::placeholder {
-      color: #777;
+      color:
+        #777;
     }
 
 
     .botao-entrar {
-      width: 100%;
-      min-height: 50px;
-      margin-top: 8px;
-      border: 1px solid var(--gold-primary);
-      border-radius: 2px;
-      background: var(--gold-primary);
-      color: #171513;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: 0.3s ease;
+      width:
+        100%;
+
+      min-height:
+        50px;
+
+      margin-top:
+        8px;
+
+      border:
+        1px solid var(--gold-primary);
+
+      border-radius:
+        2px;
+
+      background:
+        var(--gold-primary);
+
+      color:
+        #171513;
+
+      font-family:
+        var(--font-sans);
+
+      font-size:
+        0.75rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        1px;
+
+      text-transform:
+        uppercase;
+
+      cursor:
+        pointer;
+
+      transition:
+        0.3s ease;
     }
 
 
     .botao-entrar:hover {
-      background: #e0bd7d;
-      border-color: #e0bd7d;
+      background:
+        #e0bd7d;
+
+      border-color:
+        #e0bd7d;
     }
 
 
     .botao-entrar:disabled {
-      opacity: 0.6;
-      cursor: wait;
+      opacity:
+        0.6;
+
+      cursor:
+        wait;
     }
 
 
     .mensagem-login {
-      min-height: 20px;
-      margin-top: 15px;
-      text-align: center;
-      color: #d99;
-      font-size: 0.8rem;
-      line-height: 1.5;
+      min-height:
+        20px;
+
+      margin-top:
+        15px;
+
+      text-align:
+        center;
+
+      color:
+        #d99;
+
+      font-size:
+        0.8rem;
+
+      line-height:
+        1.5;
     }
 
 
@@ -684,69 +874,66 @@
     @media (max-width: 800px) {
 
       .pagina {
-        padding: 40px 15px 60px;
+        padding:
+          40px 15px 60px;
       }
 
 
       .livro {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 25px;
+        grid-template-columns:
+          1fr;
+
+        gap:
+          30px;
+
+        padding:
+          25px;
       }
 
 
       .livro-capa img {
-        max-width: 240px;
+        max-width:
+          240px;
       }
 
 
       .livro-info h1 {
-        font-size: 2rem;
-        text-align: center;
+        font-size:
+          2rem;
+
+        text-align:
+          center;
       }
 
 
       .livro-subtitulo,
       .livro-autor {
-        text-align: center;
+        text-align:
+          center;
+      }
+
+
+      .livro-descricao {
+        text-align:
+          left;
       }
 
 
       .botoes {
-        grid-template-columns: 1fr;
-      }
-
-
-      .devocional-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 25px;
-      }
-
-
-      .devocional-capa {
-        margin: 0 auto;
-      }
-
-
-      .devocional-conteudo p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-
-      .devocional-botoes {
-        justify-content: center;
+        grid-template-columns:
+          1fr;
       }
 
 
       .acesso-digital {
-        padding: 25px 18px;
+        padding:
+          25px 18px;
       }
 
 
       .caixa-login {
-        padding: 35px 22px;
+        padding:
+          35px 22px;
       }
 
     }
@@ -754,43 +941,42 @@
 
     @media (max-width: 500px) {
 
-      .devocional-botoes {
-        flex-direction: column;
+      .livro-info h1 {
+        font-size:
+          1.8rem;
       }
 
 
-      .devocional-botao {
-        width: 100%;
+      .button {
+        font-size:
+          0.7rem;
+
+        padding:
+          13px 12px;
+      }
+
+
+      .botao-leitura {
+        width:
+          100%;
       }
 
     }
 
   </style>
 
-
   <!-- =====================================================
        SUPABASE
-       IMPORTANTE: NÃO ALTERAR
+       NÃO ALTERAR
   ====================================================== -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
   ></script>
 
-
-  <!-- =====================================================
-       PDF.JS
-  ====================================================== -->
-
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
-  ></script>
-
 </head>
 
-
 <body>
-
 
   <!-- =====================================================
        MODAL DE LOGIN
@@ -802,105 +988,106 @@
     aria-hidden="true"
   >
 
-    <div class="caixa-login">
+```
+<div class="caixa-login">
 
 
-      <button
-        type="button"
-        class="fechar-login"
-        onclick="fecharLogin()"
-        aria-label="Fechar"
-      >
+  <button
+    type="button"
+    class="fechar-login"
+    onclick="fecharLogin()"
+    aria-label="Fechar"
+  >
 
-        <i class="fa-solid fa-xmark"></i>
+    <i class="fa-solid fa-xmark"></i>
 
-      </button>
-
-
-      <div class="icone-login">
-
-        <i class="fa-solid fa-lock"></i>
-
-      </div>
+  </button>
 
 
-      <h2>
-        Acesso à leitura digital
-      </h2>
+  <div class="icone-login">
 
-
-      <p class="texto-login">
-
-        Entre com seu e-mail e senha
-        para acessar sua biblioteca.
-
-      </p>
-
-
-      <form id="formLogin">
-
-
-        <div class="campo-login">
-
-          <label for="emailLogin">
-            E-mail
-          </label>
-
-
-          <input
-            type="email"
-            id="emailLogin"
-            placeholder="Digite seu e-mail"
-            autocomplete="email"
-            required
-          >
-
-        </div>
-
-
-        <div class="campo-login">
-
-          <label for="senhaLogin">
-            Senha
-          </label>
-
-
-          <input
-            type="password"
-            id="senhaLogin"
-            placeholder="Digite sua senha"
-            autocomplete="current-password"
-            required
-          >
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="botao-entrar"
-          id="botaoEntrar"
-        >
-
-          <i class="fa-solid fa-right-to-bracket"></i>
-
-          Entrar
-
-        </button>
-
-
-        <p
-          id="mensagemLogin"
-          class="mensagem-login"
-        ></p>
-
-
-      </form>
-
-    </div>
+    <i class="fa-solid fa-lock"></i>
 
   </div>
 
+
+  <h2>
+    Acesso à leitura digital
+  </h2>
+
+
+  <p class="texto-login">
+
+    Entre com seu e-mail e senha
+    para acessar sua biblioteca.
+
+  </p>
+
+
+  <form id="formLogin">
+
+
+    <div class="campo-login">
+
+      <label for="emailLogin">
+        E-mail
+      </label>
+
+
+      <input
+        type="email"
+        id="emailLogin"
+        placeholder="Digite seu e-mail"
+        autocomplete="email"
+        required
+      >
+
+    </div>
+
+
+    <div class="campo-login">
+
+      <label for="senhaLogin">
+        Senha
+      </label>
+
+
+      <input
+        type="password"
+        id="senhaLogin"
+        placeholder="Digite sua senha"
+        autocomplete="current-password"
+        required
+      >
+
+    </div>
+
+
+    <button
+      type="submit"
+      class="botao-entrar"
+      id="botaoEntrar"
+    >
+
+      <i class="fa-solid fa-right-to-bracket"></i>
+
+      Entrar
+
+    </button>
+
+
+    <p
+      id="mensagemLogin"
+      class="mensagem-login"
+    ></p>
+
+
+  </form>
+
+</div>
+```
+
+  </div>
 
   <!-- =====================================================
        CABEÇALHO
@@ -908,99 +1095,99 @@
 
   <header class="site-header">
 
+```
+<div class="header-brand">
 
-    <div class="header-brand">
-
-      <img
-        src="imagem-pessoal.jpg"
-        alt="Francisco Denilson Pinheiro"
-        class="foto-pessoal"
-      >
-
-
-      <div class="brand-titles">
-
-        <span class="brand-name">
-          Francisco Denilson
-        </span>
+  <img
+    src="imagem-pessoal.jpg"
+    alt="Francisco Denilson Pinheiro"
+    class="foto-pessoal"
+  >
 
 
-        <span class="brand-sub">
-          Escritor & Palestrante
-        </span>
+  <div class="brand-titles">
 
-      </div>
-
-    </div>
+    <span class="brand-name">
+      Francisco Denilson
+    </span>
 
 
-    <!-- =====================================================
-         MENU DESKTOP
-    ====================================================== -->
+    <span class="brand-sub">
+      Escritor & Palestrante
+    </span>
 
-    <nav class="menu-desktop">
+  </div>
 
-
-      <a href="index.html">
-        Início
-      </a>
+</div>
 
 
-      <a
-        href="obras.html"
-        class="ativo"
-      >
-        Obras
-      </a>
+<!-- ===================================================
+     MENU DESKTOP
+==================================================== -->
+
+<nav class="menu-desktop">
 
 
-      <a href="pre-venda.html">
-        Pré Venda
-      </a>
+  <a href="index.html">
+    Início
+  </a>
 
 
-      <a href="eventos.html">
-        Eventos
-      </a>
+  <a
+    href="obras.html"
+    class="ativo"
+  >
+    Obras
+  </a>
 
 
-      <a href="area-do-leitor.html">
-        Área do Leitor
-      </a>
+  <a href="pre-venda.html">
+    Pré Venda
+  </a>
 
 
-      <a href="seja-um-escritor.html">
-        Seja um Escritor
-      </a>
+  <a href="eventos.html">
+    Eventos
+  </a>
 
 
-      <a href="contato.html">
-        Contato
-      </a>
+  <a href="area-do-leitor.html">
+    Área do Leitor
+  </a>
 
 
-    </nav>
+  <a href="seja-um-escritor.html">
+    Seja um Escritor
+  </a>
 
 
-    <!-- =====================================================
-         BOTÃO MENU MOBILE
-    ====================================================== -->
+  <a href="contato.html">
+    Contato
+  </a>
 
-    <button
-      type="button"
-      class="botao-menu-mobile"
-      id="botaoMenu"
-      aria-label="Abrir menu"
-      onclick="alternarMenu()"
-    >
 
-      <i class="fa-solid fa-bars"></i>
+</nav>
 
-    </button>
 
+<!-- ===================================================
+     BOTÃO MENU MOBILE
+==================================================== -->
+
+<button
+  type="button"
+  class="botao-menu-mobile"
+  id="botaoMenu"
+  aria-label="Abrir menu"
+  aria-expanded="false"
+  onclick="alternarMenu()"
+>
+
+  <i class="fa-solid fa-bars"></i>
+
+</button>
+```
 
   </header>
-
 
   <!-- =====================================================
        MENU MOBILE
@@ -1011,453 +1198,264 @@
     id="menuConteudo"
   >
 
-
-    <a href="index.html">
-      Início
-    </a>
-
-
-    <a
-      href="obras.html"
-      class="ativo"
-    >
-      Obras
-    </a>
+```
+<a href="index.html">
+  Início
+</a>
 
 
-    <a href="pre-venda.html">
-      Pré Venda
-    </a>
+<a
+  href="obras.html"
+  class="ativo"
+>
+  Obras
+</a>
 
 
-    <a href="eventos.html">
-      Eventos
-    </a>
+<a href="pre-venda.html">
+  Pré Venda
+</a>
 
 
-    <a href="area-do-leitor.html">
-      Área do Leitor
-    </a>
+<a href="eventos.html">
+  Eventos
+</a>
 
 
-    <a href="seja-um-escritor.html">
-      Seja um Escritor
-    </a>
+<a href="area-do-leitor.html">
+  Área do Leitor
+</a>
 
 
-    <a href="contato.html">
-      Contato
-    </a>
+<a href="seja-um-escritor.html">
+  Seja um Escritor
+</a>
 
+
+<a href="contato.html">
+  Contato
+</a>
+```
 
   </div>
 
-
   <!-- =====================================================
-       CONTEÚDO
+       CONTEÚDO PRINCIPAL
   ====================================================== -->
 
   <main class="pagina">
 
+```
+<!-- ===================================================
+     TÍTULO DA SEÇÃO
+==================================================== -->
 
-    <!-- =====================================================
-         TÍTULO
-    ====================================================== -->
-
-    <div class="titulo-secao">
-
-
-      <span class="pequeno">
-        Minhas obras
-      </span>
+<div class="titulo-secao">
 
 
-      <h2>
-        Livros e Devocionais
-      </h2>
+  <span class="pequeno">
+    Minha obra
+  </span>
 
 
-      <div class="linha-dourada"></div>
+  <h2>
+    Antes Que Eu Seja Usado
+  </h2>
+
+
+  <div class="linha-dourada"></div>
+
+
+</div>
+
+
+<!-- ===================================================
+     LIVRO
+==================================================== -->
+
+<article class="livro">
+
+
+  <!-- CAPA -->
+
+  <div class="livro-capa">
+
+    <img
+      src="capa.jpg"
+      alt="Capa do livro Antes Que Eu Seja Usado"
+    >
+
+  </div>
+
+
+  <!-- INFORMAÇÕES -->
+
+  <div class="livro-info">
+
+
+    <h1>
+      Antes Que Eu Seja Usado
+    </h1>
+
+
+    <p class="livro-subtitulo">
+
+      Uma jornada antes do encontro com nossa vocação.
+
+    </p>
+
+
+    <div class="livro-autor">
+
+
+      <strong>
+        Autor
+      </strong>
+
+
+      Francisco Denilson Pinheiro
 
 
     </div>
 
 
-    <!-- =====================================================
-         LIVRO
-    ====================================================== -->
+    <p class="livro-descricao">
 
-    <article class="livro">
+      Antes de sermos usados por Deus, existe um processo que
+      precisa acontecer dentro de nós. Esta obra é um convite
+      para uma jornada de reflexão, quebrantamento,
+      transformação e preparação para o encontro com nossa
+      vocação.
 
+    </p>
 
-      <div class="livro-capa">
 
-        <img
-          src="capa.jpg"
-          alt="Capa do livro Antes Que Eu Seja Usado"
-        >
+    <!-- =================================================
+         BOTÕES
+    ================================================== -->
 
-      </div>
+    <div class="botoes">
 
 
-      <div class="livro-info">
+      <!-- SINOPSE -->
 
-
-        <h1>
-          Antes Que Eu Seja Usado
-        </h1>
-
-
-        <p class="livro-subtitulo">
-          Uma jornada antes do encontro com nossa vocação.
-        </p>
-
-
-        <div class="livro-autor">
-
-
-          <strong>
-            Autor
-          </strong>
-
-
-          Francisco Denilson Pinheiro
-
-
-        </div>
-
-
-        <p class="livro-descricao">
-
-          Antes de sermos usados por Deus, existe um processo que
-          precisa acontecer dentro de nós. Esta obra é um convite
-          para uma jornada de reflexão, quebrantamento,
-          transformação e preparação para o encontro com nossa
-          vocação.
-
-        </p>
-
-
-        <div class="botoes">
-
-
-          <!-- SINOPSE -->
-
-          <a
-            href="sinopse.html"
-            class="button button-outline"
-          >
-
-            <i class="fa-solid fa-book-open"></i>
-
-            Conheça a sinopse
-
-          </a>
-
-
-          <!-- PIX -->
-
-          <a
-            href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
-            class="button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <i class="fa-brands fa-pix"></i>
-
-            Adquira agora — PIX
-
-          </a>
-
-
-          <!-- CARTÃO -->
-
-          <a
-            href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
-            class="button button-outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <i class="fa-regular fa-credit-card"></i>
-
-            Comprar com cartão
-
-          </a>
-
-
-          <!-- AMAZON -->
-
-          <a
-            href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
-            class="button button-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <i class="fa-brands fa-amazon"></i>
-
-            Versão digital — Amazon KDP
-
-          </a>
-
-
-        </div>
-
-
-      </div>
-
-
-    </article>
-
-
-    <!-- =====================================================
-         DEVOCIONAIS
-    ====================================================== -->
-
-    <section class="devocionais">
-
-
-      <div class="devocionais-cabecalho">
-
-
-        <span class="pequeno">
-          Conteúdo gratuito
-        </span>
-
-
-        <h2>
-          Devocionais para ler em PDF
-        </h2>
-
-
-        <p>
-
-          Textos para leitura, reflexão e edificação.
-          Leia diretamente no navegador ou baixe o PDF
-          para guardar e ler quando quiser.
-
-        </p>
-
-
-      </div>
-
-
-      <!-- ===================================================
-           DEVOCIONAL 01
-      ==================================================== -->
-
-      <article class="devocional-card">
-
-
-        <div
-          class="devocional-capa"
-          aria-label="Capa do Devocional 01"
-        >
-
-          <canvas
-            id="capaDevocional"
-          ></canvas>
-
-        </div>
-
-
-        <div class="devocional-conteudo">
-
-
-          <h3>
-            Promessas
-          </h3>
-
-
-          <p>
-            Os recursos de Deus para o cumprimento do propósito.
-          </p>
-
-
-          <div class="devocional-botoes">
-
-
-            <a
-              href="devocionais/devocional-01.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="devocional-botao devocional-botao-leitura"
-            >
-
-              <i class="fa-solid fa-book-open"></i>
-
-              Ler online
-
-            </a>
-
-
-            <a
-              href="devocionais/devocional-01.pdf"
-              download="devocional-01.pdf"
-              class="devocional-botao devocional-botao-download"
-            >
-
-              <i class="fa-solid fa-download"></i>
-
-              Baixar PDF
-
-            </a>
-
-
-          </div>
-
-
-          <div class="devocional-observacao">
-
-            Arquivo PDF • Leitura gratuita
-
-          </div>
-
-
-        </div>
-
-
-      </article>
-
-
-      <!-- ===================================================
-           DEVOCIONAL 02
-      ==================================================== -->
-
-      <article class="devocional-card">
-
-
-        <div
-          class="devocional-capa"
-          aria-label="Capa do Devocional 02"
-        >
-
-          <canvas
-            id="capaDevocional02"
-          ></canvas>
-
-        </div>
-
-
-        <div class="devocional-conteudo">
-
-
-          <h3>
-            Derrotas que poderiam ser evitadas
-          </h3>
-
-
-          <p>
-            5 erros que levam ao fracasso.
-          </p>
-
-
-          <div class="devocional-botoes">
-
-
-            <a
-              href="devocionais/devocional-02.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="devocional-botao devocional-botao-leitura"
-            >
-
-              <i class="fa-solid fa-book-open"></i>
-
-              Ler online
-
-            </a>
-
-
-            <a
-              href="devocionais/devocional-02.pdf"
-              download="devocional-02.pdf"
-              class="devocional-botao devocional-botao-download"
-            >
-
-              <i class="fa-solid fa-download"></i>
-
-              Baixar PDF
-
-            </a>
-
-
-          </div>
-
-
-          <div class="devocional-observacao">
-
-            Arquivo PDF • Leitura gratuita
-
-          </div>
-
-
-        </div>
-
-
-      </article>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         ACESSO À LEITURA DIGITAL
-         PRESERVADO
-    ====================================================== -->
-
-    <section class="acesso-digital">
-
-
-      <div class="acesso-icone">
-
-        <i class="fa-solid fa-lock"></i>
-
-      </div>
-
-
-      <h2>
-        Acesso à leitura digital
-      </h2>
-
-
-      <p>
-
-        Comprou o livro físico na pré-venda?
-
-        Você tem direito ao acesso à versão digital de
-        <strong>Antes Que Eu Seja Usado</strong>.
-
-        Faça login para acessar sua leitura.
-
-      </p>
-
-
-      <!-- =================================================
-           BOTÃO DE ACESSO
-           NÃO ALTERAR
-      ================================================= -->
-
-      <button
-        type="button"
-        class="botao-leitura"
-        onclick="abrirLogin()"
+      <a
+        href="sinopse.html"
+        class="button button-outline"
       >
 
         <i class="fa-solid fa-book-open"></i>
 
-        Acessar leitura do livro
+        Conheça a sinopse
 
-      </button>
+      </a>
 
 
-    </section>
+      <!-- PIX -->
 
+      <a
+        href="https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-pix"></i>
+
+        Adquira agora — PIX
+
+      </a>
+
+
+      <!-- CARTÃO -->
+
+      <a
+        href="https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90"
+        class="button button-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-regular fa-credit-card"></i>
+
+        Comprar com cartão
+
+      </a>
+
+
+      <!-- AMAZON -->
+
+      <a
+        href="https://www.amazon.com.br/dp/B0HB2FMCQZ"
+        class="button button-dark"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-amazon"></i>
+
+        Versão digital — Amazon KDP
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+
+</article>
+
+
+<!-- ===================================================
+     ACESSO À LEITURA DIGITAL
+==================================================== -->
+
+<section class="acesso-digital">
+
+
+  <div class="acesso-icone">
+
+    <i class="fa-solid fa-lock"></i>
+
+  </div>
+
+
+  <h2>
+    Acesso à leitura digital
+  </h2>
+
+
+  <p>
+
+    Comprou o livro físico na pré-venda?
+
+    Você tem direito ao acesso à versão digital de
+    <strong>Antes Que Eu Seja Usado</strong>.
+
+    Faça login para acessar sua leitura.
+
+  </p>
+
+
+  <button
+    type="button"
+    class="botao-leitura"
+    onclick="abrirLogin()"
+  >
+
+    <i class="fa-solid fa-book-open"></i>
+
+    Acessar leitura do livro
+
+  </button>
+
+
+</section>
+```
 
   </main>
-
 
   <!-- =====================================================
        RODAPÉ
@@ -1465,43 +1463,42 @@
 
   <footer class="site-footer">
 
-
-    <div class="footer-social">
-
-
-      <a
-        href="https://instagram.com/prdenilsonescritor"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-
-        <i class="fa-brands fa-instagram"></i>
-
-      </a>
+```
+<div class="footer-social">
 
 
-      <a
-        href="https://wa.me/5585985141830"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp"
-      >
+  <a
+    href="https://instagram.com/prdenilsonescritor"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
 
-        <i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-brands fa-instagram"></i>
 
-      </a>
-
-
-    </div>
+  </a>
 
 
-    © 2026 Francisco Denilson Pinheiro.
-    Todos os direitos reservados.
+  <a
+    href="https://wa.me/5585985141830"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
 
+    <i class="fa-brands fa-whatsapp"></i>
+
+  </a>
+
+
+</div>
+
+
+© 2026 Francisco Denilson Pinheiro.
+Todos os direitos reservados.
+```
 
   </footer>
-
 
   <!-- =====================================================
        JAVASCRIPT
@@ -1531,217 +1528,36 @@
 
 
     /* =====================================================
-       CONFIGURAÇÃO DO PDF.JS
-    ===================================================== */
-
-    if (
-      typeof pdfjsLib !== "undefined"
-    ) {
-
-      pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
-    }
-
-
-    /* =====================================================
-       FUNÇÃO PARA RENDERIZAR CAPA DO PDF
-    ===================================================== */
-
-    function renderizarCapaPDF(
-      url,
-      canvas
-    ) {
-
-      if (
-        !canvas ||
-        typeof pdfjsLib === "undefined"
-      ) {
-
-        console.error(
-          "PDF.js não foi carregado."
-        );
-
-        return;
-
-      }
-
-
-      const container =
-        canvas.parentElement;
-
-
-      pdfjsLib
-        .getDocument(url)
-        .promise
-
-        .then(function(pdf) {
-
-          return pdf.getPage(1);
-
-        })
-
-        .then(function(page) {
-
-
-          const largura =
-            container.clientWidth;
-
-
-          const viewportOriginal =
-            page.getViewport({
-              scale: 1
-            });
-
-
-          const escala =
-            largura /
-            viewportOriginal.width;
-
-
-          const viewport =
-            page.getViewport({
-              scale: escala
-            });
-
-
-          canvas.width =
-            Math.floor(
-              viewport.width
-            );
-
-
-          canvas.height =
-            Math.floor(
-              viewport.height
-            );
-
-
-          const contexto =
-            canvas.getContext("2d");
-
-
-          return page.render({
-
-            canvasContext:
-              contexto,
-
-            viewport:
-              viewport
-
-          }).promise;
-
-
-        })
-
-        .catch(function(erro) {
-
-          console.error(
-            "Erro ao carregar PDF:",
-            url,
-            erro
-          );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       CAPA DO DEVOCIONAL 01
-    ===================================================== */
-
-    const canvasDevocional =
-      document.getElementById(
-        "capaDevocional"
-      );
-
-
-    renderizarCapaPDF(
-      "devocionais/devocional-01.pdf",
-      canvasDevocional
-    );
-
-
-    /* =====================================================
-       CAPA DO DEVOCIONAL 02
-    ===================================================== */
-
-    const canvasDevocional02 =
-      document.getElementById(
-        "capaDevocional02"
-      );
-
-
-    renderizarCapaPDF(
-      "devocionais/devocional-02.pdf",
-      canvasDevocional02
-    );
-
-
-    /* =====================================================
-       REDIMENSIONAR CAPAS
-       QUANDO A TELA MUDAR DE TAMANHO
-    ===================================================== */
-
-    let redimensionamentoPDF;
-
-
-    window.addEventListener(
-      "resize",
-      function() {
-
-
-        clearTimeout(
-          redimensionamentoPDF
-        );
-
-
-        redimensionamentoPDF =
-          setTimeout(
-            function() {
-
-
-              renderizarCapaPDF(
-                "devocionais/devocional-01.pdf",
-                canvasDevocional
-              );
-
-
-              renderizarCapaPDF(
-                "devocionais/devocional-02.pdf",
-                canvasDevocional02
-              );
-
-
-            },
-            250
-          );
-
-      }
-    );
-
-
-    /* =====================================================
        MENU MOBILE
     ===================================================== */
 
     function alternarMenu() {
-
 
       const menu =
         document.getElementById(
           "menuConteudo"
         );
 
-
-      if (!menu) {
-        return;
-      }
+      const botao =
+        document.getElementById(
+          "botaoMenu"
+        );
 
 
       menu.classList.toggle(
         "aberto"
+      );
+
+
+      const aberto =
+        menu.classList.contains(
+          "aberto"
+        );
+
+
+      botao.setAttribute(
+        "aria-expanded",
+        aberto ? "true" : "false"
       );
 
     }
@@ -1749,23 +1565,32 @@
 
     function fecharMenu() {
 
+      const menu =
+        document.getElementById(
+          "menuConteudo"
+        );
 
-      if (window.innerWidth <= 850) {
+      const botao =
+        document.getElementById(
+          "botaoMenu"
+        );
 
 
-        const menu =
-          document.getElementById(
-            "menuConteudo"
-          );
+      if (menu) {
+
+        menu.classList.remove(
+          "aberto"
+        );
+
+      }
 
 
-        if (menu) {
+      if (botao) {
 
-          menu.classList.remove(
-            "aberto"
-          );
-
-        }
+        botao.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
       }
 
@@ -1779,15 +1604,33 @@
       .forEach(
         function(link) {
 
-
           link.addEventListener(
             "click",
             fecharMenu
           );
 
-
         }
       );
+
+
+    /* =====================================================
+       FECHAR MENU AO REDIMENSIONAR
+    ===================================================== */
+
+    window.addEventListener(
+      "resize",
+      function() {
+
+        if (
+          window.innerWidth > 850
+        ) {
+
+          fecharMenu();
+
+        }
+
+      }
+    );
 
 
     /* =====================================================
@@ -1795,7 +1638,6 @@
     ===================================================== */
 
     function abrirLogin() {
-
 
       const modal =
         document.getElementById(
@@ -1826,7 +1668,6 @@
       setTimeout(
         function() {
 
-
           const campo =
             document.getElementById(
               "emailLogin"
@@ -1839,7 +1680,6 @@
 
           }
 
-
         },
         100
       );
@@ -1848,7 +1688,6 @@
 
 
     function fecharLogin() {
-
 
       const modal =
         document.getElementById(
@@ -1890,11 +1729,9 @@
 
     if (formLogin) {
 
-
       formLogin.addEventListener(
         "submit",
         async function(event) {
-
 
           event.preventDefault();
 
@@ -1942,7 +1779,6 @@
 
           try {
 
-
             const {
               data,
               error
@@ -1950,15 +1786,16 @@
               await supabaseClient.auth
                 .signInWithPassword({
 
-                  email: email,
+                  email:
+                    email,
 
-                  password: senha
+                  password:
+                    senha
 
                 });
 
 
             if (error) {
-
 
               console.error(
                 "Erro no login:",
@@ -1985,15 +1822,12 @@
 
             if (data.session) {
 
-
               window.location.href =
                 "biblioteca.html";
-
 
             }
 
           } catch (erro) {
-
 
             console.error(
               "Erro inesperado:",
@@ -2032,11 +1866,9 @@
 
     if (modalLogin) {
 
-
       modalLogin.addEventListener(
         "click",
         function(event) {
-
 
           if (
             event.target === this
@@ -2060,12 +1892,13 @@
       "keydown",
       function(event) {
 
-
         if (
           event.key === "Escape"
         ) {
 
           fecharLogin();
+
+          fecharMenu();
 
         }
 
@@ -2075,7 +1908,7 @@
 
   </script>
 
-
 </body>
 
 </html>
+
