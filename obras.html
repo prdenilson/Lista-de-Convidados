@@ -447,6 +447,17 @@
 
     }
 
+    .devocional-capa {
+  overflow: hidden;
+  padding: 0;
+}
+
+.devocional-capa canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 
     .devocional-conteudo h3 {
 
@@ -1145,10 +1156,15 @@
   </style>
 
 
-  <!-- SUPABASE -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-  ></script>
+ <!-- SUPABASE -->
+<script
+ SUPABASE_PUBLISHABLE_KEY
+></script>
+
+<!-- PDF.JS -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+></script>
 
 </head>
 
@@ -1619,13 +1635,11 @@
         <!-- CAPA / ÍCONE -->
 
         <div
-          class="devocional-capa"
-          aria-label="Devocional em PDF"
-        >
-
-          <i class="fa-solid fa-file-pdf"></i>
-
-        </div>
+  class="devocional-capa"
+  aria-label="Capa do Devocional 01"
+>
+  <canvas id="capaDevocional"></canvas>
+</div>
 
 
         <!-- CONTEÚDO -->
