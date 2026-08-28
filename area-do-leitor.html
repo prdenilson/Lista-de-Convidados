@@ -2731,30 +2731,48 @@ document
               PARA ENVIAR O E-MAIL
         ================================================== */
 
-        const respostaEmail =
-          await fetch(
-            SUPABASE_URL +
-            "/functions/v1/resend-email",
-            {
-              method: "POST",
-
-              headers: {
-                "Content-Type": "application/json",
-                "Authorization":
-                  "Bearer " + SUPABASE_ANON_KEY
-              },
-
-              body: JSON.stringify({
-                nome: nome,
-                leitura: leitura,
-                mensagem: mensagem
-              })
-            }
-          );
+       ```javascript
+const {
+  data: resultadoEmail,
+  error: erroEmail
+} = await supabaseClient.functions.invoke(
+  "resend-email",
+  {
+    body: {
+      nome: nome,
+      leitura: leitura || "Não informado",
+      mensagem: mensagem
+    }
+  }
+);
 
 
-        const resultadoEmail =
-          await respostaEmail.json();
+if (erroEmail) {
+
+  console.error(
+    "Erro ao chamar a Edge Function:",
+    erroEmail
+  );
+
+  mostrarStatus(
+    "Mensagem recebida, mas houve um problema ao enviar o aviso por e-mail.",
+    "sucesso"
+  );
+
+} else {
+
+  console.log(
+    "E-mail enviado:",
+    resultadoEmail
+  );
+
+  mostrarStatus(
+    "Mensagem enviada com sucesso! Ela ficará aguardando aprovação.",
+    "sucesso"
+  );
+
+}
+```
 
 
         console.log(
