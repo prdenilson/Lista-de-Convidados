@@ -906,21 +906,23 @@ function limparProjeto() {
 }
 
 /* =====================================================
-   ANALISAR IDEIA DO LIVRO
+   ANALISAR IDEIA DO LIVRO COM IA
 ===================================================== */
 
-function analisarIdeia() {
+async function analisarIdeia() {
 
-  const ideia = document
-    .getElementById("ideiaLivro")
-    .value
-    .trim();
+  const ideiaTexto =
+    document.getElementById("ideiaLivro").value.trim();
 
   const resultado =
     document.getElementById("resultadoAnalise");
 
 
-  if (!ideia) {
+  // ==========================================
+  // VERIFICAR IDEIA
+  // ==========================================
+
+  if (!ideiaTexto) {
 
     alert(
       "Escreva primeiro sua ideia para o livro."
@@ -934,204 +936,459 @@ function analisarIdeia() {
   }
 
 
+  // ==========================================
+  // MOSTRAR CARREGAMENTO
+  // ==========================================
+
   resultado.innerHTML = `
 
     <div class="analise-cabecalho">
 
       <span>
-        SUA IDEIA COMEÇOU A GANHAR FORMA
+        ANALISANDO SUA IDEIA
       </span>
 
       <h2>
-        Existe um livro possível aqui.
+        Vamos descobrir o livro que existe dentro dela.
       </h2>
 
       <p>
-        A partir daquilo que você escreveu,
-        este é um primeiro caminho para começar
-        a transformar sua ideia em livro.
+        A inteligência artificial está analisando
+        suas respostas e preparando uma análise personalizada.
       </p>
 
-    </div>
-
-
-    <div class="analise-item">
-
-      <span>
-        SUA IDEIA
-      </span>
-
-      <p>
-        ${escaparHTML(ideia)}
-      </p>
-
-    </div>
-
-
-    <div class="estrutura-livro">
-
-      <span>
-        UMA POSSÍVEL ESTRUTURA
-      </span>
-
-      <h3>
-        Caminho sugerido para o seu livro
-      </h3>
-
-
-      <div class="capitulo-sugerido">
-
-        <strong>01</strong>
-
-        <div>
-
-          <h4>
-            Onde tudo começou
-          </h4>
-
-          <p>
-            Conte a história, experiência ou acontecimento
-            que deu origem à sua ideia.
-          </p>
-
-        </div>
-
+      <div style="
+        margin-top:20px;
+        color:#c99e5c;
+        font-size:1.5rem;
+      ">
+        <i class="fa-solid fa-spinner fa-spin"></i>
       </div>
-
-
-      <div class="capitulo-sugerido">
-
-        <strong>02</strong>
-
-        <div>
-
-          <h4>
-            A pergunta que ficou
-          </h4>
-
-          <p>
-            Qual pergunta ou inquietação fez você perceber
-            que precisava falar sobre esse assunto?
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="capitulo-sugerido">
-
-        <strong>03</strong>
-
-        <div>
-
-          <h4>
-            O que você descobriu
-          </h4>
-
-          <p>
-            Quais experiências, aprendizados ou descobertas
-            ajudaram você a compreender melhor essa ideia?
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="capitulo-sugerido">
-
-        <strong>04</strong>
-
-        <div>
-
-          <h4>
-            Quando tudo mudou
-          </h4>
-
-          <p>
-            Existe algum momento decisivo que mudou sua
-            maneira de pensar ou enxergar esse assunto?
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="capitulo-sugerido">
-
-        <strong>05</strong>
-
-        <div>
-
-          <h4>
-            O que você gostaria de dizer
-          </h4>
-
-          <p>
-            Se o leitor pudesse guardar apenas uma mensagem
-            do seu livro, qual seria?
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="capitulo-sugerido">
-
-        <strong>06</strong>
-
-        <div>
-
-          <h4>
-            Depois da última página
-          </h4>
-
-          <p>
-            Como você gostaria que o leitor estivesse
-            diferente depois de terminar seu livro?
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="analise-mensagem">
-
-      <i class="fa-solid fa-feather-pointed"></i>
-
-      <p>
-
-        <strong>
-          Agora comece pelo primeiro capítulo.
-        </strong>
-
-        Não tente escrever um livro inteiro de uma vez.
-        Comece contando aquilo que você conhece,
-        aquilo que viveu e aquilo que deseja comunicar.
-
-      </p>
 
     </div>
 
   `;
 
-
   resultado.classList.add("mostrar");
-
 
   resultado.scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 
-}
 
+  // ==========================================
+  // PEGAR DADOS DO FORMULÁRIO
+  // ==========================================
+
+  const dados = {
+
+    ideia:
+      ideiaTexto,
+
+    pergunta1:
+      document.getElementById("pergunta1").value.trim(),
+
+    pergunta2:
+      document.getElementById("pergunta2").value.trim(),
+
+    pergunta3:
+      document.getElementById("pergunta3").value.trim(),
+
+    pergunta4:
+      document.getElementById("pergunta4").value.trim(),
+
+    pergunta5:
+      document.getElementById("pergunta5").value.trim(),
+
+    titulo:
+      document.getElementById("tituloLivro").value.trim(),
+
+    tema:
+      document.getElementById("temaLivro").value.trim(),
+
+    leitor:
+      document.getElementById("leitorLivro").value.trim(),
+
+    transformacao:
+      document.getElementById("transformacaoLivro").value.trim()
+
+  };
+
+
+  // ==========================================
+  // CHAMAR A IA PELO SUPABASE
+  // ==========================================
+
+  try {
+
+    const resposta = await fetch(
+      "https://qieejecsicnmsdtefejs.supabase.co/functions/v1/analisar-ideia",
+      {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(dados)
+
+      }
+    );
+
+
+    const analise =
+      await resposta.json();
+
+
+    // ==========================================
+    // VERIFICAR ERRO
+    // ==========================================
+
+    if (!resposta.ok) {
+
+      console.error(
+        "Erro da IA:",
+        analise
+      );
+
+      throw new Error(
+        analise.erro ||
+        "Não foi possível analisar a ideia."
+      );
+
+    }
+
+
+    // ==========================================
+    // MONTAR CAPÍTULOS
+    // ==========================================
+
+    let estruturaHTML = "";
+
+
+    if (Array.isArray(analise.estrutura)) {
+
+      analise.estrutura.forEach(
+        function(capitulo) {
+
+          estruturaHTML += `
+
+            <div class="capitulo-sugerido">
+
+              <strong>
+                ${escaparHTML(
+                  capitulo.numero || ""
+                )}
+              </strong>
+
+              <div>
+
+                <h4>
+                  ${escaparHTML(
+                    capitulo.titulo || ""
+                  )}
+                </h4>
+
+                <p>
+                  ${escaparHTML(
+                    capitulo.descricao || ""
+                  )}
+                </p>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      );
+
+    }
+
+
+    // ==========================================
+    // PONTOS FORTES
+    // ==========================================
+
+    let pontosFortesHTML = "";
+
+    if (Array.isArray(analise.pontos_fortes)) {
+
+      pontosFortesHTML =
+        analise.pontos_fortes
+          .map(function(item) {
+
+            return `
+              <li>
+                ${escaparHTML(item)}
+              </li>
+            `;
+
+          })
+          .join("");
+
+    }
+
+
+    // ==========================================
+    // PONTOS A DESENVOLVER
+    // ==========================================
+
+    let pontosDesenvolverHTML = "";
+
+    if (
+      Array.isArray(
+        analise.pontos_desenvolver
+      )
+    ) {
+
+      pontosDesenvolverHTML =
+        analise.pontos_desenvolver
+          .map(function(item) {
+
+            return `
+              <li>
+                ${escaparHTML(item)}
+              </li>
+            `;
+
+          })
+          .join("");
+
+    }
+
+
+    // ==========================================
+    // MOSTRAR ANÁLISE
+    // ==========================================
+
+    resultado.innerHTML = `
+
+      <div class="analise-cabecalho">
+
+        <span>
+          SUA IDEIA FOI ANALISADA
+        </span>
+
+        <h2>
+          ${escaparHTML(
+            analise.titulo_sugerido ||
+            "Existe um livro possível aqui."
+          )}
+        </h2>
+
+        <p>
+          ${escaparHTML(
+            analise.avaliacao || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          POTENCIAL DA IDEIA
+        </span>
+
+        <p>
+          ${escaparHTML(
+            analise.potencial || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          PARA QUEM É ESTE LIVRO
+        </span>
+
+        <p>
+          ${escaparHTML(
+            analise.publico || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          GÊNERO / FORMATO
+        </span>
+
+        <p>
+          ${escaparHTML(
+            analise.genero || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          TÍTULO E SUBTÍTULO SUGERIDOS
+        </span>
+
+        <h3>
+          ${escaparHTML(
+            analise.titulo_sugerido || ""
+          )}
+        </h3>
+
+        <p>
+          ${escaparHTML(
+            analise.subtitulo_sugerido || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          PROMESSA DO LIVRO
+        </span>
+
+        <p>
+          ${escaparHTML(
+            analise.promessa_do_livro || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          PONTOS FORTES
+        </span>
+
+        <ul>
+          ${pontosFortesHTML}
+        </ul>
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          O QUE AINDA PODE SER DESENVOLVIDO
+        </span>
+
+        <ul>
+          ${pontosDesenvolverHTML}
+        </ul>
+
+      </div>
+
+
+      <div class="estrutura-livro">
+
+        <span>
+          UMA POSSÍVEL ESTRUTURA
+        </span>
+
+        <h3>
+          Caminho sugerido para o seu livro
+        </h3>
+
+        ${estruturaHTML}
+
+      </div>
+
+
+      <div class="analise-item">
+
+        <span>
+          PRIMEIRO PASSO
+        </span>
+
+        <p>
+          ${escaparHTML(
+            analise.primeiro_passo || ""
+          )}
+        </p>
+
+      </div>
+
+
+      <div class="analise-mensagem">
+
+        <i class="fa-solid fa-feather-pointed"></i>
+
+        <p>
+
+          <strong>
+            ${escaparHTML(
+              analise.mensagem_final || ""
+            )}
+          </strong>
+
+        </p>
+
+      </div>
+
+    `;
+
+
+    // ==========================================
+    // ROLAR PARA O RESULTADO
+    // ==========================================
+
+    resultado.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao analisar ideia:",
+      erro
+    );
+
+
+    resultado.innerHTML = `
+
+      <div class="analise-cabecalho">
+
+        <span>
+          NÃO FOI POSSÍVEL CONCLUIR A ANÁLISE
+        </span>
+
+        <h2>
+          Tivemos um pequeno problema.
+        </h2>
+
+        <p>
+          Sua ideia não foi perdida.
+          Tente novamente em alguns instantes.
+        </p>
+
+      </div>
+
+    `;
+
+    resultado.classList.add("mostrar");
+
+  }
+
+}
 
 /* =====================================================
    PROTEGER TEXTO
