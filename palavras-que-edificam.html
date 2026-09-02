@@ -40,7 +40,9 @@
       margin: 0 auto;
     }
 
-    /* TÍTULO */
+    /* =========================
+       TÍTULO
+       ========================= */
 
     .cabecalho {
       text-align: center;
@@ -68,7 +70,9 @@
       font-size: 1rem;
     }
 
-    /* VÍDEOS */
+    /* =========================
+       LISTA DE VÍDEOS
+       ========================= */
 
     .lista-videos {
       display: grid;
@@ -86,14 +90,22 @@
         0 8px 25px rgba(0, 0, 0, 0.08);
     }
 
+    /* =========================
+       MINIATURA MENOR
+       ========================= */
+
     .miniatura {
-      width: 100%;
+      width: 75%;
 
       aspect-ratio: 16 / 9;
+
+      margin: 25px auto 0;
 
       overflow: hidden;
 
       background: #111;
+
+      border-radius: 10px;
     }
 
     .miniatura img {
@@ -105,8 +117,12 @@
       display: block;
     }
 
+    /* =========================
+       INFORMAÇÕES DO VÍDEO
+       ========================= */
+
     .video-info {
-      padding: 25px;
+      padding: 25px 30px 30px;
     }
 
     .video-info h2 {
@@ -124,6 +140,10 @@
 
       color: #666;
     }
+
+    /* =========================
+       BOTÃO ASSISTIR
+       ========================= */
 
     .botao-assistir {
       display: inline-block;
@@ -145,10 +165,13 @@
 
     .botao-assistir:hover {
       transform: translateY(-2px);
+
       opacity: 0.9;
     }
 
-    /* VOLTAR */
+    /* =========================
+       BOTÃO VOLTAR
+       ========================= */
 
     .voltar {
       text-align: center;
@@ -176,15 +199,26 @@
 
     .botao-voltar:hover {
       background: #222;
+
       color: white;
     }
 
-    /* CELULAR */
+    /* =========================
+       CELULAR
+       ========================= */
 
     @media (max-width: 600px) {
 
       .pagina {
         padding: 35px 15px 50px;
+      }
+
+      .miniatura {
+        width: 100%;
+
+        margin-top: 15px;
+
+        border-radius: 0;
       }
 
       .video-info {
@@ -198,6 +232,7 @@
       .botao-assistir,
       .botao-voltar {
         width: 100%;
+
         text-align: center;
       }
 
@@ -216,7 +251,9 @@
     <div class="conteudo">
 
 
-      <!-- TÍTULO -->
+      <!-- =========================
+           CABEÇALHO
+           ========================= -->
 
       <header class="cabecalho">
 
@@ -233,9 +270,9 @@
       </header>
 
 
-      <!-- =================================================
-           LISTA DE VÍDEOS
-           ================================================= -->
+      <!-- =========================
+           VÍDEOS
+           ========================= -->
 
       <section class="lista-videos">
 
@@ -243,6 +280,7 @@
         <!-- VÍDEO 01 -->
 
         <article class="video">
+
 
           <div class="miniatura">
 
@@ -265,6 +303,7 @@
               da Unidade Pastoral de Fortaleza.
             </p>
 
+
             <a
               href="https://youtu.be/HKPJMK-2qYY"
               target="_blank"
@@ -282,7 +321,9 @@
       </section>
 
 
-      <!-- VOLTAR -->
+      <!-- =========================
+           VOLTAR
+           ========================= -->
 
       <div class="voltar">
 
