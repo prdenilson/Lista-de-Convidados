@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Palavras que Edificam</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f5f0;
+      color: #222;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .pagina {
+      min-height: 100vh;
+      padding: 50px 20px 70px;
+    }
+
+    .conteudo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* TÍTULO */
+
+    .cabecalho {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .cabecalho h1 {
+      margin: 0 0 15px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+
+      color: #222;
+    }
+
+    .cabecalho p {
+      max-width: 700px;
+      margin: 0 auto;
+
+      line-height: 1.7;
+
+      color: #666;
+
+      font-size: 1rem;
+    }
+
+    /* VÍDEOS */
+
+    .lista-videos {
+      display: grid;
+      gap: 35px;
+    }
+
+    .video {
+      background: white;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .miniatura {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .miniatura img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .video-info {
+      padding: 25px;
+    }
+
+    .video-info h2 {
+      margin: 0 0 10px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 1.7rem;
+    }
+
+    .video-info p {
+      margin: 0 0 22px;
+
+      line-height: 1.7;
+
+      color: #666;
+    }
+
+    .botao-assistir {
+      display: inline-block;
+
+      padding: 12px 22px;
+
+      background: #222;
+
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 7px;
+
+      font-weight: 600;
+
+      transition: 0.2s;
+    }
+
+    .botao-assistir:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* VOLTAR */
+
+    .voltar {
+      text-align: center;
+
+      margin-top: 50px;
+    }
+
+    .botao-voltar {
+      display: inline-block;
+
+      padding: 12px 22px;
+
+      border: 1px solid #222;
+
+      color: #222;
+
+      text-decoration: none;
+
+      border-radius: 7px;
+
+      font-weight: 600;
+
+      transition: 0.2s;
+    }
+
+    .botao-voltar:hover {
+      background: #222;
+      color: white;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 600px) {
+
+      .pagina {
+        padding: 35px 15px 50px;
+      }
+
+      .video-info {
+        padding: 20px;
+      }
+
+      .video-info h2 {
+        font-size: 1.45rem;
+      }
+
+      .botao-assistir,
+      .botao-voltar {
+        width: 100%;
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="pagina">
+
+    <div class="conteudo">
+
+
+      <!-- TÍTULO -->
+
+      <header class="cabecalho">
+
+        <h1>
+          Palavras que Edificam
+        </h1>
+
+        <p>
+          Mensagens para fortalecer sua fé,
+          edificar sua vida e aproximar seu
+          coração de Deus.
+        </p>
+
+      </header>
+
+
+      <!-- =================================================
+           LISTA DE VÍDEOS
+           ================================================= -->
+
+      <section class="lista-videos">
+
+
+        <!-- VÍDEO 01 -->
+
+        <article class="video">
+
+          <div class="miniatura">
+
+            <img
+              src="https://img.youtube.com/vi/HKPJMK-2qYY/hqdefault.jpg"
+              alt="O Poder da Fraqueza"
+            >
+
+          </div>
+
+
+          <div class="video-info">
+
+            <h2>
+              O Poder da Fraqueza
+            </h2>
+
+            <p>
+              Palavra ministrada no Café com Pastores
+              da Unidade Pastoral de Fortaleza.
+            </p>
+
+            <a
+              href="https://youtu.be/HKPJMK-2qYY"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="botao-assistir"
+            >
+              ▶ Assistir
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </section>
+
+
+      <!-- VOLTAR -->
+
+      <div class="voltar">
+
+        <a
+          href="area-do-leitor.html"
+          class="botao-voltar"
+        >
+          ← Voltar para a Área do Leitor
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+</body>
+
+</html>
