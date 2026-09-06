@@ -625,57 +625,107 @@
     }
 
 
-    /* =========================
-       BOTÃO FIXO
-    ========================= */
+/* =========================
+   BOTÃO FIXO
+========================= */
 
-    .confirmar-fixo {
+.confirmar-fixo {
 
-      position: fixed;
+  position: fixed;
 
-      right: 22px;
+  right: 22px;
 
-      bottom: 22px;
+  bottom: 22px;
 
-      z-index: 2000;
+  z-index: 2000;
 
-      background: #c9b58a;
+  background: linear-gradient(
+    135deg,
+    #d8c08a,
+    #c9a957,
+    #e5cf96
+  );
 
-      color: #191715;
+  color: #191715;
 
-      padding: 15px 22px;
+  padding: 17px 28px;
 
-      border: none;
+  border: 2px solid #f0dda8;
 
-      border-radius: 3px;
+  border-radius: 50px;
 
-      font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 
-      font-size: 12px;
+  font-size: 13px;
 
-      font-weight: bold;
+  font-weight: bold;
 
-      letter-spacing: 1px;
+  letter-spacing: 1.2px;
 
-      text-transform: uppercase;
+  text-transform: uppercase;
 
-      cursor: pointer;
+  cursor: pointer;
 
-      box-shadow: 0 8px 25px rgba(0,0,0,0.30);
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.35),
+    0 0 0 0 rgba(201,181,138,0.7);
 
-      transition: 0.3s;
-    }
+  transition: all 0.3s ease;
 
+  animation: pulsarConfirmacao 2s infinite;
 
-    .confirmar-fixo:hover {
-
-      background: #e0cfaa;
-
-      transform: translateY(-2px);
-    }
+}
 
 
-    /* =========================
+/* EFEITO AO PASSAR O MOUSE */
+
+.confirmar-fixo:hover {
+
+  background: linear-gradient(
+    135deg,
+    #e8d49f,
+    #d8bd70,
+    #f0dda8
+  );
+
+  transform: translateY(-3px) scale(1.03);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.40),
+    0 0 25px rgba(201,181,138,0.65);
+
+}
+
+
+/* ANIMAÇÃO SUAVE */
+
+@keyframes pulsarConfirmacao {
+
+  0% {
+
+    box-shadow:
+      0 8px 25px rgba(0,0,0,0.35),
+      0 0 0 0 rgba(201,181,138,0.65);
+
+  }
+
+  50% {
+
+    box-shadow:
+      0 8px 25px rgba(0,0,0,0.35),
+      0 0 0 10px rgba(201,181,138,0);
+
+  }
+
+  100% {
+
+    box-shadow:
+      0 8px 25px rgba(0,0,0,0.35),
+      0 0 0 0 rgba(201,181,138,0);
+
+  }
+
+}    /* =========================
        MODAL — CONFIRMAÇÃO
     ========================= */
 
