@@ -1447,23 +1447,16 @@
         };
 
         const resposta =
-          await fetch(
-            "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
-            {
-              method: "POST",
-              body: JSON.stringify(dados)
-            }
-          );
+  await fetch(
+    "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
+    {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(dados)
+    }
+  );
 
-        const resultado =
-          await resposta.json();
-
-        if (!resultado.sucesso) {
-          throw new Error(
-            resultado.erro || "Erro ao enviar o pedido."
-          );
-        }
-
+     
         form.style.display = "none";
 
         sucesso.classList.add("ativo");
