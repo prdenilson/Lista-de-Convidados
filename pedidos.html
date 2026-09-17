@@ -1350,22 +1350,119 @@
     ========================= */
 
     form.addEventListener(
-      "submit",
-      function(event) {
+  "submit",
+  async function(event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        /*
-          IMPORTANTE:
+    const botao = form.querySelector("button[type='submit']");
+    const arquivo = document.getElementById("comprovante").files[0];
 
-          AQUI ENTRARÁ A CONEXÃO COM A PLANILHA.
+    if (!arquivo) {
+      alert("Selecione o comprovante de pagamento.");
+      return;
+    }
 
-          Por enquanto o formulário NÃO envia os dados
-          para nenhum lugar.
+    botao.disabled = true;
+    botao.textContent = "ENVIANDO PEDIDO...";
 
-          Depois vamos conectar este formulário ao
-          Google Sheets e fazer o upload do comprovante.
-        */
+    try {
+
+      const leitor = new FileReader();
+
+      leitor.onload = async function() {
+
+        const base64Completo = leitor.result;
+
+        const base64 = base64Completo.split(",")[1];
+
+        const quantidade =
+          parseInt(document.getElementById("quantidade").value);
+
+        const valorTotal =
+          quantidade * PRECO;
+
+        const pagamento =
+          document.querySelector(
+            'input[name="pagamento"]:checked'
+          ).value;
+
+        const dados = {
+
+          nome:
+            document.getElementById("nome").value,
+
+          whatsapp:
+            document.getElementById("whatsapp").value,
+
+          email:
+            document.getElementById("email").value,
+
+          quantidade:
+            quantidade,
+
+          valorUnitario:
+            PRECO,
+
+          valorTotal:
+            valorTotal,
+
+          formaPagamento:
+            pagamento,
+
+          cep:
+            document.getElementById("cep").value,
+
+          estado:
+            document.getElementById("estado").value,
+
+          rua:
+            document.getElementById("endereco").value,
+
+          numero:
+            document.getElementById("numeroEndereco").value,
+
+          complemento:
+            document.getElementById("complemento").value,
+
+          bairro:
+            document.getElementById("bairro").value,
+
+          cidade:
+            document.getElementById("cidade").value,
+
+          comprovante: {
+
+            nome:
+              arquivo.name,
+
+            tipo:
+              arquivo.type,
+
+            base64:
+              base64
+
+          }
+
+        };
+
+        const resposta =
+          await fetch(
+            "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
+            {
+              method: "POST",
+              body: JSON.stringify(dados)
+            }
+          );
+
+        const resultado =
+          await resposta.json();
+
+        if (!resultado.sucesso) {
+          throw new Error(
+            resultado.erro || "Erro ao enviar o pedido."
+          );
+        }
 
         form.style.display = "none";
 
@@ -1376,9 +1473,25 @@
           behavior: "smooth"
         });
 
-      }
-    );
+      };
 
+      leitor.readAsDataURL(arquivo);
+
+    } catch (erro) {
+
+      console.error(erro);
+
+      alert(
+        "Não foi possível enviar o pedido. Tente novamente."
+      );
+
+      botao.disabled = false;
+      botao.textContent = "ENVIAR MEU PEDIDO";
+
+    }
+
+  }
+);
   </script>
 
 </body>
