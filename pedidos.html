@@ -1308,7 +1308,7 @@
        JAVASCRIPT
   ========================= -->
 
-<script>
+ <script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -1325,6 +1325,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const sucesso =
     document.getElementById("sucesso");
+
+  const areaComprovante =
+    document.getElementById("areaComprovante");
+
+  const campoComprovante =
+    document.getElementById("comprovante");
 
 
   /* =========================
@@ -1377,8 +1383,10 @@ document.addEventListener("DOMContentLoaded", function () {
         this.value.replace(/\D/g, "");
 
       if (valor.length > 8) {
+
         valor =
           valor.substring(0, 8);
+
       }
 
       if (valor.length > 5) {
@@ -1412,7 +1420,6 @@ document.addEventListener("DOMContentLoaded", function () {
           valor.substring(0, 11);
 
       }
-
 
       if (valor.length <= 10) {
 
@@ -1454,6 +1461,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
+     TIPO DE COMPRA
+  ========================= */
+
+  const opcoesTipoCompra =
+    document.querySelectorAll(
+      'input[name="tipoCompra"]'
+    );
+
+
+  function atualizarTipoCompra() {
+
+    const tipoCompra =
+      document.querySelector(
+        'input[name="tipoCompra"]:checked'
+      ).value;
+
+
+    if (tipoCompra === "evento") {
+
+      areaComprovante.style.display =
+        "none";
+
+    } else {
+
+      areaComprovante.style.display =
+        "block";
+
+    }
+
+  }
+
+
+  opcoesTipoCompra.forEach(
+    function (opcao) {
+
+      opcao.addEventListener(
+        "change",
+        atualizarTipoCompra
+      );
+
+    }
+  );
+
+
+  atualizarTipoCompra();
+
+
+  /* =========================
      ENVIO DO PEDIDO
   ========================= */
 
@@ -1471,51 +1526,139 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       const tipoCompra =
-  document.querySelector(
-    'input[name="tipoCompra"]:checked'
-  ).value;
+        document.querySelector(
+          'input[name="tipoCompra"]:checked'
+        ).value;
 
 
-let arquivo =
-  document.getElementById(
-    "comprovante"
-  ).files[0];
+      let arquivo =
+        campoComprovante.files[0];
 
 
-if (
-  !arquivo &&
-  tipoCompra === "evento"
-) {
+      /* =========================
+         COMPRA ONLINE
+      ========================= */
 
-  arquivo = new File(
-    [""],
-    "sem-comprovante.txt",
-    {
-      type: "text/plain"
-    }
-  );
+      if (
+        tipoCompra === "online" &&
+        !arquivo
+      ) {
 
-}
+        alert(
+          "Selecione o comprovante de pagamento."
+        );
 
+        return;
 
-if (
-  tipoCompra === "online" &&
-  !arquivo
-) {
+      }
 
-  alert(
-    "Selecione o comprovante de pagamento."
-  );
-
-  return;
-
-}
 
       botao.disabled = true;
 
       botao.textContent =
         "ENVIANDO PEDIDO...";
 
+
+      /* =========================
+         COMPRA NO EVENTO
+      ========================= */
+
+      if (
+        tipoCompra === "evento"
+      ) {
+
+        const qtd =
+          parseInt(
+            document.getElementById(
+              "quantidade"
+            ).value
+          );
+
+
+        const valorTotal =
+          qtd * PRECO;
+
+
+        const dados = {
+
+          nome:
+            document.getElementById(
+              "nome"
+            ).value,
+
+          whatsapp:
+            document.getElementById(
+              "whatsapp"
+            ).value,
+
+          email:
+            document.getElementById(
+              "email"
+            ).value,
+
+          quantidade:
+            qtd,
+
+          valorUnitario:
+            PRECO,
+
+          valorTotal:
+            valorTotal,
+
+          formaPagamento:
+            "PAGO NO EVENTO",
+
+          cep:
+            document.getElementById(
+              "cep"
+            ).value,
+
+          estado:
+            document.getElementById(
+              "estado"
+            ).value,
+
+          rua:
+            document.getElementById(
+              "endereco"
+            ).value,
+
+          numero:
+            document.getElementById(
+              "numeroEndereco"
+            ).value,
+
+          complemento:
+            document.getElementById(
+              "complemento"
+            ).value,
+
+          bairro:
+            document.getElementById(
+              "bairro"
+            ).value,
+
+          cidade:
+            document.getElementById(
+              "cidade"
+            ).value,
+
+          comprovante:
+            null
+
+        };
+
+
+        enviarPedido(dados);
+
+        return;
+
+      }
+
+
+      /* =========================
+         COMPRA ONLINE
+      ========================= */
 
       const leitor =
         new FileReader();
@@ -1578,9 +1721,7 @@ if (
               valorTotal,
 
             formaPagamento:
-  tipoCompra === "evento"
-    ? "PAGO NO EVENTO"
-    : pagamento,
+              pagamento,
 
             cep:
               document.getElementById(
@@ -1617,22 +1758,79 @@ if (
                 "cidade"
               ).value,
 
-            comprovante:
-  tipoCompra === "evento"
-    ? null
-    : {
-        nome: arquivo.name,
-        tipo: arquivo.type,
-        base64: base64
-      }
+            comprovante: {
+
+              nome:
+                arquivo.name,
+
+              tipo:
+                arquivo.type,
+
+              base64:
+                base64
+
             }
 
           };
 
 
-          /* =========================
-             ENVIO PARA APPS SCRIPT
-          ========================= */
+          enviarPedido(dados);
+
+
+        } catch (erro) {
+
+          console.error(
+            "Erro ao preparar pedido:",
+            erro
+          );
+
+
+          alert(
+            "Não foi possível preparar o pedido. Tente novamente."
+          );
+
+
+          botao.disabled =
+            false;
+
+
+          botao.textContent =
+            "ENVIAR MEU PEDIDO";
+
+        }
+
+      };
+
+
+      leitor.onerror = function () {
+
+        alert(
+          "Não foi possível ler o comprovante."
+        );
+
+
+        botao.disabled =
+          false;
+
+
+        botao.textContent =
+          "ENVIAR MEU PEDIDO";
+
+      };
+
+
+      leitor.readAsDataURL(
+        arquivo
+      );
+
+
+      /* =========================
+         FUNÇÃO DE ENVIO
+      ========================= */
+
+      async function enviarPedido(dados) {
+
+        try {
 
           const formularioEnvio =
             new URLSearchParams();
@@ -1704,75 +1902,21 @@ if (
 
         }
 
-      };
-
-
-      leitor.onerror = function () {
-
-        alert(
-          "Não foi possível ler o comprovante."
-        );
-
-
-        botao.disabled =
-          false;
-
-
-        botao.textContent =
-          "ENVIAR MEU PEDIDO";
-
-      };
-
-
-      leitor.readAsDataURL(
-        arquivo
-      );
+      }
 
     }
   );
 
 
+  /* =========================
+     TOTAL INICIAL
+  ========================= */
+
   atualizarTotal();
 
 });
 
-const opcoesTipoCompra =
-  document.querySelectorAll(
-    'input[name="tipoCompra"]'
-  );
-
-const areaComprovante =
-  document.getElementById(
-    "areaComprovante"
-  );
-
-opcoesTipoCompra.forEach(
-  function (opcao) {
-
-    opcao.addEventListener(
-      "change",
-      function () {
-
-        if (
-          this.value === "evento"
-        ) {
-
-          areaComprovante.style.display =
-            "none";
-
-        } else {
-
-          areaComprovante.style.display =
-            "block";
-
-        }
-
-      }
-    );
-
-  }
-);
-  
 </script>
+
 </body>
 </html>
