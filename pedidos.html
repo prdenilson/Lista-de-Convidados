@@ -1518,7 +1518,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       event.preventDefault();
 
-
+      if (!form.checkValidity()) {
+  form.reportValidity();
+  return;
+}
+      
       const botao =
         form.querySelector(
           "button[type='submit']"
