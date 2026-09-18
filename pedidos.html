@@ -1100,7 +1100,35 @@
               </div>
 
             </div>
+            
+           <!-- TIPO DE COMPRA -->
 
+<div class="tipo-compra">
+
+  <label>
+    Como você realizou a compra?
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      name="tipoCompra"
+      value="online"
+      checked
+    >
+    Compra online
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      name="tipoCompra"
+      value="evento"
+    >
+    Comprei no evento de lançamento
+  </label>
+
+</div>
 
             <!-- COMPROVANTE -->
 
@@ -1381,22 +1409,30 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-      const arquivo =
-        document.getElementById(
-          "comprovante"
-        ).files[0];
+      const tipoCompra =
+  document.querySelector(
+    'input[name="tipoCompra"]:checked'
+  ).value;
 
 
-      if (!arquivo) {
+const arquivo =
+  document.getElementById(
+    "comprovante"
+  ).files[0];
 
-        alert(
-          "Selecione o comprovante de pagamento."
-        );
 
-        return;
+if (
+  tipoCompra === "online" &&
+  !arquivo
+) {
 
-      }
+  alert(
+    "Selecione o comprovante de pagamento."
+  );
 
+  return;
+
+}
 
       botao.disabled = true;
 
