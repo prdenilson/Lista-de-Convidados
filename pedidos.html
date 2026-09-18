@@ -1219,31 +1219,56 @@
        JAVASCRIPT
   ========================= -->
 
- <script>
+<script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
   const PRECO = 34.90;
 
-  const quantidade = document.getElementById("quantidade");
-  const total = document.getElementById("total");
-  const form = document.getElementById("formPedido");
-  const sucesso = document.getElementById("sucesso");
+  const quantidade =
+    document.getElementById("quantidade");
+
+  const total =
+    document.getElementById("total");
+
+  const form =
+    document.getElementById("formPedido");
+
+  const sucesso =
+    document.getElementById("sucesso");
+
+
+  /* =========================
+     MOEDA
+  ========================= */
 
   function formatarMoeda(valor) {
+
     return valor.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
     });
+
   }
+
+
+  /* =========================
+     TOTAL
+  ========================= */
 
   function atualizarTotal() {
 
-    const qtd = Number(quantidade.value);
-    const valor = qtd * PRECO;
+    const qtd =
+      Number(quantidade.value);
 
-    total.textContent = formatarMoeda(valor);
+    const valor =
+      qtd * PRECO;
+
+    total.textContent =
+      formatarMoeda(valor);
+
   }
+
 
   quantidade.addEventListener(
     "change",
@@ -1259,17 +1284,21 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("cep")
     .addEventListener("input", function () {
 
-      let valor = this.value.replace(/\D/g, "");
+      let valor =
+        this.value.replace(/\D/g, "");
 
       if (valor.length > 8) {
-        valor = valor.substring(0, 8);
+        valor =
+          valor.substring(0, 8);
       }
 
       if (valor.length > 5) {
+
         valor =
           valor.substring(0, 5) +
           "-" +
           valor.substring(5);
+
       }
 
       this.value = valor;
@@ -1289,8 +1318,12 @@ document.addEventListener("DOMContentLoaded", function () {
         this.value.replace(/\D/g, "");
 
       if (valor.length > 11) {
-        valor = valor.substring(0, 11);
+
+        valor =
+          valor.substring(0, 11);
+
       }
+
 
       if (valor.length <= 10) {
 
@@ -1341,15 +1374,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       event.preventDefault();
 
+
       const botao =
         form.querySelector(
           "button[type='submit']"
         );
 
+
       const arquivo =
         document.getElementById(
           "comprovante"
         ).files[0];
+
 
       if (!arquivo) {
 
@@ -1358,9 +1394,12 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         return;
+
       }
 
+
       botao.disabled = true;
+
       botao.textContent =
         "ENVIANDO PEDIDO...";
 
@@ -1375,6 +1414,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const base64Completo =
             leitor.result;
+
 
           const base64 =
             base64Completo.split(",")[1];
@@ -1478,27 +1518,55 @@ document.addEventListener("DOMContentLoaded", function () {
           };
 
 
+          /* =========================
+             ENVIO PARA APPS SCRIPT
+          ========================= */
+
+          const formularioEnvio =
+            new URLSearchParams();
+
+
+          formularioEnvio.append(
+            "dados",
+            JSON.stringify(dados)
+          );
+
+
           await fetch(
             "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
             {
+
               method: "POST",
+
               mode: "no-cors",
-              body: JSON.stringify(dados)
+
+              body: formularioEnvio
+
             }
           );
 
 
           /* =========================
-             SUCESSO
+             CONFIRMAÇÃO
           ========================= */
 
-          form.style.display = "none";
+          form.style.display =
+            "none";
 
-          sucesso.classList.add("ativo");
+
+          sucesso.classList.add(
+            "ativo"
+          );
+
 
           window.scrollTo({
-            top: sucesso.offsetTop - 100,
-            behavior: "smooth"
+
+            top:
+              sucesso.offsetTop - 100,
+
+            behavior:
+              "smooth"
+
           });
 
 
@@ -1509,11 +1577,15 @@ document.addEventListener("DOMContentLoaded", function () {
             erro
           );
 
+
           alert(
             "Não foi possível enviar o pedido. Tente novamente."
           );
 
-          botao.disabled = false;
+
+          botao.disabled =
+            false;
+
 
           botao.textContent =
             "ENVIAR MEU PEDIDO";
@@ -1529,7 +1601,10 @@ document.addEventListener("DOMContentLoaded", function () {
           "Não foi possível ler o comprovante."
         );
 
-        botao.disabled = false;
+
+        botao.disabled =
+          false;
+
 
         botao.textContent =
           "ENVIAR MEU PEDIDO";
@@ -1537,16 +1612,18 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
 
-      leitor.readAsDataURL(arquivo);
+      leitor.readAsDataURL(
+        arquivo
+      );
 
     }
   );
+
 
   atualizarTotal();
 
 });
 
-</script>  
-
+</script>
 </body>
 </html>
