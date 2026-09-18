@@ -1219,273 +1219,334 @@
        JAVASCRIPT
   ========================= -->
 
-  <script>
+ <script>
 
-    const PRECO = 34.90;
+document.addEventListener("DOMContentLoaded", function () {
 
-    const quantidade =
-      document.getElementById("quantidade");
+  const PRECO = 34.90;
 
-    const total =
-      document.getElementById("total");
+  const quantidade = document.getElementById("quantidade");
+  const total = document.getElementById("total");
+  const form = document.getElementById("formPedido");
+  const sucesso = document.getElementById("sucesso");
 
-    const form =
-      document.getElementById("formPedido");
+  function formatarMoeda(valor) {
+    return valor.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+  }
 
-    const sucesso =
-      document.getElementById("sucesso");
+  function atualizarTotal() {
 
+    const qtd = Number(quantidade.value);
+    const valor = qtd * PRECO;
 
-    function formatarMoeda(valor) {
+    total.textContent = formatarMoeda(valor);
+  }
 
-      return valor.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      });
-
-    }
-
-
-    function atualizarTotal() {
-
-      const qtd =
-        Number(quantidade.value);
-
-      const valor =
-        qtd * PRECO;
-
-      total.textContent =
-        formatarMoeda(valor);
-
-    }
+  quantidade.addEventListener(
+    "change",
+    atualizarTotal
+  );
 
 
-    quantidade.addEventListener(
-      "change",
-      atualizarTotal
-    );
+  /* =========================
+     MÁSCARA CEP
+  ========================= */
+
+  document
+    .getElementById("cep")
+    .addEventListener("input", function () {
+
+      let valor = this.value.replace(/\D/g, "");
+
+      if (valor.length > 8) {
+        valor = valor.substring(0, 8);
+      }
+
+      if (valor.length > 5) {
+        valor =
+          valor.substring(0, 5) +
+          "-" +
+          valor.substring(5);
+      }
+
+      this.value = valor;
+
+    });
 
 
-    /* =========================
-       MÁSCARA CEP
-    ========================= */
+  /* =========================
+     MÁSCARA WHATSAPP
+  ========================= */
 
-    document
-      .getElementById("cep")
-      .addEventListener("input", function () {
+  document
+    .getElementById("whatsapp")
+    .addEventListener("input", function () {
 
-        let valor =
-          this.value.replace(/\D/g, "");
+      let valor =
+        this.value.replace(/\D/g, "");
 
-        if (valor.length > 5) {
+      if (valor.length > 11) {
+        valor = valor.substring(0, 11);
+      }
 
-          valor =
-            valor.substring(0, 5)
-            + "-"
-            + valor.substring(5, 8);
+      if (valor.length <= 10) {
 
-        }
-
-        this.value = valor;
-
-      });
-
-
-    /* =========================
-       MÁSCARA WHATSAPP
-    ========================= */
-
-    document
-      .getElementById("whatsapp")
-      .addEventListener("input", function () {
-
-        let valor =
-          this.value.replace(/\D/g, "");
-
-        if (valor.length > 11) {
-          valor = valor.substring(0, 11);
-        }
-
-        if (valor.length <= 10) {
-
-          if (valor.length > 6) {
-
-            valor =
-              "(" +
-              valor.substring(0, 2) +
-              ") " +
-              valor.substring(2, 6) +
-              "-" +
-              valor.substring(6);
-
-          } else if (valor.length > 2) {
-
-            valor =
-              "(" +
-              valor.substring(0, 2) +
-              ") " +
-              valor.substring(2);
-
-          }
-
-        } else {
+        if (valor.length > 6) {
 
           valor =
             "(" +
             valor.substring(0, 2) +
             ") " +
-            valor.substring(2, 7) +
+            valor.substring(2, 6) +
             "-" +
-            valor.substring(7);
+            valor.substring(6);
+
+        } else if (valor.length > 2) {
+
+          valor =
+            "(" +
+            valor.substring(0, 2) +
+            ") " +
+            valor.substring(2);
 
         }
 
-        this.value = valor;
+      } else {
 
-      });
+        valor =
+          "(" +
+          valor.substring(0, 2) +
+          ") " +
+          valor.substring(2, 7) +
+          "-" +
+          valor.substring(7);
+
+      }
+
+      this.value = valor;
+
+    });
 
 
-    /* =========================
-       ENVIO TEMPORÁRIO
-    ========================= */
+  /* =========================
+     ENVIO DO PEDIDO
+  ========================= */
 
-    form.addEventListener(
-  "submit",
-  async function(event) {
+  form.addEventListener(
+    "submit",
+    function (event) {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    const botao = form.querySelector("button[type='submit']");
-    const arquivo = document.getElementById("comprovante").files[0];
+      const botao =
+        form.querySelector(
+          "button[type='submit']"
+        );
 
-    if (!arquivo) {
-      alert("Selecione o comprovante de pagamento.");
-      return;
-    }
+      const arquivo =
+        document.getElementById(
+          "comprovante"
+        ).files[0];
 
-    botao.disabled = true;
-    botao.textContent = "ENVIANDO PEDIDO...";
+      if (!arquivo) {
 
-    try {
+        alert(
+          "Selecione o comprovante de pagamento."
+        );
 
-      const leitor = new FileReader();
+        return;
+      }
 
-      leitor.onload = async function() {
+      botao.disabled = true;
+      botao.textContent =
+        "ENVIANDO PEDIDO...";
 
-        const base64Completo = leitor.result;
 
-        const base64 = base64Completo.split(",")[1];
+      const leitor =
+        new FileReader();
 
-        const quantidade =
-          parseInt(document.getElementById("quantidade").value);
 
-        const valorTotal =
-          quantidade * PRECO;
+      leitor.onload = async function () {
 
-        const pagamento =
-          document.querySelector(
-            'input[name="pagamento"]:checked'
-          ).value;
+        try {
 
-        const dados = {
+          const base64Completo =
+            leitor.result;
 
-          nome:
-            document.getElementById("nome").value,
+          const base64 =
+            base64Completo.split(",")[1];
 
-          whatsapp:
-            document.getElementById("whatsapp").value,
 
-          email:
-            document.getElementById("email").value,
+          const qtd =
+            parseInt(
+              document.getElementById(
+                "quantidade"
+              ).value
+            );
 
-          quantidade:
-            quantidade,
 
-          valorUnitario:
-            PRECO,
+          const valorTotal =
+            qtd * PRECO;
 
-          valorTotal:
-            valorTotal,
 
-          formaPagamento:
-            pagamento,
+          const pagamento =
+            document.querySelector(
+              'input[name="pagamento"]:checked'
+            ).value;
 
-          cep:
-            document.getElementById("cep").value,
 
-          estado:
-            document.getElementById("estado").value,
-
-          rua:
-            document.getElementById("endereco").value,
-
-          numero:
-            document.getElementById("numeroEndereco").value,
-
-          complemento:
-            document.getElementById("complemento").value,
-
-          bairro:
-            document.getElementById("bairro").value,
-
-          cidade:
-            document.getElementById("cidade").value,
-
-          comprovante: {
+          const dados = {
 
             nome:
-              arquivo.name,
+              document.getElementById(
+                "nome"
+              ).value,
 
-            tipo:
-              arquivo.type,
+            whatsapp:
+              document.getElementById(
+                "whatsapp"
+              ).value,
 
-            base64:
-              base64
+            email:
+              document.getElementById(
+                "email"
+              ).value,
 
-          }
+            quantidade:
+              qtd,
 
-        };
+            valorUnitario:
+              PRECO,
 
-        const resposta =
-  await fetch(
-    "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
-    {
-      method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify(dados)
-    }
-  );
+            valorTotal:
+              valorTotal,
 
-     
-        form.style.display = "none";
+            formaPagamento:
+              pagamento,
 
-        sucesso.classList.add("ativo");
+            cep:
+              document.getElementById(
+                "cep"
+              ).value,
 
-        window.scrollTo({
-          top: sucesso.offsetTop - 100,
-          behavior: "smooth"
-        });
+            estado:
+              document.getElementById(
+                "estado"
+              ).value,
+
+            rua:
+              document.getElementById(
+                "endereco"
+              ).value,
+
+            numero:
+              document.getElementById(
+                "numeroEndereco"
+              ).value,
+
+            complemento:
+              document.getElementById(
+                "complemento"
+              ).value,
+
+            bairro:
+              document.getElementById(
+                "bairro"
+              ).value,
+
+            cidade:
+              document.getElementById(
+                "cidade"
+              ).value,
+
+            comprovante: {
+
+              nome:
+                arquivo.name,
+
+              tipo:
+                arquivo.type,
+
+              base64:
+                base64
+
+            }
+
+          };
+
+
+          await fetch(
+            "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
+            {
+              method: "POST",
+              mode: "no-cors",
+              body: JSON.stringify(dados)
+            }
+          );
+
+
+          /* =========================
+             SUCESSO
+          ========================= */
+
+          form.style.display = "none";
+
+          sucesso.classList.add("ativo");
+
+          window.scrollTo({
+            top: sucesso.offsetTop - 100,
+            behavior: "smooth"
+          });
+
+
+        } catch (erro) {
+
+          console.error(
+            "Erro ao enviar pedido:",
+            erro
+          );
+
+          alert(
+            "Não foi possível enviar o pedido. Tente novamente."
+          );
+
+          botao.disabled = false;
+
+          botao.textContent =
+            "ENVIAR MEU PEDIDO";
+
+        }
 
       };
 
+
+      leitor.onerror = function () {
+
+        alert(
+          "Não foi possível ler o comprovante."
+        );
+
+        botao.disabled = false;
+
+        botao.textContent =
+          "ENVIAR MEU PEDIDO";
+
+      };
+
+
       leitor.readAsDataURL(arquivo);
 
-    } catch (erro) {
-
-      console.error(erro);
-
-      alert(
-        "Não foi possível enviar o pedido. Tente novamente."
-      );
-
-      botao.disabled = false;
-      botao.textContent = "ENVIAR MEU PEDIDO";
-
     }
+  );
 
-  }
-);
-  </script>
+  atualizarTotal();
+
+});
+
+</script>  
 
 </body>
 </html>
