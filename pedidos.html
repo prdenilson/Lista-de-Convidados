@@ -1415,10 +1415,26 @@ document.addEventListener("DOMContentLoaded", function () {
   ).value;
 
 
-const arquivo =
+let arquivo =
   document.getElementById(
     "comprovante"
   ).files[0];
+
+
+if (
+  !arquivo &&
+  tipoCompra === "evento"
+) {
+
+  arquivo = new File(
+    [""],
+    "sem-comprovante.txt",
+    {
+      type: "text/plain"
+    }
+  );
+
+}
 
 
 if (
@@ -1501,7 +1517,9 @@ if (
               valorTotal,
 
             formaPagamento:
-              pagamento,
+  tipoCompra === "evento"
+    ? "PAGO NO EVENTO"
+    : pagamento,
 
             cep:
               document.getElementById(
