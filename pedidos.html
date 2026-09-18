@@ -432,6 +432,53 @@
        COMPROVANTE
     ========================= */
 
+.tipo-compra {
+  margin-top: 30px;
+  padding: 22px;
+  background: #f5f1eb;
+  border: 1px solid #cfc4b5;
+  border-radius: 5px;
+}
+
+.tipo-compra > label:first-child {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: bold;
+  color: #2d4a3e;
+}
+
+.tipo-compra-opcoes {
+  display: flex;
+  gap: 12px;
+}
+
+.tipo-compra-opcao {
+  flex: 1;
+  cursor: pointer;
+}
+
+.tipo-compra-opcao input {
+  display: none;
+}
+
+.tipo-compra-opcao span {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #cfc4b5;
+  border-radius: 6px;
+  background: white;
+  font-weight: bold;
+  color: #4a443d;
+  transition: .2s;
+}
+
+.tipo-compra-opcao input:checked + span {
+  background: #2d4a3e;
+  color: white;
+  border-color: #2d4a3e;
+}
+    
     .comprovante {
       margin-top: 30px;
       padding: 22px;
@@ -1101,7 +1148,7 @@
 
             </div>
             
-           <!-- TIPO DE COMPRA -->
+          <!-- TIPO DE COMPRA -->
 
 <div class="tipo-compra">
 
@@ -1109,30 +1156,45 @@
     Como você realizou a compra?
   </label>
 
-  <label>
-    <input
-      type="radio"
-      name="tipoCompra"
-      value="online"
-      checked
-    >
-    Compra online
-  </label>
+  <div class="tipo-compra-opcoes">
 
-  <label>
-    <input
-      type="radio"
-      name="tipoCompra"
-      value="evento"
-    >
-    Comprei no evento de lançamento
-  </label>
+    <label class="tipo-compra-opcao">
+
+      <input
+        type="radio"
+        name="tipoCompra"
+        value="online"
+        checked
+      >
+
+      <span>
+        🛒 COMPRA ONLINE
+      </span>
+
+    </label>
+
+
+    <label class="tipo-compra-opcao">
+
+      <input
+        type="radio"
+        name="tipoCompra"
+        value="evento"
+      >
+
+      <span>
+        🎉 COMPREI NO EVENTO
+      </span>
+
+    </label>
+
+  </div>
 
 </div>
+ 
+            <!-- COMPROVANTE --> 
 
-            <!-- COMPROVANTE -->
-
-            <div class="comprovante">
+            <div class="comprovante" id="areaComprovante">
 
               <label for="comprovante">
                 Comprovante de pagamento *
@@ -1143,8 +1205,7 @@
                 id="comprovante"
                 name="comprovante"
                 accept="image/*,.pdf"
-                required
-              >
+                >
 
               <p class="aviso">
                 Envie uma foto ou PDF do comprovante.
@@ -1556,17 +1617,14 @@ if (
                 "cidade"
               ).value,
 
-            comprovante: {
-
-              nome:
-                arquivo.name,
-
-              tipo:
-                arquivo.type,
-
-              base64:
-                base64
-
+            comprovante:
+  tipoCompra === "evento"
+    ? null
+    : {
+        nome: arquivo.name,
+        tipo: arquivo.type,
+        base64: base64
+      }
             }
 
           };
@@ -1678,6 +1736,43 @@ if (
 
 });
 
+const opcoesTipoCompra =
+  document.querySelectorAll(
+    'input[name="tipoCompra"]'
+  );
+
+const areaComprovante =
+  document.getElementById(
+    "areaComprovante"
+  );
+
+opcoesTipoCompra.forEach(
+  function (opcao) {
+
+    opcao.addEventListener(
+      "change",
+      function () {
+
+        if (
+          this.value === "evento"
+        ) {
+
+          areaComprovante.style.display =
+            "none";
+
+        } else {
+
+          areaComprovante.style.display =
+            "block";
+
+        }
+
+      }
+    );
+
+  }
+);
+  
 </script>
 </body>
 </html>
