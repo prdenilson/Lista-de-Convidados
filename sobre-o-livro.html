@@ -7,13 +7,13 @@
 
   <title>Sobre o Livro | Antes Que Eu Seja Usado</title>
 
-  <meta name="description" content="Conheça Antes Que Eu Seja Usado, de Francisco Denílson Pinheiro — uma jornada antes do encontro com nossa vocação.">
+  <meta name="description" content="Conheça o livro Antes Que Eu Seja Usado, de Francisco Denílson Pinheiro. Uma jornada sobre caráter, transformação e propósito antes de sermos usados por Deus.">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -21,175 +21,126 @@
     }
 
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: #f8f5ef;
-      color: #29251f;
-      line-height: 1.6;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f6f2;
+      color: #252321;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     /* =========================
        MENU
-    ========================== */
+    ========================= */
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(35, 30, 25, 0.96);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 3px 15px rgba(0,0,0,.2);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
+      background: #171513;
       color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #d6b36a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
     .menu {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 25px;
+
       display: flex;
-      gap: 25px;
-      list-style: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .menu a {
-      color: #fff;
-      text-decoration: none;
+    .logo {
+      font-size: 21px;
+      letter-spacing: 1px;
+      color: #c9b58a;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
       font-size: 15px;
-      transition: .3s;
+      color: #f5f2ec;
+      transition: 0.3s;
     }
 
-    .menu a:hover {
-      color: #d6b36a;
-    }
-
-    .menu-btn {
-      display: none;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
+    nav a:hover {
+      color: #c9b58a;
     }
 
     /* =========================
        HERO
-    ========================== */
+    ========================= */
 
     .hero {
-      min-height: 100vh;
-      padding: 120px 25px 80px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(25,20,16,.76), rgba(25,20,16,.88)),
-        url('capa.jpg') center/cover;
-      color: white;
-    }
-
-    .hero-container {
-      max-width: 1150px;
-      width: 100%;
+      max-width: 1100px;
       margin: auto;
+      padding: 80px 25px 70px;
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      grid-template-columns: 0.8fr 1.2fr;
       align-items: center;
+      gap: 70px;
     }
 
-    .hero-text h1 {
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: 1;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
-
-    .hero-text h1 span {
-      color: #d6b36a;
-    }
-
-    .subtitle {
-      font-size: 23px;
-      font-style: italic;
-      margin-bottom: 25px;
-      color: #eee;
-    }
-
-    .hero-text p {
-      font-family: Arial, sans-serif;
-      font-size: 17px;
-      max-width: 600px;
-      color: #ddd;
-    }
-
-    .book-cover {
+    .capa {
       text-align: center;
-      animation: floating 4s ease-in-out infinite;
     }
 
-    .book-cover img {
-      width: min(360px, 80%);
-      border-radius: 5px;
-      box-shadow: 0 25px 50px rgba(0,0,0,.6);
+    .capa img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 3px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
     }
 
-    @keyframes floating {
-      0%,100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-15px);
-      }
+    .conteudo-hero h1 {
+      font-size: 46px;
+      line-height: 1.12;
+      font-weight: normal;
+      margin-bottom: 20px;
+      color: #191715;
     }
 
-    /* =========================
-       BOTÕES
-    ========================== */
-
-    .btn {
-      display: inline-block;
-      padding: 16px 30px;
-      margin-top: 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      transition: .3s;
-      cursor: pointer;
-      border: none;
+    .conteudo-hero .subtitulo {
+      font-size: 21px;
+      color: #756d62;
+      margin-bottom: 25px;
     }
 
-    .btn-primary {
-      background: #d6b36a;
-      color: #241f19;
+    .conteudo-hero p {
+      font-size: 18px;
+      color: #45413d;
+      margin-bottom: 18px;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    .frase-destaque {
+      border-left: 3px solid #c9b58a;
+      padding-left: 20px;
+      margin-top: 28px;
+      font-style: italic;
+      font-size: 19px;
+      color: #514a42;
     }
 
     /* =========================
        SEÇÕES
-    ========================== */
+    ========================= */
 
     section {
-      padding: 90px 25px;
+      padding: 80px 25px;
     }
 
     .container {
@@ -197,364 +148,344 @@
       margin: auto;
     }
 
-    .section-title {
+    .titulo-secao {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
-    .section-title h2 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      font-family: Arial, sans-serif;
-      color: #6c655d;
-    }
-
-    /* =========================
-       PERGUNTA
-    ========================== */
-
-    .question {
-      background: #2b2621;
-      color: white;
-      text-align: center;
-    }
-
-    .question h2 {
-      font-size: clamp(32px, 5vw, 52px);
-      max-width: 850px;
-      margin: auto;
-      font-style: italic;
-    }
-
-    .question p {
-      max-width: 700px;
-      margin: 25px auto 0;
-      font-family: Arial, sans-serif;
-      color: #ddd;
-      font-size: 17px;
-    }
-
-    /* =========================
-       VÍDEO
-    ========================== */
-
-    .video-box {
-      max-width: 850px;
-      margin: auto;
-      aspect-ratio: 16/9;
-      background: #211d19;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,.15);
-    }
-
-    .video-box iframe {
-      width: 100%;
-      height: 100%;
+    .titulo-secao span {
       display: block;
-      border: 0;
+      color: #c9b58a;
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
-    /* =========================
-       CAPÍTULOS
-    ========================== */
-
-    .chapters {
-      background: #fff;
-    }
-
-    .chapter-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .chapter {
-      padding: 30px;
-      background: #f8f5ef;
-      border-radius: 15px;
-      border: 1px solid #e6dfd3;
-      transition: .3s;
-    }
-
-    .chapter:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 30px rgba(0,0,0,.08);
-    }
-
-    .chapter-number {
-      font-size: 42px;
-      color: #c19a51;
-      font-weight: bold;
-    }
-
-    .chapter h3 {
-      font-size: 22px;
-      margin: 8px 0 15px;
-    }
-
-    .chapter p {
-      font-family: Arial, sans-serif;
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .chapter p:last-child {
-      margin-bottom: 0;
+    .titulo-secao h2 {
+      font-size: 34px;
+      font-weight: normal;
+      color: #191715;
     }
 
     /* =========================
        DEGUSTAÇÃO
-    ========================== */
+    ========================= */
 
-    .excerpt {
-      background: #eee8dc;
+    .degustacao {
+      background: #191715;
+      color: #fff;
     }
 
-    .excerpt-box {
-      max-width: 800px;
-      margin: auto;
-      padding: 50px;
-      background: white;
-      border-left: 5px solid #c19a51;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    .degustacao .titulo-secao h2 {
+      color: #fff;
     }
 
-    .excerpt-box p {
-      font-size: 20px;
-      font-style: italic;
-    }
-
-    /* =========================
-       INFORMAÇÕES DA EDIÇÃO
-    ========================== */
-
-    .edition {
-      background: #29241f;
-      color: white;
-    }
-
-    .edition-box {
-      max-width: 950px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .edition-info h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .edition-info p {
-      font-family: Arial, sans-serif;
-      color: #ddd;
+    .degustacao-intro {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+      color: #d9d4cb;
       font-size: 17px;
     }
 
-    .price {
-      font-size: 48px;
-      color: #d6b36a;
-      font-weight: bold;
-      margin: 20px 0;
+    .capitulos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
-    .edition-card {
-      background: #fff;
-      color: #29241f;
-      padding: 35px;
-      border-radius: 18px;
+    .capitulo {
+      border: 1px solid rgba(201,181,138,0.35);
+      padding: 30px;
+      background: rgba(255,255,255,0.025);
     }
 
-    .edition-card h3 {
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .edition-list {
-      list-style: none;
-      font-family: Arial, sans-serif;
-    }
-
-    .edition-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e5ded3;
-    }
-
-    .edition-list li:last-child {
-      border-bottom: none;
-    }
-
-    .groups {
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid #e5ded3;
-    }
-
-    .groups strong {
-      display: block;
+    .capitulo-numero {
+      color: #c9b58a;
+      font-size: 13px;
+      letter-spacing: 2px;
       margin-bottom: 8px;
     }
 
-    .groups p {
-      font-family: Arial, sans-serif;
-      color: #666;
+    .capitulo h3 {
+      color: #fff;
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .capitulo p {
+      color: #d4d0ca;
+      font-size: 16px;
+    }
+
+    /* =========================
+       INFORMAÇÕES DO LIVRO
+    ========================= */
+
+    .informacoes {
+      background: #fff;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #ddd6ca;
+      border-left: 1px solid #ddd6ca;
+    }
+
+    .info-item {
+      padding: 28px;
+      border-right: 1px solid #ddd6ca;
+      border-bottom: 1px solid #ddd6ca;
+    }
+
+    .info-item span {
+      display: block;
+      color: #9a8b72;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    .info-item strong {
+      font-size: 19px;
+      font-weight: normal;
+      color: #292622;
+    }
+
+    .condicao-grupo {
+      max-width: 760px;
+      margin: 35px auto 0;
+      padding: 25px;
+      text-align: center;
+      background: #f4f0eb;
+      border-left: 3px solid #c9b58a;
+    }
+
+    .condicao-grupo strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    /* =========================
+       BOTÃO
+    ========================= */
+
+    .acao-livro {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 16px 34px;
+      background: #191715;
+      color: #fff;
+      letter-spacing: 1px;
       font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      background: #c9b58a;
+      color: #191715;
     }
 
     /* =========================
        DEPOIMENTOS
-    ========================== */
+    ========================= */
 
-    .testimonials {
-      background: white;
+    .depoimentos {
+      background: #f8f6f2;
     }
 
-    .testimonial-grid {
+    .depoimentos-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
 
-    .testimonial {
+    .depoimento {
+      background: #fff;
       padding: 30px;
-      background: #f8f5ef;
-      border-radius: 15px;
+      border-top: 2px solid #c9b58a;
+    }
+
+    .depoimento p {
       font-style: italic;
+      color: #514d48;
+      margin-bottom: 20px;
     }
 
-    .testimonial strong {
-      display: block;
-      margin-top: 20px;
-      font-style: normal;
-    }
-
-    /* =========================
-       FAQ
-    ========================== */
-
-    .faq {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    details {
-      background: white;
-      margin-bottom: 12px;
-      padding: 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      border: 1px solid #e5ded3;
-    }
-
-    summary {
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-    }
-
-    details p {
-      margin-top: 15px;
-      font-family: Arial, sans-serif;
-      color: #666;
+    .depoimento strong {
+      font-size: 14px;
+      color: #292622;
     }
 
     /* =========================
-       FINAL CTA
-    ========================== */
+       PERGUNTE SOBRE O LIVRO
+    ========================= */
 
-    .final {
+    .perguntas {
+      background: #fff;
+    }
+
+    .perguntas-intro {
+      max-width: 700px;
+      margin: -15px auto 40px;
       text-align: center;
-      background:
-        linear-gradient(rgba(30,25,20,.85),rgba(30,25,20,.9)),
-        url('capa.jpg') center/cover;
-      color: white;
+      color: #66605a;
     }
 
-    .final h2 {
-      font-size: clamp(35px,5vw,55px);
-      margin-bottom: 15px;
-    }
-
-    .final p {
-      font-family: Arial, sans-serif;
-      max-width: 650px;
+    .pergunta-box {
+      max-width: 760px;
       margin: auto;
-      color: #ddd;
+      padding: 35px;
+      background: #f8f6f2;
+      border: 1px solid #ddd6ca;
+    }
+
+    .campo {
+      margin-bottom: 20px;
+    }
+
+    .campo label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      color: #3d3934;
+    }
+
+    .campo input,
+    .campo textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d4cec3;
+      background: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      color: #292622;
+      outline: none;
+    }
+
+    .campo input:focus,
+    .campo textarea:focus {
+      border-color: #c9b58a;
+    }
+
+    .campo textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .perguntas-publicadas {
+      max-width: 900px;
+      margin: 65px auto 0;
+    }
+
+    .perguntas-publicadas h3 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    .pergunta-publicada {
+      padding: 25px 0;
+      border-bottom: 1px solid #ddd6ca;
+    }
+
+    .pergunta-publicada .pergunta {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .pergunta-publicada .resposta {
+      color: #5d5750;
     }
 
     /* =========================
-       FOOTER
-    ========================== */
+       RODAPÉ
+    ========================= */
 
     footer {
-      background: #1d1916;
-      color: #aaa;
+      background: #171513;
+      color: #cfc8bd;
       text-align: center;
       padding: 35px 20px;
-      font-family: Arial, sans-serif;
       font-size: 14px;
+    }
+
+    footer strong {
+      color: #c9b58a;
     }
 
     /* =========================
        RESPONSIVO
-    ========================== */
+    ========================= */
 
     @media (max-width: 800px) {
 
       .menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #231f1b;
         flex-direction: column;
-        padding: 25px;
+        padding: 18px 20px;
+        gap: 15px;
       }
 
-      .menu.active {
-        display: flex;
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
       }
 
-      .menu-btn {
-        display: block;
-      }
-
-      .hero-container,
-      .edition-box {
+      .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 40px;
+        padding-top: 55px;
       }
 
-      .hero-text p {
-        margin: auto;
+      .conteudo-hero h1 {
+        font-size: 38px;
       }
 
-      .chapter-grid,
-      .testimonial-grid {
+      .capitulos {
         grid-template-columns: 1fr;
       }
 
-      .book-cover {
-        order: -1;
+      .info-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .excerpt-box {
-        padding: 30px;
+      .depoimentos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      section {
+        padding: 60px 18px;
       }
 
-      .edition-info p {
-        margin: auto;
+      .info-grid {
+        grid-template-columns: 1fr;
       }
 
-      .edition-card {
-        text-align: left;
+      .titulo-secao h2 {
+        font-size: 29px;
+      }
+
+      .conteudo-hero h1 {
+        font-size: 34px;
+      }
+
+      .pergunta-box {
+        padding: 25px 20px;
       }
     }
   </style>
@@ -563,674 +494,366 @@
 
 <body>
 
-<header>
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <header>
+    <div class="menu">
+
+```
+  <a href="index.html" class="logo">
+    FRANCISCO DENÍLSON
+  </a>
+
   <nav>
-
-```
-<a href="index.html" class="logo">
-  Pr. Denílson <span>Pinheiro</span>
-</a>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-<ul class="menu" id="menu">
-  <li><a href="index.html">Início</a></li>
-  <li><a href="sobre-o-livro.html">Sobre o Livro</a></li>
-  <li><a href="sobre.html">Sobre o Autor</a></li>
-  <li><a href="lancamento.html">Lançamento</a></li>
-  <li><a href="contato.html">Contato</a></li>
-</ul>
-```
-
+    <a href="index.html">Início</a>
+    <a href="sobre-o-livro.html">Sobre o Livro</a>
+    <a href="sobre.html">Sobre o Autor</a>
+    <a href="lancamento.html">Lançamento</a>
+    <a href="contato.html">Contato</a>
   </nav>
-</header>
 
-<!-- =========================
-     HERO
-========================== -->
+</div>
+```
 
-<section class="hero" id="livro">
+  </header>
 
-  <div class="hero-container">
+  <!-- =========================
+       LIVRO + SINOPSE
+  ========================= -->
+
+  <main>
 
 ```
-<div class="hero-text">
+<section class="hero">
 
-  <p style="color:#d6b36a;font-family:Arial,sans-serif;font-weight:bold;">
-    SOBRE O LIVRO
-  </p>
-
-  <h1>
-    ANTES QUE<br>
-    EU SEJA <span>USADO</span>
-  </h1>
-
-  <div class="subtitle">
-    Uma jornada antes do encontro com nossa vocação
+  <div class="capa">
+    <img src="capa.jpg" alt="Capa do livro Antes Que Eu Seja Usado">
   </div>
 
-  <p>
-    Antes de Deus usar nossas mãos, talvez Ele queira
-    transformar nosso coração.
-  </p>
+  <div class="conteudo-hero">
 
-  <a href="#edicao" class="btn btn-primary">
-    QUERO MEU EXEMPLAR
-  </a>
+    <h1>Antes Que Eu Seja Usado</h1>
 
-</div>
+    <div class="subtitulo">
+      Uma jornada antes do encontro com nossa vocação.
+    </div>
 
-<div class="book-cover">
-  <img
-    src="capa.jpg"
-    alt="Capa do livro Antes Que Eu Seja Usado"
-  >
-</div>
-```
+    <p>
+      Antes que Deus use nossas mãos, Ele deseja trabalhar em nosso coração.
+    </p>
+
+    <p>
+      <strong>Antes Que Eu Seja Usado</strong> é uma jornada de reflexão,
+      transformação e preparação para compreender que, antes de sermos
+      instrumentos nas mãos de Deus, precisamos permitir que Ele trabalhe
+      em nós.
+    </p>
+
+    <p>
+      O livro conduz o leitor por uma caminhada de confronto, quebrantamento,
+      transformação, enchimento e, finalmente, disposição para ser usado
+      por Deus.
+    </p>
+
+    <div class="frase-destaque">
+      “A maior obra de Deus é em nós e não através de nós.”
+    </div>
 
   </div>
 
 </section>
 
-<!-- =========================
-     PERGUNTA CENTRAL
-========================== -->
 
-<section class="question">
+<!-- =========================
+     DEGUSTAÇÃO DOS CAPÍTULOS
+========================= -->
+
+<section class="degustacao" id="capitulos">
 
   <div class="container">
 
-```
-<h2>
-  E se antes de Deus usar você...
-  Ele quiser transformar você?
-</h2>
+    <div class="titulo-secao">
+      <span>Uma jornada</span>
+      <h2>Degustação dos capítulos</h2>
+    </div>
 
-<p>
-  Talvez a maior preparação para cumprir uma vocação
-  não aconteça diante das pessoas, mas no lugar secreto.
-</p>
-```
+    <p class="degustacao-intro">
+      Uma pequena amostra da jornada proposta em
+      <em>Antes Que Eu Seja Usado</em>.
+    </p>
+
+    <div class="capitulos">
+
+      <article class="capitulo">
+        <div class="capitulo-numero">CAPÍTULO 01</div>
+        <h3>Antes de Tudo</h3>
+        <p>
+          Antes de pensar naquilo que Deus pode fazer através de nós,
+          precisamos compreender aquilo que Ele deseja fazer em nós.
+        </p>
+      </article>
+
+      <article class="capitulo">
+        <div class="capitulo-numero">CAPÍTULO 02</div>
+        <h3>Sonda-me</h3>
+        <p>
+          Uma caminhada de sinceridade diante de Deus, permitindo que Ele
+          revele aquilo que muitas vezes escondemos até de nós mesmos.
+        </p>
+      </article>
+
+      <article class="capitulo">
+        <div class="capitulo-numero">CAPÍTULO 03</div>
+        <h3>Quebranta-me</h3>
+        <p>
+          O quebrantamento como parte do processo de Deus para formar em
+          nós um coração disposto a obedecer.
+        </p>
+      </article>
+
+      <article class="capitulo">
+        <div class="capitulo-numero">CAPÍTULO 04</div>
+        <h3>Transforma-me</h3>
+        <p>
+          Deus não está interessado apenas em mudar aquilo que fazemos,
+          mas em transformar quem somos.
+        </p>
+      </article>
+
+      <article class="capitulo">
+        <div class="capitulo-numero">CAPÍTULO 05</div>
+        <h3>Enche-me</h3>
+        <p>
+          Depois do esvaziamento, existe espaço para aquilo que vem de
+          Deus. O enchimento também faz parte da preparação.
+        </p>
+      </article>
+
+      <article class="capitulo">
+        <div class="capitulo-numero">CAPÍTULO 06</div>
+        <h3>Usa-me</h3>
+        <p>
+          O propósito não começa no momento em que somos usados. Existe
+          uma obra anterior que precisa acontecer dentro de nós.
+        </p>
+      </article>
+
+    </div>
 
   </div>
 
 </section>
 
-<!-- =========================
-     VÍDEO
-========================== -->
 
-<section>
+<!-- =========================
+     INFORMAÇÕES DO LIVRO
+========================= -->
+
+<section class="informacoes" id="edicao">
 
   <div class="container">
 
-```
-<div class="section-title">
+    <div class="titulo-secao">
+      <span>Detalhes da edição</span>
+      <h2>Informações do livro</h2>
+    </div>
 
-  <h2>Por que este livro?</h2>
+    <div class="info-grid">
 
-  <p>
-    Uma mensagem pessoal do autor
-  </p>
+      <div class="info-item">
+        <span>Autor</span>
+        <strong>Francisco Denílson Pinheiro</strong>
+      </div>
 
-</div>
+      <div class="info-item">
+        <span>Título</span>
+        <strong>Antes Que Eu Seja Usado</strong>
+      </div>
 
-<div class="video-box">
+      <div class="info-item">
+        <span>Páginas</span>
+        <strong>110 páginas</strong>
+      </div>
 
-  <iframe
-    src="https://www.youtube.com/embed/3-ZwEQxqmj8"
-    title="Vídeo de apresentação — Antes Que Eu Seja Usado"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
+      <div class="info-item">
+        <span>Formato</span>
+        <strong>14 × 21 cm</strong>
+      </div>
 
-</div>
-```
+      <div class="info-item">
+        <span>Impressão</span>
+        <strong>Papel Pólen</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Valor</span>
+        <strong>R$ 34,90</strong>
+      </div>
+
+    </div>
+
+    <div class="condicao-grupo">
+      <strong>Grupos de leitura</strong>
+      Condições especiais para grupos a partir de 8 exemplares.
+    </div>
+
+    <div class="acao-livro">
+      <a href="pedidos.html" class="botao">
+        ADQUIRIR O LIVRO
+      </a>
+    </div>
 
   </div>
 
 </section>
 
-<!-- =========================
-     CAPÍTULOS
-========================== -->
 
-<section class="chapters" id="capitulos">
+<!-- =========================
+     O QUE ESTÃO DIZENDO
+========================= -->
+
+<section class="depoimentos">
 
   <div class="container">
 
-```
-<div class="section-title">
+    <div class="titulo-secao">
+      <span>Palavras sobre a obra</span>
+      <h2>O que estão dizendo</h2>
+    </div>
 
-  <h2>Uma jornada em seis passos</h2>
+    <div class="depoimentos-grid">
 
-  <p>
-    Cada capítulo representa uma etapa de transformação.
-  </p>
+      <article class="depoimento">
+        <p>
+          “Este livro nos leva a olhar primeiro para dentro antes de querer
+          fazer algo para Deus.”
+        </p>
+        <strong>— Pastora Valdelúcia Fialho</strong>
+      </article>
 
-</div>
+      <article class="depoimento">
+        <p>
+          “Uma mensagem que fala sobre preparação, caráter e propósito.”
+        </p>
+        <strong>— Francisco Denílson Pinheiro Filho</strong>
+      </article>
 
-<div class="chapter-grid">
+      <article class="depoimento">
+        <p>
+          “Uma jornada profunda sobre aquilo que Deus deseja formar em nós.”
+        </p>
+        <strong>— Pastora Gardênia Pinheiro</strong>
+      </article>
 
-
-  <div class="chapter">
-
-    <div class="chapter-number">01</div>
-
-    <h3>
-      Antes de Tudo
-    </h3>
-
-    <p>
-      Antes de Deus confiar uma missão a alguém, Ele primeiro trabalha essa pessoa.
-      O primeiro passo da jornada é compreender que o chamado de Deus não começa
-      no serviço, mas no relacionamento.
-    </p>
-
-    <p>
-      Antes de querer ser usado por Ele, precisamos permitir que Ele forme nosso
-      caráter, fortaleça nossa identidade e nos ensine a respeitar o Seu processo.
-    </p>
-
-    <p>
-      Um capítulo sobre maturidade, identidade e o perigo de queimar etapas.
-    </p>
-
-  </div>
-
-
-  <div class="chapter">
-
-    <div class="chapter-number">02</div>
-
-    <h3>
-      Sonda-me
-    </h3>
-
-    <p>
-      Deus não se impressiona com a aparência. Ele conhece o coração e nos conduz
-      a uma jornada de autoconhecimento à luz da Sua presença.
-    </p>
-
-    <p>
-      Ser sondado por Deus é permitir que Ele revele o que está escondido,
-      confronte nossas máscaras e trate aquilo que precisa ser transformado.
-    </p>
-
-    <p>
-      Um capítulo sobre autoconhecimento, quebrantamento e a coragem de deixar
-      Deus revelar quem realmente somos.
-    </p>
-
-  </div>
-
-
-  <div class="chapter">
-
-    <div class="chapter-number">03</div>
-
-    <h3>
-      Quebranta-me
-    </h3>
-
-    <p>
-      Depois de revelar o que existe em nosso interior, Deus nos conduz a uma
-      decisão: esconder a verdade ou nos render à Sua ação restauradora.
-    </p>
-
-    <p>
-      Quebrantamento não é apenas chorar; é permitir que Deus confronte o orgulho,
-      o amor ao mundo, o remorso e tudo aquilo que impede nossa transformação.
-    </p>
-
-    <p>
-      Um capítulo sobre rendição, correção e a coragem de permitir que Deus faça
-      em nós tudo o que for necessário.
-    </p>
-
-  </div>
-
-
-  <div class="chapter">
-
-    <div class="chapter-number">04</div>
-
-    <h3>
-      Transforma-me
-    </h3>
-
-    <p>
-      Depois de sondar o coração e nos conduzir ao quebrantamento,
-      Deus inicia uma obra mais profunda: a transformação.
-    </p>
-
-    <p>
-      Não se trata apenas de abandonar hábitos ou mudar comportamentos,
-      mas de permitir que Deus renove nossa mente, trate nosso interior
-      e forme em nós o caráter de Cristo.
-    </p>
-
-    <p>
-      Um capítulo sobre a transformação do homem interior e o processo
-      de tornar-se aquilo que Deus planejou.
-    </p>
-
-  </div>
-
-
-  <div class="chapter">
-
-    <div class="chapter-number">05</div>
-
-    <h3>
-      Enche-me
-    </h3>
-
-    <p>
-      Depois de sondar, quebrantar e transformar, Deus nos conduz a uma vida
-      cheia do Espírito Santo.
-    </p>
-
-    <p>
-      Ser cheio do Espírito não é apenas experimentar manifestações espirituais,
-      mas permitir que Sua presença governe nossas escolhas, produza domínio
-      próprio, transforme nossos relacionamentos e forme em nós o caráter de Cristo.
-    </p>
-
-    <p>
-      Como um vaso de barro nas mãos do Oleiro, somos preparados, moldados e
-      preenchidos para que aquilo que transborde de nós revele quem Deus é.
-    </p>
-
-    <p>
-      Um capítulo sobre plenitude, submissão e o processo de Deus para preparar
-      um vaso pronto para ser usado.
-    </p>
-
-  </div>
-
-
-  <div class="chapter">
-
-    <div class="chapter-number">06</div>
-
-    <h3>
-      Usa-me
-    </h3>
-
-    <p>
-      Depois de ser sondado, quebrantado, transformado e cheio do Espírito,
-      chega o momento de compreender o privilégio de ser usado por Deus.
-    </p>
-
-    <p>
-      Servir não é buscar aplausos, posição ou reconhecimento. É carregar a
-      presença de Deus, desenvolver os dons recebidos e colocar tudo o que somos
-      a serviço do propósito do Pai.
-    </p>
-
-    <p>
-      Mesmo quando estamos prontos, ainda pode existir um tempo de espera: o
-      “tempo da aljava”, quando Deus guarda a flecha até o momento certo de enviá-la.
-    </p>
-
-    <p>
-      Um capítulo sobre serviço, caráter, propósito e a importância de esperar
-      o tempo de Deus.
-    </p>
-
-  </div>
-
-</div>
-```
+    </div>
 
   </div>
 
 </section>
 
-<!-- =========================
-     DEGUSTAÇÃO
-========================== -->
 
-<section class="excerpt">
+<!-- =========================
+     PERGUNTE SOBRE O LIVRO
+========================= -->
+
+<section class="perguntas" id="perguntas">
 
   <div class="container">
 
-```
-<div class="section-title">
+    <div class="titulo-secao">
+      <span>Converse sobre a obra</span>
+      <h2>Pergunte sobre o livro</h2>
+    </div>
 
-  <h2>Uma pequena degustação</h2>
+    <p class="perguntas-intro">
+      Tem alguma pergunta sobre a história, os capítulos ou o conteúdo
+      de <em>Antes Que Eu Seja Usado</em>? Envie sua pergunta.
+    </p>
 
-  <p>
-    Conheça um pouco da mensagem do livro.
-  </p>
+    <div class="pergunta-box">
 
-</div>
+      <div class="campo">
+        <label for="nome">Seu nome</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Digite seu nome"
+        >
+      </div>
 
-<div class="excerpt-box">
+      <div class="campo">
+        <label for="pergunta">Sua pergunta</label>
+        <textarea
+          id="pergunta"
+          name="pergunta"
+          placeholder="Escreva sua pergunta sobre o livro..."
+        ></textarea>
+      </div>
 
-  <p>
-    “Talvez este livro não seja sobre como ser usado por Deus.
-    Talvez seja sobre quem precisamos nos tornar antes que
-    Deus nos use.”
-  </p>
+      <button type="button" class="botao">
+        ENVIAR PERGUNTA
+      </button>
 
-  <a href="#" class="btn btn-primary">
-    LER UM TRECHO
-  </a>
+    </div>
 
-</div>
-```
+
+    <!--
+      ESTA ÁREA SERÁ LIGADA AO SISTEMA DE PERGUNTAS
+      EM UMA PRÓXIMA ETAPA.
+    -->
+
+    <div class="perguntas-publicadas">
+
+      <h3>Perguntas dos leitores</h3>
+
+      <div class="pergunta-publicada">
+
+        <div class="pergunta">
+          Qual é a principal mensagem de Antes Que Eu Seja Usado?
+        </div>
+
+        <div class="resposta">
+          A proposta central é refletir sobre aquilo que Deus deseja
+          realizar em nós antes daquilo que deseja realizar através de nós.
+        </div>
+
+      </div>
+
+      <div class="pergunta-publicada">
+
+        <div class="pergunta">
+          O livro fala somente sobre vocação ministerial?
+        </div>
+
+        <div class="resposta">
+          Não. A reflexão alcança qualquer pessoa que deseja compreender
+          melhor o processo de Deus em sua vida, seu caráter e seu propósito.
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
-
-<!-- =========================
-     INFORMAÇÕES DA EDIÇÃO
-========================== -->
-
-<section class="edition" id="edicao">
-
-  <div class="edition-box">
-
 ```
-<div class="edition-info">
 
-  <p style="color:#d6b36a;font-weight:bold;">
-    O LIVRO
-  </p>
+  </main>
 
-  <h2>
-    Antes Que Eu Seja Usado
-  </h2>
+  <!-- =========================
+       RODAPÉ
+  ========================= -->
 
-  <p>
-    Uma jornada antes do encontro com nossa vocação.
-  </p>
-
-  <div class="price">
-    R$ 34,90
-  </div>
-
-  <p>
-    Garanta seu exemplar e mergulhe em uma jornada
-    de caráter, identidade, quebrantamento, transformação,
-    plenitude e propósito.
-  </p>
-
-  <a
-    href="#contato"
-    class="btn btn-primary"
-  >
-    QUERO MEU EXEMPLAR
-  </a>
-
-</div>
-
-
-<div class="edition-card">
-
-  <h3>
-    Informações sobre a edição
-  </h3>
-
-  <ul class="edition-list">
-
-    <li>
-      <strong>Formato:</strong> 14 × 21 cm
-    </li>
-
-    <li>
-      <strong>Extensão:</strong> 110 páginas
-    </li>
-
-    <li>
-      <strong>Impressão:</strong> papel couché
-    </li>
-
-    <li>
-      <strong>Edição:</strong> impressa
-    </li>
-
-    <li>
-      <strong>Valor:</strong> R$ 34,90
-    </li>
-
-  </ul>
-
-
-  <div class="groups">
-
-    <strong>
-      Grupos de leitura
-    </strong>
-
+  <footer>
     <p>
-      Para grupos com 8 exemplares ou mais,
-      entre em contato para conhecer as condições especiais.
+      © 2026 <strong>Francisco Denílson Pinheiro</strong>.
+      Todos os direitos reservados.
     </p>
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================
-     DEPOIMENTOS
-========================== -->
-
-<section class="testimonials">
-
-  <div class="container">
-
-```
-<div class="section-title">
-
-  <h2>O que estão dizendo</h2>
-
-  <p>
-    Pessoas que conheceram a mensagem do livro.
-  </p>
-
-</div>
-
-<div class="testimonial-grid">
-
-
-  <div class="testimonial">
-
-    “Este livro nos leva a olhar
-    primeiro para dentro antes de
-    querer fazer algo para Deus.”
-
-    <strong>
-      — Pastora Valdelúcia Fialho
-    </strong>
-
-  </div>
-
-
-  <div class="testimonial">
-
-    “Uma mensagem que fala sobre
-    preparação, caráter e propósito.”
-
-    <strong>
-      — Francisco Denílson Pinheiro Filho
-    </strong>
-
-  </div>
-
-
-  <div class="testimonial">
-
-    “Uma jornada profunda sobre
-    aquilo que Deus deseja formar em nós.”
-
-    <strong>
-      — Pastora Gardênia Pinheiro
-    </strong>
-
-  </div>
-
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================
-     DÚVIDAS
-========================== -->
-
-<section id="duvidas">
-
-  <div class="container">
-
-```
-<div class="section-title">
-
-  <h2>Dúvidas frequentes</h2>
-
-  <p>
-    Algumas informações sobre o livro.
-  </p>
-
-</div>
-
-<div class="faq">
-
-
-  <details>
-
-    <summary>
-      Qual o valor do livro?
-    </summary>
-
-    <p>
-      O valor da edição impressa é R$ 34,90.
-    </p>
-
-  </details>
-
-
-  <details>
-
-    <summary>
-      Qual o formato do livro?
-    </summary>
-
-    <p>
-      A edição impressa possui formato 14 × 21 cm
-      e aproximadamente 110 páginas.
-    </p>
-
-  </details>
-
-
-  <details>
-
-    <summary>
-      Posso comprar mais de um exemplar?
-    </summary>
-
-    <p>
-      Sim. Para grupos de leitura com 8 exemplares
-      ou mais, entre em contato para conhecer as
-      condições especiais.
-    </p>
-
-  </details>
-
-
-  <details>
-
-    <summary>
-      Onde posso adquirir o livro?
-    </summary>
-
-    <p>
-      Para informações sobre disponibilidade e formas
-      de aquisição, entre em contato diretamente.
-    </p>
-
-  </details>
-
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================
-     CTA FINAL
-========================== -->
-
-<section class="final" id="contato">
-
-  <div class="container">
-
-```
-<h2>
-  Antes de ser usado...
-  permita-se ser transformado.
-</h2>
-
-<p>
-  Conheça <strong>Antes Que Eu Seja Usado</strong>
-  e comece esta jornada.
-</p>
-
-<a
-  href="contato.html"
-  class="btn btn-primary"
->
-  QUERO MEU EXEMPLAR
-</a>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer>
-
-  <p>
-    © 2026 Francisco Denílson Pinheiro
-  </p>
-
-  <p style="margin-top:8px;">
-    Escritor • Pastor • Palestrante
-  </p>
-
-</footer>
-
-<script>
-
-  function toggleMenu() {
-
-    document
-      .getElementById("menu")
-      .classList
-      .toggle("active");
-
-  }
-
-</script>
+  </footer>
 
 </body>
 </html>
