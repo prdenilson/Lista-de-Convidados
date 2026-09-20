@@ -580,50 +580,7 @@
       margin: 20px 0;
     }
 
-
-    /* =========================
-       BOTÃO DE PRÉ-VENDA
-    ========================= */
-
-    .pre-venda-button {
-
-      display: inline-block;
-
-      margin-top: 15px;
-
-      padding: 15px 25px;
-
-      background: #c9b58a;
-
-      color: #191715;
-
-      border: 1px solid #c9b58a;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-
-      font-weight: bold;
-
-      letter-spacing: 1.3px;
-
-      text-transform: uppercase;
-
-      cursor: pointer;
-
-      transition: 0.3s;
-
-      text-align: center;
-    }
-
-
-    .pre-venda-button:hover {
-
-      background: #e0cfaa;
-
-      border-color: #e0cfaa;
-    }
-
+ 
 
 /* =========================
    BOTÃO FIXO
@@ -1501,11 +1458,6 @@
   </a>
 </li>
 
-<li>
-  <a href="pre-venda.html">
-    Pré Venda
-  </a>
-</li>
 
           <li>
   <a href="pedidos.html">
@@ -1705,17 +1657,7 @@
           >
             Como chegar
           </a>
-
-
-          <!-- PRÉ-VENDA -->
-
-          <a
-  href="pre-venda.html"
-  class="pre-venda-button"
->
-  Adquira agora na pré-venda
-</a>
-
+        
 
         </div>
 
@@ -1896,73 +1838,7 @@
 
   </div>
 
-
-  <!-- =========================
-       MODAL — PRÉ-VENDA
-  ========================= -->
-
-  <div
-    class="pre-venda-modal"
-    id="modalPreVenda"
-    onclick="fecharPreVendaFora(event)"
-  >
-
-    <div class="pre-venda-card">
-
-
-      <button
-        type="button"
-        class="fechar-pre-venda"
-        onclick="fecharPreVenda()"
-        aria-label="Fechar"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        Pré-venda
-      </div>
-
-
-      <h2>
-        Antes Que Eu Seja Usado
-      </h2>
-
-
-      <div class="linha"></div>
-
-
-      <p>
-        Adquira seu exemplar físico na pré-venda e tenha uma condição especial para acessar também a versão digital da obra.
-      </p>
-
-
-      <div class="beneficio">
-
-        <strong>
-          Benefício da pré-venda
-        </strong>
-
-        <span>
-          Livro físico + acesso à versão digital
-        </span>
-
-      </div>
-
-
-      <a
-        href="obras.html"
-        class="botao-adquirir"
-      >
-        Quero adquirir o livro
-      </a>
-
-
-    </div>
-
-  </div>
-
+ 
 
   <!-- =========================
        RODAPÉ
@@ -1995,10 +1871,6 @@
 
         <a href="obras.html">
           Obras
-        </a>
-
-        <a href="pre-venda.html">
-          Pré Venda
         </a>
 
         <a href="eventos.html">
@@ -2364,54 +2236,7 @@
       }
     );
 
-
-    /* =========================
-       MODAL DE PRÉ-VENDA
-    ========================= */
-
-    function abrirPreVenda() {
-
-      const modal =
-        document.getElementById(
-          "modalPreVenda"
-        );
-
-
-      modal.classList.add(
-        "aberto"
-      );
-
-    }
-
-
-    function fecharPreVenda() {
-
-      const modal =
-        document.getElementById(
-          "modalPreVenda"
-        );
-
-
-      modal.classList.remove(
-        "aberto"
-      );
-
-    }
-
-
-    function fecharPreVendaFora(event) {
-
-      if (
-        event.target.id ===
-        "modalPreVenda"
-      ) {
-
-        fecharPreVenda();
-
-      }
-
-    }
-
+  
   </script>
 
 
