@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>Pedidos | Antes Que Eu Seja Usado</title>
+  <title>Adquirir o Livro | Antes Que Eu Seja Usado</title>
 
   <meta
     name="description"
@@ -13,18 +18,21 @@
   >
 
   <style>
+
     :root {
       --fundo: #f8f5ef;
-      --fundo-suave: #eee8dc;
-      --escuro: #29241f;
-      --escuro-2: #1d1916;
-      --dourado: #d6b36a;
-      --dourado-escuro: #b8954f;
+      --fundo-2: #eee8dc;
+      --escuro: #211d19;
+      --escuro-2: #171411;
+      --dourado: #c9a05c;
+      --dourado-2: #a98242;
       --texto: #29251f;
-      --borda: #e1d8ca;
+      --cinza: #6b645b;
+      --borda: #ddd3c5;
       --branco: #ffffff;
       --verde: #53685b;
     }
+
 
     * {
       box-sizing: border-box;
@@ -32,9 +40,6 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
 
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -43,328 +48,230 @@
       line-height: 1.6;
     }
 
+
     /* =========================
        CABEÇALHO
     ========================= */
 
     header {
-      background: rgba(35, 30, 25, 0.98);
+      background: var(--escuro);
       color: white;
       padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 15px rgba(0,0,0,.15);
     }
 
+
     .header-inner {
-      max-width: 1150px;
+      max-width: 1050px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
     }
+
 
     .logo {
       color: var(--dourado);
       text-decoration: none;
-      font-size: 1.2rem;
       font-weight: bold;
-      white-space: nowrap;
+      font-size: 1.05rem;
     }
 
-    nav {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-    }
 
-    nav a {
-      color: #f4efe7;
+    header a {
+      color: white;
       text-decoration: none;
-      font-size: .95rem;
+      font-size: .9rem;
     }
 
-    nav a:hover {
-      color: var(--dourado);
-    }
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
-      min-height: 600px;
-      position: relative;
-      background:
-        linear-gradient(
-          rgba(25, 21, 18, .78),
-          rgba(25, 21, 18, .88)
-        ),
-        url("capa.jpg") center / cover;
+      min-height: 430px;
+      padding: 60px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 70px 20px;
+
       color: white;
+
+      background:
+        linear-gradient(
+          rgba(25,21,18,.78),
+          rgba(25,21,18,.88)
+        ),
+        url("capa.jpg") center / cover;
     }
+
 
     .hero-content {
-      max-width: 850px;
+      max-width: 750px;
     }
+
 
     .hero small {
-      display: block;
       color: var(--dourado);
       text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-      font-size: .8rem;
+      letter-spacing: 2px;
+      font-size: .78rem;
     }
+
 
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
+      margin: 15px 0;
+      font-size: clamp(2.3rem, 7vw, 4.5rem);
       line-height: 1.05;
-      margin-bottom: 22px;
       font-weight: normal;
     }
+
 
     .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 1.15rem;
       color: #eee8dc;
-    }
-
-    /* =========================
-       BOTÕES
-    ========================= */
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(
-        135deg,
-        var(--dourado),
-        var(--dourado-escuro)
-      );
-      color: #211b15;
-      padding: 15px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: .25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,.18);
-    }
-
-    .hero .btn {
-      margin-top: 32px;
-    }
-
-    /* =========================
-       SEÇÃO LIVRO
-    ========================= */
-
-    .livro {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 20px;
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .capa-box {
-      text-align: center;
-    }
-
-    .capa-box img {
-      width: 100%;
-      max-width: 330px;
-      border-radius: 3px;
-      box-shadow: 0 20px 45px rgba(0,0,0,.22);
-    }
-
-    .conteudo-livro h2 {
-      font-size: 2.4rem;
-      font-weight: normal;
-      margin-bottom: 20px;
-    }
-
-    .linha-dourada {
-      width: 70px;
-      height: 3px;
-      background: var(--dourado);
-      margin-bottom: 25px;
-    }
-
-    .conteudo-livro p {
-      margin-bottom: 18px;
       font-size: 1.05rem;
     }
 
-    .frase {
-      border-left: 3px solid var(--dourado);
-      padding: 15px 20px;
-      margin: 28px 0;
-      font-style: italic;
-      background: rgba(255,255,255,.45);
+
+    .btn-hero {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 15px 28px;
+      background: var(--dourado);
+      color: #211b15;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
     }
+
+
+    /* =========================
+       CONTEÚDO
+    ========================= */
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+
+    .livro {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+
+    .capa {
+      text-align: center;
+    }
+
+
+    .capa img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 4px;
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+
+
+    .informacoes h2 {
+      font-size: 2.3rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+
+    .subtitulo {
+      color: var(--dourado-2);
+      font-style: italic;
+      margin-bottom: 22px;
+    }
+
+
+    .informacoes p {
+      margin-bottom: 15px;
+    }
+
+
+    .preco {
+      margin: 25px 0;
+      padding: 20px;
+      background: var(--fundo-2);
+      border: 1px solid var(--borda);
+      border-radius: 5px;
+    }
+
+
+    .preco span {
+      display: block;
+      font-size: .85rem;
+      color: var(--cinza);
+    }
+
+
+    .preco strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--dourado-2);
+      font-size: 2rem;
+    }
+
 
     /* =========================
        PEDIDO
     ========================= */
 
-    .pedido-section {
-      background: var(--escuro);
-      color: white;
-      padding: 90px 20px;
+    .pedido {
+      margin-top: 80px;
+      padding: 45px;
+      background: white;
+      border: 1px solid var(--borda);
+      border-radius: 6px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.12);
     }
 
-    .pedido-container {
-      max-width: 850px;
-      margin: auto;
-    }
 
-    .pedido-titulo {
+    .titulo {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 35px;
     }
 
-    .pedido-titulo small {
-      color: var(--dourado);
+
+    .titulo small {
+      color: var(--dourado-2);
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
-    .pedido-titulo h2 {
-      font-size: 2.6rem;
+
+    .titulo h2 {
+      font-size: 2.2rem;
       font-weight: normal;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
-    .pedido-titulo p {
-      color: #d8d1c7;
+
+    .titulo p {
+      color: var(--cinza);
     }
+
 
     /* =========================
-       CARD DO PEDIDO
+       QUANTIDADE
     ========================= */
 
-    .pedido-card {
-      background: #fff;
-      color: var(--texto);
-      padding: 38px;
-      border-radius: 6px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.25);
-    }
-
-    .etapa {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 25px;
-    }
-
-    .numero {
-      min-width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--dourado);
-      color: #211b15;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .etapa h3 {
-      margin-bottom: 4px;
-    }
-
-    .etapa p {
-      color: #625b52;
-      font-size: .95rem;
-    }
-
-    /* =========================
-       DIVISÓRIA
-    ========================= */
-
-    .divisoria {
-      height: 1px;
-      background: var(--borda);
-      margin: 35px 0;
-    }
-
-    /* =========================
-       FORMULÁRIO
-    ========================= */
-
-    .formulario h3 {
-      font-size: 1.5rem;
-      margin-bottom: 25px;
-      font-weight: normal;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .campo {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 3px;
-    }
-
-    .campo.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-size: .9rem;
-      font-weight: bold;
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d6cec2;
-      border-radius: 4px;
-      background: #fff;
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--texto);
-      outline: none;
-    }
-
-    input:focus,
-    select:focus {
-      border-color: var(--dourado);
-      box-shadow: 0 0 0 2px rgba(214,179,106,.15);
-    }
-
-    .quantidade-box {
+    .quantidade {
       background: var(--fundo);
       border: 1px solid var(--borda);
       padding: 20px;
-      margin: 25px 0;
       border-radius: 5px;
+      margin-bottom: 30px;
     }
+
 
     .quantidade-linha {
       display: flex;
@@ -373,522 +280,816 @@
       gap: 20px;
     }
 
-    .quantidade-linha select {
-      max-width: 100px;
+
+    .quantidade select {
+      width: 100px;
     }
 
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d4cabb;
+      border-radius: 4px;
+      background: white;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--texto);
+      outline: none;
+    }
+
+
+    select:focus,
+    input:focus {
+      border-color: var(--dourado);
+    }
+
+
     .total {
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid var(--borda);
       display: flex;
       justify-content: space-between;
-      font-size: 1.2rem;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--borda);
+      font-size: 1.25rem;
       font-weight: bold;
     }
 
-    .preco {
-      color: var(--dourado-escuro);
+
+    .total strong {
+      color: var(--dourado-2);
     }
+
+
+    /* =========================
+       FORMULÁRIO
+    ========================= */
+
+    .secao {
+      margin-top: 35px;
+    }
+
+
+    .secao h3 {
+      font-size: 1.45rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+
+    .campo.full {
+      grid-column: 1 / -1;
+    }
+
+
+    label {
+      font-size: .9rem;
+      font-weight: bold;
+    }
+
 
     /* =========================
        PAGAMENTO
     ========================= */
 
-    .pagamento {
-      margin-top: 30px;
-    }
-
-    .pagamento-opcoes {
+    .pagamentos {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
-      margin-top: 15px;
     }
 
-    .pagamento-opcao {
-      border: 1px solid var(--borda);
-      padding: 18px;
+
+    .pagamento {
+      position: relative;
+    }
+
+
+    .pagamento input {
+      position: absolute;
+      opacity: 0;
+    }
+
+
+    .pagamento label {
+      display: block;
+      padding: 20px;
+      border: 2px solid var(--borda);
       border-radius: 5px;
       cursor: pointer;
+      text-align: center;
       transition: .2s;
     }
 
-    .pagamento-opcao:hover {
-      border-color: var(--dourado);
-    }
 
-    .pagamento-opcao strong {
+    .pagamento label strong {
       display: block;
-      margin-bottom: 4px;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
     }
 
-    .pagamento-opcao span {
-      color: #6a635a;
-      font-size: .9rem;
-    }
 
-    /* =========================
-       COMPROVANTE
-    ========================= */
-
-.tipo-compra {
-  margin-top: 30px;
-  padding: 22px;
-  background: #f5f1eb;
-  border: 1px solid #cfc4b5;
-  border-radius: 5px;
-}
-
-.tipo-compra > label:first-child {
-  display: block;
-  margin-bottom: 14px;
-  font-weight: bold;
-  color: #2d4a3e;
-}
-
-.tipo-compra-opcoes {
-  display: flex;
-  gap: 12px;
-}
-
-.tipo-compra-opcao {
-  flex: 1;
-  cursor: pointer;
-}
-
-.tipo-compra-opcao input {
-  display: none;
-}
-
-.tipo-compra-opcao span {
-  display: block;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid #cfc4b5;
-  border-radius: 6px;
-  background: white;
-  font-weight: bold;
-  color: #4a443d;
-  transition: .2s;
-}
-
-.tipo-compra-opcao input:checked + span {
-  background: #2d4a3e;
-  color: white;
-  border-color: #2d4a3e;
-}
-    
-    .comprovante {
-      margin-top: 30px;
-      padding: 22px;
-      background: #f5f1eb;
-      border: 1px dashed #cfc4b5;
-      border-radius: 5px;
-    }
-
-    .comprovante label {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .comprovante input {
-      background: white;
-    }
-
-    .aviso {
+    .pagamento label span {
+      color: var(--cinza);
       font-size: .85rem;
-      color: #6c655c;
-      margin-top: 10px;
+      font-weight: normal;
     }
 
+
+    .pagamento input:checked + label {
+      border-color: var(--dourado);
+      background: #faf6ee;
+    }
+
+
     /* =========================
-       LGPD
+       CONSENTIMENTO
     ========================= */
 
     .consentimento {
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      margin: 25px 0;
+      margin: 30px 0;
+      color: var(--cinza);
       font-size: .85rem;
-      color: #625b52;
+      font-weight: normal;
     }
+
 
     .consentimento input {
       width: auto;
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
+
     /* =========================
-       BOTÃO ENVIAR
+       BOTÃO
     ========================= */
 
-    .btn-enviar {
+    .btn-finalizar {
       width: 100%;
-      margin-top: 10px;
+      padding: 18px;
+      border: none;
+      border-radius: 4px;
+      background: var(--dourado);
+      color: #211b15;
+      font-family: inherit;
       font-size: 1.05rem;
-      padding: 17px;
+      font-weight: bold;
+      cursor: pointer;
     }
+
+
+    .btn-finalizar:hover {
+      background: #b8904d;
+    }
+
+
+    .btn-finalizar:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
 
     /* =========================
-       CONFIRMAÇÃO
+       MODAL
     ========================= */
 
-    .sucesso {
+    .modal {
+      position: fixed;
+      inset: 0;
       display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,.75);
+      z-index: 9999;
+    }
+
+
+    .modal.aberto {
+      display: flex;
+    }
+
+
+    .modal-caixa {
+      width: 100%;
+      max-width: 430px;
+      padding: 35px 25px;
+      background: white;
+      border-radius: 7px;
       text-align: center;
-      padding: 45px 25px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.35);
     }
 
-    .sucesso.ativo {
-      display: block;
-    }
 
-    .sucesso-icone {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: var(--verde);
-      color: white;
+    .icone-sucesso {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 18px;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 50%;
+      background: var(--verde);
+      color: white;
       font-size: 2rem;
     }
 
-    .sucesso h2 {
-      font-size: 2rem;
+
+    .modal h2 {
+      font-size: 1.8rem;
       font-weight: normal;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
-    .sucesso p {
-      color: #625b52;
-      max-width: 600px;
-      margin: 0 auto 10px;
+
+    .modal p {
+      color: var(--cinza);
+      margin-bottom: 20px;
     }
+
+
+    .fechar {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 4px;
+      background: var(--escuro);
+      color: white;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
 
     /* =========================
        RODAPÉ
     ========================= */
 
     footer {
+      padding: 35px 20px;
       background: var(--escuro-2);
       color: #d5cec5;
       text-align: center;
-      padding: 35px 20px;
       font-size: .9rem;
     }
+
 
     footer strong {
       color: var(--dourado);
     }
 
+
     /* =========================
-       RESPONSIVO
+       CELULAR
     ========================= */
 
-    @media (max-width: 800px) {
-
-      nav {
-        display: none;
-      }
+    @media (max-width: 750px) {
 
       .hero {
-        min-height: 520px;
+        min-height: 480px;
       }
+
+
+      main {
+        padding: 45px 15px;
+      }
+
 
       .livro {
         grid-template-columns: 1fr;
-        gap: 45px;
-        padding: 65px 20px;
+        gap: 35px;
       }
 
-      .conteudo-livro {
+
+      .capa img {
+        max-width: 240px;
+      }
+
+
+      .informacoes h2 {
+        font-size: 2rem;
         text-align: center;
       }
 
-      .linha-dourada {
-        margin-left: auto;
-        margin-right: auto;
+
+      .subtitulo {
+        text-align: center;
       }
 
-      .frase {
-        text-align: left;
+
+      .pedido {
+        margin-top: 55px;
+        padding: 25px 18px;
       }
 
-      .pedido-section {
-        padding: 65px 15px;
-      }
-
-      .pedido-card {
-        padding: 25px 20px;
-      }
 
       .grid {
         grid-template-columns: 1fr;
       }
 
+
       .campo.full {
         grid-column: auto;
       }
 
-      .pagamento-opcoes {
+
+      .pagamentos {
         grid-template-columns: 1fr;
       }
 
-      .quantidade-linha {
-        align-items: flex-start;
-      }
     }
 
-    @media (max-width: 480px) {
+
+    @media (max-width: 450px) {
+
+      .header-inner {
+        justify-content: center;
+      }
+
+
+      header a {
+        display: none;
+      }
+
 
       .hero h1 {
         font-size: 2.5rem;
       }
 
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .pedido-titulo h2 {
-        font-size: 2.1rem;
-      }
 
       .quantidade-linha {
         flex-direction: column;
+        align-items: stretch;
       }
 
-      .quantidade-linha select {
-        max-width: none;
+
+      .quantidade select {
+        width: 100%;
       }
+
+
+      .titulo h2 {
+        font-size: 1.9rem;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================
-       CABEÇALHO
-  ========================= -->
 
-  <header>
-    <div class="header-inner">
+<header>
 
-      <a href="index.html" class="logo">
-        Pr. Denílson Pinheiro
-      </a>
+  <div class="header-inner">
 
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="#livro">O Livro</a>
-        <a href="#pedido">Pedido</a>
-      </nav>
+    <a
+      href="index.html"
+      class="logo"
+    >
+      Pr. Denílson Pinheiro
+    </a>
 
-    </div>
-  </header>
+    <a href="obras.html">
+      ← Voltar para Obras
+    </a>
 
+  </div>
 
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <small>Obra de Francisco Denilson Pinheiro</small>
-
-      <h1>
-        Antes que eu seja usado
-      </h1>
-
-      <p>
-        Antes de Deus usar nossas mãos, Ele trabalha nosso coração.
-        Uma jornada de transformação, preparação e propósito.
-      </p>
-
-      <a href="#pedido" class="btn">
-        ADQUIRA AGORA SEU EXEMPLAR
-      </a>
-
-    </div>
-
-  </section>
+</header>
 
 
-  <!-- =========================
-       LIVRO
-  ========================= -->
+<section class="hero">
 
-  <section class="livro" id="livro">
+  <div class="hero-content">
 
-    <div class="capa-box">
+    <small>
+      Antes Que Eu Seja Usado
+    </small>
+
+    <h1>
+      Adquira seu exemplar
+    </h1>
+
+    <p>
+      Uma jornada antes do encontro com nossa vocação.
+    </p>
+
+    <a
+      href="#pedido"
+      class="btn-hero"
+    >
+      ADQUIRIR AGORA
+    </a>
+
+  </div>
+
+</section>
+
+
+<main>
+
+
+  <!-- LIVRO -->
+
+  <section class="livro">
+
+    <div class="capa">
 
       <img
         src="capa.jpg"
-        alt="Capa do livro Antes que eu seja usado"
+        alt="Capa do livro Antes Que Eu Seja Usado"
       >
 
     </div>
 
-    <div class="conteudo-livro">
+
+    <div class="informacoes">
 
       <h2>
-        Antes que eu seja usado
+        Antes Que Eu Seja Usado
       </h2>
 
-      <div class="linha-dourada"></div>
-
-      <p>
-        Há uma obra que Deus deseja realizar através de nós.
-        Mas antes disso, existe uma obra que Ele deseja realizar
-        <strong>em nós.</strong>
+      <p class="subtitulo">
+        Uma jornada antes do encontro com nossa vocação.
       </p>
 
       <p>
-        Este livro conduz o leitor por uma jornada de sondagem,
-        quebrantamento, transformação, enchimento e preparação
-        para aquilo que Deus deseja realizar através de sua vida.
+        Antes de sermos usados por Deus, existe uma obra
+        que Ele deseja realizar em nós.
       </p>
 
-      <div class="frase">
-        “A maior obra de Deus é em nós e não através de nós.”
+      <p>
+        Este livro conduz o leitor por uma jornada de
+        reflexão, quebrantamento, transformação e preparação
+        para o encontro com nossa vocação.
+      </p>
+
+      <div class="preco">
+
+        <span>
+          Valor do exemplar
+        </span>
+
+        <strong>
+          R$ 34,90
+        </strong>
+
       </div>
-
-      <p>
-        Agora você pode adquirir seu exemplar.
-      </p>
 
     </div>
 
   </section>
 
 
-  <!-- =========================
-       PEDIDO
-  ========================= -->
+  <!-- PEDIDO -->
 
-  <section class="pedido-section" id="pedido">
+  <section
+    class="pedido"
+    id="pedido"
+  >
 
-    <div class="pedido-container">
+    <div class="titulo">
 
-      <div class="pedido-titulo">
+      <small>
+        Pedido
+      </small>
 
-        <small>Pedido do livro</small>
+      <h2>
+        Preencha seus dados
+      </h2>
 
-        <h2>
-          Adquira seu exemplar
-        </h2>
+      <p>
+        Informe os dados para enviarmos seu livro.
+      </p>
 
-        <p>
-          Preencha seus dados para receber o livro em seu endereço.
-        </p>
-
-      </div>
+    </div>
 
 
-      <div class="pedido-card">
+    <form id="formPedido">
 
-        <!-- ETAPA 1 -->
 
-        <div class="etapa">
+      <!-- QUANTIDADE -->
 
-          <div class="numero">1</div>
+      <div class="quantidade">
+
+        <div class="quantidade-linha">
 
           <div>
-            <h3>Faça seu pedido</h3>
 
-            <p>
-              Escolha quantos exemplares deseja adquirir.
+            <strong>
+              Quantidade de exemplares
+            </strong>
+
+            <p style="color:#6b645b;font-size:.9rem;">
+              R$ 34,90 por exemplar
             </p>
+
           </div>
+
+
+          <select id="quantidade">
+
+            <option value="1">1 exemplar</option>
+            <option value="2">2 exemplares</option>
+            <option value="3">3 exemplares</option>
+            <option value="4">4 exemplares</option>
+            <option value="5">5 exemplares</option>
+            <option value="6">6 exemplares</option>
+            <option value="7">7 exemplares</option>
+            <option value="8">8 exemplares</option>
+            <option value="9">9 exemplares</option>
+            <option value="10">10 exemplares</option>
+
+          </select>
 
         </div>
 
 
-        <div class="quantidade-box">
+        <div class="total">
 
-          <div class="quantidade-linha">
+          <span>
+            Total
+          </span>
 
-            <div>
-              <strong>Quantidade de exemplares</strong>
+          <strong id="total">
+            R$ 34,90
+          </strong>
 
-              <p style="font-size:.9rem;color:#6a635a;">
-                Valor por exemplar: R$ 34,90
-              </p>
-            </div>
+        </div>
 
-            <select id="quantidade" name="quantidade">
+      </div>
 
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
+
+      <!-- DADOS PESSOAIS -->
+
+      <div class="secao">
+
+        <h3>
+          1. Seus dados
+        </h3>
+
+
+        <div class="grid">
+
+
+          <div class="campo full">
+
+            <label for="nome">
+              Nome completo *
+            </label>
+
+            <input
+              id="nome"
+              type="text"
+              required
+              placeholder="Digite seu nome completo"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="whatsapp">
+              WhatsApp *
+            </label>
+
+            <input
+              id="whatsapp"
+              type="tel"
+              required
+              placeholder="(85) 99999-9999"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="email">
+              E-mail
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="seuemail@email.com"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ENDEREÇO -->
+
+      <div class="secao">
+
+        <h3>
+          2. Local de entrega
+        </h3>
+
+
+        <div class="grid">
+
+
+          <div class="campo">
+
+            <label for="cep">
+              CEP *
+            </label>
+
+            <input
+              id="cep"
+              type="text"
+              maxlength="9"
+              required
+              placeholder="00000-000"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="estado">
+              Estado *
+            </label>
+
+            <select
+              id="estado"
+              required
+            >
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
 
             </select>
 
           </div>
 
-          <div class="total">
 
-            <span>Total</span>
+          <div class="campo full">
 
-            <span class="preco" id="total">
-              R$ 34,90
-            </span>
+            <label for="endereco">
+              Rua / Avenida *
+            </label>
+
+            <input
+              id="endereco"
+              type="text"
+              required
+              placeholder="Nome da rua ou avenida"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="numero">
+              Número *
+            </label>
+
+            <input
+              id="numero"
+              type="text"
+              required
+              placeholder="Número"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="complemento">
+              Complemento
+            </label>
+
+            <input
+              id="complemento"
+              type="text"
+              placeholder="Apto, casa, bloco..."
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="bairro">
+              Bairro *
+            </label>
+
+            <input
+              id="bairro"
+              type="text"
+              required
+              placeholder="Seu bairro"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="cidade">
+              Cidade *
+            </label>
+
+            <input
+              id="cidade"
+              type="text"
+              required
+              placeholder="Sua cidade"
+            >
 
           </div>
 
         </div>
 
-
-        <!-- ETAPA 2 -->
-
-        <div class="etapa">
-
-          <div class="numero">2</div>
-
-          <div>
-
-            <h3>Pagamento</h3>
-
-            <p>
-              Realize o pagamento do seu pedido.
-            </p>
-
-          </div>
-
-        </div>
+      </div>
 
 
-        <div class="pagamento">
+      <!-- PAGAMENTO -->
 
-          <label>
-            Forma de pagamento
-          </label>
+      <div class="secao">
 
-          <div class="pagamento-opcoes">
+        <h3>
+          3. Forma de pagamento
+        </h3>
 
-            <label class="pagamento-opcao">
 
-              <input
-                type="radio"
-                name="pagamento"
-                value="PIX"
-                checked
-              >
+        <div class="pagamentos">
 
-              <strong>PIX</strong>
+
+          <div class="pagamento">
+
+            <input
+              type="radio"
+              id="pix"
+              name="pagamento"
+              value="PIX"
+              checked
+            >
+
+            <label for="pix">
+
+              <strong>
+                PIX
+              </strong>
 
               <span>
                 Pagamento instantâneo
@@ -896,381 +1097,63 @@
 
             </label>
 
+          </div>
 
-            <label class="pagamento-opcao">
 
-              <input
-                type="radio"
-                name="pagamento"
-                value="Cartão"
-              >
+          <div class="pagamento">
 
-              <strong>Cartão</strong>
+            <input
+              type="radio"
+              id="cartao"
+              name="pagamento"
+              value="Cartão de crédito"
+            >
+
+            <label for="cartao">
+
+              <strong>
+                Cartão de crédito
+              </strong>
 
               <span>
-                Pagamento com cartão
+                Pagamento seguro online
               </span>
 
             </label>
 
           </div>
+
 
         </div>
 
 
-        <div class="divisoria"></div>
-
-
-        <!-- FORMULÁRIO -->
-
-        <form id="formPedido">
-
-          <div class="etapa">
-
-            <div class="numero">3</div>
-
-            <div>
-
-              <h3>Dados para entrega</h3>
-
-              <p>
-                Informe corretamente onde seu livro deverá ser entregue.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="formulario">
-
-            <div class="grid">
-
-              <div class="campo full">
-
-                <label for="nome">
-                  Nome completo *
-                </label>
-
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  placeholder="Digite seu nome completo"
-                  required
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="whatsapp">
-                  WhatsApp *
-                </label>
-
-                <input
-                  type="tel"
-                  id="whatsapp"
-                  name="whatsapp"
-                  placeholder="(85) 99999-9999"
-                  required
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="email">
-                  E-mail
-                </label>
-
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="seuemail@email.com"
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="cep">
-                  CEP *
-                </label>
-
-                <input
-                  type="text"
-                  id="cep"
-                  name="cep"
-                  placeholder="00000-000"
-                  maxlength="9"
-                  required
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="estado">
-                  Estado *
-                </label>
-
-                <select
-                  id="estado"
-                  name="estado"
-                  required
-                >
-
-                  <option value="">
-                    Selecione
-                  </option>
-
-                  <option>AC</option>
-                  <option>AL</option>
-                  <option>AP</option>
-                  <option>AM</option>
-                  <option>BA</option>
-                  <option>CE</option>
-                  <option>DF</option>
-                  <option>ES</option>
-                  <option>GO</option>
-                  <option>MA</option>
-                  <option>MT</option>
-                  <option>MS</option>
-                  <option>MG</option>
-                  <option>PA</option>
-                  <option>PB</option>
-                  <option>PR</option>
-                  <option>PE</option>
-                  <option>PI</option>
-                  <option>RJ</option>
-                  <option>RN</option>
-                  <option>RS</option>
-                  <option>RO</option>
-                  <option>RR</option>
-                  <option>SC</option>
-                  <option>SP</option>
-                  <option>SE</option>
-                  <option>TO</option>
-
-                </select>
-
-              </div>
-
-
-              <div class="campo full">
-
-                <label for="endereco">
-                  Rua / Avenida *
-                </label>
-
-                <input
-                  type="text"
-                  id="endereco"
-                  name="endereco"
-                  placeholder="Nome da rua ou avenida"
-                  required
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="numeroEndereco">
-                  Número *
-                </label>
-
-                <input
-                  type="text"
-                  id="numeroEndereco"
-                  name="numeroEndereco"
-                  placeholder="Ex.: 485"
-                  required
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="complemento">
-                  Complemento
-                </label>
-
-                <input
-                  type="text"
-                  id="complemento"
-                  name="complemento"
-                  placeholder="Apto, casa, bloco..."
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="bairro">
-                  Bairro *
-                </label>
-
-                <input
-                  type="text"
-                  id="bairro"
-                  name="bairro"
-                  placeholder="Seu bairro"
-                  required
-                >
-
-              </div>
-
-
-              <div class="campo">
-
-                <label for="cidade">
-                  Cidade *
-                </label>
-
-                <input
-                  type="text"
-                  id="cidade"
-                  name="cidade"
-                  placeholder="Sua cidade"
-                  required
-                >
-
-              </div>
-
-            </div>
-            
-          <!-- TIPO DE COMPRA -->
-
-<div class="tipo-compra">
-
-  <label>
-    Como você realizou a compra?
-  </label>
-
-  <div class="tipo-compra-opcoes">
-
-    <label class="tipo-compra-opcao">
-
-      <input
-        type="radio"
-        name="tipoCompra"
-        value="online"
-        checked
-      >
-
-      <span>
-        🛒 COMPRA ONLINE
-      </span>
-
-    </label>
-
-
-    <label class="tipo-compra-opcao">
-
-      <input
-        type="radio"
-        name="tipoCompra"
-        value="evento"
-      >
-
-      <span>
-        🎉 COMPREI NO EVENTO
-      </span>
-
-    </label>
-
-  </div>
-
-</div>
- 
-            <!-- COMPROVANTE --> 
-
-            <div class="comprovante" id="areaComprovante">
-
-              <label for="comprovante">
-                Comprovante de pagamento *
-              </label>
-
-              <input
-                type="file"
-                id="comprovante"
-                name="comprovante"
-                accept="image/*,.pdf"
-                >
-
-              <p class="aviso">
-                Envie uma foto ou PDF do comprovante.
-                O pedido será confirmado após a conferência do pagamento.
-              </p>
-
-            </div>
-
-
-            <!-- CONSENTIMENTO -->
-
-            <label class="consentimento">
-
-              <input
-                type="checkbox"
-                id="consentimento"
-                required
-              >
-
-              <span>
-                Autorizo o uso dos dados informados para o processamento
-                e entrega deste pedido.
-              </span>
-
-            </label>
-
-
-            <button
-              type="submit"
-              class="btn btn-enviar"
-            >
-              ENVIAR MEU PEDIDO
-            </button>
-
-          </div>
-
-        </form>
-
-
-        <!-- =========================
-             SUCESSO
-        ========================= -->
-
-        <div class="sucesso" id="sucesso">
-
-          <div class="sucesso-icone">
-            ✓
-          </div>
-
-          <h2>
-            Pedido recebido!
-          </h2>
-
-          <p>
-            Recebemos seus dados e o comprovante de pagamento.
+        <!-- DADOS PIX -->
+
+        <div
+          id="dadosPix"
+          style="
+            margin-top:20px;
+            padding:20px;
+            background:#faf6ee;
+            border:1px solid #ddd3c5;
+            border-radius:5px;
+            text-align:center;
+          "
+        >
+
+          <strong style="display:block;margin-bottom:8px;">
+            Pagamento via PIX
+          </strong>
+
+          <p style="font-size:.9rem;color:#6b645b;">
+            Ao finalizar o pedido, você será direcionado
+            para a página segura de pagamento PIX.
           </p>
 
-          <p>
-            Seu pagamento será conferido e, após a confirmação,
-            seu pedido ficará registrado para entrega.
-          </p>
-
-          <p>
+          <p style="margin-top:10px;">
+            E-mail:
             <strong>
-              Guarde esta confirmação.
+              antesqueeusejausado@yahoo.com
             </strong>
           </p>
 
@@ -1278,41 +1161,121 @@
 
       </div>
 
-    </div>
+
+      <!-- CONSENTIMENTO -->
+
+      <label class="consentimento">
+
+        <input
+          type="checkbox"
+          id="consentimento"
+          required
+        >
+
+        <span>
+          Autorizo o uso dos dados informados para
+          processamento e entrega deste pedido.
+        </span>
+
+      </label>
+
+
+      <button
+        type="submit"
+        class="btn-finalizar"
+        id="btnFinalizar"
+      >
+        FINALIZAR PEDIDO
+      </button>
+
+
+    </form>
 
   </section>
 
+</main>
 
-  <!-- =========================
-       RODAPÉ
-  ========================= -->
 
-  <footer>
+<!-- MODAL -->
+
+<div
+  class="modal"
+  id="modal"
+>
+
+  <div class="modal-caixa">
+
+    <div class="icone-sucesso">
+      ✓
+    </div>
+
+    <h2>
+      Pedido registrado!
+    </h2>
 
     <p>
-      <strong>Antes que eu seja usado</strong>
+      Seus dados foram registrados com sucesso.
+      Agora você será direcionado para realizar o pagamento.
     </p>
 
-    <p>
-      Francisco Denilson Pinheiro
-    </p>
+    <button
+      class="fechar"
+      onclick="fecharModal()"
+    >
+      FECHAR
+    </button>
 
-    <p style="margin-top:10px;">
-      Escritor • Pastor • Palestrante
-    </p>
+  </div>
 
-  </footer>
+</div>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+<footer>
 
- <script>
+  <p>
+    <strong>
+      Antes Que Eu Seja Usado
+    </strong>
+  </p>
 
-document.addEventListener("DOMContentLoaded", function () {
+  <p>
+    Francisco Denilson Pinheiro
+  </p>
+
+  <p>
+    Escritor • Pastor • Palestrante
+  </p>
+
+</footer>
+
+
+<script>
+
+  /* =========================
+     CONFIGURAÇÕES
+  ========================= */
 
   const PRECO = 34.90;
+
+
+  const LINK_PIX =
+    "https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5";
+
+
+  const LINK_CARTAO =
+    "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90";
+
+
+  const URL_PLANILHA =
+    "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec";
+
+
+  /* =========================
+     ELEMENTOS
+  ========================= */
+
+  const form =
+    document.getElementById("formPedido");
 
   const quantidade =
     document.getElementById("quantidade");
@@ -1320,29 +1283,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const total =
     document.getElementById("total");
 
-  const form =
-    document.getElementById("formPedido");
+  const btnFinalizar =
+    document.getElementById("btnFinalizar");
 
-  const sucesso =
-    document.getElementById("sucesso");
+  const modal =
+    document.getElementById("modal");
 
-  const areaComprovante =
-    document.getElementById("areaComprovante");
-
-  const campoComprovante =
-    document.getElementById("comprovante");
+  const dadosPix =
+    document.getElementById("dadosPix");
 
 
   /* =========================
      MOEDA
   ========================= */
 
-  function formatarMoeda(valor) {
+  function moeda(valor) {
 
-    return valor.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    });
+    return valor.toLocaleString(
+      "pt-BR",
+      {
+        style: "currency",
+        currency: "BRL"
+      }
+    );
 
   }
 
@@ -1356,11 +1319,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const qtd =
       Number(quantidade.value);
 
-    const valor =
-      qtd * PRECO;
-
     total.textContent =
-      formatarMoeda(valor);
+      moeda(qtd * PRECO);
 
   }
 
@@ -1372,540 +1332,302 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     MÁSCARA CEP
+     PIX / CARTÃO
+  ========================= */
+
+  document
+    .querySelectorAll(
+      'input[name="pagamento"]'
+    )
+    .forEach(
+      function(opcao) {
+
+        opcao.addEventListener(
+          "change",
+          function() {
+
+            if (this.value === "PIX") {
+
+              dadosPix.style.display =
+                "block";
+
+            } else {
+
+              dadosPix.style.display =
+                "none";
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =========================
+     CEP
   ========================= */
 
   document
     .getElementById("cep")
-    .addEventListener("input", function () {
+    .addEventListener(
+      "input",
+      function() {
 
-      let valor =
-        this.value.replace(/\D/g, "");
-
-      if (valor.length > 8) {
+        let valor =
+          this.value.replace(/\D/g, "");
 
         valor =
           valor.substring(0, 8);
 
+        if (valor.length > 5) {
+
+          valor =
+            valor.substring(0, 5)
+            + "-"
+            + valor.substring(5);
+
+        }
+
+        this.value = valor;
+
       }
-
-      if (valor.length > 5) {
-
-        valor =
-          valor.substring(0, 5) +
-          "-" +
-          valor.substring(5);
-
-      }
-
-      this.value = valor;
-
-    });
+    );
 
 
   /* =========================
-     MÁSCARA WHATSAPP
+     WHATSAPP
   ========================= */
 
   document
     .getElementById("whatsapp")
-    .addEventListener("input", function () {
+    .addEventListener(
+      "input",
+      function() {
 
-      let valor =
-        this.value.replace(/\D/g, "");
-
-      if (valor.length > 11) {
+        let valor =
+          this.value.replace(/\D/g, "");
 
         valor =
           valor.substring(0, 11);
 
-      }
+        if (valor.length <= 10) {
 
-      if (valor.length <= 10) {
+          if (valor.length > 6) {
 
-        if (valor.length > 6) {
+            valor =
+              "(" +
+              valor.substring(0, 2) +
+              ") " +
+              valor.substring(2, 6) +
+              "-" +
+              valor.substring(6);
+
+          } else if (valor.length > 2) {
+
+            valor =
+              "(" +
+              valor.substring(0, 2) +
+              ") " +
+              valor.substring(2);
+
+          }
+
+        } else {
 
           valor =
             "(" +
             valor.substring(0, 2) +
             ") " +
-            valor.substring(2, 6) +
+            valor.substring(2, 7) +
             "-" +
-            valor.substring(6);
-
-        } else if (valor.length > 2) {
-
-          valor =
-            "(" +
-            valor.substring(0, 2) +
-            ") " +
-            valor.substring(2);
+            valor.substring(7);
 
         }
 
-      } else {
-
-        valor =
-          "(" +
-          valor.substring(0, 2) +
-          ") " +
-          valor.substring(2, 7) +
-          "-" +
-          valor.substring(7);
+        this.value = valor;
 
       }
-
-      this.value = valor;
-
-    });
-
-
-  /* =========================
-     TIPO DE COMPRA
-  ========================= */
-
-  const opcoesTipoCompra =
-    document.querySelectorAll(
-      'input[name="tipoCompra"]'
     );
 
 
-  function atualizarTipoCompra() {
-
-    const tipoCompra =
-      document.querySelector(
-        'input[name="tipoCompra"]:checked'
-      ).value;
-
-
-    if (tipoCompra === "evento") {
-
-      areaComprovante.style.display =
-        "none";
-
-    } else {
-
-      areaComprovante.style.display =
-        "block";
-
-    }
-
-  }
-
-
-  opcoesTipoCompra.forEach(
-    function (opcao) {
-
-      opcao.addEventListener(
-        "change",
-        atualizarTipoCompra
-      );
-
-    }
-  );
-
-
-  atualizarTipoCompra();
-
-
   /* =========================
-     ENVIO DO PEDIDO
+     ENVIO
   ========================= */
 
   form.addEventListener(
     "submit",
-    function (event) {
+    async function(event) {
 
       event.preventDefault();
 
+
       if (!form.checkValidity()) {
-  form.reportValidity();
-  return;
-}
-      
-      const botao =
-        form.querySelector(
-          "button[type='submit']"
-        );
+
+        form.reportValidity();
+
+        return;
+
+      }
 
 
-      const tipoCompra =
+      btnFinalizar.disabled = true;
+
+      btnFinalizar.textContent =
+        "REGISTRANDO PEDIDO...";
+
+
+      const qtd =
+        Number(quantidade.value);
+
+
+      const valorTotal =
+        qtd * PRECO;
+
+
+      const pagamento =
         document.querySelector(
-          'input[name="tipoCompra"]:checked'
+          'input[name="pagamento"]:checked'
         ).value;
 
 
-      let arquivo =
-        campoComprovante.files[0];
+      const dados = {
 
+        nome:
+          document.getElementById("nome").value.trim(),
 
-      /* =========================
-         COMPRA ONLINE
-      ========================= */
+        whatsapp:
+          document.getElementById("whatsapp").value.trim(),
 
-      if (
-        tipoCompra === "online" &&
-        !arquivo
-      ) {
+        email:
+          document.getElementById("email").value.trim(),
 
-        alert(
-          "Selecione o comprovante de pagamento."
-        );
+        quantidade:
+          qtd,
 
-        return;
+        valorUnitario:
+          PRECO,
 
-      }
+        valorTotal:
+          valorTotal,
 
+        formaPagamento:
+          pagamento,
 
-      botao.disabled = true;
+        cep:
+          document.getElementById("cep").value.trim(),
 
-      botao.textContent =
-        "ENVIANDO PEDIDO...";
+        estado:
+          document.getElementById("estado").value,
 
+        rua:
+          document.getElementById("endereco").value.trim(),
 
-      /* =========================
-         COMPRA NO EVENTO
-      ========================= */
+        numero:
+          document.getElementById("numero").value.trim(),
 
-      if (
-        tipoCompra === "evento"
-      ) {
+        complemento:
+          document.getElementById("complemento").value.trim(),
 
-        const qtd =
-          parseInt(
-            document.getElementById(
-              "quantidade"
-            ).value
-          );
+        bairro:
+          document.getElementById("bairro").value.trim(),
 
-
-        const valorTotal =
-          qtd * PRECO;
-
-
-        const dados = {
-
-          nome:
-            document.getElementById(
-              "nome"
-            ).value,
-
-          whatsapp:
-            document.getElementById(
-              "whatsapp"
-            ).value,
-
-          email:
-            document.getElementById(
-              "email"
-            ).value,
-
-          quantidade:
-            qtd,
-
-          valorUnitario:
-            PRECO,
-
-          valorTotal:
-            valorTotal,
-
-          formaPagamento:
-            "PAGO NO EVENTO",
-
-          cep:
-            document.getElementById(
-              "cep"
-            ).value,
-
-          estado:
-            document.getElementById(
-              "estado"
-            ).value,
-
-          rua:
-            document.getElementById(
-              "endereco"
-            ).value,
-
-          numero:
-            document.getElementById(
-              "numeroEndereco"
-            ).value,
-
-          complemento:
-            document.getElementById(
-              "complemento"
-            ).value,
-
-          bairro:
-            document.getElementById(
-              "bairro"
-            ).value,
-
-          cidade:
-            document.getElementById(
-              "cidade"
-            ).value,
-
-          comprovante:
-            null
-
-        };
-
-
-        enviarPedido(dados);
-
-        return;
-
-      }
-
-
-      /* =========================
-         COMPRA ONLINE
-      ========================= */
-
-      const leitor =
-        new FileReader();
-
-      console.log("ENTREI NA COMPRA ONLINE");
-      
-      leitor.onload = async function () {
-
-        try {
-
-          const base64Completo =
-            leitor.result;
-
-
-          const base64 =
-            base64Completo.split(",")[1];
-
-
-          const qtd =
-            parseInt(
-              document.getElementById(
-                "quantidade"
-              ).value
-            );
-
-
-          const valorTotal =
-            qtd * PRECO;
-
-
-          const pagamento =
-            document.querySelector(
-              'input[name="pagamento"]:checked'
-            ).value;
-
-
-          const dados = {
-
-            nome:
-              document.getElementById(
-                "nome"
-              ).value,
-
-            whatsapp:
-              document.getElementById(
-                "whatsapp"
-              ).value,
-
-            email:
-              document.getElementById(
-                "email"
-              ).value,
-
-            quantidade:
-              qtd,
-
-            valorUnitario:
-              PRECO,
-
-            valorTotal:
-              valorTotal,
-
-            formaPagamento:
-              pagamento,
-
-            cep:
-              document.getElementById(
-                "cep"
-              ).value,
-
-            estado:
-              document.getElementById(
-                "estado"
-              ).value,
-
-            rua:
-              document.getElementById(
-                "endereco"
-              ).value,
-
-            numero:
-              document.getElementById(
-                "numeroEndereco"
-              ).value,
-
-            complemento:
-              document.getElementById(
-                "complemento"
-              ).value,
-
-            bairro:
-              document.getElementById(
-                "bairro"
-              ).value,
-
-            cidade:
-              document.getElementById(
-                "cidade"
-              ).value,
-
-            comprovante: {
-
-              nome:
-                arquivo.name,
-
-              tipo:
-                arquivo.type,
-
-              base64:
-                base64
-
-            }
-
-          };
-
-
-          enviarPedido(dados);
-
-
-        } catch (erro) {
-
-          console.error(
-            "Erro ao preparar pedido:",
-            erro
-          );
-
-
-          alert(
-            "Não foi possível preparar o pedido. Tente novamente."
-          );
-
-
-          botao.disabled =
-            false;
-
-
-          botao.textContent =
-            "ENVIAR MEU PEDIDO";
-
-        }
+        cidade:
+          document.getElementById("cidade").value.trim()
 
       };
 
 
-      leitor.onerror = function () {
+      try {
 
-        alert(
-          "Não foi possível ler o comprovante."
+        const envio =
+          new URLSearchParams();
+
+        envio.append(
+          "dados",
+          JSON.stringify(dados)
         );
 
 
-        botao.disabled =
+        /*
+          Envia para a mesma planilha
+          usada pelo pedidos.html anterior.
+        */
+
+        await fetch(
+          URL_PLANILHA,
+          {
+            method: "POST",
+            mode: "no-cors",
+            body: envio
+          }
+        );
+
+
+        /* =========================
+           MOSTRA MODAL
+        ========================= */
+
+        modal.classList.add("aberto");
+
+        document.body.style.overflow =
+          "hidden";
+
+
+        /*
+          Pequeno intervalo para o
+          usuário visualizar a confirmação.
+        */
+
+        setTimeout(
+          function() {
+
+            if (pagamento === "PIX") {
+
+              window.open(
+                LINK_PIX,
+                "_blank"
+              );
+
+            } else {
+
+              window.open(
+                LINK_CARTAO,
+                "_blank"
+              );
+
+            }
+
+          },
+          1200
+        );
+
+
+        btnFinalizar.disabled = false;
+
+        btnFinalizar.textContent =
+          "PEDIDO REGISTRADO";
+
+
+      } catch (erro) {
+
+        console.error(
+          "Erro ao enviar pedido:",
+          erro
+        );
+
+
+        alert(
+          "Não foi possível registrar o pedido. Tente novamente."
+        );
+
+
+        btnFinalizar.disabled =
           false;
 
-
-        botao.textContent =
-          "ENVIAR MEU PEDIDO";
-
-      };
-
-
-      leitor.readAsDataURL(
-        arquivo
-      );
-
-
-      /* =========================
-         FUNÇÃO DE ENVIO
-      ========================= */
-
-      async function enviarPedido(dados) {
-
-        try {
-
-          const formularioEnvio =
-            new URLSearchParams();
-
-
-          formularioEnvio.append(
-            "dados",
-            JSON.stringify(dados)
-          );
-
-
-          await fetch(
-            "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec",
-            {
-
-              method: "POST",
-
-              mode: "no-cors",
-
-              body: formularioEnvio
-
-            }
-          );
-
-
-          /* =========================
-             CONFIRMAÇÃO
-          ========================= */
-
-          form.style.display =
-            "none";
-
-
-          sucesso.classList.add(
-            "ativo"
-          );
-
-
-          window.scrollTo({
-
-            top:
-              sucesso.offsetTop - 100,
-
-            behavior:
-              "smooth"
-
-          });
-
-
-        } catch (erro) {
-
-          console.error(
-            "Erro ao enviar pedido:",
-            erro
-          );
-
-
-          alert(
-            "Não foi possível enviar o pedido. Tente novamente."
-          );
-
-
-          botao.disabled =
-            false;
-
-
-          botao.textContent =
-            "ENVIAR MEU PEDIDO";
-
-        }
+        btnFinalizar.textContent =
+          "FINALIZAR PEDIDO";
 
       }
 
@@ -1914,14 +1636,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     TOTAL INICIAL
+     MODAL
+  ========================= */
+
+  function fecharModal() {
+
+    modal.classList.remove("aberto");
+
+    document.body.style.overflow =
+      "";
+
+  }
+
+
+  modal.addEventListener(
+    "click",
+    function(event) {
+
+      if (event.target === modal) {
+
+        fecharModal();
+
+      }
+
+    }
+  );
+
+
+  /* =========================
+     INICIALIZAÇÃO
   ========================= */
 
   atualizarTotal();
 
-});
-
 </script>
 
+
 </body>
+
 </html>
