@@ -1262,8 +1262,19 @@
     "https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5";
 
 
-  const LINK_CARTAO =
-    "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90";
+  const LINKS_CARTAO = {
+
+  1: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90",
+
+  2: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-lOoZQsj0pl-69,80",
+
+  3: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-QtrP94FpYh-104,70",
+
+  4: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-LucmtRZYDL-139,60",
+
+  5: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-uspNdnNb2C-174,50"
+
+};
 
 
   const URL_PLANILHA =
@@ -1590,15 +1601,14 @@
                 "_blank"
               );
 
-            } else {
+          } else {
 
-              window.open(
-                LINK_CARTAO,
-                "_blank"
-              );
+  window.open(
+    LINKS_CARTAO[qtd],
+    "_blank"
+  );
 
-            }
-
+}
           },
           1200
         );
