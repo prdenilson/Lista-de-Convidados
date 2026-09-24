@@ -1210,21 +1210,53 @@
     </div>
 
     <h2>
-      Pedido registrado!
-    </h2>
+  Pedido registrado!
+</h2>
 
-    <p>
-      Seus dados foram registrados com sucesso.
-      Agora você será direcionado para realizar o pagamento.
-    </p>
+<p>
+  Seu pedido foi registrado com sucesso.
+</p>
 
-    <button
-      class="fechar"
-      onclick="fecharModal()"
-    >
-      FECHAR
-    </button>
+<p>
+  <strong>Agora você precisa realizar o pagamento.</strong>
+</p>
 
+<p>
+  Clique no botão abaixo para abrir o pagamento escolhido.
+  Depois de concluir o pagamento, volte para esta página
+  e envie o comprovante pelo WhatsApp.
+</p>
+
+<button
+  class="fechar"
+  onclick="continuarPagamento()"
+>
+  CONTINUAR PARA O PAGAMENTO
+</button>
+    
+<div
+  id="comprovante-whatsapp"
+  style="display: none; margin-top: 20px;"
+>
+
+  <p>
+    <strong>Já realizou o pagamento?</strong>
+  </p>
+
+  <p>
+    Agora envie o comprovante pelo WhatsApp
+    para concluirmos seu pedido.
+  </p>
+
+  <button
+    type="button"
+    onclick="enviarComprovanteWhatsApp()"
+  >
+    📱 ENVIAR COMPROVANTE PELO WHATSAPP
+  </button>
+
+</div>
+    
   </div>
 
 </div>
@@ -1585,35 +1617,7 @@
         document.body.style.overflow =
           "hidden";
 
-
-        /*
-          Pequeno intervalo para o
-          usuário visualizar a confirmação.
-        */
-
-        setTimeout(
-          function() {
-
-            if (pagamento === "PIX") {
-
-              window.open(
-                LINK_PIX,
-                "_blank"
-              );
-
-          } else {
-
-  window.open(
-    LINKS_CARTAO[qtd],
-    "_blank"
-  );
-
-}
-          },
-          1200
-        );
-
-
+       
         btnFinalizar.disabled = false;
 
         btnFinalizar.textContent =
@@ -1645,10 +1649,59 @@
   );
 
 
-  /* =========================
-     MODAL
-  ========================= */
+function continuarPagamento() {
 
+  const qtd =
+    Number(quantidade.value);
+
+  const pagamento =
+    document.querySelector(
+      'input[name="pagamento"]:checked'
+    ).value;
+
+  if (pagamento === "PIX") {
+
+    window.open(
+      LINK_PIX,
+      "_blank"
+    );
+
+  } else {
+
+    window.open(
+      LINKS_CARTAO[qtd],
+      "_blank"
+    );
+
+  }
+
+  document.getElementById(
+    "comprovante-whatsapp"
+  ).style.display = "block";
+
+}  
+function enviarComprovanteWhatsApp() {
+
+  const numeroWhatsApp =
+    "5585985141830";
+
+  const mensagem =
+    "Olá! Eu fiz o pagamento do meu pedido do livro " +
+    "“Antes Que Eu Seja Usado” pelo site. " +
+    "Segue em anexo o comprovante.";
+
+  const link =
+    "https://wa.me/" +
+    numeroWhatsApp +
+    "?text=" +
+    encodeURIComponent(mensagem);
+
+  window.open(
+    link,
+    "_blank"
+  );
+}
+  
   function fecharModal() {
 
     modal.classList.remove("aberto");
