@@ -220,7 +220,34 @@
       font-size: 2rem;
     }
 
+/* =========================
+   BANNER DE FRETE
+========================= */
 
+.banner-frete {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.banner-frete img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 750px) {
+
+  .banner-frete {
+    margin-bottom: 35px;
+    border-radius: 6px;
+  }
+
+}
+    
     /* =========================
        PEDIDO
     ========================= */
@@ -844,7 +871,17 @@
     </div>
 
   </section>
+  
+  <!-- BANNER DE FRETE -->
 
+  <div class="banner-frete">
+
+    <img
+      src="banner-frete.jfif"
+      alt="Informações sobre envio do livro"
+    >
+
+  </div>
 
   <!-- PEDIDO -->
 
