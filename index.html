@@ -202,6 +202,61 @@
       cursor: pointer;
     }
 
+    /* =========================
+   BOTÕES DE IDIOMA
+========================= */
+
+.idiomas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.idioma-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 11px;
+
+  border: 1px solid #c9b58a;
+  border-radius: 4px;
+
+  background: transparent;
+  color: #c9b58a;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition: 0.3s ease;
+}
+
+.idioma-botao:hover {
+  background: #c9b58a;
+  color: #171513;
+}
+
+@media (max-width: 800px) {
+
+  .idiomas {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .idioma-botao {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+}
 
     /* =========================
        BOTÕES
@@ -786,7 +841,24 @@
 
           </li>
 
+          <li class="idiomas">
 
+  <a
+    href="index.html"
+    class="idioma-botao"
+  >
+    🇧🇷 Português
+  </a>
+
+  <a
+    href="english.html"
+    class="idioma-botao"
+  >
+    🇺🇸 English
+  </a>
+
+</li>
+          
         </ul>
 
       </nav>
