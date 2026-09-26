@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>About the Book | Before I Am Used</title>
+
+  <meta
+    name="description"
+    content="Discover Before I Am Used, by Francisco Denilson Pinheiro. A journey of character, transformation and purpose before we are used by God."
+  >
+
+  <!-- GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYG8ED1GLC"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-DYG8ED1GLC");
+  </script>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f6f2;
+      color: #252321;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    header {
+      background: #171513;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .menu {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 21px;
+      letter-spacing: 1px;
+      color: #c9b58a;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 15px;
+      color: #f5f2ec;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #c9b58a;
+    }
+
+    .language-switch {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #c9b58a;
+      white-space: nowrap;
+    }
+
+    .language-switch:hover {
+      color: #e0cfaa;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 25px 70px;
+
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .capa {
+      text-align: center;
+    }
+
+    .capa img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 3px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+    }
+
+    .conteudo-hero h1 {
+      font-size: 46px;
+      line-height: 1.12;
+      font-weight: normal;
+      margin-bottom: 20px;
+      color: #191715;
+    }
+
+    .conteudo-hero .subtitulo {
+      font-size: 21px;
+      color: #756d62;
+      margin-bottom: 25px;
+    }
+
+    .conteudo-hero p {
+      font-size: 18px;
+      color: #45413d;
+      margin-bottom: 18px;
+    }
+
+    .frase-destaque {
+      border-left: 3px solid #c9b58a;
+      padding-left: 20px;
+      margin-top: 28px;
+      font-style: italic;
+      font-size: 19px;
+      color: #514a42;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 80px 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .titulo-secao {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .titulo-secao span {
+      display: block;
+      color: #c9b58a;
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      font-size: 34px;
+      font-weight: normal;
+      color: #191715;
+    }
+
+
+    /* =========================
+       CHAPTER PREVIEW
+    ========================= */
+
+    .degustacao {
+      background: #191715;
+      color: #fff;
+    }
+
+    .degustacao .titulo-secao h2 {
+      color: #fff;
+    }
+
+    .degustacao-intro {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+      color: #d9d4cb;
+      font-size: 17px;
+    }
+
+    .capitulos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .capitulo {
+      border: 1px solid rgba(201,181,138,0.35);
+      padding: 30px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .capitulo-numero {
+      color: #c9b58a;
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .capitulo h3 {
+      color: #fff;
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .capitulo p {
+      color: #d4d0ca;
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       BOOK INFORMATION
+    ========================= */
+
+    .informacoes {
+      background: #fff;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #ddd6ca;
+      border-left: 1px solid #ddd6ca;
+    }
+
+    .info-item {
+      padding: 28px;
+      border-right: 1px solid #ddd6ca;
+      border-bottom: 1px solid #ddd6ca;
+    }
+
+    .info-item span {
+      display: block;
+      color: #9a8b72;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    .info-item strong {
+      font-size: 19px;
+      font-weight: normal;
+      color: #292622;
+    }
+
+    .condicao-grupo {
+      max-width: 760px;
+      margin: 35px auto 0;
+      padding: 25px;
+      text-align: center;
+      background: #f4f0eb;
+      border-left: 3px solid #c9b58a;
+    }
+
+    .condicao-grupo strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .acao-livro {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 16px 34px;
+      background: #191715;
+      color: #fff;
+      letter-spacing: 1px;
+      font-size: 14px;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .botao:hover {
+      background: #c9b58a;
+      color: #191715;
+    }
+
+
+    /* =========================
+       TESTIMONIALS
+    ========================= */
+
+    .depoimentos {
+      background: #f8f6f2;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .depoimento {
+      background: #fff;
+      padding: 30px;
+      border-top: 2px solid #c9b58a;
+    }
+
+    .depoimento p {
+      font-style: italic;
+      color: #514d48;
+      margin-bottom: 20px;
+    }
+
+    .depoimento strong {
+      font-size: 14px;
+      color: #292622;
+    }
+
+
+    /* =========================
+       ASK ABOUT THE BOOK
+    ========================= */
+
+    .perguntas {
+      background: #fff;
+    }
+
+    .perguntas-intro {
+      max-width: 700px;
+      margin: -15px auto 40px;
+      text-align: center;
+      color: #66605a;
+    }
+
+    .pergunta-box {
+      max-width: 760px;
+      margin: auto;
+      padding: 35px;
+      background: #f8f6f2;
+      border: 1px solid #ddd6ca;
+    }
+
+    .campo {
+      margin-bottom: 20px;
+    }
+
+    .campo label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      color: #3d3934;
+    }
+
+    .campo input,
+    .campo textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d4cec3;
+      background: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      color: #292622;
+      outline: none;
+    }
+
+    .campo input:focus,
+    .campo textarea:focus {
+      border-color: #c9b58a;
+    }
+
+    .campo textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .perguntas-publicadas {
+      max-width: 900px;
+      margin: 65px auto 0;
+    }
+
+    .perguntas-publicadas h3 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    .pergunta-publicada {
+      padding: 25px 0;
+      border-bottom: 1px solid #ddd6ca;
+    }
+
+    .pergunta-publicada .pergunta {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .pergunta-publicada .resposta {
+      color: #5d5750;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #171513;
+      color: #cfc8bd;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #c9b58a;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .menu {
+        flex-direction: column;
+        padding: 18px 20px;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 55px;
+      }
+
+      .conteudo-hero h1 {
+        font-size: 38px;
+      }
+
+      .capitulos {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .depoimentos-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      section {
+        padding: 60px 18px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .titulo-secao h2 {
+        font-size: 29px;
+      }
+
+      .conteudo-hero h1 {
+        font-size: 34px;
+      }
+
+      .pergunta-box {
+        padding: 25px 20px;
+      }
+
+    }
+
+
+    /* =========================
+       FLOATING WHATSAPP
+    ========================= */
+
+    .whatsapp-flutuante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #25D366;
+      color: #ffffff;
+
+      border-radius: 50%;
+      text-decoration: none;
+
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+
+      z-index: 9998;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .whatsapp-flutuante:hover {
+      transform: scale(1.08);
+
+      box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.30);
+    }
+
+    .whatsapp-flutuante svg {
+      width: 31px;
+      height: 31px;
+      fill: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+
+      .whatsapp-flutuante {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .whatsapp-flutuante svg {
+        width: 29px;
+        height: 29px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       FLOATING WHATSAPP
+  ========================= -->
+
+  <a
+    href="https://wa.me/5585985141830?text=Hello!%20I%20came%20from%20the%20website%20and%20would%20like%20to%20know%20more%20about%20the%20book%20Before%20I%20Am%20Used."
+    class="whatsapp-flutuante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact via WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+
+      <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z" />
+
+    </svg>
+
+  </a>
+
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <header>
+
+    <div class="menu">
+
+      <a href="english.html" class="logo">
+        FRANCISCO DENILSON
+      </a>
+
+
+      <nav>
+
+        <a href="english.html">
+          Home
+        </a>
+
+        <a href="sobre-o-livro-english.html">
+          About the Book
+        </a>
+
+        <a href="area-do-leitor-english.html">
+          Reader's Area
+        </a>
+
+        <a href="pedidos-english.html">
+          Orders
+        </a>
+
+        <a
+          href="index.html"
+          class="language-switch"
+          aria-label="Portuguese version"
+        >
+          🇧🇷 Português
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       BOOK + SYNOPSIS
+  ========================= -->
+
+  <main>
+
+
+    <section class="hero">
+
+      <div class="capa">
+
+        <img
+          src="capa.jpg"
+          alt="Book cover of Before I Am Used"
+        >
+
+      </div>
+
+
+      <div class="conteudo-hero">
+
+        <h1>
+          Before I Am Used
+        </h1>
+
+        <div class="subtitulo">
+          A journey before encountering our calling.
+        </div>
+
+        <p>
+          Before God uses our hands, He desires to work in our hearts.
+        </p>
+
+        <p>
+          <strong>Before I Am Used</strong> is a journey of reflection,
+          transformation and preparation to understand that, before we
+          become instruments in God's hands, we need to allow Him to
+          work within us.
+        </p>
+
+        <p>
+          The book takes the reader on a journey through confrontation,
+          brokenness, transformation, filling and, finally, a willingness
+          to be used by God.
+        </p>
+
+        <div class="frase-destaque">
+          “God's greatest work is in us, not through us.”
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CHAPTER PREVIEW
+    ========================= -->
+
+    <section
+      class="degustacao"
+      id="chapters"
+    >
+
+      <div class="container">
+
+        <div class="titulo-secao">
+
+          <span>
+            A journey
+          </span>
+
+          <h2>
+            Chapter Preview
+          </h2>
+
+        </div>
+
+
+        <p class="degustacao-intro">
+
+          A small preview of the journey proposed in
+          <em>Before I Am Used</em>.
+
+        </p>
+
+
+        <div class="capitulos">
+
+
+          <article class="capitulo">
+
+            <div class="capitulo-numero">
+              CHAPTER 01
+            </div>
+
+            <h3>
+              Before Everything
+            </h3>
+
+            <p>
+              Before thinking about what God can do through us,
+              we need to understand what He desires to do in us.
+            </p>
+
+          </article>
+
+
+
+          <article class="capitulo">
+
+            <div class="capitulo-numero">
+              CHAPTER 02
+            </div>
+
+            <h3>
+              Search Me
+            </h3>
+
+            <p>
+              A journey of honesty before God, allowing Him to reveal
+              what we often hide even from ourselves.
+            </p>
+
+          </article>
+
+
+
+          <article class="capitulo">
+
+            <div class="capitulo-numero">
+              CHAPTER 03
+            </div>
+
+            <h3>
+              Break Me
+            </h3>
+
+            <p>
+              Brokenness as part of God's process of forming in us
+              a heart willing to obey.
+            </p>
+
+          </article>
+
+
+
+          <article class="capitulo">
+
+            <div class="capitulo-numero">
+              CHAPTER 04
+            </div>
+
+            <h3>
+              Transform Me
+            </h3>
+
+            <p>
+              God is not interested only in changing what we do,
+              but in transforming who we are.
+            </p>
+
+          </article>
+
+
+
+          <article class="capitulo">
+
+            <div class="capitulo-numero">
+              CHAPTER 05
+            </div>
+
+            <h3>
+              Fill Me
+            </h3>
+
+            <p>
+              After emptiness comes room for what comes from God.
+              Being filled is also part of the preparation.
+            </p>
+
+          </article>
+
+
+
+          <article class="capitulo">
+
+            <div class="capitulo-numero">
+              CHAPTER 06
+            </div>
+
+            <h3>
+              Use Me
+            </h3>
+
+            <p>
+              Purpose does not begin when we are used.
+              There is a previous work that needs to take place within us.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BOOK INFORMATION
+    ========================= -->
+
+    <section
+      class="informacoes"
+      id="edition"
+    >
+
+      <div class="container">
+
+        <div class="titulo-secao">
+
+          <span>
+            Edition details
+          </span>
+
+          <h2>
+            Book Information
+          </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+          <div class="info-item">
+
+            <span>
+              Author
+            </span>
+
+            <strong>
+              Francisco Denilson Pinheiro
+            </strong>
+
+          </div>
+
+
+
+          <div class="info-item">
+
+            <span>
+              Title
+            </span>
+
+            <strong>
+              Before I Am Used
+            </strong>
+
+          </div>
+
+
+
+          <div class="info-item">
+
+            <span>
+              Pages
+            </span>
+
+            <strong>
+              110 pages
+            </strong>
+
+          </div>
+
+
+
+          <div class="info-item">
+
+            <span>
+              Format
+            </span>
+
+            <strong>
+              14 × 21 cm
+            </strong>
+
+          </div>
+
+
+
+          <div class="info-item">
+
+            <span>
+              Printing
+            </span>
+
+            <strong>
+              Pólen Paper
+            </strong>
+
+          </div>
+
+
+
+          <div class="info-item">
+
+            <span>
+              Price
+            </span>
+
+            <strong>
+              R$ 34.90
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="condicao-grupo">
+
+          <strong>
+            Reading Groups
+          </strong>
+
+          Special conditions for groups purchasing 8 or more copies.
+
+        </div>
+
+
+        <div class="acao-livro">
+
+          <a
+            href="pedidos-english.html"
+            class="botao"
+          >
+            GET THE BOOK
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================= -->
+
+    <section class="depoimentos">
+
+      <div class="container">
+
+        <div class="titulo-secao">
+
+          <span>
+            Words about the book
+          </span>
+
+          <h2>
+            What Readers Are Saying
+          </h2>
+
+        </div>
+
+
+        <div class="depoimentos-grid">
+
+
+          <article class="depoimento">
+
+            <p>
+              “This book leads us to look within ourselves first
+              before wanting to do something for God.”
+            </p>
+
+            <strong>
+              — Pastor Valdelúcia Fialho
+            </strong>
+
+          </article>
+
+
+
+          <article class="depoimento">
+
+            <p>
+              “A message about preparation, character and purpose.”
+            </p>
+
+            <strong>
+              — Francisco Denilson Pinheiro Filho
+            </strong>
+
+          </article>
+
+
+
+          <article class="depoimento">
+
+            <p>
+              “A profound journey into what God desires to form within us.”
+            </p>
+
+            <strong>
+              — Pastor Gardênia Pinheiro
+            </strong>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ASK ABOUT THE BOOK
+    ========================= -->
+
+    <section
+      class="perguntas"
+      id="questions"
+    >
+
+      <div class="container">
+
+
+        <div class="titulo-secao">
+
+          <span>
+            Talk about the book
+          </span>
+
+          <h2>
+            Ask About the Book
+          </h2>
+
+        </div>
+
+
+        <p class="perguntas-intro">
+
+          Do you have a question about the story, the chapters,
+          or the content of <em>Before I Am Used</em>?
+          Send your question.
+
+        </p>
+
+
+        <div class="pergunta-box">
+
+
+          <div class="campo">
+
+            <label for="nome">
+              Your name
+            </label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Enter your name"
+            >
+
+          </div>
+
+
+
+          <div class="campo">
+
+            <label for="pergunta">
+              Your question
+            </label>
+
+            <textarea
+              id="pergunta"
+              name="pergunta"
+              placeholder="Write your question about the book..."
+            ></textarea>
+
+          </div>
+
+
+
+          <button
+            type="button"
+            class="botao"
+          >
+            SEND QUESTION
+          </button>
+
+
+        </div>
+
+
+
+        <!--
+          THIS AREA WILL BE CONNECTED TO THE
+          QUESTION SYSTEM IN A FUTURE STEP.
+        -->
+
+
+        <div class="perguntas-publicadas">
+
+
+          <h3>
+            Readers' Questions
+          </h3>
+
+
+
+          <div class="pergunta-publicada">
+
+
+            <div class="pergunta">
+
+              What is the main message of
+              Before I Am Used?
+
+            </div>
+
+
+            <div class="resposta">
+
+              The central message is to reflect on what God desires
+              to do in us before what He desires to do through us.
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="pergunta-publicada">
+
+
+            <div class="pergunta">
+
+              Is the book only about ministry calling?
+
+            </div>
+
+
+            <div class="resposta">
+
+              No. The reflection reaches anyone who wants to better
+              understand God's work in their life, character and purpose.
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+
+      © 2026
+      <strong>
+        Francisco Denilson Pinheiro
+      </strong>.
+      All rights reserved.
+
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
