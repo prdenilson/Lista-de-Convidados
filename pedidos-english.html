@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Order the Book | Before I Am Used</title>
+
+  <meta
+    name="description"
+    content="Order your copy of Before I Am Used, by Francisco Denilson Pinheiro."
+  >
+
+  <!-- GOOGLE ANALYTICS -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYG8ED1GLC"></script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-DYG8ED1GLC");
+
+  </script>
+
+
+  <style>
+
+    :root {
+      --fundo: #f8f5ef;
+      --fundo-2: #eee8dc;
+      --escuro: #211d19;
+      --escuro-2: #171411;
+      --dourado: #c9a05c;
+      --dourado-2: #a98242;
+      --texto: #29251f;
+      --cinza: #6b645b;
+      --borda: #ddd3c5;
+      --branco: #ffffff;
+      --verde: #53685b;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: var(--escuro);
+      color: white;
+      padding: 18px 20px;
+    }
+
+
+    .header-inner {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+
+    .logo {
+      color: var(--dourado);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+
+    header a:hover {
+      color: var(--dourado);
+    }
+
+
+    .language-switch {
+      color: var(--dourado);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+
+    .language-switch:hover {
+      color: #e0cfaa;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 430px;
+      padding: 60px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(25,21,18,.78),
+          rgba(25,21,18,.88)
+        ),
+        url("capa.jpg") center / cover;
+    }
+
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+
+    .hero small {
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+    }
+
+
+    .hero h1 {
+      margin: 15px 0;
+      font-size: clamp(2.3rem, 7vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: normal;
+    }
+
+
+    .hero p {
+      color: #eee8dc;
+      font-size: 1.05rem;
+    }
+
+
+    .btn-hero {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 15px 28px;
+      background: var(--dourado);
+      color: #211b15;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+
+    .btn-hero:hover {
+      background: #b8904d;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+
+    .livro {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+
+    .capa {
+      text-align: center;
+    }
+
+
+    .capa img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 4px;
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+
+
+    .informacoes h2 {
+      font-size: 2.3rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+
+    .subtitulo {
+      color: var(--dourado-2);
+      font-style: italic;
+      margin-bottom: 22px;
+    }
+
+
+    .informacoes p {
+      margin-bottom: 15px;
+    }
+
+
+    .preco {
+      margin: 25px 0;
+      padding: 20px;
+      background: var(--fundo-2);
+      border: 1px solid var(--borda);
+      border-radius: 5px;
+    }
+
+
+    .preco span {
+      display: block;
+      font-size: .85rem;
+      color: var(--cinza);
+    }
+
+
+    .preco strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--dourado-2);
+      font-size: 2rem;
+    }
+
+
+    /* =========================
+       SHIPPING BANNER
+    ========================= */
+
+    .banner-frete {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto 50px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+
+
+    .banner-frete img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+
+    @media (max-width: 750px) {
+
+      .banner-frete {
+        margin-bottom: 35px;
+        border-radius: 6px;
+      }
+
+    }
+
+
+    /* =========================
+       ORDER
+    ========================= */
+
+    .pedido {
+      margin-top: 80px;
+      padding: 45px;
+      background: white;
+      border: 1px solid var(--borda);
+      border-radius: 6px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    }
+
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+
+    .titulo small {
+      color: var(--dourado-2);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+
+    .titulo h2 {
+      font-size: 2.2rem;
+      font-weight: normal;
+      margin: 8px 0;
+    }
+
+
+    .titulo p {
+      color: var(--cinza);
+    }
+
+
+    /* =========================
+       QUANTITY
+    ========================= */
+
+    .quantidade {
+      background: var(--fundo);
+      border: 1px solid var(--borda);
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+
+    .quantidade-linha {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+
+    .quantidade select {
+      width: 130px;
+    }
+
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d4cabb;
+      border-radius: 4px;
+      background: white;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--texto);
+      outline: none;
+    }
+
+
+    select:focus,
+    input:focus {
+      border-color: var(--dourado);
+    }
+
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--borda);
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+
+    .total strong {
+      color: var(--dourado-2);
+    }
+
+
+    /* =========================
+       FORM
+    ========================= */
+
+    .secao {
+      margin-top: 35px;
+    }
+
+
+    .secao h3 {
+      font-size: 1.45rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+
+    .campo.full {
+      grid-column: 1 / -1;
+    }
+
+
+    label {
+      font-size: .9rem;
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       PAYMENT
+    ========================= */
+
+    .pagamentos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+
+    .pagamento {
+      position: relative;
+    }
+
+
+    .pagamento input {
+      position: absolute;
+      opacity: 0;
+    }
+
+
+    .pagamento label {
+      display: block;
+      padding: 20px;
+      border: 2px solid var(--borda);
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: .2s;
+    }
+
+
+    .pagamento label strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+
+    .pagamento label span {
+      color: var(--cinza);
+      font-size: .85rem;
+      font-weight: normal;
+    }
+
+
+    .pagamento input:checked + label {
+      border-color: var(--dourado);
+      background: #faf6ee;
+    }
+
+
+    /* =========================
+       CONSENT
+    ========================= */
+
+    .consentimento {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 30px 0;
+      color: var(--cinza);
+      font-size: .85rem;
+      font-weight: normal;
+    }
+
+
+    .consentimento input {
+      width: auto;
+      margin-top: 5px;
+    }
+
+
+    /* =========================
+       FINAL BUTTON
+    ========================= */
+
+    .btn-finalizar {
+      width: 100%;
+      padding: 18px;
+      border: none;
+      border-radius: 4px;
+      background: var(--dourado);
+      color: #211b15;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
+    .btn-finalizar:hover {
+      background: #b8904d;
+    }
+
+
+    .btn-finalizar:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,.75);
+      z-index: 9999;
+    }
+
+
+    .modal.aberto {
+      display: flex;
+    }
+
+
+    .modal-caixa {
+      width: 100%;
+      max-width: 430px;
+      padding: 35px 25px;
+      background: white;
+      border-radius: 7px;
+      text-align: center;
+      box-shadow: 0 25px 70px rgba(0,0,0,.35);
+    }
+
+
+    .icone-sucesso {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--verde);
+      color: white;
+      font-size: 2rem;
+    }
+
+
+    .modal h2 {
+      font-size: 1.8rem;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+
+    .modal p {
+      color: var(--cinza);
+      margin-bottom: 20px;
+    }
+
+
+    .fechar {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 4px;
+      background: var(--escuro);
+      color: white;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+
+    .fechar:hover {
+      background: var(--dourado-2);
+    }
+
+
+    .comprovante-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 4px;
+      background: #25D366;
+      color: white;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 20px;
+      background: var(--escuro-2);
+      color: #d5cec5;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+
+    footer strong {
+      color: var(--dourado);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      .hero {
+        min-height: 480px;
+      }
+
+
+      main {
+        padding: 45px 15px;
+      }
+
+
+      .livro {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+
+      .capa img {
+        max-width: 240px;
+      }
+
+
+      .informacoes h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+
+      .subtitulo {
+        text-align: center;
+      }
+
+
+      .pedido {
+        margin-top: 55px;
+        padding: 25px 18px;
+      }
+
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .campo.full {
+        grid-column: auto;
+      }
+
+
+      .pagamentos {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 450px) {
+
+      .header-inner {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+
+      .quantidade-linha {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+
+      .quantidade select {
+        width: 100%;
+      }
+
+
+      .titulo h2 {
+        font-size: 1.9rem;
+      }
+
+    }
+
+
+    /* =========================
+       FLOATING WHATSAPP
+    ========================= */
+
+    .whatsapp-flutuante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #25D366;
+      color: #ffffff;
+
+      border-radius: 50%;
+      text-decoration: none;
+
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+
+      z-index: 9998;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .whatsapp-flutuante:hover {
+      transform: scale(1.08);
+
+      box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.30);
+    }
+
+
+    .whatsapp-flutuante svg {
+      width: 31px;
+      height: 31px;
+      fill: #ffffff;
+    }
+
+
+    @media (max-width: 600px) {
+
+      .whatsapp-flutuante {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+
+      .whatsapp-flutuante svg {
+        width: 29px;
+        height: 29px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+  href="https://wa.me/5585985141830?text=Hello!%20I%20came%20from%20the%20website%20and%20would%20like%20to%20know%20more%20about%20the%20book%20Before%20I%20Am%20Used."
+  class="whatsapp-flutuante"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contact via WhatsApp"
+>
+
+  <svg
+    viewBox="0 0 32 32"
+    aria-hidden="true"
+  >
+
+    <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z" />
+
+  </svg>
+
+</a>
+
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <div class="header-inner">
+
+    <a
+      href="english.html"
+      class="logo"
+    >
+      FRANCISCO DENILSON
+    </a>
+
+
+    <a
+      href="english.html"
+      class="language-switch"
+    >
+      🇺🇸 Back to Home
+    </a>
+
+
+    <a
+      href="index.html"
+      class="language-switch"
+    >
+      🇧🇷 Português
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <small>
+      Before I Am Used
+    </small>
+
+    <h1>
+      Order Your Copy
+    </h1>
+
+    <p>
+      A journey before encountering our calling.
+    </p>
+
+    <a
+      href="#pedido"
+      class="btn-hero"
+    >
+      ORDER NOW
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<main>
+
+
+  <!-- BOOK -->
+
+  <section class="livro">
+
+    <div class="capa">
+
+      <img
+        src="capa.jpg"
+        alt="Book cover of Before I Am Used"
+      >
+
+    </div>
+
+
+    <div class="informacoes">
+
+      <h2>
+        Before I Am Used
+      </h2>
+
+      <p class="subtitulo">
+        A journey before encountering our calling.
+      </p>
+
+      <p>
+        Before we are used by God, there is a work
+        He desires to accomplish in us.
+      </p>
+
+      <p>
+        This book takes the reader on a journey of
+        reflection, brokenness, transformation and preparation
+        for the encounter with our calling.
+      </p>
+
+
+      <div class="preco">
+
+        <span>
+          Price per copy
+        </span>
+
+        <strong>
+          R$ 34.90
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SHIPPING BANNER -->
+
+  <div class="banner-frete">
+
+    <img
+      src="banner-frete.jfif"
+      alt="Book shipping information"
+    >
+
+  </div>
+
+
+
+  <!-- ORDER -->
+
+  <section
+    class="pedido"
+    id="pedido"
+  >
+
+    <div class="titulo">
+
+      <small>
+        Order
+      </small>
+
+      <h2>
+        Enter Your Information
+      </h2>
+
+      <p>
+        Please provide the information needed to ship your book.
+      </p>
+
+    </div>
+
+
+
+    <form id="formPedido">
+
+
+      <!-- QUANTITY -->
+
+      <div class="quantidade">
+
+        <div class="quantidade-linha">
+
+          <div>
+
+            <strong>
+              Number of copies
+            </strong>
+
+            <p style="color:#6b645b;font-size:.9rem;">
+              R$ 34.90 per copy
+            </p>
+
+          </div>
+
+
+          <select id="quantidade">
+
+            <option value="1">1 copy</option>
+            <option value="2">2 copies</option>
+            <option value="3">3 copies</option>
+            <option value="4">4 copies</option>
+            <option value="5">5 copies</option>
+            <option value="6">6 copies</option>
+            <option value="7">7 copies</option>
+            <option value="8">8 copies</option>
+            <option value="9">9 copies</option>
+            <option value="10">10 copies</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="total">
+
+          <span>
+            Total
+          </span>
+
+          <strong id="total">
+            R$ 34.90
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- PERSONAL INFORMATION -->
+
+      <div class="secao">
+
+        <h3>
+          1. Your Information
+        </h3>
+
+
+        <div class="grid">
+
+
+          <div class="campo full">
+
+            <label for="nome">
+              Full name *
+            </label>
+
+            <input
+              id="nome"
+              type="text"
+              required
+              placeholder="Enter your full name"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="whatsapp">
+              WhatsApp *
+            </label>
+
+            <input
+              id="whatsapp"
+              type="tel"
+              required
+              placeholder="+55 (85) 99999-9999"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="youremail@example.com"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- DELIVERY ADDRESS -->
+
+      <div class="secao">
+
+        <h3>
+          2. Delivery Address
+        </h3>
+
+
+        <div class="grid">
+
+
+          <div class="campo">
+
+            <label for="cep">
+              Postal Code *
+            </label>
+
+            <input
+              id="cep"
+              type="text"
+              maxlength="9"
+              required
+              placeholder="00000-000"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="estado">
+              State *
+            </label>
+
+            <select
+              id="estado"
+              required
+            >
+
+              <option value="">
+                Select
+              </option>
+
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>DF</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="campo full">
+
+            <label for="endereco">
+              Street / Avenue *
+            </label>
+
+            <input
+              id="endereco"
+              type="text"
+              required
+              placeholder="Street or avenue name"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="numero">
+              Number *
+            </label>
+
+            <input
+              id="numero"
+              type="text"
+              required
+              placeholder="Street number"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="complemento">
+              Address details
+            </label>
+
+            <input
+              id="complemento"
+              type="text"
+              placeholder="Apartment, house, block..."
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="bairro">
+              Neighborhood *
+            </label>
+
+            <input
+              id="bairro"
+              type="text"
+              required
+              placeholder="Your neighborhood"
+            >
+
+          </div>
+
+
+          <div class="campo">
+
+            <label for="cidade">
+              City *
+            </label>
+
+            <input
+              id="cidade"
+              type="text"
+              required
+              placeholder="Your city"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- PAYMENT -->
+
+      <div class="secao">
+
+        <h3>
+          3. Payment Method
+        </h3>
+
+
+        <div class="pagamentos">
+
+
+          <div class="pagamento">
+
+            <input
+              type="radio"
+              id="pix"
+              name="pagamento"
+              value="PIX"
+              checked
+            >
+
+            <label for="pix">
+
+              <strong>
+                PIX
+              </strong>
+
+              <span>
+                Instant payment
+              </span>
+
+            </label>
+
+          </div>
+
+
+          <div class="pagamento">
+
+            <input
+              type="radio"
+              id="cartao"
+              name="pagamento"
+              value="Credit Card"
+            >
+
+            <label for="cartao">
+
+              <strong>
+                Credit Card
+              </strong>
+
+              <span>
+                Secure online payment
+              </span>
+
+            </label>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- PIX INFORMATION -->
+
+        <div
+          id="dadosPix"
+          style="
+            margin-top:20px;
+            padding:20px;
+            background:#faf6ee;
+            border:1px solid #ddd3c5;
+            border-radius:5px;
+            text-align:center;
+          "
+        >
+
+          <strong style="display:block;margin-bottom:8px;">
+            PIX Payment
+          </strong>
+
+          <p style="font-size:.9rem;color:#6b645b;">
+            After completing your order, you will be
+            redirected to the secure PIX payment page.
+          </p>
+
+          <p style="margin-top:10px;">
+            Email:
+            <strong>
+              antesqueeusejausado@yahoo.com
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CONSENT -->
+
+      <label class="consentimento">
+
+        <input
+          type="checkbox"
+          id="consentimento"
+          required
+        >
+
+        <span>
+          I authorize the use of the information provided
+          to process and deliver this order.
+        </span>
+
+      </label>
+
+
+
+      <button
+        type="submit"
+        class="btn-finalizar"
+        id="btnFinalizar"
+      >
+        COMPLETE ORDER
+      </button>
+
+
+    </form>
+
+  </section>
+
+</main>
+
+
+
+<!-- MODAL -->
+
+<div
+  class="modal"
+  id="modal"
+>
+
+  <div class="modal-caixa">
+
+    <div class="icone-sucesso">
+      ✓
+    </div>
+
+
+    <h2>
+      Order Registered!
+    </h2>
+
+
+    <p>
+      Your order has been successfully registered.
+    </p>
+
+
+    <p>
+      <strong>
+        You still need to complete the payment.
+      </strong>
+    </p>
+
+
+    <p>
+      Click the button below to open the payment page.
+      After completing the payment, return to this page
+      and send your payment receipt via WhatsApp.
+    </p>
+
+
+    <button
+      class="fechar"
+      onclick="continuarPagamento()"
+    >
+      CONTINUE TO PAYMENT
+    </button>
+
+
+
+    <div
+      id="comprovante-whatsapp"
+      style="display: none; margin-top: 20px;"
+    >
+
+      <p>
+        <strong>
+          Have you already completed the payment?
+        </strong>
+      </p>
+
+
+      <p>
+        Now send your payment receipt via WhatsApp
+        so we can complete your order.
+      </p>
+
+
+      <button
+        type="button"
+        class="comprovante-btn"
+        onclick="enviarComprovanteWhatsApp()"
+      >
+        📱 SEND PAYMENT RECEIPT VIA WHATSAPP
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    <strong>
+      Before I Am Used
+    </strong>
+  </p>
+
+
+  <p>
+    Francisco Denilson Pinheiro
+  </p>
+
+
+  <p>
+    Writer • Pastor • Speaker
+  </p>
+
+</footer>
+
+
+
+<script>
+
+
+  /* =========================
+     SETTINGS
+  ========================= */
+
+  const PRECO = 34.90;
+
+
+  const LINK_PIX =
+    "https://cobranca.c6pix.com.br/01KZKVM8C6H7P28AY5T5GHQJM5";
+
+
+  const LINKS_CARTAO = {
+
+    1: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-xUQ5mwtLqa-34,90",
+
+    2: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-lOoZQsj0pl-69,80",
+
+    3: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-QtrP94FpYh-104,70",
+
+    4: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-LucmtRZYDL-139,60",
+
+    5: "https://link.infinitepay.io/francisco-denilson-s57/VC1DLTItSQ-uspNdnNb2C-174,50"
+
+  };
+
+
+  const URL_PLANILHA =
+    "https://script.google.com/macros/s/AKfycbwYmxfwue21qRrrXMqF_7Xfodn4KZB49Uky0exsCy4JLuFhthi4xIduXxTcnds-Dq3lAA/exec";
+
+
+
+  /* =========================
+     ELEMENTS
+  ========================= */
+
+  const form =
+    document.getElementById("formPedido");
+
+
+  const quantidade =
+    document.getElementById("quantidade");
+
+
+  const total =
+    document.getElementById("total");
+
+
+  const btnFinalizar =
+    document.getElementById("btnFinalizar");
+
+
+  const modal =
+    document.getElementById("modal");
+
+
+  const dadosPix =
+    document.getElementById("dadosPix");
+
+
+
+  /* =========================
+     CURRENCY
+  ========================= */
+
+  function moeda(valor) {
+
+    return valor.toLocaleString(
+      "pt-BR",
+      {
+        style: "currency",
+        currency: "BRL"
+      }
+    );
+
+  }
+
+
+
+  /* =========================
+     TOTAL
+  ========================= */
+
+  function atualizarTotal() {
+
+    const qtd =
+      Number(quantidade.value);
+
+
+    total.textContent =
+      moeda(qtd * PRECO);
+
+  }
+
+
+  quantidade.addEventListener(
+    "change",
+    atualizarTotal
+  );
+
+
+
+  /* =========================
+     PIX / CREDIT CARD
+  ========================= */
+
+  document
+    .querySelectorAll(
+      'input[name="pagamento"]'
+    )
+    .forEach(
+      function(opcao) {
+
+        opcao.addEventListener(
+          "change",
+          function() {
+
+            if (this.value === "PIX") {
+
+              dadosPix.style.display =
+                "block";
+
+            } else {
+
+              dadosPix.style.display =
+                "none";
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+
+  /* =========================
+     POSTAL CODE
+  ========================= */
+
+  document
+    .getElementById("cep")
+    .addEventListener(
+      "input",
+      function() {
+
+        let valor =
+          this.value.replace(/\D/g, "");
+
+
+        valor =
+          valor.substring(0, 8);
+
+
+        if (valor.length > 5) {
+
+          valor =
+            valor.substring(0, 5)
+            + "-"
+            + valor.substring(5);
+
+        }
+
+
+        this.value = valor;
+
+      }
+    );
+
+
+
+  /* =========================
+     WHATSAPP
+  ========================= */
+
+  document
+    .getElementById("whatsapp")
+    .addEventListener(
+      "input",
+      function() {
+
+        let valor =
+          this.value.replace(/\D/g, "");
+
+
+        valor =
+          valor.substring(0, 11);
+
+
+        if (valor.length <= 10) {
+
+          if (valor.length > 6) {
+
+            valor =
+              "(" +
+              valor.substring(0, 2) +
+              ") " +
+              valor.substring(2, 6) +
+              "-" +
+              valor.substring(6);
+
+          } else if (valor.length > 2) {
+
+            valor =
+              "(" +
+              valor.substring(0, 2) +
+              ") " +
+              valor.substring(2);
+
+          }
+
+        } else {
+
+          valor =
+            "(" +
+            valor.substring(0, 2) +
+            ") " +
+            valor.substring(2, 7) +
+            "-" +
+            valor.substring(7);
+
+        }
+
+
+        this.value = valor;
+
+      }
+    );
+
+
+
+  /* =========================
+     SUBMISSION
+  ========================= */
+
+  form.addEventListener(
+    "submit",
+    async function(event) {
+
+      event.preventDefault();
+
+
+      if (!form.checkValidity()) {
+
+        form.reportValidity();
+
+        return;
+
+      }
+
+
+      btnFinalizar.disabled = true;
+
+
+      btnFinalizar.textContent =
+        "REGISTERING ORDER...";
+
+
+      const qtd =
+        Number(quantidade.value);
+
+
+      const valorTotal =
+        qtd * PRECO;
+
+
+      const pagamento =
+        document.querySelector(
+          'input[name="pagamento"]:checked'
+        ).value;
+
+
+      const dados = {
+
+        nome:
+          document.getElementById("nome").value.trim(),
+
+        whatsapp:
+          document.getElementById("whatsapp").value.trim(),
+
+        email:
+          document.getElementById("email").value.trim(),
+
+        quantidade:
+          qtd,
+
+        valorUnitario:
+          PRECO,
+
+        valorTotal:
+          valorTotal,
+
+        formaPagamento:
+          pagamento,
+
+        cep:
+          document.getElementById("cep").value.trim(),
+
+        estado:
+          document.getElementById("estado").value,
+
+        rua:
+          document.getElementById("endereco").value.trim(),
+
+        numero:
+          document.getElementById("numero").value.trim(),
+
+        complemento:
+          document.getElementById("complemento").value.trim(),
+
+        bairro:
+          document.getElementById("bairro").value.trim(),
+
+        cidade:
+          document.getElementById("cidade").value.trim()
+
+      };
+
+
+      try {
+
+        const envio =
+          new URLSearchParams();
+
+
+        envio.append(
+          "dados",
+          JSON.stringify(dados)
+        );
+
+
+        await fetch(
+          URL_PLANILHA,
+          {
+            method: "POST",
+            mode: "no-cors",
+            body: envio
+          }
+        );
+
+
+        /* =========================
+           SHOW MODAL
+        ========================= */
+
+        modal.classList.add("aberto");
+
+
+        document.body.style.overflow =
+          "hidden";
+
+
+        btnFinalizar.disabled = false;
+
+
+        btnFinalizar.textContent =
+          "ORDER REGISTERED";
+
+
+      } catch (erro) {
+
+        console.error(
+          "Error sending order:",
+          erro
+        );
+
+
+        alert(
+          "The order could not be registered. Please try again."
+        );
+
+
+        btnFinalizar.disabled =
+          false;
+
+
+        btnFinalizar.textContent =
+          "COMPLETE ORDER";
+
+      }
+
+    }
+  );
+
+
+
+  /* =========================
+     CONTINUE TO PAYMENT
+  ========================= */
+
+  function continuarPagamento() {
+
+    const qtd =
+      Number(quantidade.value);
+
+
+    const pagamento =
+      document.querySelector(
+        'input[name="pagamento"]:checked'
+      ).value;
+
+
+    if (pagamento === "PIX") {
+
+      window.open(
+        LINK_PIX,
+        "_blank"
+      );
+
+    } else {
+
+      window.open(
+        LINKS_CARTAO[qtd],
+        "_blank"
+      );
+
+    }
+
+
+    document.getElementById(
+      "comprovante-whatsapp"
+    ).style.display = "block";
+
+  }
+
+
+
+  /* =========================
+     WHATSAPP RECEIPT
+  ========================= */
+
+  function enviarComprovanteWhatsApp() {
+
+    const numeroWhatsApp =
+      "5585985141830";
+
+
+    const mensagem =
+      "Hello! I completed the payment for my order of the book " +
+      "“Before I Am Used” through the website. " +
+      "I am sending the payment receipt.";
+
+
+    const link =
+      "https://wa.me/" +
+      numeroWhatsApp +
+      "?text=" +
+      encodeURIComponent(mensagem);
+
+
+    window.open(
+      link,
+      "_blank"
+    );
+
+  }
+
+
+
+  /* =========================
+     CLOSE MODAL
+  ========================= */
+
+  function fecharModal() {
+
+    modal.classList.remove("aberto");
+
+
+    document.body.style.overflow =
+      "";
+
+  }
+
+
+  modal.addEventListener(
+    "click",
+    function(event) {
+
+      if (event.target === modal) {
+
+        fecharModal();
+
+      }
+
+    }
+  );
+
+
+
+  /* =========================
+     INITIALIZATION
+  ========================= */
+
+  atualizarTotal();
+
+
+</script>
+
+
+</body>
+
+</html>
