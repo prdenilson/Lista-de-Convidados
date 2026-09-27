@@ -1196,98 +1196,118 @@
         </h3>
 
 
-        <div class="pagamentos">
+       <div class="pagamentos">
 
+  <div class="pagamento">
 
-          <div class="pagamento">
+    <input
+      type="radio"
+      id="pix"
+      name="pagamento"
+      value="PIX"
+      checked
+    >
 
-            <input
-              type="radio"
-              id="pix"
-              name="pagamento"
-              value="PIX"
-              checked
-            >
+    <label for="pix">
 
-         <label for="pix">
+      <strong>
+        Pagamento via PIX
+      </strong>
 
-  <div class="pix-marca">
-    <span class="pix-simbolo">✣</span>
+      <span>
+        Pague com PIX
+      </span>
 
-    <strong>
-      Pagamento via PIX
-    </strong>
+    </label>
+
   </div>
 
-</label>
-          </div>
 
+  <div class="pagamento">
 
-          <div class="pagamento">
+    <input
+      type="radio"
+      id="cartao"
+      name="pagamento"
+      value="Cartão de crédito"
+    >
 
-            <input
-              type="radio"
-              id="cartao"
-              name="pagamento"
-              value="Cartão de crédito"
-            >
+    <label for="cartao">
 
-            <label for="cartao">
+      <strong>
+        Cartão de crédito
+      </strong>
 
-  <div class="cartao-marca">
-    <span class="cartao-simbolo">💳</span>
+      <span>
+        Pagamento via cartão de crédito
+      </span>
 
-    <strong>
-      Cartão de crédito
-    </strong>
+    </label>
+
   </div>
 
-  <span>
-    Pagamento via cartão de crédito
-  </span>
-
-</label>
-          </div>
-
-
-        </div>
-
+</div>
 
         <!-- DADOS PIX -->
 
-        <div
-          id="dadosPix"
-          style="
-            margin-top:20px;
-            padding:20px;
-            background:#faf6ee;
-            border:1px solid #ddd3c5;
-            border-radius:5px;
-            text-align:center;
-          "
-        >
+       <div
+  id="dadosPix"
+  class="dados-pagamento"
+>
 
-          <strong style="display:block;margin-bottom:8px;">
-            Pagamento via PIX
-          </strong>
+  <strong id="tituloPagamento">
+    Pagamento via PIX
+  </strong>
 
-          <p style="font-size:.9rem;color:#6b645b;">
-            Ao finalizar o pedido, você será direcionado
-            para a página segura de pagamento PIX.
-          </p>
+  <p id="textoPagamento">
+    Ao finalizar o pedido, você será direcionado
+    para a página segura de pagamento PIX.
+  </p>
 
-          <p style="margin-top:10px;">
-            E-mail:
-            <strong>
-              antesqueeusejausado@yahoo.com
-            </strong>
-          </p>
+  <p
+    id="emailPix"
+    class="email-pix"
+  >
+    E-mail:
+    <strong>
+      antesqueeusejausado@yahoo.com
+    </strong>
+  </p>
 
-        </div>
-
+</div>
       </div>
 
+.dados-pagamento {
+  margin-top: 20px;
+  padding: 22px;
+  background: #faf6ee;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  text-align: center;
+}
 
+.dados-pagamento > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--escuro);
+  font-size: 1.15rem;
+}
+
+.dados-pagamento p {
+  margin: 0;
+  color: var(--cinza);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dados-pagamento .email-pix {
+  margin-top: 14px;
+}
+
+.dados-pagamento .email-pix strong {
+  color: var(--escuro);
+}
+      
       <!-- CONSENTIMENTO -->
 
       <label class="consentimento">
@@ -1515,18 +1535,39 @@
           "change",
           function() {
 
-            if (this.value === "PIX") {
+            const tituloPagamento =
+  document.getElementById("tituloPagamento");
 
-              dadosPix.style.display =
-                "block";
+const textoPagamento =
+  document.getElementById("textoPagamento");
 
-            } else {
+const emailPix =
+  document.getElementById("emailPix");
 
-              dadosPix.style.display =
-                "none";
 
-            }
+if (this.value === "PIX") {
 
+  tituloPagamento.textContent =
+    "Pagamento via PIX";
+
+  textoPagamento.textContent =
+    "Ao finalizar o pedido, você será direcionado para a página segura de pagamento PIX.";
+
+  emailPix.style.display =
+    "block";
+
+} else {
+
+  tituloPagamento.textContent =
+    "Pagamento via cartão de crédito";
+
+  textoPagamento.textContent =
+    "Ao finalizar o pedido, você será direcionado para a página segura de pagamento com cartão de crédito.";
+
+  emailPix.style.display =
+    "none";
+
+}
           }
         );
 
