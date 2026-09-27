@@ -390,105 +390,60 @@
     }
 
 
-    /* =========================
-       PAGAMENTO
-    ========================= */
+/* =========================
+   PAGAMENTO
+========================= */
 
-    .pagamentos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
+.pagamentos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
 
+.pagamento {
+  position: relative;
+}
 
-    .pagamento {
-      position: relative;
-    }
+.pagamento input {
+  position: absolute;
+  opacity: 0;
+}
 
-
-    .pagamento input {
-      position: absolute;
-      opacity: 0;
-    }
-
-
-    .pagamento label {
-      display: block;
-      padding: 20px;
-      border: 2px solid var(--borda);
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-      transition: .2s;
-    }
-
-
-    .pagamento label strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-    }
-
-
-    .pagamento label span {
-      color: var(--cinza);
-      font-size: .85rem;
-      font-weight: normal;
-    }
-
-    .pix-marca {
+.pagamento label {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  min-height: 105px;
+  padding: 22px 18px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s ease;
 }
 
-.cartao-marca {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.cartao-simbolo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  background: var(--escuro);
-  color: white;
-  font-size: 1.15rem;
-}
-
-.cartao-marca strong {
-  margin: 0;
-}
-    
-.pix-simbolo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  background: var(--dourado);
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 1.25rem;
+.pagamento label strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--escuro);
+  font-size: 1.18rem;
   font-weight: bold;
 }
 
-.pix-marca strong {
-  margin: 0;
+.pagamento label span {
+  color: var(--cinza);
+  font-size: .95rem;
+  font-weight: normal;
 }
 
-    .pagamento input:checked + label {
-      border-color: var(--dourado);
-      background: #faf6ee;
-    }
-
+.pagamento input:checked + label {
+  border-color: var(--dourado);
+  background: #faf6ee;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transform: translateY(-2px);
+}
 
     /* =========================
        CONSENTIMENTO
