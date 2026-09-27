@@ -436,6 +436,53 @@
       font-weight: normal;
     }
 
+    .pix-marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cartao-marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cartao-simbolo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--escuro);
+  color: white;
+  font-size: 1.15rem;
+}
+
+.cartao-marca strong {
+  margin: 0;
+}
+    
+.pix-simbolo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--dourado);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.pix-marca strong {
+  margin: 0;
+}
 
     .pagamento input:checked + label {
       border-color: var(--dourado);
@@ -1207,18 +1254,17 @@
               checked
             >
 
-            <label for="pix">
+         <label for="pix">
 
-              <strong>
-                PIX
-              </strong>
+  <div class="pix-marca">
+    <span class="pix-simbolo">✣</span>
 
-              <span>
-                Pagamento instantâneo
-              </span>
+    <strong>
+      Pagamento via PIX
+    </strong>
+  </div>
 
-            </label>
-
+</label>
           </div>
 
 
@@ -1233,16 +1279,19 @@
 
             <label for="cartao">
 
-              <strong>
-                Cartão de crédito
-              </strong>
+  <div class="cartao-marca">
+    <span class="cartao-simbolo">💳</span>
 
-              <span>
-                Pagamento seguro online
-              </span>
+    <strong>
+      Cartão de crédito
+    </strong>
+  </div>
 
-            </label>
+  <span>
+    Pagamento via cartão de crédito
+  </span>
 
+</label>
           </div>
 
 
