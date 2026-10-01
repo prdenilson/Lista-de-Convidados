@@ -1462,31 +1462,8 @@
                     this.value === "nao-li"
                 ) {
 
-                    mensagemNaoIniciou.style.display =
-                        "block";
-
-                    /*
-                     * Não mostra:
-                     *
-                     * - perguntas de leitura
-                     * - autorização
-                     * - botão de envio
-                     *
-                     * A pessoa apenas recebe
-                     * a mensagem de incentivo.
-                     */
-
-                }
-
-            }
-        );
-
-    });
-
-
-
-    // ==========================================
-    // ENVIO
+                       // ==========================================
+    // ENVIO PARA O GOOGLE SHEETS
     // ==========================================
 
     const formulario =
@@ -1501,32 +1478,55 @@
         );
 
 
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyiHa4kWQLK75VtvlKEYBq_44kXIEAv5ULyeaL8WJEfrT1KQmqw_tvjpeufDVy5SEZU/exec";
+
+
     formulario.addEventListener(
         "submit",
-        function(event) {
+        async function(event) {
 
             event.preventDefault();
 
 
-            formulario.style.display =
-                "none";
+            try {
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: new FormData(formulario)
+                    }
+                );
 
 
-            mensagemSucesso.style.display =
-                "block";
+                formulario.style.display =
+                    "none";
 
 
-            window.scrollTo({
+                mensagemSucesso.style.display =
+                    "block";
 
-                top: 0,
 
-                behavior: "smooth"
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
-            });
+
+            } catch (erro) {
+
+                console.error(erro);
+
+                alert(
+                    "Não foi possível enviar sua resposta. Tente novamente."
+                );
+
+            }
 
         }
     );
-
 
 </script>
 
