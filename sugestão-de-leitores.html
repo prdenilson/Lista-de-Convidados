@@ -1115,22 +1115,30 @@
             ========================== -->
 
             <div
-                id="mensagemNaoIniciou"
-                class="mensagem-nao-iniciou"
-            >
+    id="mensagemNaoIniciou"
+    class="mensagem-nao-iniciou"
+>
 
-                <h3>
-                    Estamos esperando você começar!
-                </h3>
+    <h3>
+        Estamos esperando você começar!
+    </h3>
 
-                <p>
+    <p>
+        Quando você começar a leitura,
+        ou depois de concluí-la, volte aqui
+        e compartilhe sua experiência conosco.
+    </p>
 
-                    Quando você começar a leitura,
-                    ou depois de concluí-la, volte aqui
-                    e compartilhe sua experiência conosco.
+    <button
+        type="button"
+        id="botaoNaoLi"
+        class="botao"
+        style="margin-top: 20px;"
+    >
+        AVISAR QUE AINDA NÃO LI
+    </button>
 
-                </p>
-
+</div>
             </div>
 
 
@@ -1306,6 +1314,10 @@
     const mensagemSucesso = document.getElementById(
         "mensagemSucesso"
     );
+
+    const botaoNaoLi = document.getElementById(
+    "botaoNaoLi"
+);
 
 
     // ==========================================
@@ -1524,6 +1536,109 @@
         }
     );
 
+    // ==========================================
+    // REGISTRO DE QUEM AINDA NÃO COMEÇOU
+    // ==========================================
+
+    botaoNaoLi.addEventListener(
+        "click",
+        async function() {
+
+            const nome = document.getElementById(
+                "nome"
+            ).value.trim();
+
+
+            if (!nome) {
+
+                alert(
+                    "Por favor, digite seu nome antes de continuar."
+                );
+
+                document.getElementById(
+                    "nome"
+                ).focus();
+
+                return;
+
+            }
+
+
+            botaoNaoLi.disabled = true;
+
+            botaoNaoLi.textContent =
+                "REGISTRANDO...";
+
+
+            const dados = new FormData();
+
+            dados.append(
+                "nome",
+                nome
+            );
+
+            dados.append(
+                "statusLeitura",
+                "Ainda não começou"
+            );
+
+
+            try {
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: dados
+                    }
+                );
+
+
+                botaoNaoLi.textContent =
+                    "REGISTRADO ✓";
+
+
+                mensagemSucesso.style.display =
+                    "block";
+
+
+                mensagemSucesso.querySelector(
+                    "h2"
+                ).textContent =
+                    "Obrigado!";
+
+
+                mensagemSucesso.querySelector(
+                    "p"
+                ).textContent =
+                    "Registramos que você ainda não começou a leitura. Quando começar, volte aqui para compartilhar sua experiência.";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+
+            } catch (erro) {
+
+                console.error(erro);
+
+                alert(
+                    "Não foi possível registrar sua resposta. Tente novamente."
+                );
+
+
+                botaoNaoLi.disabled = false;
+
+                botaoNaoLi.textContent =
+                    "AVISAR QUE AINDA NÃO LI";
+
+            }
+
+        }
+    );
+    
 </script>
 
 </body>
