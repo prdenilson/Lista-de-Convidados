@@ -1271,114 +1271,102 @@
 
 <script>
 
-
     // ==========================================
     // ELEMENTOS
     // ==========================================
 
-    const radiosStatus =
-        document.querySelectorAll(
-            'input[name="statusLeitura"]'
-        );
+    const radiosStatus = document.querySelectorAll(
+        'input[name="statusLeitura"]'
+    );
 
+    const secaoLendo = document.getElementById(
+        "secaoLendo"
+    );
 
-    const secaoLendo =
-        document.getElementById(
-            "secaoLendo"
-        );
+    const secaoConcluido = document.getElementById(
+        "secaoConcluido"
+    );
 
+    const secaoAutorizacao = document.getElementById(
+        "secaoAutorizacao"
+    );
 
-    const secaoConcluido =
-        document.getElementById(
-            "secaoConcluido"
-        );
+    const mensagemNaoIniciou = document.getElementById(
+        "mensagemNaoIniciou"
+    );
 
+    const botaoEnviar = document.getElementById(
+        "botaoEnviar"
+    );
 
-    const secaoAutorizacao =
-        document.getElementById(
-            "secaoAutorizacao"
-        );
+    const formulario = document.getElementById(
+        "formFeedback"
+    );
 
-
-    const mensagemNaoIniciou =
-        document.getElementById(
-            "mensagemNaoIniciou"
-        );
-
-
-    const botaoEnviar =
-        document.getElementById(
-            "botaoEnviar"
-        );
-
+    const mensagemSucesso = document.getElementById(
+        "mensagemSucesso"
+    );
 
 
     // ==========================================
-    // FUNÇÃO PARA LIMPAR CAMPOS CONDICIONAIS
+    // GOOGLE SHEETS
+    // ==========================================
+
+    const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyiHa4kWQLK75VtvlKEYBq_44kXIEAv5ULyeaL8WJEfrT1KQmqw_tvjpeufDVy5SEZU/exec";
+
+
+    // ==========================================
+    // LIMPAR CAMPOS CONDICIONAIS
     // ==========================================
 
     function limparCampos() {
 
-        document
-            .querySelectorAll(
-                "#secaoLendo input, #secaoLendo textarea, #secaoLendo select"
-            )
-            .forEach(function(campo) {
+        document.querySelectorAll(
+            "#secaoLendo input, #secaoLendo textarea, #secaoLendo select"
+        ).forEach(function(campo) {
 
-                if (
-                    campo.type === "radio" ||
-                    campo.type === "checkbox"
-                ) {
-
-                    campo.checked = false;
-
-                } else {
-
-                    campo.value = "";
-
-                }
-
-            });
-
-
-        document
-            .querySelectorAll(
-                "#secaoConcluido input, #secaoConcluido textarea"
-            )
-            .forEach(function(campo) {
-
-                if (
-                    campo.type === "radio" ||
-                    campo.type === "checkbox"
-                ) {
-
-                    campo.checked = false;
-
-                } else {
-
-                    campo.value = "";
-
-                }
-
-            });
-
-
-        document
-            .querySelectorAll(
-                'input[name="autorizacao"]'
-            )
-            .forEach(function(campo) {
-
+            if (
+                campo.type === "radio" ||
+                campo.type === "checkbox"
+            ) {
                 campo.checked = false;
+            } else {
+                campo.value = "";
+            }
 
-            });
+        });
+
+
+        document.querySelectorAll(
+            "#secaoConcluido input, #secaoConcluido textarea"
+        ).forEach(function(campo) {
+
+            if (
+                campo.type === "radio" ||
+                campo.type === "checkbox"
+            ) {
+                campo.checked = false;
+            } else {
+                campo.value = "";
+            }
+
+        });
+
+
+        document.querySelectorAll(
+            'input[name="autorizacao"]'
+        ).forEach(function(campo) {
+
+            campo.checked = false;
+
+        });
 
     }
 
 
-
     // ==========================================
-    // QUANDO A PESSOA ESCOLHER O STATUS
+    // MUDANÇA DO STATUS DA LEITURA
     // ==========================================
 
     radiosStatus.forEach(function(radio) {
@@ -1387,106 +1375,104 @@
             "change",
             function() {
 
+                // Esconde tudo
 
-                // ESCONDE TUDO PRIMEIRO
+                secaoLendo.style.display = "none";
 
-                secaoLendo.style.display =
-                    "none";
+                secaoConcluido.style.display = "none";
 
-                secaoConcluido.style.display =
-                    "none";
+                secaoAutorizacao.style.display = "none";
 
-                secaoAutorizacao.style.display =
-                    "none";
+                mensagemNaoIniciou.style.display = "none";
 
-                mensagemNaoIniciou.style.display =
-                    "none";
-
-                botaoEnviar.style.display =
-                    "none";
+                botaoEnviar.style.display = "none";
 
 
-                // LIMPA CAMPOS
+                // Limpa os campos anteriores
 
                 limparCampos();
-
 
 
                 // ==================================
                 // ESTÁ LENDO
                 // ==================================
 
-                if (
-                    this.value === "lendo"
-                ) {
+                if (this.value === "lendo") {
 
-                    secaoLendo.style.display =
-                        "block";
+                    secaoLendo.style.display = "block";
 
-                    secaoAutorizacao.style.display =
-                        "block";
+                    secaoAutorizacao.style.display = "block";
 
-                    botaoEnviar.style.display =
-                        "block";
+                    botaoEnviar.style.display = "block";
 
                 }
-
 
 
                 // ==================================
                 // JÁ CONCLUIU
                 // ==================================
 
-                else if (
-                    this.value === "concluido"
-                ) {
+                else if (this.value === "concluido") {
 
-                    secaoConcluido.style.display =
-                        "block";
+                    secaoConcluido.style.display = "block";
 
-                    secaoAutorizacao.style.display =
-                        "block";
+                    secaoAutorizacao.style.display = "block";
 
-                    botaoEnviar.style.display =
-                        "block";
+                    botaoEnviar.style.display = "block";
 
                 }
-
 
 
                 // ==================================
                 // AINDA NÃO COMEÇOU
                 // ==================================
 
-                else if (
-                    this.value === "nao-li"
-                ) {
+                else if (this.value === "nao-li") {
 
-                       // ==========================================
-    // ENVIO PARA O GOOGLE SHEETS
+                    mensagemNaoIniciou.style.display = "block";
+
+                }
+
+            }
+        );
+
+    });
+
+
     // ==========================================
-
-    const formulario =
-        document.getElementById(
-            "formFeedback"
-        );
-
-
-    const mensagemSucesso =
-        document.getElementById(
-            "mensagemSucesso"
-        );
-
-
-    const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbyiHa4kWQLK75VtvlKEYBq_44kXIEAv5ULyeaL8WJEfrT1KQmqw_tvjpeufDVy5SEZU/exec";
-
+    // ENVIO DO FORMULÁRIO
+    // ==========================================
 
     formulario.addEventListener(
         "submit",
         async function(event) {
 
             event.preventDefault();
+
+
+            // Verifica autorização
+
+            const autorizacao = document.querySelector(
+                'input[name="autorizacao"]:checked'
+            );
+
+
+            if (!autorizacao) {
+
+                alert(
+                    "Por favor, informe se você autoriza a publicação da sua resposta."
+                );
+
+                return;
+
+            }
+
+
+            // Muda o texto do botão
+
+            botaoEnviar.disabled = true;
+
+            botaoEnviar.textContent = "ENVIANDO...";
 
 
             try {
@@ -1501,13 +1487,17 @@
                 );
 
 
-                formulario.style.display =
-                    "none";
+                // Esconde o formulário
+
+                formulario.style.display = "none";
 
 
-                mensagemSucesso.style.display =
-                    "block";
+                // Mostra mensagem de sucesso
 
+                mensagemSucesso.style.display = "block";
+
+
+                // Volta para o topo
 
                 window.scrollTo({
                     top: 0,
@@ -1523,13 +1513,18 @@
                     "Não foi possível enviar sua resposta. Tente novamente."
                 );
 
+
+                botaoEnviar.disabled = false;
+
+                botaoEnviar.textContent =
+                    "ENVIAR MINHA EXPERIÊNCIA";
+
             }
 
         }
     );
 
 </script>
-
 
 </body>
 </html>
