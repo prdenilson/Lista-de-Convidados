@@ -14,7 +14,7 @@
 
   <meta
     name="description"
-    content="Discover Before I Am Used, by Francisco Denilson Pinheiro. A journey of character, transformation and purpose before we are used by God."
+    content="Discover Before I Am Used, by Francisco Denilson Pinheiro. A journey of reflection, transformation and preparation before we are used by God."
   >
 
   <!-- GOOGLE ANALYTICS -->
@@ -210,6 +210,38 @@
 
 
     /* =========================
+       TESTIMONIALS
+    ========================= */
+
+    .depoimentos {
+      background: #f8f6f2;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .depoimento {
+      background: #fff;
+      padding: 30px;
+      border-top: 2px solid #c9b58a;
+    }
+
+    .depoimento p {
+      font-style: italic;
+      color: #514d48;
+      margin-bottom: 20px;
+    }
+
+    .depoimento strong {
+      font-size: 14px;
+      color: #292622;
+    }
+
+
+    /* =========================
        CHAPTER PREVIEW
     ========================= */
 
@@ -315,7 +347,7 @@
 
 
     /* =========================
-       BUTTON
+       BUTTONS
     ========================= */
 
     .acao-livro {
@@ -341,36 +373,23 @@
       color: #191715;
     }
 
-
-    /* =========================
-       TESTIMONIALS
-    ========================= */
-
-    .depoimentos {
-      background: #f8f6f2;
-    }
-
-    .depoimentos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .depoimento {
-      background: #fff;
-      padding: 30px;
-      border-top: 2px solid #c9b58a;
-    }
-
-    .depoimento p {
-      font-style: italic;
-      color: #514d48;
-      margin-bottom: 20px;
-    }
-
-    .depoimento strong {
+    .botao-secundario {
+      display: inline-block;
+      padding: 16px 34px;
+      background: transparent;
+      color: #191715;
+      letter-spacing: 1px;
       font-size: 14px;
-      color: #292622;
+      transition: 0.3s;
+      border: 1px solid #191715;
+      cursor: pointer;
+      font-family: inherit;
+      margin-left: 10px;
+    }
+
+    .botao-secundario:hover {
+      background: #191715;
+      color: #fff;
     }
 
 
@@ -395,66 +414,19 @@
       padding: 35px;
       background: #f8f6f2;
       border: 1px solid #ddd6ca;
-    }
-
-    .campo {
-      margin-bottom: 20px;
-    }
-
-    .campo label {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 14px;
-      color: #3d3934;
-    }
-
-    .campo input,
-    .campo textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d4cec3;
-      background: #fff;
-      font-family: inherit;
-      font-size: 15px;
-      color: #292622;
-      outline: none;
-    }
-
-    .campo input:focus,
-    .campo textarea:focus {
-      border-color: #c9b58a;
-    }
-
-    .campo textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .perguntas-publicadas {
-      max-width: 900px;
-      margin: 65px auto 0;
-    }
-
-    .perguntas-publicadas h3 {
       text-align: center;
-      font-size: 26px;
-      font-weight: normal;
-      margin-bottom: 30px;
     }
 
-    .pergunta-publicada {
-      padding: 25px 0;
-      border-bottom: 1px solid #ddd6ca;
-    }
-
-    .pergunta-publicada .pergunta {
-      font-size: 17px;
-      font-weight: bold;
+    .pergunta-box strong {
+      display: block;
       margin-bottom: 10px;
+      font-size: 20px;
+      color: #292622;
     }
 
-    .pergunta-publicada .resposta {
+    .pergunta-box p {
       color: #5d5750;
+      margin-bottom: 25px;
     }
 
 
@@ -538,6 +510,11 @@
 
       .pergunta-box {
         padding: 25px 20px;
+      }
+
+      .botao-secundario {
+        margin-left: 0;
+        margin-top: 10px;
       }
 
     }
@@ -720,17 +697,101 @@
           <strong>Before I Am Used</strong> is a journey of reflection,
           transformation and preparation to understand that, before we
           become instruments in God's hands, we need to allow Him to
-          work within us.
+          work in us.
         </p>
 
         <p>
-          The book takes the reader on a journey through confrontation,
+          The book takes the reader on a journey of confrontation,
           brokenness, transformation, filling and, finally, a willingness
           to be used by God.
         </p>
 
         <div class="frase-destaque">
           “God's greatest work is in us, not through us.”
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================= -->
+
+    <section class="depoimentos">
+
+      <div class="container">
+
+        <div class="titulo-secao">
+
+          <span>
+            Words from those who have begun the journey
+          </span>
+
+          <h2>
+            What Readers Are Saying
+          </h2>
+
+        </div>
+
+
+        <div class="depoimentos-grid">
+
+
+          <article class="depoimento">
+
+            <p>
+              “Each chapter makes me realize that, before being an
+              instrument in God's hands, I need to be willing to let
+              the Lord search me, break me, transform me, fill me,
+              and ultimately mold me.”
+            </p>
+
+            <strong>
+              — Maria José Pinheiro
+            </strong>
+
+          </article>
+
+
+
+          <article class="depoimento">
+
+            <p>
+              “I will certainly read it again, but what stayed with me
+              was the understanding that our God wants to have a genuine
+              relationship with us. He does not call us only to do a work;
+              He calls us out of love.”
+            </p>
+
+            <strong>
+              — Itála Rodrigues
+            </strong>
+
+          </article>
+
+
+
+          <article class="depoimento">
+
+            <p>
+              “One of the lessons that marked me was the danger of
+              religious activism: people who want to do God's work
+              without knowing the God of the work. Another was the
+              true meaning of brokenness — not simply being moved
+              emotionally, but experiencing a change of direction
+              and attitudes.”
+            </p>
+
+            <strong>
+              — Edgleison
+            </strong>
+
+          </article>
+
+
         </div>
 
       </div>
@@ -1028,79 +1089,12 @@
             GET THE BOOK
           </a>
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         TESTIMONIALS
-    ========================= -->
-
-    <section class="depoimentos">
-
-      <div class="container">
-
-        <div class="titulo-secao">
-
-          <span>
-            Words about the book
-          </span>
-
-          <h2>
-            What Readers Are Saying
-          </h2>
-
-        </div>
-
-
-        <div class="depoimentos-grid">
-
-
-          <article class="depoimento">
-
-            <p>
-              “This book leads us to look within ourselves first
-              before wanting to do something for God.”
-            </p>
-
-            <strong>
-              — Pastor Valdelúcia Fialho
-            </strong>
-
-          </article>
-
-
-
-          <article class="depoimento">
-
-            <p>
-              “A message about preparation, character and purpose.”
-            </p>
-
-            <strong>
-              — Francisco Denilson Pinheiro Filho
-            </strong>
-
-          </article>
-
-
-
-          <article class="depoimento">
-
-            <p>
-              “A profound journey into what God desires to form within us.”
-            </p>
-
-            <strong>
-              — Pastor Gardênia Pinheiro
-            </strong>
-
-          </article>
-
+          <a
+            href="english.html"
+            class="botao-secundario"
+          >
+            BACK TO HOME
+          </a>
 
         </div>
 
@@ -1139,119 +1133,33 @@
 
           Do you have a question about the story, the chapters,
           or the content of <em>Before I Am Used</em>?
-          Send your question.
+          Talk directly with me on WhatsApp.
 
         </p>
 
 
         <div class="pergunta-box">
 
+          <strong>
+            Want to know more about the book?
+          </strong>
 
-          <div class="campo">
+          <p>
+            Send your question and it will be a pleasure
+            to talk with you about the book.
+          </p>
 
-            <label for="nome">
-              Your name
-            </label>
-
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              placeholder="Enter your name"
-            >
-
-          </div>
-
-
-
-          <div class="campo">
-
-            <label for="pergunta">
-              Your question
-            </label>
-
-            <textarea
-              id="pergunta"
-              name="pergunta"
-              placeholder="Write your question about the book..."
-            ></textarea>
-
-          </div>
-
-
-
-          <button
-            type="button"
+          <a
+            href="https://wa.me/5585985141830?text=Hello!%20I%20came%20from%20the%20website%20and%20have%20a%20question%20about%20the%20book%20Before%20I%20Am%20Used."
             class="botao"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            SEND QUESTION
-          </button>
-
-
-        </div>
-
-
-
-        <!--
-          THIS AREA WILL BE CONNECTED TO THE
-          QUESTION SYSTEM IN A FUTURE STEP.
-        -->
-
-
-        <div class="perguntas-publicadas">
-
-
-          <h3>
-            Readers' Questions
-          </h3>
-
-
-
-          <div class="pergunta-publicada">
-
-
-            <div class="pergunta">
-
-              What is the main message of
-              Before I Am Used?
-
-            </div>
-
-
-            <div class="resposta">
-
-              The central message is to reflect on what God desires
-              to do in us before what He desires to do through us.
-
-            </div>
-
-
-          </div>
-
-
-
-          <div class="pergunta-publicada">
-
-
-            <div class="pergunta">
-
-              Is the book only about ministry calling?
-
-            </div>
-
-
-            <div class="resposta">
-
-              No. The reflection reaches anyone who wants to better
-              understand God's work in their life, character and purpose.
-
-            </div>
-
-
-          </div>
-
+            ASK YOUR QUESTION ON WHATSAPP
+          </a>
 
         </div>
+
 
       </div>
 
@@ -1276,6 +1184,10 @@
       </strong>.
       All rights reserved.
 
+    </p>
+
+    <p>
+      <em>Before I Am Used</em>
     </p>
 
   </footer>
