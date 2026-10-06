@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Passo a Passo para Correção do Livro | Antes Que Eu Seja Usado</title>
+
+  <meta name="description" content="Guia prático para escritores organizarem e realizarem a correção do próprio livro, passo a passo.">
+
+  <style>
+    :root {
+      --fundo: #f8f6f2;
+      --escuro: #171513;
+      --dourado: #c9b58a;
+      --dourado-claro: #e8ddc7;
+      --branco: #ffffff;
+      --cinza: #6f6a63;
+      --borda: #ddd6ca;
+      --verde: #526653;
+      --verde-claro: #e8eee8;
+      --sombra: 0 12px 35px rgba(23, 21, 19, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--fundo);
+      color: var(--escuro);
+      line-height: 1.7;
+    }
+
+    /* =========================
+       TOPO
+    ========================= */
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(23,21,19,0.90), rgba(23,21,19,0.94)),
+        url("capa.jpg") center/cover no-repeat;
+      color: var(--branco);
+      padding: 70px 20px 80px;
+      text-align: center;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(201,181,138,0.25);
+      border-radius: 50%;
+      right: -100px;
+      top: -100px;
+    }
+
+    .marca {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .marca-pequena {
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.1;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .subtitulo {
+      max-width: 720px;
+      margin: auto;
+      color: #eee9e0;
+      font-size: 1.1rem;
+    }
+
+    .linha-dourada {
+      width: 70px;
+      height: 2px;
+      background: var(--dourado);
+      margin: 28px auto;
+    }
+
+    /* =========================
+       INTRODUÇÃO
+    ========================= */
+
+    .introducao {
+      max-width: 950px;
+      margin: -35px auto 0;
+      position: relative;
+      z-index: 5;
+      padding: 0 20px;
+    }
+
+    .intro-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: var(--sombra);
+      text-align: center;
+    }
+
+    .intro-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      font-weight: normal;
+    }
+
+    .intro-card p {
+      color: var(--cinza);
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .alerta {
+      margin-top: 25px;
+      background: var(--verde-claro);
+      border-left: 4px solid var(--verde);
+      padding: 18px 20px;
+      border-radius: 8px;
+      text-align: left;
+      color: #344436;
+    }
+
+    /* =========================
+       PROGRESSO
+    ========================= */
+
+    .progresso-container {
+      max-width: 950px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .progresso-topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--cinza);
+    }
+
+    .barra {
+      height: 9px;
+      background: #ddd8d0;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .barra-preenchida {
+      height: 100%;
+      width: 0%;
+      background: var(--dourado);
+      border-radius: 20px;
+      transition: width 0.4s ease;
+    }
+
+    /* =========================
+       CONTEÚDO
+    ========================= */
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .titulo-secao {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .titulo-secao span {
+      display: block;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    .titulo-secao h2 {
+      font-size: 2.3rem;
+      font-weight: normal;
+    }
+
+    .titulo-secao p {
+      max-width: 700px;
+      margin: 12px auto 0;
+      color: var(--cinza);
+    }
+
+    /* =========================
+       ETAPAS
+    ========================= */
+
+    .etapa {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(23,21,19,0.04);
+      transition: 0.3s ease;
+    }
+
+    .etapa:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--sombra);
+    }
+
+    .etapa-concluida {
+      border-color: var(--verde);
+    }
+
+    .etapa-cabecalho {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 25px;
+      cursor: pointer;
+    }
+
+    .numero {
+      min-width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: var(--escuro);
+      color: var(--dourado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .etapa-concluida .numero {
+      background: var(--verde);
+      color: white;
+    }
+
+    .etapa-titulo {
+      flex: 1;
+    }
+
+    .etapa-titulo h3 {
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .etapa-titulo p {
+      color: var(--cinza);
+      font-size: 0.95rem;
+    }
+
+    .seta {
+      font-size: 1.3rem;
+      transition: transform 0.3s;
+    }
+
+    .aberta .seta {
+      transform: rotate(180deg);
+    }
+
+    .etapa-conteudo {
+      display: none;
+      padding: 0 30px 30px;
+      border-top: 1px solid var(--borda);
+    }
+
+    .aberta .etapa-conteudo {
+      display: block;
+    }
+
+    .etapa-conteudo h4 {
+      color: var(--escuro);
+      margin: 25px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .etapa-conteudo p {
+      color: #4f4a45;
+      margin-bottom: 12px;
+    }
+
+    .etapa-conteudo ul,
+    .etapa-conteudo ol {
+      margin: 10px 0 20px 22px;
+      color: #4f4a45;
+    }
+
+    .etapa-conteudo li {
+      margin-bottom: 9px;
+    }
+
+    .dica {
+      background: #f7f3eb;
+      border-left: 4px solid var(--dourado);
+      padding: 18px;
+      border-radius: 7px;
+      margin: 20px 0;
+    }
+
+    .erro {
+      background: #f5eeee;
+      border-left: 4px solid #9a5a5a;
+      padding: 18px;
+      border-radius: 7px;
+      margin: 20px 0;
+    }
+
+    .acao {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--borda);
+    }
+
+    .botao-concluir {
+      border: none;
+      background: var(--escuro);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .botao-concluir:hover {
+      background: var(--dourado);
+      color: var(--escuro);
+    }
+
+    .etapa-concluida .botao-concluir {
+      background: var(--verde);
+    }
+
+    /* =========================
+       FLUXO VISUAL
+    ========================= */
+
+    .fluxo {
+      margin: 60px 0;
+      background: var(--escuro);
+      color: white;
+      padding: 40px 25px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .fluxo h2 {
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    .fluxo-linha {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .fluxo-item {
+      border: 1px solid rgba(201,181,138,0.5);
+      padding: 12px 17px;
+      border-radius: 30px;
+      color: var(--dourado);
+      font-size: 0.9rem;
+    }
+
+    .seta-fluxo {
+      color: #aaa;
+    }
+
+    /* =========================
+       CHECKLIST
+    ========================= */
+
+    .checklist {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    .checklist h2 {
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .checklist > p {
+      color: var(--cinza);
+      margin-bottom: 25px;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee9e1;
+    }
+
+    .check:last-child {
+      border-bottom: none;
+    }
+
+    .check input {
+      margin-top: 6px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--verde);
+    }
+
+    .check label {
+      cursor: pointer;
+      color: #4f4a45;
+    }
+
+    .check input:checked + label {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    /* =========================
+       FRASE FINAL
+    ========================= */
+
+    .final {
+      text-align: center;
+      margin: 70px auto 40px;
+      max-width: 760px;
+    }
+
+    .final .aspas {
+      font-size: 4rem;
+      color: var(--dourado);
+      line-height: 1;
+    }
+
+    .final blockquote {
+      font-size: 1.45rem;
+      line-height: 1.5;
+      font-style: italic;
+      margin: 10px 0 20px;
+    }
+
+    .final p {
+      color: var(--cinza);
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    footer {
+      background: var(--escuro);
+      color: #d9d4cb;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 70px;
+    }
+
+    footer strong {
+      color: var(--dourado);
+      font-weight: normal;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 8px;
+      color: #999;
+    }
+
+    /* =========================
+       BOTÃO VOLTAR AO TOPO
+    ========================= */
+
+    #topo {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: var(--escuro);
+      color: var(--dourado);
+      cursor: pointer;
+      display: none;
+      z-index: 100;
+      box-shadow: var(--sombra);
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 55px 18px 65px;
+      }
+
+      .intro-card {
+        padding: 25px 20px;
+      }
+
+      .etapa-cabecalho {
+        padding: 20px;
+        gap: 14px;
+      }
+
+      .numero {
+        min-width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+
+      .etapa-titulo h3 {
+        font-size: 1.1rem;
+      }
+
+      .etapa-conteudo {
+        padding: 0 20px 25px;
+      }
+
+      .fluxo-linha {
+        flex-direction: column;
+      }
+
+      .seta-fluxo {
+        transform: rotate(90deg);
+      }
+
+      .checklist {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       CABEÇALHO
+  ========================== -->
+
+  <header id="inicio">
+
+    <div class="marca">
+
+      <div class="marca-pequena">
+        Antes Que Eu Seja Usado
+      </div>
+
+      <h1>
+        Guia de Correção<br>
+        para Escritores
+      </h1>
+
+      <div class="linha-dourada"></div>
+
+      <p class="subtitulo">
+        Um passo a passo para você olhar para o seu próprio livro
+        com mais clareza, organização e atenção antes de considerá-lo concluído.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       INTRODUÇÃO
+  ========================== -->
+
+  <section class="introducao">
+
+    <div class="intro-card">
+
+      <h2>
+        Antes de começar
+      </h2>
+
+      <p>
+        Escrever um livro é apenas uma parte do processo.
+        Depois de colocar as ideias no papel, começa uma etapa igualmente importante:
+        <strong>a correção.</strong>
+      </p>
+
+      <p style="margin-top: 15px;">
+        Este guia foi criado para ajudar você a revisar seu próprio texto
+        de maneira organizada, sem tentar corrigir tudo de uma vez.
+      </p>
+
+      <div class="alerta">
+        <strong>Importante:</strong>
+        este guia é sobre <strong>correção do manuscrito</strong>.
+        Ele não é um guia de publicação, diagramação ou registro de livro.
+        Primeiro, vamos cuidar do texto.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROGRESSO
+  ========================== -->
+
+  <div class="progresso-container">
+
+    <div class="progresso-topo">
+      <span>Seu progresso</span>
+      <span id="contador">0 de 8 etapas concluídas</span>
+    </div>
+
+    <div class="barra">
+      <div class="barra-preenchida" id="barraProgresso"></div>
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================== -->
+
+  <main>
+
+    <div class="titulo-secao">
+
+      <span>Comece aqui</span>
+
+      <h2>
+        O caminho da correção
+      </h2>
+
+      <p>
+        Não tente corrigir tudo ao mesmo tempo.
+        Siga as etapas na ordem e concentre sua atenção em uma coisa de cada vez.
+      </p>
+
+    </div>
+
+
+    <!-- ETAPA 1 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">1</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Organize o seu material</h3>
+
+          <p>
+            Antes de corrigir, organize.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>O que fazer?</h4>
+
+        <p>
+          Crie uma pasta exclusiva para o seu livro.
+          Evite trabalhar com dezenas de arquivos espalhados pelo computador ou celular.
+        </p>
+
+        <ol>
+
+          <li>
+            Crie uma pasta com o nome do seu livro.
+          </li>
+
+          <li>
+            Coloque dentro dela o manuscrito original.
+          </li>
+
+          <li>
+            Faça uma cópia antes de começar qualquer alteração.
+          </li>
+
+          <li>
+            Trabalhe sempre sobre uma versão identificada como
+            <strong>“Em revisão”</strong>.
+          </li>
+
+        </ol>
+
+        <div class="dica">
+          <strong>Dica:</strong>
+          nunca apague o arquivo original.
+          Ele é a sua segurança caso uma alteração precise ser desfeita.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 2 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">2</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Faça uma leitura completa</h3>
+
+          <p>
+            Leia primeiro. Corrija depois.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Não comece procurando vírgulas.</h4>
+
+        <p>
+          Antes de corrigir palavras ou frases, leia o livro inteiro.
+          O objetivo agora é perceber o livro como um todo.
+        </p>
+
+        <ul>
+
+          <li>O livro apresenta claramente sua proposta?</li>
+
+          <li>Existe uma sequência lógica entre os capítulos?</li>
+
+          <li>Algum capítulo parece deslocado?</li>
+
+          <li>Existem assuntos repetidos?</li>
+
+          <li>Alguma ideia importante ficou sem desenvolvimento?</li>
+
+          <li>O final corresponde ao que foi prometido no início?</li>
+
+        </ul>
+
+        <div class="erro">
+          <strong>Evite este erro:</strong>
+          começar a corrigir a gramática enquanto você ainda não sabe
+          se a estrutura do capítulo está funcionando.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 3 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">3</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Corrija a estrutura</h3>
+
+          <p>
+            Primeiro o conteúdo. Depois a frase.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Observe cada capítulo</h4>
+
+        <p>
+          Pergunte se o capítulo realmente precisa estar ali
+          e se ele cumpre uma função dentro do livro.
+        </p>
+
+        <ul>
+
+          <li>Qual é a função deste capítulo?</li>
+
+          <li>Qual é a ideia principal?</li>
+
+          <li>O início prepara o leitor para o assunto?</li>
+
+          <li>O desenvolvimento sustenta a ideia?</li>
+
+          <li>O capítulo termina de maneira satisfatória?</li>
+
+          <li>Existe alguma parte que deveria estar em outro capítulo?</li>
+
+        </ul>
+
+        <div class="dica">
+          <strong>Regra simples:</strong>
+          se um parágrafo apresenta uma ideia nova que não é desenvolvida,
+          talvez ele pertença a outro lugar do livro.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 4 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">4</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Procure repetições</h3>
+
+          <p>
+            Nem toda repetição é necessária.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Identifique ideias que aparecem várias vezes</h4>
+
+        <p>
+          Durante a revisão, marque frases, histórias, exemplos,
+          argumentos e conceitos que aparecem repetidamente.
+        </p>
+
+        <ul>
+
+          <li>Existe uma frase que você repete em vários capítulos?</li>
+
+          <li>A mesma história aparece mais de uma vez?</li>
+
+          <li>O mesmo versículo está sendo usado repetidamente?</li>
+
+          <li>Você explica a mesma ideia em lugares diferentes?</li>
+
+        </ul>
+
+        <p>
+          Quando encontrar uma repetição, não corte imediatamente.
+          Primeiro pergunte:
+          <strong>onde essa ideia funciona melhor?</strong>
+        </p>
+
+        <div class="dica">
+          <strong>Objetivo:</strong>
+          cada ideia importante deve ter um lugar principal dentro do livro.
+          Outros capítulos podem apenas fazer referência a ela.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 5 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">5</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Revise a clareza</h3>
+
+          <p>
+            O leitor entende o que você quis dizer?
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Leia como se você não fosse o autor</h4>
+
+        <p>
+          Essa talvez seja uma das partes mais difíceis.
+          O autor conhece tão bem sua própria ideia que muitas vezes
+          deixa informações implícitas.
+        </p>
+
+        <ul>
+
+          <li>Existe alguma frase difícil de entender?</li>
+
+          <li>Algum termo precisa ser explicado?</li>
+
+          <li>Há frases muito longas?</li>
+
+          <li>O texto muda de assunto sem preparação?</li>
+
+          <li>O leitor saberá quem está falando?</li>
+
+          <li>Uma pessoa que não conhece o contexto entenderá?</li>
+
+        </ul>
+
+        <div class="dica">
+          <strong>Experimente:</strong>
+          leia alguns parágrafos em voz alta.
+          Muitas frases que parecem boas na tela revelam problemas
+          quando são pronunciadas.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 6 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">6</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Faça a revisão gramatical</h3>
+
+          <p>
+            Agora sim: palavras, frases e pontuação.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Procure os erros técnicos</h4>
+
+        <ul>
+
+          <li>Ortografia</li>
+
+          <li>Concordância verbal</li>
+
+          <li>Concordância nominal</li>
+
+          <li>Regência</li>
+
+          <li>Pontuação</li>
+
+          <li>Acentuação</li>
+
+          <li>Maiúsculas e minúsculas</li>
+
+          <li>Espaços duplicados</li>
+
+          <li>Palavras repetidas involuntariamente</li>
+
+        </ul>
+
+        <div class="erro">
+          <strong>Atenção:</strong>
+          uma inteligência artificial pode ajudar a localizar problemas,
+          mas você deve decidir se a alteração preserva aquilo que realmente
+          queria comunicar.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 7 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">7</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Use a Inteligência Artificial com critério</h3>
+
+          <p>
+            A IA deve ajudar o autor, não substituir o autor.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Como trabalhar com a IA</h4>
+
+        <p>
+          Não entregue o livro inteiro de uma vez e simplesmente peça:
+          “corrija meu livro”.
+        </p>
+
+        <p>
+          Trabalhe por etapas e, de preferência, um capítulo por vez.
+        </p>
+
+        <ol>
+
+          <li>
+            Envie o contexto do livro.
+          </li>
+
+          <li>
+            Informe o objetivo daquele capítulo.
+          </li>
+
+          <li>
+            Peça primeiro um diagnóstico.
+          </li>
+
+          <li>
+            Analise as sugestões.
+          </li>
+
+          <li>
+            Decida o que será aceito ou rejeitado.
+          </li>
+
+          <li>
+            Só depois faça as alterações no manuscrito.
+          </li>
+
+        </ol>
+
+        <div class="dica">
+          <strong>Regra de ouro:</strong>
+          não aceite automaticamente tudo o que a IA sugerir.
+          A decisão final sobre conteúdo, mensagem e voz é do autor.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- ETAPA 8 -->
+
+    <article class="etapa">
+
+      <div class="etapa-cabecalho" onclick="abrirEtapa(this)">
+
+        <div class="numero">8</div>
+
+        <div class="etapa-titulo">
+
+          <h3>Faça uma última leitura</h3>
+
+          <p>
+            Agora leia o livro como leitor.
+          </p>
+
+        </div>
+
+        <div class="seta">⌄</div>
+
+      </div>
+
+
+      <div class="etapa-conteudo">
+
+        <h4>Chegou a hora de parar de corrigir</h4>
+
+        <p>
+          Depois de tantas alterações, faça uma última leitura completa.
+        </p>
+
+        <p>
+          Não leia procurando apenas erros.
+          Leia para perceber se o livro está dizendo aquilo que você
+          realmente queria dizer.
+        </p>
+
+        <ul>
+
+          <li>O livro tem uma mensagem clara?</li>
+
+          <li>O texto mantém a mesma voz?</li>
+
+          <li>Os capítulos conversam entre si?</li>
+
+          <li>Há alguma repetição desnecessária?</li>
+
+          <li>Existem pontos que ainda precisam ser esclarecidos?</li>
+
+          <li>O final entrega aquilo que o início prometeu?</li>
+
+        </ul>
+
+        <div class="dica">
+          <strong>Uma boa prática:</strong>
+          se possível, deixe o manuscrito descansar alguns dias
+          antes dessa última leitura.
+        </div>
+
+        <div class="acao">
+
+          <button class="botao-concluir"
+            onclick="concluirEtapa(event, this)">
+            Marcar etapa como concluída
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- FLUXO -->
+
+    <section class="fluxo">
+
+      <h2>
+        Lembre-se da ordem
+      </h2>
+
+      <div class="fluxo-linha">
+
+        <div class="fluxo-item">Organizar</div>
+
+        <span class="seta-fluxo">→</span>
+
+        <div class="fluxo-item">Ler</div>
+
+        <span class="seta-fluxo">→</span>
+
+        <div class="fluxo-item">Estruturar</div>
+
+        <span class="seta-fluxo">→</span>
+
+        <div class="fluxo-item">Enxugar</div>
+
+        <span class="seta-fluxo">→</span>
+
+        <div class="fluxo-item">Clarear</div>
+
+        <span class="seta-fluxo">→</span>
+
+        <div class="fluxo-item">Corrigir</div>
+
+        <span class="seta-fluxo">→</span>
+
+        <div class="fluxo-item">Revisar</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHECKLIST FINAL -->
+
+    <section class="checklist">
+
+      <h2>
+        Checklist da correção
+      </h2>
+
+      <p>
+        Antes de considerar a revisão concluída, confira:
+      </p>
+
+      <div class="check">
+
+        <input type="checkbox" id="c1">
+
+        <label for="c1">
+          Li o livro inteiro antes de começar a correção detalhada.
+        </label>
+
+      </div>
+
+      <div class="check">
+
+        <input type="checkbox" id="c2">
+
+        <label for="c2">
+          Cada capítulo possui uma função clara.
+        </label>
+
+      </div>
+
+      <div class="check">
+
+        <input type="checkbox" id="c3">
+
+        <label for="c3">
+          Identifiquei e avaliei as repetições.
+        </label>
+
+      </div>
+
+      <div class="check">
+
+        <input type="checkbox" id="c4">
+
+        <label for="c4">
+          Verifiquei se o texto está claro para alguém que não conhece minha ideia.
+        </label>
+
+      </div>
+
+      <div class="check">
+
+        <input type="checkbox" id="c5">
+
+        <label for="c5">
+          Fiz uma revisão gramatical.
+        </label>
+
+      </div>
+
+      <div class="check">
+
+        <input type="checkbox" id="c6">
+
+        <label for="c6">
+          Revisei as alterações sugeridas pela Inteligência Artificial.
+        </label>
+
+      </div>
+
+      <div class="check">
+
+        <input type="checkbox" id="c7">
+
+        <label for="c7">
+          Fiz uma última leitura completa do manuscrito.
+        </label>
+
+      </div>
+
+    </section>
+
+
+    <!-- FRASE FINAL -->
+
+    <section class="final">
+
+      <div class="aspas">“</div>
+
+      <blockquote>
+        Antes de pensar em publicar um livro,
+        cuide para que aquilo que você escreveu
+        realmente diga o que você queria dizer.
+      </blockquote>
+
+      <p>
+        A correção não existe para tirar a sua voz.
+        Ela existe para ajudá-la a ser ouvida com mais clareza.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
+
+  <footer>
+
+    <strong>Antes Que Eu Seja Usado</strong>
+
+    <small>
+      Francisco Denílson Pinheiro • Escritor • Pastor • Palestrante
+    </small>
+
+    <small>
+      Guia de correção para escritores
+    </small>
+
+  </footer>
+
+
+  <!-- BOTÃO TOPO -->
+
+  <button id="topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑
+  </button>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /*
+      ABRIR / FECHAR ETAPA
+    */
+
+    function abrirEtapa(cabecalho) {
+
+      const etapa = cabecalho.parentElement;
+
+      etapa.classList.toggle("aberta");
+
+    }
+
+
+    /*
+      MARCAR ETAPA COMO CONCLUÍDA
+    */
+
+    function concluirEtapa(event, botao) {
+
+      event.stopPropagation();
+
+      const etapa = botao.closest(".etapa");
+
+      etapa.classList.toggle("etapa-concluida");
+
+      if (etapa.classList.contains("etapa-concluida")) {
+
+        botao.textContent = "✓ Etapa concluída";
+
+      } else {
+
+        botao.textContent = "Marcar etapa como concluída";
+
+      }
+
+      atualizarProgresso();
+
+    }
+
+
+    /*
+      ATUALIZA BARRA DE PROGRESSO
+    */
+
+    function atualizarProgresso() {
+
+      const etapas = document.querySelectorAll(".etapa");
+
+      const concluidas =
+        document.querySelectorAll(".etapa-concluida").length;
+
+      const total = etapas.length;
+
+      const porcentagem = (concluidas / total) * 100;
+
+      document.getElementById("barraProgresso").style.width =
+        porcentagem + "%";
+
+      document.getElementById("contador").textContent =
+        concluidas + " de " + total + " etapas concluídas";
+
+    }
+
+
+    /*
+      MOSTRAR BOTÃO TOPO
+    */
+
+    window.addEventListener("scroll", function() {
+
+      const botaoTopo = document.getElementById("topo");
+
+      if (window.scrollY > 500) {
+
+        botaoTopo.style.display = "block";
+
+      } else {
+
+        botaoTopo.style.display = "none";
+
+      }
+
+    });
+
+
+    /*
+      ABRIR A PRIMEIRA ETAPA AUTOMATICAMENTE
+    */
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+      const primeira =
+        document.querySelector(".etapa");
+
+      if (primeira) {
+
+        primeira.classList.add("aberta");
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
