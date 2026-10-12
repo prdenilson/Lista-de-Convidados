@@ -1179,6 +1179,71 @@ content="Conheça as obras de Francisco Denilson Pinheiro."
 
   </div>
 
+<!-- =====================================================
+     MODAL DE ACESSO POR CHAVE
+===================================================== -->
+
+<div
+  id="modalChave"
+  class="modal-login"
+  aria-hidden="true"
+>
+  <div class="caixa-login">
+
+    <button
+      type="button"
+      class="fechar-login"
+      onclick="fecharModalChave()"
+      aria-label="Fechar"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="icone-login">
+      <i class="fa-solid fa-key"></i>
+    </div>
+
+    <h2>Acessar por chave</h2>
+
+    <p class="texto-login">
+      Digite a chave de acesso para abrir a versão digital do livro.
+    </p>
+
+    <form id="formChave">
+
+      <div class="campo-login">
+        <label for="codigoChave">Chave de acesso</label>
+
+        <input
+          type="text"
+          id="codigoChave"
+          placeholder="Digite sua chave"
+          autocomplete="off"
+          autocapitalize="characters"
+          required
+        >
+      </div>
+
+      <button
+        type="submit"
+        class="botao-entrar"
+        id="botaoVerificarChave"
+      >
+        <i class="fa-solid fa-unlock"></i>
+        Acessar livro
+      </button>
+
+      <p
+        id="mensagemChave"
+        class="mensagem-login"
+        aria-live="polite"
+      ></p>
+
+    </form>
+
+  </div>
+</div>
+  
   <!-- =====================================================
        CABEÇALHO
   ===================================================== -->
@@ -1527,17 +1592,25 @@ content="Conheça as obras de Francisco Denilson Pinheiro."
   </p>
 
 
+ <div class="botoes-acesso">
   <button
     type="button"
     class="botao-leitura"
     onclick="abrirLogin()"
   >
-
-    <i class="fa-solid fa-book-open"></i>
-
-    Acessar leitura do livro
-
+    <i class="fa-solid fa-envelope"></i>
+    Acessar leitura por e-mail
   </button>
+
+  <button
+    type="button"
+    class="botao-leitura"
+    onclick="abrirModalChave()"
+  >
+    <i class="fa-solid fa-key"></i>
+    Acessar leitura por chave
+  </button>
+</div>
 
 
 </section>
@@ -1804,7 +1877,97 @@ Todos os direitos reservados.
 
     }
 
+/* =====================================================
+   ACESSO À BIBLIOTECA POR CHAVE
+===================================================== */
 
+function abrirModalChave() {
+  const modal = document.getElementById("modalChave");
+
+  if (!modal) return;
+
+  modal.classList.add("aberto");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  setTimeout(function () {
+    const campo = document.getElementById("codigoChave");
+    if (campo) campo.focus();
+  }, 100);
+}
+
+function fecharModalChave() {
+  const modal = document.getElementById("modalChave");
+
+  if (!modal) return;
+
+  modal.classList.remove("aberto");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+const modalChave = document.getElementById("modalChave");
+
+if (modalChave) {
+  modalChave.addEventListener("click", function (event) {
+    if (event.target === this) {
+      fecharModalChave();
+    }
+  });
+}
+
+const formChave = document.getElementById("formChave");
+
+if (formChave) {
+  formChave.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const campo = document.getElementById("codigoChave");
+    const mensagem = document.getElementById("mensagemChave");
+    const botao = document.getElementById("botaoVerificarChave");
+    const codigo = campo.value.trim().toUpperCase();
+
+    mensagem.textContent = "";
+    botao.disabled = true;
+    botao.innerHTML =
+      '<i class="fa-solid fa-spinner fa-spin"></i> Verificando...';
+
+    try {
+      const resposta = await fetch(
+        "https://qieejecsicnmsdtefejs.supabase.co/functions/v1/acessar-biblioteca-chave",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_PUBLISHABLE_KEY
+          },
+          body: JSON.stringify({ codigo: codigo })
+        }
+      );
+
+      const resultado = await resposta.json();
+
+      if (!resposta.ok || !resultado.sucesso || !resultado.url) {
+        mensagem.textContent =
+          resultado.mensagem || "Não foi possível validar a chave.";
+        return;
+      }
+
+      sessionStorage.setItem("urlLivroChave", resultado.url);
+      window.location.href = "biblioteca.html?acesso=chave";
+
+    } catch (erro) {
+      console.error("Erro ao verificar chave:", erro);
+      mensagem.textContent =
+        "Não foi possível conectar. Tente novamente.";
+    } finally {
+      botao.disabled = false;
+      botao.innerHTML =
+        '<i class="fa-solid fa-unlock"></i> Acessar livro';
+    }
+  });
+}
+    
     /* =====================================================
        LOGIN COM SUPABASE
     ===================================================== */
@@ -1985,7 +2148,7 @@ Todos os direitos reservados.
         ) {
 
           fecharLogin();
-
+          fecharModalChave();
           fecharMenu();
 
         }
