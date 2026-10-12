@@ -276,6 +276,9 @@
     const ARQUIVO_PDF = "Antes que eu seja usado PDF.pdf";
     const TEMPO_URL = 3600; /* 1 hora = 3600 segundos */
 
+    const acessoPorChave =
+      new URLSearchParams(window.location.search).get("acesso") === "chave";
+    
     /* INICIALIZAÇÃO */
     document.addEventListener("DOMContentLoaded", verificarAcesso);
 
@@ -284,6 +287,29 @@
       const carregando = document.getElementById("carregando");
 
       try {
+                /* ACESSO POR CHAVE */
+        if (acessoPorChave) {
+          const urlLivro = sessionStorage.getItem("urlLivroChave");
+
+          if (!urlLivro) {
+            mostrarErro("Acesso por chave não encontrado. Volte à página do livro e digite sua chave novamente.");
+            return;
+          }
+
+          document.getElementById("usuarioLogado").innerHTML =
+            '<i class="fa-solid fa-key" style="color: var(--gold-primary);"></i> Acesso por chave';
+
+          document.getElementById("barraUsuario").style.display = "flex";
+
+          const leitorPDF = document.getElementById("leitorPDF");
+          leitorPDF.src = urlLivro;
+          leitorPDF.setAttribute("referrerpolicy", "no-referrer");
+          
+          document.getElementById("carregando").style.display = "none";
+          document.getElementById("leitor").style.display = "block";
+
+          return;
+        }
         const { data, error } = await supabaseClient.auth.getSession();
 
         if (error) {
@@ -335,7 +361,7 @@
 
         const leitorPDF = document.getElementById("leitorPDF");
         leitorPDF.src = data.signedUrl;
-
+        
         document.getElementById("carregando").style.display = "none";
         document.getElementById("leitor").style.display = "block";
 
@@ -349,13 +375,19 @@
       }
     }
 
+    
     /* SAIR */
     async function sair() {
       try {
-        await supabaseClient.auth.signOut();
+        if (!acessoPorChave) {
+          await supabaseClient.auth.signOut();
+        }
+
+        sessionStorage.removeItem("urlLivroChave");
       } catch (erro) {
         console.error("Erro ao sair:", erro);
       }
+
       window.location.href = "index.html";
     }
 
@@ -373,13 +405,15 @@
       document.getElementById("mensagemErro").style.display = "block";
     }
 
-    /* OBSERVAR ALTERAÇÕES DE AUTENTICAÇÃO */
-    supabaseClient.auth.onAuthStateChange((event, session) => {
-      console.log("Estado de autenticação:", event);
-      if (event === "SIGNED_OUT" || !session) {
-        window.location.href = "index.html";
-      }
-    });
-  </script>
+     /* OBSERVAR ALTERAÇÕES DE AUTENTICAÇÃO */
+    if (!acessoPorChave) {
+      supabaseClient.auth.onAuthStateChange((event, session) => {
+        console.log("Estado de autenticação:", event);
+
+        if (event === "SIGNED_OUT" || !session) {
+          window.location.href = "index.html";
+        }
+      });
+    }  </script>
 </body>
 </html>
