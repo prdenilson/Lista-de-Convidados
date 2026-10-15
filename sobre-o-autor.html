@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYG8ED1GLC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYG8ED1GLC');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Conheça Francisco Denilson Pinheiro, escritor, pastor e palestrante dedicado ao ensino das Escrituras e à produção de livros cristãos."
+  >
+
+  <meta name="theme-color" content="#171513">
+
+  <title>Sobre o Autor | Francisco Denilson Pinheiro</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #171513;
+      color: #f8f6f2;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* CABEÇALHO */
+    header {
+      width: 100%;
+      background: #171513;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(201, 181, 138, 0.2);
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1200px;
+      min-height: 82px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+
+    .logo strong {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      margin-top: 7px;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c9b58a;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      color: #eee;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #c9b58a;
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* IDIOMAS */
+    .idiomas {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a.idioma-botao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 10px;
+      border: 1px solid #c9b58a;
+      border-radius: 4px;
+      background: transparent;
+      color: #c9b58a;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      transition: 0.3s ease;
+    }
+
+    nav a.idioma-botao:hover {
+      background: #c9b58a;
+      color: #171513;
+    }
+
+    /* CONTEÚDO DO AUTOR */
+    .about {
+      padding: 90px 20px;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(201, 181, 138, 0.09),
+          transparent 35%
+        ),
+        #1c1a17;
+    }
+
+    .about-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .about-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid rgba(201, 181, 138, 0.35);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+    }
+
+    .about-text {
+      max-width: 570px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      color: #c9b58a;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .about-text h1 {
+      color: #f8f6f2;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.15;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .about-text p {
+      color: #d1cbc1;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .author-roles {
+      color: #c9b58a;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* FRASE DE DESTAQUE */
+    .author-quote {
+      padding: 65px 20px;
+      background: #12110f;
+      border-top: 1px solid rgba(201, 181, 138, 0.18);
+      border-bottom: 1px solid rgba(201, 181, 138, 0.18);
+      text-align: center;
+    }
+
+    .quote-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .quote-mark {
+      color: #c9b58a;
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .author-quote blockquote {
+      color: #f8f6f2;
+      font-size: clamp(23px, 3vw, 34px);
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    /* CAMINHO E PROPÓSITO */
+    .purpose {
+      padding: 75px 20px;
+      background: #171513;
+    }
+
+    .purpose-container {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .purpose h2 {
+      color: #c9b58a;
+      font-size: clamp(25px, 3vw, 34px);
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .purpose p {
+      color: #d1cbc1;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    /* BOTÕES */
+    .button {
+      display: inline-block;
+      margin: 12px 8px 0 0;
+      padding: 14px 23px;
+      background: #c9b58a;
+      color: #191715;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+      text-align: center;
+      border: 1px solid #c9b58a;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #e0cfaa;
+      border-color: #e0cfaa;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: #c9b58a;
+    }
+
+    .button-outline:hover {
+      background: #c9b58a;
+      color: #171513;
+    }
+
+    /* RODAPÉ */
+    footer {
+      width: 100%;
+      background: #0f0e0c;
+      color: #ddd;
+      padding: 35px 20px 25px;
+    }
+
+    .footer-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-name strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .footer-name span {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #c9b58a;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: #c9b58a;
+    }
+
+    .copyright {
+      width: 100%;
+      max-width: 1100px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+
+    /* WHATSAPP FLUTUANTE */
+    .whatsapp-flutuante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+      z-index: 9998;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-flutuante:hover {
+      transform: scale(1.08);
+      box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .whatsapp-flutuante svg {
+      width: 31px;
+      height: 31px;
+      fill: #fff;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 1050px) {
+      .header-container {
+        flex-wrap: wrap;
+      }
+
+      nav ul {
+        gap: 14px;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .header-container {
+        min-height: 70px;
+      }
+
+      .logo strong {
+        font-size: 16px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        background: #171513;
+        padding: 22px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      nav.open {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav a {
+        display: inline-block;
+        font-size: 12px;
+      }
+
+      .idiomas {
+        display: flex;
+        gap: 10px;
+      }
+
+      nav a.idioma-botao {
+        flex: 1;
+        padding: 11px 8px;
+        text-align: center;
+      }
+
+      .about {
+        padding: 55px 20px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+      }
+
+      .about-image img {
+        max-width: 390px;
+      }
+
+      .about-text {
+        max-width: 100%;
+      }
+
+      .about-text p,
+      .purpose p {
+        font-size: 16px;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 330px;
+        margin-right: 0;
+      }
+
+      .author-quote {
+        padding: 50px 22px;
+      }
+
+      .purpose {
+        padding: 55px 20px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-flutuante {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .whatsapp-flutuante svg {
+        width: 29px;
+        height: 29px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a
+    href="https://wa.me/5585985141830?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20entrar%20em%20contato."
+    class="whatsapp-flutuante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar pelo WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z"/>
+    </svg>
+  </a>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="header-container">
+
+      <a href="index.html" class="logo">
+        <strong>Francisco Denilson Pinheiro</strong>
+        <span>Escritor • Pastor • Palestrante</span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        ☰
+      </button>
+
+      <nav id="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre-o-autor.html" class="active" aria-current="page">Sobre o Autor</a></li>
+          <li><a href="obras.html">Obras</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="area-do-leitor.html">Área do Leitor</a></li>
+          <li><a href="seja-um-escritor.html">Seja um Escritor</a></li>
+          <li><a href="contato.html">Contato</a></li>
+
+          <li class="idiomas">
+            <a href="index.html" class="idioma-botao">🇧🇷 Português</a>
+            <a href="english.html" class="idioma-botao">🇺🇸 English</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO DO AUTOR -->
+    <section class="about">
+      <div class="about-container">
+        <div class="about-grid">
+
+          <div class="about-image">
+            <img
+              src="imagem-pessoal.jpg"
+              alt="Fotografia de Francisco Denilson Pinheiro"
+              loading="eager"
+            >
+          </div>
+
+          <div class="about-text">
+            <div class="eyebrow">Sobre o autor</div>
+
+            <h1>Francisco Denilson Pinheiro</h1>
+
+            <div class="author-roles">
+              Escritor • Pastor • Palestrante
+            </div>
+
+            <p>
+              Francisco Denilson Pinheiro é escritor, pastor e palestrante,
+              dedicado ao ensino das Escrituras e à produção de conteúdos
+              cristãos que convidam à reflexão, à fé e à transformação.
+            </p>
+
+            <p>
+              Sua escrita nasce da caminhada ministerial, da reflexão bíblica
+              e do desejo de ajudar pessoas a aprofundarem seu relacionamento
+              com Deus, olhando não apenas para aquilo que fazem, mas também
+              para aquilo que estão se tornando.
+            </p>
+
+            <p>
+              Em seus escritos, procura conduzir o leitor a uma jornada de
+              autoconhecimento à luz das Escrituras, amadurecimento espiritual
+              e preparação do caráter para viver o propósito de Deus.
+            </p>
+
+            <a href="obras.html" class="button">
+              Conheça as Obras
+            </a>
+
+            <a
+              href="https://www.instagram.com/prdenilsonescritor/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-outline"
+            >
+              Instagram @prdenilsonescritor
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MENSAGEM CENTRAL -->
+    <section class="author-quote">
+      <div class="quote-container">
+        <div class="quote-mark" aria-hidden="true">“</div>
+        <blockquote>
+          A maior obra de Deus é em nós e não através de nós.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- PROPÓSITO -->
+    <section class="purpose">
+      <div class="purpose-container">
+        <div class="eyebrow">Escrita e propósito</div>
+
+        <h2>Uma jornada de transformação de dentro para fora</h2>
+
+        <p>
+          Mais do que compartilhar ideias, seus livros buscam despertar
+          perguntas, promover reflexão e lembrar que a caminhada cristã
+          também envolve permitir que Deus trabalhe no coração, nas
+          motivações e no caráter.
+        </p>
+
+        <p>
+          Essa perspectiva está presente em
+          <em>Antes Que Eu Seja Usado</em>, obra que convida o leitor a
+          refletir sobre a preparação interior antes de viver plenamente
+          sua vocação.
+        </p>
+
+        <a href="index.html" class="button">
+          Voltar ao Início
+        </a>
+
+        <a href="obras.html" class="button button-outline">
+          Ver as Obras
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-container">
+
+      <div class="footer-name">
+        <strong>Francisco Denilson Pinheiro</strong>
+        <span>Escritor • Pastor • Palestrante</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="sobre-o-autor.html">Sobre o Autor</a>
+        <a href="obras.html">Obras</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="area-do-leitor.html">Área do Leitor</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Francisco Denilson Pinheiro. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const button = document.querySelector(".menu-button");
+      const aberto = menu.classList.toggle("open");
+
+      button.setAttribute("aria-expanded", aberto);
+      button.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+      );
+    }
+
+    // Fecha o menu móvel depois que um link é selecionado.
+    document.querySelectorAll("#menu a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        const menu = document.getElementById("menu");
+        const button = document.querySelector(".menu-button");
+
+        menu.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Abrir menu");
+      });
+    });
+  </script>
+
+</body>
+</html>
