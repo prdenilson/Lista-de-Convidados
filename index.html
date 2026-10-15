@@ -120,6 +120,38 @@
       color: var(--dourado-claro);
     }
 
+
+    /* BOTÕES DE IDIOMA */
+
+    .idiomas {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a.idioma-botao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 10px;
+      border: 1px solid var(--dourado);
+      border-radius: 4px;
+      color: var(--dourado);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: .4px;
+      white-space: nowrap;
+      transition: background .25s, color .25s;
+    }
+
+    nav a.idioma-botao:hover,
+    nav a.idioma-botao:focus-visible {
+      background: var(--dourado);
+      color: var(--fundo);
+    }
+
+    
     /* APRESENTAÇÃO PRINCIPAL */
 
     .hero {
