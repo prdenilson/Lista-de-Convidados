@@ -1,1064 +1,799 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYG8ED1GLC"></script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-DYG8ED1GLC');
-  </script>
-
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Antes Que Eu Seja Usado | Francisco Denílson Pinheiro</title>
 
-  <meta
-    name="description"
-    content="Francisco Denilson Pinheiro — escritor, pastor e autor de livros cristãos."
-  >
+  <meta name="description"
+    content="Conheça Antes Que Eu Seja Usado, de Francisco Denílson Pinheiro. Uma jornada sobre caráter, quebrantamento, transformação e propósito antes de sermos usados por Deus.">
 
-  <title>
-    Francisco Denilson Pinheiro | Escritor
-  </title>
+  <meta name="theme-color" content="#171513">
+  <meta property="og:title" content="Antes Que Eu Seja Usado">
+  <meta property="og:description"
+    content="Uma jornada antes do encontro com nossa vocação.">
+  <meta property="og:image" content="https://prdenilsonescritor.com.br/capa.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prdenilsonescritor.com.br/">
 
+  <link rel="canonical" href="https://prdenilsonescritor.com.br/">
 
   <style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --fundo: #171513;
+      --fundo-secundario: #201d19;
+      --fundo-card: #24211d;
+      --dourado: #c9b58a;
+      --dourado-claro: #e0d0a9;
+      --texto: #f8f6f2;
+      --texto-suave: #d0c9bd;
+      --borda: rgba(201, 181, 138, .28);
+      --largura: 1150px;
     }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 115px;
     }
-
 
     body {
       font-family: Georgia, "Times New Roman", serif;
-      background: #f8f6f2;
-      color: #24211e;
-      line-height: 1.6;
-      overflow-x: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.75;
     }
-
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-    /* =========================
-       CABEÇALHO
-    ========================= */
+    a:focus-visible {
+      outline: 2px solid var(--dourado-claro);
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(var(--largura), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* MENU */
 
     header {
-
-      width: 100%;
-
-      background: #171513;
-
-      color: #fff;
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(23, 21, 19, .97);
+      border-bottom: 1px solid var(--borda);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+      backdrop-filter: blur(12px);
     }
 
-
-    .header-container {
-
-      width: 100%;
-
-      max-width: 1200px;
-
-      min-height: 82px;
-
-      margin: 0 auto;
-
-      padding: 0 20px;
-
+    .menu {
+      max-width: 1300px;
+      min-height: 76px;
+      margin: auto;
+      padding: 12px 25px;
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
-      gap: 20px;
+      gap: 24px;
     }
-
 
     .logo {
-
-      display: flex;
-
-      flex-direction: column;
-
-      line-height: 1.1;
-    }
-
-
-    .logo strong {
-
-      font-size: 18px;
-
-      font-weight: 500;
-
-      letter-spacing: 0.5px;
-    }
-
-
-    .logo span {
-
-      margin-top: 5px;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 10px;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      color: #c9b58a;
-    }
-
-
-    nav ul {
-
-      list-style: none;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 28px;
-    }
-
-
-    nav a {
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
-
-      color: #eee;
-
-      transition: 0.3s;
-
+      color: var(--dourado);
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
       white-space: nowrap;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    nav a {
+      color: var(--texto-suave);
+      font-size: 13px;
+      transition: color .2s;
+    }
 
     nav a:hover,
-    nav a.active {
-
-      color: #c9b58a;
+    nav a:focus-visible {
+      color: var(--dourado-claro);
     }
 
+    /* APRESENTAÇÃO PRINCIPAL */
 
-    .menu-button {
-
-      display: none;
-
-      background: transparent;
-
-      border: none;
-
-      color: white;
-
-      font-size: 28px;
-
-      cursor: pointer;
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 20% 40%,
+          rgba(201, 181, 138, .09), transparent 55%),
+        linear-gradient(135deg, #1c1916, #171513 70%);
+      border-bottom: 1px solid var(--borda);
     }
 
-    /* =========================
-   BOTÕES DE IDIOMA
-========================= */
-
-.idiomas {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.idioma-botao {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 7px 11px;
-
-  border: 1px solid #c9b58a;
-  border-radius: 4px;
-
-  background: transparent;
-  color: #c9b58a;
-
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition: 0.3s ease;
-}
-
-.idioma-botao:hover {
-  background: #c9b58a;
-  color: #171513;
-}
-
-@media (max-width: 800px) {
-
-  .idiomas {
-    width: 100%;
-    gap: 10px;
-  }
-
-  .idioma-botao {
-    flex: 1;
-    padding: 10px 12px;
-    font-size: 10px;
-    text-align: center;
-  }
-
-}
-
-    /* =========================
-       BOTÕES
-    ========================= */
-
-    .button {
-
-      display: inline-block;
-
-      margin-top: 12px;
-
-      padding: 14px 25px;
-
-      background: #c9b58a;
-
-      color: #191715;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-
-      font-weight: bold;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      transition: 0.3s;
-
-      text-align: center;
-
-      border: none;
-
-      cursor: pointer;
-    }
-
-
-    .button:hover {
-
-      background: #e0cfaa;
-
-      transform: translateY(-1px);
-    }
-
-
-    /* =========================
-       SOBRE O AUTOR
-    ========================= */
-
-    .about {
-
-      width: 100%;
-
-      background: #ffffff;
-
-      padding: 80px 20px;
-    }
-
-
-    .about-container {
-
-      width: 100%;
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-    }
-
-
-    .about-grid {
-
+    .hero-conteudo {
+      max-width: 1150px;
+      min-height: 590px;
+      margin: auto;
+      padding: 65px 25px 75px;
       display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 70px;
-
+      grid-template-columns: .85fr 1.15fr;
       align-items: center;
+      gap: 75px;
     }
 
-
-    .about-image {
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
+    .capa {
+      text-align: center;
     }
 
-
-    .about-image img {
-
-      width: 100%;
-
-      max-width: 500px;
-
-      height: auto;
-
+    .capa img {
       display: block;
-
-      border-radius: 4px;
-
-      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+      width: 100%;
+      max-width: 340px;
+      margin: auto;
+      border: 1px solid rgba(201, 181, 138, .2);
+      border-radius: 3px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, .48);
     }
 
-
-    .about-text {
-
-      max-width: 500px;
-    }
-
-
-    .eyebrow {
-
-      font-family: Arial, sans-serif;
-
-      color: #9c8457;
-
-      font-size: 11px;
-
-      font-weight: bold;
-
+    .selo {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--dourado);
+      font-size: 12px;
       letter-spacing: 3px;
-
       text-transform: uppercase;
-
-      margin-bottom: 12px;
     }
 
-
-    .about-text h1 {
-
-      font-size: clamp(32px, 4vw, 48px);
-
-      line-height: 1.1;
-
-      font-weight: 500;
-
-      margin-bottom: 22px;
+    .conteudo-hero h1 {
+      max-width: 650px;
+      margin-bottom: 18px;
+      color: var(--texto);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: normal;
+      line-height: 1.12;
     }
 
+    .subtitulo {
+      margin-bottom: 25px;
+      color: var(--dourado);
+      font-size: 21px;
+      line-height: 1.5;
+    }
 
-    .about-text p {
-
-      color: #5c5751;
-
+    .conteudo-hero p {
+      margin-bottom: 17px;
+      color: var(--texto-suave);
       font-size: 17px;
-
-      margin-bottom: 16px;
     }
 
+    .conteudo-hero p strong {
+      color: var(--texto);
+    }
 
-    /* =========================
-       RODAPÉ
-    ========================= */
+    .frase-destaque {
+      margin-top: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--dourado);
+      color: var(--dourado-claro);
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .botoes-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    /* BOTÕES */
+
+    .botao {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 25px;
+      border: 1px solid var(--dourado);
+      background: var(--dourado);
+      color: #171513;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+      transition: background .25s, color .25s, transform .25s;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background: var(--dourado-claro);
+      border-color: var(--dourado-claro);
+      transform: translateY(-2px);
+    }
+
+    .botao-secundario {
+      background: transparent;
+      color: var(--dourado-claro);
+    }
+
+    .botao-secundario:hover {
+      background: var(--dourado);
+      color: #171513;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 76px 0;
+    }
+
+    .titulo-secao {
+      margin-bottom: 42px;
+      text-align: center;
+    }
+
+    .titulo-secao span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      color: var(--texto);
+      font-size: clamp(27px, 3vw, 36px);
+      font-weight: normal;
+      line-height: 1.25;
+    }
+
+    .titulo-secao::after {
+      display: block;
+      width: 55px;
+      height: 2px;
+      margin: 19px auto 0;
+      background: var(--dourado);
+      content: "";
+    }
+
+    /* DEPOIMENTOS */
+
+    .depoimentos {
+      background: var(--fundo-secundario);
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 22px;
+    }
+
+    .depoimento {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 25px;
+      background: var(--fundo-card);
+      border: 1px solid var(--borda);
+      border-top: 3px solid var(--dourado);
+      transition: transform .25s, border-color .25s;
+    }
+
+    .depoimento:hover {
+      transform: translateY(-4px);
+      border-color: var(--dourado);
+    }
+
+    .aspas {
+      margin-bottom: 15px;
+      color: var(--dourado);
+      font-size: 48px;
+      line-height: .8;
+    }
+
+    .depoimento p {
+      margin-bottom: 20px;
+      color: var(--texto-suave);
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .depoimento strong {
+      display: block;
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px solid var(--borda);
+      color: var(--dourado-claro);
+      font-size: 14px;
+    }
+
+    /* CAPÍTULOS */
+
+    .degustacao {
+      background: var(--fundo);
+    }
+
+    .degustacao-intro {
+      max-width: 730px;
+      margin: -12px auto 38px;
+      color: var(--texto-suave);
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .capitulos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .capitulo {
+      padding: 28px;
+      background: linear-gradient(135deg, #211e1a, #191715);
+      border: 1px solid var(--borda);
+      transition: border-color .25s, transform .25s;
+    }
+
+    .capitulo:hover {
+      transform: translateY(-3px);
+      border-color: var(--dourado);
+    }
+
+    .capitulo-numero {
+      margin-bottom: 7px;
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .capitulo h3 {
+      margin-bottom: 10px;
+      color: var(--texto);
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .capitulo p {
+      color: var(--texto-suave);
+      font-size: 15px;
+    }
+
+    /* INFORMAÇÕES DO LIVRO */
+
+    .informacoes {
+      background: var(--fundo-secundario);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--borda);
+      border-left: 1px solid var(--borda);
+    }
+
+    .info-item {
+      padding: 25px 22px;
+      border-right: 1px solid var(--borda);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .info-item span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--dourado);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .info-item strong {
+      color: var(--texto);
+      font-size: 17px;
+      font-weight: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .condicao-grupo {
+      max-width: 760px;
+      margin: 30px auto 0;
+      padding: 24px;
+      background: #24211d;
+      border-left: 3px solid var(--dourado);
+      color: var(--texto-suave);
+      text-align: center;
+    }
+
+    .condicao-grupo strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dourado-claro);
+      font-size: 18px;
+    }
+
+    .acao-livro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 38px;
+    }
+
+    /* PERGUNTAS */
+
+    .perguntas {
+      background:
+        radial-gradient(ellipse at center,
+          rgba(201, 181, 138, .06), transparent 65%),
+        var(--fundo);
+    }
+
+    .perguntas-intro {
+      max-width: 720px;
+      margin: -10px auto 35px;
+      color: var(--texto-suave);
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .pergunta-box {
+      max-width: 760px;
+      margin: auto;
+      padding: 35px 25px;
+      background: var(--fundo-card);
+      border: 1px solid var(--borda);
+      text-align: center;
+    }
+
+    .pergunta-box strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--dourado-claro);
+      font-size: 21px;
+      font-weight: normal;
+    }
+
+    .pergunta-box p {
+      margin-bottom: 20px;
+      color: var(--texto-suave);
+    }
+
+    /* RODAPÉ */
 
     footer {
-
-      width: 100%;
-
-      background: #12110f;
-
-      color: #ddd;
-
-      padding: 35px 20px 25px;
-    }
-
-
-    .footer-container {
-
-      width: 100%;
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      gap: 30px;
-    }
-
-
-    .footer-name strong {
-
-      display: block;
-
-      font-size: 18px;
-
-      font-weight: 500;
-
-      color: white;
-
-      margin-bottom: 5px;
-    }
-
-
-    .footer-name span {
-
-      font-family: Arial, sans-serif;
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-      color: #c9b58a;
-
-      text-transform: uppercase;
-    }
-
-
-    .footer-links {
-
-      display: flex;
-
-      gap: 18px;
-
-      flex-wrap: wrap;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-    }
-
-
-    .footer-links a:hover {
-
-      color: #c9b58a;
-    }
-
-
-    .copyright {
-
-      width: 100%;
-
-      max-width: 1100px;
-
-      margin: 25px auto 0;
-
-      padding-top: 18px;
-
-      border-top: 1px solid rgba(255,255,255,0.1);
-
-      font-family: Arial, sans-serif;
-
-      font-size: 11px;
-
-      color: #888;
-
+      padding: 32px 20px;
+      background: #100f0d;
+      border-top: 1px solid var(--borda);
+      color: #bdb5a9;
+      font-size: 13px;
       text-align: center;
     }
 
+    footer strong {
+      color: var(--dourado);
+    }
 
-    /* =========================
-       RESPONSIVO
-    ========================= */
+    /* WHATSAPP FLUTUANTE */
 
-    @media (max-width: 800px) {
+    .whatsapp-flutuante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9998;
+      display: flex;
+      width: 56px;
+      height: 56px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #25d366;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .35);
+      transition: transform .2s;
+    }
 
-      .header-container {
+    .whatsapp-flutuante:hover {
+      transform: scale(1.08);
+    }
 
-        min-height: 70px;
+    .whatsapp-flutuante svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 1050px) {
+      .menu {
+        flex-direction: column;
+        padding: 17px 20px;
+        gap: 13px;
       }
-
-
-      .logo strong {
-
-        font-size: 16px;
-      }
-
-
-      .menu-button {
-
-        display: block;
-      }
-
 
       nav {
-
-        display: none;
-
-        position: absolute;
-
-        top: 100%;
-
-        left: 0;
-
-        width: 100%;
-
-        background: #171513;
-
-        padding: 20px;
-
-        box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+        justify-content: center;
+        gap: 10px 18px;
       }
 
-
-      nav.open {
-
-        display: block;
+      .hero-conteudo {
+        gap: 40px;
       }
 
-
-      nav ul {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 15px;
+      .depoimentos-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
+      .depoimento:last-child {
+        grid-column: 1 / -1;
+      }
+    }
 
-      /* SOBRE */
+    /* CELULARES */
 
-      .about {
-
-        padding: 55px 20px;
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
       }
 
+      .container {
+        width: min(100% - 32px, var(--largura));
+      }
 
-      .about-grid {
+      .menu {
+        padding: 14px 12px;
+      }
 
+      .logo {
+        font-size: 17px;
+      }
+
+      nav {
+        gap: 8px 13px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero-conteudo {
+        min-height: auto;
         grid-template-columns: 1fr;
-
         gap: 35px;
+        padding: 42px 20px 55px;
+      }
 
+      .capa img {
+        max-width: 245px;
+      }
+
+      .conteudo-hero {
         text-align: center;
       }
 
-
-      .about-image img {
-
-        max-width: 430px;
+      .conteudo-hero h1 {
+        font-size: 37px;
       }
 
-
-      .about-text {
-
-        max-width: 100%;
+      .subtitulo {
+        font-size: 19px;
       }
 
-
-      .about-text p {
-
+      .conteudo-hero p {
         font-size: 16px;
       }
 
-
-      .button {
-
-        width: 100%;
-
-        max-width: 320px;
+      .frase-destaque {
+        text-align: left;
+        font-size: 18px;
       }
 
-
-      /* RODAPÉ */
-
-      .footer-container {
-
+      .botoes-hero {
         flex-direction: column;
-
-        text-align: center;
-
         align-items: center;
       }
 
-
-      .footer-links {
-
-        justify-content: center;
+      .botoes-hero .botao {
+        width: 100%;
+        max-width: 330px;
       }
 
+      section {
+        padding: 55px 0;
+      }
+
+      .titulo-secao {
+        margin-bottom: 32px;
+      }
+
+      .depoimentos-grid,
+      .capitulos,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .depoimento:last-child {
+        grid-column: auto;
+      }
+
+      .capitulo {
+        padding: 24px;
+      }
+
+      .info-item {
+        padding: 20px;
+      }
+
+      .acao-livro {
+        flex-direction: column;
+      }
+
+      .acao-livro .botao {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .pergunta-box {
+        padding: 28px 20px;
+      }
+
+      .whatsapp-flutuante {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+      }
     }
 
-/* =========================
-   WHATSAPP FLUTUANTE
-========================= */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
 
-.whatsapp-flutuante {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-
-  width: 58px;
-  height: 58px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #25D366;
-  color: #ffffff;
-
-  border-radius: 50%;
-  text-decoration: none;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
-
-  z-index: 9998;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.whatsapp-flutuante:hover {
-  transform: scale(1.08);
-
-  box-shadow:
-    0 7px 22px rgba(0, 0, 0, 0.30);
-}
-
-.whatsapp-flutuante svg {
-  width: 31px;
-  height: 31px;
-  fill: #ffffff;
-}
-
-@media (max-width: 600px) {
-
-  .whatsapp-flutuante {
-    width: 54px;
-    height: 54px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .whatsapp-flutuante svg {
-    width: 29px;
-    height: 29px;
-  }
-
-}
-    
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
-
 </head>
-
 
 <body>
 
-  <!-- =========================
-     WHATSAPP FLUTUANTE
-========================= -->
+  <!-- WHATSAPP FLUTUANTE -->
 
-<a
-  href="https://wa.me/5585985141830?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20livro%20Antes%20Que%20Eu%20Seja%20Usado."
-  class="whatsapp-flutuante"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Falar pelo WhatsApp"
->
-
-  <svg
-    viewBox="0 0 32 32"
-    aria-hidden="true"
+  <a
+    href="https://wa.me/5585985141830?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20livro%20Antes%20Que%20Eu%20Seja%20Usado"
+    class="whatsapp-flutuante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar pelo WhatsApp"
   >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z"/>
+    </svg>
+  </a>
 
-    <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z" />
-
-  </svg>
-
-</a>
-
-  <!-- =========================
-       CABEÇALHO
-  ========================= -->
+  <!-- MENU PRINCIPAL -->
 
   <header>
+    <div class="menu">
 
-    <div class="header-container">
-
-
-      <a
-        href="index.html"
-        class="logo"
-      >
-
-        <strong>
-          Francisco Denilson Pinheiro
-        </strong>
-
-        <span>
-          Escritor
-        </span>
-
+      <a href="index.html" class="logo">
+        FRANCISCO DENÍLSON
       </a>
 
-
-      <button
-        class="menu-button"
-        onclick="toggleMenu()"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-
-      <nav id="menu">
-
-        <ul>
-
-
-          <li>
-
-            <a
-              href="index.html"
-              class="active"
-            >
-              Início
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="sobre-o-livro.html">
-              Sobre o Livro
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="obras.html">
-              Obras
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="pedidos.html">
-              Pedidos
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="eventos.html">
-              Eventos
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="area-do-leitor.html">
-              Área do Leitor
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="seja-um-escritor.html">
-              Seja um Escritor
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="contato.html">
-              Contato
-            </a>
-
-          </li>
-
-          <li class="idiomas">
-
-  <a
-    href="index.html"
-    class="idioma-botao"
-  >
-    🇧🇷 Português
-  </a>
-
-  <a
-    href="english.html"
-    class="idioma-botao"
-  >
-    🇺🇸 English
-  </a>
-
-</li>
-          
-        </ul>
-
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="sobre-o-livro.html">Sobre o Livro</a>
+        <a href="obras.html">Obras</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="obras.html">Área do Leitor</a>
+        <a href="passoapassoescritores.html">Seja um Escritor</a>
+        <a href="contato.html">Contato</a>
       </nav>
 
     </div>
-
   </header>
-
-
-  <!-- =========================
-       CONTEÚDO
-  ========================= -->
 
   <main>
 
+    <!-- DESTAQUE PRINCIPAL DO LIVRO -->
 
-    <!-- =========================
-         SOBRE O AUTOR
-    ========================= -->
+    <section class="hero" id="inicio">
+      <div class="hero-conteudo">
 
-    <section class="about">
+        <div class="capa">
+          <img
+            src="capa.jpg"
+            alt="Capa do livro Antes Que Eu Seja Usado, de Francisco Denílson Pinheiro"
+            fetchpriority="high"
+          >
+        </div>
 
-      <div class="about-container">
+        <div class="conteudo-hero">
 
-        <div class="about-grid">
+          <span class="selo">Uma jornada de transformação</span>
 
+          <h1>Antes Que Eu Seja Usado</h1>
 
-          <div class="about-image">
-
-            <img
-              src="imagem-pessoal.jpg"
-              alt="Francisco Denilson Pinheiro"
-            >
-
+          <div class="subtitulo">
+            Uma jornada antes do encontro com nossa vocação.
           </div>
 
+          <p>
+            Antes que Deus use nossas mãos, Ele deseja trabalhar em nosso coração.
+          </p>
 
-          <div class="about-text">
+          <p>
+            <strong>Antes Que Eu Seja Usado</strong> é uma jornada de reflexão,
+            transformação e preparação para compreender que, antes de sermos
+            instrumentos nas mãos de Deus, precisamos permitir que Ele trabalhe
+            em nós.
+          </p>
 
-            <div class="eyebrow">
-              Sobre o autor
-            </div>
+          <p>
+            O livro conduz o leitor por uma caminhada de confronto,
+            quebrantamento, transformação, enchimento e, finalmente,
+            disposição para ser usado por Deus.
+          </p>
 
+          <div class="frase-destaque">
+            “A maior obra de Deus é em nós e não através de nós.”
+          </div>
 
-            <h1>
-              Francisco Denilson Pinheiro
-            </h1>
-
-
-            <p>
-              Escritor, pastor e palestrante, dedicado ao ensino das Escrituras e à produção de conteúdos que promovam reflexão, fé e transformação.
-            </p>
-
-
-            <p>
-              Seus escritos nascem da experiência ministerial, da reflexão bíblica e do desejo de ajudar pessoas a compreenderem melhor sua caminhada com Deus.
-            </p>
-
-
-            <a
-              href="sobre-o-livro.html"
-              class="button"
-            >
-              Sobre o Livro
+          <div class="botoes-hero">
+            <a href="pedidos.html" class="botao">
+              ADQUIRIR O LIVRO
             </a>
 
-
-            <a
-              href="https://www.instagram.com/prdenilsonescritor/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Instagram @prdenilsonescritor
+            <a href="#capitulos" class="botao botao-secundario">
+              CONHECER OS CAPÍTULOS
             </a>
-
-
           </div>
 
         </div>
-
       </div>
-
     </section>
 
+    <!-- DEPOIMENTOS DOS LEITORES -->
 
-  </main>
+    <section class="depoimentos" id="depoimentos">
+      <div class="container">
 
+        <div class="titulo-secao">
+          <span>Palavras de quem já começou a jornada</span>
+          <h2>O que os leitores estão dizendo</h2>
+        </div>
 
-  <!-- =========================
-       RODAPÉ
-  ========================= -->
+        <div class="depoimentos-grid">
 
-  <footer>
-
-
-    <div class="footer-container">
-
-
-      <div class="footer-name">
-
-        <strong>
-          Francisco Denilson Pinheiro
-        </strong>
-
-        <span>
-          Escritor
-        </span>
-
-      </div>
-
-
-      <div class="footer-links">
-
-
-        <a href="index.html">
-          Início
-        </a>
-
-
-        <a href="sobre-o-livro.html">
-          Sobre o Livro
-        </a>
-
-
-        <a href="obras.html">
-          Obras
-        </a>
-
-
-        <a href="eventos.html">
-          Eventos
-        </a>
-
-
-        <a href="area-do-leitor.html">
-          Área do Leitor
-        </a>
-
-
-        <a href="contato.html">
-          Contato
-        </a>
-
-
-      </div>
-
-    </div>
-
-
-    <div class="copyright">
-
-      © 2026 Francisco Denilson Pinheiro.
-      Todos os direitos reservados.
-
-    </div>
-
-
-  </footer>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-
-    /* =========================
-       MENU MOBILE
-    ========================= */
-
-    function toggleMenu() {
-
-      const menu =
-        document.getElementById("menu");
-
-
-      const button =
-        document.querySelector(".menu-button");
-
-
-      menu.classList.toggle("open");
-
-
-      const aberto =
-        menu.classList.contains("open");
-
-
-      button.setAttribute(
-        "aria-expanded",
-        aberto
-      );
-
-    }
-
-
-  </script>
-
-
-</body>
-
-</html>
-
+          <article class="depoimento">
+            <div class="aspas" aria-hidden="true">“
