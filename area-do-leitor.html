@@ -1343,6 +1343,29 @@
       }
 
     }
+
+/* BOTÃO FLUTUANTE DO GRUPO DE LEITURA */
+.grupo-leitura-flutuante {
+  position: fixed;
+  right: 20px;
+  bottom: 92px;
+  z-index: 9997;
+  background: #c9b58a;
+  color: #171513;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 600px) {
+  .grupo-leitura-flutuante {
+    right: 16px;
+    bottom: 82px;
+  }
+}
     
   </style>
 
@@ -1373,6 +1396,79 @@
   </svg>
 
 </a>
+
+<!-- BOTÃO FLUTUANTE DO GRUPO DE LEITURA -->
+<button
+  type="button"
+  class="grupo-leitura-flutuante"
+  onclick="abrirGrupoLeitura()"
+>
+  <i class="fa-solid fa-book-open"></i>
+  Grupo de Leitura
+</button>
+
+<!-- JANELA DO GRUPO DE LEITURA -->
+<div
+  class="grupo-modal"
+  id="modalGrupoLeitura"
+  onclick="fecharGrupoLeituraFora(event)"
+>
+  <div
+    class="grupo-modal-conteudo"
+    role="dialog"
+    aria-modal="true"
+    onclick="event.stopPropagation()"
+  >
+
+    <button
+      type="button"
+      class="grupo-modal-fechar"
+      onclick="fecharGrupoLeitura()"
+      aria-label="Fechar"
+    >
+      &times;
+    </button>
+
+    <h2>Grupo de <em>Leitura</em></h2>
+
+    <p>
+      Uma jornada de leitura e reflexão sobre o livro
+      <strong>Antes Que Eu Seja Usado</strong>,
+      em seis encontros on-line.
+    </p>
+
+    <div class="grupo-modal-detalhes">
+
+      <p><strong>Início:</strong> 16 de novembro de 2026</p>
+
+      <p>
+        <strong>Datas:</strong><br>
+        16, 23 e 30 de novembro;<br>
+        7, 14 e 21 de dezembro.
+      </p>
+
+      <p><strong>Horário:</strong> Segundas-feiras, às 21h.</p>
+
+      <p><strong>Plataforma:</strong> Google Meet.</p>
+
+    </div>
+
+    <a
+      href="https://chat.whatsapp.com/Fd0f8gvpCHcFKuEAwLwK1o?s=sh&p=a&mlu=4&ilr=4&iam=2"
+      class="grupo-modal-participar"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      PARTICIPAR DO GRUPO
+    </a>
+
+    <p class="grupo-modal-observacao">
+      Entre no grupo do WhatsApp para receber as orientações
+      sobre os encontros e o acesso ao Google Meet.
+    </p>
+
+  </div>
+</div>
   
   <!-- =====================================================
        CABEÇALHO
@@ -2712,6 +2808,34 @@
       }
     );
 
+/* GRUPO DE LEITURA — ABRIR E FECHAR MODAL */
+
+function abrirGrupoLeitura() {
+  const modal = document.getElementById("modalGrupoLeitura");
+
+  modal.classList.add("aberto");
+  document.body.style.overflow = "hidden";
+}
+
+function fecharGrupoLeitura() {
+  const modal = document.getElementById("modalGrupoLeitura");
+
+  modal.classList.remove("aberto");
+  document.body.style.overflow = "";
+}
+
+function fecharGrupoLeituraFora(event) {
+  if (event.target.id === "modalGrupoLeitura") {
+    fecharGrupoLeitura();
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    fecharGrupoLeitura();
+  }
+});
+    
   </script>
 
 </body>
