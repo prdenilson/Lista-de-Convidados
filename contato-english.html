@@ -226,115 +226,111 @@
 
       </p>
 
-      <form id="formContato">
+      
+<form id="formContato">
 
-        <!-- NAME -->
+  <!-- NAME -->
+  <div class="contato-campo">
 
-        <div class="contato-campo">
+    <label for="nomeContato">
+      Your name
+    </label>
 
-          <label for="nomeContato">
-            Your name
-          </label>
+    <input
+      type="text"
+      id="nomeContato"
+      name="nome"
+      placeholder="What should I call you?"
+      autocomplete="name"
+      required
+    >
 
-          <input
-            type="text"
-            id="nomeContato"
-            name="nome"
-            placeholder="What should I call you?"
-            autocomplete="name"
-            required
-          >
+  </div>
 
-        </div>
+  <!-- EMAIL -->
+  <div class="contato-campo">
 
-        <!-- EMAIL -->
+    <label for="emailContato">
+      Your email address
+    </label>
 
-        <div class="contato-campo">
+    <input
+      type="email"
+      id="emailContato"
+      name="email"
+      placeholder="youremail@example.com"
+      autocomplete="email"
+      required
+    >
 
-          <label for="emailContato">
-            Your email address
-          </label>
+  </div>
 
-          <input
-            type="email"
-            id="emailContato"
-            name="email"
-            placeholder="youremail@example.com"
-            autocomplete="email"
-            required
-          >
+  <!-- SUBJECT -->
+  <div class="contato-campo">
 
-        </div>
+    <label for="tipoContato">
+      What would you like to talk about?
+    </label>
 
-        <!-- SUBJECT -->
+    <select
+      id="tipoContato"
+      name="tipo"
+      required
+    >
 
-        <div class="contato-campo">
+      <option value="">
+        Choose an option
+      </option>
 
-          <label for="tipoContato">
-            What would you like to talk about?
-          </label>
+      <option value="A message from a reader">
+        A message from a reader
+      </option>
 
-          <select
-            id="tipoContato"
-            name="tipo"
-            required
-          >
+      <option value="Partnership / Press">
+        Partnership / Press
+      </option>
 
-            <option value="">
-              Choose an option
-            </option>
+      <option value="Event / Speaking invitation">
+        Event / Speaking invitation
+      </option>
 
-            <option value="Dear reader">
-              A message from a reader
-            </option>
+      <option value="Other">
+        Other
+      </option>
 
-            <option value="Partnership/Press">
-              Partnership / Press
-            </option>
+    </select>
 
-            <option value="Event/Speaking invitation">
-              Event / Speaking invitation
-            </option>
+  </div>
 
-            <option value="Other">
-              Other
-            </option>
+  <!-- MESSAGE -->
+  <div class="contato-campo">
 
-          </select>
+    <label for="mensagemContato">
+      Your message
+    </label>
 
-        </div>
+    <textarea
+      id="mensagemContato"
+      name="mensagem"
+      placeholder="Write your note here..."
+      required
+    ></textarea>
 
-        <!-- MESSAGE -->
+  </div>
 
-        <div class="contato-campo">
+  <!-- SUBMIT BUTTON -->
+  <button
+    type="submit"
+    class="contato-enviar"
+  >
 
-          <label for="mensagemContato">
-            Your message
-          </label>
+    <i class="fa-solid fa-feather-pointed"></i>
 
-          <textarea
-            id="mensagemContato"
-            name="mensagem"
-            placeholder="Write your note here..."
-            required
-          ></textarea>
+    Send my message
 
-        </div>
+  </button>
 
-        <!-- SUBMIT BUTTON -->
-
-        <button
-          type="submit"
-          class="contato-enviar"
-        >
-
-          <i class="fa-solid fa-feather-pointed"></i>
-
-          Send my message
-
-        </button>
-
-      </form>
+</form>
 
     </section>
 
