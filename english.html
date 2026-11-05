@@ -1,1064 +1,1103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <!-- =========================
-       GOOGLE ANALYTICS
-  ========================= -->
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYG8ED1GLC"></script>
-
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DYG8ED1GLC');
   </script>
 
-
-  <!-- =========================
-       META
-  ========================= -->
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Before I Am Used | Francisco Denilson Pinheiro</title>
 
-  <meta
-    name="description"
-    content="Francisco Denilson Pinheiro — writer, pastor and speaker, author of Christian books."
-  >
+  <meta name="description"
+    content="Discover Before I Am Used by Francisco Denilson Pinheiro: a journey of character, surrender, transformation, and purpose before being used by God.">
 
-  <title>
-    Francisco Denilson Pinheiro | Writer
-  </title>
+  <meta name="theme-color" content="#171513">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Before I Am Used">
+  <meta property="og:description"
+    content="A journey before discovering our calling.">
+  <meta property="og:image" content="https://prdenilsonescritor.com.br/capa.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prdenilsonescritor.com.br/english.html">
 
+  <link rel="canonical" href="https://prdenilsonescritor.com.br/english.html">
 
   <style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --fundo: #171513;
+      --fundo-secundario: #201d19;
+      --fundo-card: #24211d;
+      --dourado: #c9b58a;
+      --dourado-claro: #e0d0a9;
+      --texto: #f8f6f2;
+      --texto-suave: #d0c9bd;
+      --borda: rgba(201, 181, 138, .28);
+      --largura: 1150px;
     }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 115px;
     }
-
 
     body {
       font-family: Georgia, "Times New Roman", serif;
-
-      background: #f8f6f2;
-
-      color: #24211e;
-
-      line-height: 1.6;
-
-      overflow-x: hidden;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.75;
     }
-
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-    /* =========================
-       CABEÇALHO
-    ========================= */
+    a:focus-visible {
+      outline: 2px solid var(--dourado-claro);
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(var(--largura), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* MENU */
 
     header {
-
-      width: 100%;
-
-      background: #171513;
-
-      color: #fff;
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
-      border-bottom:
-        1px solid rgba(255,255,255,0.08);
+      background: rgba(23, 21, 19, .97);
+      border-bottom: 1px solid var(--borda);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+      backdrop-filter: blur(12px);
     }
 
-
-    .header-container {
-
-      width: 100%;
-
-      max-width: 1200px;
-
-      min-height: 82px;
-
-      margin: 0 auto;
-
-      padding: 0 20px;
-
+    .menu {
+      max-width: 1300px;
+      min-height: 76px;
+      margin: auto;
+      padding: 12px 25px;
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
-      gap: 20px;
+      gap: 24px;
     }
-
-
-    /* =========================
-       LOGO
-    ========================= */
 
     .logo {
+      color: var(--dourado);
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+    }
 
+    nav {
       display: flex;
-
-      flex-direction: column;
-
-      line-height: 1.1;
-
-      flex-shrink: 0;
-    }
-
-
-    .logo strong {
-
-      font-size: 18px;
-
-      font-weight: 500;
-
-      letter-spacing: 0.5px;
-    }
-
-
-    .logo span {
-
-      margin-top: 5px;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 10px;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      color: #c9b58a;
-    }
-
-
-    /* =========================
-       MENU
-    ========================= */
-
-    nav ul {
-
-      list-style: none;
-
-      display: flex;
-
       align-items: center;
-
-      gap: 28px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px 20px;
     }
-
 
     nav a {
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
-
-      color: #eee;
-
-      transition: 0.3s;
-
-      white-space: nowrap;
+      color: var(--texto-suave);
+      font-size: 13px;
+      transition: color .2s;
     }
-
 
     nav a:hover,
-    nav a.active {
-
-      color: #c9b58a;
+    nav a:focus-visible {
+      color: var(--dourado-claro);
     }
 
 
-    /* =========================
-       BOTÃO MENU MOBILE
-    ========================= */
+    /* BOTÕES DE IDIOMA */
 
-    .menu-button {
-
-      display: none;
-
-      background: transparent;
-
-      border: none;
-
-      color: white;
-
-      font-size: 28px;
-
-      cursor: pointer;
-    }
-
-
-    /* =========================
-       IDIOMA
-    ========================= */
-
-    .language-switch {
-
-      font-family: Arial, sans-serif;
-
-      font-size: 11px;
-
-      letter-spacing: 1px;
-
-      color: #c9b58a;
-
-      white-space: nowrap;
-
-      transition: 0.3s;
-    }
-
-
-    .language-switch:hover {
-
-      color: #e0cfaa;
-    }
-
-
-    /* =========================
-       BOTÕES
-    ========================= */
-
-    .button {
-
-      display: inline-block;
-
-      margin-top: 12px;
-
-      padding: 14px 25px;
-
-      background: #c9b58a;
-
-      color: #191715;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-
-      font-weight: bold;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      transition: 0.3s;
-
-      text-align: center;
-
-      border: none;
-
-      cursor: pointer;
-    }
-
-
-    .button:hover {
-
-      background: #e0cfaa;
-
-      transform: translateY(-1px);
-    }
-
-
-    /* =========================
-       SOBRE O AUTOR
-    ========================= */
-
-    .about {
-
-      width: 100%;
-
-      background: #ffffff;
-
-      padding: 80px 20px;
-    }
-
-
-    .about-container {
-
-      width: 100%;
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-    }
-
-
-    .about-grid {
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 70px;
-
+    .idiomas {
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-
-    /* =========================
-       IMAGEM
-    ========================= */
-
-    .about-image {
-
-      display: flex;
-
+    nav a.idioma-botao {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-
-      align-items: center;
-    }
-
-
-    .about-image img {
-
-      width: 100%;
-
-      max-width: 500px;
-
-      height: auto;
-
-      display: block;
-
+      padding: 7px 10px;
+      border: 1px solid var(--dourado);
       border-radius: 4px;
-
-      box-shadow:
-        0 18px 40px rgba(0,0,0,0.14);
-    }
-
-
-    /* =========================
-       TEXTO
-    ========================= */
-
-    .about-text {
-
-      max-width: 500px;
-    }
-
-
-    .eyebrow {
-
-      font-family: Arial, sans-serif;
-
-      color: #9c8457;
-
+      color: var(--dourado);
       font-size: 11px;
-
       font-weight: bold;
+      letter-spacing: .4px;
+      white-space: nowrap;
+      transition: background .25s, color .25s;
+    }
 
+    nav a.idioma-botao:hover,
+    nav a.idioma-botao:focus-visible {
+      background: var(--dourado);
+      color: var(--fundo);
+    }
+
+
+    /* APRESENTAÇÃO PRINCIPAL */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 20% 40%,
+          rgba(201, 181, 138, .09), transparent 55%),
+        linear-gradient(135deg, #1c1916, #171513 70%);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .hero-conteudo {
+      max-width: 1150px;
+      min-height: 590px;
+      margin: auto;
+      padding: 65px 25px 75px;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .capa {
+      text-align: center;
+    }
+
+    .capa img {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      margin: auto;
+      border: 1px solid rgba(201, 181, 138, .2);
+      border-radius: 3px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, .48);
+    }
+
+    .selo {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--dourado);
+      font-size: 12px;
       letter-spacing: 3px;
-
       text-transform: uppercase;
-
-      margin-bottom: 12px;
     }
 
-
-    .about-text h1 {
-
-      font-size:
-        clamp(32px, 4vw, 48px);
-
-      line-height: 1.1;
-
-      font-weight: 500;
-
-      margin-bottom: 22px;
+    .conteudo-hero h1 {
+      max-width: 650px;
+      margin-bottom: 18px;
+      color: var(--texto);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: normal;
+      line-height: 1.12;
     }
 
+    .subtitulo {
+      margin-bottom: 25px;
+      color: var(--dourado);
+      font-size: 21px;
+      line-height: 1.5;
+    }
 
-    .about-text p {
-
-      color: #5c5751;
-
+    .conteudo-hero p {
+      margin-bottom: 17px;
+      color: var(--texto-suave);
       font-size: 17px;
-
-      margin-bottom: 16px;
     }
 
+    .conteudo-hero p strong {
+      color: var(--texto);
+    }
 
-    /* =========================
-       RODAPÉ
-    ========================= */
+    .frase-destaque {
+      margin-top: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--dourado);
+      color: var(--dourado-claro);
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .botoes-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    /* BOTÕES */
+
+    .botao {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 25px;
+      border: 1px solid var(--dourado);
+      background: var(--dourado);
+      color: #171513;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+      transition: background .25s, color .25s, transform .25s;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background: var(--dourado-claro);
+      border-color: var(--dourado-claro);
+      transform: translateY(-2px);
+    }
+
+    .botao-secundario {
+      background: transparent;
+      color: var(--dourado-claro);
+    }
+
+    .botao-secundario:hover {
+      background: var(--dourado);
+      color: #171513;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 76px 0;
+    }
+
+    .titulo-secao {
+      margin-bottom: 42px;
+      text-align: center;
+    }
+
+    .titulo-secao span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      color: var(--texto);
+      font-size: clamp(27px, 3vw, 36px);
+      font-weight: normal;
+      line-height: 1.25;
+    }
+
+    .titulo-secao::after {
+      display: block;
+      width: 55px;
+      height: 2px;
+      margin: 19px auto 0;
+      background: var(--dourado);
+      content: "";
+    }
+
+    /* DEPOIMENTOS */
+
+    .depoimentos {
+      background: var(--fundo-secundario);
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 22px;
+    }
+
+    .depoimento {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 25px;
+      background: var(--fundo-card);
+      border: 1px solid var(--borda);
+      border-top: 3px solid var(--dourado);
+      transition: transform .25s, border-color .25s;
+    }
+
+    .depoimento:hover {
+      transform: translateY(-4px);
+      border-color: var(--dourado);
+    }
+
+    .aspas {
+      margin-bottom: 15px;
+      color: var(--dourado);
+      font-size: 48px;
+      line-height: .8;
+    }
+
+    .depoimento p {
+      margin-bottom: 20px;
+      color: var(--texto-suave);
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .depoimento strong {
+      display: block;
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px solid var(--borda);
+      color: var(--dourado-claro);
+      font-size: 14px;
+    }
+
+    /* CAPÍTULOS */
+
+    .degustacao {
+      background: var(--fundo);
+    }
+
+    .degustacao-intro {
+      max-width: 730px;
+      margin: -12px auto 38px;
+      color: var(--texto-suave);
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .capitulos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .capitulo {
+      padding: 28px;
+      background: linear-gradient(135deg, #211e1a, #191715);
+      border: 1px solid var(--borda);
+      transition: border-color .25s, transform .25s;
+    }
+
+    .capitulo:hover {
+      transform: translateY(-3px);
+      border-color: var(--dourado);
+    }
+
+    .capitulo-numero {
+      margin-bottom: 7px;
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .capitulo h3 {
+      margin-bottom: 10px;
+      color: var(--texto);
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .capitulo p {
+      color: var(--texto-suave);
+      font-size: 15px;
+    }
+
+    /* INFORMAÇÕES DO LIVRO */
+
+    .informacoes {
+      background: var(--fundo-secundario);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--borda);
+      border-left: 1px solid var(--borda);
+    }
+
+    .info-item {
+      padding: 25px 22px;
+      border-right: 1px solid var(--borda);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .info-item span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--dourado);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .info-item strong {
+      color: var(--texto);
+      font-size: 17px;
+      font-weight: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .condicao-grupo {
+      max-width: 760px;
+      margin: 30px auto 0;
+      padding: 24px;
+      background: #24211d;
+      border-left: 3px solid var(--dourado);
+      color: var(--texto-suave);
+      text-align: center;
+    }
+
+    .condicao-grupo strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dourado-claro);
+      font-size: 18px;
+    }
+
+    .acao-livro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 38px;
+    }
+
+    /* PERGUNTAS */
+
+    .perguntas {
+      background:
+        radial-gradient(ellipse at center,
+          rgba(201, 181, 138, .06), transparent 65%),
+        var(--fundo);
+    }
+
+    .perguntas-intro {
+      max-width: 720px;
+      margin: -10px auto 35px;
+      color: var(--texto-suave);
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .pergunta-box {
+      max-width: 760px;
+      margin: auto;
+      padding: 35px 25px;
+      background: var(--fundo-card);
+      border: 1px solid var(--borda);
+      text-align: center;
+    }
+
+    .pergunta-box strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--dourado-claro);
+      font-size: 21px;
+      font-weight: normal;
+    }
+
+    .pergunta-box p {
+      margin-bottom: 20px;
+      color: var(--texto-suave);
+    }
+
+    /* RODAPÉ */
 
     footer {
-
-      width: 100%;
-
-      background: #12110f;
-
-      color: #ddd;
-
-      padding: 35px 20px 25px;
-    }
-
-
-    .footer-container {
-
-      width: 100%;
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      gap: 30px;
-    }
-
-
-    .footer-name strong {
-
-      display: block;
-
-      font-size: 18px;
-
-      font-weight: 500;
-
-      color: white;
-
-      margin-bottom: 5px;
-    }
-
-
-    .footer-name span {
-
-      font-family: Arial, sans-serif;
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-      color: #c9b58a;
-
-      text-transform: uppercase;
-    }
-
-
-    .footer-links {
-
-      display: flex;
-
-      gap: 18px;
-
-      flex-wrap: wrap;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 12px;
-    }
-
-
-    .footer-links a:hover {
-
-      color: #c9b58a;
-    }
-
-
-    .copyright {
-
-      width: 100%;
-
-      max-width: 1100px;
-
-      margin: 25px auto 0;
-
-      padding-top: 18px;
-
-      border-top:
-        1px solid rgba(255,255,255,0.1);
-
-      font-family: Arial, sans-serif;
-
-      font-size: 11px;
-
-      color: #888;
-
+      padding: 32px 20px;
+      background: #100f0d;
+      border-top: 1px solid var(--borda);
+      color: #bdb5a9;
+      font-size: 13px;
       text-align: center;
     }
 
+    footer strong {
+      color: var(--dourado);
+    }
 
-    /* =========================
-       WHATSAPP FLUTUANTE
-    ========================= */
+    /* WHATSAPP FLUTUANTE */
 
     .whatsapp-flutuante {
-
       position: fixed;
-
       right: 20px;
-
       bottom: 20px;
-
-      width: 58px;
-
-      height: 58px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background: #25D366;
-
-      color: #ffffff;
-
-      border-radius: 50%;
-
-      text-decoration: none;
-
-      box-shadow:
-        0 5px 18px rgba(0,0,0,0.25);
-
       z-index: 9998;
+      display: flex;
+      width: 56px;
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+          height: 56px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #25d366;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .35);
+      transition: transform .2s;
     }
-
 
     .whatsapp-flutuante:hover {
-
       transform: scale(1.08);
-
-      box-shadow:
-        0 7px 22px rgba(0,0,0,0.30);
     }
-
 
     .whatsapp-flutuante svg {
-
-      width: 31px;
-
-      height: 31px;
-
-      fill: #ffffff;
+      width: 30px;
+      height: 30px;
+      fill: #fff;
     }
 
+    /* TABLETS */
 
-    /* =========================
-       RESPONSIVO
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .header-container {
-
-        min-height: 70px;
-
-        position: relative;
+    @media (max-width: 1050px) {
+      .menu {
+        flex-direction: column;
+        padding: 17px 20px;
+        gap: 13px;
       }
-
-
-      .logo strong {
-
-        font-size: 16px;
-      }
-
-
-      .menu-button {
-
-        display: block;
-
-        margin-left: auto;
-      }
-
-
-      .language-switch {
-
-        margin-left: 12px;
-      }
-
 
       nav {
-
-        display: none;
-
-        position: absolute;
-
-        top: 100%;
-
-        left: 0;
-
-        width: 100%;
-
-        background: #171513;
-
-        padding: 20px;
-
-        box-shadow:
-          0 10px 10px rgba(0,0,0,0.3);
+        justify-content: center;
+        gap: 10px 18px;
       }
 
-
-      nav.open {
-
-        display: block;
+      .hero-conteudo {
+        gap: 40px;
       }
 
-
-      nav ul {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 15px;
+      .depoimentos-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
+      .depoimento:last-child {
+        grid-column: 1 / -1;
+      }
+    }
 
-      /* SOBRE */
+    /* CELULARES */
 
-      .about {
-
-        padding: 55px 20px;
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
       }
 
+      .container {
+        width: min(100% - 32px, var(--largura));
+      }
 
-      .about-grid {
+      .menu {
+        padding: 14px 12px;
+      }
 
+      .logo {
+        font-size: 17px;
+      }
+
+      nav {
+        gap: 8px 13px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero-conteudo {
+        min-height: auto;
         grid-template-columns: 1fr;
-
         gap: 35px;
+        padding: 42px 20px 55px;
+      }
 
+      .capa img {
+        max-width: 245px;
+      }
+
+      .conteudo-hero {
         text-align: center;
       }
 
-
-      .about-image img {
-
-        max-width: 430px;
+      .conteudo-hero h1 {
+        font-size: 37px;
       }
 
-
-      .about-text {
-
-        max-width: 100%;
+      .subtitulo {
+        font-size: 19px;
       }
 
-
-      .about-text p {
-
+      .conteudo-hero p {
         font-size: 16px;
       }
 
-
-      .button {
-
-        width: 100%;
-
-        max-width: 320px;
+      .frase-destaque {
+        text-align: left;
+        font-size: 18px;
       }
 
-
-      /* RODAPÉ */
-
-      .footer-container {
-
+      .botoes-hero {
         flex-direction: column;
-
-        text-align: center;
-
         align-items: center;
       }
 
-
-      .footer-links {
-
-        justify-content: center;
+      .botoes-hero .botao {
+        width: 100%;
+        max-width: 330px;
       }
 
-    }
+      section {
+        padding: 55px 0;
+      }
 
+      .titulo-secao {
+        margin-bottom: 32px;
+      }
 
-    @media (max-width: 600px) {
+      .depoimentos-grid,
+      .capitulos,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .depoimento:last-child {
+        grid-column: auto;
+      }
+
+      .capitulo {
+        padding: 24px;
+      }
+
+      .info-item {
+        padding: 20px;
+      }
+
+      .acao-livro {
+        flex-direction: column;
+      }
+
+      .acao-livro .botao {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .pergunta-box {
+        padding: 28px 20px;
+      }
 
       .whatsapp-flutuante {
-
-        width: 54px;
-
-        height: 54px;
-
-        right: 16px;
-
-        bottom: 16px;
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
       }
-
-
-      .whatsapp-flutuante svg {
-
-        width: 29px;
-
-        height: 29px;
-      }
-
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- =========================
-       WHATSAPP
-  ========================= -->
+  <!-- FLOATING WHATSAPP BUTTON -->
 
   <a
-    href="https://wa.me/5585985141830?text=Hello!%20I%20came%20from%20your%20website%20and%20would%20like%20to%20know%20more%20about%20the%20book%20Before%20I%20Am%20Used."
+    href="https://wa.me/5585985141830?text=Hello!%20I%20came%20from%20your%20website%20and%20would%20like%20to%20know%20more%20about%20Before%20I%20Am%20Used."
     class="whatsapp-flutuante"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Contact via WhatsApp"
+    aria-label="Contact me on WhatsApp"
   >
-
-    <svg
-      viewBox="0 0 32 32"
-      aria-hidden="true"
-    >
-
-      <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z" />
-
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.39c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 26.67h-.01a10.67 10.67 0 0 1-5.44-1.49l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.65 10.65 0 1 1 9.05 5zM16 2.67a13.33 13.33 0 0 0-11.4 20.25L3.11 28.4l5.62-1.47A13.33 13.33 0 1 0 16 2.67z"/>
     </svg>
-
   </a>
 
-
-  <!-- =========================
-       CABEÇALHO
-  ========================= -->
+  <!-- MAIN NAVIGATION -->
 
   <header>
+    <div class="menu">
 
-    <div class="header-container">
+      <a href="english.html" class="logo">
+        FRANCISCO DENÍLSON
+      </a>
 
-
-      <!-- LOGO -->
-
-      <a
-        href="english.html"
-        class="logo"
-      >
-
-        <strong>
-          Francisco Denilson Pinheiro
-        </strong>
-
-        <span>
-          Writer
+      <nav aria-label="Main navigation">
+        <a href="english.html" aria-current="page">Home</a>
+        <a href="sobre-o-livro-english.html">About the Book</a>
+        <a href="area-do-leitor-english.html">Reader’s Area</a>
+        <a href="pedidos-english.html">Orders</a>
+        <span class="idiomas" aria-label="Choose language">
+          <a href="index.html" class="idioma-botao">🇧🇷 Português</a>
+          <a href="english.html" class="idioma-botao" aria-current="page">🇺🇸 English</a>
         </span>
-
-      </a>
-
-
-      <!-- MENU MOBILE -->
-
-      <button
-        class="menu-button"
-        onclick="toggleMenu()"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-
-      <!-- IDIOMA -->
-
-      <a
-        href="index.html"
-        class="language-switch"
-        aria-label="Portuguese version"
-      >
-        🇧🇷 Português
-      </a>
-
-
-      <!-- MENU -->
-
-      <nav id="menu">
-
-        <ul>
-
-
-          <li>
-
-            <a
-              href="english.html"
-              class="active"
-            >
-              Home
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="sobre-o-livro-english.html">
-              About the Book
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="area-do-leitor-english.html">
-              Reader's Area
-            </a>
-
-          </li>
-
-
-          <li>
-
-            <a href="pedidos-english.html">
-              Orders
-            </a>
-
-          </li>
-
-
-        </ul>
-
       </nav>
 
 
     </div>
-
   </header>
-
-
-  <!-- =========================
-       CONTEÚDO PRINCIPAL
-  ========================= -->
 
   <main>
 
+    <!-- MAIN BOOK FEATURE -->
 
-    <!-- =========================
-         SOBRE O AUTOR
-    ========================= -->
+    <section class="hero" id="inicio">
+      <div class="hero-conteudo">
 
-    <section class="about">
+        <div class="capa">
+          <img
+            src="capa.jpg"
+            alt="Cover of Before I Am Used by Francisco Denilson Pinheiro"
+            fetchpriority="high"
+          >
+        </div>
 
-      <div class="about-container">
+        <div class="conteudo-hero">
 
-        <div class="about-grid">
+          <span class="selo">A journey of transformation</span>
 
+          <h1>Before I Am Used</h1>
 
-          <!-- IMAGEM -->
-
-          <div class="about-image">
-
-            <img
-              src="imagem-pessoal.jpg"
-              alt="Francisco Denilson Pinheiro"
-            >
-
+          <div class="subtitulo">
+            A journey before discovering our calling.
           </div>
 
+          <p>
+            Before God uses our hands, He wants to work in our hearts.
+          </p>
 
-          <!-- TEXTO -->
+          <p>
+            <strong>Before I Am Used</strong> is a journey of reflection,
+            transformation, and preparation. It helps us understand that before we become
+            instruments in God’s hands, we must allow Him to work
+            within us.
+          </p>
 
-          <div class="about-text">
+          <p>
+            The book leads readers through a journey of self-examination,
+            surrender, transformation, being filled by God, and ultimately
+            becoming willing to be used by God.
+          </p>
 
-            <div class="eyebrow">
-              About the Author
-            </div>
-
-
-            <h1>
-              Francisco Denilson Pinheiro
-            </h1>
-
-
-            <p>
-              Writer, pastor and speaker, dedicated to teaching Scripture and creating content that encourages reflection, faith and transformation.
-            </p>
-
-
-            <p>
-              His writings are born from his ministry experience, biblical reflection and his desire to help people better understand their journey with God.
-            </p>
-
-
-            <a
-              href="sobre-o-livro-english.html"
-              class="button"
-            >
-              About the Book
-            </a>
-
-
-            <a
-              href="https://www.instagram.com/prdenilsonescritor/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Instagram @prdenilsonescritor
-            </a>
-
-
+          <div class="frase-destaque">
+            “God’s greatest work is in us, not through us.”
           </div>
 
+          <div class="botoes-hero">
+            <a href="pedidos-english.html" class="botao">
+              ORDER THE BOOK
+            </a>
+
+            <a href="#capitulos" class="botao botao-secundario">
+              EXPLORE THE CHAPTERS
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- READER TESTIMONIALS -->
+
+    <section class="depoimentos" id="depoimentos">
+      <div class="container">
+
+        <div class="titulo-secao">
+          <span>Words from readers who have begun the journey</span>
+          <h2>What readers are saying</h2>
+        </div>
+
+        <div class="depoimentos-grid">
+
+          <article class="depoimento">
+            <div class="aspas" aria-hidden="true">“</div>
+
+            <p>
+              Each chapter makes me realize that before becoming an instrument in God’s hands, I must be willing to let the Lord search me, break me, transform me, fill me, and ultimately shape me according to His will.
+            </p>
+
+            <strong>— Maria José Pinheiro</strong>
+          </article>
+
+          <article class="depoimento">
+            <div class="aspas" aria-hidden="true">“</div>
+
+            <p>
+              I will certainly read it again. What stayed with me most was the realization that our God wants to have a genuine relationship with us. He does not call us merely to do a work; He calls us because He loves us.
+            </p>
+
+            <strong>— Itála Rodrigues</strong>
+          </article>
+
+          <article class="depoimento">
+            <div class="aspas" aria-hidden="true">“</div>
+
+            <p>
+              I would like to mention two things. The first is the danger of religious activism: men and women who want to do God’s work without knowing the God of the work.
+            </p>
+
+                   <p>
+              The second is the true meaning of a broken and surrendered heart. It is not simply being moved to tears; its true meaning involves a change of direction and attitudes, even in the way we pray. We can run the risk of praying only for our own benefit instead of genuinely seeking to know God’s will.
+            </p>
+
+            <strong>— Edgleison</strong>
+          </article>
+
+          <article class="depoimento">
+            <div class="aspas" aria-hidden="true">“</div>
+
+            <p>
+              While reading Before I Am Used, I realized that we often think we are doing everything right. We may even take pride in what we do for God, yet sometimes we are deceiving ourselves. When frustration comes, we tend to blame God Himself. The truth, however, is that we were pursuing our own will, not God’s!
+            </p>
+
+          <strong>— Clea Fernandes</strong>          
+          </article>
+
+          <article class="depoimento">
+  <div class="aspas" aria-hidden="true">“</div>
+
+  <p>
+    I just wanted to congratulate you. What an incredible book! I pray that God will continue to cover you with grace and wisdom, leading you along this path of dependence and surrender. May this book touch a generation and awaken a strong people who understand that it is not about doing a lot for God, but about being with Him.<strong> </strong> 
+  </p>
+
+  <strong>— Pr. Klécio</strong>
+</article>
+
+<article class="depoimento">
+  <div class="aspas" aria-hidden="true">“</div>
+
+  <p>
+    My dear brother, I am a very rational person. I usually approach everything thoughtfully, with plans and practical steps, and this has brought good results in what I do — to the point that I even considered myself a good servant.
+  </p>
+
+  <p>
+    That was shaken when I read your book. My service had become the foundation of my relationship with God; it was what made me feel like a “true Christian.” Now, thanks to this book, I have lost that sense of security — my eyes have been opened — and I was not expecting this.
+  </p>
+
+  <p>
+    I now have to reconsider many things in my life. Deep down, I already sensed them, but I kept quiet because, to me, everything seemed to be working. Now I can no longer hide from it: what was concealed has been brought to light. All I can say, my brother, is: THANK YOU!
+  </p>
+
+  <strong>— Pr. Leonardo</strong>
+</article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER PREVIEW -->
+    <section class="degustacao" id="capitulos">
+      <div class="container">
+
+        <div class="titulo-secao">
+          <span>A journey</span>
+          <h2>Explore the chapters</h2>
+        </div>
+
+        <p class="degustacao-intro">
+          A brief glimpse into the journey presented in
+          <em>Before I Am Used</em>.
+        </p>
+
+        <div class="capitulos">
+
+          <article class="capitulo">
+            <div class="capitulo-numero">CHAPTER 01</div>
+            <h3>Before Anything Else</h3>
+            <p>
+              Before thinking about what God can do through us, we need to understand what He wants to do within us.
+            </p>
+          </article>
+
+          <article class="capitulo">
+            <div class="capitulo-numero">CHAPTER 02</div>
+            <h3>Search Me</h3>
+            <p>
+              A journey of honesty before God, allowing Him to reveal what we often hide even from ourselves.
+            </p>
+          </article>
+
+          <article class="capitulo">
+            <div class="capitulo-numero">CHAPTER 03</div>
+            <h3>Break Me</h3>
+            <p>
+              Surrender is part of God’s process of shaping a heart within us that is willing to obey.
+            </p>
+          </article>
+
+          <article class="capitulo">
+            <div class="capitulo-numero">CHAPTER 04</div>
+            <h3>Transform Me</h3>
+            <p>
+              God is not interested only in changing what we do, but in transforming who we are.
+            </p>
+          </article>
+
+          <article class="capitulo">
+            <div class="capitulo-numero">CHAPTER 05</div>
+            <h3>Fill Me</h3>
+            <p>
+              After we are emptied, there is room for what comes from God. Being filled is also part of the preparation.
+            </p>
+          </article>
+
+          <article class="capitulo">
+            <div class="capitulo-numero">CHAPTER 06</div>
+            <h3>Use Me</h3>
+            <p>
+              Purpose does not begin when we are used. There is a prior work that must take place within us.
+            </p>
+          </article>
 
         </div>
 
-      </div>
+        <div class="acao-livro">
+          <a href="pedidos-english.html" class="botao">ORDER THE BOOK</a>
+          <a href="#edicao" class="botao botao-secundario">
+            VIEW BOOK DETAILS
+          </a>
+        </div>
 
+      </div>
     </section>
 
+    <!-- BOOK DETAILS -->
+
+    <section class="informacoes" id="edicao">
+      <div class="container">
+
+        <div class="titulo-secao">
+          <span>Edition details</span>
+          <h2>Book information</h2>
+        </div>
+
+        <div class="info-grid">
+
+          <div class="info-item">
+            <span>Author</span>
+            <strong>Francisco Denílson Pinheiro</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Title</span>
+            <strong>Before I Am Used</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Pages</span>
+            <strong>110 pages</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Format</span>
+            <strong>14 × 21 cm</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Paper</span>
+            <strong>Coated paper</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Price</span>
+            <strong>R$ 34.90</strong>
+          </div>
+
+        </div>
+
+        <div class="condicao-grupo">
+          <strong>Reading groups</strong>
+          Special conditions are available for groups ordering 8 copies or more.
+        </div>
+
+        <div class="acao-livro">
+          <a href="pedidos-english.html" class="botao">
+            ORDER THE BOOK
+          </a>
+
+          <a href="english.html" class="botao botao-secundario">
+            VOLTAR AO INÍCIO
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUESTIONS ABOUT THE BOOK -->
+
+    <section class="perguntas" id="perguntas">
+      <div class="container">
+
+        <div class="titulo-secao">
+          <span>Let’s talk about the book</span>
+          <h2>Ask a question about the book</h2>
+        </div>
+
+        <p class="perguntas-intro">
+          Do you have a question about the story, the chapters, or the content of <em>Before I Am Used</em>? Contact me directly on WhatsApp.
+        </p>
+
+        <div class="pergunta-box">
+
+          <strong>Would you like to know more about the book?</strong>
+
+          <p>
+            Send me your question. I would be glad to talk with you about the book.
+          </p>
+
+          <a
+            href="https://wa.me/5585985141830?text=Hello!%20I%20visited%20your%20website%20and%20have%20a%20question%20about%20Before%20I%20Am%20Used."
+            class="botao"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ASK YOUR QUESTION ON WHATSAPP
+          </a>
+
+        </div>
+      </div>
+    </section>
 
   </main>
 
-
-  <!-- =========================
-       RODAPÉ
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
-
-    <div class="footer-container">
-
-
-      <!-- NOME -->
-
-      <div class="footer-name">
-
-        <strong>
-          Francisco Denilson Pinheiro
-        </strong>
-
-        <span>
-          Writer
-        </span>
-
-      </div>
-
-
-      <!-- LINKS -->
-
-      <div class="footer-links">
-
-
-        <a href="english.html">
-          Home
-        </a>
-
-
-        <a href="sobre-o-livro-english.html">
-          About the Book
-        </a>
-
-
-        <a href="area-do-leitor-english.html">
-          Reader's Area
-        </a>
-
-
-        <a href="pedidos-english.html">
-          Orders
-        </a>
-
-
-      </div>
-
-
-    </div>
-
-
-    <!-- COPYRIGHT -->
-
-    <div class="copyright">
-
-      © 2026 Francisco Denilson Pinheiro.
+    <p>
+      © 2026 <strong>Francisco Denílson Pinheiro</strong>.
       All rights reserved.
+    </p>
 
-    </div>
-
-
+    <p>Before I Am Used</p>
   </footer>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    function toggleMenu() {
-
-      const menu =
-        document.getElementById("menu");
-
-      const button =
-        document.querySelector(".menu-button");
-
-      menu.classList.toggle("open");
-
-      const aberto =
-        menu.classList.contains("open");
-
-      button.setAttribute(
-        "aria-expanded",
-        aberto
-      );
-
-    }
-
-  </script>
-
-
 </body>
-
 </html>
