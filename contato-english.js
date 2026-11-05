@@ -4,145 +4,70 @@
 ========================================================= */
 
 
-/* =========================================================
-   EMAIL
-========================================================= */
-
-function copiarEmail() {
-
-  const email =
-    "antesqueeusejausado@yahoo.com";
-
-  const botao =
-    document.getElementById("botaoCopiarEmail");
-
-  const textoOriginal =
-    botao.innerHTML;
-
-
-  navigator.clipboard.writeText(email)
-
-    .then(function() {
-
-      botao.classList.add("copiado");
-
-      botao.innerHTML =
-        '<i class="fa-solid fa-check"></i> Email copied';
-
-
-      setTimeout(function() {
-
-        botao.classList.remove("copiado");
-
-        botao.innerHTML =
-          textoOriginal;
-
-      }, 2500);
-
-    })
-
-    .catch(function() {
-
-      botao.innerHTML =
-        '<i class="fa-solid fa-circle-exclamation"></i> Unable to copy email';
-
-    });
-
-}
-
-
-/* =========================================================
-   FAQ ACCORDION
-========================================================= */
+/* FAQ ACCORDION */
 
 document
   .querySelectorAll(".faq-pergunta")
   .forEach(function(pergunta) {
 
-    pergunta.addEventListener(
-      "click",
-      function() {
+    pergunta.addEventListener("click", function() {
 
-        const item =
-          this.closest(".faq-item");
+      const item = this.closest(".faq-item");
 
+      document
+        .querySelectorAll(".faq-item.aberto")
+        .forEach(function(outroItem) {
 
-        document
-          .querySelectorAll(".faq-item.aberto")
-          .forEach(function(outroItem) {
+          if (outroItem !== item) {
+            outroItem.classList.remove("aberto");
+          }
 
-            if (outroItem !== item) {
+        });
 
-              outroItem.classList.remove(
-                "aberto"
-              );
+      item.classList.toggle("aberto");
 
-            }
-
-          });
-
-
-        item.classList.toggle("aberto");
-
-      }
-    );
+    });
 
   });
 
 
-/* =========================================================
-   CONTACT FORM
-========================================================= */
+/* CONTACT FORM — WHATSAPP */
 
-const formulario =
-  document.getElementById("formContato");
-
+const formulario = document.getElementById("formContato");
 
 if (formulario) {
 
-  formulario.addEventListener(
-    "submit",
-    function(event) {
+  formulario.addEventListener("submit", function(event) {
 
-      event.preventDefault();
+    event.preventDefault();
 
+    const nome = document.getElementById("nomeContato").value.trim();
+    const email = document.getElementById("emailContato").value.trim();
+    const assunto = document.getElementById("tipoContato").value;
+    const mensagem = document.getElementById("mensagemContato").value.trim();
 
-      const nome =
-        document.getElementById("nomeContato").value.trim();
+    if (!nome || !email || !assunto || !mensagem) {
 
-      const tipo =
-        document.getElementById("tipoContato").value;
-
-      const mensagem =
-        document.getElementById("mensagemContato").value.trim();
-
-
-      if (!nome || !tipo || !mensagem) {
-
-        alert(
-          "Please complete the required fields before sending your message."
-        );
-
-        return;
-
-      }
-
-
-      /*
-       * For now, this form is only a visual interface.
-       *
-       * It is not yet connected to an email
-       * or message delivery service.
-       */
-
-
-      alert(
-        "Thank you for your message, " +
-        nome +
-        "! The contact form is ready to be connected to a messaging service."
-      );
+      alert("Please complete all fields before sending your message.");
+      return;
 
     }
-  );
+
+    const texto =
+      "NEW MESSAGE FROM YOUR WEBSITE\n\n" +
+      "Name: " + nome + "\n" +
+      "Email: " + email + "\n" +
+      "Subject: " + assunto + "\n\n" +
+      "Message:\n" + mensagem;
+
+    const numeroWhatsApp = "5585985141830";
+
+    const linkWhatsApp =
+      "https://wa.me/" + numeroWhatsApp +
+      "?text=" + encodeURIComponent(texto);
+
+    window.location.href = linkWhatsApp;
+
+  });
 
 }
