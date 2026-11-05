@@ -1,1 +1,660 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Contact | Francisco Denilson Pinheiro</title>
+
+  <meta
+    name="description"
+    content="Get in touch with Francisco Denilson Pinheiro. Send a message about books, speaking engagements, partnerships, or other inquiries."
+  >
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <!-- =====================================================
+       MAIN CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <!-- =====================================================
+       PAGE CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="contato.css"
+  >
+
+</head>
+
+<body class="contato-page">
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+  <div class="header-brand">
+
+    <img
+      src="imagem-pessoal.jpg"
+      alt="Francisco Denilson Pinheiro"
+      class="foto-pessoal"
+    >
+
+    <div class="brand-titles">
+
+      <span class="brand-name">
+        Francisco Denilson
+      </span>
+
+      <span class="brand-sub">
+        Writer & Speaker
+      </span>
+
+    </div>
+
+  </div>
+
+  <nav class="menu-desktop">
+
+    <a href="english.html">
+      Home
+    </a>
+
+    <a href="obras-english.html">
+      Books
+    </a>
+
+    <a href="biblioteca-english.html">
+      My Library
+    </a>
+
+    <a href="eventos-english.html">
+      Events
+    </a>
+
+    <a
+      href="contato-english.html"
+      class="ativo"
+    >
+      Contact
+    </a>
+
+  </nav>
+
+  <button
+    type="button"
+    class="botao-menu-mobile"
+    id="botaoMenu"
+    onclick="alternarMenu()"
+    aria-label="Open menu"
+  >
+
+    <i class="fa-solid fa-bars"></i>
+
+  </button>
+
+</header>
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div
+  class="menu-mobile-dropdown"
+  id="menuConteudo"
+>
+
+  <a href="english.html">
+    Home
+  </a>
+
+  <a href="obras-english.html">
+    Books
+  </a>
+
+  <a href="biblioteca-english.html">
+    My Library
+  </a>
+
+  <a href="eventos-english.html">
+    Events
+  </a>
+
+  <a
+    href="contato-english.html"
+    class="ativo"
+  >
+    Contact
+  </a>
+
+</div>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="contato-hero">
+
+  <span class="contato-kicker">
+    A door that is always open
+  </span>
+
+  <h1>
+    Let's talk
+    <em>about books?</em>
+  </h1>
+
+  <div class="contato-linha"></div>
+
+  <p class="contato-hero-texto">
+
+    Some conversations begin with a question.
+    Others begin with a story.
+    Perhaps your message will be the beginning
+    of a wonderful conversation.
+
+    <br><br>
+
+    Send me a note. I would be delighted to read it.
+
+  </p>
+
+</section>
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="contato-container">
+
+  <div class="contato-grid">
+
+    <!-- ===================================================
+         CONTACT FORM
+    ==================================================== -->
+
+    <section class="contato-form-card">
+
+      <h2>
+        Send me a note
+      </h2>
+
+      <p class="contato-form-intro">
+
+        Tell me a little about what brought you here.
+
+      </p>
+
+      <form id="formContato">
+
+        <!-- NAME -->
+
+        <div class="contato-campo">
+
+          <label for="nomeContato">
+            Your name
+          </label>
+
+          <input
+            type="text"
+            id="nomeContato"
+            name="nome"
+            placeholder="What should I call you?"
+            autocomplete="name"
+            required
+          >
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="contato-campo">
+
+          <label for="emailContato">
+            Your email address
+          </label>
+
+          <input
+            type="email"
+            id="emailContato"
+            name="email"
+            placeholder="youremail@example.com"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+        <!-- SUBJECT -->
+
+        <div class="contato-campo">
+
+          <label for="tipoContato">
+            What would you like to talk about?
+          </label>
+
+          <select
+            id="tipoContato"
+            name="tipo"
+            required
+          >
+
+            <option value="">
+              Choose an option
+            </option>
+
+            <option value="Dear reader">
+              A message from a reader
+            </option>
+
+            <option value="Partnership/Press">
+              Partnership / Press
+            </option>
+
+            <option value="Event/Speaking invitation">
+              Event / Speaking invitation
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div class="contato-campo">
+
+          <label for="mensagemContato">
+            Your message
+          </label>
+
+          <textarea
+            id="mensagemContato"
+            name="mensagem"
+            placeholder="Write your note here..."
+            required
+          ></textarea>
+
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+
+        <button
+          type="submit"
+          class="contato-enviar"
+        >
+
+          <i class="fa-solid fa-feather-pointed"></i>
+
+          Send my message
+
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+    <aside class="contato-lateral">
+
+      <!-- AVAILABILITY -->
+
+      <div class="contato-disponibilidade">
+
+        <div class="status-contato">
+
+          <span class="status-bolinha"></span>
+
+          Available to connect
+
+        </div>
+
+        <h3>
+          Reading messages between chapters.
+        </h3>
+
+        <p>
+
+          I try to personally reply to the messages
+          I receive here. My response may not be
+          immediate, but every message will be read
+          with care.
+
+        </p>
+
+        <div class="contato-email">
+
+          <span class="contato-email-label">
+            Contact email
+          </span>
+
+          <a
+            href="mailto:antesqueeusejausado@yahoo.com"
+            class="contato-email-endereco"
+          >
+            antesqueeusejausado@yahoo.com
+          </a>
+
+          <a
+            href="mailto:antesqueeusejausado@yahoo.com"
+            class="copiar-email"
+            style="text-decoration: none;"
+          >
+
+            <i class="fa-regular fa-envelope"></i>
+
+            Send an email
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- SOCIAL MEDIA -->
+
+      <div class="contato-redes">
+
+        <h3>
+          Find me online
+        </h3>
+
+        <div class="redes-links">
+
+          <a
+            href="https://instagram.com/prdenilsonescritor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <i class="fa-brands fa-instagram"></i>
+
+            Instagram
+
+          </a>
+
+          <a
+            href="https://wa.me/5585985141830"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            WhatsApp
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- NEWSLETTER -->
+
+      <div class="newsletter">
+
+        <h3>
+          A letter from time to time
+        </h3>
+
+        <p>
+
+          Coming soon: a place to receive updates,
+          reflections, and news about upcoming books
+          directly in your inbox.
+
+        </p>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- =====================================================
+       FAQ
+  ====================================================== -->
+
+  <section class="faq">
+
+    <div class="faq-titulo">
+
+      <span>
+        Reader's corner
+      </span>
+
+      <h2>
+        A few questions before the next page
+      </h2>
+
+    </div>
+
+    <!-- QUESTION 1 -->
+
+    <div class="faq-item">
+
+      <button
+        type="button"
+        class="faq-pergunta"
+      >
+
+        Where can I find your books?
+
+        <i class="fa-solid fa-plus"></i>
+
+      </button>
+
+      <div class="faq-resposta">
+
+        <div>
+
+          <p>
+
+            You can explore my books in the
+            <strong>Books</strong> section of this website.
+            There, you will find information about each
+            book and the available ways to purchase them.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- QUESTION 2 -->
+
+    <div class="faq-item">
+
+      <button
+        type="button"
+        class="faq-pergunta"
+      >
+
+        Do you accept invitations to events and speaking engagements?
+
+        <i class="fa-solid fa-plus"></i>
+
+      </button>
+
+      <div class="faq-resposta">
+
+        <div>
+
+          <p>
+
+            Yes. For invitations to talks, conferences,
+            gatherings, churches, and other events,
+            please send a message explaining the occasion.
+            I will be glad to discuss the possibility.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- QUESTION 3 -->
+
+    <div class="faq-item">
+
+      <button
+        type="button"
+        class="faq-pergunta"
+      >
+
+        Can I send you a message about one of your books?
+
+        <i class="fa-solid fa-plus"></i>
+
+      </button>
+
+      <div class="faq-resposta">
+
+        <div>
+
+          <p>
+
+            Of course. Readers' comments, questions,
+            and impressions are always welcome.
+            After all, a book completes its journey
+            when it finds someone willing to read it.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- QUESTION 4 -->
+
+    <div class="faq-item">
+
+      <button
+        type="button"
+        class="faq-pergunta"
+      >
+
+        How can I contact you directly?
+
+        <i class="fa-solid fa-plus"></i>
+
+      </button>
+
+      <div class="faq-resposta">
+
+        <div>
+
+          <p>
+
+            You can use the contact form on this page
+            or reach me directly through WhatsApp.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="contato-footer">
+
+  Francisco Denilson Pinheiro
+
+  <br>
+
+  Writer & Speaker
+
+  <br><br>
+
+  © 2026 — All rights reserved.
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="contato-english.js"></script>
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<script>
+
+function alternarMenu() {
+
+  const menu =
+    document.getElementById("menuConteudo");
+
+  menu.classList.toggle("aberto");
+
+}
+
+</script>
+
+</body>
+
+</html>
