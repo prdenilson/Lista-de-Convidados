@@ -95,6 +95,30 @@
       gap: 14px;
     }
 
+    .preco {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid var(--borda);
+      border-radius: 6px;
+      background: #1c1916;
+    }
+
+    .preco strong {
+      color: var(--dourado-claro);
+    }
+
+    .total {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--borda);
+      font-size: 19px;
+    }
+
+    .total span {
+      color: var(--dourado-claro);
+      font-weight: bold;
+    }
+
     .pix {
       margin-top: 24px;
       padding: 18px;
@@ -179,34 +203,24 @@
 
     <form id="pedidoForm">
 
-      <div class="grid">
+      <label for="quantidade">Quantidade de livros</label>
+      <input
+        id="quantidade"
+        name="quantidade"
+        type="number"
+        min="1"
+        step="1"
+        value="1"
+        required
+      >
 
-        <div>
-          <label for="quantidade">Quantidade de livros</label>
-          <input
-            id="quantidade"
-            name="quantidade"
-            type="number"
-            min="1"
-            step="1"
-            value="1"
-            required
-          >
+      <div class="preco">
+        <strong>Preço por unidade:</strong> R$ 34,90
+
+        <div class="total">
+          Total do pedido:
+          <span id="total">R$ 34,90</span>
         </div>
-
-        <div>
-          <label for="valor">Valor que deseja pagar via PIX (R$)</label>
-          <input
-            id="valor"
-            name="valor"
-            type="number"
-            min="0.01"
-            step="0.01"
-            placeholder="Ex.: 34,90"
-            required
-          >
-        </div>
-
       </div>
 
       <label for="nome">Nome completo</label>
@@ -225,7 +239,6 @@
       <input id="endereco" name="endereco" required>
 
       <div class="grid">
-
         <div>
           <label for="numero">Número</label>
           <input id="numero" name="numero" required>
@@ -235,11 +248,9 @@
           <label for="bairro">Bairro</label>
           <input id="bairro" name="bairro" required>
         </div>
-
       </div>
 
       <div class="grid">
-
         <div>
           <label for="cidade">Cidade</label>
           <input id="cidade" name="cidade" required>
@@ -249,7 +260,6 @@
           <label for="cep">CEP</label>
           <input id="cep" name="cep" required>
         </div>
-
       </div>
 
       <label for="complemento">Complemento (opcional)</label>
@@ -272,7 +282,7 @@
         </button>
 
         <p class="aviso">
-          Informe no aplicativo do seu banco o valor escolhido.
+          Faça o PIX utilizando o valor total do pedido.
           Confira o nome do recebedor antes de confirmar.
         </p>
 
@@ -300,8 +310,27 @@
 
 <script>
 
+const precoUnitario = 34.90;
 const chavePix = "antesqueeusejausado@yahoo.com";
 const whatsappDestino = "5585985141830";
+
+const quantidadeInput = document.getElementById("quantidade");
+const totalElemento = document.getElementById("total");
+
+function calcularTotal() {
+  const quantidade = Number(quantidadeInput.value);
+
+  const total = Number.isInteger(quantidade) && quantidade > 0
+    ? quantidade * 3490
+    : 0;
+
+  totalElemento.textContent = (total / 100).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+}
+
+quantidadeInput.addEventListener("input", calcularTotal);
 
 document.getElementById("copiarPix")
 .addEventListener("click", async () => {
@@ -324,56 +353,40 @@ document.getElementById("pedidoForm")
   event.preventDefault();
 
   const dados = new FormData(this);
-
   const quantidade = Number(dados.get("quantidade"));
-  const valor = Number(dados.get("valor"));
 
-  if (
-    !Number.isInteger(quantidade) ||
-    quantidade < 1 ||
-    !Number.isFinite(valor) ||
-    valor <= 0
-  ) {
-    alert("Confira a quantidade e o valor do PIX.");
+  if (!Number.isInteger(quantidade) || quantidade < 1) {
+    alert("Informe uma quantidade válida de livros.");
     return;
   }
 
+  const totalCentavos = quantidade * 3490;
+  const total = (totalCentavos / 100).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
   const linhas = [
-
     "Olá! Quero fazer um pedido do livro Antes Que Eu Seja Usado.",
-
     "",
     "DADOS DO PEDIDO",
-
     "Quantidade: " + quantidade + " livro(s)",
-
-    "Valor informado para o PIX: R$ " +
-    valor.toFixed(2).replace(".", ","),
-
+    "Preço por unidade: R$ 34,90",
+    "VALOR TOTAL: " + total,
     "",
     "DADOS PARA ENTREGA",
-
     "Nome: " + dados.get("nome"),
-
     "WhatsApp: " + dados.get("whatsapp"),
-
     "Endereço: " + dados.get("endereco") +
-    ", nº " + dados.get("numero"),
-
+      ", nº " + dados.get("numero"),
     "Bairro: " + dados.get("bairro"),
-
     "Cidade: " + dados.get("cidade"),
-
     "CEP: " + dados.get("cep"),
-
     "Complemento: " +
-    (dados.get("complemento") || "Não informado"),
-
+      (dados.get("complemento") || "Não informado"),
     "",
     "Chave PIX: " + chavePix,
-
     "Enviarei o comprovante após realizar o pagamento."
-
   ];
 
   const url =
@@ -385,6 +398,8 @@ document.getElementById("pedidoForm")
   window.open(url, "_blank", "noopener,noreferrer");
 
 });
+
+calcularTotal();
 
 </script>
 
